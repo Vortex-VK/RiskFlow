@@ -1,0 +1,328 @@
+{
+  "demo": {
+    "all_leads": {
+      "fn": 7,
+      "fp": 1,
+      "fraud": 10,
+      "precision": 0.75,
+      "recall": 0.3,
+      "rows": 186,
+      "tn": 175,
+      "tp": 3
+    },
+    "exploratory": {
+      "fn": 9,
+      "fp": 1,
+      "fraud": 10,
+      "precision": 0.5,
+      "recall": 0.1,
+      "rows": 186,
+      "tn": 175,
+      "tp": 1
+    },
+    "prioritized": {
+      "fn": 8,
+      "fp": 0,
+      "fraud": 10,
+      "precision": 1.0,
+      "recall": 0.2,
+      "rows": 186,
+      "tn": 176,
+      "tp": 2
+    },
+    "source_sha256": "ba74fd8b71c14718de27bae36deb94e578e6c1086462e0ccd2397ad8fb893a28"
+  },
+  "native": {
+    "diagnostic-short": {
+      "all_leads": {
+        "fn": 132,
+        "fp": 69,
+        "fraud": 132,
+        "precision": 0.0,
+        "recall": 0.0,
+        "rows": 160321,
+        "tn": 160120,
+        "tp": 0
+      },
+      "exploratory": {
+        "fn": 132,
+        "fp": 69,
+        "fraud": 132,
+        "precision": 0.0,
+        "recall": 0.0,
+        "rows": 160321,
+        "tn": 160120,
+        "tp": 0
+      },
+      "prioritized": {
+        "fn": 132,
+        "fp": 0,
+        "fraud": 132,
+        "precision": null,
+        "recall": 0.0,
+        "rows": 160321,
+        "tn": 160189,
+        "tp": 0
+      }
+    },
+    "diagnostic-wide": {
+      "all_leads": {
+        "fn": 132,
+        "fp": 71,
+        "fraud": 132,
+        "precision": 0.0,
+        "recall": 0.0,
+        "rows": 160321,
+        "tn": 160118,
+        "tp": 0
+      },
+      "exploratory": {
+        "fn": 132,
+        "fp": 71,
+        "fraud": 132,
+        "precision": 0.0,
+        "recall": 0.0,
+        "rows": 160321,
+        "tn": 160118,
+        "tp": 0
+      },
+      "prioritized": {
+        "fn": 132,
+        "fp": 0,
+        "fraud": 132,
+        "precision": null,
+        "recall": 0.0,
+        "rows": 160321,
+        "tn": 160189,
+        "tp": 0
+      }
+    },
+    "final-short": {
+      "all_leads": {
+        "fn": 263,
+        "fp": 177,
+        "fraud": 263,
+        "precision": 0.0,
+        "recall": 0.0,
+        "rows": 334777,
+        "tn": 334337,
+        "tp": 0
+      },
+      "exploratory": {
+        "fn": 263,
+        "fp": 177,
+        "fraud": 263,
+        "precision": 0.0,
+        "recall": 0.0,
+        "rows": 334777,
+        "tn": 334337,
+        "tp": 0
+      },
+      "prioritized": {
+        "fn": 263,
+        "fp": 0,
+        "fraud": 263,
+        "precision": null,
+        "recall": 0.0,
+        "rows": 334777,
+        "tn": 334514,
+        "tp": 0
+      }
+    },
+    "final-wide": {
+      "all_leads": {
+        "fn": 263,
+        "fp": 216,
+        "fraud": 263,
+        "precision": 0.0,
+        "recall": 0.0,
+        "rows": 334777,
+        "tn": 334298,
+        "tp": 0
+      },
+      "exploratory": {
+        "fn": 263,
+        "fp": 216,
+        "fraud": 263,
+        "precision": 0.0,
+        "recall": 0.0,
+        "rows": 334777,
+        "tn": 334298,
+        "tp": 0
+      },
+      "prioritized": {
+        "fn": 263,
+        "fp": 0,
+        "fraud": 263,
+        "precision": null,
+        "recall": 0.0,
+        "rows": 334777,
+        "tn": 334514,
+        "tp": 0
+      }
+    }
+  },
+  "review_bundle_sha256": "47db3ad7245bcb988d3ea22b575771b9a5bd8536eec1a96c9af71386b0195b97",
+  "scenario": {
+    "all_leads": {
+      "fn": 167,
+      "fp": 7,
+      "fraud": 180,
+      "precision": 0.65,
+      "recall": 0.07222222222222222,
+      "rows": 10000,
+      "tn": 9813,
+      "tp": 13
+    },
+    "exploratory": {
+      "fn": 173,
+      "fp": 7,
+      "fraud": 180,
+      "precision": 0.5,
+      "recall": 0.03888888888888889,
+      "rows": 10000,
+      "tn": 9813,
+      "tp": 7
+    },
+    "prioritized": {
+      "fn": 174,
+      "fp": 0,
+      "fraud": 180,
+      "precision": 1.0,
+      "recall": 0.03333333333333333,
+      "rows": 10000,
+      "tn": 9820,
+      "tp": 6
+    },
+    "prioritized_patterns": {
+      "account_takeover_online": {
+        "fn": 42,
+        "fp": 0,
+        "fraud": 42,
+        "precision": null,
+        "recall": 0.0,
+        "rows": 42,
+        "tn": 0,
+        "tp": 0
+      },
+      "card_testing": {
+        "fn": 26,
+        "fp": 0,
+        "fraud": 26,
+        "precision": null,
+        "recall": 0.0,
+        "rows": 26,
+        "tn": 0,
+        "tp": 0
+      },
+      "counterfeit_swipe": {
+        "fn": 22,
+        "fp": 0,
+        "fraud": 26,
+        "precision": 1.0,
+        "recall": 0.15384615384615385,
+        "rows": 26,
+        "tn": 0,
+        "tp": 4
+      },
+      "electronics_cashout": {
+        "fn": 33,
+        "fp": 0,
+        "fraud": 35,
+        "precision": 1.0,
+        "recall": 0.05714285714285714,
+        "rows": 35,
+        "tn": 0,
+        "tp": 2
+      },
+      "international_online": {
+        "fn": 51,
+        "fp": 0,
+        "fraud": 51,
+        "precision": null,
+        "recall": 0.0,
+        "rows": 51,
+        "tn": 0,
+        "tp": 0
+      },
+      "legitimate_fast_repeat": {
+        "fn": 0,
+        "fp": 0,
+        "fraud": 0,
+        "precision": null,
+        "recall": null,
+        "rows": 35,
+        "tn": 35,
+        "tp": 0
+      },
+      "legitimate_large_purchase": {
+        "fn": 0,
+        "fp": 0,
+        "fraud": 0,
+        "precision": null,
+        "recall": null,
+        "rows": 60,
+        "tn": 60,
+        "tp": 0
+      },
+      "legitimate_travel": {
+        "fn": 0,
+        "fp": 0,
+        "fraud": 0,
+        "precision": null,
+        "recall": null,
+        "rows": 45,
+        "tn": 45,
+        "tp": 0
+      },
+      "legitimate_unfamiliar_online": {
+        "fn": 0,
+        "fp": 0,
+        "fraud": 0,
+        "precision": null,
+        "recall": null,
+        "rows": 25,
+        "tn": 25,
+        "tp": 0
+      },
+      "ordinary": {
+        "fn": 0,
+        "fp": 0,
+        "fraud": 0,
+        "precision": null,
+        "recall": null,
+        "rows": 5728,
+        "tn": 5728,
+        "tp": 0
+      },
+      "ordinary_or_genuine_travel": {
+        "fn": 0,
+        "fp": 0,
+        "fraud": 0,
+        "precision": null,
+        "recall": null,
+        "rows": 2631,
+        "tn": 2631,
+        "tp": 0
+      },
+      "recurring_subscription": {
+        "fn": 0,
+        "fp": 0,
+        "fraud": 0,
+        "precision": null,
+        "recall": null,
+        "rows": 1296,
+        "tn": 1296,
+        "tp": 0
+      }
+    },
+    "source_sha256": "4681043496aef46c93d8575e0c58b0986b7ac4eb9f1fd5c506b1f4d66fe4050e"
+  },
+  "v8_bundle_sha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+  "verification": {
+    "limitations": "Priority role chosen after exposed evaluations; no fresh test or general reliability claim. Total false suggestions remain; priority changes review order.",
+    "priority_is_subset_of_leads": true,
+    "v1_leads_and_scores_unchanged": true,
+    "v8_scenario_and_demo_scores_unchanged": true
+  }
+}

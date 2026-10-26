@@ -1,0 +1,59 @@
+.continuous-scores,
+.score-explorer {
+  border-top: 1px solid #4c6665;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+.continuous-score {
+  margin: 1rem 0;
+}
+.continuous-score > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+.continuous-score output {
+  font-variant-numeric: tabular-nums;
+  font-size: 1.1rem;
+  color: #ace3d8;
+  white-space: nowrap;
+}
+.continuous-score meter {
+  width: 100%;
+  height: 0.65rem;
+  margin-top: 0.5rem;
+  accent-color: #8ad2c0;
+}
+.continuous-score p {
+  margin: 0.35rem 0;
+}
+.continuous-scores .high-estimated-risk,
+.score-explorer .high-estimated-risk {
+  border-left: 3px solid #ffc975;
+  padding-left: 0.75rem;
+  background: #30291d;
+}
+.high-estimate-label {
+  color: #ffe0a6;
+  font-weight: 600;
+}
+.score-explorer label {
+  display: block;
+  margin: 0.65rem 0;
+}
+.score-explorer input[type="range"],
+.score-explorer select {
+  width: 100%;
+}
+.score-explorer table {
+  width: 100%;
+  font-size: 0.85rem;
+  text-align: left;
+  border-collapse: collapse;
+}
+.score-explorer td,
+.score-explorer th {
+  padding: 0.3rem;
+  border-bottom: 1px solid #40504f;
+}

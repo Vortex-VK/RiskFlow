@@ -1,0 +1,6 @@
+event_id,account_id,date,amount,currency,direction,transaction_type
+example-a,personal,2026-01-01,10.00,USD,debit,purchase
+example-b,personal,2026-01-02,30.00,USD,debit,purchase
+example-c,personal,2026-01-03,100.00,USD,debit,purchase
+example-refund,personal,2026-01-04,-10.00,USD,credit,refund
+example-other,another-account,2026-01-04,200.00,USD,debit,purchase

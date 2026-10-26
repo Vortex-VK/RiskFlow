@@ -1,0 +1,40 @@
+{
+  "epsilon": 1e-06,
+  "experiments_sha256": "2ebcf9229d76d8baa249dec7a0909ecd4beb2608a7cc68ede6b7a1eccc83f423",
+  "protocol_sha256": "aeaabd3c41af8aed1e5175805c739936fffdd51a6407e6fcdf427d50a1fe6a7c",
+  "review_sha256": "47db3ad7245bcb988d3ea22b575771b9a5bd8536eec1a96c9af71386b0195b97",
+  "scope": "ibm_synthetic",
+  "sources": {
+    "card_pattern": {
+      "intercept": -3.536331521488256,
+      "method": "sigmoid",
+      "raw_cutoff": -1.8899241882241695,
+      "reference_probability": 0.012102750516307385,
+      "slope": 0.45812124929671494
+    },
+    "card_priority": {
+      "intercept": -0.9588572918312703,
+      "method": "sigmoid",
+      "raw_cutoff": -1.0691764979048273,
+      "reference_probability": 0.11839362605982828,
+      "slope": 0.9810106109874388
+    },
+    "coverage": {
+      "intercept": -0.9015655590228809,
+      "method": "sigmoid",
+      "raw_cutoff": 2.485474202331682,
+      "reference_probability": 0.8103737269982116,
+      "slope": 0.9471053606282225
+    },
+    "online_specialist": {
+      "intercept": -1.0141856052796117,
+      "method": "sigmoid",
+      "raw_cutoff": 1.8637710412616648,
+      "reference_probability": 0.7592891038757795,
+      "slope": 1.1605350394648364
+    }
+  },
+  "upload_domain_validated": false,
+  "v8_sha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+  "version": "fraud-probability-v1"
+}

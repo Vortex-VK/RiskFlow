@@ -1,0 +1,75 @@
+# Installed dependencies and local toolchains
+.venv/
+venv/
+node_modules/
+/.tools/
+
+# Python caches and packaging output
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+build/
+dist/
+
+# Build, test and development artifacts
+.cache/
+.vite/
+coverage/
+.coverage
+.coverage.*
+htmlcov/
+test-results/
+playwright-report/
+blob-report/
+*.tsbuildinfo
+*.log
+
+# Local configuration and credentials; safe templates may be committed
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+.npmrc
+.pypirc
+.aws/
+.ssh/
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Private runtime data, uploads and original training datasets
+.data/
+/training_data/
+/uploads/
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+
+# Local diagnostics of user-supplied uploads (not app fixtures or public samples)
+/docs/evaluations/realistic-card-4000/
+/scripts/diagnose_realistic_card_upload.py
+
+# Machine/editor and assistant-local state
+.codex/
+.agents/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+
+# Keep backend/model_artifacts, fixtures, public samples and dependency lockfiles.
+# They are required to reproduce and run the application from a fresh checkout.

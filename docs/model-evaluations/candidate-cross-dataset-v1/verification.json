@@ -1,0 +1,18 @@
+{
+  "audit_code_sha256": "753fa94def1b4ed5db40811f04a823e15f964376b21fa26cf6abf378eb3f4a91",
+  "checks": [
+    "prediction hashes",
+    "independent confusion counts",
+    "finite bounded probabilities",
+    "Brier/RMSE/logloss/AP/AUC",
+    "no invented accuracy for unlabeled data"
+  ],
+  "comparison_sha256": "9e8031ff4e201b88888c57e52f3109fe57e3e8bd1b224c7326e7b2870306a7f6",
+  "engine_changed": false,
+  "ieee_candidate_not_scored": true,
+  "metric_rows_verified": 32,
+  "protocol_sha256": "277d0d675751193e3022f649ab1c898316cd2f2cefa4997e1f5e2aa13d19a96f",
+  "retrained": false,
+  "thresholds_changed": false,
+  "unlabeled_variants_verified": 4
+}

@@ -1,0 +1,55 @@
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 18px;
+}
+.actions button {
+  flex: 1;
+}
+.error {
+  color: var(--block);
+  padding: 10px;
+  border: 1px solid var(--block);
+  border-radius: 6px;
+  font-size: 12px;
+}
+.note,
+.labelChoice span {
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.labelChoice {
+  background: var(--soft);
+  padding: 12px;
+  border-radius: 8px;
+}
+.dirty {
+  color: var(--review);
+  font-size: 11px;
+}
+.payments {
+  max-height: 190px;
+  overflow-y: auto;
+}
+.payments button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  text-align: left;
+  padding: 10px 0;
+}
+.payments small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 4px;
+}
+.payments strong {
+  font-weight: 500;
+}

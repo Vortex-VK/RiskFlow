@@ -1,0 +1,113 @@
+.canvas {
+  position: absolute;
+  inset: 0;
+}
+.object {
+  width: 100px;
+  height: 100px;
+  cursor: grab;
+  pointer-events: none;
+}
+.object :global(.node-hit) {
+  pointer-events: all;
+}
+.object svg {
+  overflow: visible;
+}
+.object :global(.node-body) {
+  fill: var(--node-fill);
+  stroke: var(--node-stroke);
+  stroke-width: 1.4;
+}
+.object:hover :global(.node-body),
+.selected :global(.node-body) {
+  stroke: var(--node-ink);
+  stroke-width: 2;
+}
+.initial {
+  fill: var(--node-ink);
+  font-size: 17px;
+  font-weight: 500;
+}
+.icon {
+  fill: none;
+  stroke: var(--node-ink);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.label {
+  fill: var(--node-label, var(--muted));
+  text-anchor: middle;
+  font-size: 12px;
+  paint-order: stroke;
+  stroke: var(--canvas);
+  stroke-width: 5px;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+:global(.node-account) .label {
+  fill: var(--node-label, var(--node-ink));
+  font-weight: 550;
+}
+.edgeLabel {
+  opacity: 0;
+  font-size: 10px;
+  text-anchor: middle;
+  fill: var(--muted);
+  paint-order: stroke;
+  stroke: var(--canvas);
+  stroke-width: 5;
+  pointer-events: none;
+}
+.comparisonLabel {
+  opacity: 1;
+  fill: var(--accent);
+  font-size: 11px;
+}
+:global(.react-flow__edge:hover) .edgeLabel,
+:global(.react-flow__edge.selected) .edgeLabel,
+:global(.react-flow__edge:focus-visible) .edgeLabel {
+  opacity: 1;
+}
+.object .anchor {
+  visibility: hidden;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  background: transparent;
+}
+:global(.react-flow__node) {
+  pointer-events: none !important;
+  outline: none !important;
+  border: 0;
+  box-shadow: none !important;
+  background: transparent;
+}
+:global(.react-flow__node:focus-visible .node-body) {
+  stroke: var(--node-ink);
+  stroke-width: 3;
+  stroke-dasharray: 4 3;
+}
+:global(.react-flow__edge:focus-visible) {
+  outline: none;
+}
+:global(.react-flow__edge:focus-visible path.react-flow__edge-path) {
+  stroke: var(--accent) !important;
+  stroke-width: 3 !important;
+  stroke-dasharray: 4 3 !important;
+}
+:global(.react-flow__attribution) {
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 8px;
+  bottom: 2px;
+}
+:global(.react-flow__attribution a) {
+  color: var(--muted);
+}
+:global(.react-flow) {
+  --xy-background-color: transparent;
+  --xy-edge-stroke: var(--edge);
+}

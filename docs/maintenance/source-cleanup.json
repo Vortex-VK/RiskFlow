@@ -1,0 +1,621 @@
+{
+  "accepted_model": "ml-v13 depth6",
+  "accepted_replay_sha256": "c741259f685da3039991250dfe2dce886ea81ab5d8aaab6868c5def5211f1165",
+  "authorization": "User requested unused code removal and a clean standalone project with logical naming and placement.",
+  "completed_utc": "2026-10-24T01:41:19.018450+00:00",
+  "evaluation_rows_replayed": 206709,
+  "historical_evidence": "Model packages, cached records and experiment reports retained. Retired source manifests and runner commands are historical records; use python -m ml.verify.",
+  "independent_training_rebuild": false,
+  "new_ml_source_files": 24,
+  "new_ml_source_lines": 1744,
+  "old_ml_source_files": 89,
+  "old_ml_source_lines": 9904,
+  "protected_files": {
+    "RiskFlow_ML_Implementation_Plan.md": "d6e716491b2cfe00065da75c69ed8138038277f91611a65a654212e60f98edb2",
+    "docs/simulator-evaluation/accepted-model-v13.json": "646d865a1100a7948263940536748bac07a6c2d4f00889f7e90e8ff1b4820aad",
+    "docs/simulator-evaluation/current-model.json": "a06b051551efeb05bd934485bc290328e248001207a482c3b81cebe097e15240",
+    "plan.md": "3369db1978b56695cd27f29fcc48763e1f1a9bbc3b02dcb1815e7ec9bdfe7512",
+    "todo.md": "d8b009ee69f7347f3180278a82be1d07cc3cabfcabf6f57712174c82959be56a"
+  },
+  "removed_source_files": {
+    "backend/ml/feasibility.py": {
+      "lines": 200,
+      "sha256": "114bb17faf9825aa8f540ad8a325e30daf866a53d9e34ce032abd2d8f0d1a067"
+    },
+    "backend/ml/features.py": {
+      "lines": 167,
+      "sha256": "a9dcfa5f176f36cf498ee46845461fa8f2ea0a6800600b1bf714466da520c7fe"
+    },
+    "backend/ml/freeze.py": {
+      "lines": 19,
+      "sha256": "8417aa25f568925b82197e661999a86f284b4b2dbe082dd90144ed03486ed5e4"
+    },
+    "backend/ml/prepare.py": {
+      "lines": 162,
+      "sha256": "8f5814f4a440e08c79078cf1dd6522732f70a476bf72b76b5cfae92abd0540f4"
+    },
+    "backend/ml/protocol.py": {
+      "lines": 106,
+      "sha256": "93bf1a2a32f65fb5fc578e901e209146a8ec660998686126fe2a98427c3f4c40"
+    },
+    "backend/ml/report.py": {
+      "lines": 187,
+      "sha256": "43e1176997c7ac544f10a9e5c5a0571a98e22d4ebd2437e4568fc52aead5214c"
+    },
+    "backend/ml/score.py": {
+      "lines": 107,
+      "sha256": "acaf4de263b64dde35644a479beeac1df069f64779c14caf8a2f51a08220896f"
+    },
+    "backend/ml/train.py": {
+      "lines": 176,
+      "sha256": "8551797539d99e60565157bcf81ee01e73f5eed0680c06cd4a638de88d315a22"
+    },
+    "backend/ml_v10/__init__.py": {
+      "lines": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "backend/ml_v10/engine.py": {
+      "lines": 68,
+      "sha256": "aafa70b7eae861cc36a509eb7f6ab699e97dd1212029c7e42b8c5f016bd29c3f"
+    },
+    "backend/ml_v10/pipeline.py": {
+      "lines": 205,
+      "sha256": "aefdf4a151e9ae2612dc80f768788eefd492db7779dae6efc761749e289b08f7"
+    },
+    "backend/ml_v11/__init__.py": {
+      "lines": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "backend/ml_v11/data.py": {
+      "lines": 101,
+      "sha256": "08cefe2beb57ec7ae45b180ec9df386d5f304377cdd9ef710f774e326378f280"
+    },
+    "backend/ml_v11/engine.py": {
+      "lines": 86,
+      "sha256": "24c6c81fd8280cbb417dba384b3fb606af45a106f24fcb3b3f5b35dba129b5fe"
+    },
+    "backend/ml_v11/pipeline.py": {
+      "lines": 191,
+      "sha256": "6376723c70928bd5cd02edac9850abb768dd0b38a18498aad46d76e9332b2fba"
+    },
+    "backend/ml_v11/protocol.py": {
+      "lines": 65,
+      "sha256": "fc762ea3567133141fd0099e63f2aaba26d5b9342e3db0e19ff3a9e2e33ded39"
+    },
+    "backend/ml_v12/__init__.py": {
+      "lines": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "backend/ml_v12/engine.py": {
+      "lines": 44,
+      "sha256": "73554f37a7e12f098ad64f007b4cce495cf9687308927e4c61617731ed083114"
+    },
+    "backend/ml_v12/pipeline.py": {
+      "lines": 195,
+      "sha256": "988d6b3d8116b1e5b8e9bb5db72430a5d12fbb15c83f132dbb4097fa9fd9ee24"
+    },
+    "backend/ml_v13/__init__.py": {
+      "lines": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "backend/ml_v13/data.py": {
+      "lines": 117,
+      "sha256": "d8fd9a492c5d816bc99a50a6aea477eddb90798adcd810951f83ec7b372ec6bf"
+    },
+    "backend/ml_v13/engine.py": {
+      "lines": 101,
+      "sha256": "b81f62c6ae4de69ff9175579d20c1a42270eb408a87a9d5b55eefed864fd39f7"
+    },
+    "backend/ml_v13/pipeline.py": {
+      "lines": 161,
+      "sha256": "83bbcd47d360849a20e4bd0256333c92ee5a716cda9bd565c735a50270c37abe"
+    },
+    "backend/ml_v13/protocol.py": {
+      "lines": 70,
+      "sha256": "8dd8ef8d7dbc6afc790922b047e93d6be329e5a71d260c45e52c19073db1851c"
+    },
+    "backend/ml_v14/__init__.py": {
+      "lines": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "backend/ml_v14/data.py": {
+      "lines": 196,
+      "sha256": "5b996899b8827de5aecb9e13fc39bc06200d836a57acdb5b1b123f8b7ce64fc8"
+    },
+    "backend/ml_v14/features.py": {
+      "lines": 93,
+      "sha256": "37487f7f391f2b5c3fd33610016b629b7a4ac7adc45f169c95317e4b339d9d71"
+    },
+    "backend/ml_v14/models.py": {
+      "lines": 74,
+      "sha256": "99753cb5fbe0ba2b6d3a8dcf8e8ff6b55ebb8de5dffac36117bd3277cd58c62e"
+    },
+    "backend/ml_v14/pipeline.py": {
+      "lines": 199,
+      "sha256": "9f871f61ed6d789e4d61e24333f407445338cd2b3b0ea9be723a21625ec2427e"
+    },
+    "backend/ml_v14/policies.py": {
+      "lines": 73,
+      "sha256": "309b3cb752a4f44beb0c760d26a0061f20f9a7df45728b86e5caf56b8ce61fa0"
+    },
+    "backend/ml_v14/protocol.py": {
+      "lines": 83,
+      "sha256": "546d82966b3bba64c30ef910dc06fee2272f53a0c42bfb04c08fc62e7d0cc0bd"
+    },
+    "backend/ml_v2/__init__.py": {
+      "lines": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "backend/ml_v2/audit.py": {
+      "lines": 53,
+      "sha256": "09b21f719bf0b3d98d067aeb4d7e5b44392b2c2b8af7c35009b7789bd34d57e9"
+    },
+    "backend/ml_v2/build.py": {
+      "lines": 99,
+      "sha256": "b58814af820a7203e49e032783c220a206726717735ee9a002d95bcc93c4c553"
+    },
+    "backend/ml_v2/data.py": {
+      "lines": 78,
+      "sha256": "463b9f884bc2a6306182c2fb339e59eaf4f1f5567dee96f1fbaba153151c04b1"
+    },
+    "backend/ml_v2/diagnostics.py": {
+      "lines": 59,
+      "sha256": "6a8ad3804005b996013281b614eb6395aa15b107df601fb865a5b01411d08b9b"
+    },
+    "backend/ml_v2/execution.py": {
+      "lines": 13,
+      "sha256": "a0041e88eef91f4f602ca69ac9bd917d5587b9e5935a598d0d2fff7b014ddb7a"
+    },
+    "backend/ml_v2/explain.py": {
+      "lines": 23,
+      "sha256": "4072993d570d3e9d64a1d7a49cb45d2e6f9159cdf26c3992112413d268e25596"
+    },
+    "backend/ml_v2/feasibility.py": {
+      "lines": 243,
+      "sha256": "81a73e5d6e8725aae32c7e3b3b80de32c489d56851925ef62770f5e913499f48"
+    },
+    "backend/ml_v2/features.py": {
+      "lines": 177,
+      "sha256": "0085883fe3d0ec69055e112c32204167c35970a13977f6b16f14ed25455288d5"
+    },
+    "backend/ml_v2/models.py": {
+      "lines": 62,
+      "sha256": "b47ee6ba5d8dc5f0cf5d39db74a757d0ba8063732704f7cd0d2b7ae722bd68bf"
+    },
+    "backend/ml_v2/prepare.py": {
+      "lines": 162,
+      "sha256": "63285ffcc444bc45fb4da41b63c7c390e2b1bbc194ab858027310fc762a976a5"
+    },
+    "backend/ml_v2/protocol.py": {
+      "lines": 105,
+      "sha256": "2bbda521e5cbac832ef3e4d964cc3ebd82d208356284cd1dcd9c820f4d4687fb"
+    },
+    "backend/ml_v2/report.py": {
+      "lines": 192,
+      "sha256": "f82624d326a5d6a5131e2331d13d370efb27ea1a3db05dd03c5036c962c5ff6a"
+    },
+    "backend/ml_v2/score.py": {
+      "lines": 124,
+      "sha256": "afa8c300735b6f6a6c2958747efa70007889bc56d981b9464bb86d1eba5eaf08"
+    },
+    "backend/ml_v2/train.py": {
+      "lines": 181,
+      "sha256": "8d2569e568ca4dee12557140aca7b117af35c30b245ebe4214bc1c786fde036f"
+    },
+    "backend/ml_v2/uncertainty.py": {
+      "lines": 60,
+      "sha256": "9d8745ee60529767cc39c653a65f068057d54226456dc30e55e8cb570d94332b"
+    },
+    "backend/ml_v3/__init__.py": {
+      "lines": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "backend/ml_v3/data.py": {
+      "lines": 91,
+      "sha256": "a05076fa1ed70c1e9503a8d2b85b6d0d7e32caf1f916c1daf6df761bbe9c3f81"
+    },
+    "backend/ml_v3/models.py": {
+      "lines": 49,
+      "sha256": "2a6b5305d7aedf847b5bd131930c714425f7b5ceedcd162213d040987bb3083b"
+    },
+    "backend/ml_v3/pipeline.py": {
+      "lines": 383,
+      "sha256": "632948a7a98842065760aa046efcd34000ad502e4b37a331309d43a9f04fcc29"
+    },
+    "backend/ml_v3/protocol.py": {
+      "lines": 73,
+      "sha256": "5acf2d1771af17e34656880ff406c96b1af850b64b2be797b9ba53f42affde1f"
+    },
+    "backend/ml_v4/__init__.py": {
+      "lines": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "backend/ml_v4/build.py": {
+      "lines": 161,
+      "sha256": "b798065f1f966a99eff997a10e24879347142a5f9765ceaaacd7dc58ed7b7dde"
+    },
+    "backend/ml_v4/context.py": {
+      "lines": 183,
+      "sha256": "e58cff869d26dcc09b5676b0adf46e04d439f7951626519b1bbe92b3c5bdea5f"
+    },
+    "backend/ml_v4/data.py": {
+      "lines": 204,
+      "sha256": "97eec0b15a0563416439d7c872c0175fd8bbfdf75705fbfb8c09e1adbc6c15cb"
+    },
+    "backend/ml_v4/models.py": {
+      "lines": 23,
+      "sha256": "e4d17404c3f524557fa53f692ea858db7fce66b05245a26248af8dccb3b5a152"
+    },
+    "backend/ml_v4/pipeline.py": {
+      "lines": 381,
+      "sha256": "b11c86a06e0c52a8664b160771bd199136fb79c1ba7178dc616e40aae8374a49"
+    },
+    "backend/ml_v4/prepare.py": {
+      "lines": 18,
+      "sha256": "348a2502025b9b0747bda5bd23765e77e65f9401a7c8a8330fe5088e546e19fe"
+    },
+    "backend/ml_v4/protocol.py": {
+      "lines": 80,
+      "sha256": "25aba9e208ecc0c58874cfebc72002446ce32f4b616deb764847b49d5afe2023"
+    },
+    "backend/ml_v5/__init__.py": {
+      "lines": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "backend/ml_v5/data.py": {
+      "lines": 116,
+      "sha256": "74355b321482c6f4397d6306685720041df5aa481112f071cd63f37d40006fad"
+    },
+    "backend/ml_v5/metrics.py": {
+      "lines": 115,
+      "sha256": "84d48a4f1d7198424e040f8d4733023d0e0e2d4740c74cccb09e18658160f112"
+    },
+    "backend/ml_v5/pipeline.py": {
+      "lines": 294,
+      "sha256": "143ca2c5e1dfc4f2cdd4b58ce2243548c42ae452ea1813638b726e0e28379a54"
+    },
+    "backend/ml_v5/protocol.py": {
+      "lines": 73,
+      "sha256": "b75ce72f533be28370756559ff982f5b508b731c7dadac142f0f51e2ac37aa0c"
+    },
+    "backend/ml_v6/__init__.py": {
+      "lines": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "backend/ml_v6/pipeline.py": {
+      "lines": 182,
+      "sha256": "e8fbcbe359eb2a7bc8b9c35e4b7edea37d7d19c3f6c7508e6d4abf89ffff7946"
+    },
+    "backend/ml_v6/protocol.py": {
+      "lines": 62,
+      "sha256": "71e1a4e0176d8a612deb8775d7f52962732c74da2aa6a8dac46a125bdc424c7b"
+    },
+    "backend/ml_v7/__init__.py": {
+      "lines": 1,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    "backend/ml_v7/data.py": {
+      "lines": 273,
+      "sha256": "c7417b97bfb8edce43fead2f0ea90538d8047301b29d90cd9d847729ab3b6215"
+    },
+    "backend/ml_v7/features.py": {
+      "lines": 114,
+      "sha256": "908945568b5525777f42b5203a9b0a19314279f7532047823c4513bd36e38b68"
+    },
+    "backend/ml_v7/pipeline.py": {
+      "lines": 379,
+      "sha256": "65e138eeea4e94a9a4c85d89ce5d9d3b81ad7800317d7b7773a0511961cea1dc"
+    },
+    "backend/ml_v7/protocol.py": {
+      "lines": 123,
+      "sha256": "0b47176e0c7aa88f082808d55278e76ea1719faa94f44aa7c75179ae10442bd2"
+    },
+    "backend/ml_v8/__init__.py": {
+      "lines": 1,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    "backend/ml_v8/data.py": {
+      "lines": 50,
+      "sha256": "e3ebef4412274e6aa4eb7f5d6d5ef4c36738c7aea0f5c498c3004fdabef9dfa9"
+    },
+    "backend/ml_v8/models.py": {
+      "lines": 64,
+      "sha256": "82c813abb429e61b66374f3688ff125bf29ae54e8eaa6837aba4d217cdbd9627"
+    },
+    "backend/ml_v8/pipeline.py": {
+      "lines": 269,
+      "sha256": "4dae2022bd721856d40c88a97017782b13f8e66a20bf44a21c92c4cba3309122"
+    },
+    "backend/ml_v8/protocol.py": {
+      "lines": 82,
+      "sha256": "ca11e5fc192f1c24ac2c256513a054fb463dda0148c935898d44dd3fd8a22f71"
+    },
+    "backend/ml_v9/__init__.py": {
+      "lines": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "backend/ml_v9/data.py": {
+      "lines": 100,
+      "sha256": "f761c7fe14a84f0a068d269e8cf9ac2fc6f42f158cb44691e4c8c673455eac36"
+    },
+    "backend/ml_v9/engine.py": {
+      "lines": 82,
+      "sha256": "8a099ba0186c01da7564a1ea2c45e437d5d6454e26cbd589c7bc422aaa2eb840"
+    },
+    "backend/ml_v9/pipeline.py": {
+      "lines": 320,
+      "sha256": "534a803ac03ba916d5a2b9d96ede2cf70ac2699502b5187843b1f868c7b865cb"
+    },
+    "backend/ml_v9/policies.py": {
+      "lines": 92,
+      "sha256": "c2fb98851c60e9bf65d6e67f2c220bb259f6abd5852aea307a5e1f6fdbe694d9"
+    },
+    "backend/ml_v9/protocol.py": {
+      "lines": 102,
+      "sha256": "2dc5ac48d030c5d732076798437d205e475fe06487b09f7f6c521c4a28bfe850"
+    },
+    "backend/tests/test_ml_features.py": {
+      "lines": 59,
+      "sha256": "f4352cc8d91bb4b9a66856b5f031794b7a30e4d939e797acbe8ecc83aba6cd27"
+    },
+    "backend/tests/test_ml_metrics.py": {
+      "lines": 48,
+      "sha256": "4f019bcf769b840a89886719bf498a6b40ba6dc47a42f9a29f50b7d8c5c04210"
+    },
+    "backend/tests/test_ml_protocol.py": {
+      "lines": 103,
+      "sha256": "0e4f8cc8bf3b75fd051a99cc9544f282ca1b34118cc42a1f93e7253ce1c35576"
+    },
+    "backend/tests/test_ml_reference.py": {
+      "lines": 80,
+      "sha256": "fb03f22c1c226cf714c42bd0c955a2a1a4f3bb37bca2c97d5d662adcf8588907"
+    },
+    "backend/tests/test_ml_v10.py": {
+      "lines": 48,
+      "sha256": "83ce6b1bbfaf3a3f36a536cdb98eea68a124768b1d538da130dd49d17b1c9a17"
+    },
+    "backend/tests/test_ml_v11.py": {
+      "lines": 108,
+      "sha256": "8ddf2d1c77c27b71d271a49983cd29817d4096a9b136905054bf7160aeef3ee6"
+    },
+    "backend/tests/test_ml_v12.py": {
+      "lines": 77,
+      "sha256": "4691afa5eecd42f23c08ba8a2714dfaa03c84a5fe08e50469c900ed4bbb39fd1"
+    },
+    "backend/tests/test_ml_v13.py": {
+      "lines": 99,
+      "sha256": "02ba5480066e63976893c3f38b918cd783cb94e8d1fe313fcb795f24e0fdfb51"
+    },
+    "backend/tests/test_ml_v14.py": {
+      "lines": 125,
+      "sha256": "7addf610c6613451fd6551d68a5122fb8427fa69451fece6d4af422f0773554f"
+    },
+    "backend/tests/test_ml_v2_features.py": {
+      "lines": 88,
+      "sha256": "22988139e5f465323c21c52db124670de25c77bdfc08b6e5904e77468411165d"
+    },
+    "backend/tests/test_ml_v2_protocol.py": {
+      "lines": 98,
+      "sha256": "cd490f4c718e3579578e1efddc98a7305734fbbf455b192cf399a4249b0cfb55"
+    },
+    "backend/tests/test_ml_v3.py": {
+      "lines": 156,
+      "sha256": "22c96334c6f71a0a43288415686132387b4df2457b226dfeb9755087d0fe7e27"
+    },
+    "backend/tests/test_ml_v4_context.py": {
+      "lines": 100,
+      "sha256": "71d6ce2762f7a1eb7468bd5464399f839090a51fc71dd4e40764b11a7f1ab9dc"
+    },
+    "backend/tests/test_ml_v4_protocol.py": {
+      "lines": 128,
+      "sha256": "8efbbc16325764e190b28640c50423e6e8fa88eda00814c7100f8ef56774dbbc"
+    },
+    "backend/tests/test_ml_v5.py": {
+      "lines": 221,
+      "sha256": "09b09aab7c67772d7ddd3c72290f0a2eab86f4f0762f828706da211104346fe2"
+    },
+    "backend/tests/test_ml_v6.py": {
+      "lines": 61,
+      "sha256": "c2a94165fd38c8470b9599da3a84117745d964bb0c29f526fdaee8292ae33dc7"
+    },
+    "backend/tests/test_ml_v7.py": {
+      "lines": 184,
+      "sha256": "3d6cbf1f7086ec972dfe584ccf903131936190a88ee5f06aba7e8310dcae9fd5"
+    },
+    "backend/tests/test_ml_v8.py": {
+      "lines": 41,
+      "sha256": "a256bfeeeec9a95e4d23e3411e206577ac2b5531f6669f7d0dbb6316f7692792"
+    },
+    "backend/tests/test_ml_v9.py": {
+      "lines": 100,
+      "sha256": "df1f9a9fd6e4e259c429bb95c9fd07af949209d909eb3607c55fc1380420bac0"
+    },
+    "scripts/audit_ml_v7_source.py": {
+      "lines": 80,
+      "sha256": "a8231cc13c262090e0ac1ebcccf4bda94757fc3fcaee344ac0c89d13f3138921"
+    },
+    "scripts/check_ml_v2_viewer.mjs": {
+      "lines": 34,
+      "sha256": "4cf2a1341dba0b796f1b916b81ae033f49e9b10384085c53248ddda0c4aaa897"
+    },
+    "scripts/check_ml_v4_features.py": {
+      "lines": 68,
+      "sha256": "226e8fa35224a93c55a569e7bdbcfc7f826a81bc831ed180c2ca57944a7ca801"
+    },
+    "scripts/diagnose_ml_v4.py": {
+      "lines": 96,
+      "sha256": "409877080a0622e45ac264e14bcb8c9f6259b75b8ef36dae124d172d409e5c61"
+    },
+    "scripts/plot_ml_precision.py": {
+      "lines": 86,
+      "sha256": "4f80dd98df32a6cbf912e40c0d740f1c9ba6314172130e5a0261ea862eab5224"
+    },
+    "scripts/probe_ml_v8.py": {
+      "lines": 104,
+      "sha256": "95651492b1956201ce6f6f4b5c57428deebf9a64b0d48c2e371a00d4d03550a9"
+    },
+    "scripts/render_ml_figure.py": {
+      "lines": 67,
+      "sha256": "8cd5c0ad4e10a47b1a211992beb016cd370b6772361607b1f62f2638ebbeb104"
+    },
+    "scripts/render_ml_v2.py": {
+      "lines": 184,
+      "sha256": "2480e98add5663133803d1a9f3a5ae6d315aaea4568d3d57e1745ea5d003d870"
+    },
+    "scripts/render_ml_v3.py": {
+      "lines": 68,
+      "sha256": "03e85c17cec8eece0305008cb6eb1e6423b3db6f16f8451acc424933e10eb8e6"
+    },
+    "scripts/report_ml_v10.py": {
+      "lines": 182,
+      "sha256": "24305a41c561ee5f5fca379b60ff1f4d6c4d6f48c2a3bf9e540555b38876e9cc"
+    },
+    "scripts/report_ml_v12.py": {
+      "lines": 207,
+      "sha256": "fa5b27ec2d02b8a7394b0b0d1c9765246824735ec91ba75ef605c7ffda658264"
+    },
+    "scripts/report_ml_v13.py": {
+      "lines": 138,
+      "sha256": "da142df45d8a0165d9fecaa5a72daa48d239d4e4db4c7ed22a4df8aa9b7de660"
+    },
+    "scripts/report_ml_v14.py": {
+      "lines": 183,
+      "sha256": "0b19ccd2b222cce65923144c5d50ce62688e7382baf04fbb7b51fd731b85427f"
+    },
+    "scripts/report_ml_v8.py": {
+      "lines": 329,
+      "sha256": "552a4333e81328af3ad927de17d22ef5194cb57e690cca82d652b27c47e1d860"
+    },
+    "scripts/report_ml_v9.py": {
+      "lines": 203,
+      "sha256": "998590c57da7a3740e13615f0b8a3ca13b57a903a84780fe0b2d64de362d5fa2"
+    },
+    "scripts/run_ml_experiment.py": {
+      "lines": 58,
+      "sha256": "f2ef9752da9869b8fce026f1f4c504315cb34a467079e569dde708ed0b33d18f"
+    },
+    "scripts/run_ml_v2.py": {
+      "lines": 49,
+      "sha256": "4bb60bb07237072247ab605e95a787bc3d74d98fe0dc190d9521810510759da5"
+    },
+    "scripts/run_ml_v3.py": {
+      "lines": 47,
+      "sha256": "4a254ef651351896f11c77e889efa0cdc388b1b675d3194f1d84cc549a214bc5"
+    },
+    "scripts/run_ml_v4.py": {
+      "lines": 45,
+      "sha256": "48a6e70cd3a05337fbb032aa9e923deed859d29ef22107ac723f80f9989cb2e1"
+    },
+    "scripts/run_ml_v5.py": {
+      "lines": 51,
+      "sha256": "15db5b3cc8fc3e0a426ca5ed14eddfa048e22c2209d420451db98ff6ceb60bc1"
+    },
+    "scripts/verify_ml_experiment.py": {
+      "lines": 44,
+      "sha256": "57909a8a25c3eea0f209052d8fe0ae56a9847e3c223fff46174de91cfa0f1a6f"
+    },
+    "scripts/verify_ml_v10.py": {
+      "lines": 113,
+      "sha256": "083685900efcbdf06d10cb39afac499bcdfb4efd379c55761cb60e888dc488fb"
+    },
+    "scripts/verify_ml_v12.py": {
+      "lines": 288,
+      "sha256": "7a5c722544b677b9bdc59851623917e27aec4b0b3f198d1a8352123b77ff3c92"
+    },
+    "scripts/verify_ml_v13.py": {
+      "lines": 213,
+      "sha256": "688b857c43790ab667c16d6c119f7dc3a62ee6acd42cd1b4ef91f4a7a4c83955"
+    },
+    "scripts/verify_ml_v14.py": {
+      "lines": 315,
+      "sha256": "9e4a3108d278443de9644cd8394ea2eebd4713088c2f4602b742c9ba788fedd4"
+    },
+    "scripts/verify_ml_v2.py": {
+      "lines": 34,
+      "sha256": "2ae449359aec2e869ace86430a88aaa7dd78454279c88698cf94e59305e94a9e"
+    },
+    "scripts/verify_ml_v3.py": {
+      "lines": 77,
+      "sha256": "072bbee20510482615420de472eacef9bb91ae97e8667a3421c86ec48e215649"
+    },
+    "scripts/verify_ml_v4.py": {
+      "lines": 110,
+      "sha256": "9e0334b9f54afa88de9afa003bb7771f4f2447ca81a4af6304d5928a83c4db9f"
+    },
+    "scripts/verify_ml_v5.py": {
+      "lines": 121,
+      "sha256": "bcae1419d487cb680f59911b58d5f51018e3699739d89e9531022a60dca15a38"
+    },
+    "scripts/verify_ml_v8.py": {
+      "lines": 152,
+      "sha256": "6e64d24369dca0b54a1878e9b6a7fde2e65f5717d395d1fe0b982daefffafe3f"
+    },
+    "scripts/verify_ml_v9.py": {
+      "lines": 211,
+      "sha256": "5f0351a7627d35b1668ca7973f56662c87ecd145750c767c2e79d96a2cca927c"
+    }
+  },
+  "replaced_source_files": {
+    "backend/ml/__init__.py": {
+      "after": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "before": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "backend/ml/data.py": {
+      "after": "ab1d7e627035d45054294eded3a7f0f75f521172cd5238d3807f21749741627f",
+      "before": "5eab13ab217f02e7c4f7a5231302ba98e77033c3bc847f203a5f4a4762d235c6"
+    },
+    "backend/ml/metrics.py": {
+      "after": "2e3d020536654709c138c74f6cb2167bd78e226b49af000816a8b61dacb77e5b",
+      "before": "118a2507a3720840eccd6edd7dc270b6455a78bb57850109513c13bb8d2a0be7"
+    },
+    "backend/ml/models.py": {
+      "after": "c937fa94db0a91ec6a9bac5fb003ad19a1aeb3bc9cf5bd5b92025afa16ef087b",
+      "before": "40f9f6d96d9dc995cc54b34592ed0dcc577854cfa943a87678212637826f30d1"
+    },
+    "backend/ml/verify.py": {
+      "after": "edc8e629d5540fa1107402dbb2a9c86113350230035f93040c80ffaf24c5f4e8",
+      "before": "9704d3d52ebec7ff5fe5111db523f03230d4ebf4646d7085e0faa28a4e2727da"
+    }
+  },
+  "retained_ml_sources": {
+    "backend/ml/__init__.py": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+    "backend/ml/accepted.py": "7407e65e3ae55e342a524b0d4d0c5d5b34710d65e553c693bc7a95aac7910a44",
+    "backend/ml/artifacts.py": "6a95fc5c5197965bded3be28cf9b6f66a681f36aa6f1b9b3035ac00d2859a034",
+    "backend/ml/baseline.py": "56a48eb77f80ada7a3d0624b7a87cca00bca788f876ec81b9b24086ff4a4c4b0",
+    "backend/ml/config.py": "fbee137963c148bded04cfeb9a86755f614d1c8c51869ad24185db4f1f30f2e4",
+    "backend/ml/data.py": "ab1d7e627035d45054294eded3a7f0f75f521172cd5238d3807f21749741627f",
+    "backend/ml/estimators.py": "098dc3d8d0cae23a8f22e1380e1d354d5b015e08349087e43bbced31d3186c91",
+    "backend/ml/features/__init__.py": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+    "backend/ml/features/context.py": "d7b5af3050ea120e905a2cf5183cd4ea968303676989a5ea89238627c59a2e70",
+    "backend/ml/features/geography.py": "4883e1147d1ee15145458155aea253c9bde3d3ac9c491a00be8a4e663076d2ef",
+    "backend/ml/features/history.py": "3e09be0f85a5a9f86512c9b22e2e0d2e7af00f08194641fcacc61e4ebeb3fbd2",
+    "backend/ml/metrics.py": "2e3d020536654709c138c74f6cb2167bd78e226b49af000816a8b61dacb77e5b",
+    "backend/ml/models.py": "c937fa94db0a91ec6a9bac5fb003ad19a1aeb3bc9cf5bd5b92025afa16ef087b",
+    "backend/ml/policies/__init__.py": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+    "backend/ml/policies/calibration.py": "7682d6870f093d8527d15f67d780afa7dfbe413a2406dfe0c2a505d4d3651769",
+    "backend/ml/policies/combined.py": "fc78c98636cfc76fc46934f0fced2273c4a5318a4de2caff9559e746309bd178",
+    "backend/ml/policies/online.py": "fd6d13cd1fc349f5389c1b10776b33722d2490c11e95ca88679640d350101d6e",
+    "backend/ml/policies/rescue.py": "fe346fd44b8328e99541446ed5ae699b1b498bf506473ec1141df076d8a6d556",
+    "backend/ml/policies/specialists.py": "09847d7dd782b51a4c8d15c0962f153f1335e3fa7f428d963cfc11707bba3f0d",
+    "backend/ml/policies/thresholds.py": "b28f8f1989653be2b0ad5e595f039f965f6ca2d0c6241da43bb9f03e6139b8fb",
+    "backend/ml/reference.py": "ffc6588337874f66c13f2dc92a971b54de50dd1a5e179f761b716e1e4fbd8d93",
+    "backend/ml/resources.py": "e44ce188a9f09e28fe9d6e59bc2747685a51c2cb516da5138bc4a80ee5e58e24",
+    "backend/ml/statistics.py": "3beaf7dace2db9eb0d276e372efb857910a779bef90ab464f38b6375eb56c2d8",
+    "backend/ml/verify.py": "edc8e629d5540fa1107402dbb2a9c86113350230035f93040c80ffaf24c5f4e8"
+  },
+  "retired_scripts": 31,
+  "ruff": {
+    "check_passed": true,
+    "format_passed": true,
+    "formatted_files_checked": 93
+  },
+  "tests": {
+    "command": "python -m pytest -o addopts=",
+    "passed": 247
+  },
+  "typing": {
+    "passed": true,
+    "source_files": 67,
+    "strict": true
+  }
+}

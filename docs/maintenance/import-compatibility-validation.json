@@ -1,0 +1,11 @@
+{
+  "change": "Temporary CSV import rejects any included payment without supported V13 inputs before offering Build graph.",
+  "original_2400_csv": "Rejected at preview: 1953 of 1953 included payments lack compatible model inputs; current graph preserved.",
+  "mixed_file": "Rejected without reusing an earlier valid preview; corrected file imports successfully.",
+  "retained_datasets": "Unsupported records still retainable and explicitly not assessed.",
+  "frontend_unit_tests_passed": 200,
+  "affected_browser_checks_passed": 31,
+  "lint_format_types_build_and_production_smoke": "passed",
+  "model_and_backend_unchanged": true,
+  "browser_teardown": "Stopped test-owned Windows servers after workers completed; Playwright reported 31 passed."
+}

@@ -1,0 +1,34 @@
+{
+  "all_research_protocol_hashes_verified": true,
+  "backend_tests": 339,
+  "backend_typed_files": 136,
+  "browser": {
+    "failedTests": [],
+    "status": "passed"
+  },
+  "browser_tests": 4,
+  "bundle_sha256": "47db3ad7245bcb988d3ea22b575771b9a5bd8536eec1a96c9af71386b0195b97",
+  "evaluation_sha256": "2a5eb2379b17aca37c961b657cf2486617e2cdab482efdf0bcaf4a27704b6ed1",
+  "frontend_build": true,
+  "frontend_tests": 227,
+  "lint": true,
+  "live_demo": {
+    "all_leads": 4,
+    "engine": "engine-ml-upload-v8",
+    "prioritized": 2,
+    "review": "card-pattern-v5"
+  },
+  "live_health": {
+    "engineVersion": "engine-ml-upload-v8",
+    "schemaVersion": 1,
+    "status": "ok"
+  },
+  "report_sha256": "e910c36c98f4a20506f1eb4b9e886bc01f0786c0406fc685064270317660b8e6",
+  "review_package": "card-pattern-v5",
+  "scope": "Improved priority separation only. Original lead set, recall and total false suggestions unchanged.",
+  "screenshot": "training_data/card-pattern-v2/priority-panel.png",
+  "six_ibm_csv_bytes_unchanged": true,
+  "v1_bundle_unchanged": true,
+  "v8_bundle_sha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+  "v8_bundle_unchanged": true
+}

@@ -1,0 +1,9 @@
+transaction_id,timestamp,account_id,amount,currency,direction,transaction_type,merchant_name,merchant_category,payment_method,channel,merchant_city,merchant_state,merchant_country,card_present,device_id,ip_country,status,description
+TXN-RFSIM-2026-002094,2026-10-08T19:08:11Z,ACC-RF-0029,19.75,USD,debit,purchase,Online Market,retail,credit_card,ecommerce,Austin,TX,US,false,DEV-RF-SHARED-ONLINE-7,US,completed,Online purchase - Online Market
+TXN-RFSIM-2026-002095,2026-10-08T19:08:40Z,ACC-RF-0043,27.42,USD,debit,purchase,Online Market,retail,credit_card,ecommerce,Dallas,TX,US,false,DEV-RF-SHARED-ONLINE-7,US,completed,Online purchase - Online Market
+TXN-RFSIM-2026-002096,2026-10-08T19:09:05Z,ACC-RF-0067,34.65,USD,debit,purchase,Online Market,retail,credit_card,ecommerce,Charlotte,NC,US,false,DEV-RF-SHARED-ONLINE-7,US,completed,Online purchase - Online Market
+TXN-RFSIM-2026-002097,2026-10-08T19:09:28Z,ACC-RF-0067,16.15,USD,debit,purchase,Online Market,retail,credit_card,ecommerce,Charlotte,NC,US,false,DEV-RF-SHARED-ONLINE-7,US,completed,Online purchase - Online Market
+TXN-RFSIM-2026-002098,2026-10-08T19:09:59Z,ACC-RF-0067,31.29,USD,debit,purchase,Online Market,retail,credit_card,ecommerce,Charlotte,NC,US,false,DEV-RF-SHARED-ONLINE-7,US,completed,Online purchase - Online Market
+TXN-RFSIM-2026-002099,2026-10-08T19:10:24Z,ACC-RF-0067,9.75,USD,debit,purchase,Online Market,retail,credit_card,ecommerce,Charlotte,NC,US,false,DEV-RF-SHARED-ONLINE-7,US,completed,Online purchase - Online Market
+TXN-RFSIM-2026-002100,2026-10-08T19:10:59Z,ACC-RF-0067,15.95,USD,debit,purchase,Online Market,retail,credit_card,ecommerce,Charlotte,NC,US,false,DEV-RF-SHARED-ONLINE-7,US,completed,Online purchase - Online Market
+TXN-RFSIM-2026-002101,2026-10-08T19:11:32Z,ACC-RF-0067,24.19,USD,debit,purchase,Online Market,retail,credit_card,ecommerce,Charlotte,NC,US,false,DEV-RF-SHARED-ONLINE-7,US,completed,Online purchase - Online Market

@@ -1,0 +1,5 @@
+{
+  "corrected_protocol_sha256": "779d8350c79c70aefbe2d5c5927c720a19ab8406e3076faeb21e4f5d8f5c8803",
+  "initial_protocol_sha256": "a980e756fb218eb894e8459aaf95215ccd9b5cef07ce6d52dea67a7f88c6d10b",
+  "reason": "Shorten one descriptive eligibility string to meet lint line length before prediction or transfer metric access; no population, mapping, model, policy or numerical changes."
+}

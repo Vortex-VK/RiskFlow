@@ -1,0 +1,310 @@
+.hierarchy-canvas {
+  position: absolute;
+  inset: 0;
+}
+.hierarchy-navigation {
+  position: absolute;
+  z-index: 12;
+  top: 96px;
+  left: 24px;
+  right: 24px;
+  width: fit-content;
+  max-width: calc(100vw - 48px);
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel-solid);
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.hierarchy-navigation button {
+  padding: 5px 9px;
+  font-size: 12px;
+  border: 0;
+  background: transparent;
+}
+.hierarchy-navigation span {
+  color: var(--muted);
+  padding: 0 6px;
+}
+.hierarchy-navigation .hierarchy-key {
+  font-size: 11px;
+  border-left: 1px solid var(--line);
+}
+.hierarchy-stage {
+  position: absolute;
+  inset: 0;
+}
+.hierarchy-stage[data-transitioning="true"] {
+  pointer-events: none;
+}
+@media (max-width: 600px) {
+  .hierarchy-navigation {
+    top: 140px;
+    left: 12px;
+  }
+  .hierarchy-navigation .hierarchy-key {
+    display: none;
+  }
+}
+
+.atlas-cloud {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.atlas-canvas .react-flow__renderer {
+  z-index: 2;
+}
+.transaction-sector {
+  position: relative;
+  border: 0;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  color: var(--text);
+  pointer-events: none;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+.transaction-sector:hover {
+  background: none;
+}
+.transaction-sector:focus-visible {
+  outline: none;
+}
+.territory-hit {
+  fill: transparent;
+  stroke: none;
+  pointer-events: all;
+}
+.transaction-sector:hover .sector-name,
+.transaction-sector:focus-visible .sector-name {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.transaction-sector:disabled {
+  opacity: 1;
+}
+.sector-name-crowded {
+  opacity: 0;
+}
+.transaction-sector:hover .sector-name-crowded,
+.transaction-sector:focus-visible .sector-name-crowded {
+  opacity: 1;
+}
+.sector-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1em;
+  width: max-content;
+  max-width: 22em;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+  line-height: 1.6;
+  pointer-events: none;
+  paint-order: stroke;
+  background: var(--canvas);
+  border-radius: 0.3em;
+  padding: 0 0.4em;
+}
+.sector-payment-count {
+  display: none;
+  font-size: 0.85em;
+  color: var(--muted);
+}
+.sector-reference {
+  display: block;
+  font-size: 0.8em;
+  color: var(--muted);
+}
+.transaction-sector:hover .sector-payment-count,
+.transaction-sector:focus-visible .sector-payment-count {
+  display: block;
+}
+.hierarchy-stage[data-detail="true"] .node-material {
+  animation: resolve-object 300ms ease-out;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@keyframes resolve-object {
+  from {
+    opacity: 0.3;
+    scale: 0.1;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hierarchy-stage[data-detail="true"] .node-material {
+    animation: none;
+  }
+}
+[data-motion="off"] .hierarchy-stage[data-detail="true"] .node-material {
+  animation: none;
+}
+
+.connection-targets {
+  --sector-saturation: 48%;
+  --sector-lightness: 43%;
+  position: absolute;
+  pointer-events: none;
+}
+[data-theme="dark"] .connection-targets {
+  --sector-saturation: 52%;
+  --sector-lightness: 68%;
+}
+.connection-target {
+  fill: none;
+  stroke: transparent;
+  pointer-events: stroke;
+  cursor: pointer;
+}
+.connection-target:focus-visible {
+  outline: none;
+}
+.connection-hover {
+  fill: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease-out;
+}
+.connection-control:hover .connection-hover {
+  opacity: 0.8;
+}
+.connection-control:has(.connection-target:focus-visible) .connection-hover {
+  opacity: 0.65;
+}
+@media (prefers-reduced-motion: reduce) {
+  .connection-hover {
+    transition: none;
+  }
+}
+[data-motion="off"] .connection-hover {
+  transition: none;
+}
+.connection-toggle {
+  position: absolute;
+  z-index: 10;
+  left: 24px;
+  bottom: 100px;
+  font-size: 12px;
+  background: var(--panel-solid);
+}
+.connection-details {
+  position: absolute;
+  z-index: 15;
+  right: 24px;
+  top: 180px;
+  bottom: 110px;
+  width: 340px;
+  max-width: calc(100vw - 48px);
+  overflow: auto;
+  background: var(--panel-solid);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 8px 32px #00000012;
+  font-size: 12px;
+}
+.connection-details header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 16px;
+}
+.connection-details header button {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+}
+.connection-details p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+.connection-details label {
+  display: block;
+  margin: 16px 0 10px;
+}
+.connection-details select {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel-solid);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 12px;
+}
+.connection-source {
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.connection-payments {
+  list-style: none;
+  padding: 0;
+}
+.connection-payments li {
+  margin: 8px 0;
+  overflow-wrap: anywhere;
+}
+.connection-payments li > span {
+  display: block;
+  line-height: 1.6;
+  font-size: 11px;
+}
+.connection-payments button {
+  border: 0;
+  padding: 0;
+  background: none;
+  text-align: left;
+  font-size: 12px;
+  color: var(--accent);
+}
+.connection-source nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 11px;
+}
+.connection-source nav button {
+  font-size: 11px;
+  padding: 5px 8px;
+}
+.connection-details small {
+  display: block;
+  margin-top: 16px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+@media (max-width: 600px) {
+  .connection-details {
+    right: 12px;
+    left: 12px;
+    top: 190px;
+    width: auto;
+    max-width: none;
+  }
+  .connection-toggle {
+    left: 12px;
+  }
+}

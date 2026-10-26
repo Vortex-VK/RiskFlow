@@ -1,0 +1,33 @@
+{
+  "manifest_sha256": "c502560911caa3464ce7cadf5a662a0d4200d74a86c456614061bac272ca197f",
+  "sources": {
+    "card_pattern": {
+      "intercept": -3.536331521488256,
+      "method": "sigmoid",
+      "raw_cutoff": -1.8899241882241695,
+      "reference_probability": 0.012102750516307385,
+      "slope": 0.45812124929671494
+    },
+    "card_priority": {
+      "intercept": -0.9588572918312703,
+      "method": "sigmoid",
+      "raw_cutoff": -1.0691764979048273,
+      "reference_probability": 0.11839362605982828,
+      "slope": 0.9810106109874388
+    },
+    "coverage": {
+      "intercept": -0.9015655590228809,
+      "method": "sigmoid",
+      "raw_cutoff": 2.485474202331682,
+      "reference_probability": 0.8103737269982116,
+      "slope": 0.9471053606282225
+    },
+    "online_specialist": {
+      "intercept": -1.0141856052796117,
+      "method": "sigmoid",
+      "raw_cutoff": 1.8637710412616648,
+      "reference_probability": 0.7592891038757795,
+      "slope": 1.1605350394648364
+    }
+  }
+}

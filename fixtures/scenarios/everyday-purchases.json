@@ -1,0 +1,218 @@
+{
+  "scenario": {
+    "schemaVersion": 1,
+    "id": "everyday-purchases",
+    "name": "Everyday Purchases",
+    "description": "Illustrative synthetic purchases for V13 replay. MCC and channel are authored demo inputs; labels are story annotations, not measured model performance.",
+    "sourceTemplateId": "everyday-purchases",
+    "sourceTemplateVersion": 2,
+    "scenarioStartAt": "2026-01-15T00:00:00.000Z",
+    "currency": "USD",
+    "nodes": [
+      {
+        "id": "account-a",
+        "type": "account",
+        "name": "Alex Morgan",
+        "openedAt": "2025-01-15T00:00:00.000Z",
+        "typicalAmountMinor": 5000,
+        "usualCountryCodes": [
+          "US"
+        ],
+        "usualMerchantCategories": [
+          "groceries",
+          "retail",
+          "dining"
+        ]
+      },
+      {
+        "id": "grocery",
+        "type": "merchant",
+        "name": "Juniper Market",
+        "category": "groceries",
+        "countryCode": "US"
+      },
+      {
+        "id": "retail",
+        "type": "merchant",
+        "name": "Common Goods",
+        "category": "retail",
+        "countryCode": "US"
+      },
+      {
+        "id": "dining",
+        "type": "merchant",
+        "name": "Sunday Table",
+        "category": "dining",
+        "countryCode": "US"
+      },
+      {
+        "id": "device-a",
+        "type": "device",
+        "name": "Personal phone"
+      },
+      {
+        "id": "location-a",
+        "type": "location",
+        "name": "Home \u00b7 US",
+        "countryCode": "US"
+      }
+    ],
+    "associations": [
+      {
+        "id": "account-a-device-a-link",
+        "type": "accountDevice",
+        "accountId": "account-a",
+        "targetId": "device-a",
+        "observedAt": "2026-01-14T00:00:00.000Z",
+        "knownFrom": "2026-01-14T00:00:00.000Z"
+      },
+      {
+        "id": "account-a-location-a-link",
+        "type": "accountLocation",
+        "accountId": "account-a",
+        "targetId": "location-a",
+        "observedAt": "2026-01-14T00:00:00.000Z",
+        "knownFrom": "2026-01-14T00:00:00.000Z"
+      }
+    ],
+    "payments": [
+      {
+        "id": "day-pay-01",
+        "occurredAt": "2026-01-15T09:00:00.000Z",
+        "accountId": "account-a",
+        "merchantId": "grocery",
+        "deviceId": "device-a",
+        "locationId": "location-a",
+        "amountMinor": 1800,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5411",
+          "completed": true
+        }
+      },
+      {
+        "id": "day-pay-02",
+        "occurredAt": "2026-01-15T09:45:00.000Z",
+        "accountId": "account-a",
+        "merchantId": "retail",
+        "deviceId": "device-a",
+        "locationId": "location-a",
+        "amountMinor": 4200,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5311",
+          "completed": true
+        }
+      },
+      {
+        "id": "day-pay-03",
+        "occurredAt": "2026-01-15T12:00:00.000Z",
+        "accountId": "account-a",
+        "merchantId": "dining",
+        "deviceId": "device-a",
+        "locationId": "location-a",
+        "amountMinor": 5500,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5812",
+          "completed": true
+        }
+      },
+      {
+        "id": "day-pay-04",
+        "occurredAt": "2026-01-15T15:00:00.000Z",
+        "accountId": "account-a",
+        "merchantId": "grocery",
+        "deviceId": "device-a",
+        "locationId": "location-a",
+        "amountMinor": 2800,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5411",
+          "completed": true
+        }
+      },
+      {
+        "id": "day-pay-05",
+        "occurredAt": "2026-01-15T18:00:00.000Z",
+        "accountId": "account-a",
+        "merchantId": "retail",
+        "deviceId": "device-a",
+        "locationId": "location-a",
+        "amountMinor": 9600,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5311",
+          "completed": true
+        }
+      },
+      {
+        "id": "day-pay-06",
+        "occurredAt": "2026-01-15T20:00:00.000Z",
+        "accountId": "account-a",
+        "merchantId": "dining",
+        "deviceId": "device-a",
+        "locationId": "location-a",
+        "amountMinor": 3500,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5812",
+          "completed": true
+        }
+      }
+    ],
+    "groundTruth": {
+      "day-pay-01": "legitimate",
+      "day-pay-02": "legitimate",
+      "day-pay-03": "legitimate",
+      "day-pay-04": "legitimate",
+      "day-pay-05": "legitimate",
+      "day-pay-06": "legitimate"
+    },
+    "ruleSetVersion": "rules-v1",
+    "policy": {
+      "version": 1,
+      "reviewThreshold": 40,
+      "blockThreshold": 70
+    },
+    "costAssumptions": {
+      "approvedFraudLossBps": 10000,
+      "reviewCostMinor": 300,
+      "falseBlockCostMinor": 1500
+    },
+    "seed": null
+  },
+  "view": {
+    "positions": {
+      "account-a": {
+        "x": 300,
+        "y": 240
+      },
+      "grocery": {
+        "x": 620,
+        "y": 70
+      },
+      "retail": {
+        "x": 680,
+        "y": 240
+      },
+      "dining": {
+        "x": 620,
+        "y": 420
+      },
+      "device-a": {
+        "x": 60,
+        "y": 100
+      },
+      "location-a": {
+        "x": 60,
+        "y": 400
+      }
+    },
+    "viewport": {
+      "x": 0,
+      "y": 0,
+      "zoom": 1
+    }
+  }
+}

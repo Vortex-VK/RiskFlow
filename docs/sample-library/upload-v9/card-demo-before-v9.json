@@ -1,0 +1,17 @@
+{
+  "additionalFraud": 3,
+  "additionalLegitimate": 1,
+  "additionalReviews": 4,
+  "prioritizedReviews": 2,
+  "prioritizedFraud": 2,
+  "prioritizedLegitimate": 0,
+  "bytes": 17066,
+  "file": "card-pattern-demo.csv",
+  "fraudCount": 10,
+  "modelCaught": 0,
+  "modelFalseAlerts": 6,
+  "rows": 186,
+  "sha256": "ba74fd8b71c14718de27bae36deb94e578e6c1086462e0ccd2397ad8fb893a28",
+  "source": "Curated subset of the supplied authored scenarios; not original IBM rows or a validation benchmark.",
+  "title": "Card-pattern review demo"
+}

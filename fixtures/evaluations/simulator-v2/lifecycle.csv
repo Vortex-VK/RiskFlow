@@ -1,0 +1,9 @@
+event_id,account_id,timestamp,source_available_at,amount,currency,direction,transaction_type,status,merchant_id,lifecycle_kind,underlying_transaction_id,related_event_id
+decline,A,2026-10-01T10:00:00.000Z,2026-10-01T10:00:00.000Z,100,USD,debit,purchase,declined,M,authorization,purchase-1,
+auth,A,2026-10-01T10:01:00.000Z,2026-10-01T10:01:00.000Z,100,USD,debit,purchase,completed,M,authorization,purchase-1,
+capture-1,A,2026-10-01T10:02:00.000Z,2026-10-01T10:02:00.000Z,60,USD,debit,purchase,completed,M,capture,purchase-1,auth
+capture-2,A,2026-10-01T10:03:00.000Z,2026-10-01T10:03:00.000Z,40,USD,debit,purchase,completed,M,capture,purchase-1,auth
+refund,A,2026-10-01T10:04:00.000Z,2026-10-01T10:04:00.000Z,20,USD,credit,refund,completed,M,refund,purchase-1,capture-1
+reverse,A,2026-10-01T10:05:00.000Z,2026-10-01T10:05:00.000Z,40,USD,credit,reversal,completed,M,reversal,purchase-1,capture-1
+update,A,2026-10-01T10:06:00.000Z,2026-10-01T10:06:00.000Z,100,USD,debit,purchase,completed,M,status_update,purchase-1,auth
+release,A,2026-10-01T10:07:00.000Z,2026-10-01T10:07:00.000Z,100,USD,debit,reversal,completed,M,reversal,purchase-1,auth

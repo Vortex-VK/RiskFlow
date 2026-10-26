@@ -1,0 +1,9 @@
+event_id,account_id,timestamp,amount,currency,direction,transaction_type,status,merchant_id,merchant_category,channel
+ato-pay-01,account-a,2026-01-15T09:00:00.000Z,24.00,USD,debit,purchase,completed,grocery,MCC 5411,Online Transaction
+ato-pay-02,account-a,2026-01-15T09:20:00.000Z,48.00,USD,debit,purchase,completed,retail,MCC 5311,Online Transaction
+ato-pay-03,account-a,2026-01-15T09:30:00.000Z,80.00,USD,debit,purchase,completed,retail,MCC 5311,Online Transaction
+ato-pay-04,account-a,2026-01-15T09:31:00.000Z,180.00,USD,debit,purchase,completed,electronics-1,MCC 5732,Online Transaction
+ato-pay-05,account-a,2026-01-15T09:32:00.000Z,320.00,USD,debit,purchase,completed,electronics-1,MCC 5732,Online Transaction
+ato-pay-06,account-a,2026-01-15T10:00:00.000Z,170.00,USD,debit,purchase,completed,electronics-1,MCC 5732,Online Transaction
+ato-pay-07,account-a,2026-01-15T10:10:00.000Z,340.00,USD,debit,purchase,completed,electronics-1,MCC 5732,Online Transaction
+ato-pay-08,account-a,2026-01-15T10:30:00.000Z,40.00,USD,debit,purchase,completed,grocery,MCC 5411,Online Transaction

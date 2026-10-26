@@ -1,0 +1,14 @@
+{
+  "original_markdown_checked": 90,
+  "markdown_changed_or_missing": [],
+  "protected_changed_or_missing": [],
+  "intentionally_retired_bundle": "upload-v5",
+  "markdown_locations": {
+    ".pytest_cache/README.md": "docs/archive/generated-notes/.pytest_cache/README.md",
+    "backend/.pytest_cache/README.md": "docs/archive/generated-notes/backend/.pytest_cache/README.md",
+    ".cache/v9-retained-first-run-context.md": "docs/archive/generated-notes/.cache/v9-retained-first-run-context.md",
+    "README.md": "docs/archive/README-before-cleanup.md",
+    "docs/sample-library/README.md": "docs/archive/sample-library-before-cleanup.md",
+    "training_data/ml-general/data/simulated-data-raw-main/README.md": "training_data/raw/handbook/README.md"
+  }
+}

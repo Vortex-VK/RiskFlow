@@ -1,0 +1,13 @@
+{
+  "formula": "100 / (1 + exp(-(raw_margin - reference_threshold)))",
+  "interpretation": "Monotone model evidence index. Compare within a route, not across models. Use exact raw margins for ranking metrics. Not a calibrated fraud probability.",
+  "probabilityAvailable": false,
+  "referenceValue": 50,
+  "thresholds": {
+    "card_pattern": -1.8899241882241695,
+    "card_priority": -1.0691764979048273,
+    "coverage": 2.485474202331682,
+    "online_specialist": 1.8637710412616648
+  },
+  "version": "margin-index-v1"
+}

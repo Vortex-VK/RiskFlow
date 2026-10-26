@@ -1,0 +1,249 @@
+{
+  "baseline_calibration": {
+    "by_view": {
+      "short": {
+        "f1": 0.8181818181818182,
+        "fn": 22,
+        "fp": 18,
+        "fraud": 112,
+        "precision": 0.8333333333333334,
+        "recall": 0.8035714285714286,
+        "rows": 21055,
+        "tn": 20925,
+        "tp": 90
+      },
+      "wide": {
+        "f1": 0.8518518518518519,
+        "fn": 20,
+        "fp": 12,
+        "fraud": 112,
+        "precision": 0.8846153846153846,
+        "recall": 0.8214285714285714,
+        "rows": 21055,
+        "tn": 20931,
+        "tp": 92
+      }
+    },
+    "pooled_views": {
+      "f1": 0.8348623853211009,
+      "fn": 42,
+      "fp": 30,
+      "fraud": 224,
+      "precision": 0.8584905660377359,
+      "recall": 0.8125,
+      "rows": 42110,
+      "tn": 41856,
+      "tp": 182
+    }
+  },
+  "calibration": {
+    "balanced": {
+      "by_view": {
+        "short": {
+          "f1": 0.8,
+          "fn": 26,
+          "fp": 17,
+          "fraud": 112,
+          "precision": 0.8349514563106796,
+          "recall": 0.7678571428571429,
+          "rows": 21055,
+          "tn": 20926,
+          "tp": 86
+        },
+        "wide": {
+          "f1": 0.8269230769230769,
+          "fn": 26,
+          "fp": 10,
+          "fraud": 112,
+          "precision": 0.8958333333333334,
+          "recall": 0.7678571428571429,
+          "rows": 21055,
+          "tn": 20933,
+          "tp": 86
+        }
+      },
+      "pooled_views": {
+        "f1": 0.8132387706855791,
+        "fn": 52,
+        "fp": 27,
+        "fraud": 224,
+        "precision": 0.864321608040201,
+        "recall": 0.7678571428571429,
+        "rows": 42110,
+        "tn": 41859,
+        "tp": 172
+      }
+    },
+    "precision95": {
+      "by_view": {
+        "short": {
+          "f1": 0.7916666666666666,
+          "fn": 36,
+          "fp": 4,
+          "fraud": 112,
+          "precision": 0.95,
+          "recall": 0.6785714285714286,
+          "rows": 21055,
+          "tn": 20939,
+          "tp": 76
+        },
+        "wide": {
+          "f1": 0.8148148148148148,
+          "fn": 35,
+          "fp": 0,
+          "fraud": 112,
+          "precision": 1.0,
+          "recall": 0.6875,
+          "rows": 21055,
+          "tn": 20943,
+          "tp": 77
+        }
+      },
+      "pooled_views": {
+        "f1": 0.8031496062992126,
+        "fn": 71,
+        "fp": 4,
+        "fraud": 224,
+        "precision": 0.9745222929936306,
+        "recall": 0.6830357142857143,
+        "rows": 42110,
+        "tn": 41882,
+        "tp": 153
+      }
+    }
+  },
+  "development": {
+    "calibration.parquet": "585f35b1b614905963cd0a61b51247ca69a6351d74f6a9bd993ca56841e7fb5c",
+    "selection.parquet": "a7edfa66c4ca84c9f905a5bdf279f4c92c1379254c0915fea125bd31c114ac6b"
+  },
+  "fit_manifest_sha256": "8882b18c9cb0472b5cfee0b15f04d372242351f31d4c88f413ad860cab601b09",
+  "policies": {
+    "balanced": 0.22527103423768172,
+    "precision95": 1.8637710412616648
+  },
+  "protocol_sha256": "c3d641b609f940e5fb47fbfaffc7a88129317cedd1f226254f66f7260865bec4",
+  "selected": {
+    "configuration": {
+      "depth": 8,
+      "features": [
+        "log_amount",
+        "category",
+        "channel",
+        "hour",
+        "weekday",
+        "attempts_1h",
+        "attempts_24h",
+        "attempts_7d",
+        "log_spend_24h",
+        "log_spend_7d",
+        "log_mean_24h",
+        "log_mean_7d",
+        "merchant_recency_days",
+        "history_samples",
+        "history_span_days",
+        "history_age_days",
+        "amount_percentile",
+        "robust_amount_deviation",
+        "category_amount_percentile",
+        "category_robust_deviation",
+        "category_fallback",
+        "category_samples",
+        "category_frequency",
+        "channel_frequency",
+        "merchant_frequency",
+        "activity_ratio",
+        "spend_ratio",
+        "log_account_median",
+        "log_category_median",
+        "personal_history_available",
+        "ew_account_log_mean",
+        "ew_account_log_std",
+        "ew_account_support",
+        "ew_category_support",
+        "category_shrink_weight",
+        "shrunk_log_amount_z",
+        "account_log_amount_z",
+        "shrunk_category_log_mean",
+        "recent_log_mean_shift",
+        "merchant_frequency_soft",
+        "category_frequency_soft",
+        "channel_frequency_soft",
+        "attempts_5m",
+        "same_merchant_attempts_5m",
+        "distinct_merchants_1h",
+        "distinct_categories_1h",
+        "prior_failure_fraction_1h",
+        "last_channel_changed",
+        "last_merchant_changed",
+        "log_amount_over_previous_completed",
+        "hour_frequency_90d",
+        "merchant_attempts_1h",
+        "merchant_attempts_7d",
+        "merchant_distinct_accounts_1h",
+        "merchant_distinct_accounts_7d",
+        "merchant_failure_fraction_1h",
+        "merchant_rate_ratio",
+        "merchant_log_amount_z_7d",
+        "merchant_account_novel_7d",
+        "merchant_geo_available",
+        "geo_history_count",
+        "state_frequency_90d",
+        "city_frequency_90d",
+        "zip_frequency_90d",
+        "distinct_states_90d",
+        "state_recency_days"
+      ],
+      "name": "deep",
+      "positive_weight": 3
+    },
+    "file": "deep.cbm",
+    "fit_fraud": 1750,
+    "fit_rows": 130118,
+    "objective": [
+      0.7191780821917808,
+      0.7630662020905923
+    ],
+    "seconds": 100.95563660003245,
+    "selection": {
+      "by_view": {
+        "short": {
+          "f1": 0.7216494845360825,
+          "fn": 41,
+          "fp": 40,
+          "fraud": 146,
+          "precision": 0.7241379310344828,
+          "recall": 0.7191780821917808,
+          "rows": 19580,
+          "tn": 19394,
+          "tp": 105
+        },
+        "wide": {
+          "f1": 0.8056537102473498,
+          "fn": 32,
+          "fp": 23,
+          "fraud": 146,
+          "precision": 0.8321167883211679,
+          "recall": 0.7808219178082192,
+          "rows": 19580,
+          "tn": 19411,
+          "tp": 114
+        }
+      },
+      "pooled_views": {
+        "f1": 0.7630662020905923,
+        "fn": 73,
+        "fp": 63,
+        "fraud": 292,
+        "precision": 0.776595744680851,
+        "recall": 0.75,
+        "rows": 39160,
+        "tn": 38805,
+        "tp": 219
+      }
+    },
+    "sha256": "200d22795e5fed375badabbb10dad04a2feac9124a3ddbb565db66bfedcd7c9c",
+    "threshold": -0.41067589334096277
+  },
+  "selected_sha256": "803f0faa5a79c2ab355c96df91dd21ba0b3d5803d16670ded3c51b331963d56c",
+  "v7_frozen_sha256": "b63e948e62995e5e201a17d9c06ef272cd953d037608beb8b20dd10468e4d496"
+}

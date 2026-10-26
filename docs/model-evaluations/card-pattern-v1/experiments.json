@@ -1,0 +1,70 @@
+[
+  {
+    "configuration": {
+      "depth": 4,
+      "positive_weight": 3
+    },
+    "file": "depth4.cbm",
+    "metrics": {
+      "short": {
+        "f1": 0.07692307692307693,
+        "fn": 16,
+        "fp": 8,
+        "fraud": 17,
+        "precision": 0.1111111111111111,
+        "recall": 0.058823529411764705,
+        "rows": 71213,
+        "tn": 71188,
+        "tp": 1
+      },
+      "wide": {
+        "f1": 0.13333333333333333,
+        "fn": 15,
+        "fp": 11,
+        "fraud": 17,
+        "precision": 0.15384615384615385,
+        "recall": 0.11764705882352941,
+        "rows": 71213,
+        "tn": 71185,
+        "tp": 2
+      }
+    },
+    "objective": 0.07692307692307693,
+    "sha256": "c61c1f6df5492ffa5468bd58eaa4cee17ae4d92083260c813d5dba8dcddeeb06",
+    "threshold": -1.5383024672406354
+  },
+  {
+    "configuration": {
+      "depth": 6,
+      "positive_weight": 5
+    },
+    "file": "depth6.cbm",
+    "metrics": {
+      "short": {
+        "f1": 0.1,
+        "fn": 16,
+        "fp": 2,
+        "fraud": 17,
+        "precision": 0.3333333333333333,
+        "recall": 0.058823529411764705,
+        "rows": 71213,
+        "tn": 71194,
+        "tp": 1
+      },
+      "wide": {
+        "f1": 0.10526315789473684,
+        "fn": 16,
+        "fp": 1,
+        "fraud": 17,
+        "precision": 0.5,
+        "recall": 0.058823529411764705,
+        "rows": 71213,
+        "tn": 71195,
+        "tp": 1
+      }
+    },
+    "objective": 0.1,
+    "sha256": "4bee862023d0be4538544a5e2384c7b8454db6d4591a6b965526e5f7318483e3",
+    "threshold": 0.30446819121229907
+  }
+]

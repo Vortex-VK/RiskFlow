@@ -1,0 +1,59 @@
+:root {
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+  background: var(--canvas);
+  font-size: 14px;
+  font-synthesis: none;
+  color-scheme: dark;
+  --text: #e8e8e8;
+  --canvas: #000000;
+  --surface: #181818f5;
+  --popover: #181818fa;
+  --panel-solid: #181818;
+  --tray: #242424;
+  --muted: #adadad;
+  --line: #383838;
+  --transaction-cyan: #51e5ff;
+  --transaction-review: #ff9d43;
+  --transaction-block: #ff5365;
+  --accent: #8bd1c1;
+  --soft: #272727;
+  --soft-hover: #353535;
+  --strong: #b9dbd3;
+  --edge: #617480;
+  --edge-hover: #96b5bb;
+  --edge-evidence: #8bc9ad;
+  --edge-active: #e2a18d;
+  --edge-changed: #d3b67b;
+  --approve: #91d1b4;
+  --review: #e1c284;
+  --block: #efa39b;
+  --approve-bg: #233e36;
+  --review-bg: #403a28;
+  --block-bg: #452f32;
+}
+
+:is(.node-account, .category-account) {
+  --node-fill: #7d9bb2;
+  --node-stroke: #9bb5c8;
+  --node-ink: #172d3e;
+  --node-label: #b1d0f7;
+}
+:is(.node-merchant, .category-merchant) {
+  --node-fill: #c9aa70;
+  --node-stroke: #dfc596;
+  --node-ink: #352911;
+  --node-label: #efd294;
+}
+:is(.node-device, .category-device) {
+  --node-fill: #a89dbb;
+  --node-stroke: #c5bbd5;
+  --node-ink: #34293f;
+  --node-label: #d3b9f3;
+}
+:is(.node-location, .category-location) {
+  --node-fill: #8eaf96;
+  --node-stroke: #acc9b1;
+  --node-ink: #1e3d29;
+  --node-label: #a5dfcf;
+}

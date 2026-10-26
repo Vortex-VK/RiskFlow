@@ -1,0 +1,10 @@
+{
+  "fresh_independent_validation": false,
+  "installed": "Upload-v7 / balanced",
+  "online_2018_recall_preserved": false,
+  "primary_95_95_point_target": true,
+  "promoted": false,
+  "reason": "IBM point target met but online recall regresses, scenario false alarms rise, short-history recall remains below95%, and tests are reused. Keep candidate offline.",
+  "scenario_precision_preserved": false,
+  "short_95_95_point_target": false
+}

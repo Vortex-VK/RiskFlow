@@ -1,0 +1,37 @@
+{
+  "active_catalog_sha256": "225f56e3fecaf0b58a8f00efa4ed56e05ec63a8f041bfc839cbcbb605cb92181",
+  "assessment_version": "assessment-v2.8",
+  "browser_cleanup": "After all33 cases completed, stopped only verified descendant test servers8123/5184; runner exited0. Local8000/5173 remain running.",
+  "checks": {
+    "backend_full_run_passed": 332,
+    "backend_strict_typecheck_files": 130,
+    "backend_unique_tests_passed": 333,
+    "browser_tests": 33,
+    "frontend_build": true,
+    "frontend_typecheck": true,
+    "frontend_unit_tests": 226,
+    "lint": true,
+    "live_health": {
+      "engineVersion": "engine-ml-upload-v8",
+      "schemaVersion": 1,
+      "status": "ok"
+    },
+    "native_history_view_predictions_identical": 990196,
+    "production_http_smoke": true,
+    "review_ui_visually_inspected": true,
+    "targeted_review_tests_passed_after_retained_addition": 9
+  },
+  "engine": "engine-ml-upload-v8",
+  "model_predictions_frozen": true,
+  "native_parity_receipt_sha256": "e80cbe21cc96d8f04819a29ea961f6becfbc0d6193004ee857f14fc4bebcea6f",
+  "policy": "precision95",
+  "prior_statistical_promotion_decision_unchanged": true,
+  "report_sha256": "035029d3b133447681d36899d6b20b46cd98615d55f505c740690359668ec834",
+  "review_bundle_sha256": "34ec3e0351fa2977a1614e58ae2bd727a652d4d988e7528849d4d0b6733e56a2",
+  "review_changes_model_decisions": false,
+  "review_limits": "13 additional scenario frauds and7 legitimate suggestions; primary IBM adds216 legitimate suggestions and0 fraud. Experimental separate panel only.",
+  "six_ibm_csv_hashes_unchanged": true,
+  "user_selected_v8_despite_prior_regressions": true,
+  "v7_bundle_unchanged": true,
+  "v8_bundle_sha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606"
+}

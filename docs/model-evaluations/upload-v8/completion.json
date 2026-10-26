@@ -1,0 +1,16 @@
+{
+  "candidate_installed": false,
+  "frozen_sha256": "fe5e3dc72f0c30ea882105e5f9360d9898d4e83ff3a62b73c23eca974d504994",
+  "health": {
+    "engineVersion": "engine-ml-upload-v7",
+    "schemaVersion": 1,
+    "status": "ok"
+  },
+  "independent_confusion_matrices": 268,
+  "installed_engine": "engine-ml-upload-v7",
+  "lint": true,
+  "report_links_verified": true,
+  "report_sha256": "0bc685e2ec86369e50dc7020c390b179607fe33796a11c4cf68aff554b49f22a",
+  "strict_typecheck_files": 4,
+  "targeted_tests": 26
+}

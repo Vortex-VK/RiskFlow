@@ -1,0 +1,28 @@
+{
+  "active_engine_changed": false,
+  "all_training_protocol_code_hashes_match": true,
+  "authored_source_and_labels_unchanged": true,
+  "browser": "card-pattern.spec.ts passed, including Axe, independent90%preview and unchanged reference counts",
+  "browser_cleanup": "Verified and stopped exact test server PIDs after test completion; runner exit0",
+  "candidate_installed": false,
+  "frontend_build": "passed; existing large-chunk warning",
+  "frontend_eslint": "passed",
+  "frontend_typecheck": "passed",
+  "frontend_unit": {
+    "files": 28,
+    "passed": true,
+    "tests": 235
+  },
+  "preserved_manifest_hashes": {
+    "card-pattern-v5": "47db3ad7245bcb988d3ea22b575771b9a5bd8536eec1a96c9af71386b0195b97",
+    "probability-v1": "c502560911caa3464ce7cadf5a662a0d4200d74a86c456614061bac272ca197f",
+    "upload-v8": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606"
+  },
+  "report_sha256": "644fd2e17f597e6e2880cd7faba569049957a2d297445ed36b578a65904635ee",
+  "research_audit": {
+    "passed": true,
+    "sha256": "61ff4505caae90057b7a701c1fe6abbd69b4169aff109a4f4afa358fb53f4a99"
+  },
+  "research_lint": "v3 policy and audit pass backend Ruff configuration; frozen v1/v2 have import-order findings under that configuration",
+  "scope": "No backend runtime change; full backend regression suite not rerun. Native/authored inference, hashes and predictions audited."
+}

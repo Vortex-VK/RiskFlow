@@ -1,0 +1,26 @@
+{
+  "adapter_correction": "Unlabeled authored adapter initially failed before inference because timestamps lacked required millisecond formatting. Convert the same instant to canonical UTC milliseconds. Original script/protocol archived alongside. Models, thresholds, source rows, labels and previously completed results unchanged.",
+  "candidate_code": {
+    "select_authored_policy.py": "137a31dc0b9929d283146b8ac520ef6da1090a147d0cce9f51b8a08b4ca64406",
+    "train_authored_adaptation.py": "b62a3b3b2d78771b53ffe86c45b1e77a7f869ad170d5a9d94663184f6953b3ad",
+    "train_authored_residual.py": "babf3795571ddb9dc203781e6f8b034d129c3463b5d75e4739151d52c62d23ef"
+  },
+  "candidate_freeze_sha256": "646bcfca08e2f4c307bffc38a7f6aa36c7da27dc11e7d3cb6b548d4b6f901ef4",
+  "code_sha256": "6139ca5cb56890d798174ff67d6df4950177577326c9f0302b8a395b6e9ccc7b",
+  "initial_code_sha256": "6d245102fa42a5d249a5fbdbac62ea025c6ddfe9ef90368513c6f764d40cea57",
+  "limitations": "Synthetic IBM/authored/Sparkov and already exposed evaluation sources. Views share rows. Sources differ in prevalence and available fields; do not pool them into one accuracy headline. IEEE model is separate.",
+  "metrics": "Fixed90% estimate cutoff and previously selected reference policies; precision/recall/counts, AP, ROC AUC, RMSE/Brier/logloss by class. No refit, calibration, threshold tuning, promotion or deployment.",
+  "plan": {
+    "authored": "Recount the1935-row customer-heldout slice only; fitting and selection rows excluded from accuracy claims. Independently rerun the saved head and verify probability equality.",
+    "authored_unlabeled": "All four existing generated-2400 input variants, preserving documented assigned channels/MCC/merchant identity. No labels: report score distributions and alert workload only.",
+    "ibm": "Recount all four frozen wide/short native prediction populations and two older-online diagnostics. Verify bytes and candidate dependency hashes. No rerun or reselection needed for unchanged predictions.",
+    "ieee": "Inspect actual source columns. This candidate has no valid direct adapter: no authoritative account/merchant identities, MCC, native chip/swipe/online channel or completion history. Do not invent them. Reproduce separately trained IEEE-v1 selected base-seed predictions and probability mapping, reporting as a different model, never as candidate transfer accuracy.",
+    "sparkov": "First100000 fraudTrain.csv rows, no label sampling, ten10000-row uploads with state reset. Replay existing three assumed channels: Chip/Swipe/Online. MCC0000, empty merchant geography, completed=true, naive time treatedUTC, nominal amounts. Missing fields make this assumption sensitivity, not native compatibility or validated accuracy. Freeze predictions before extracting outcomes; do not pick best channel."
+  },
+  "source_hashes": {
+    "ieee_identity": "b63c725d8377be90a995268d97f347c17d456b95db45807adcf9f59cd603c37c",
+    "ieee_transactions": "3a5c83ab6b3cc13dcabe5ffa9f522307fd5f7f7b6e6f6a60c32284ca6283d642",
+    "sparkov_archive": "4e32829b9ba5a6b17af707c513c15204011044df0e8971e431cedca3d8c0a8a1"
+  },
+  "version": "candidate-cross-dataset-v1"
+}

@@ -1,0 +1,44 @@
+.card.history-panel {
+  position: fixed;
+  inset: 100px 24px 24px;
+  z-index: 30;
+  width: auto;
+  max-width: 1000px;
+  max-height: none;
+  overflow-y: auto;
+  margin: auto;
+}
+.history-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0;
+}
+.history-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+.history-panel dd,
+.history-panel p,
+.history-panel summary {
+  overflow-wrap: anywhere;
+}
+.history-panel table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+.history-panel th,
+.history-panel td {
+  text-align: left;
+  padding: 8px;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 600px) {
+  .card.history-panel {
+    inset: 110px 8px 8px;
+  }
+}

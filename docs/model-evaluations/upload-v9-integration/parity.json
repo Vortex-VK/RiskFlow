@@ -1,0 +1,30 @@
+{
+  "bundle_sha256": "58c9c2497c36ccd85c1553214ed104713d174dd4970ea6553f72bb8498495e67",
+  "populations": {
+    "authored-heldout": {
+      "exact_alerts": true,
+      "exact_probabilities": true,
+      "rows": 1935
+    },
+    "diagnostic-short": {
+      "exact_alerts": true,
+      "exact_probabilities": true,
+      "rows": 160321
+    },
+    "diagnostic-wide": {
+      "exact_alerts": true,
+      "exact_probabilities": true,
+      "rows": 160321
+    },
+    "final-short": {
+      "exact_alerts": true,
+      "exact_probabilities": true,
+      "rows": 334777
+    },
+    "final-wide": {
+      "exact_alerts": true,
+      "exact_probabilities": true,
+      "rows": 334777
+    }
+  }
+}

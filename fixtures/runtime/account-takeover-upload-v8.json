@@ -1,0 +1,791 @@
+{
+  "engineVersion": "engine-ml-upload-v8",
+  "ruleSetVersion": "upload-v8-precision95",
+  "schemaVersion": 1,
+  "scenarioSnapshot": {
+    "schemaVersion": 1,
+    "id": "account-takeover",
+    "name": "Account Takeover",
+    "description": "Illustrative synthetic purchases for V13 replay. MCC and channel are authored demo inputs; labels are story annotations, not measured model performance.",
+    "sourceTemplateId": "account-takeover",
+    "sourceTemplateVersion": 2,
+    "scenarioStartAt": "2026-01-15T00:00:00.000Z",
+    "currency": "USD",
+    "nodes": [
+      {
+        "id": "account-a",
+        "name": "Alex Morgan",
+        "type": "account",
+        "openedAt": "2025-01-15T00:00:00.000Z",
+        "typicalAmountMinor": 5000,
+        "usualCountryCodes": [
+          "US"
+        ],
+        "usualMerchantCategories": [
+          "dining",
+          "groceries",
+          "retail"
+        ]
+      },
+      {
+        "id": "device-a",
+        "name": "Personal phone",
+        "type": "device",
+        "description": null
+      },
+      {
+        "id": "device-new",
+        "name": "Unfamiliar device",
+        "type": "device",
+        "description": null
+      },
+      {
+        "id": "electronics-1",
+        "name": "Circuit Supply",
+        "type": "merchant",
+        "category": "electronics",
+        "countryCode": "US"
+      },
+      {
+        "id": "grocery",
+        "name": "Juniper Market",
+        "type": "merchant",
+        "category": "groceries",
+        "countryCode": "US"
+      },
+      {
+        "id": "location-a",
+        "name": "Home · US",
+        "type": "location",
+        "countryCode": "US",
+        "regionLabel": null
+      },
+      {
+        "id": "location-gb",
+        "name": "Travel · GB",
+        "type": "location",
+        "countryCode": "GB",
+        "regionLabel": null
+      },
+      {
+        "id": "retail",
+        "name": "Common Goods",
+        "type": "merchant",
+        "category": "retail",
+        "countryCode": "US"
+      }
+    ],
+    "associations": [
+      {
+        "id": "account-a-device-a-link",
+        "type": "accountDevice",
+        "accountId": "account-a",
+        "targetId": "device-a",
+        "observedAt": "2026-01-14T00:00:00.000Z",
+        "knownFrom": "2026-01-14T00:00:00.000Z"
+      },
+      {
+        "id": "account-a-device-new-link",
+        "type": "accountDevice",
+        "accountId": "account-a",
+        "targetId": "device-new",
+        "observedAt": "2026-01-15T09:30:00.000Z",
+        "knownFrom": null
+      },
+      {
+        "id": "account-a-location-a-link",
+        "type": "accountLocation",
+        "accountId": "account-a",
+        "targetId": "location-a",
+        "observedAt": "2026-01-14T00:00:00.000Z",
+        "knownFrom": "2026-01-14T00:00:00.000Z"
+      },
+      {
+        "id": "account-a-location-gb-link",
+        "type": "accountLocation",
+        "accountId": "account-a",
+        "targetId": "location-gb",
+        "observedAt": "2026-01-15T09:30:00.000Z",
+        "knownFrom": null
+      }
+    ],
+    "payments": [
+      {
+        "id": "ato-pay-01",
+        "accountId": "account-a",
+        "merchantId": "grocery",
+        "deviceId": "device-a",
+        "locationId": "location-a",
+        "occurredAt": "2026-01-15T09:00:00.000Z",
+        "amountMinor": 2400,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Online Transaction",
+          "mcc": "5411",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      },
+      {
+        "id": "ato-pay-02",
+        "accountId": "account-a",
+        "merchantId": "retail",
+        "deviceId": "device-a",
+        "locationId": "location-a",
+        "occurredAt": "2026-01-15T09:20:00.000Z",
+        "amountMinor": 4800,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Online Transaction",
+          "mcc": "5311",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      },
+      {
+        "id": "ato-pay-03",
+        "accountId": "account-a",
+        "merchantId": "retail",
+        "deviceId": "device-new",
+        "locationId": "location-gb",
+        "occurredAt": "2026-01-15T09:30:00.000Z",
+        "amountMinor": 8000,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Online Transaction",
+          "mcc": "5311",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      },
+      {
+        "id": "ato-pay-04",
+        "accountId": "account-a",
+        "merchantId": "electronics-1",
+        "deviceId": "device-new",
+        "locationId": "location-gb",
+        "occurredAt": "2026-01-15T09:31:00.000Z",
+        "amountMinor": 18000,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Online Transaction",
+          "mcc": "5732",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      },
+      {
+        "id": "ato-pay-05",
+        "accountId": "account-a",
+        "merchantId": "electronics-1",
+        "deviceId": "device-new",
+        "locationId": "location-gb",
+        "occurredAt": "2026-01-15T09:32:00.000Z",
+        "amountMinor": 32000,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Online Transaction",
+          "mcc": "5732",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      },
+      {
+        "id": "ato-pay-06",
+        "accountId": "account-a",
+        "merchantId": "electronics-1",
+        "deviceId": "device-a",
+        "locationId": "location-gb",
+        "occurredAt": "2026-01-15T10:00:00.000Z",
+        "amountMinor": 17000,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Online Transaction",
+          "mcc": "5732",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      },
+      {
+        "id": "ato-pay-07",
+        "accountId": "account-a",
+        "merchantId": "electronics-1",
+        "deviceId": "device-a",
+        "locationId": "location-gb",
+        "occurredAt": "2026-01-15T10:10:00.000Z",
+        "amountMinor": 34000,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Online Transaction",
+          "mcc": "5732",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      },
+      {
+        "id": "ato-pay-08",
+        "accountId": "account-a",
+        "merchantId": "grocery",
+        "deviceId": "device-a",
+        "locationId": "location-a",
+        "occurredAt": "2026-01-15T10:30:00.000Z",
+        "amountMinor": 4000,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Online Transaction",
+          "mcc": "5411",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      }
+    ],
+    "groundTruth": {
+      "ato-pay-01": "legitimate",
+      "ato-pay-02": "legitimate",
+      "ato-pay-03": "fraudulent",
+      "ato-pay-04": "fraudulent",
+      "ato-pay-05": "fraudulent",
+      "ato-pay-06": "legitimate",
+      "ato-pay-07": "legitimate",
+      "ato-pay-08": "legitimate"
+    },
+    "ruleSetVersion": "rules-v1",
+    "policy": {
+      "version": 1,
+      "reviewThreshold": 40,
+      "blockThreshold": 70
+    },
+    "costAssumptions": {
+      "approvedFraudLossBps": 10000,
+      "reviewCostMinor": 300,
+      "falseBlockCostMinor": 1500
+    },
+    "seed": null
+  },
+  "events": [
+    {
+      "eventId": "ato-pay-01",
+      "sequenceIndex": 0,
+      "occurredAt": "2026-01-15T09:00:00.000Z",
+      "amountMinor": 2400,
+      "accountId": "account-a",
+      "merchantId": "grocery",
+      "deviceId": "device-a",
+      "locationId": "location-a",
+      "features": {
+        "amountMinor": 2400,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": true,
+        "rawScores": {
+          "baseline": -21.132058165564224,
+          "cb": -8.868099288860645,
+          "depth6": 0.5744790446052968,
+          "online_cb": 1.1583040194393914,
+          "online_ebm": -3.758695228220752,
+          "base_margin": 0.0,
+          "coverage": -9.444796921941562,
+          "online_specialist": 2.305983000857213
+        },
+        "detectionPaths": [
+          "online_specialist"
+        ],
+        "historyCount": 0,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "review"
+    },
+    {
+      "eventId": "ato-pay-02",
+      "sequenceIndex": 1,
+      "occurredAt": "2026-01-15T09:20:00.000Z",
+      "amountMinor": 4800,
+      "accountId": "account-a",
+      "merchantId": "retail",
+      "deviceId": "device-a",
+      "locationId": "location-a",
+      "features": {
+        "amountMinor": 4800,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": false,
+        "rawScores": {
+          "baseline": -6.643694708927751,
+          "cb": -7.803407850647657,
+          "depth6": -0.12439930600535881,
+          "online_cb": -0.10226206024534254,
+          "online_ebm": 1.7852118114031286,
+          "base_margin": 0.0,
+          "coverage": -8.399804956997226,
+          "online_specialist": -2.4170454825486614
+        },
+        "detectionPaths": [],
+        "historyCount": 1,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "approve"
+    },
+    {
+      "eventId": "ato-pay-03",
+      "sequenceIndex": 2,
+      "occurredAt": "2026-01-15T09:30:00.000Z",
+      "amountMinor": 8000,
+      "accountId": "account-a",
+      "merchantId": "retail",
+      "deviceId": "device-new",
+      "locationId": "location-gb",
+      "features": {
+        "amountMinor": 8000,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": false,
+        "rawScores": {
+          "baseline": -11.149641179357836,
+          "cb": -9.435058918428531,
+          "depth6": -2.0781641642453876,
+          "online_cb": -1.5238864765147835,
+          "online_ebm": -3.0782957705452407,
+          "base_margin": 0.0,
+          "coverage": -8.50510413150244,
+          "online_specialist": -4.348526035941453
+        },
+        "detectionPaths": [],
+        "historyCount": 2,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "approve"
+    },
+    {
+      "eventId": "ato-pay-04",
+      "sequenceIndex": 3,
+      "occurredAt": "2026-01-15T09:31:00.000Z",
+      "amountMinor": 18000,
+      "accountId": "account-a",
+      "merchantId": "electronics-1",
+      "deviceId": "device-new",
+      "locationId": "location-gb",
+      "features": {
+        "amountMinor": 18000,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": true,
+        "rawScores": {
+          "baseline": -9.941765032674523,
+          "cb": -6.8880393625172065,
+          "depth6": 2.255567673162222,
+          "online_cb": 1.37100311977344,
+          "online_ebm": 2.291820713101838,
+          "base_margin": 0.0,
+          "coverage": -8.412169969011256,
+          "online_specialist": 2.7719600614972064
+        },
+        "detectionPaths": [
+          "online_specialist"
+        ],
+        "historyCount": 3,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "review"
+    },
+    {
+      "eventId": "ato-pay-05",
+      "sequenceIndex": 4,
+      "occurredAt": "2026-01-15T09:32:00.000Z",
+      "amountMinor": 32000,
+      "accountId": "account-a",
+      "merchantId": "electronics-1",
+      "deviceId": "device-new",
+      "locationId": "location-gb",
+      "features": {
+        "amountMinor": 32000,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": false,
+        "rawScores": {
+          "baseline": -16.617694490183975,
+          "cb": -9.020261180284173,
+          "depth6": -0.1984328971366348,
+          "online_cb": 0.8071487671933189,
+          "online_ebm": -6.036939832367718,
+          "base_margin": 0.0,
+          "coverage": -7.654036389593882,
+          "online_specialist": 0.8009224992169218
+        },
+        "detectionPaths": [],
+        "historyCount": 4,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "approve"
+    },
+    {
+      "eventId": "ato-pay-06",
+      "sequenceIndex": 5,
+      "occurredAt": "2026-01-15T10:00:00.000Z",
+      "amountMinor": 17000,
+      "accountId": "account-a",
+      "merchantId": "electronics-1",
+      "deviceId": "device-a",
+      "locationId": "location-gb",
+      "features": {
+        "amountMinor": 17000,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": false,
+        "rawScores": {
+          "baseline": -18.873547568925936,
+          "cb": -7.898716592921374,
+          "depth6": 0.6032355162344398,
+          "online_cb": 1.0806095109981502,
+          "online_ebm": -2.3076686083467033,
+          "base_margin": 0.0,
+          "coverage": -8.044549119599187,
+          "online_specialist": 1.2463146456653365
+        },
+        "detectionPaths": [],
+        "historyCount": 5,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "approve"
+    },
+    {
+      "eventId": "ato-pay-07",
+      "sequenceIndex": 6,
+      "occurredAt": "2026-01-15T10:10:00.000Z",
+      "amountMinor": 34000,
+      "accountId": "account-a",
+      "merchantId": "electronics-1",
+      "deviceId": "device-a",
+      "locationId": "location-gb",
+      "features": {
+        "amountMinor": 34000,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": false,
+        "rawScores": {
+          "baseline": -20.218717441888963,
+          "cb": -8.489186113103685,
+          "depth6": 0.6498587832702873,
+          "online_cb": 1.209136289633218,
+          "online_ebm": -5.41275225135545,
+          "base_margin": 0.0,
+          "coverage": -7.293089266299341,
+          "online_specialist": -0.327833042837992
+        },
+        "detectionPaths": [],
+        "historyCount": 6,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "approve"
+    },
+    {
+      "eventId": "ato-pay-08",
+      "sequenceIndex": 7,
+      "occurredAt": "2026-01-15T10:30:00.000Z",
+      "amountMinor": 4000,
+      "accountId": "account-a",
+      "merchantId": "grocery",
+      "deviceId": "device-a",
+      "locationId": "location-a",
+      "features": {
+        "amountMinor": 4000,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": true,
+        "rawScores": {
+          "baseline": -18.43271259708809,
+          "cb": -8.654284297666258,
+          "depth6": -0.5041147260352694,
+          "online_cb": 2.2759413561459323,
+          "online_ebm": -1.1228645846614218,
+          "base_margin": 0.0,
+          "coverage": -8.064461614370478,
+          "online_specialist": 4.533024251078809
+        },
+        "detectionPaths": [
+          "online_specialist"
+        ],
+        "historyCount": 7,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "review"
+    }
+  ],
+  "metrics": {
+    "totalCount": 8,
+    "totalAmountMinor": 120200,
+    "decisions": {
+      "approve": {
+        "count": 5,
+        "amountMinor": 95800
+      },
+      "review": {
+        "count": 3,
+        "amountMinor": 24400
+      },
+      "block": {
+        "count": 0,
+        "amountMinor": 0
+      }
+    },
+    "decisionRates": {
+      "approve": {
+        "numerator": 5,
+        "denominator": 8
+      },
+      "review": {
+        "numerator": 3,
+        "denominator": 8
+      },
+      "block": {
+        "numerator": 0,
+        "denominator": 8
+      }
+    },
+    "flaggedCount": 3,
+    "flaggedRate": {
+      "numerator": 3,
+      "denominator": 8
+    },
+    "reviewWorkload": 3,
+    "scoreBins": {
+      "0-19": 0,
+      "20-39": 0,
+      "40-59": 0,
+      "60-79": 0,
+      "80-100": 0
+    },
+    "ruleTriggerCounts": {
+      "unusual_amount": 0,
+      "payment_velocity": 0,
+      "new_device": 0,
+      "unusual_location": 0,
+      "merchant_category_deviation": 0,
+      "shared_device_accounts": 0
+    },
+    "labeledCount": 8,
+    "unlabeledCount": 0,
+    "truthMetrics": {
+      "fraudulent": {
+        "count": 3,
+        "amountMinor": 58000
+      },
+      "legitimate": {
+        "count": 5,
+        "amountMinor": 62200
+      },
+      "blockedFraud": {
+        "count": 0,
+        "amountMinor": 0
+      },
+      "approvedFraud": {
+        "count": 2,
+        "amountMinor": 40000
+      },
+      "pendingFraud": {
+        "count": 1,
+        "amountMinor": 18000
+      },
+      "blockedLegitimate": {
+        "count": 0,
+        "amountMinor": 0
+      },
+      "legitimateBlockRate": {
+        "numerator": 0,
+        "denominator": 5
+      },
+      "fraudBlockRate": {
+        "numerator": 0,
+        "denominator": 3
+      },
+      "fraudApprovalRate": {
+        "numerator": 2,
+        "denominator": 3
+      }
+    },
+    "costs": {
+      "reviewOperatingCostAllMinor": 900,
+      "estimatedApprovedFraudLossMinor": 40000,
+      "labeledReviewCostMinor": 900,
+      "estimatedFalseBlockFrictionCostMinor": 0,
+      "illustrativeLabeledTotalCostMinor": 40900
+    }
+  },
+  "warnings": [
+    {
+      "code": "card_pattern_scope",
+      "message": "Card-pattern suggestions are experimental behavioral reviews, separate from Upload-v8 alerts. They do not change model decisions or fraud metrics, and do not identify counterfeit cards or establish fraud."
+    },
+    {
+      "code": "model_scope",
+      "message": "Upload-v8 is an experimental synthetic model using frozen thresholds. Matching fields do not establish validity for this upload's source. Review means a model alert; approve means no alert, not a payment authorization. No automatic blocking. Raw model margins are not probabilities. Legacy rule thresholds and device/location baselines do not affect scoring."
+    },
+    {
+      "code": "incomplete_data",
+      "message": "Features use only this submitted history. Confirmed delayed merchant-fraud feedback is unavailable and encoded as zero support. Short histories and missing merchant geography may reduce performance. Synthetic benchmark metrics do not describe this upload."
+    },
+    {
+      "code": "attempt_history",
+      "message": "Features use strictly earlier events. Equal-time events cannot influence each other. Completion status updates future spending history; current labels are excluded from inference."
+    }
+  ]
+}

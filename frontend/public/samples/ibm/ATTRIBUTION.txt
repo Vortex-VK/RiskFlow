@@ -1,0 +1,28 @@
+RiskFlow IBM sample library
+
+Source: IBM's synthetic credit-card transaction dataset, associated with
+Tabular Transformers for Modeling Multivariate Time Series (ICASSP 2021).
+https://github.com/IBM/TabFormer
+
+Authors: Inkit Padhi, Yair Schiff, Igor Melnyk, Mattia Rigotti, Youssef Mroueh,
+Pierre Dognin, Jerret Ross, Ravi Nair and Erik Altman.
+
+The upstream repository publishes code and data under the Apache License 2.0.
+See LICENSE.txt alongside these examples.
+
+RiskFlow modifications: selected bounded positive-purchase subsets from the
+locally supplied credit_card_transactions-ibm_v2.csv, sorted chronologically,
+and serialized as UTF-8 CSV. Original transaction field values and Is Fraud?
+labels are preserved. Source SHA-256:
+b01fa323c98522f8c710c7f7242581860c97c50183f1c5fa9e772e5c674a7f15
+
+These are synthetic transactions, not real customer records. The local source
+is an IBM-format release; byte-equivalence to the current upstream archive has
+not been established. No personal demographic or card-detail files are used.
+Selection rules and file hashes are in frontend/src/features/samples/catalog.json
+in the project. Source-row lineage and
+per-event verification are in the project's docs/sample-library directory.
+
+The examples were curated to illustrate known episodes, including missed fraud.
+They are not an independent validation set. USD and UTC are import conventions.
+Outcome labels are used for comparison only and never enter V13 predictors.

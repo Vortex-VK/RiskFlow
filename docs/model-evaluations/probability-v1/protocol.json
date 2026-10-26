@@ -1,0 +1,19 @@
+{
+  "code_sha256": "8a299aa6c75970c57377ef6626da709e77d0b938129342b1d9d310f8597527c7",
+  "decisions": "Keep base reference decisions. Display their mapped probability cutoff; probability previews are separate and may differ at isotonic ties.",
+  "epsilon": 1e-06,
+  "evaluation": "Reused native final/diagnostic views, older online cohorts and authored scenarios; not fitting or selection. No new independent real-world validation.",
+  "fit_data": "Existing IBM calibration cohorts outside base fitting rows. Card:2019Q3 bucket4; online and reviewer:2016Q4 bucket3 plus2019Q3 bucket4. Both history views.",
+  "goal": "Train probability output models, not remap a threshold to 50.",
+  "limitations": "Development cohorts previously used for base threshold/architecture selection. Grouped CV evaluates new probability heads only, not the full historical selection process. Limited fraud support and source shift remain.",
+  "methods": [
+    "sigmoid: logistic regression C1 no class reweighting",
+    "isotonic: monotone weighted least squares"
+  ],
+  "review_sha256": "47db3ad7245bcb988d3ea22b575771b9a5bd8536eec1a96c9af71386b0195b97",
+  "selection": "Lowest pooled out-of-fold log loss; Brier tie-break. Refit selected mapping on full development cohort once; freeze before diagnostic evaluation.",
+  "v8_sha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+  "validation": "Four deterministic customer-grouped folds (SHA256 probability-v1:user mod4), all views of a source row in the same fold. No outcome-based split selection.",
+  "version": "probability-v1",
+  "weights": "Each source transaction has total weight1 across views. No fraud oversampling or class costs in probability fitting."
+}

@@ -1,0 +1,60 @@
+{
+  "activation": "Review suggestions only for card purchases with>=10 prior completed purchases and no v8 model alert. No fraud subtype prediction or probability.",
+  "calibration": "2016Q4 bucket3 card purchases; wide and short histories.",
+  "code_sha256": "cf06df236a2bb9d90e30b1427e5cafd55dd01dd1fb055179c2410911b2443e2f",
+  "evaluation": "Frozen v7 primary/diagnostic views, supplied scenario patterns and legitimate controls. Evaluation only after freeze; no tuning on these.",
+  "exposure": "Reused IBM source/development. Only17 selection and19 calibration frauds; experimental review, no general precision/recall claim.",
+  "features": [
+    "attempts_1h",
+    "attempts_24h",
+    "attempts_7d",
+    "merchant_recency_days",
+    "history_samples",
+    "history_span_days",
+    "history_age_days",
+    "amount_percentile",
+    "robust_amount_deviation",
+    "category_amount_percentile",
+    "category_robust_deviation",
+    "category_samples",
+    "category_frequency",
+    "channel_frequency",
+    "merchant_frequency",
+    "activity_ratio",
+    "spend_ratio",
+    "ew_account_log_std",
+    "ew_account_support",
+    "ew_category_support",
+    "category_shrink_weight",
+    "shrunk_log_amount_z",
+    "account_log_amount_z",
+    "recent_log_mean_shift",
+    "merchant_frequency_soft",
+    "category_frequency_soft",
+    "channel_frequency_soft",
+    "attempts_5m",
+    "same_merchant_attempts_5m",
+    "distinct_merchants_1h",
+    "distinct_categories_1h",
+    "prior_failure_fraction_1h",
+    "last_channel_changed",
+    "last_merchant_changed",
+    "log_amount_over_previous_completed"
+  ],
+  "fit": "2015 to June2016 buckets0/1, native card purchases, existing full histories.",
+  "minimum_completed_history": 10,
+  "model_configs": [
+    {
+      "depth": 4,
+      "positive_weight": 3
+    },
+    {
+      "depth": 6,
+      "positive_weight": 5
+    }
+  ],
+  "scope": "Separate behavioral review; never change v8 fraud decisions or metrics.",
+  "selection": "2016Q3 bucket2 card purchases; wide and reconstructed short histories.",
+  "selection_rule": "Maximize worst-view F1 subject to false-positive rate<=.001 in each view and pooled. Calibrate selected model once with same rule.",
+  "training": "300 trees, lr.06, l2 10, seed20261025, threads2; all fit fraud and deterministic10% negatives with inverse-inclusion weights10."
+}

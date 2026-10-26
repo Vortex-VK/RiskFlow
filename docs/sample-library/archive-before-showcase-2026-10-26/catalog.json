@@ -1,0 +1,194 @@
+{
+  "assumptions": [
+    "USD and UTC are adapter conventions; the source does not supply a timezone.",
+    "User + Card scopes history. Positive purchases only; original source values and labels are preserved.",
+    "Blank Errors? is treated as completed; other values as failed attempts.",
+    "History starts with the supplied file. No hidden warmup or merchant-fraud feedback is added.",
+    "Is Fraud? is used only to compare outcomes, never as a model input.",
+    "Card IDs are not devices. Missing graph context is explicitly unknown."
+  ],
+  "bundleSha256": "58c9c2497c36ccd85c1553214ed104713d174dd4970ea6553f72bb8498495e67",
+  "model": "Upload-v9",
+  "policy": "mixed-source",
+  "resultsDirectory": "docs/sample-library/upload-v9",
+  "samples": [
+    {
+      "accounts": 3,
+      "alertCount": 0,
+      "bytes": 584,
+      "channels": {
+        "Chip Transaction": 4,
+        "Swipe Transaction": 1
+      },
+      "description": "Follow five everyday purchases and inspect each connection.",
+      "end": "2018-02-02",
+      "file": "first-five.csv",
+      "fraudCount": 0,
+      "guidance": "With only five payments, Upload-v9 has very little history. Start here to learn the graph.",
+      "id": "first-five",
+      "merchants": 5,
+      "metrics": {
+        "falseNegative": 0,
+        "falsePositive": 0,
+        "trueNegative": 5,
+        "truePositive": 0
+      },
+      "rows": 5,
+      "selection": "First 5 positive purchases for user 424 from 2018-02-01.",
+      "sha256": "927143b0eca10d3e75809ae3147b5a79239f874b27f014c10b66f9eee8dd4b49",
+      "start": "2018-02-01",
+      "tag": "A small start",
+      "title": "First five payments"
+    },
+    {
+      "accounts": 1,
+      "alertCount": 2,
+      "bytes": 4776,
+      "channels": {
+        "Chip Transaction": 30,
+        "Online Transaction": 12,
+        "Swipe Transaction": 8
+      },
+      "description": "Explore a compact card history with a labeled online fraud episode.",
+      "end": "2018-12-01",
+      "file": "short-history.csv",
+      "fraudCount": 7,
+      "guidance": "Compare the source labels with the model alerts. A short history can leave fraud undetected.",
+      "id": "short-history",
+      "merchants": 30,
+      "metrics": {
+        "falseNegative": 5,
+        "falsePositive": 0,
+        "trueNegative": 43,
+        "truePositive": 2
+      },
+      "rows": 50,
+      "selection": "Last 50 positive purchases for user 591, card 1, before 2018-12-02.",
+      "sha256": "958b56d3be7a7ad4705170905c1da08b2790bcb9f0e6a955f0a533377d19b6d0",
+      "start": "2018-07-27",
+      "tag": "Cold start",
+      "title": "A short online history"
+    },
+    {
+      "accounts": 6,
+      "alertCount": 6,
+      "bytes": 24848,
+      "channels": {
+        "Chip Transaction": 226,
+        "Online Transaction": 11,
+        "Swipe Transaction": 13
+      },
+      "description": "Investigate a burst of labeled fraud among an established purchase history.",
+      "end": "2018-11-17",
+      "file": "online-episode.csv",
+      "fraudCount": 15,
+      "guidance": "Run Simulate, then open Events to inspect alerts and Results to compare them with the source labels.",
+      "id": "online-episode",
+      "merchants": 46,
+      "metrics": {
+        "falseNegative": 9,
+        "falsePositive": 0,
+        "trueNegative": 235,
+        "truePositive": 6
+      },
+      "rows": 250,
+      "selection": "Last 250 positive purchases for user 759 before 2018-11-18.",
+      "sha256": "54a53d6eaa2bb5abf79d49f222e62ddc37151fa08f4f857d97363bfffd9baa42",
+      "start": "2018-09-20",
+      "tag": "Start here",
+      "title": "An online fraud episode"
+    },
+    {
+      "accounts": 4,
+      "alertCount": 19,
+      "bytes": 99869,
+      "channels": {
+        "Chip Transaction": 234,
+        "Online Transaction": 27,
+        "Swipe Transaction": 739
+      },
+      "description": "Explore chip, swipe and online purchases across one user's cards.",
+      "end": "2018-12-31",
+      "file": "mixed-channels.csv",
+      "fraudCount": 19,
+      "guidance": "A labeled fraud episode does not guarantee an alert. Compare detection across the different payment channels.",
+      "id": "mixed-channels",
+      "merchants": 66,
+      "metrics": {
+        "falseNegative": 0,
+        "falsePositive": 0,
+        "trueNegative": 981,
+        "truePositive": 19
+      },
+      "rows": 1000,
+      "selection": "Last 1,000 positive purchases for user 1497 in 2018.",
+      "sha256": "0700af3e81a0b73e621afae7bea8f88a63f98fbe153171a205927a7095709528",
+      "start": "2018-07-13",
+      "tag": "More context",
+      "title": "Across payment channels"
+    },
+    {
+      "accounts": 53,
+      "alertCount": 83,
+      "bytes": 485912,
+      "channels": {
+        "Chip Transaction": 3627,
+        "Online Transaction": 279,
+        "Swipe Transaction": 1094
+      },
+      "description": "Move between account groups and inspect a larger mix of ordinary and fraudulent purchases.",
+      "end": "2018-12-31",
+      "file": "many-accounts.csv",
+      "fraudCount": 113,
+      "guidance": "Open transaction groups to narrow the network, then inspect individual payments and their history.",
+      "id": "many-accounts",
+      "merchants": 467,
+      "metrics": {
+        "falseNegative": 30,
+        "falsePositive": 0,
+        "trueNegative": 4887,
+        "truePositive": 83
+      },
+      "rows": 5000,
+      "selection": "Last 5,000 positive purchases in 2018 across the 13 selected users.",
+      "sha256": "b3c8e12ad22448b52276fca84fdf91f7c122ae89a5e41b2e1f46efeb358d5d3a",
+      "start": "2018-08-25",
+      "tag": "Investigation",
+      "title": "Many accounts, one view"
+    },
+    {
+      "accounts": 54,
+      "alertCount": 93,
+      "bytes": 967637,
+      "channels": {
+        "Chip Transaction": 7224,
+        "Online Transaction": 576,
+        "Swipe Transaction": 2200
+      },
+      "description": "Explore 10,000 transactions at the interactive workspace's supported limit.",
+      "end": "2018-12-31",
+      "file": "full-workspace.csv",
+      "fraudCount": 123,
+      "guidance": "The graph groups larger histories. Loading and simulation take longer; use groups to reach individual payments.",
+      "id": "full-workspace",
+      "merchants": 590,
+      "metrics": {
+        "falseNegative": 30,
+        "falsePositive": 0,
+        "trueNegative": 9877,
+        "truePositive": 93
+      },
+      "rows": 10000,
+      "selection": "Last 10,000 positive purchases in 2018 across the 13 selected users.",
+      "sha256": "ebfeff8280d341577e6b88d97b104b1bc8762704c21570dd519b5fc785a9e7a3",
+      "start": "2018-04-16",
+      "tag": "At scale",
+      "title": "The full workspace"
+    }
+  ],
+  "selectionScope": "Curated demonstrations from previously inspected IBM data, not a new independent evaluation. User and time windows were chosen to illustrate known fraud episodes; no model or threshold tuning.",
+  "source": "IBM synthetic credit-card transactions",
+  "sourceSha256": "b01fa323c98522f8c710c7f7242581860c97c50183f1c5fa9e772e5c674a7f15",
+  "sourceUrl": "https://github.com/IBM/TabFormer",
+  "version": 5
+}

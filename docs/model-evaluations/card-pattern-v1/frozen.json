@@ -1,0 +1,109 @@
+{
+  "calibration": {
+    "short": {
+      "f1": 0.03278688524590164,
+      "fn": 18,
+      "fp": 41,
+      "fraud": 19,
+      "precision": 0.023809523809523808,
+      "recall": 0.05263157894736842,
+      "rows": 68868,
+      "tn": 68808,
+      "tp": 1
+    },
+    "wide": {
+      "f1": 0.14545454545454545,
+      "fn": 15,
+      "fp": 32,
+      "fraud": 19,
+      "precision": 0.1111111111111111,
+      "recall": 0.21052631578947367,
+      "rows": 68868,
+      "tn": 68817,
+      "tp": 4
+    }
+  },
+  "development": {
+    "calibration.parquet": "fac702aa58619fc4cf2a5b08132be5f05f0b4241a1a209a2e06d314e98be1404",
+    "selection.parquet": "a3023955e0d5d0bcd77beea35ac7526fbd4f5783490c51edb7737e15ae1b6427"
+  },
+  "features": [
+    "attempts_1h",
+    "attempts_24h",
+    "attempts_7d",
+    "merchant_recency_days",
+    "history_samples",
+    "history_span_days",
+    "history_age_days",
+    "amount_percentile",
+    "robust_amount_deviation",
+    "category_amount_percentile",
+    "category_robust_deviation",
+    "category_samples",
+    "category_frequency",
+    "channel_frequency",
+    "merchant_frequency",
+    "activity_ratio",
+    "spend_ratio",
+    "ew_account_log_std",
+    "ew_account_support",
+    "ew_category_support",
+    "category_shrink_weight",
+    "shrunk_log_amount_z",
+    "account_log_amount_z",
+    "recent_log_mean_shift",
+    "merchant_frequency_soft",
+    "category_frequency_soft",
+    "channel_frequency_soft",
+    "attempts_5m",
+    "same_merchant_attempts_5m",
+    "distinct_merchants_1h",
+    "distinct_categories_1h",
+    "prior_failure_fraction_1h",
+    "last_channel_changed",
+    "last_merchant_changed",
+    "log_amount_over_previous_completed"
+  ],
+  "fit_fraud": 315,
+  "fit_manifest_sha256": "8882b18c9cb0472b5cfee0b15f04d372242351f31d4c88f413ad860cab601b09",
+  "fit_population": 844082,
+  "fit_sample": 84674,
+  "minimum_completed_history": 10,
+  "model": {
+    "configuration": {
+      "depth": 6,
+      "positive_weight": 5
+    },
+    "file": "depth6.cbm",
+    "metrics": {
+      "short": {
+        "f1": 0.1,
+        "fn": 16,
+        "fp": 2,
+        "fraud": 17,
+        "precision": 0.3333333333333333,
+        "recall": 0.058823529411764705,
+        "rows": 71213,
+        "tn": 71194,
+        "tp": 1
+      },
+      "wide": {
+        "f1": 0.10526315789473684,
+        "fn": 16,
+        "fp": 1,
+        "fraud": 17,
+        "precision": 0.5,
+        "recall": 0.058823529411764705,
+        "rows": 71213,
+        "tn": 71195,
+        "tp": 1
+      }
+    },
+    "objective": 0.1,
+    "sha256": "4bee862023d0be4538544a5e2384c7b8454db6d4591a6b965526e5f7318483e3",
+    "threshold": 0.30446819121229907
+  },
+  "protocol_sha256": "2dcda689f1b361c30d1dc3131b10102087b8640a9be1404b9890d35837c7d40c",
+  "threshold": -1.8899241882241695,
+  "version": "card-pattern-v1"
+}

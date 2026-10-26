@@ -1,0 +1,18 @@
+{
+  "model_sha256": "fe5e3dc72f0c30ea882105e5f9360d9898d4e83ff3a62b73c23eca974d504994",
+  "predictions": {
+    "Chip Transaction": {
+      "rows": 100000,
+      "sha256": "e5317c1cfbb086b1c83c57df46cf85c52b601281d891d3fe75490bc9f57b9f47"
+    },
+    "Online Transaction": {
+      "rows": 100000,
+      "sha256": "e42154f0715185a407aee50e4cb4a960ccaccbfd011e032d2548eea8be05a960"
+    },
+    "Swipe Transaction": {
+      "rows": 100000,
+      "sha256": "e5317c1cfbb086b1c83c57df46cf85c52b601281d891d3fe75490bc9f57b9f47"
+    }
+  },
+  "protocol_sha256": "9d2f80bdad2dcb9f7fd0062638907659a05b0c08628ea82991f86eb4e612e7f6"
+}

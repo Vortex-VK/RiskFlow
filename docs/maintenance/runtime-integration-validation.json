@@ -1,0 +1,26 @@
+{
+  "engine": "engine-ml-v13",
+  "accepted_model": "ml-v13 depth6",
+  "deterministic_scoring_removed": true,
+  "backend_tests_passed": 190,
+  "frontend_unit_tests_passed": 196,
+  "browser_tests_passed": 75,
+  "backend_lint_format_and_strict_types": "passed",
+  "frontend_lint_format_types_and_production_build": "passed",
+  "production_http_smoke": "passed",
+  "accepted_model_replay_rows": 206709,
+  "packaged_inference_parity_rows": 51889,
+  "packaged_scores_and_decisions_exact": true,
+  "standalone_wheel_inference_without_research_data": "passed",
+  "obsolete_generated_files_removed": 1462,
+  "obsolete_generated_bytes_removed": 11721702139,
+  "original_ibm_csvs_retained": true,
+  "browser_teardown": "All tests completed; stopped test-owned Windows servers to finish Playwright shutdown.",
+  "limits": [
+    "Uploaded data has no confirmed merchant-fraud feedback and may have shorter history than the benchmark.",
+    "Unsupported records are explicitly not assessed; simulations with missing model inputs fail without a rule fallback.",
+    "Historical saved-result schemas and readers remain for compatibility.",
+    "Docker execution was not tested locally.",
+    "Existing frontend chunk-size advisory and React Flow fallback warnings remain."
+  ]
+}

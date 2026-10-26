@@ -1,0 +1,6 @@
+User,Card,Year,Month,Day,Time,Amount,Use Chip,Merchant Name,Merchant City,Merchant State,Zip,MCC,Errors?,Is Fraud?
+591,4,2018,8,9,15:17,$17.72,Chip Transaction,593588911319431962,Tucker,GA,30084.0,5411,,No
+1497,3,2018,8,9,15:21,$21.55,Swipe Transaction,-7256174002936429026,Crown Point,IN,46307.0,5912,,No
+759,5,2018,8,9,16:10,$0.71,Chip Transaction,-6571010470072147219,Myrtle Beach,SC,29579.0,5499,,No
+759,5,2018,8,9,16:10,$127.45,Chip Transaction,-4693979874497918566,Myrtle Beach,SC,29579.0,7538,,No
+1258,3,2018,8,9,17:19,$15.15,Chip Transaction,9057735476014445185,Rome,Italy,,5311,,Yes

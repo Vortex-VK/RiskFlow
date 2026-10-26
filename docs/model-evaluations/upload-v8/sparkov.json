@@ -1,0 +1,2093 @@
+{
+  "accounts": 922,
+  "assumptions": "MCC0000 unknown; merchant geography empty; completion true; each entire upload uses one assumed channel; naive clock treated asUTC. Amounts used in original nominal units, not verified currency conversion.",
+  "conditions": {
+    "Chip Transaction": {
+      "overall": {
+        "balanced": {
+          "f1": 0.0,
+          "fn": 990,
+          "fp": 0,
+          "fraud": 990,
+          "precision": null,
+          "recall": 0.0,
+          "rows": 100000,
+          "tn": 99010,
+          "tp": 0
+        },
+        "confirm95": {
+          "f1": 0.0,
+          "fn": 990,
+          "fp": 0,
+          "fraud": 990,
+          "precision": null,
+          "recall": 0.0,
+          "rows": 100000,
+          "tn": 99010,
+          "tp": 0
+        },
+        "precision95": {
+          "f1": 0.0,
+          "fn": 990,
+          "fp": 0,
+          "fraud": 990,
+          "precision": null,
+          "recall": 0.0,
+          "rows": 100000,
+          "tn": 99010,
+          "tp": 0
+        },
+        "v7": {
+          "f1": 0.0,
+          "fn": 990,
+          "fp": 0,
+          "fraud": 990,
+          "precision": null,
+          "recall": 0.0,
+          "rows": 100000,
+          "tn": 99010,
+          "tp": 0
+        }
+      },
+      "patterns": {
+        "entertainment": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 21,
+            "fp": 0,
+            "fraud": 21,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7179,
+            "tn": 7158,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 21,
+            "fp": 0,
+            "fraud": 21,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7179,
+            "tn": 7158,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 21,
+            "fp": 0,
+            "fraud": 21,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7179,
+            "tn": 7158,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 21,
+            "fp": 0,
+            "fraud": 21,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7179,
+            "tn": 7158,
+            "tp": 0
+          }
+        },
+        "food_dining": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 19,
+            "fp": 0,
+            "fraud": 19,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7116,
+            "tn": 7097,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 19,
+            "fp": 0,
+            "fraud": 19,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7116,
+            "tn": 7097,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 19,
+            "fp": 0,
+            "fraud": 19,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7116,
+            "tn": 7097,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 19,
+            "fp": 0,
+            "fraud": 19,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7116,
+            "tn": 7097,
+            "tp": 0
+          }
+        },
+        "gas_transport": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 86,
+            "fp": 0,
+            "fraud": 86,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 10221,
+            "tn": 10135,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 86,
+            "fp": 0,
+            "fraud": 86,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 10221,
+            "tn": 10135,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 86,
+            "fp": 0,
+            "fraud": 86,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 10221,
+            "tn": 10135,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 86,
+            "fp": 0,
+            "fraud": 86,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 10221,
+            "tn": 10135,
+            "tp": 0
+          }
+        },
+        "grocery_net": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 13,
+            "fp": 0,
+            "fraud": 13,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 3483,
+            "tn": 3470,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 13,
+            "fp": 0,
+            "fraud": 13,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 3483,
+            "tn": 3470,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 13,
+            "fp": 0,
+            "fraud": 13,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 3483,
+            "tn": 3470,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 13,
+            "fp": 0,
+            "fraud": 13,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 3483,
+            "tn": 3470,
+            "tp": 0
+          }
+        },
+        "grocery_pos": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 246,
+            "fp": 0,
+            "fraud": 246,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9533,
+            "tn": 9287,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 246,
+            "fp": 0,
+            "fraud": 246,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9533,
+            "tn": 9287,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 246,
+            "fp": 0,
+            "fraud": 246,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9533,
+            "tn": 9287,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 246,
+            "fp": 0,
+            "fraud": 246,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9533,
+            "tn": 9287,
+            "tp": 0
+          }
+        },
+        "health_fitness": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 18,
+            "fp": 0,
+            "fraud": 18,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 6739,
+            "tn": 6721,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 18,
+            "fp": 0,
+            "fraud": 18,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 6739,
+            "tn": 6721,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 18,
+            "fp": 0,
+            "fraud": 18,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 6739,
+            "tn": 6721,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 18,
+            "fp": 0,
+            "fraud": 18,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 6739,
+            "tn": 6721,
+            "tp": 0
+          }
+        },
+        "home": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 18,
+            "fp": 0,
+            "fraud": 18,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9417,
+            "tn": 9399,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 18,
+            "fp": 0,
+            "fraud": 18,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9417,
+            "tn": 9399,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 18,
+            "fp": 0,
+            "fraud": 18,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9417,
+            "tn": 9399,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 18,
+            "fp": 0,
+            "fraud": 18,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9417,
+            "tn": 9399,
+            "tp": 0
+          }
+        },
+        "kids_pets": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 37,
+            "fp": 0,
+            "fraud": 37,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 8558,
+            "tn": 8521,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 37,
+            "fp": 0,
+            "fraud": 37,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 8558,
+            "tn": 8521,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 37,
+            "fp": 0,
+            "fraud": 37,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 8558,
+            "tn": 8521,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 37,
+            "fp": 0,
+            "fraud": 37,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 8558,
+            "tn": 8521,
+            "tp": 0
+          }
+        },
+        "misc_net": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 124,
+            "fp": 0,
+            "fraud": 124,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 4931,
+            "tn": 4807,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 124,
+            "fp": 0,
+            "fraud": 124,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 4931,
+            "tn": 4807,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 124,
+            "fp": 0,
+            "fraud": 124,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 4931,
+            "tn": 4807,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 124,
+            "fp": 0,
+            "fraud": 124,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 4931,
+            "tn": 4807,
+            "tp": 0
+          }
+        },
+        "misc_pos": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 31,
+            "fp": 0,
+            "fraud": 31,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 6065,
+            "tn": 6034,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 31,
+            "fp": 0,
+            "fraud": 31,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 6065,
+            "tn": 6034,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 31,
+            "fp": 0,
+            "fraud": 31,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 6065,
+            "tn": 6034,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 31,
+            "fp": 0,
+            "fraud": 31,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 6065,
+            "tn": 6034,
+            "tp": 0
+          }
+        },
+        "personal_care": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 28,
+            "fp": 0,
+            "fraud": 28,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7034,
+            "tn": 7006,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 28,
+            "fp": 0,
+            "fraud": 28,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7034,
+            "tn": 7006,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 28,
+            "fp": 0,
+            "fraud": 28,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7034,
+            "tn": 7006,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 28,
+            "fp": 0,
+            "fraud": 28,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7034,
+            "tn": 7006,
+            "tp": 0
+          }
+        },
+        "shopping_net": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 218,
+            "fp": 0,
+            "fraud": 218,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7596,
+            "tn": 7378,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 218,
+            "fp": 0,
+            "fraud": 218,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7596,
+            "tn": 7378,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 218,
+            "fp": 0,
+            "fraud": 218,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7596,
+            "tn": 7378,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 218,
+            "fp": 0,
+            "fraud": 218,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7596,
+            "tn": 7378,
+            "tp": 0
+          }
+        },
+        "shopping_pos": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 112,
+            "fp": 0,
+            "fraud": 112,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9021,
+            "tn": 8909,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 112,
+            "fp": 0,
+            "fraud": 112,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9021,
+            "tn": 8909,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 112,
+            "fp": 0,
+            "fraud": 112,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9021,
+            "tn": 8909,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 112,
+            "fp": 0,
+            "fraud": 112,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9021,
+            "tn": 8909,
+            "tp": 0
+          }
+        },
+        "travel": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 19,
+            "fp": 0,
+            "fraud": 19,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 3107,
+            "tn": 3088,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 19,
+            "fp": 0,
+            "fraud": 19,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 3107,
+            "tn": 3088,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 19,
+            "fp": 0,
+            "fraud": 19,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 3107,
+            "tn": 3088,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 19,
+            "fp": 0,
+            "fraud": 19,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 3107,
+            "tn": 3088,
+            "tp": 0
+          }
+        }
+      }
+    },
+    "Online Transaction": {
+      "overall": {
+        "balanced": {
+          "f1": 0.022813688212927757,
+          "fn": 477,
+          "fp": 43470,
+          "fraud": 990,
+          "precision": 0.011663597298956415,
+          "recall": 0.5181818181818182,
+          "rows": 100000,
+          "tn": 55540,
+          "tp": 513
+        },
+        "confirm95": {
+          "f1": 0.00303951367781155,
+          "fn": 986,
+          "fp": 1638,
+          "fraud": 990,
+          "precision": 0.00243605359317905,
+          "recall": 0.00404040404040404,
+          "rows": 100000,
+          "tn": 97372,
+          "tp": 4
+        },
+        "precision95": {
+          "f1": 0.010381568163190967,
+          "fn": 933,
+          "fp": 9934,
+          "fraud": 990,
+          "precision": 0.005705134621159043,
+          "recall": 0.05757575757575758,
+          "rows": 100000,
+          "tn": 89076,
+          "tp": 57
+        },
+        "v7": {
+          "f1": 0.04008975317875842,
+          "fn": 856,
+          "fp": 5561,
+          "fraud": 990,
+          "precision": 0.023529411764705882,
+          "recall": 0.13535353535353536,
+          "rows": 100000,
+          "tn": 93449,
+          "tp": 134
+        }
+      },
+      "patterns": {
+        "entertainment": {
+          "balanced": {
+            "f1": 0.006470397929472662,
+            "fn": 11,
+            "fp": 3060,
+            "fraud": 21,
+            "precision": 0.003257328990228013,
+            "recall": 0.47619047619047616,
+            "rows": 7179,
+            "tn": 4098,
+            "tp": 10
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 21,
+            "fp": 126,
+            "fraud": 21,
+            "precision": 0.0,
+            "recall": 0.0,
+            "rows": 7179,
+            "tn": 7032,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.002805049088359046,
+            "fn": 20,
+            "fp": 691,
+            "fraud": 21,
+            "precision": 0.001445086705202312,
+            "recall": 0.047619047619047616,
+            "rows": 7179,
+            "tn": 6467,
+            "tp": 1
+          },
+          "v7": {
+            "f1": 0.015209125475285171,
+            "fn": 17,
+            "fp": 501,
+            "fraud": 21,
+            "precision": 0.007920792079207921,
+            "recall": 0.19047619047619047,
+            "rows": 7179,
+            "tn": 6657,
+            "tp": 4
+          }
+        },
+        "food_dining": {
+          "balanced": {
+            "f1": 0.007387508394895903,
+            "fn": 8,
+            "fp": 2948,
+            "fraud": 19,
+            "precision": 0.0037174721189591076,
+            "recall": 0.5789473684210527,
+            "rows": 7116,
+            "tn": 4149,
+            "tp": 11
+          },
+          "confirm95": {
+            "f1": 0.015037593984962405,
+            "fn": 18,
+            "fp": 113,
+            "fraud": 19,
+            "precision": 0.008771929824561403,
+            "recall": 0.05263157894736842,
+            "rows": 7116,
+            "tn": 6984,
+            "tp": 1
+          },
+          "precision95": {
+            "f1": 0.008356545961002786,
+            "fn": 16,
+            "fp": 696,
+            "fraud": 19,
+            "precision": 0.004291845493562232,
+            "recall": 0.15789473684210525,
+            "rows": 7116,
+            "tn": 6401,
+            "tp": 3
+          },
+          "v7": {
+            "f1": 0.012526096033402923,
+            "fn": 16,
+            "fp": 457,
+            "fraud": 19,
+            "precision": 0.006521739130434782,
+            "recall": 0.15789473684210525,
+            "rows": 7116,
+            "tn": 6640,
+            "tp": 3
+          }
+        },
+        "gas_transport": {
+          "balanced": {
+            "f1": 0.02571830419931686,
+            "fn": 22,
+            "fp": 4827,
+            "fraud": 86,
+            "precision": 0.013085258638315273,
+            "recall": 0.7441860465116279,
+            "rows": 10221,
+            "tn": 5308,
+            "tp": 64
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 86,
+            "fp": 141,
+            "fraud": 86,
+            "precision": 0.0,
+            "recall": 0.0,
+            "rows": 10221,
+            "tn": 9994,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.021702838063439065,
+            "fn": 73,
+            "fp": 1099,
+            "fraud": 86,
+            "precision": 0.011690647482014389,
+            "recall": 0.1511627906976744,
+            "rows": 10221,
+            "tn": 9036,
+            "tp": 13
+          },
+          "v7": {
+            "f1": 0.02570694087403599,
+            "fn": 81,
+            "fp": 298,
+            "fraud": 86,
+            "precision": 0.0165016501650165,
+            "recall": 0.05813953488372093,
+            "rows": 10221,
+            "tn": 9837,
+            "tp": 5
+          }
+        },
+        "grocery_net": {
+          "balanced": {
+            "f1": 0.012161415146489774,
+            "fn": 2,
+            "fp": 1785,
+            "fraud": 13,
+            "precision": 0.006124721603563474,
+            "recall": 0.8461538461538461,
+            "rows": 3483,
+            "tn": 1685,
+            "tp": 11
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 13,
+            "fp": 47,
+            "fraud": 13,
+            "precision": 0.0,
+            "recall": 0.0,
+            "rows": 3483,
+            "tn": 3423,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.00477326968973747,
+            "fn": 12,
+            "fp": 405,
+            "fraud": 13,
+            "precision": 0.0024630541871921183,
+            "recall": 0.07692307692307693,
+            "rows": 3483,
+            "tn": 3065,
+            "tp": 1
+          },
+          "v7": {
+            "f1": 0.05825242718446602,
+            "fn": 10,
+            "fp": 87,
+            "fraud": 13,
+            "precision": 0.03333333333333333,
+            "recall": 0.23076923076923078,
+            "rows": 3483,
+            "tn": 3383,
+            "tp": 3
+          }
+        },
+        "grocery_pos": {
+          "balanced": {
+            "f1": 0.06370147003392386,
+            "fn": 77,
+            "fp": 4891,
+            "fraud": 246,
+            "precision": 0.03339920948616601,
+            "recall": 0.6869918699186992,
+            "rows": 9533,
+            "tn": 4396,
+            "tp": 169
+          },
+          "confirm95": {
+            "f1": 0.009216589861751152,
+            "fn": 244,
+            "fp": 186,
+            "fraud": 246,
+            "precision": 0.010638297872340425,
+            "recall": 0.008130081300813009,
+            "rows": 9533,
+            "tn": 9101,
+            "tp": 2
+          },
+          "precision95": {
+            "f1": 0.03069838833461243,
+            "fn": 226,
+            "fp": 1037,
+            "fraud": 246,
+            "precision": 0.01892147587511826,
+            "recall": 0.08130081300813008,
+            "rows": 9533,
+            "tn": 8250,
+            "tp": 20
+          },
+          "v7": {
+            "f1": 0.06340057636887608,
+            "fn": 224,
+            "fp": 426,
+            "fraud": 246,
+            "precision": 0.049107142857142856,
+            "recall": 0.08943089430894309,
+            "rows": 9533,
+            "tn": 8861,
+            "tp": 22
+          }
+        },
+        "health_fitness": {
+          "balanced": {
+            "f1": 0.005190952910641453,
+            "fn": 11,
+            "fp": 2672,
+            "fraud": 18,
+            "precision": 0.0026129152668906306,
+            "recall": 0.3888888888888889,
+            "rows": 6739,
+            "tn": 4049,
+            "tp": 7
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 18,
+            "fp": 134,
+            "fraud": 18,
+            "precision": 0.0,
+            "recall": 0.0,
+            "rows": 6739,
+            "tn": 6587,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 18,
+            "fp": 665,
+            "fraud": 18,
+            "precision": 0.0,
+            "recall": 0.0,
+            "rows": 6739,
+            "tn": 6056,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.02053388090349076,
+            "fn": 13,
+            "fp": 464,
+            "fraud": 18,
+            "precision": 0.010660980810234541,
+            "recall": 0.2777777777777778,
+            "rows": 6739,
+            "tn": 6257,
+            "tp": 5
+          }
+        },
+        "home": {
+          "balanced": {
+            "f1": 0.004942339373970346,
+            "fn": 9,
+            "fp": 3615,
+            "fraud": 18,
+            "precision": 0.0024834437086092716,
+            "recall": 0.5,
+            "rows": 9417,
+            "tn": 5784,
+            "tp": 9
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 18,
+            "fp": 138,
+            "fraud": 18,
+            "precision": 0.0,
+            "recall": 0.0,
+            "rows": 9417,
+            "tn": 9261,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0024479804161566705,
+            "fn": 17,
+            "fp": 798,
+            "fraud": 18,
+            "precision": 0.0012515644555694619,
+            "recall": 0.05555555555555555,
+            "rows": 9417,
+            "tn": 8601,
+            "tp": 1
+          },
+          "v7": {
+            "f1": 0.01584786053882726,
+            "fn": 13,
+            "fp": 608,
+            "fraud": 18,
+            "precision": 0.008156606851549755,
+            "recall": 0.2777777777777778,
+            "rows": 9417,
+            "tn": 8791,
+            "tp": 5
+          }
+        },
+        "kids_pets": {
+          "balanced": {
+            "f1": 0.013454226381983035,
+            "fn": 14,
+            "fp": 3359,
+            "fraud": 37,
+            "precision": 0.006800709639266706,
+            "recall": 0.6216216216216216,
+            "rows": 8558,
+            "tn": 5162,
+            "tp": 23
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 37,
+            "fp": 139,
+            "fraud": 37,
+            "precision": 0.0,
+            "recall": 0.0,
+            "rows": 8558,
+            "tn": 8382,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.005025125628140704,
+            "fn": 35,
+            "fp": 757,
+            "fraud": 37,
+            "precision": 0.002635046113306983,
+            "recall": 0.05405405405405406,
+            "rows": 8558,
+            "tn": 7764,
+            "tp": 2
+          },
+          "v7": {
+            "f1": 0.03421461897356143,
+            "fn": 26,
+            "fp": 595,
+            "fraud": 37,
+            "precision": 0.018151815181518153,
+            "recall": 0.2972972972972973,
+            "rows": 8558,
+            "tn": 7926,
+            "tp": 11
+          }
+        },
+        "misc_net": {
+          "balanced": {
+            "f1": 0.03693295865114412,
+            "fn": 78,
+            "fp": 2321,
+            "fraud": 124,
+            "precision": 0.019433882551753275,
+            "recall": 0.3709677419354839,
+            "rows": 4931,
+            "tn": 2486,
+            "tp": 46
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 124,
+            "fp": 77,
+            "fraud": 124,
+            "precision": 0.0,
+            "recall": 0.0,
+            "rows": 4931,
+            "tn": 4730,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.008955223880597015,
+            "fn": 121,
+            "fp": 543,
+            "fraud": 124,
+            "precision": 0.005494505494505495,
+            "recall": 0.024193548387096774,
+            "rows": 4931,
+            "tn": 4264,
+            "tp": 3
+          },
+          "v7": {
+            "f1": 0.0625,
+            "fn": 113,
+            "fp": 217,
+            "fraud": 124,
+            "precision": 0.04824561403508772,
+            "recall": 0.08870967741935484,
+            "rows": 4931,
+            "tn": 4590,
+            "tp": 11
+          }
+        },
+        "misc_pos": {
+          "balanced": {
+            "f1": 0.014685314685314685,
+            "fn": 10,
+            "fp": 2808,
+            "fraud": 31,
+            "precision": 0.007423117709437964,
+            "recall": 0.6774193548387096,
+            "rows": 6065,
+            "tn": 3226,
+            "tp": 21
+          },
+          "confirm95": {
+            "f1": 0.01652892561983471,
+            "fn": 30,
+            "fp": 89,
+            "fraud": 31,
+            "precision": 0.011111111111111112,
+            "recall": 0.03225806451612903,
+            "rows": 6065,
+            "tn": 5945,
+            "tp": 1
+          },
+          "precision95": {
+            "f1": 0.009188361408882083,
+            "fn": 28,
+            "fp": 619,
+            "fraud": 31,
+            "precision": 0.00482315112540193,
+            "recall": 0.0967741935483871,
+            "rows": 6065,
+            "tn": 5415,
+            "tp": 3
+          },
+          "v7": {
+            "f1": 0.025157232704402517,
+            "fn": 27,
+            "fp": 283,
+            "fraud": 31,
+            "precision": 0.013937282229965157,
+            "recall": 0.12903225806451613,
+            "rows": 6065,
+            "tn": 5751,
+            "tp": 4
+          }
+        },
+        "personal_care": {
+          "balanced": {
+            "f1": 0.012523020257826888,
+            "fn": 11,
+            "fp": 2670,
+            "fraud": 28,
+            "precision": 0.006326758466691477,
+            "recall": 0.6071428571428571,
+            "rows": 7034,
+            "tn": 4336,
+            "tp": 17
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 28,
+            "fp": 96,
+            "fraud": 28,
+            "precision": 0.0,
+            "recall": 0.0,
+            "rows": 7034,
+            "tn": 6910,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.00949367088607595,
+            "fn": 25,
+            "fp": 601,
+            "fraud": 28,
+            "precision": 0.004966887417218543,
+            "recall": 0.10714285714285714,
+            "rows": 7034,
+            "tn": 6405,
+            "tp": 3
+          },
+          "v7": {
+            "f1": 0.022172949002217297,
+            "fn": 23,
+            "fp": 418,
+            "fraud": 28,
+            "precision": 0.01182033096926714,
+            "recall": 0.17857142857142858,
+            "rows": 7034,
+            "tn": 6588,
+            "tp": 5
+          }
+        },
+        "shopping_net": {
+          "balanced": {
+            "f1": 0.03616133518776078,
+            "fn": 153,
+            "fp": 3312,
+            "fraud": 218,
+            "precision": 0.01924785312407462,
+            "recall": 0.2981651376146789,
+            "rows": 7596,
+            "tn": 4066,
+            "tp": 65
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 218,
+            "fp": 134,
+            "fraud": 218,
+            "precision": 0.0,
+            "recall": 0.0,
+            "rows": 7596,
+            "tn": 7244,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.007736943907156673,
+            "fn": 214,
+            "fp": 812,
+            "fraud": 218,
+            "precision": 0.004901960784313725,
+            "recall": 0.01834862385321101,
+            "rows": 7596,
+            "tn": 6566,
+            "tp": 4
+          },
+          "v7": {
+            "f1": 0.09590973201692525,
+            "fn": 184,
+            "fp": 457,
+            "fraud": 218,
+            "precision": 0.06924643584521385,
+            "recall": 0.1559633027522936,
+            "rows": 7596,
+            "tn": 6921,
+            "tp": 34
+          }
+        },
+        "shopping_pos": {
+          "balanced": {
+            "f1": 0.023604622571920333,
+            "fn": 64,
+            "fp": 3907,
+            "fraud": 112,
+            "precision": 0.01213653603034134,
+            "recall": 0.42857142857142855,
+            "rows": 9021,
+            "tn": 5002,
+            "tp": 48
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 112,
+            "fp": 160,
+            "fraud": 112,
+            "precision": 0.0,
+            "recall": 0.0,
+            "rows": 9021,
+            "tn": 8749,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 112,
+            "fp": 887,
+            "fraud": 112,
+            "precision": 0.0,
+            "recall": 0.0,
+            "rows": 9021,
+            "tn": 8022,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.05150214592274678,
+            "fn": 94,
+            "fp": 569,
+            "fraud": 112,
+            "precision": 0.030664395229982964,
+            "recall": 0.16071428571428573,
+            "rows": 9021,
+            "tn": 8340,
+            "tp": 18
+          }
+        },
+        "travel": {
+          "balanced": {
+            "f1": 0.01809954751131222,
+            "fn": 7,
+            "fp": 1295,
+            "fraud": 19,
+            "precision": 0.009181331293037491,
+            "recall": 0.631578947368421,
+            "rows": 3107,
+            "tn": 1793,
+            "tp": 12
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 19,
+            "fp": 58,
+            "fraud": 19,
+            "precision": 0.0,
+            "recall": 0.0,
+            "rows": 3107,
+            "tn": 3030,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.017341040462427744,
+            "fn": 16,
+            "fp": 324,
+            "fraud": 19,
+            "precision": 0.009174311926605505,
+            "recall": 0.15789473684210525,
+            "rows": 3107,
+            "tn": 2764,
+            "tp": 3
+          },
+          "v7": {
+            "f1": 0.0392156862745098,
+            "fn": 15,
+            "fp": 181,
+            "fraud": 19,
+            "precision": 0.021621621621621623,
+            "recall": 0.21052631578947367,
+            "rows": 3107,
+            "tn": 2907,
+            "tp": 4
+          }
+        }
+      }
+    },
+    "Swipe Transaction": {
+      "overall": {
+        "balanced": {
+          "f1": 0.0,
+          "fn": 990,
+          "fp": 0,
+          "fraud": 990,
+          "precision": null,
+          "recall": 0.0,
+          "rows": 100000,
+          "tn": 99010,
+          "tp": 0
+        },
+        "confirm95": {
+          "f1": 0.0,
+          "fn": 990,
+          "fp": 0,
+          "fraud": 990,
+          "precision": null,
+          "recall": 0.0,
+          "rows": 100000,
+          "tn": 99010,
+          "tp": 0
+        },
+        "precision95": {
+          "f1": 0.0,
+          "fn": 990,
+          "fp": 0,
+          "fraud": 990,
+          "precision": null,
+          "recall": 0.0,
+          "rows": 100000,
+          "tn": 99010,
+          "tp": 0
+        },
+        "v7": {
+          "f1": 0.0,
+          "fn": 990,
+          "fp": 0,
+          "fraud": 990,
+          "precision": null,
+          "recall": 0.0,
+          "rows": 100000,
+          "tn": 99010,
+          "tp": 0
+        }
+      },
+      "patterns": {
+        "entertainment": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 21,
+            "fp": 0,
+            "fraud": 21,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7179,
+            "tn": 7158,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 21,
+            "fp": 0,
+            "fraud": 21,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7179,
+            "tn": 7158,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 21,
+            "fp": 0,
+            "fraud": 21,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7179,
+            "tn": 7158,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 21,
+            "fp": 0,
+            "fraud": 21,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7179,
+            "tn": 7158,
+            "tp": 0
+          }
+        },
+        "food_dining": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 19,
+            "fp": 0,
+            "fraud": 19,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7116,
+            "tn": 7097,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 19,
+            "fp": 0,
+            "fraud": 19,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7116,
+            "tn": 7097,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 19,
+            "fp": 0,
+            "fraud": 19,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7116,
+            "tn": 7097,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 19,
+            "fp": 0,
+            "fraud": 19,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7116,
+            "tn": 7097,
+            "tp": 0
+          }
+        },
+        "gas_transport": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 86,
+            "fp": 0,
+            "fraud": 86,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 10221,
+            "tn": 10135,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 86,
+            "fp": 0,
+            "fraud": 86,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 10221,
+            "tn": 10135,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 86,
+            "fp": 0,
+            "fraud": 86,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 10221,
+            "tn": 10135,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 86,
+            "fp": 0,
+            "fraud": 86,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 10221,
+            "tn": 10135,
+            "tp": 0
+          }
+        },
+        "grocery_net": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 13,
+            "fp": 0,
+            "fraud": 13,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 3483,
+            "tn": 3470,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 13,
+            "fp": 0,
+            "fraud": 13,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 3483,
+            "tn": 3470,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 13,
+            "fp": 0,
+            "fraud": 13,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 3483,
+            "tn": 3470,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 13,
+            "fp": 0,
+            "fraud": 13,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 3483,
+            "tn": 3470,
+            "tp": 0
+          }
+        },
+        "grocery_pos": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 246,
+            "fp": 0,
+            "fraud": 246,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9533,
+            "tn": 9287,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 246,
+            "fp": 0,
+            "fraud": 246,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9533,
+            "tn": 9287,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 246,
+            "fp": 0,
+            "fraud": 246,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9533,
+            "tn": 9287,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 246,
+            "fp": 0,
+            "fraud": 246,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9533,
+            "tn": 9287,
+            "tp": 0
+          }
+        },
+        "health_fitness": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 18,
+            "fp": 0,
+            "fraud": 18,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 6739,
+            "tn": 6721,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 18,
+            "fp": 0,
+            "fraud": 18,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 6739,
+            "tn": 6721,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 18,
+            "fp": 0,
+            "fraud": 18,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 6739,
+            "tn": 6721,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 18,
+            "fp": 0,
+            "fraud": 18,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 6739,
+            "tn": 6721,
+            "tp": 0
+          }
+        },
+        "home": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 18,
+            "fp": 0,
+            "fraud": 18,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9417,
+            "tn": 9399,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 18,
+            "fp": 0,
+            "fraud": 18,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9417,
+            "tn": 9399,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 18,
+            "fp": 0,
+            "fraud": 18,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9417,
+            "tn": 9399,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 18,
+            "fp": 0,
+            "fraud": 18,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9417,
+            "tn": 9399,
+            "tp": 0
+          }
+        },
+        "kids_pets": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 37,
+            "fp": 0,
+            "fraud": 37,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 8558,
+            "tn": 8521,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 37,
+            "fp": 0,
+            "fraud": 37,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 8558,
+            "tn": 8521,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 37,
+            "fp": 0,
+            "fraud": 37,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 8558,
+            "tn": 8521,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 37,
+            "fp": 0,
+            "fraud": 37,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 8558,
+            "tn": 8521,
+            "tp": 0
+          }
+        },
+        "misc_net": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 124,
+            "fp": 0,
+            "fraud": 124,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 4931,
+            "tn": 4807,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 124,
+            "fp": 0,
+            "fraud": 124,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 4931,
+            "tn": 4807,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 124,
+            "fp": 0,
+            "fraud": 124,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 4931,
+            "tn": 4807,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 124,
+            "fp": 0,
+            "fraud": 124,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 4931,
+            "tn": 4807,
+            "tp": 0
+          }
+        },
+        "misc_pos": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 31,
+            "fp": 0,
+            "fraud": 31,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 6065,
+            "tn": 6034,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 31,
+            "fp": 0,
+            "fraud": 31,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 6065,
+            "tn": 6034,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 31,
+            "fp": 0,
+            "fraud": 31,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 6065,
+            "tn": 6034,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 31,
+            "fp": 0,
+            "fraud": 31,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 6065,
+            "tn": 6034,
+            "tp": 0
+          }
+        },
+        "personal_care": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 28,
+            "fp": 0,
+            "fraud": 28,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7034,
+            "tn": 7006,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 28,
+            "fp": 0,
+            "fraud": 28,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7034,
+            "tn": 7006,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 28,
+            "fp": 0,
+            "fraud": 28,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7034,
+            "tn": 7006,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 28,
+            "fp": 0,
+            "fraud": 28,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7034,
+            "tn": 7006,
+            "tp": 0
+          }
+        },
+        "shopping_net": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 218,
+            "fp": 0,
+            "fraud": 218,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7596,
+            "tn": 7378,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 218,
+            "fp": 0,
+            "fraud": 218,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7596,
+            "tn": 7378,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 218,
+            "fp": 0,
+            "fraud": 218,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7596,
+            "tn": 7378,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 218,
+            "fp": 0,
+            "fraud": 218,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 7596,
+            "tn": 7378,
+            "tp": 0
+          }
+        },
+        "shopping_pos": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 112,
+            "fp": 0,
+            "fraud": 112,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9021,
+            "tn": 8909,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 112,
+            "fp": 0,
+            "fraud": 112,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9021,
+            "tn": 8909,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 112,
+            "fp": 0,
+            "fraud": 112,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9021,
+            "tn": 8909,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 112,
+            "fp": 0,
+            "fraud": 112,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 9021,
+            "tn": 8909,
+            "tp": 0
+          }
+        },
+        "travel": {
+          "balanced": {
+            "f1": 0.0,
+            "fn": 19,
+            "fp": 0,
+            "fraud": 19,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 3107,
+            "tn": 3088,
+            "tp": 0
+          },
+          "confirm95": {
+            "f1": 0.0,
+            "fn": 19,
+            "fp": 0,
+            "fraud": 19,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 3107,
+            "tn": 3088,
+            "tp": 0
+          },
+          "precision95": {
+            "f1": 0.0,
+            "fn": 19,
+            "fp": 0,
+            "fraud": 19,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 3107,
+            "tn": 3088,
+            "tp": 0
+          },
+          "v7": {
+            "f1": 0.0,
+            "fn": 19,
+            "fp": 0,
+            "fraud": 19,
+            "precision": null,
+            "recall": 0.0,
+            "rows": 3107,
+            "tn": 3088,
+            "tp": 0
+          }
+        }
+      }
+    }
+  },
+  "first": "2019-01-01 00:00:18",
+  "fraud": 990,
+  "last": "2019-02-28 15:40:20",
+  "rows": 100000,
+  "scope": "Unsupported field sensitivity only. No preferred channel selected; repeated conditions share rows. Not a valid general-purpose accuracy estimate and not a supported native import."
+}

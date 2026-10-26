@@ -1,0 +1,12 @@
+{
+  "code_sha256": "137a31dc0b9929d283146b8ac520ef6da1090a147d0cce9f51b8a08b4ca64406",
+  "first_code_sha256": "b62a3b3b2d78771b53ffe86c45b1e77a7f869ad170d5a9d94663184f6953b3ad",
+  "gate": "Unchanged v1 final gate. Record primary wide/short, other native diagnostics, all authored patterns, and 90% probability results. No retuning from heldout outcomes, even if a gate fails.",
+  "limits": "Reused synthetic sources, small customer-heldout authored sample, selection/calibration reuse. No universal or bank-data reliability claim.",
+  "method": "No new model fitting or model selection. Enumerate pairs of exact positive-score boundaries for card/online. Preserve all ties. Minimize same selection violations, then maximize authored recall, then minimize authored FP. Same <=100FP/10000 and IBM P/R each within2pp constraints. No refit after threshold selection. Probabilities remain unchanged.",
+  "prepared_sha256": "a8cc963ea348ef5b646d5875ea1136335502e1012d882d2583a2ea5e754e6853",
+  "reason": "V2's selected context_preserve head narrowly fails a shared-cutoff constraint. V8 already uses different card/online thresholds. Test that policy structure on the already-selected head before final access.",
+  "second_code_sha256": "babf3795571ddb9dc203781e6f8b034d129c3463b5d75e4739151d52c62d23ef",
+  "v2_selection_sha256": "67aa1ba4b94a6f7f53b3dfd286bd5b8a2dc5aa7379d80b831643d65620f4ee02",
+  "version": "authored-adaptation-v3"
+}
