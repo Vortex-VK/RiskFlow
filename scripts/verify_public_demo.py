@@ -6,6 +6,7 @@ import json
 import re
 import sys
 import time
+from http.client import HTTPException
 from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
@@ -14,14 +15,14 @@ ROOT = Path(__file__).resolve().parents[1]
 BASE = sys.argv[1].rstrip("/") if len(sys.argv) > 1 else "http://127.0.0.1:8000"
 
 
-def request(path, payload=None, headers=None):
+def request(path, payload=None, headers=None, timeout=60):
     data = None if payload is None else json.dumps(payload).encode()
     req = Request(
         BASE + path,
         data=data,
         headers={"Content-Type": "application/json", **(headers or {})},
     )
-    with urlopen(req, timeout=60) as response:
+    with urlopen(req, timeout=timeout) as response:
         return response.read(), response.headers
 
 
@@ -36,12 +37,13 @@ def missing(path, payload=None):
 
 def main():
     started = time.monotonic()
-    for _ in range(120):
+    deadline = started + 120
+    while time.monotonic() < deadline:
         try:
-            health, _ = request("/api/v1/health")
+            health, _ = request("/api/v1/health", timeout=10)
             assert json.loads(health)["status"] == "ok"
             break
-        except (URLError, TimeoutError):
+        except (URLError, TimeoutError, ConnectionError, HTTPException):
             time.sleep(1)
     else:
         raise RuntimeError("Public demo did not become ready")
