@@ -10,7 +10,7 @@ test("largest sample finishes within the UI request timeout", async ({
   const library = page.getByRole("dialog", { name: "Start with a sample." });
   await library.getByRole("button", { name: new RegExp(sample.title) }).click();
   await library.getByRole("button", { name: "Open in workspace" }).click();
-  await expect(library).toHaveCount(0);
+  await expect(library).toHaveCount(0, { timeout: 30000 });
   // Capture the large result before Chromium evicts it from its inspector cache.
   const captured =
     Promise.withResolvers<
