@@ -1,45 +1,66 @@
-# Public demo deployment
+﻿# Public deployment
 
-RiskFlow serves the React build and Python inference API from one Docker service. The public demo keeps CSV imports and simulations transient. No external model API or model key is required; all inference bundles ship in the image.
+Hosting must stay free. The public frontend targets **Cloudflare Pages**, using static files and no Pages Functions, paid resources, database, or disk. The previous Render configuration and deployment links have been removed; no Render service was provisioned during setup.
 
-## Free hosting constraint
+## Cloudflare Pages
 
-Hosting must stay free. No paid service has been provisioned. Do not substitute paid resources if a free deployment fails. The Render template selects `plan: free`; it is preparation, not evidence that the full app fits that plan.
+The Pages build serves a readable home page, guide, and recorded sample results without JavaScript. The interactive app lives at `/workspace/`. Search crawlers can read the public content; allowing crawlers does not guarantee indexing or appearance in ChatGPT search.
 
-Render Free currently provides 512 MB RAM and 0.1 CPU. Our successful [Linux container check](https://github.com/Vortex-VK/RiskFlow/actions/runs/40398823801) used 1 CPU / 2 GB, with peak memory of 584,212,480 bytes (about 557 MiB) and an approximately 11-second request for 10,000 payments. That workload exceeds the free memory budget, and the much smaller CPU allowance may exceed the frontend's 30-second simulation timeout. Verify or improve those limits before launching the full demo on Render Free; do not silently remove samples or lower upload limits.
+1. In Cloudflare, open **Workers & Pages**, create a **Pages** project, and connect GitHub. Authorize `Vortex-VK/RiskFlow` and choose production branch `main`.
+2. Use these build settings:
 
-Free web services sleep after 15 idle minutes and can take about a minute to wake. Monthly usage limits also apply. Without a payment method, Render suspends free services or builds when applicable usage allowances are exhausted instead of billing overages. Keep the account on free resources and review usage settings. Sources: [compute allocations](https://render.com/docs/compute-plans), [free-tier limits](https://render.com/docs/free).
+   | Setting | Value |
+   | --- | --- |
+   | Framework preset | None |
+   | Root directory | `frontend` |
+   | Build command | `npm run build:pages` |
+   | Build output directory | `dist-pages` |
+   | Node version | `24.22.0` (also pinned in `.node-version`) |
 
-## Render setup (after free-tier verification)
+3. Leave `VITE_API_ORIGIN` unset until an inference backend is available. Deploy to the free `pages.dev` address; a custom domain is optional.
+4. Set production environment variable `VITE_SITE_URL` to the assigned stable HTTPS origin, for example `https://your-project.pages.dev`, and redeploy. This gives canonical links and the sitemap a stable destination. Before this is set, the build uses Cloudflare's deployment URL. Never use the example domain as a production value.
+5. Check `/`, `/guide/`, `/sample-results/`, `/workspace/`, `/robots.txt`, and `/sitemap.xml` at the public URL. Check the Samples and CSV import journeys. A direct visit to an unknown path should return the custom 404.
 
-1. Check that the target commit's **Public demo container** GitHub Actions run passed, and separately verify the workload under free-tier resource limits. The existing workflow tests the image and functionality with 1 CPU / 2 GB; a green result alone does not verify Render Free compatibility.
-2. Open [Deploy to Render](https://render.com/deploy?repo=https://github.com/Vortex-VK/RiskFlow), select your Render workspace, and confirm the service uses the Free compute plan.
-3. `render.yaml` specifies Docker, port 8000, `/api/v1/health` readiness, public-demo mode, and one free instance. No disk or database is provisioned.
-4. Wait for health, then repeat the sample/import/simulate journey at the assigned HTTPS URL. A custom domain is optional. Record the deployed Git commit and the URL.
+GitHub-connected Pages automatically builds subsequent pushes to `main`. Preview branches are marked `noindex` and disallowed in robots.txt. The workspace itself is marked `noindex`; the readable public pages contain the material intended for search. Review Cloudflare's crawler settings if a crawler receives a challenge; robots.txt alone cannot override an account-level block. Roll back to a previous successful production deployment in the Pages dashboard if necessary.
 
-Preparing this repository does not provision hosting or incur a Render charge. Automatic deployment is off, so a push alone does not change a running public site. To update, deploy a verified commit manually. Roll back to the preceding verified deploy in Render if readiness or core journeys fail.
+Account authorization must happen in the owner's Cloudflare account. No account token belongs in GitHub, frontend environment variables, or chat. `VITE_*` values are public build settings, never secrets.
 
-Provider references: [Docker services](https://render.com/docs/docker), [Blueprint settings](https://render.com/docs/blueprint-spec), [pricing](https://render.com/pricing).
+Official references: [GitHub integration](https://developers.cloudflare.com/pages/configuration/git-integration/github-integration/), [build settings](https://developers.cloudflare.com/pages/configuration/build-configuration/), [static routing](https://developers.cloudflare.com/pages/configuration/serving-pages/), [response headers](https://developers.cloudflare.com/pages/configuration/headers/).
 
-## Public-demo behavior
+## Live simulations need a separate backend
 
-`RISKFLOW_PUBLIC_DEMO=true` is the Docker default and is explicitly set by Render:
+Cloudflare Pages hosts the frontend; it does not run this Python inference service. With no backend configured, graph editing, CSV import, bundled presets, and sample exploration work. Simulate is disabled with an explanation, and the tutorial skips unavailable simulation steps. Recorded sample results remain available. This is an exploration site until a backend is connected.
 
-- `/api/v2/datasets` and every child route return 404, for reads and writes. These routes are also omitted from the API schema. Removing a UI button alone would not protect stored data.
-- No server-side datasets, imports or assessments are saved by the public demo. Temporary workspaces are submitted to the inference endpoint for processing.
-- One simulation can run at a time. Excess concurrent requests are rejected immediately rather than queued.
-- A rolling 60-second window admits at most 20 simulations and 60 total API writes. These are global per-process limits, not per-visitor allowances. The service returns 429, a retry message and `Retry-After` when busy; assets, samples and readiness stay available.
-- The existing 16 MiB JSON request limit, 5 MB browser CSV limit and 10,000-payment limit remain in effect.
+To enable the existing engine without changing its predictions:
 
-Run exactly one worker and one instance with these in-memory limits. Forwarding headers do not determine quota identity, and Uvicorn does not trust them. Multi-instance deployment needs a shared limiter. The current limits bound inference work; they are not a substitute for provider-level protection against network floods.
+1. Select and verify a separate **free** container host. Do not substitute a paid plan. The passing [Linux container check](https://github.com/Vortex-VK/RiskFlow/actions/runs/40398823801) used 1 CPU / 2 GB, peaked at approximately 557 MiB, and processed the 10,000-payment sample in about 11 seconds. A 512 MB service has not been demonstrated sufficient. Cold starts and the frontend's 30-second simulation timeout also matter.
+2. Deploy the root `Dockerfile`, port `8000`, one worker and one instance, with readiness path `/api/v1/health`. Keep `RISKFLOW_PUBLIC_DEMO=true` (the image default).
+3. Set the backend's `RISKFLOW_ALLOWED_ORIGINS` to the exact public Pages origin. Multiple explicitly authorized HTTPS origins can be comma-separated. Wildcards are rejected. This enables browser requests; it is not API authentication or an abuse-control boundary.
+4. Set production `VITE_API_ORIGIN` in Pages to the backend HTTPS origin, without a path, and rebuild. Leave preview builds disconnected unless their exact origins are explicitly authorized. The normal local app continues to use its existing same-origin API proxy.
+5. Verify a real sample and CSV simulation from the public Pages workspace, including health, preflight requests, errors, and the largest sample. Do not describe simulations as live until this succeeds.
 
-Do not disable public-demo mode on an anonymous public service. Local retained-history functionality uses shared SQLite without user authentication or ownership checks. Enabling it publicly requires authentication, per-user authorization and durable storage first.
+## Public-demo API behavior
+
+- Saved-dataset routes return 404 and are omitted from the API schema. Public workspaces are processed transiently; no server-side datasets or assessments are saved.
+- One simulation runs at a time. A rolling minute admits at most 20 simulations and 60 total API writes. These limits are global per process. Busy responses use 429 with `Retry-After`.
+- The existing 16 MiB JSON request, 5 MB browser CSV, and 10,000-payment limits remain unchanged.
+- Run one worker and one instance for these in-memory limits. Multiple instances require a shared limiter. Provider-level traffic protection is still separate.
+
+Do not disable public-demo mode on an anonymous public service: local retained-history functionality uses shared SQLite without user authentication or ownership checks.
 
 ## Verification
 
-The image runs as UID 10001, includes all hash-verified model components, and serves `/`, `/assets` and `/samples`. HTML and sample downloads revalidate; hashed assets cache for one year. API logging records request IDs, methods, status codes and durations, not request bodies.
+The **Cloudflare Pages build** GitHub workflow builds the static artifact, runs frontend unit checks, and verifies readable pages and backend-free import/sample journeys in Chromium. Its example sitemap origin is test-only and its artifact is not deployed. Cloudflare builds production using the account's configured origin.
 
-Docker is not installed in the development workspace. The GitHub Actions workflow provides Linux container verification; inspect its outcome rather than treating a successful local Python run as proof of container readiness. It runs with 1 CPU and a 2 GB memory limit and records container memory use, peak memory and logs.
+Locally, from `frontend` with Node on PATH:
+
+```sh
+npm ci
+npm run build:pages
+npx playwright test --config playwright.pages.config.ts
+```
+
+The separate **Public demo container** workflow still verifies the existing engine, HTTP boundaries, and real sample/import simulations on Linux. Docker is unavailable in the development workspace; local Python checks alone are not proof of container readiness. The image includes all required hash-verified inference components and runs as UID 10001. HTML and samples revalidate, hashed assets cache for a year, and API logs omit request bodies.
 
 With Docker available, from the repository root:
 
@@ -49,13 +70,7 @@ docker run --rm --name riskflow --cpus=1 --memory=2g -p 8000:8000 riskflow:publi
 # In another terminal:
 python scripts/verify_public_demo.py http://127.0.0.1:8000
 cd frontend
-npm ci
-npx playwright install chromium
 npx playwright test --config playwright.public.config.ts
 ```
 
-For local browser checks the config uses installed Chrome; set `CI=true` to use Playwright's bundled Chromium. `RISKFLOW_TEST_URL` can override the target URL. Tests issue real simulations; run them serially against an otherwise idle demo.
-
-For a local production-server check without Docker, build the frontend, set `PYTHONPATH=backend`, `RISKFLOW_FRONTEND_DIR` to the absolute `frontend/dist` path, and `RISKFLOW_PUBLIC_DEMO=true`, then start `python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --workers 1 --no-proxy-headers` using the backend environment. Run the same HTTP and browser checks against it.
-
-The frontend simulation timeout is 30 seconds. Container CI checks the largest sample against this budget, but hosted latency and concurrent traffic still need measurement at the actual service. The existing roughly 724 kB JavaScript bundle remains a known optimization opportunity.
+Local browser checks use installed Chrome; CI uses Playwright Chromium. `RISKFLOW_TEST_URL` can override the container test target. Actual hosting latency, resource limits, and cross-origin behavior must also be checked at the deployed URL.

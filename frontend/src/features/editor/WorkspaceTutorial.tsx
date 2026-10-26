@@ -5,6 +5,7 @@ import { useWorkspace } from "../../state/workspace";
 import { useSimulation } from "../../state/simulation";
 import type { Draft } from "./draft";
 import { useTutorialInteractions } from "./useTutorialInteractions";
+import { liveSimulationAvailable } from "../../api/endpoint";
 
 type Phase =
   | "prepare"
@@ -25,8 +26,7 @@ const sequence: Phase[] = [
   "merchant",
   "connect",
   "payment",
-  "simulate",
-  "results",
+  ...(liveSimulationAvailable ? (["simulate", "results"] as const) : []),
   "samples",
 ];
 type Bounds = { x: number; y: number; width: number; height: number };
@@ -268,7 +268,7 @@ export function WorkspaceTutorial({
     }
     const saved = scenario.payments.some((payment) => payment.id === paymentId);
     if (phase === "payment") {
-      if (saved) setPhase("simulate");
+      if (saved) setPhase(liveSimulationAvailable ? "simulate" : "samples");
       else if (!draft) setPhase("connect");
     }
     if (phase === "simulate" && !saved) setPhase("connect");

@@ -16,6 +16,8 @@ training_data
 **/.env
 **/.env.*
 frontend/dist
+frontend/dist-pages
+**/.wrangler
 frontend/test-results
 frontend/playwright-report
 docs

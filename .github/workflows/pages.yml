@@ -1,0 +1,39 @@
+name: Cloudflare Pages build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pages:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.22.0'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run lint && npm test
+      - run: npm run build:pages
+        env:
+          VITE_SITE_URL: https://riskflow.example
+      - run: npx playwright install --with-deps chromium
+      - run: npx playwright test --config playwright.pages.config.ts
+      - name: Save browser failure traces
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pages-browser
+          path: frontend/test-results/
+          retention-days: 7

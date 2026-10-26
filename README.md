@@ -57,9 +57,9 @@ The Dockerfile builds the frontend and packages the same API and weights. It ena
 
 ## Public hosting
 
-Hosting must stay free. The included `render.yaml` selects Render's `free` compute plan with no database or persistent disk; automatic redeployment is disabled. Do not upgrade to paid resources as a fallback.
+Hosting must stay free. The frontend targets **Cloudflare Pages** with `npm run build:pages` from `frontend`, output `dist-pages`. It includes readable public pages for search and the app at `/workspace/`. The previous Render configuration has been removed.
 
-The full app is **not yet verified on Render Free**. Its 512 MB RAM / 0.1 CPU allocation is below the resources used in our passing container check (1 CPU / 2 GB); the 10,000-payment test peaked at approximately 557 MiB. Free-tier memory, latency and cold starts need verification before deployment. See [deployment instructions](docs/deployment.md).
+Without a separately hosted Python backend, the public workspace supports graph editing, CSV import, and sample exploration; live simulation is disabled with an explanation. Recorded sample results remain readable. Set `VITE_API_ORIGIN` only after a free inference host is verified, and `VITE_SITE_URL` to the assigned public origin for canonical links and a sitemap. See [deployment instructions](docs/deployment.md) for exact Cloudflare settings, backend connection, checks, and resource requirements.
 
 ## Verification and maintenance
 

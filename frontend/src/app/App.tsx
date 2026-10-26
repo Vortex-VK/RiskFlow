@@ -6,6 +6,11 @@ import { ReactFlowProvider, useReactFlow } from "@xyflow/react";
 import type { components } from "../api/generated";
 import { getTemplate, getTemplates } from "../api/client";
 import {
+  liveSimulationAvailable,
+  pagesHosting,
+  simulationOfflineMessage,
+} from "../api/endpoint";
+import {
   addNode,
   blank,
   clone,
@@ -635,6 +640,14 @@ function Workspace() {
             {panel === "about" && (
               <section className="card about">
                 <h2>A space to explore risk.</h2>
+                {pagesHosting && (
+                  <p>
+                    <a href="/guide/" target="_blank" rel="noreferrer">
+                      Read the guide
+                    </a>{" "}
+                    · <a href="/">About RiskFlow</a>
+                  </p>
+                )}
                 <p>
                   Add objects, connect their context, and create payments.
                   Select anything to look closer.
@@ -810,6 +823,8 @@ function Workspace() {
           <div className="status" role="status" aria-live="polite">
             {simulation.error ||
               loadError ||
+              (!liveSimulationAvailable &&
+                (state.message || simulationOfflineMessage)) ||
               (simulation.pending
                 ? "Simulating your scenario…"
                 : stale
@@ -824,7 +839,14 @@ function Workspace() {
               <button
                 className="simulate"
                 disabled={
-                  simulation.pending || (simulationUnavailable && !state.dirty)
+                  !liveSimulationAvailable ||
+                  simulation.pending ||
+                  (simulationUnavailable && !state.dirty)
+                }
+                title={
+                  !liveSimulationAvailable
+                    ? simulationOfflineMessage
+                    : undefined
                 }
                 onClick={simulate}
               >
