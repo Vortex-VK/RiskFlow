@@ -109,7 +109,9 @@ export const useSimulation = create<SimulationState>((set, get) => ({
       if (!response.ok) {
         let message = `Simulation failed (${response.status}). Try again.`;
         if (
-          (response.status === 422 || response.status === 503) &&
+          (response.status === 422 ||
+            response.status === 429 ||
+            response.status === 503) &&
           data &&
           typeof data === "object" &&
           "error" in data

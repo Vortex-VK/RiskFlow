@@ -12,6 +12,7 @@ from starlette.responses import JSONResponse
 
 from app.api.boundary import RequestBoundary, RequestLog, error_response
 from app.api.frontend import mount_frontend
+from app.api.public_demo import PublicDemo
 from app.api.v2 import router as history_router
 from app.domain.engine import ENGINE_VERSION, simulate
 from app.domain.model_inputs import UnsupportedModelInput
@@ -31,6 +32,9 @@ app = FastAPI(
     responses={status: {"model": ErrorResponse} for status in (404, 413, 415, 422, 500)},
 )
 app.add_middleware(RequestBoundary)
+public_demo = os.environ.get("RISKFLOW_PUBLIC_DEMO", "false").lower() == "true"
+if public_demo:
+    app.add_middleware(PublicDemo)
 app.add_middleware(GZipMiddleware, minimum_size=1000, compresslevel=5)
 app.add_middleware(RequestLog)
 logger = logging.getLogger("riskflow.api")
@@ -164,7 +168,8 @@ def simulation(payload: ScenarioRequest, request: Request) -> RunResult | JSONRe
     )
 
 
-app.include_router(history_router)
+if not public_demo:
+    app.include_router(history_router)
 
 if frontend_directory := os.environ.get("RISKFLOW_FRONTEND_DIR"):
     mount_frontend(app, Path(frontend_directory).resolve())

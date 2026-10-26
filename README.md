@@ -53,7 +53,13 @@ API documentation is at `http://127.0.0.1:8000/docs`. Health reports `engine-ml-
 
 All inference weights are included in `backend/model_artifacts/`. Training datasets and experiment caches are unnecessary for serving, building or testing the app. Several versioned bundles are internal components of the installed engine; their immutable names and hashes are part of the model contract. [Component map](backend/model_artifacts/README.md).
 
-The Dockerfile builds the frontend and packages the same API and weights. Docker execution has not been verified locally.
+The Dockerfile builds the frontend and packages the same API and weights. It enables public-demo mode: temporary CSV workspaces and simulations remain available, saved-dataset endpoints are disabled, and inference requests are bounded. Local development keeps retained-data support. See [deployment instructions](docs/deployment.md) for verification and limits.
+
+## Public hosting
+
+[Deploy RiskFlow to Render](https://render.com/deploy?repo=https://github.com/Vortex-VK/RiskFlow)
+
+The included `render.yaml` configures one Docker web service with 1 CPU / 2 GB RAM and no database or persistent disk. This is a paid compute plan; review the current price in Render before creating it. Automatic redeployment is disabled. Deploy a commit only after its **Public demo container** GitHub Actions check succeeds.
 
 ## Verification and maintenance
 

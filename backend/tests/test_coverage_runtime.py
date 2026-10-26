@@ -24,14 +24,15 @@ from ml.sample_inputs import payments
     ],
 )
 def test_packaged_coverage_matches_every_frozen_sample_decision(name):
+    receipts = json.loads((ROOT / "fixtures/model/coverage-samples.json").read_text())
+    assert receipts["bundle_sha256"] == MANIFEST_SHA256
+    receipt = receipts["samples"][name]
+    assert digest(ROOT / f"frontend/public/samples/ibm/{name}.csv") == receipt["sha256"]
     rows = pd.read_csv(
         ROOT / f"frontend/public/samples/ibm/{name}.csv", dtype=str, keep_default_na=False
     ).to_dict("records")
     frame = feature_frame(payments(rows))
     scores, paths = runtime().predict(frame)
-    receipt = json.loads((ROOT / "fixtures/model/coverage-samples.json").read_text())["samples"][
-        name
-    ]
     assert len(frame) == receipt["rows"]
     np.testing.assert_array_equal(paths["alert"], frame.id.isin(receipt["alert_ids"]))
     assert set(scores) == {

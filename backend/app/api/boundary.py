@@ -69,8 +69,7 @@ class RequestBoundary:
         if scope["type"] != "http":
             await self.app(scope, receive, send)
             return
-        request_id = str(uuid4())
-        scope.setdefault("state", {})["request_id"] = request_id
+        request_id = scope.setdefault("state", {}).setdefault("request_id", str(uuid4()))
         if scope["method"] not in {"POST", "PUT", "PATCH"}:
             await self.app(scope, receive, send)
             return

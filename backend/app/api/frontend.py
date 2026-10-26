@@ -14,11 +14,20 @@ class HashedAssets(StaticFiles):
         return response
 
 
+class Samples(StaticFiles):
+    async def get_response(self, path: str, scope: Scope) -> Response:
+        response = await super().get_response(path, scope)
+        response.headers["Cache-Control"] = "no-cache"
+        return response
+
+
 def mount_frontend(app: FastAPI, directory: Path) -> None:
     index = directory / "index.html"
     if not index.is_file():
         raise RuntimeError("Build the frontend before enabling production asset serving.")
     app.mount("/assets", HashedAssets(directory=directory / "assets"), name="assets")
+    if (directory / "samples").is_dir():
+        app.mount("/samples", Samples(directory=directory / "samples"), name="samples")
 
     @app.get("/", include_in_schema=False)
     def home() -> FileResponse:

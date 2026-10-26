@@ -13,6 +13,8 @@ def test_single_service_serves_assets_without_swallowing_api_or_unknown_paths(
     (tmp_path / "assets").mkdir()
     (tmp_path / "index.html").write_text("<html>RiskFlow</html>")
     (tmp_path / "assets" / "app.js").write_text("document.title = 'RiskFlow';")
+    (tmp_path / "samples").mkdir()
+    (tmp_path / "samples" / "example.csv").write_bytes(b"id,amount\n1,20\n")
     application = FastAPI()
 
     @application.get("/api/v1/health")
@@ -28,11 +30,16 @@ def test_single_service_serves_assets_without_swallowing_api_or_unknown_paths(
             "public, max-age=31536000, immutable"
         )
         assert client.get("/api/v1/health").json() == {"status": "ok"}
+        sample = client.get("/samples/example.csv")
+        assert sample.content == b"id,amount\n1,20\n"
+        assert sample.headers["cache-control"] == "no-cache"
         for path in (
             "/api/v1/missing",
             "/missing",
             "/assets/missing.js",
             "/assets/%2e%2e/index.html",
+            "/samples/%2e%2e/index.html",
+            "/samples/missing.csv",
         ):
             assert client.get(path).status_code == 404
 

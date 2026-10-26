@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: riskflow
+    runtime: docker
+    plan: 1c-2g
+    numInstances: 1
+    branch: main
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/v1/health
+    autoDeployTrigger: off
+    envVars:
+      - key: RISKFLOW_PUBLIC_DEMO
+        value: "true"
+      - key: PORT
+        value: "8000"

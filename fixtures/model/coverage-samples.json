@@ -1,33 +1,41 @@
 {
-  "source": "upload-v7/sample-*.parquet",
+  "source": "frontend/public/samples/ibm/*.csv",
   "samples": {
     "first-five": {
       "rows": 5,
-      "alert_ids": []
+      "alert_ids": [
+        "CSV_006"
+      ],
+      "sha256": "4e09c19d5b5777107139ff8fc09c38104b227e1ad1aad4bfc04988ee9b554576"
     },
     "short-history": {
       "rows": 50,
       "alert_ids": [
-        "CSV_043",
-        "CSV_045",
-        "CSV_046",
+        "CSV_012",
+        "CSV_042",
+        "CSV_044",
         "CSV_051"
-      ]
+      ],
+      "sha256": "1cc75d210f4d01a08943b9ebd01b925d303409b74c3293ff33dd71f5681f4af8"
     },
     "online-episode": {
       "rows": 250,
       "alert_ids": [
-        "CSV_008",
-        "CSV_064",
-        "CSV_081",
+        "CSV_002",
+        "CSV_003",
+        "CSV_005",
+        "CSV_134",
+        "CSV_135",
+        "CSV_140",
+        "CSV_142",
+        "CSV_214",
+        "CSV_216",
         "CSV_217",
-        "CSV_218",
-        "CSV_219",
-        "CSV_220",
-        "CSV_221",
-        "CSV_222",
-        "CSV_246"
-      ]
+        "CSV_223",
+        "CSV_225",
+        "CSV_234"
+      ],
+      "sha256": "1ae2e5dfe4f8d28bf7ccbea2e83018acc52d8443d0e42508b29a594ceb1b0caa"
     },
     "mixed-channels": {
       "rows": 1000,
@@ -51,7 +59,8 @@
         "CSV_698",
         "CSV_701",
         "CSV_705"
-      ]
+      ],
+      "sha256": "0700af3e81a0b73e621afae7bea8f88a63f98fbe153171a205927a7095709528"
     },
     "many-accounts": {
       "rows": 5000,
@@ -154,7 +163,8 @@
         "CSV_4799",
         "CSV_4877",
         "CSV_4987"
-      ]
+      ],
+      "sha256": "b3c8e12ad22448b52276fca84fdf91f7c122ae89a5e41b2e1f46efeb358d5d3a"
     },
     "full-workspace": {
       "rows": 10000,
@@ -267,7 +277,9 @@
         "CSV_9799",
         "CSV_9877",
         "CSV_9987"
-      ]
+      ],
+      "sha256": "ebfeff8280d341577e6b88d97b104b1bc8762704c21570dd519b5fc785a9e7a3"
     }
-  }
+  },
+  "bundle_sha256": "a4374bd76f8a67012f9ea5ae1ec4a87c51ae0f8c9b3db04080f5c2f73ee2bcfd"
 }

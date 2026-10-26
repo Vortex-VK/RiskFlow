@@ -1,0 +1,50 @@
+name: Public demo container
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  container:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.22.0'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Build production image
+        run: docker build -t riskflow:ci .
+      - name: Start public demo with hosting resource limits
+        run: docker run -d --name riskflow --cpus=1 --memory=2g -p 8000:8000 riskflow:ci
+      - name: Verify production HTTP and engine
+        run: python3 scripts/verify_public_demo.py
+      - name: Install browser checks
+        working-directory: frontend
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+      - name: Verify sample and import in a browser
+        working-directory: frontend
+        run: npx playwright test --config playwright.public.config.ts
+      - name: Record container resources and logs
+        if: always()
+        run: |
+          docker stats --no-stream riskflow || true
+          docker exec riskflow cat /sys/fs/cgroup/memory.peak || true
+          docker logs riskflow || true
+          docker inspect riskflow --format '{{json .State}}' || true
+      - name: Save browser failure traces
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-demo-browser
+          path: frontend/test-results/
+          retention-days: 7
