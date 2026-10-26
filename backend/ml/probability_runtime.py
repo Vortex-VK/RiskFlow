@@ -35,9 +35,13 @@ class Runtime:
                     raise ValueError("Supported monotone probability mapping required")
                 if not all(math.isfinite(mapping[k]) for k in ("slope", "intercept", "raw_cutoff")):
                     raise ValueError("Finite probability parameters required")
-                if (
-                    float(predict(mapping, [mapping["raw_cutoff"]])[0])
-                    != mapping["reference_probability"]
+                # libm/NumPy may differ in the final floating-point bits across OSes.
+                # Artifact bytes and learned parameters remain strictly hash-checked.
+                if not math.isclose(
+                    float(predict(mapping, [mapping["raw_cutoff"]])[0]),
+                    mapping["reference_probability"],
+                    rel_tol=1e-14,
+                    abs_tol=1e-15,
                 ):
                     raise ValueError("Reference probability mismatch")
         except Exception as exc:

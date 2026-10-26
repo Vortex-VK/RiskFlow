@@ -50,3 +50,18 @@ def test_probability_mapping_math():
     np.testing.assert_allclose(
         predict({"method": "isotonic", "x": [0, 1], "y": [0.1, 0.9]}, [-1, 0.5, 2]), [0.1, 0.5, 0.9]
     )
+
+
+def test_reference_check_accepts_roundoff_but_rejects_changed_predictions(monkeypatch):
+    monkeypatch.setattr(
+        "ml.probability_runtime.predict",
+        lambda mapping, values: np.nextafter(predict(mapping, values), np.inf),
+    )
+    Runtime()
+    for difference in (1e-10, math.nan, math.inf):
+        monkeypatch.setattr(
+            "ml.probability_runtime.predict",
+            lambda mapping, values, delta=difference: predict(mapping, values) + delta,
+        )
+        with pytest.raises(ModelUnavailable):
+            Runtime()

@@ -22,6 +22,9 @@ jobs:
           cache-dependency-path: frontend/package-lock.json
       - name: Build production image
         run: docker build -t riskflow:ci .
+      - name: Verify model loading and record cross-platform rounding
+        run: |
+          docker run --rm riskflow:ci python -c 'from ml.probability_runtime import runtime; from ml.probability_math import predict; r = runtime(); print({name: float(predict(m, [m["raw_cutoff"]])[0]) - m["reference_probability"] for name, m in r.manifest["sources"].items()})'
       - name: Start public demo with hosting resource limits
         run: docker run -d --name riskflow --cpus=1 --memory=2g -p 8000:8000 riskflow:ci
       - name: Verify production HTTP and engine

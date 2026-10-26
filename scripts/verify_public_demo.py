@@ -3,6 +3,7 @@
 import gzip
 import hashlib
 import json
+import math
 import re
 import sys
 import time
@@ -33,6 +34,22 @@ def missing(path, payload=None):
         assert error.code == 404, (path, error.code)
     else:
         raise AssertionError(f"Expected 404: {path}")
+
+
+def same_prediction(actual, expected):
+    """Keep decisions exact; tolerate only numerical roundoff across OSes."""
+    if isinstance(expected, float):
+        assert math.isclose(actual, expected, rel_tol=1e-12, abs_tol=1e-12), (actual, expected)
+    elif isinstance(expected, dict):
+        assert actual.keys() == expected.keys()
+        for key in expected:
+            same_prediction(actual[key], expected[key])
+    elif isinstance(expected, list):
+        assert len(actual) == len(expected)
+        for left, right in zip(actual, expected, strict=True):
+            same_prediction(left, right)
+    else:
+        assert actual == expected, (actual, expected)
 
 
 def main():
@@ -83,8 +100,8 @@ def main():
             expected = json.loads(
                 (ROOT / "fixtures/runtime/shared-device-cluster-upload-v9.json").read_text()
             )
-            assert result["events"] == expected["events"]
-            assert result["metrics"] == expected["metrics"]
+            same_prediction(result["events"], expected["events"])
+            same_prediction(result["metrics"], expected["metrics"])
         print(f"{template['id']}: {time.monotonic() - started:.2f}s", flush=True)
 
     schema, _ = request("/openapi.json")
