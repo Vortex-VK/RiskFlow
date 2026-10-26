@@ -2,7 +2,8 @@ services:
   - type: web
     name: riskflow
     runtime: docker
-    plan: 1c-2g
+    # Free hosting only. The full 10,000-payment workload is not verified at this size.
+    plan: free
     numInstances: 1
     branch: main
     dockerfilePath: ./Dockerfile

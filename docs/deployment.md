@@ -2,14 +2,22 @@
 
 RiskFlow serves the React build and Python inference API from one Docker service. The public demo keeps CSV imports and simulations transient. No external model API or model key is required; all inference bundles ship in the image.
 
-## Render
+## Free hosting constraint
 
-1. Check that the target commit's **Public demo container** GitHub Actions run passed. It builds the Linux image, tests the HTTP API and model predictions, checks every sample download, and exercises sample loading, CSV import and the 10,000-payment sample in Chromium.
-2. Open [Deploy to Render](https://render.com/deploy?repo=https://github.com/Vortex-VK/RiskFlow), select your Render workspace, and review the proposed service and its price before creating it.
-3. `render.yaml` specifies Docker, port 8000, `/api/v1/health` readiness, public-demo mode, and one `1c-2g` instance (1 CPU / 2 GB). No disk or database is provisioned. The plan is a starting configuration; measure real hosted latency and memory before reducing its resources.
+Hosting must stay free. No paid service has been provisioned. Do not substitute paid resources if a free deployment fails. The Render template selects `plan: free`; it is preparation, not evidence that the full app fits that plan.
+
+Render Free currently provides 512 MB RAM and 0.1 CPU. Our successful [Linux container check](https://github.com/Vortex-VK/RiskFlow/actions/runs/40398823801) used 1 CPU / 2 GB, with peak memory of 584,212,480 bytes (about 557 MiB) and an approximately 11-second request for 10,000 payments. That workload exceeds the free memory budget, and the much smaller CPU allowance may exceed the frontend's 30-second simulation timeout. Verify or improve those limits before launching the full demo on Render Free; do not silently remove samples or lower upload limits.
+
+Free web services sleep after 15 idle minutes and can take about a minute to wake. Monthly usage limits also apply. Without a payment method, Render suspends free services or builds when applicable usage allowances are exhausted instead of billing overages. Keep the account on free resources and review usage settings. Sources: [compute allocations](https://render.com/docs/compute-plans), [free-tier limits](https://render.com/docs/free).
+
+## Render setup (after free-tier verification)
+
+1. Check that the target commit's **Public demo container** GitHub Actions run passed, and separately verify the workload under free-tier resource limits. The existing workflow tests the image and functionality with 1 CPU / 2 GB; a green result alone does not verify Render Free compatibility.
+2. Open [Deploy to Render](https://render.com/deploy?repo=https://github.com/Vortex-VK/RiskFlow), select your Render workspace, and confirm the service uses the Free compute plan.
+3. `render.yaml` specifies Docker, port 8000, `/api/v1/health` readiness, public-demo mode, and one free instance. No disk or database is provisioned.
 4. Wait for health, then repeat the sample/import/simulate journey at the assigned HTTPS URL. A custom domain is optional. Record the deployed Git commit and the URL.
 
-The Render account connection and plan purchase belong to the account owner. Preparing this repository does not provision hosting or incur a Render charge. Automatic deployment is off, so a push alone does not change a running public site. To update, deploy a verified commit manually. Roll back to the preceding verified deploy in Render if readiness or core journeys fail.
+Preparing this repository does not provision hosting or incur a Render charge. Automatic deployment is off, so a push alone does not change a running public site. To update, deploy a verified commit manually. Roll back to the preceding verified deploy in Render if readiness or core journeys fail.
 
 Provider references: [Docker services](https://render.com/docs/docker), [Blueprint settings](https://render.com/docs/blueprint-spec), [pricing](https://render.com/pricing).
 

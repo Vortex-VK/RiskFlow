@@ -57,9 +57,9 @@ The Dockerfile builds the frontend and packages the same API and weights. It ena
 
 ## Public hosting
 
-[Deploy RiskFlow to Render](https://render.com/deploy?repo=https://github.com/Vortex-VK/RiskFlow)
+Hosting must stay free. The included `render.yaml` selects Render's `free` compute plan with no database or persistent disk; automatic redeployment is disabled. Do not upgrade to paid resources as a fallback.
 
-The included `render.yaml` configures one Docker web service with 1 CPU / 2 GB RAM and no database or persistent disk. This is a paid compute plan; review the current price in Render before creating it. Automatic redeployment is disabled. Deploy a commit only after its **Public demo container** GitHub Actions check succeeds.
+The full app is **not yet verified on Render Free**. Its 512 MB RAM / 0.1 CPU allocation is below the resources used in our passing container check (1 CPU / 2 GB); the 10,000-payment test peaked at approximately 557 MiB. Free-tier memory, latency and cold starts need verification before deployment. See [deployment instructions](docs/deployment.md).
 
 ## Verification and maintenance
 
