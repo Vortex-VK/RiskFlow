@@ -73,7 +73,7 @@ export function Replay({
     [captured],
   );
   const run = captured.result;
-  const [threshold, setThreshold] = useState<number | null>(null);
+  const [threshold, setThreshold] = useState(90);
   const probabilityScores = useMemo(
     () =>
       run.events.flatMap((e) =>
@@ -323,9 +323,9 @@ export function Replay({
               : " - drag to rearrange"}
           </small>
         </div>
-        <div className="top-actions">
+        <div className="top-actions" data-mode-transition={overviewMotion}>
           <button
-            className="primary samples-button"
+            className={`samples-button${overviewMotion === "exiting" ? " primary" : ""}`}
             data-tour="samples"
             aria-haspopup="dialog"
             onClick={() => {
@@ -347,6 +347,7 @@ export function Replay({
             Inspect payments
           </button>
           <button
+            className={`results-button${overviewMotion !== "exiting" ? " primary" : ""}`}
             data-tour="results"
             aria-expanded={panel === "results"}
             onClick={() => {
@@ -396,11 +397,7 @@ export function Replay({
           </button>
         </div>
         {!!probabilityScores.length && (
-          <ProbabilityThreshold
-            scores={probabilityScores}
-            threshold={threshold}
-            onChange={setThreshold}
-          />
+          <ProbabilityThreshold threshold={threshold} onChange={setThreshold} />
         )}
       </section>
       {panel === "events" && (
@@ -723,7 +720,14 @@ export function Replay({
           >
             {(e) => (
               <button
-                className="wide"
+                className="wide payment-review-choice"
+                data-review-state={
+                  needsReview(e, threshold)
+                    ? "review"
+                    : outcome(e) === "no alert"
+                      ? "no-alert"
+                      : "pending"
+                }
                 key={e.eventId}
                 onClick={() => inspectPayment(e.sequenceIndex)}
               >

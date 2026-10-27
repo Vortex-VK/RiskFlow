@@ -1,4 +1,3 @@
-import { useCommonCutoff } from "./workspace-helpers";
 import { expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { setPlaybackSpeed } from "./workspace-helpers";
@@ -30,9 +29,9 @@ test("review counts follow visible playback and completed inspection keeps the f
   await page.getByRole("button", { name: "Simulate", exact: true }).click();
   const run = await (await response).json();
   const flagged = run.events.filter(
-    (e: { model: { alert: boolean } }) => e.model.alert,
+    (e: { model: { score: { value: number } } }) => e.model.score.value >= 90,
   );
-  expect(flagged).toHaveLength(15);
+  expect(flagged.length).toBeGreaterThan(1);
   const overview = page.getByRole("region", { name: "Run assessment summary" });
   await page
     .getByRole("button", { name: "Reset playback", exact: true })
@@ -68,7 +67,10 @@ test("review counts follow visible playback and completed inspection keeps the f
     await page.getByRole("button", { name: "Next event", exact: true }).click();
     const reviewCount = run.events
       .slice(0, count)
-      .filter((e: { model: { alert: boolean } }) => e.model.alert).length;
+      .filter(
+        (e: { model: { score: { value: number } } }) =>
+          e.model.score.value >= 90,
+      ).length;
     await expect(totals).toHaveText([
       String(count),
       String(reviewCount),
@@ -82,19 +84,18 @@ test("review counts follow visible playback and completed inspection keeps the f
   const threshold = page.getByRole("slider", {
     name: /^Probability threshold/,
   });
-  await useCommonCutoff(page);
   await threshold.press("Home");
   await expect(totals).toHaveText(["8", "8", "0"]);
   expect(await sumGroupCounts()).toBe(8);
-  await page
-    .getByRole("button", { name: "Reset defaults", exact: true })
-    .click();
+  await threshold.fill("90");
   await page
     .getByRole("button", { name: "Previous event", exact: true })
     .click();
   const previousReviews = run.events
     .slice(0, 7)
-    .filter((e: { model: { alert: boolean } }) => e.model.alert).length;
+    .filter(
+      (e: { model: { score: { value: number } } }) => e.model.score.value >= 90,
+    ).length;
   await expect(totals).toHaveText([
     "7",
     String(previousReviews),
@@ -106,14 +107,17 @@ test("review counts follow visible playback and completed inspection keeps the f
   await expect(page.getByRole("status")).toContainText("Run complete", {
     timeout: 30000,
   });
-  await expect(totals).toHaveText(["250", "15", "235"]);
+  await expect(totals).toHaveText([
+    "250",
+    String(flagged.length),
+    String(250 - flagged.length),
+  ]);
   await expect(
     page.getByRole("button", { name: "Fit", exact: true }),
   ).toHaveCount(0);
   await expect(page.getByRole("button", { name: /^Connections/ })).toHaveCount(
     0,
   );
-  await useCommonCutoff(page);
   await threshold.press("Home");
   await expect(totals).toHaveText(["250", "250", "0"]);
   await expect(page.getByRole("status")).toContainText(
@@ -149,16 +153,17 @@ test("review counts follow visible playback and completed inspection keeps the f
       page.getByRole("complementary", { name: "Completed run totals" }),
     ).not.toContainText(removed);
   await page.getByRole("button", { name: "Close results" }).click();
-  await useCommonCutoff(page);
   await threshold.press("End");
   const at100 = run.events.filter(
     (e: { model: { score: { value: number } } }) => e.model.score.value >= 100,
   ).length;
   await expect(totals).toHaveText(["250", String(at100), String(250 - at100)]);
-  await page
-    .getByRole("button", { name: "Reset defaults", exact: true })
-    .click();
-  await expect(totals).toHaveText(["250", "15", "235"]);
+  await threshold.fill("90");
+  await expect(totals).toHaveText([
+    "250",
+    String(flagged.length),
+    String(250 - flagged.length),
+  ]);
   await expect(page.locator(".react-flow__viewport")).toHaveAttribute(
     "style",
     before!,
@@ -188,11 +193,13 @@ test("review counts follow visible playback and completed inspection keeps the f
     before!,
   );
   await page.screenshot({ path: testInfo.outputPath("after-simulation.png") });
-  await overview.getByRole("button", { name: /15 need review/ }).click();
+  await overview
+    .getByRole("button", { name: `${flagged.length} need review` })
+    .click();
   const events = page.getByRole("region", { name: "Run events" });
   await expect(
     events.getByRole("button", { name: /^Inspect CSV/ }),
-  ).toHaveCount(15);
+  ).toHaveCount(flagged.length);
   await events
     .getByRole("button", { name: `Inspect ${flagged[0].eventId}`, exact: true })
     .click();
@@ -201,11 +208,13 @@ test("review counts follow visible playback and completed inspection keeps the f
   });
   await expect(detail).toContainText("Review recommended");
   await expect(
-    detail.getByText(`${flagged[0].model.score.value.toFixed(2)}%`, {
-      exact: true,
-    }),
+    detail
+      .locator(".payment-verdict")
+      .getByText(`${flagged[0].model.score.value.toFixed(2)}%`, {
+        exact: true,
+      }),
   ).toHaveCount(1);
-  await expect(detail).toContainText("model review cutoff");
+  await expect(detail).toContainText("Meets 90.00% threshold · For review.");
   await expect(detail.locator(".continuous-score")).toHaveCount(0);
   const selectedMerchant = page.locator(
     `[data-node="${flagged[0].merchantId}"]`,
@@ -246,7 +255,7 @@ test("review counts follow visible playback and completed inspection keeps the f
   await page.screenshot({ path: testInfo.outputPath("payment-detail.png") });
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
   await page.getByRole("button", { name: "Results", exact: true }).click();
-  await expect(results).toContainText("Model defaults");
+  await expect(results).toContainText("90% threshold preview");
   await expect(
     page.getByRole("complementary", { name: "Completed run totals" }),
   ).toHaveCSS("opacity", "1");

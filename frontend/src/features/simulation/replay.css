@@ -1,3 +1,27 @@
+.replay .top-actions :is(.samples-button, .results-button) {
+  transition:
+    background-color var(--panel-duration) var(--panel-easing),
+    border-color var(--panel-duration) var(--panel-easing),
+    color var(--panel-duration) var(--panel-easing);
+}
+.replay
+  .top-actions[data-mode-transition="exiting"]
+  :is(.samples-button, .results-button) {
+  transition-duration: min(280ms, var(--panel-duration));
+}
+@starting-style {
+  .replay .top-actions .samples-button {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--canvas);
+  }
+  .replay .top-actions .results-button {
+    background-color: var(--surface);
+    border-color: var(--line);
+    color: var(--text);
+  }
+}
+
 .run-overview {
   position: absolute;
   z-index: 5;
@@ -118,20 +142,6 @@ html[data-motion="off"] .run-overview {
   gap: 16px;
   font-size: 12px;
 }
-.threshold-defaults {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 4px 16px;
-  min-height: 22px;
-  margin: 4px 0;
-  font-size: 12px;
-}
-.threshold-defaults b {
-  color: var(--text);
-  font-size: inherit;
-  font-variant-numeric: tabular-nums;
-}
 .threshold-control .threshold-value {
   color: var(--transaction-review);
 }
@@ -181,20 +191,6 @@ html[data-motion="off"] .run-overview {
   border-radius: 50%;
   background: var(--text);
   box-shadow: 0 0 0 1px var(--muted);
-}
-.threshold-caption {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-}
-.threshold-caption span {
-  font-size: 10px;
-  white-space: normal;
-}
-.threshold-caption button {
-  padding: 3px 6px;
-  font-size: 10px;
 }
 .dataset-results .result-scope {
   font-size: 12px;

@@ -220,7 +220,7 @@ export function PaymentEvidence({
         <h3>Review decision</h3>
         <p>
           {score?.probabilityAvailable && cutoff !== undefined
-            ? `${review ? "At or above" : "Below"} the ${cutoff.toFixed(2)}% ${threshold === null ? "model review cutoff" : "preview threshold"}. ${review ? "Queued for review." : "No alert."}`
+            ? `${review ? "Meets" : "Below"} ${cutoff.toFixed(2)}% threshold · ${review ? "For review." : "No alert."}`
             : model.alert
               ? "The model’s fixed alert policy sent this payment for review."
               : "The model’s fixed alert policy did not flag this payment."}

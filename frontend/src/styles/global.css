@@ -122,6 +122,43 @@ button.primary {
   color: var(--canvas);
   border-color: var(--accent);
 }
+button.payment-review-choice[data-review-state="review"] {
+  --payment-choice-color: var(--transaction-review);
+}
+button.payment-review-choice[data-review-state="no-alert"] {
+  --payment-choice-color: var(--accent);
+}
+button.payment-review-choice:is(
+    [data-review-state="review"],
+    [data-review-state="no-alert"]
+  ) {
+  color: var(--payment-choice-color);
+  border-color: color-mix(
+    in srgb,
+    var(--payment-choice-color) 55%,
+    var(--line)
+  );
+  background: color-mix(
+    in srgb,
+    var(--payment-choice-color) 9%,
+    var(--surface)
+  );
+}
+button.payment-review-choice:is(
+    [data-review-state="review"],
+    [data-review-state="no-alert"]
+  ):hover {
+  border-color: var(--payment-choice-color);
+  background: color-mix(
+    in srgb,
+    var(--payment-choice-color) 16%,
+    var(--surface)
+  );
+}
+button.payment-review-choice[data-review-state="no-alert"]
+  .connection-payment-status {
+  color: var(--payment-choice-color);
+}
 .workspace {
   position: relative;
   height: 100dvh;

@@ -45,14 +45,15 @@ test("CSV preparation starts before Simulate and its result powers playback and 
     .click();
   await expect(overview.locator("strong")).toHaveText(["0", "0", "0"]);
   await page.getByRole("button", { name: "Next event", exact: true }).click();
-  const reviews = Number(run.events[0].model.alert);
+  const reviews = Number(run.events[0].model.score.value >= 90);
   await expect(overview.locator("strong")).toHaveText([
     "1",
     String(reviews),
     String(1 - reviews),
   ]);
   const flagged = run.events.find(
-    (event: { model: { alert: boolean } }) => event.model.alert,
+    (event: { model: { score: { value: number } } }) =>
+      event.model.score.value >= 90,
   );
   await page.getByRole("button", { name: "Flagged only", exact: true }).click();
   await page
@@ -86,12 +87,17 @@ test("CSV preparation starts before Simulate and its result powers playback and 
   await expect(results).not.toContainText("334,777");
   await expect(results).not.toContainText("97.72%");
   await expect(results).not.toContainText("Overall model evaluation");
-  await expect(results.locator(".result-detection strong")).toHaveText([
-    "83",
-    "30",
-    "0",
-    "4887",
-  ]);
+  const outcomes = [0, 0, 0, 0];
+  for (const event of run.events) {
+    const label = run.scenarioSnapshot.groundTruth[event.eventId];
+    if (!label) continue;
+    const flagged = event.model.score.value >= 90;
+    const index = label === "fraudulent" ? (flagged ? 0 : 1) : flagged ? 2 : 3;
+    outcomes[index]!++;
+  }
+  await expect(results.locator(".result-detection strong")).toHaveText(
+    outcomes.map(String),
+  );
   await page.getByRole("button", { name: "Samples", exact: true }).click();
   const samples = page.getByRole("dialog", { name: "Start with a sample." });
   await samples.getByText("Overall model evaluation", { exact: true }).click();

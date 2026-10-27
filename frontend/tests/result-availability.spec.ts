@@ -1,4 +1,3 @@
-import { useCommonCutoff } from "./workspace-helpers";
 import { expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { readFileSync } from "node:fs";
@@ -65,7 +64,8 @@ for (const [name, labels] of [
       results.getByRole("region", { name: "Probability distribution" }),
     ).toBeVisible();
     const flagged = run.events.filter(
-      (event: { model: { alert: boolean } }) => event.model.alert,
+      (event: { model: { score: { value: number } } }) =>
+        event.model.score.value >= 90,
     ).length;
     await expect(
       results.getByRole("button", {
@@ -127,22 +127,12 @@ test("insight links follow the threshold without advancing playback", async ({
   const threshold = page.getByRole("slider", {
     name: /^Probability threshold/,
   });
-  await expect(threshold).toHaveCount(0);
-  for (const cutoff of new Set(
-    run.events.map((e) => e.model!.score!.referenceValue),
-  ))
-    await expect(overview.locator(".threshold-defaults")).toContainText(
-      `${cutoff.toFixed(2)}%`,
-    );
-  await useCommonCutoff(page);
-  await expect(threshold).toHaveValue(
-    (
-      Math.ceil(
-        Math.max(...run.events.map((e) => e.model!.score!.referenceValue)) *
-          100,
-      ) / 100
-    ).toFixed(2),
-  );
+  await expect(threshold).toBeVisible();
+  await expect(threshold).toHaveValue("90");
+  await expect(overview.locator(".threshold-defaults")).toHaveCount(0);
+  await expect(
+    overview.getByRole("button", { name: "Reset defaults" }),
+  ).toHaveCount(0);
   await threshold.press("Home");
   await page.getByRole("button", { name: "Results", exact: true }).click();
   const concentration = page.getByRole("region", {
@@ -170,11 +160,9 @@ test("insight links follow the threshold without advancing playback", async ({
     await expect(
       queue.getByRole("button", { name: `Inspect ${e.eventId}`, exact: true }),
     ).toBeVisible();
-  await useCommonCutoff(page);
   await threshold.press("End");
   const at100 = largest.filter((e) => e.model!.score!.value >= 100).length;
   await expect(queue).toContainText(`${at100} matching flagged payments`);
-  await useCommonCutoff(page);
   await threshold.press("Home");
   await expect(queue).toContainText(
     `${largest.length} matching flagged payments`,
@@ -217,7 +205,7 @@ test("insight links follow the threshold without advancing playback", async ({
     queue.getByRole("heading", { name: "Payments for review", exact: true }),
   ).toBeVisible();
   await expect(overview.locator("strong")).toHaveText(["0", "0", "0"]);
-  const lowRisk = run.events.find((e) => !e.model!.alert)!;
+  const lowRisk = run.events.find((e) => e.model!.score!.value < 90)!;
   expect(lowRisk).toBeTruthy();
   const explanation = page.waitForResponse((r) =>
     r.url().endsWith("/api/v1/explanations"),
@@ -229,9 +217,7 @@ test("insight links follow the threshold without advancing playback", async ({
   const detail = page.getByRole("complementary", {
     name: "Payment explanation",
   });
-  await page
-    .getByRole("button", { name: "Reset defaults", exact: true })
-    .click();
+  await threshold.fill("90");
   await expect(
     detail.getByRole("region", { name: "Review decision" }),
   ).toContainText("No alert.");
@@ -337,13 +323,11 @@ test("insight links follow the threshold without advancing playback", async ({
     if (request.url().endsWith("/api/v1/explanations"))
       additionalExplanations++;
   });
-  await useCommonCutoff(page);
   await threshold.press("Home");
   await expect(detail.locator(".probability-final")).toHaveClass(/raises-risk/);
   await expect(detail.locator(".probability-final")).toContainText(
     "above the preview threshold",
   );
-  await useCommonCutoff(page);
   await threshold.press("End");
   await expect(detail.locator(".probability-final")).toHaveClass(/lowers-risk/);
   await expect(detail.locator(".probability-final")).toContainText(
@@ -362,9 +346,7 @@ test("insight links follow the threshold without advancing playback", async ({
       .textContent(),
   ).toBe(estimateBefore);
   expect(additionalExplanations).toBe(0);
-  await page
-    .getByRole("button", { name: "Reset defaults", exact: true })
-    .click();
+  await threshold.fill("90");
   await chart.scrollIntoViewIfNeeded();
   await expect(detail).toHaveCSS("opacity", "1");
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);

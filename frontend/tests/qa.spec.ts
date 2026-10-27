@@ -196,7 +196,7 @@ for (const templateId of [
         name: "Payment explanation",
       });
       await expect(panel.locator(".decision")).toContainText(
-        `${event.model.alert ? "review" : "no alert"}`,
+        `${event.model.score!.value >= 90 ? "review" : "no alert"}`,
       );
       if (event === expected.events[expected.events.length - 1]) {
         await expandDetails(panel);

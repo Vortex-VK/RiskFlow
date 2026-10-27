@@ -36,7 +36,10 @@ function RelatedPayments({
           .map(({ payment: p, assessed, flagged }) => (
             <li key={p.id}>
               <button
-                className="connection-payment"
+                className="connection-payment payment-review-choice"
+                data-review-state={
+                  flagged ? "review" : assessed ? "no-alert" : "pending"
+                }
                 disabled={!inspect}
                 onClick={() => inspect?.(p.id)}
                 title={`Inspect payment ${p.id}`}
