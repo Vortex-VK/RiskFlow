@@ -14,7 +14,7 @@
   --muted: #adadad;
   --line: #383838;
   --transaction-cyan: #51e5ff;
-  --transaction-review: #ff9d43;
+  --transaction-review: #ff8d7b;
   --transaction-block: #ff5365;
   --accent: #8bd1c1;
   --soft: #272727;
@@ -26,10 +26,10 @@
   --edge-active: #e2a18d;
   --edge-changed: #d3b67b;
   --approve: #91d1b4;
-  --review: #e1c284;
+  --review: #ffab9e;
   --block: #efa39b;
   --approve-bg: #233e36;
-  --review-bg: #403a28;
+  --review-bg: #3b2623;
   --block-bg: #452f32;
 }
 

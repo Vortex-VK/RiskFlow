@@ -49,11 +49,13 @@ export function ScoreValue({ score, label }: { score: Score; label: string }) {
 export function ContinuousScores({
   model,
   cards,
+  includePrimary = true,
 }: {
   model:
     DeepReadonly<components["schemas"]["ModelEvaluation"]> | null | undefined;
   cards:
     DeepReadonly<components["schemas"]["CardPatternScores"]> | null | undefined;
+  includePrimary?: boolean;
 }) {
   if (!model?.score) return null;
   return (
@@ -68,14 +70,16 @@ export function ContinuousScores({
           ? `Trained probability estimates based on ${model.score.calibrationScope === "ibm_authored_synthetic" ? "IBM and authored" : "IBM"} synthetic data. Their reliability on your upload is unverified. Highlights mark estimates of 90% or higher, not confirmed fraud or measured accuracy. Each model retains its own reference cutoff.`
           : "Historical evidence indices, not percentages of fraud. 50 marks the original cutoff. Scores from different models are not interchangeable."}
       </p>
-      <ScoreValue
-        score={model.score}
-        label={
-          ["adapted_card", "coverage"].includes(model.score.source)
-            ? "Card payments"
-            : "Online payments"
-        }
-      />
+      {includePrimary && (
+        <ScoreValue
+          score={model.score}
+          label={
+            ["adapted_card", "coverage"].includes(model.score.source)
+              ? "Card payments"
+              : "Online payments"
+          }
+        />
+      )}
       {cards ? (
         <>
           <ScoreValue score={cards.pattern} label="Card specialist" />

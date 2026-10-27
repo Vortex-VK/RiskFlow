@@ -206,7 +206,7 @@ test("blank scenario can be built through keyboard-accessible forms and independ
 test("mobile containment and reduced motion", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ reducedMotion: "reduce" });
-  await page.getByRole("button", { name: "Fit network to canvas" }).click();
+  await openExampleWorkspace(page);
   await page.getByRole("button", { name: "Payments 16" }).click();
   await page.getByRole("button", { name: "Payment H10", exact: true }).click();
   const box = await details(page).boundingBox();

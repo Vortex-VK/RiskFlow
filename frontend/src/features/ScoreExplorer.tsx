@@ -34,7 +34,6 @@ export function ScoreExplorer({
   inspect: (event: Event) => void;
 }) {
   const [source, setSource] = useState<Source>("coverage");
-  const [selectedCutoff, setCutoff] = useState<number | null>(null);
   const observations = useMemo(
     () =>
       events.flatMap((event) => {
@@ -76,14 +75,12 @@ export function ScoreExplorer({
   const ranking = useMemo(() => rankingMetrics(rows), [rows]);
   const isProbability = rows[0]?.score.probabilityAvailable ?? false;
   const referenceValue = rows[0]?.score.referenceValue ?? 50;
-  const cutoff = selectedCutoff ?? referenceValue;
   const losses = useMemo(() => probabilityMetrics(rows), [rows]);
-  const preview = thresholdMetrics(rows, cutoff),
-    reference = thresholdMetrics(
-      rows,
-      referenceValue,
-      rows[0]?.score.version !== "fraud-probability-v2",
-    );
+  const reference = thresholdMetrics(
+    rows,
+    referenceValue,
+    rows[0]?.score.version !== "fraud-probability-v2",
+  );
   if (!active) return null;
   const exportScores = () => {
     const cell = (value: unknown) => {
@@ -132,22 +129,15 @@ export function ScoreExplorer({
   };
   return (
     <details className="score-explorer">
-      <summary>Scores and threshold explorer</summary>
+      <summary>Score evaluation</summary>
       <section aria-label="Score evaluation">
-        <p>
-          Explore continuous scores independently of the saved alert decisions.
-          {isProbability
-            ? ` Scores are estimated fraud probabilities fitted on ${rows[0]?.score.calibrationScope === "ibm_authored_synthetic" ? "IBM and authored" : "IBM"} synthetic data. Calibration for this upload is unverified.`
-            : " The historical 0–100 scale is not a fraud probability."}{" "}
-          Compare rankings within one model.
-        </p>
+        <p>Recorded model cutoffs ? independent of the threshold preview.</p>
         <label>
           Score model
           <select
             value={active}
             onChange={(e) => {
               setSource(e.target.value as Source);
-              setCutoff(null);
             }}
           >
             {sources.map((s) => (
@@ -161,152 +151,146 @@ export function ScoreExplorer({
           {rows.length} scored transactions · {ranking.positives} labeled frauds
           · {ranking.negatives} labeled legitimate.
         </p>
-        <p>
-          Average precision: {percent(ranking.ap)} · ROC AUC:{" "}
-          {percent(ranking.auc)}.
-        </p>
-        <p className="fineprint">
-          Ranking metrics use exact raw margins and require both labeled
-          classes. Average precision summarizes the precision/recall tradeoff;
-          ROC AUC measures ranking separation. Small or curated uploads do not
-          establish general accuracy.
-        </p>
-        {losses && (
-          <div aria-label="Probability evaluation">
-            <p>
-              Brier score: {losses.brier.toFixed(6)} · Log loss:{" "}
-              {losses.logLoss.toFixed(6)}.
-            </p>
-            <p>
-              RMSE: {losses.rmse.toFixed(2)} points · Fraud RMSE:{" "}
-              {losses.fraudRmse?.toFixed(2) ?? "N/A"} · Legitimate RMSE:{" "}
-              {losses.legitimateRmse?.toFixed(2) ?? "N/A"}.
-            </p>
-            <p className="fineprint">
-              Lower losses are better. Overall loss can hide missed fraud when
-              legitimate transactions dominate.
-            </p>
-            <details>
-              <summary>Probability reliability by group</summary>
-              <table>
-                <caption>
-                  Estimated versus observed fraud on labeled transactions
-                </caption>
-                <thead>
-                  <tr>
-                    <th scope="col">Range</th>
-                    <th scope="col">Count</th>
-                    <th scope="col">Mean estimate</th>
-                    <th scope="col">Observed fraud</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {losses.bins.map((b) => (
-                    <tr key={b.lower}>
-                      <th scope="row">
-                        {b.lower}–{b.upper}%
-                      </th>
-                      <td>{b.count}</td>
-                      <td>{b.mean.toFixed(2)}%</td>
-                      <td>{b.observed.toFixed(2)}%</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              <p className="fineprint">
-                These groups describe this file only. Sparse groups do not
-                establish calibration. Empty groups are omitted.
-              </p>
-            </details>
+        <div className="evaluation-summary">
+          <div>
+            <strong>{reference.reviews}</strong>
+            <span>above the model cutoff</span>
           </div>
-        )}
-        <label>
-          Preview cutoff:{" "}
-          <output>
-            {cutoff.toFixed(2)}
-            {isProbability ? "%" : " / 100"}
-          </output>
-          <input
-            type="range"
-            aria-label="Preview score cutoff"
-            min={0}
-            max={100}
-            step="any"
-            value={cutoff}
-            onChange={(e) => setCutoff(Number(e.target.value))}
-          />
-        </label>
-        <button onClick={() => setCutoff(null)}>
-          Reset to reference cutoff
-        </button>
-        {isProbability && (
-          <button onClick={() => setCutoff(90)}>Preview 90%+ estimates</button>
-        )}
-        <table>
-          <caption>Independent score threshold comparison</caption>
-          <thead>
-            <tr>
-              <th scope="col">Measure</th>
-              <th scope="col">Reference {referenceValue.toFixed(2)}</th>
-              <th scope="col">Preview {cutoff.toFixed(2)}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {(
-              [
-                ["Above cutoff", reference.reviews, preview.reviews],
-                ["Frauds found", reference.tp, preview.tp],
-                ["Frauds missed", reference.fn, preview.fn],
-                ["Legitimate above cutoff", reference.fp, preview.fp],
-                [
-                  "Precision",
-                  percent(reference.precision),
-                  percent(preview.precision),
-                ],
-                ["Recall", percent(reference.recall), percent(preview.recall)],
-              ] as const
-            ).map(([label, a, b]) => (
-              <tr key={label}>
-                <th scope="row">{label}</th>
-                <td>{a}</td>
-                <td>{b}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <p>
-          Preview only: saved decisions and headline metrics stay at their
-          reference thresholds. Counts here assess each score independently;
-          specialist scores include transactions already flagged by the primary
-          model. Unlabeled transactions count toward workload, but not precision
-          or recall.
-        </p>
-        <button onClick={exportScores}>Download scores CSV</button>
-        <h3>Transactions ranked by {labels[active]} score</h3>
-        {isProbability && (
+          <div>
+            <strong>
+              {percent(rows.length ? reference.reviews / rows.length : null)}
+            </strong>
+            <span>review workload</span>
+          </div>
+        </div>
+        <details>
+          <summary>Ranking &amp; calibration</summary>
           <p>
-            {rows.filter((r) => r.value >= 90).length} transactions have
-            estimates of 90% or higher. Highlighted for investigation; this is
-            not measured accuracy or a confirmed fraud verdict.
+            Average precision: {percent(ranking.ap)} · ROC AUC:{" "}
+            {percent(ranking.auc)}.
           </p>
-        )}
-        <PaymentPages
-          key={active}
-          items={rows}
-          identify={(r) => sourceId(r.event.eventId)}
-        >
-          {(r) => (
-            <button
-              className={`wide${r.probability && r.value >= 90 ? " high-estimated-risk" : ""}`}
-              key={r.event.eventId}
-              onClick={() => inspect(r.event)}
-            >
-              {sourceId(r.event.eventId)} · {r.value.toFixed(2)}
-              {isProbability ? "%" : " / 100"}
-              {r.probability && r.value >= 90 && " · High estimated risk"}
-            </button>
+          <p className="fineprint">
+            Ranking metrics use exact raw margins and require both labeled
+            classes. Average precision summarizes the precision/recall tradeoff;
+            ROC AUC measures ranking separation. Small or curated uploads do not
+            establish general accuracy.
+          </p>
+          {losses && (
+            <div aria-label="Probability evaluation">
+              <p>
+                Brier score: {losses.brier.toFixed(6)} · Log loss:{" "}
+                {losses.logLoss.toFixed(6)}.
+              </p>
+              <p>
+                RMSE: {losses.rmse.toFixed(2)} points · Fraud RMSE:{" "}
+                {losses.fraudRmse?.toFixed(2) ?? "N/A"} · Legitimate RMSE:{" "}
+                {losses.legitimateRmse?.toFixed(2) ?? "N/A"}.
+              </p>
+              <p className="fineprint">
+                Lower losses are better. Overall loss can hide missed fraud when
+                legitimate transactions dominate.
+              </p>
+              <details>
+                <summary>Probability reliability by group</summary>
+                <table>
+                  <caption>
+                    Estimated versus observed fraud on labeled transactions
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Range</th>
+                      <th scope="col">Count</th>
+                      <th scope="col">Mean estimate</th>
+                      <th scope="col">Observed fraud</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {losses.bins.map((b) => (
+                      <tr key={b.lower}>
+                        <th scope="row">
+                          {b.lower}–{b.upper}%
+                        </th>
+                        <td>{b.count}</td>
+                        <td>{b.mean.toFixed(2)}%</td>
+                        <td>{b.observed.toFixed(2)}%</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <p className="fineprint">
+                  These groups describe this file only. Sparse groups do not
+                  establish calibration. Empty groups are omitted.
+                </p>
+              </details>
+            </div>
           )}
-        </PaymentPages>
+        </details>
+        <details>
+          <summary>Outcomes at the fixed cutoff</summary>
+          <table>
+            <caption>
+              Model reference cutoff: {referenceValue.toFixed(2)}
+              {isProbability ? "%" : " / 100"}
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Measure</th>
+                <th scope="col">Recorded model cutoff</th>
+              </tr>
+            </thead>
+            <tbody>
+              {(
+                [
+                  ["Above cutoff", reference.reviews],
+                  ["Frauds found", reference.tp],
+                  ["Frauds missed", reference.fn],
+                  ["Legitimate above cutoff", reference.fp],
+                  ["Precision", percent(reference.precision)],
+                  ["Recall", percent(reference.recall)],
+                ] as const
+              ).map(([label, a]) => (
+                <tr key={label}>
+                  <th scope="row">{label}</th>
+                  <td>{a}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p>
+            Counts here assess each score independently; specialist scores
+            include transactions already flagged by the primary model. Unlabeled
+            transactions count toward workload, but not precision or recall.
+          </p>
+        </details>
+        <button onClick={exportScores}>Download scores CSV</button>
+        <details>
+          <summary>Ranked payments</summary>
+          <h3>Transactions ranked by {labels[active]} score</h3>
+          {isProbability && (
+            <p>
+              {rows.filter((r) => r.value >= 90).length} transactions have
+              estimates of 90% or higher. Highlighted for investigation; this is
+              not measured accuracy or a confirmed fraud verdict.
+            </p>
+          )}
+          <PaymentPages
+            key={active}
+            items={rows}
+            identify={(r) => sourceId(r.event.eventId)}
+          >
+            {(r) => (
+              <button
+                className={`wide${r.probability && r.value >= 90 ? " high-estimated-risk" : ""}`}
+                key={r.event.eventId}
+                onClick={() => inspect(r.event)}
+              >
+                {sourceId(r.event.eventId)} · {r.value.toFixed(2)}
+                {isProbability ? "%" : " / 100"}
+                {r.probability && r.value >= 90 && " · High estimated risk"}
+              </button>
+            )}
+          </PaymentPages>
+        </details>
       </section>
     </details>
   );

@@ -6,11 +6,6 @@ import { ReactFlowProvider, useReactFlow } from "@xyflow/react";
 import type { components } from "../api/generated";
 import { getTemplate, getTemplates } from "../api/client";
 import {
-  liveSimulationAvailable,
-  pagesHosting,
-  simulationOfflineMessage,
-} from "../api/endpoint";
-import {
   addNode,
   blank,
   clone,
@@ -640,21 +635,13 @@ function Workspace() {
             {panel === "about" && (
               <section className="card about">
                 <h2>A space to explore risk.</h2>
-                {pagesHosting && (
-                  <p>
-                    <a href="/guide/" target="_blank" rel="noreferrer">
-                      Read the guide
-                    </a>{" "}
-                    · <a href="/">About RiskFlow</a>
-                  </p>
-                )}
                 <p>
                   Add objects, connect their context, and create payments.
                   Select anything to look closer.
                 </p>
                 <p>
-                  Drag objects to rearrange them. Drag empty canvas to pan. Use
-                  Fit to see the network.
+                  Drag objects to rearrange them. Drag empty canvas to pan.
+                  Zoom out to see more of the network.
                 </p>
                 <p>
                   Right-drag between an account and another object to connect
@@ -823,8 +810,6 @@ function Workspace() {
           <div className="status" role="status" aria-live="polite">
             {simulation.error ||
               loadError ||
-              (!liveSimulationAvailable &&
-                (state.message || simulationOfflineMessage)) ||
               (simulation.pending
                 ? "Simulating your scenario…"
                 : stale
@@ -839,14 +824,7 @@ function Workspace() {
               <button
                 className="simulate"
                 disabled={
-                  !liveSimulationAvailable ||
-                  simulation.pending ||
-                  (simulationUnavailable && !state.dirty)
-                }
-                title={
-                  !liveSimulationAvailable
-                    ? simulationOfflineMessage
-                    : undefined
+                  simulation.pending || (simulationUnavailable && !state.dirty)
                 }
                 onClick={simulate}
               >
@@ -883,14 +861,6 @@ function Workspace() {
             <div className="tools camera">
               <button aria-label="Zoom out" onClick={() => void flow.zoomOut()}>
                 −
-              </button>
-              <button
-                aria-label="Fit network to canvas"
-                onClick={() =>
-                  void flow.fitView({ padding: 0.25, duration: 0 })
-                }
-              >
-                Fit
               </button>
               <button aria-label="Zoom in" onClick={() => void flow.zoomIn()}>
                 +

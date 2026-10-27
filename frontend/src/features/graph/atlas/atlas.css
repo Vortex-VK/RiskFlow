@@ -195,14 +195,6 @@
 [data-motion="off"] .connection-hover {
   transition: none;
 }
-.connection-toggle {
-  position: absolute;
-  z-index: 10;
-  left: 24px;
-  bottom: 100px;
-  font-size: 12px;
-  background: var(--panel-solid);
-}
 .connection-details {
   position: absolute;
   z-index: 15;

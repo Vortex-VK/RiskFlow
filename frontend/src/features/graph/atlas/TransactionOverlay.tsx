@@ -113,7 +113,7 @@ const CurrentCanvas = memo(function CurrentCanvas({
       context.lineWidth = 2.2 + 1.6 * boost;
       context.stroke(path);
       context.globalAlpha = alpha * (0.8 + 0.15 * boost);
-      context.lineWidth = kind === "risk" ? 1.05 : 0.75;
+      context.lineWidth = kind === "risk" ? 1.65 : 0.75;
       context.stroke(path);
     }
     for (const { x, y, color, alpha, boost } of endpoints.values()) {
@@ -215,8 +215,8 @@ export function TransactionOverlay({
       risks.map(({ path, decision }) => ({
         a: path.a,
         b: path.b,
-        color: decision === "block" ? "#ff5365" : "#ff9d43",
-        strength: 0.7,
+        color: decision === "block" ? "#ff5365" : "#ff8d7b",
+        strength: 0.95,
       })),
     [risks],
   );

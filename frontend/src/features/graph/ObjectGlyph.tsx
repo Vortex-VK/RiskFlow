@@ -10,18 +10,36 @@ type Glyph = Pick<Entity, "id" | "name" | "type">;
 export const ObjectGlyph = memo(function ObjectGlyph({
   node,
   selected = false,
+  review,
   accountLabel = accountInitial(node.name),
 }: {
   node: Glyph;
   selected?: boolean;
+  review?: "flagged" | "selected" | undefined;
   accountLabel?: string;
 }) {
   const r = radius(node);
   const corner = cornerRadius(node);
   return (
     <svg width="100" height="100" viewBox="-50 -50 100 100" overflow="visible">
-      <g data-node={node.id} className={selected ? styles.selected : ""}>
+      <g
+        data-node={node.id}
+        data-review={review}
+        className={selected ? styles.selected : ""}
+      >
         <circle className="node-hit" r={r + 8} fill="transparent" />
+        {review && (
+          <circle
+            className="node-review-ring"
+            r={r + 5}
+            fill="none"
+            stroke="var(--transaction-review)"
+            strokeWidth={review === "selected" ? 3 : 1.5}
+            opacity={review === "selected" ? 1 : 0.65}
+            pointerEvents="none"
+            aria-hidden="true"
+          />
+        )}
         <g className="node-material" pointerEvents="none">
           <path
             className="node-body"
@@ -46,6 +64,28 @@ export const ObjectGlyph = memo(function ObjectGlyph({
             />
           )}
         </g>
+        {review && (
+          <g
+            className="node-review-badge"
+            transform={`translate(${r * 0.85},${-r * 0.85})`}
+            pointerEvents="none"
+            aria-hidden="true"
+          >
+            <circle
+              r="8"
+              fill="var(--transaction-review)"
+              stroke="var(--canvas)"
+              strokeWidth="2"
+            />
+            <path
+              d="M0 -3.5V0.5M0 3.5V3.6"
+              fill="none"
+              stroke="#301b17"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+            />
+          </g>
+        )}
       </g>
       <text className={styles.label} y={r + 22}>
         {node.name.length > 27 ? node.name.slice(0, 25) + "…" : node.name}

@@ -254,7 +254,6 @@ test("all node editors, camera controls, and dirty edit guards work", async ({
   await button(page, "Zoom in").click();
   await expect(view).not.toHaveAttribute("style", before!);
   await button(page, "Zoom out").click();
-  await button(page, "Fit network to canvas").click();
   await page.mouse.move(700, 450);
   await page.mouse.wheel(0, 160);
   for (const [id, field, value] of [

@@ -11,7 +11,6 @@ from starlette.middleware.gzip import GZipMiddleware
 from starlette.responses import JSONResponse
 
 from app.api.boundary import RequestBoundary, RequestLog, error_response
-from app.api.cors import configure_cors
 from app.api.frontend import mount_frontend
 from app.api.public_demo import PublicDemo
 from app.api.v2 import router as history_router
@@ -38,7 +37,6 @@ if public_demo:
     app.add_middleware(PublicDemo)
 app.add_middleware(GZipMiddleware, minimum_size=1000, compresslevel=5)
 app.add_middleware(RequestLog)
-configure_cors(app, os.environ.get("RISKFLOW_ALLOWED_ORIGINS", ""))
 logger = logging.getLogger("riskflow.api")
 
 

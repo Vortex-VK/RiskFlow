@@ -118,7 +118,13 @@ function BridgeTargets({
 }
 
 type TerritoryNode = Node<
-  { sector: Sector; enter: (id: string) => void; disabled: boolean },
+  {
+    sector: Sector;
+    enter: (id: string) => void;
+    disabled: boolean;
+    reviewCount: number;
+    flaggedOnly: boolean;
+  },
   "territory"
 >;
 function Territory({ data }: NodeProps<TerritoryNode>) {
@@ -130,8 +136,10 @@ function Territory({ data }: NodeProps<TerritoryNode>) {
       className="transaction-sector nodrag"
       data-leaf={sector.children.length === 0}
       data-payment-count={sector.group.payments.length}
+      data-review-count={data.reviewCount}
+      data-muted={data.flaggedOnly && !data.reviewCount}
       disabled={data.disabled}
-      aria-label={`Open ${groupLabel(sector.group)}, ${sector.group.payments.length} payments`}
+      aria-label={`Open ${sector.group.label}${data.reviewCount ? ` ${data.reviewCount} for review` : ""}${sector.group.reference ? ` Sector ${sector.group.reference}` : ""}, ${sector.group.payments.length.toLocaleString()} payments`}
       aria-description={sector.group.reason}
       title={`${groupLabel(sector.group)}\n${sector.group.reason}`}
       onClick={() => data.enter(sector.group.id)}
@@ -151,13 +159,26 @@ function Territory({ data }: NodeProps<TerritoryNode>) {
       </svg>
       <span
         className={`sector-name${r * zoom < Math.min(85, Math.max(32, sector.group.label.length * 2)) ? " sector-name-crowded" : ""}`}
+        style={
+          sector.children.length
+            ? {
+                top: Math.min(...sector.territory.map((p) => p.y)) + r,
+                transform: "translate(-50%, -110%)",
+              }
+            : undefined
+        }
       >
-        <span className="sector-factor-label">{sector.group.label}</span>
+        <span className="sector-factor-label">{sector.group.label}</span>{" "}
+        {data.reviewCount > 0 && (
+          <span className="sector-review-count">
+            {data.reviewCount} for review
+          </span>
+        )}{" "}
         {sector.group.reference && (
           <span className="sector-reference">
             Sector {sector.group.reference}
           </span>
-        )}
+        )}{" "}
         <span className="sector-payment-count">
           {sector.group.payments.length.toLocaleString()} payments
         </span>
@@ -244,6 +265,29 @@ function MapLayer({
           sectorHue(key.slice(key.indexOf(":") + 1)),
         );
     previousColours.current = colours;
+    // Keep the account/merchant structure readable after the import animation
+    // settles. Batch by sector so large overviews remain canvas-only.
+    const networkPaths = new Map<
+      string,
+      { path: Path2D; point: (typeof geometry.points)[number]; active: boolean }
+    >();
+    for (const [a, b] of geometry.links) {
+      const key = a.leaf
+        .split("/")
+        .slice(0, a.leaf.startsWith(sector.group.id + "/") ? depth + 1 : 2)
+        .join("/");
+      let batch = networkPaths.get(key);
+      if (!batch) {
+        batch = {
+          path: new Path2D(),
+          point: a,
+          active: a.leaf.startsWith(sector.group.id + "/"),
+        };
+        networkPaths.set(key, batch);
+      }
+      batch.path.moveTo(a.x, a.y);
+      batch.path.lineTo(b.x, b.y);
+    }
     const previews = previewLinks.map((link) => new Path2D(bridgePath(link)));
     const bridges = connections.map((link) => ({
       link,
@@ -328,6 +372,13 @@ function MapLayer({
         ctx.stroke(path);
       }
       ctx.restore();
+      for (const { path, point, active } of networkPaths.values()) {
+        const hue = colours.get(`${point.leaf}:${point.id}`)!;
+        ctx.strokeStyle = sectorColour(hue, dark);
+        ctx.globalAlpha = (active ? 0.38 : 0.14) * settled;
+        ctx.lineWidth = 0.7 / zoom;
+        ctx.stroke(path);
+      }
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       if (age >= GROWTH_WAVE_DURATION && age < GROWTH_DURATION) {
         ctx.strokeStyle = "#91bac5";
@@ -362,7 +413,7 @@ function MapLayer({
             );
         ctx.globalAlpha = key.startsWith("in:") ? 0.9 : contextVisibility;
         ctx.beginPath();
-        const radius = Math.min(2, 1.05 + zoom * 0.7);
+        const radius = Math.min(2, 1.25 + zoom * 0.7);
         for (const p of points) {
           const x = p.x * zoom + tx,
             y = p.y * zoom + ty;
@@ -451,6 +502,8 @@ export const AtlasCanvas = memo(function AtlasCanvas({
   viewport,
   disabled,
   inspectPayment,
+  flaggedIds,
+  flaggedOnly = false,
 }: {
   inspectPayment?: ((id: string) => void) | undefined;
   root: Sector;
@@ -459,6 +512,8 @@ export const AtlasCanvas = memo(function AtlasCanvas({
   enter: (id: string) => void;
   viewport: Viewport;
   disabled: boolean;
+  flaggedIds?: ReadonlySet<string> | undefined;
+  flaggedOnly?: boolean | undefined;
 }) {
   const links = useMemo(
     () => sectorConnections(sector, entities),
@@ -520,10 +575,18 @@ export const AtlasCanvas = memo(function AtlasCanvas({
         position: c.center,
         measured: { width: c.sector.radius * 2, height: c.sector.radius * 2 },
         style: { width: c.sector.radius * 2, height: c.sector.radius * 2 },
-        data: { sector: c.sector, disabled, enter },
+        data: {
+          sector: c.sector,
+          disabled,
+          enter,
+          flaggedOnly,
+          reviewCount: c.sector.group.payments.filter((p) =>
+            flaggedIds?.has(p.id),
+          ).length,
+        },
         ariaLabel: `${groupLabel(c.sector.group)}, ${c.sector.group.payments.length} payments`,
       })),
-    [sector, disabled, enter],
+    [sector, disabled, enter, flaggedIds, flaggedOnly],
   );
   return (
     <div
@@ -584,11 +647,6 @@ export const AtlasCanvas = memo(function AtlasCanvas({
         connections={drawn}
         highlight={highlight}
       />
-      {!!links.length && !selected && (
-        <button className="connection-toggle" onClick={() => choose(links[0]!)}>
-          Connections · {visible.length}/{links.length}
-        </button>
-      )}
       {selected && selection && (
         <ConnectionDetails
           key={sector.group.id}

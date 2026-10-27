@@ -58,9 +58,8 @@ test("card reviews are separate from frozen v9 alerts and disclose labeled mista
       .length,
   );
   await page.getByRole("button", { name: "Results", exact: true }).click();
-  await page
-    .getByText("Scores and threshold explorer", { exact: true })
-    .click();
+  await page.getByText("Additional analysis", { exact: true }).click();
+  await page.getByText("Score evaluation", { exact: true }).click();
   const explorer = page.getByRole("region", {
     name: "Score evaluation",
     exact: true,
@@ -68,54 +67,24 @@ test("card reviews are separate from frozen v9 alerts and disclose labeled mista
   await explorer.getByLabel("Score model").selectOption("card_pattern");
   await expect(explorer).toContainText("Average precision:");
   await expect(explorer).toContainText("ROC AUC:");
-  const reference = await explorer
-    .getByRole("row", { name: /^Above cutoff/ })
-    .getByRole("cell")
-    .first()
-    .textContent();
-  await explorer.getByRole("slider", { name: "Preview score cutoff" }).focus();
+  await expect(explorer.getByRole("slider")).toHaveCount(0);
+  await explorer.getByText("Ranking & calibration", { exact: true }).click();
   await explorer
-    .getByRole("slider", { name: "Preview score cutoff" })
-    .press("Home");
-  await expect(
-    explorer
-      .getByRole("row", { name: /^Above cutoff/ })
-      .getByRole("cell")
-      .last(),
-  ).toHaveText(String(scoredCards.length));
-  await expect(
-    explorer
-      .getByRole("row", { name: /^Above cutoff/ })
-      .getByRole("cell")
-      .first(),
-  ).toHaveText(reference!);
-  await explorer
-    .getByRole("button", { name: "Reset to reference cutoff" })
+    .getByText("Outcomes at the fixed cutoff", { exact: true })
     .click();
-  expect(Number(await explorer.getByRole("slider").inputValue())).toBeCloseTo(
-    scoredCards[0].cardScores.pattern.referenceValue,
-    10,
-  );
-  await explorer
-    .getByRole("button", { name: "Preview 90%+ estimates" })
-    .click();
-  await expect(explorer.getByRole("slider")).toHaveValue("90");
+  const aboveReference = scoredCards.filter(
+    (e: {
+      cardScores: { pattern: { value: number; referenceValue: number } };
+    }) => e.cardScores.pattern.value >= e.cardScores.pattern.referenceValue,
+  ).length;
+  await expect(
+    explorer.getByRole("row", { name: /^Above cutoff/ }).getByRole("cell"),
+  ).toHaveText(String(aboveReference));
+  await explorer.getByText("Ranked payments", { exact: true }).click();
   const highEstimates = scoredCards.filter(
     (e: { cardScores: { pattern: { value: number } } }) =>
       e.cardScores.pattern.value >= 90,
   ).length;
-  await expect(
-    explorer
-      .getByRole("row", { name: /^Above cutoff/ })
-      .getByRole("cell")
-      .last(),
-  ).toHaveText(String(highEstimates));
-  await expect(
-    explorer
-      .getByRole("row", { name: /^Above cutoff/ })
-      .getByRole("cell")
-      .first(),
-  ).toHaveText(reference!);
   await expect(explorer).toContainText(
     `${highEstimates} transactions have estimates of 90% or higher`,
   );
@@ -134,9 +103,7 @@ test("card reviews are separate from frozen v9 alerts and disclose labeled mista
     path: "test-results/continuous-scores-explorer.png",
   });
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
-  await page
-    .getByText("Scores and threshold explorer", { exact: true })
-    .click();
+  await page.getByText("Score evaluation", { exact: true }).click();
   await page
     .getByText("Experimental card reviews (1)", { exact: true })
     .click();
@@ -162,6 +129,11 @@ test("card reviews are separate from frozen v9 alerts and disclose labeled mista
     .getByRole("button", { name: /Inspect card review/ })
     .first()
     .click();
+  await page
+    .locator("summary")
+    .filter({ hasText: /^Additional card review$/ })
+    .click();
+  await page.getByText("Additional card model scores", { exact: true }).click();
   const detail = page.getByRole("region", {
     name: "Card-pattern review",
     exact: true,
@@ -174,7 +146,7 @@ test("card reviews are separate from frozen v9 alerts and disclose labeled mista
     name: "Continuous model scores",
     exact: true,
   });
-  await expect(continuous.getByRole("meter")).toHaveCount(3);
+  await expect(continuous.getByRole("meter")).toHaveCount(2);
   await expect(continuous).toContainText("Card specialist");
   await expect(continuous).toContainText("Estimated fraud probabilities");
   await expect(continuous).toContainText(

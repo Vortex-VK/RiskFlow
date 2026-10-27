@@ -4,7 +4,6 @@ import type { Document } from "../../domain/types";
 import { catalog, loadSample, sampleUrl } from "./samples";
 import "./samples.css";
 import { panelDuration } from "../Presence";
-import { liveSimulationAvailable } from "../../api/endpoint";
 
 const number = (value: number) => value.toLocaleString("en-US");
 
@@ -92,11 +91,7 @@ export function SampleLibrary({
       <header className="sample-header">
         <div>
           <h1 id="sample-library-title">Start with a sample.</h1>
-          <p>
-            {liveSimulationAvailable
-              ? "Choose a graph to explore, then run a simulation."
-              : "Choose a graph to explore. Recorded results are shown below."}
-          </p>
+          <p>Choose a graph to explore, then run a simulation.</p>
         </div>
         <button
           className="sample-close"

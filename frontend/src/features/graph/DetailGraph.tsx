@@ -41,6 +41,7 @@ type ObjectNode = Node<
     accountLabel: string;
     highlighted: boolean;
     compatible: boolean;
+    review: "flagged" | "selected" | undefined;
   },
   "object"
 >;
@@ -69,6 +70,7 @@ function ObjectView({ data, selected }: NodeProps<ObjectNode>) {
         node={data.entity}
         accountLabel={data.accountLabel}
         selected={selected || data.highlighted}
+        review={data.review}
       />
       <Handle
         type="source"
@@ -106,7 +108,11 @@ function LinkView({ id, data, selected }: EdgeProps<Link>) {
         id={id}
         path={`M${x1},${y1}L${x2},${y2}`}
         interactionWidth={18}
-        markerEnd={data.context ? "" : "url(#payment-arrow)"}
+        markerEnd={
+          data.context
+            ? ""
+            : `url(#payment-arrow${data.risk ? `-${data.risk}` : ""})`
+        }
         style={{
           stroke: data.risk
             ? color
@@ -181,6 +187,8 @@ export function DetailGraph({
   paymentScope,
   hierarchyViewport,
   memoryKey,
+  flaggedIds,
+  flaggedOnly = false,
 }: {
   memoryKey?: string;
   navigationTarget?: HTMLElement | null;
@@ -188,6 +196,8 @@ export function DetailGraph({
   scope?: Set<string>;
   paymentScope?: Set<string>;
   focusPaymentId?: string | undefined;
+  flaggedIds?: ReadonlySet<string>;
+  flaggedOnly?: boolean;
   add: (kind: Entity["type"], point: Position) => void;
   snapshot?: Document;
   eventId?: string;
@@ -333,6 +343,24 @@ export function DetailGraph({
     () => accountLabels(document.scenario.nodes),
     [document.scenario.nodes],
   );
+  const flaggedObjects = useMemo(() => {
+    const ids = new Set<string>();
+    for (const p of visiblePayments) {
+      if (flaggedIds?.has(p.id))
+        for (const id of [p.accountId, p.merchantId, p.deviceId, p.locationId])
+          ids.add(id);
+    }
+    return ids;
+  }, [visiblePayments, flaggedIds]);
+  const flaggedMerchants = useMemo(
+    () =>
+      new Set(
+        visiblePayments
+          .filter((p) => flaggedIds?.has(p.id))
+          .map((p) => p.merchantId),
+      ),
+    [visiblePayments, flaggedIds],
+  );
   const growth = useMemo(() => {
     const points = visibleNodes.map((n) => ({
       ...document.view.positions[n.id]!,
@@ -365,6 +393,13 @@ export function DetailGraph({
       entity,
       accountLabel: labels.get(entity.id) || "",
       highlighted: readOnly && highlighted.has(entity.id),
+      review: flaggedMerchants.has(entity.id)
+        ? payment?.merchantId === entity.id &&
+          eventId &&
+          flaggedIds?.has(eventId)
+          ? "selected"
+          : "flagged"
+        : undefined,
       compatible:
         !!connectionSource &&
         (entity.type === "account") !==
@@ -373,12 +408,17 @@ export function DetailGraph({
             "account"),
     },
     selected: selection?.kind === "node" && selection.id === entity.id,
-    ariaLabel: `${entity.type}: ${entity.name}${entity.type === "account" ? ` (${labels.get(entity.id)})` : ""}`,
+    ariaLabel: `${entity.type}: ${entity.name}${entity.type === "account" ? ` (${labels.get(entity.id)})` : ""}${flaggedMerchants.has(entity.id) ? ", has payments for review" : ""}`,
     style: {
       animationDelay: `${growth.get(entity.id) || 0}ms`,
       width: 100,
       height: 100,
-      opacity: !readOnly && payment && !highlighted.has(entity.id) ? 0.28 : 1,
+      opacity:
+        flaggedOnly && !flaggedObjects.has(entity.id)
+          ? 0.18
+          : !readOnly && payment && !highlighted.has(entity.id)
+            ? 0.28
+            : 1,
     },
   }));
   const nodeMap = new Map(visibleNodes.map((n) => [n.id, n]));
@@ -467,11 +507,16 @@ export function DetailGraph({
       style: {
         animationDelay: `${Math.max(growth.get(source) || 0, growth.get(target) || 0)}ms`,
         opacity:
-          comparison && !comparison[id]
-            ? 0.2
-            : !readOnly && payment && !related
+          flaggedOnly &&
+          !(context
+            ? flaggedObjects.has(source) && flaggedObjects.has(target)
+            : risks.has(id))
+            ? 0.12
+            : comparison && !comparison[id]
               ? 0.2
-              : 1,
+              : !readOnly && payment && !related
+                ? 0.2
+                : 1,
       },
       ariaLabel: `${a.name} to ${b.name}, ${context ? `${temporal || ""} relationship` : `${count} ${readOnly ? "revealed " : ""}payments`}`,
     });
@@ -734,22 +779,27 @@ export function DetailGraph({
         style={{ position: "absolute" }}
       >
         <defs>
-          <marker
-            id="payment-arrow"
-            viewBox="0 0 10 10"
-            refX="9"
-            refY="5"
-            markerWidth="7"
-            markerHeight="7"
-            orient="auto-start-reverse"
-          >
-            <path
-              d="M2 2L8 5L2 8"
-              fill="none"
-              stroke="var(--edge-hover)"
-              strokeWidth="1.2"
-            />
-          </marker>
+          {(["", "review", "block"] as const).map((risk) => (
+            <marker
+              key={risk}
+              id={`payment-arrow${risk ? `-${risk}` : ""}`}
+              viewBox="0 0 10 10"
+              refX="9"
+              refY="5"
+              markerWidth="7"
+              markerHeight="7"
+              orient="auto-start-reverse"
+            >
+              <path
+                d="M2 2L8 5L2 8"
+                fill="none"
+                stroke={
+                  risk ? `var(--transaction-${risk})` : "var(--edge-hover)"
+                }
+                strokeWidth="1.2"
+              />
+            </marker>
+          ))}
         </defs>
       </svg>
       <ReactFlow<ObjectNode, Link>

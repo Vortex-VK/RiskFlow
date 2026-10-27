@@ -421,7 +421,7 @@ export function AtlasGraph(props: GraphProps) {
       </span>
       {!!current.children.length && (
         <span className="hierarchy-key">
-          Click or zoom to explore · Drag to pan · Colour: sector
+          Click or zoom to explore · Drag to pan
         </span>
       )}
     </nav>
@@ -443,6 +443,8 @@ export function AtlasGraph(props: GraphProps) {
               enter={enter}
               viewport={camera}
               disabled={transitioning}
+              flaggedIds={props.flaggedIds}
+              flaggedOnly={props.flaggedOnly}
               inspectPayment={
                 props.snapshot
                   ? undefined

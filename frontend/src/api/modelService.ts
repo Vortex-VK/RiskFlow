@@ -1,7 +1,5 @@
-import { apiUrl } from "./endpoint";
-
 export async function requireModelService(signal?: AbortSignal): Promise<void> {
-  const response = await fetch(apiUrl("/api/v1/health"), {
+  const response = await fetch("/api/v1/health", {
     cache: "no-store",
     signal: signal ?? AbortSignal.timeout(10000),
   });

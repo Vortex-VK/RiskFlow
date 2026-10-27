@@ -138,7 +138,10 @@ test("subtle sector links reveal exact source payments without crowding the over
   await expect(page.locator(`[data-connection="${last}"]`)).toHaveCount(1);
   await page.keyboard.press("Escape");
   await expect(panel).toHaveCount(0);
-  await page.getByRole("button", { name: /^Connections/ }).click();
+  await expect(page.getByRole("button", { name: /^Connections/ })).toHaveCount(
+    0,
+  );
+  await page.locator(".connection-target").first().press("Enter");
   const payment = panel.locator(".connection-payments button").first();
   const id = await payment.textContent();
   await payment.click();

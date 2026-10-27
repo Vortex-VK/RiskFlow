@@ -515,7 +515,7 @@ test("all playback settings advance 25 percent faster with the default still at 
   }
 });
 
-test("transaction pulses follow playback and risk glows reset when rewound", async ({
+test("transaction pulses and risk highlights follow playback while inspection preserves the clock", async ({
   page,
 }) => {
   await page.getByRole("button", { name: "About this workspace" }).click();
@@ -605,6 +605,7 @@ test("transaction pulses follow playback and risk glows reset when rewound", asy
   await expect(
     page.locator('.react-flow__edge-path[style*="--transaction-review"]'),
   ).toHaveCount(0);
+  await expect(page.locator(".node-review-ring")).toHaveCount(0);
   await expect(pulse).toHaveCount(0);
 });
 

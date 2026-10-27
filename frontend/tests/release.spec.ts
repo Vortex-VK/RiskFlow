@@ -125,7 +125,6 @@ test("sixty-payment scenario detail stays responsive and warm simulation timing 
   await expect(
     page.getByRole("navigation", { name: "Transaction groups" }),
   ).toContainText("interactive detail");
-  await page.getByRole("button", { name: "Fit network to canvas" }).click();
   await page.waitForTimeout(300);
   const metricsPromise = page.evaluate(
     () =>

@@ -1,5 +1,4 @@
 import type { components } from "./generated";
-import { apiUrl } from "./endpoint";
 import { list, decodeDocument } from "./decode";
 import { requireModelService } from "./modelService";
 import {
@@ -11,7 +10,7 @@ import {
 } from "./decodeAssessment";
 
 async function request(path: string, payload?: unknown): Promise<unknown> {
-  const response = await fetch(apiUrl(`/api/v2/datasets${path}`), {
+  const response = await fetch(`/api/v2/datasets${path}`, {
     ...(payload === undefined
       ? {}
       : {
@@ -91,7 +90,7 @@ export const historyApi = {
   ) => {
     if (analysisMode === "model") await requireModelService();
     else {
-      const response = await fetch(apiUrl("/api/v2/analysis-capabilities"), {
+      const response = await fetch("/api/v2/analysis-capabilities", {
         cache: "no-store",
         signal: AbortSignal.timeout(10000),
       });

@@ -5,7 +5,7 @@ import { join } from "node:path";
 
 export default defineConfig({
   testDir: "./tests",
-  testIgnore: ["pages.spec.ts", "public-demo.spec.ts"],
+  testIgnore: ["public-demo.spec.ts"],
   timeout: 30000,
   workers: 1,
   use: {

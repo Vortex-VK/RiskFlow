@@ -24,7 +24,7 @@ Account details put **Create starter context** directly below the name. It saves
 
 The installed probability engine is **Upload-v9 / mixed-source**, with a card-pattern specialist. It uses trained IBM/authored outputs and strictly prior transaction history. New runs expose probabilities on a 0?100 scale, raw margins and evidence for investigation.
 
-The model's review cutoffs are **88.83% for card purchases** and **96.25% for online purchases**. A separate **90%+ highlight** helps scan the interface; it does not replace those cutoffs. Alerts recommend review and do not block payments. The threshold explorer compares alternative cutoffs when labels are available.
+The model's review cutoffs are **88.83% for card purchases** and **96.25% for online purchases**. A separate **90%+ highlight** helps scan the interface; it does not replace those cutoffs. Alerts recommend review and do not block payments. The assessed, review and no-alert counters increase as playback reveals completed transactions. Coral payment paths and per-group review counts follow the same progress. Flagged merchant endpoints carry a coral ring and warning marker, with a stronger ring on the selected flagged payment. **Flagged only** dims unrelated graph context without changing its layout; **Next flagged** opens the next recorded alert. Rewinding resets the visible counts and highlights; inspection and the results panel retain access to the completed assessment without changing the playback clock. The playback controls remain in the bottom bar, without a timeline scrubber. Payment details show the primary estimate once and keep raw measurements and limitations expandable. A probability threshold slider below the summary previews a common cutoff across probability-scored payments. Counts, graph highlights, filters and dataset results update together; Reset defaults restores the recorded model decisions. Scores and saved results are unchanged. Dataset results lead with review workload, payment values, frauds found and missed, false alerts, precision and recall when labels exist. Additional analysis retains the recorded-cutoff score diagnostics.
 
 Model scoring supports positive USD purchases with precise timestamps, account and merchant identities, a four-digit MCC, completion status, and a Chip, Swipe or Online Transaction channel. Merchant geography is optional. Native IBM card exports map User + Card, Use Chip, Merchant Name, MCC and Errors? automatically, with disclosed USD/UTC assumptions. Outcome labels are used only for evaluation. Unsupported retained rows remain visible as not assessed.
 
@@ -57,9 +57,7 @@ The Dockerfile builds the frontend and packages the same API and weights. It ena
 
 ## Public hosting
 
-Hosting must stay free. The frontend targets **Cloudflare Pages** with `npm run build:pages` from `frontend`, output `dist-pages`. It includes readable public pages for search and the app at `/workspace/`. The previous Render configuration has been removed.
-
-Without a separately hosted Python backend, the public workspace supports graph editing, CSV import, and sample exploration; live simulation is disabled with an explanation. Recorded sample results remain readable. Set `VITE_API_ORIGIN` only after a free inference host is verified, and `VITE_SITE_URL` to the assigned public origin for canonical links and a sitemap. See [deployment instructions](docs/deployment.md) for exact Cloudflare settings, backend connection, checks, and resource requirements.
+Public deployment is deferred. Run RiskFlow locally using the instructions above. Provider-specific deployment configuration has been removed; the portable Docker build and its verification checks remain available for future use. Any future hosting must stay free. See [container documentation](docs/deployment.md).
 
 ## Verification and maintenance
 

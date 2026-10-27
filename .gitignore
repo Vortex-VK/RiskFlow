@@ -15,8 +15,6 @@ __pycache__/
 .nox/
 build/
 dist/
-dist-pages/
-.wrangler/
 
 # Build, test and development artifacts
 .cache/

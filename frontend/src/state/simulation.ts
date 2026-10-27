@@ -4,7 +4,6 @@ import { freeze, projectAnalyticalInput } from "../domain/runs";
 import type { DeepReadonly, Run } from "../domain/runs";
 import { decodeRun } from "../api/decodeRun";
 import { requireModelService } from "../api/modelService";
-import { apiUrl } from "../api/endpoint";
 import { useWorkspace } from "./workspace";
 import type { AssessmentRun } from "../api/decodeAssessment";
 
@@ -96,7 +95,7 @@ export const useSimulation = create<SimulationState>((set, get) => ({
     try {
       await requireModelService(signal);
       if (!current()) return;
-      const response = await fetch(apiUrl("/api/v1/simulations"), {
+      const response = await fetch("/api/v1/simulations", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ scenario: submitted.scenario }),

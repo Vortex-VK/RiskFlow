@@ -9,7 +9,8 @@ import { CardPatternDetails } from "../CardPatternDetails";
 import { CardReviewQueue } from "../CardReviewQueue";
 import { ContinuousScores } from "../ContinuousScores";
 import { ScoreExplorer } from "../ScoreExplorer";
-import { useEffect, useMemo, useState } from "react";
+import { DatasetResults } from "./DatasetResults";
+import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { useReactFlow } from "@xyflow/react";
 import { decodeDocument } from "../../api/decode";
 import { money, groupId } from "../../domain/types";
@@ -23,15 +24,18 @@ import { useSimulation } from "../../state/simulation";
 import type { CapturedRun } from "../../state/simulation";
 import { Graph } from "../graph/Graph";
 import { Comparison } from "../results/Comparison";
+import { needsReview, reviewIds } from "../../domain/review";
+import "./replay.css";
 
 const title = (value: string) => value.replaceAll("_", " ");
-const rate = (value: { numerator: number; denominator: number } | null) =>
-  value
-    ? `${((100 * value.numerator) / value.denominator).toFixed(1)}% (${value.numerator}/${value.denominator})`
-    : "N/A";
-const amount = (value: number | null) =>
-  value === null ? "N/A" : money(value);
 const noAction = () => {};
+
+function OverviewCount({ value }: { value: number }) {
+  const formatted = value.toLocaleString();
+  return (
+    <strong style={{ inlineSize: `${formatted.length}ch` }}>{formatted}</strong>
+  );
+}
 
 export function Replay({
   captured,
@@ -47,6 +51,20 @@ export function Replay({
     [captured],
   );
   const run = captured.result;
+  const [threshold, setThreshold] = useState<number | null>(null);
+  const probabilityScores = useMemo(
+    () =>
+      run.events.flatMap((e) =>
+        e.model?.score?.probabilityAvailable ? [e.model.score] : [],
+      ),
+    [run],
+  );
+  const defaultCutoffs = useMemo(
+    () => [...new Set(probabilityScores.map((s) => s.referenceValue))],
+    [probabilityScores],
+  );
+  const sliderValue =
+    threshold ?? (defaultCutoffs.length === 1 ? defaultCutoffs[0]! : 90);
   const retained = captured.assessment;
   const assessments = useMemo(
     () => new Map(retained?.assessments.map((item) => [item.eventId, item])),
@@ -55,7 +73,7 @@ export function Replay({
   const sourceId = (id: string) => assessments.get(id)?.sourceEventId ?? id;
   const outcome = (event: (typeof run.events)[number]) =>
     event.model
-      ? event.model.alert
+      ? needsReview(event, threshold)
         ? "review"
         : "no alert"
       : retained
@@ -86,10 +104,34 @@ export function Replay({
   const [comparing, setComparing] = useState(false);
   const [selection, setSelection] = useState<Selection>(null);
   const [evidenceIds, setEvidenceIds] = useState<readonly string[]>([]);
+  const [flaggedOnly, setFlaggedOnly] = useState(false);
   const revealed = useMemo(
     () => run.events.slice(0, position.cursor + 1),
     [run, position.cursor],
   );
+  // Present decisions only after their visible transaction has finished.
+  // The inspector and results panel still read the immutable completed run.
+  const flaggedIds = useMemo(
+    () => reviewIds(revealed, threshold),
+    [revealed, threshold],
+  );
+  const flaggedEvents = useMemo(
+    () => run.events.filter((e) => needsReview(e, threshold)),
+    [run, threshold],
+  );
+  const graphDecisions = useMemo(
+    () =>
+      revealed.map((e) => ({
+        ...e,
+        decision: e.model
+          ? needsReview(e, threshold)
+            ? "review"
+            : "approve"
+          : e.decision,
+      })),
+    [revealed, threshold],
+  );
+  const paymentEvents = flaggedOnly ? flaggedEvents : run.events;
   const revealedIds = useMemo(
     () => revealed.map((event) => event.eventId),
     [revealed],
@@ -178,6 +220,11 @@ export function Replay({
     setEvidenceIds([]);
     setPanel("event");
   }
+  function nextFlagged() {
+    const next =
+      flaggedEvents.find((e) => e.sequenceIndex > selected) || flaggedEvents[0];
+    if (next) inspectPayment(next.sequenceIndex);
+  }
   function play(restart = false) {
     setPanel(null);
     setEvidenceIds([]);
@@ -201,7 +248,7 @@ export function Replay({
       ? document.scenario.associations.find((a) => a.id === selection.id)
       : undefined;
   const related = selection
-    ? revealed.filter((e) =>
+    ? (flaggedOnly ? flaggedEvents : run.events).filter((e) =>
         selection.kind === "node"
           ? [e.accountId, e.merchantId, e.deviceId, e.locationId].includes(
               selection.id,
@@ -225,7 +272,7 @@ export function Replay({
     );
   return (
     <main
-      className={`workspace replay ${panel ? "panel-open" : ""}`}
+      className={`workspace replay ${panel ? "panel-open" : ""} ${flaggedOnly ? "flagged-only" : ""}`}
       aria-label="RiskFlow run snapshot"
     >
       <Graph
@@ -234,7 +281,9 @@ export function Replay({
         add={noAction}
         inspect={inspect}
         revealedIds={revealedIds}
-        decisions={revealed}
+        decisions={graphDecisions}
+        flaggedIds={flaggedIds}
+        flaggedOnly={flaggedOnly}
         evidenceIds={evidenceIds}
         focusPaymentId={event?.eventId}
         contextTime={contextTime}
@@ -299,6 +348,82 @@ export function Replay({
           </button>
         </div>
       </header>
+      <section
+        className={`run-overview${probabilityScores.length ? " has-threshold" : ""}`}
+        aria-label="Run assessment summary"
+      >
+        <div className="overview-counts">
+          <div>
+            <OverviewCount value={revealed.length} />
+            <span>assessed</span>
+          </div>
+          <button
+            className="review-total"
+            disabled={!flaggedIds.size}
+            onClick={() => {
+              setFlaggedOnly(true);
+              useSimulation.setState({ playing: false });
+              setPanel("events");
+            }}
+            aria-label={`${flaggedIds.size} need review — inspect flagged payments`}
+          >
+            <OverviewCount value={flaggedIds.size} /> <span>need review</span>
+          </button>
+          <div className="no-alert-total">
+            <OverviewCount value={revealed.length - flaggedIds.size} />
+            <span>no alert</span>
+          </div>
+          <button
+            className="flagged-filter"
+            aria-pressed={flaggedOnly}
+            onClick={() => setFlaggedOnly(!flaggedOnly)}
+          >
+            Flagged only
+          </button>
+        </div>
+        {!!probabilityScores.length && (
+          <div className="threshold-control">
+            <label htmlFor="review-threshold">
+              Probability threshold{" "}
+              <span className="threshold-value" aria-hidden="true">
+                {threshold === null
+                  ? "Model defaults"
+                  : `${threshold.toFixed(1)}%`}
+              </span>
+            </label>
+            <input
+              id="review-threshold"
+              type="range"
+              min="0"
+              max="100"
+              step="0.1"
+              value={sliderValue}
+              style={
+                { "--threshold-position": `${sliderValue}%` } as CSSProperties
+              }
+              aria-valuetext={
+                threshold === null
+                  ? `Model defaults active; adjust to preview a common threshold, starting at ${sliderValue}%`
+                  : `${threshold}%`
+              }
+              onChange={(e) => setThreshold(Number(e.target.value))}
+            />
+            <div className="threshold-caption">
+              <span>
+                {threshold === null
+                  ? `Defaults: ${defaultCutoffs.map((n) => `${n.toFixed(2)}%`).join(" / ")}`
+                  : "Preview · scores unchanged"}
+              </span>
+              <button
+                disabled={threshold === null}
+                onClick={() => setThreshold(null)}
+              >
+                Reset defaults
+              </button>
+            </div>
+          </div>
+        )}
+      </section>
       {panel === "events" && (
         <section
           id="run-payments"
@@ -312,36 +437,32 @@ export function Replay({
           >
             <CloseIcon />
           </button>
-          <h2>Payments</h2>
-          <p>Select a payment to view its details.</p>
+          <h2>{flaggedOnly ? "Payments for review" : "Payments"}</h2>
+          <p>
+            Completed model results. Select a payment to inspect its evidence.
+          </p>
+          {!paymentEvents.length && <p>No payments need review in this run.</p>}
           <div className="event-list run-event-list">
             <PaymentPages
-              items={run.events}
+              key={flaggedOnly ? "flagged" : "all"}
+              items={paymentEvents}
               identify={(e) => sourceId(e.eventId)}
             >
-              {(e, index) => (
+              {(e) => (
                 <button
                   key={e.eventId}
-                  className={
-                    index <= position.cursor
-                      ? `payment-result decision-${e.decision}`
-                      : undefined
-                  }
+                  className={`payment-result decision-${e.decision} ${needsReview(e, threshold) ? "payment-needs-review" : ""}`}
                   aria-label={`Inspect ${sourceId(e.eventId)}`}
-                  onClick={() => inspectPayment(index)}
+                  onClick={() => inspectPayment(e.sequenceIndex)}
                 >
                   <span>{sourceId(e.eventId)}</span>
                   <strong>{money(e.amountMinor)}</strong>
-                  <span>
-                    {index <= position.cursor ? outcome(e) : "Not revealed"}
-                  </span>
-                  {index <= position.cursor && <span>{score(e)}</span>}
+                  <span>{outcome(e)}</span>
+                  <span>{score(e)}</span>
                   {e.ruleEvaluations.some((r) => r.available === false) && (
                     <span>Limited data</span>
                   )}
-                  {index <= position.cursor && e.cardPattern && (
-                    <span>Additional card review</span>
-                  )}
+                  {e.cardPattern && <span>Additional card review</span>}
                 </button>
               )}
             </PaymentPages>
@@ -350,7 +471,7 @@ export function Replay({
       )}
       {panel === "event" && event && (
         <aside
-          className="card inspector run-inspector"
+          className="card inspector run-inspector payment-explanation"
           aria-label="Payment explanation"
         >
           <button
@@ -364,15 +485,27 @@ export function Replay({
             <CloseIcon />
           </button>
           <div className="kicker">
-            {retained
-              ? "Investigation recommendation"
-              : "Recorded payment decision"}
+            {retained ? "Investigation recommendation" : "Selected payment"}
           </div>
           <h2>
             {sourceId(event.eventId)} · {money(event.amountMinor)}
           </h2>
-          <div className={`decision decision-${event.decision}`}>
-            {outcome(event)} <strong>{score(event)}</strong>
+          <div
+            className={`decision decision-${event.decision} payment-verdict ${needsReview(event, threshold) ? "needs-review" : ""}`}
+          >
+            <span>
+              {needsReview(event, threshold)
+                ? "Review recommended"
+                : outcome(event)}
+            </span>
+            <div className="payment-estimate">
+              <strong>{score(event)}</strong>
+              <span>
+                {event.model?.score?.probabilityAvailable
+                  ? "Estimated fraud probability"
+                  : "Model score"}
+              </span>
+            </div>
           </div>
           {event.ruleEvaluations.some((r) => r.available === false) && (
             <p className="data-notice">
@@ -399,18 +532,31 @@ export function Replay({
           </p>
           {event.model ? (
             <section aria-label="Assessment evidence">
-              <h3>Assessment evidence</h3>
-              <p>
-                {event.model.historyCount} prior completed purchases. Confirmed
-                merchant-fraud feedback unavailable.
-              </p>
-              <p>
-                {event.model.detectionPaths.length
-                  ? `Alert paths: ${event.model.detectionPaths.map(title).join(", ")}`
-                  : "No model alert threshold crossed."}
-              </p>
+              <h3>
+                {needsReview(event, threshold)
+                  ? "Why this payment needs review"
+                  : "Assessment evidence"}
+              </h3>
+              <ul className="assessment-reasons">
+                <li>
+                  {threshold !== null && event.model.score?.probabilityAvailable
+                    ? `The estimate is ${needsReview(event, threshold) ? "at or above" : "below"} your ${threshold.toFixed(1)}% preview threshold.`
+                    : event.model.alert
+                      ? "The model estimate crossed its fixed review cutoff."
+                      : "The model estimate stayed below its fixed review cutoff."}
+                </li>
+                <li>
+                  {event.model.historyCount} prior completed purchases were
+                  available for this assessment.
+                </li>
+              </ul>
               <details>
                 <summary>Raw model margins</summary>
+                <p>
+                  {event.model.detectionPaths.length
+                    ? `Alert paths: ${event.model.detectionPaths.map(title).join(", ")}`
+                    : "No model alert threshold crossed."}
+                </p>
                 <p>
                   Uncalibrated model outputs, not fraud probabilities or
                   additive rule points.
@@ -436,103 +582,140 @@ export function Replay({
               {run.scenarioSnapshot.policy.blockThreshold}.
             </p>
           )}
-          <ContinuousScores model={event.model} cards={event.cardScores} />
-          <CardPatternDetails review={event.cardPattern} />
-          {event.ruleEvaluations.map((rule) => (
-            <details key={rule.ruleId} open={rule.triggered || undefined}>
-              <summary>
-                {title(rule.ruleId)}{" "}
-                <strong>
-                  {rule.available === false ? "N/A" : `+${rule.points}`}
-                </strong>
-              </summary>
-              <p>{rule.explanation}</p>
-              <details>
-                <summary>Measurements &amp; evidence</summary>
-                <dl className="facts">
-                  {Object.entries(rule.measured).map(([key, value]) => (
-                    <div key={key}>
-                      <dt>
-                        {title(
-                          key.replace(/[A-Z]/g, (c) => ` ${c.toLowerCase()}`),
-                        )}
-                      </dt>
-                      <dd>
-                        {Array.isArray(value)
-                          ? value.join(", ")
-                          : String(value)}
-                      </dd>
-                    </div>
-                  ))}
-                  {Object.entries(rule.thresholds).map(([key, value]) => (
-                    <div key={key}>
-                      <dt>{key}</dt>
-                      <dd>{value}</dd>
-                    </div>
-                  ))}
-                </dl>
-                <p>
-                  {rule.evidence.eventIds?.length
-                    ? `Contributing payments${rule.evidence.eventCount && rule.evidence.eventCount > rule.evidence.eventIds.length ? ` (latest ${rule.evidence.eventIds.length} of ${rule.evidence.eventCount})` : ""}: ${rule.evidence.eventIds.map(sourceId).join(", ")}`
-                    : "No contributing payment history."}
-                </p>
-                {rule.evidence.windowStart && (
-                  <p>
-                    Window: {rule.evidence.windowStart} through{" "}
-                    {rule.evidence.windowEnd}, inclusive.
-                  </p>
-                )}
-                {rule.evidence.observedAt && (
-                  <p>
-                    Observed: {rule.evidence.observedAt}
-                    <br />
-                    Familiar from:{" "}
-                    {rule.evidence.knownFrom || "Not established"}
-                  </p>
-                )}
-                {!!rule.evidence.eventIds?.length && (
-                  <div className="inline-actions">
-                    <button
-                      onClick={() => setEvidenceIds(rule.evidence.eventIds!)}
-                    >
-                      Highlight evidence
-                    </button>
-                    <button
-                      onClick={() => {
-                        const ids = new Set<string>(
-                          rule.evidence.accountIds || [],
-                        );
-                        if (rule.evidence.deviceId)
-                          ids.add(rule.evidence.deviceId);
-                        for (const e of run.events.filter((e) =>
-                          rule.evidence.eventIds?.includes(e.eventId),
-                        ))
-                          for (const id of [
-                            e.accountId,
-                            e.merchantId,
-                            e.deviceId,
-                          ])
-                            ids.add(id);
-                        setEvidenceIds(rule.evidence.eventIds!);
-                        void flow.fitView({
-                          nodes: [...ids].map((id) => ({ id })),
-                          padding: 0.4,
-                          duration: 0,
-                        });
-                      }}
-                    >
-                      Focus evidence
-                    </button>
-                  </div>
-                )}
-              </details>
+          {event.cardScores && (
+            <details>
+              <summary>Additional card model scores</summary>
+              <ContinuousScores
+                model={event.model}
+                cards={event.cardScores}
+                includePrimary={false}
+              />
             </details>
-          ))}
-          <p className="fineprint">
-            Synthetic truth label:{" "}
-            {run.scenarioSnapshot.groundTruth[event.eventId] || "Unlabeled"}.
-            Labels are excluded from scoring.
-          </p>
+          )}
+          {event.cardPattern && (
+            <details>
+              <summary>Additional card review</summary>
+              <CardPatternDetails review={event.cardPattern} />
+            </details>
+          )}
+          {!!event.ruleEvaluations.length && (
+            <details>
+              <summary>Rule measurements &amp; evidence</summary>
+              {event.ruleEvaluations.map((rule) => (
+                <details key={rule.ruleId} open={rule.triggered || undefined}>
+                  <summary>
+                    {title(rule.ruleId)}{" "}
+                    <strong>
+                      {rule.available === false ? "N/A" : `+${rule.points}`}
+                    </strong>
+                  </summary>
+                  <p>{rule.explanation}</p>
+                  <details>
+                    <summary>Measurements &amp; evidence</summary>
+                    <dl className="facts">
+                      {Object.entries(rule.measured).map(([key, value]) => (
+                        <div key={key}>
+                          <dt>
+                            {title(
+                              key.replace(
+                                /[A-Z]/g,
+                                (c) => ` ${c.toLowerCase()}`,
+                              ),
+                            )}
+                          </dt>
+                          <dd>
+                            {Array.isArray(value)
+                              ? value.join(", ")
+                              : String(value)}
+                          </dd>
+                        </div>
+                      ))}
+                      {Object.entries(rule.thresholds).map(([key, value]) => (
+                        <div key={key}>
+                          <dt>{key}</dt>
+                          <dd>{value}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                    <p>
+                      {rule.evidence.eventIds?.length
+                        ? `Contributing payments${rule.evidence.eventCount && rule.evidence.eventCount > rule.evidence.eventIds.length ? ` (latest ${rule.evidence.eventIds.length} of ${rule.evidence.eventCount})` : ""}: ${rule.evidence.eventIds.map(sourceId).join(", ")}`
+                        : "No contributing payment history."}
+                    </p>
+                    {rule.evidence.windowStart && (
+                      <p>
+                        Window: {rule.evidence.windowStart} through{" "}
+                        {rule.evidence.windowEnd}, inclusive.
+                      </p>
+                    )}
+                    {rule.evidence.observedAt && (
+                      <p>
+                        Observed: {rule.evidence.observedAt}
+                        <br />
+                        Familiar from:{" "}
+                        {rule.evidence.knownFrom || "Not established"}
+                      </p>
+                    )}
+                    {!!rule.evidence.eventIds?.length && (
+                      <div className="inline-actions">
+                        <button
+                          onClick={() =>
+                            setEvidenceIds(rule.evidence.eventIds!)
+                          }
+                        >
+                          Highlight evidence
+                        </button>
+                        <button
+                          onClick={() => {
+                            const ids = new Set<string>(
+                              rule.evidence.accountIds || [],
+                            );
+                            if (rule.evidence.deviceId)
+                              ids.add(rule.evidence.deviceId);
+                            for (const e of run.events.filter((e) =>
+                              rule.evidence.eventIds?.includes(e.eventId),
+                            ))
+                              for (const id of [
+                                e.accountId,
+                                e.merchantId,
+                                e.deviceId,
+                              ])
+                                ids.add(id);
+                            setEvidenceIds(rule.evidence.eventIds!);
+                            void flow.fitView({
+                              nodes: [...ids].map((id) => ({ id })),
+                              padding: 0.4,
+                              duration: 0,
+                            });
+                          }}
+                        >
+                          Focus evidence
+                        </button>
+                      </div>
+                    )}
+                  </details>
+                </details>
+              ))}
+            </details>
+          )}
+          <details>
+            <summary>Model limitations</summary>
+            <p>
+              Estimates are based on synthetic data and are not confirmed fraud.
+              Reliability on this upload is unverified. Confirmed merchant-fraud
+              feedback is unavailable.
+            </p>
+            <p>
+              Available history and model outputs explain the assessment
+              context; they do not establish a specific cause for the
+              prediction.
+            </p>
+            <p className="fineprint">
+              Synthetic truth label:{" "}
+              {run.scenarioSnapshot.groundTruth[event.eventId] || "Unlabeled"}.
+              Labels are excluded from scoring.
+            </p>
+          </details>
         </aside>
       )}
       {panel === "object" && selection && (
@@ -575,7 +758,7 @@ export function Replay({
                   : "observed"}
             </p>
           )}
-          <h3>{related.length} revealed payments</h3>
+          <h3>{related.length} recorded payments</h3>
           <p>
             {(["approve", "review", "block"] as const)
               .map(
@@ -620,37 +803,45 @@ export function Replay({
           <h2>
             {m.totalCount} payments · {money(m.totalAmountMinor)}
           </h2>
-          <ScoreExplorer
+          <DatasetResults
             events={run.events}
             truth={run.scenarioSnapshot.groundTruth}
-            sourceId={sourceId}
-            inspect={(e) => inspectPayment(e.sequenceIndex)}
+            threshold={threshold}
+            inspectFlagged={() => {
+              setFlaggedOnly(true);
+              setPanel("events");
+            }}
           />
-          {["engine-ml-upload-v8", "engine-ml-upload-v9"].includes(
-            run.engineVersion,
-          ) && (
-            <details className="card-pattern-review">
-              <summary>
-                Experimental card reviews (
-                {run.events.filter((e) => e.cardPattern).length})
-              </summary>
-              <section aria-label="Additional card reviews">
-                <h3>
-                  {run.events.filter((e) => e.cardPattern).length} additional
-                  card reviews
-                </h3>
-                <p>
-                  Experimental pattern suggestions, separate from primary model
-                  alerts. These purchases remain “no model alert” in the model
-                  metrics below.
-                </p>
-                {run.events.some(
-                  (e) =>
-                    e.cardPattern &&
-                    run.scenarioSnapshot.groundTruth[e.eventId],
-                ) && (
+          {retained && (
+            <p className="result-scope">
+              {
+                retained.assessments.filter(
+                  (item) => item.coverage === "not_assessed",
+                ).length
+              }{" "}
+              retained records not assessed.
+            </p>
+          )}
+          <details className="additional-analysis">
+            <summary>Additional analysis</summary>
+            <ScoreExplorer
+              events={run.events}
+              truth={run.scenarioSnapshot.groundTruth}
+              sourceId={sourceId}
+              inspect={(e) => inspectPayment(e.sequenceIndex)}
+            />
+            {run.events.some((e) => e.cardPattern) && (
+              <details className="card-pattern-review">
+                <summary>
+                  Experimental card reviews (
+                  {run.events.filter((e) => e.cardPattern).length})
+                </summary>
+                <section aria-label="Additional card reviews">
+                  <h3>
+                    {run.events.filter((e) => e.cardPattern).length} additional
+                    card reviews
+                  </h3>
                   <p>
-                    Among labeled suggestions:{" "}
                     {
                       run.events.filter(
                         (e) =>
@@ -668,221 +859,40 @@ export function Replay({
                             "legitimate",
                       ).length
                     }{" "}
-                    legitimate. Labels are used only for this comparison.
+                    legitimate among labeled suggestions.
                   </p>
-                )}
-                <CardReviewQueue
-                  events={run.events}
-                  truth={run.scenarioSnapshot.groundTruth}
-                  sourceId={sourceId}
-                  inspect={(e) => inspectPayment(e.sequenceIndex)}
-                />
-              </section>
-            </details>
-          )}
-          {retained && (
-            <p className="data-notice">
-              {retained.knowledgeLimitation}{" "}
-              {
-                retained.assessments.filter(
-                  (item) => item.coverage === "not_assessed",
-                ).length
-              }{" "}
-              retained records are not assessed. No alert does not establish
-              safety. Return to the dataset to inspect all activity.
-            </p>
-          )}
-          {run.warnings
-            .filter(
-              (w) =>
-                w.code === "incomplete_data" ||
-                w.code === "card_pattern_unavailable",
-            )
-            .map((w) => (
-              <p key={w.code} className="data-notice">
-                {assessmentText(w.message)}
-              </p>
-            ))}
-          <p>
-            These totals cover the entire completed simulation, independently of
-            playback.
-          </p>
-          <dl className="facts">
-            {(["approve", "review", "block"] as const).map((d) => (
-              <div key={d}>
-                <dt>{decisionLabel(d)}</dt>
-                <dd>
-                  {retained ? (
-                    retained.assessments.filter(
-                      (item) =>
-                        item.recommendation.replaceAll("_", " ") ===
-                        decisionLabel(d),
-                    ).length
-                  ) : (
-                    <>
-                      {m.decisions[d]!.count} ·{" "}
-                      {money(m.decisions[d]!.amountMinor)}
-                      <small>{rate(m.decisionRates[d]!)}</small>
-                    </>
-                  )}
-                </dd>
-              </div>
-            ))}
-            <div>
-              <dt>Flagged</dt>
-              <dd>{rate(m.flaggedRate)}</dd>
-            </div>
-            <div>
-              <dt>Review workload</dt>
-              <dd>{m.reviewWorkload} payments</dd>
-            </div>
-          </dl>
-          {!isLearnedEngine(run.engineVersion) && (
-            <details>
-              <summary>Score distribution &amp; rule triggers</summary>
-              <dl className="facts">
-                {Object.entries(m.scoreBins).map(([bin, count]) => (
-                  <div key={bin}>
-                    <dt>Score {bin}</dt>
-                    <dd>{count}</dd>
-                  </div>
-                ))}
-                {Object.entries(m.ruleTriggerCounts).map(([rule, count]) => (
-                  <div key={rule}>
-                    <dt>{title(rule)}</dt>
-                    <dd>{count}</dd>
-                  </div>
-                ))}
-              </dl>
-            </details>
-          )}
-          {!retained && (
-            <>
-              <details open>
-                <summary>
-                  Synthetic truth · {m.labeledCount}/{m.totalCount} labeled
-                </summary>
-                <p>
-                  {m.unlabeledCount} unlabeled payments are excluded from truth
-                  and labeled cost metrics. Review means pending, not prevented
-                  fraud.
-                </p>
-                {m.truthMetrics ? (
-                  <dl className="facts">
-                    {(
-                      [
-                        "fraudulent",
-                        "legitimate",
-                        "blockedFraud",
-                        "approvedFraud",
-                        "pendingFraud",
-                        "blockedLegitimate",
-                      ] as const
-                    ).map((key) => (
-                      <div key={key}>
-                        <dt>
-                          {key.replace(/[A-Z]/g, (c) => ` ${c.toLowerCase()}`)}
-                        </dt>
-                        <dd>
-                          {m.truthMetrics![key].count} ·{" "}
-                          {money(m.truthMetrics![key].amountMinor)}
-                        </dd>
-                      </div>
-                    ))}
-                    <div>
-                      <dt>Fraud block rate</dt>
-                      <dd>{rate(m.truthMetrics.fraudBlockRate)}</dd>
-                    </div>
-                    <div>
-                      <dt>Fraud approval rate</dt>
-                      <dd>{rate(m.truthMetrics.fraudApprovalRate)}</dd>
-                    </div>
-                    <div>
-                      <dt>Legitimate block rate</dt>
-                      <dd>{rate(m.truthMetrics.legitimateBlockRate)}</dd>
-                    </div>
-                  </dl>
-                ) : (
-                  <p>Truth metrics: N/A — no labeled payments.</p>
-                )}
+                  <CardReviewQueue
+                    events={run.events}
+                    truth={run.scenarioSnapshot.groundTruth}
+                    sourceId={sourceId}
+                    inspect={(e) => inspectPayment(e.sequenceIndex)}
+                  />
+                </section>
               </details>
-              <details>
-                <summary>
-                  Illustrative costs ·{" "}
-                  {amount(m.costs.illustrativeLabeledTotalCostMinor)}
-                </summary>
-                <dl className="facts">
-                  <div>
-                    <dt>Approved fraud loss (labeled)</dt>
-                    <dd>{amount(m.costs.estimatedApprovedFraudLossMinor)}</dd>
-                  </div>
-                  <div>
-                    <dt>Review cost (labeled)</dt>
-                    <dd>{amount(m.costs.labeledReviewCostMinor)}</dd>
-                  </div>
-                  <div>
-                    <dt>False-block friction (labeled)</dt>
-                    <dd>
-                      {amount(m.costs.estimatedFalseBlockFrictionCostMinor)}
-                    </dd>
-                  </div>
-                  <div>
-                    <dt>Review operating cost (all)</dt>
-                    <dd>{money(m.costs.reviewOperatingCostAllMinor)}</dd>
-                  </div>
-                </dl>
-                <p>
-                  Assumptions:{" "}
-                  {money(run.scenarioSnapshot.costAssumptions.reviewCostMinor)}{" "}
-                  per review;{" "}
-                  {money(
-                    run.scenarioSnapshot.costAssumptions.falseBlockCostMinor,
-                  )}{" "}
-                  per false block;{" "}
-                  {run.scenarioSnapshot.costAssumptions.approvedFraudLossBps /
-                    100}
-                  % approved fraud loss. All-review operating cost is separate
-                  from the labeled total.
-                </p>
-              </details>
-            </>
-          )}
-          <details>
-            <summary>Model notes &amp; run information</summary>
-            {run.events.length > 60 && (
-              <p>
-                Playback accelerates with the number of payments. This run takes
-                about {Math.ceil(end / 1250)} seconds at 1×. Every payment is
-                evaluated using the full available history and can be inspected
-                in Inspect payments.
-              </p>
             )}
-            {run.warnings.map((w) => (
-              <p key={w.code}>{assessmentText(w.message)}</p>
-            ))}
-            <p>
-              Completed {run.completedAt}
-              <br />
-              Run {run.runId}
-            </p>
-            <p>
-              {retained
-                ? "This assessment is saved. Open its dataset to retrieve it after refresh. The graph layout and playback clock do not change the recorded assessment."
-                : "Imported data and results last for this session. Refreshing clears the workspace and replay history."}
-            </p>
+            <details>
+              <summary>Run information</summary>
+              <p>
+                {run.completedAt}
+                <br />
+                Run {run.runId}
+              </p>
+              {run.warnings.map((w) => (
+                <p key={w.code}>{assessmentText(w.message)}</p>
+              ))}
+            </details>
           </details>
         </aside>
       )}
       <div className="status" role="status" aria-live="polite">
-        {position.cursor >= 0 && !position.completed && (
+        {position.cursor >= 0 && !position.completed && !event && (
           <>
             <button
               className={`revealed-decision decision-${run.events[position.cursor]!.decision}`}
               onClick={() => inspectPayment(position.cursor)}
             >
               Payment {sourceId(run.events[position.cursor]!.eventId)} ·{" "}
-              {outcome(run.events[position.cursor]!)} ·{" "}
-              {score(run.events[position.cursor]!)}
+              {outcome(run.events[position.cursor]!)}
             </button>
             <br />
           </>
@@ -891,16 +901,9 @@ export function Replay({
           <>
             <strong>Run complete · {m.totalCount} payments</strong>
             <br />
-            {retained ? (
-              "Investigation signals only · no payment actions taken"
-            ) : (
-              <>
-                {m.decisions.approve!.count}{" "}
-                {isLearnedEngine(run.engineVersion) ? "no alert" : "approved"} ·{" "}
-                {m.decisions.review!.count} for review ·{" "}
-                {m.decisions.block!.count} blocked
-              </>
-            )}
+            {run.events.length - flaggedEvents.length} no alert {"\u00b7"}{" "}
+            {flaggedEvents.length} for review
+            {threshold !== null && " \u00b7 Threshold preview"}
           </>
         ) : (
           <>
@@ -956,6 +959,11 @@ export function Replay({
           </button>
           <button onClick={() => play(true)}>Replay</button>
           <button onClick={() => seek(-1)}>Reset playback</button>
+          {!!flaggedEvents.length && (
+            <button className="next-flagged" onClick={nextFlagged}>
+              Next flagged
+            </button>
+          )}
           <label className="playback-speed">
             <span>
               Speed <strong>{state.speed}×</strong>
@@ -981,13 +989,6 @@ export function Replay({
             </span>
           </label>
         </nav>
-        <div className="tools camera">
-          <button
-            onClick={() => void flow.fitView({ padding: 0.25, duration: 0 })}
-          >
-            Fit
-          </button>
-        </div>
       </footer>
     </main>
   );
