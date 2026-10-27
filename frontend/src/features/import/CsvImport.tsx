@@ -10,7 +10,6 @@ import {
 } from "../../domain/csv";
 import type { ColumnMapping, CsvTable, ImportDefaults } from "../../domain/csv";
 import type { Document } from "../../domain/types";
-import { money } from "../../domain/types";
 import sampleCsvUrl from "../../assets/sample-payments.csv?url";
 import { decodeCsvBytes } from "../../domain/csv-values";
 import { MAX_CSV_BYTES } from "../../domain/limits";
@@ -86,16 +85,8 @@ export function CsvImport({
       <button className="close" aria-label="Close CSV import" onClick={close}>
         <CloseIcon />
       </button>
-      <div className="kicker">Build from data</div>
       <h2>Import payments</h2>
-      <p>
-        Drop a transaction export, map its columns, then preview your graph. Up
-        to 10,000 rows, 1,000 objects, and 5 MB. USD only. This session only.
-      </p>
-      <p>
-        Graph investigation works independently of model scoring. Choose Graph
-        only to explore a file without the inputs required for simulation.
-      </p>
+      <p>Upload a CSV, check the columns, and build your graph.</p>
       <label>
         Import purpose
         <select
@@ -106,31 +97,22 @@ export function CsvImport({
           }}
         >
           <option value="model">Graph and simulation</option>
-          <option value="graph">
-            Graph only · no simulation for incomplete data
-          </option>
+          <option value="graph">Graph only</option>
         </select>
       </label>
-      {purpose === "model" && (
-        <p>
-          Score payments using transaction behavior, account history and
-          merchant context. Compatible fields are required; review alerts
-          alongside your source data.
-        </p>
-      )}
       <p>
         <a href={sampleCsvUrl} download="sample-payments.csv">
           Download example CSV
         </a>
       </p>
       <button className="wide" onClick={browseSamples}>
-        Browse IBM samples · 5 to 10,000 transactions
+        Browse IBM samples
       </button>
       <label className="file-picker">
         <strong>
           {fileName ? "Choose another CSV" : "Choose a CSV or drop it here"}
         </strong>
-        <span>{fileName || "Comma, semicolon, or tab separated"}</span>
+        <span>{fileName || "USD · Up to 10,000 rows · 5 MB"}</span>
         <input
           aria-label="CSV file"
           type="file"
@@ -444,38 +426,25 @@ export function CsvImport({
       {preview && (
         <section ref={previewElement} aria-label="Import preview">
           <h3>Ready to build</h3>
-          {!!warnings.length && (
-            <div className="data-notice">
-              <h4>Data notes</h4>
-              <ul>
-                {warnings.map((warning) => (
-                  <li key={warning}>{warning}</li>
-                ))}
-              </ul>
-            </div>
-          )}
           <p>
             {preview.scenario.nodes.length} objects ·{" "}
             {preview.scenario.associations.length} relationships ·{" "}
             {preview.scenario.payments.length} payments
           </p>
-          <p>
-            {Object.keys(preview.scenario.groundTruth).length} labeled ·{" "}
-            {preview.scenario.payments.length -
-              Object.keys(preview.scenario.groundTruth).length}{" "}
-            unlabeled
-          </p>
-          <p>
-            Larger imports open as transaction groups; select groups to reach
-            interactive detail. Reused source IDs become shared objects. This
-            replaces the open scenario.
-          </p>
           {purpose === "graph" && (
-            <p>
-              This import builds an investigation graph without running a fraud
-              model. Display placeholders do not establish shared real devices
-              or locations. Model simulation remains a separate action.
-            </p>
+            <p>Explore these payments without running a fraud model.</p>
+          )}
+          {!!warnings.length && (
+            <details className="import-notes">
+              <summary>
+                Data notes <span>({warnings.length})</span>
+              </summary>
+              <ul>
+                {warnings.map((warning) => (
+                  <li key={warning}>{warning}</li>
+                ))}
+              </ul>
+            </details>
           )}
           <details>
             <summary>Objects in the imported graph</summary>
@@ -487,27 +456,6 @@ export function CsvImport({
               ))}
             </ul>
           </details>
-          <div className="import-table">
-            <table>
-              <caption>First five payments</caption>
-              <thead>
-                <tr>
-                  <th>Payment</th>
-                  <th>Amount</th>
-                  <th>UTC</th>
-                </tr>
-              </thead>
-              <tbody>
-                {preview.scenario.payments.slice(0, 5).map((p) => (
-                  <tr key={p.id}>
-                    <td>{p.id}</td>
-                    <td>{money(p.amountMinor)}</td>
-                    <td>{p.occurredAt}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
           <button className="primary wide" onClick={() => install(preview)}>
             Build graph
           </button>

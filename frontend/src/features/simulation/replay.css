@@ -112,11 +112,25 @@ html[data-motion="off"] .run-overview {
   margin-top: 12px;
   padding-top: 10px;
 }
-.threshold-control label {
+.threshold-heading {
   display: flex;
   justify-content: space-between;
   gap: 16px;
   font-size: 12px;
+}
+.threshold-defaults {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 16px;
+  min-height: 22px;
+  margin: 4px 0;
+  font-size: 12px;
+}
+.threshold-defaults b {
+  color: var(--text);
+  font-size: inherit;
+  font-variant-numeric: tabular-nums;
 }
 .threshold-control .threshold-value {
   color: var(--transaction-review);

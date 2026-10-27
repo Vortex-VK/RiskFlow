@@ -155,7 +155,6 @@ test("CSV preview maps columns, builds a shared graph and runs the actual engine
   await expect(preview).toContainText(
     "6 objects · 4 relationships · 3 payments",
   );
-  await expect(preview).toContainText("0 labeled · 3 unlabeled");
   await expect(page.locator(".react-flow__node")).toHaveCount(15);
   await page.screenshot({ path: "../docs/screenshots/csv-preview.png" });
   expect(
@@ -170,7 +169,9 @@ test("CSV preview maps columns, builds a shared graph and runs the actual engine
   await expect(page.locator(".node-device")).toHaveCount(1);
   await page.screenshot({ path: "../docs/screenshots/csv-imported-graph.png" });
   await page.getByRole("button", { name: "Simulate", exact: true }).click();
-  await page.getByRole("button", { name: "Inspect payments", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Inspect payments", exact: true })
+    .click();
   await page
     .getByRole("button", { name: "Inspect CSV03", exact: true })
     .click();
@@ -180,7 +181,7 @@ test("CSV preview maps columns, builds a shared graph and runs the actual engine
   await page.getByRole("button", { name: "Results", exact: true }).click();
   await expect(
     page.getByRole("complementary", { name: "Completed run totals" }),
-  ).toContainText("Truth metrics: N/A");
+  ).toContainText("No outcome labels");
 });
 
 test("CSV errors and cancellation preserve graph; dirty replacement supports cancel and discard", async ({

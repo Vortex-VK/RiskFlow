@@ -11,7 +11,8 @@ import { CardPatternDetails } from "../CardPatternDetails";
 import { ContinuousScores } from "../ContinuousScores";
 import type { ReviewGroup } from "../../domain/runInsights";
 import { DatasetResults } from "./DatasetResults";
-import { useEffect, useMemo, useState, type CSSProperties } from "react";
+import { ProbabilityThreshold } from "./ProbabilityThreshold";
+import { useEffect, useMemo, useState } from "react";
 import { useReactFlow } from "@xyflow/react";
 import { decodeDocument } from "../../api/decode";
 import { money, groupId } from "../../domain/types";
@@ -80,12 +81,6 @@ export function Replay({
       ),
     [run],
   );
-  const defaultCutoffs = useMemo(
-    () => [...new Set(probabilityScores.map((s) => s.referenceValue))],
-    [probabilityScores],
-  );
-  const sliderValue =
-    threshold ?? (defaultCutoffs.length === 1 ? defaultCutoffs[0]! : 90);
   const retained = captured.assessment;
   const assessments = useMemo(
     () => new Map(retained?.assessments.map((item) => [item.eventId, item])),
@@ -401,46 +396,11 @@ export function Replay({
           </button>
         </div>
         {!!probabilityScores.length && (
-          <div className="threshold-control">
-            <label htmlFor="review-threshold">
-              Probability threshold{" "}
-              <span className="threshold-value" aria-hidden="true">
-                {threshold === null
-                  ? "Model defaults"
-                  : `${threshold.toFixed(1)}%`}
-              </span>
-            </label>
-            <input
-              id="review-threshold"
-              type="range"
-              min="0"
-              max="100"
-              step="0.1"
-              value={sliderValue}
-              style={
-                { "--threshold-position": `${sliderValue}%` } as CSSProperties
-              }
-              aria-valuetext={
-                threshold === null
-                  ? `Model defaults active; adjust to preview a common threshold, starting at ${sliderValue}%`
-                  : `${threshold}%`
-              }
-              onChange={(e) => setThreshold(Number(e.target.value))}
-            />
-            <div className="threshold-caption">
-              <span>
-                {threshold === null
-                  ? `Defaults: ${defaultCutoffs.map((n) => `${n.toFixed(2)}%`).join(" / ")}`
-                  : "Preview · scores unchanged"}
-              </span>
-              <button
-                disabled={threshold === null}
-                onClick={() => setThreshold(null)}
-              >
-                Reset defaults
-              </button>
-            </div>
-          </div>
+          <ProbabilityThreshold
+            scores={probabilityScores}
+            threshold={threshold}
+            onChange={setThreshold}
+          />
         )}
       </section>
       {panel === "events" && (

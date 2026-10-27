@@ -21,20 +21,19 @@
   width: auto;
   flex: 0 0 auto;
 }
-.import-table {
-  overflow-x: auto;
-  margin: 16px 0;
+.import-inspector .import-notes,
+.import-inspector .data-notice {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+  border-left: 0;
 }
-.import-table table {
-  border-collapse: collapse;
-  font-size: 11px;
-  width: 100%;
+.import-inspector .import-notes summary {
+  color: var(--muted);
+  font-weight: 400;
 }
-.import-table th,
-.import-table td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid var(--line);
+.import-notes ul {
+  padding-left: 18px;
 }
 .import-inspector li {
   margin-bottom: 8px;

@@ -1,3 +1,4 @@
+import { useCommonCutoff } from "./workspace-helpers";
 import { expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { setPlaybackSpeed } from "./workspace-helpers";
@@ -81,6 +82,7 @@ test("review counts follow visible playback and completed inspection keeps the f
   const threshold = page.getByRole("slider", {
     name: /^Probability threshold/,
   });
+  await useCommonCutoff(page);
   await threshold.press("Home");
   await expect(totals).toHaveText(["8", "8", "0"]);
   expect(await sumGroupCounts()).toBe(8);
@@ -111,6 +113,7 @@ test("review counts follow visible playback and completed inspection keeps the f
   await expect(page.getByRole("button", { name: /^Connections/ })).toHaveCount(
     0,
   );
+  await useCommonCutoff(page);
   await threshold.press("Home");
   await expect(totals).toHaveText(["250", "250", "0"]);
   await expect(page.getByRole("status")).toContainText(
@@ -146,6 +149,7 @@ test("review counts follow visible playback and completed inspection keeps the f
       page.getByRole("complementary", { name: "Completed run totals" }),
     ).not.toContainText(removed);
   await page.getByRole("button", { name: "Close results" }).click();
+  await useCommonCutoff(page);
   await threshold.press("End");
   const at100 = run.events.filter(
     (e: { model: { score: { value: number } } }) => e.model.score.value >= 100,

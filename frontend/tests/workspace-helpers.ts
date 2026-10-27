@@ -123,3 +123,11 @@ export async function openExampleWorkspace(page: Page) {
   ).toHaveCount(0);
   await selectExample(page);
 }
+
+export async function useCommonCutoff(page: Page) {
+  const customize = page.getByRole("button", {
+    name: "Use one cutoff",
+    exact: true,
+  });
+  if (await customize.isVisible()) await customize.click();
+}

@@ -80,6 +80,26 @@ describe("recorded review decisions", () => {
 });
 
 describe("probability threshold preview", () => {
+  it("keeps an online payment below its model cutoff unflagged until an explicitly lower common cutoff is used", () => {
+    const online = {
+      decision: "approve",
+      model: {
+        alert: false,
+        score: {
+          value: 95.94429611983729,
+          referenceValue: 96.25289733442912,
+          probabilityAvailable: true,
+        },
+      },
+    };
+    expect(needsReview(online)).toBe(false);
+    expect(needsReview(online, 96.26)).toBe(false);
+    expect(needsReview(online, 95.95)).toBe(false);
+    expect(needsReview(online, 95.94)).toBe(true);
+    expect(needsReview(online, null)).toBe(false);
+    expect(online.model.score.value).toBe(95.94429611983729);
+  });
+
   const events = [
     {
       eventId: "a",

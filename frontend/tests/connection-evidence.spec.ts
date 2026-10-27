@@ -1,3 +1,4 @@
+import { useCommonCutoff } from "./workspace-helpers";
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { readFile } from "node:fs/promises";
@@ -185,6 +186,7 @@ test("shared connections follow playback and threshold, and open the real paymen
   const threshold = page.getByRole("slider", {
     name: /^Probability threshold/,
   });
+  await useCommonCutoff(page);
   await threshold.press("Home");
   await page.locator(".connection-target").first().press("Enter");
   const panel = page.getByRole("region", {
@@ -219,6 +221,7 @@ test("shared connections follow playback and threshold, and open the real paymen
   await expect(
     panel.locator(".connection-payment-heading .connection-flag").first(),
   ).toHaveText("Flagged");
+  await useCommonCutoff(page);
   await threshold.press("End");
   await expect(totals).toHaveText([counts[0]!, total, "0"]);
   await expect(
@@ -233,6 +236,7 @@ test("shared connections follow playback and threshold, and open the real paymen
   await expect(panel.locator(".connection-payment-status").first()).toHaveText(
     "No alert",
   );
+  await useCommonCutoff(page);
   await threshold.press("Home");
   await panel
     .getByRole("button", { name: "View flagged payments", exact: true })

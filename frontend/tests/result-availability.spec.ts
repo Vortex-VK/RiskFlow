@@ -1,3 +1,4 @@
+import { useCommonCutoff } from "./workspace-helpers";
 import { expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { readFileSync } from "node:fs";
@@ -126,6 +127,22 @@ test("insight links follow the threshold without advancing playback", async ({
   const threshold = page.getByRole("slider", {
     name: /^Probability threshold/,
   });
+  await expect(threshold).toHaveCount(0);
+  for (const cutoff of new Set(
+    run.events.map((e) => e.model!.score!.referenceValue),
+  ))
+    await expect(overview.locator(".threshold-defaults")).toContainText(
+      `${cutoff.toFixed(2)}%`,
+    );
+  await useCommonCutoff(page);
+  await expect(threshold).toHaveValue(
+    (
+      Math.ceil(
+        Math.max(...run.events.map((e) => e.model!.score!.referenceValue)) *
+          100,
+      ) / 100
+    ).toFixed(2),
+  );
   await threshold.press("Home");
   await page.getByRole("button", { name: "Results", exact: true }).click();
   const concentration = page.getByRole("region", {
@@ -153,9 +170,11 @@ test("insight links follow the threshold without advancing playback", async ({
     await expect(
       queue.getByRole("button", { name: `Inspect ${e.eventId}`, exact: true }),
     ).toBeVisible();
+  await useCommonCutoff(page);
   await threshold.press("End");
   const at100 = largest.filter((e) => e.model!.score!.value >= 100).length;
   await expect(queue).toContainText(`${at100} matching flagged payments`);
+  await useCommonCutoff(page);
   await threshold.press("Home");
   await expect(queue).toContainText(
     `${largest.length} matching flagged payments`,
@@ -318,11 +337,13 @@ test("insight links follow the threshold without advancing playback", async ({
     if (request.url().endsWith("/api/v1/explanations"))
       additionalExplanations++;
   });
+  await useCommonCutoff(page);
   await threshold.press("Home");
   await expect(detail.locator(".probability-final")).toHaveClass(/raises-risk/);
   await expect(detail.locator(".probability-final")).toContainText(
     "above the preview threshold",
   );
+  await useCommonCutoff(page);
   await threshold.press("End");
   await expect(detail.locator(".probability-final")).toHaveClass(/lowers-risk/);
   await expect(detail.locator(".probability-final")).toContainText(
