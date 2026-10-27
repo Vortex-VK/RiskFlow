@@ -60,11 +60,6 @@
   stroke-width: 5;
   pointer-events: none;
 }
-.comparisonLabel {
-  opacity: 1;
-  fill: var(--accent);
-  font-size: 11px;
-}
 :global(.react-flow__edge:hover) .edgeLabel,
 :global(.react-flow__edge.selected) .edgeLabel,
 :global(.react-flow__edge:focus-visible) .edgeLabel {

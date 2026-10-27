@@ -11,6 +11,38 @@
   border-radius: 12px;
   background: var(--surface);
 }
+.run-overview.is-entering {
+  animation: assessment-enter 420ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+.run-overview.is-exiting {
+  animation: assessment-exit 280ms ease-in forwards;
+  pointer-events: none;
+}
+@keyframes assessment-enter {
+  from {
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes assessment-exit {
+  to {
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+}
+html[data-motion="off"] .run-overview {
+  animation: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .run-overview.is-entering,
+  .run-overview.is-exiting {
+    animation: none;
+  }
+}
 .replay:has(.hierarchy-navigation) .run-overview {
   top: 148px;
 }
@@ -228,7 +260,261 @@
 .distribution-row strong {
   text-align: right;
 }
-.additional-analysis {
+.model-explanation {
+  border-block: 1px solid var(--line);
+  padding-block: 8px;
+  margin-block: 20px;
+}
+.contribution-list {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0;
+}
+.contribution-list li {
+  margin-block: 18px;
+}
+.contribution-list li > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  font-size: 12px;
+}
+.contribution-list strong {
+  font-weight: 500;
+  line-height: 1.5;
+}
+.contribution-list span {
+  white-space: nowrap;
+  font-size: 11px;
+}
+.contribution-list small {
+  display: block;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+.raises-risk {
+  --contribution-color: #edac99;
+}
+.lowers-risk {
+  --contribution-color: #a2c5ae;
+}
+.contribution-list span {
+  color: var(--contribution-color);
+}
+.contribution-value {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  min-width: 62px;
+  text-align: right;
+}
+.compact-probability {
+  margin: 12px 0;
+}
+.compact-probability figcaption {
+  font-size: 13px;
+  font-weight: 600;
+}
+.probability-plot {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 12px;
+  overflow: visible;
+}
+.probability-plot rect,
+.probability-plot circle {
+  fill: var(--contribution-color);
+}
+.probability-start {
+  --contribution-color: #bdbdbd;
+}
+.plot-axis {
+  fill: var(--muted);
+  font-size: 9px;
+}
+.plot-grid {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+.plot-connector {
+  stroke: var(--muted);
+  stroke-width: 0.7;
+  stroke-dasharray: 2 2;
+}
+.probability-cutoff {
+  stroke: #ededed;
+  stroke-width: 1;
+  stroke-dasharray: 4 3;
+}
+.probability-endpoints,
+.probability-step-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 12px;
+}
+.probability-endpoints {
+  flex-wrap: wrap;
+  font-size: 11px;
+  color: var(--muted);
+  margin: 4px 0 12px;
+}
+.probability-step-heading > :last-child {
+  color: var(--contribution-color);
+  font-variant-numeric: tabular-nums;
+}
+.compact-contributions {
+  margin: 8px 0;
+}
+.compact-contributions li {
+  margin: 8px 0;
+}
+.compact-contributions small {
+  margin: 1px 0 0 15px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.compact-contributions .contribution-index {
+  color: var(--muted);
+}
+.other-factor-details > summary {
+  display: list-item;
+  font-size: 12px;
+}
+.other-factor-details > summary strong {
+  float: right;
+  color: var(--contribution-color);
+  font-variant-numeric: tabular-nums;
+}
+.other-factor-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+}
+.other-factor-list li {
+  border-top: 1px solid var(--line);
+  padding: 8px 0;
+}
+.other-factor-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+}
+.other-factor-heading strong {
+  font-weight: 500;
+}
+.other-factor-change {
+  color: var(--contribution-color);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.other-factor-list small,
+.other-factor-running {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.other-factor-running span {
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+.probability-final {
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+  margin-top: 10px;
+}
+.probability-final p {
+  margin: 4px 0;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.probability-formula {
+  overflow-wrap: anywhere;
+}
+.model-explanation h4 {
+  font-size: 12px;
+  margin: 14px 0 8px;
+}
+.model-explanation .evidence-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 12px;
+}
+.model-explanation .evidence-facts > div {
+  display: block;
+  padding: 0;
+  border: 0;
+}
+.model-explanation .evidence-facts dd {
+  margin: 3px 0 0;
+  text-align: left;
+}
+.run-insights {
+  border-top: 1px solid var(--line);
+  margin-top: 24px;
+}
+.run-insights h4 {
+  margin: 14px 0 8px;
+  font-size: 13px;
+}
+.run-insights h4 small {
+  display: block;
+  margin-top: 4px;
+  font-weight: 400;
+  color: var(--muted);
+}
+.insight-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.concentration-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 8px;
+  padding: 10px 12px;
+  font-size: 12px;
+}
+.concentration-row strong {
+  overflow-wrap: anywhere;
+}
+.concentration-row small {
+  color: var(--muted);
+}
+.pattern-list li {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+}
+.pattern-list p {
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 6px 0 10px;
+}
+.pattern-list li > div {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.model-explanation .explanation-caption {
+  font-size: 12px;
+  line-height: 1.6;
+}
+.evidence-facts {
+  font-size: 12px;
+}
+.run-inspector > .score-explorer {
   margin-top: 24px;
   border-top: 1px solid var(--line);
   padding-top: 10px;
@@ -318,7 +604,6 @@
   color: var(--transaction-review);
 }
 .playback .next-flagged {
-  color: var(--transaction-review);
   white-space: nowrap;
 }
 .replay .playback .playback-speed {

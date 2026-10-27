@@ -19,7 +19,7 @@ test("sample library is dismissible, responsive and downloadable", async ({
   ).toHaveCount(0);
   await expect(
     dialog.locator(
-      "details, .sample-tag, .sample-format, .sample-period, .sample-option-arrow",
+      ".sample-detail details, .sample-tag, .sample-format, .sample-period, .sample-option-arrow",
     ),
   ).toHaveCount(0);
   await expect(dialog).not.toContainText(
@@ -55,6 +55,11 @@ test("sample library is dismissible, responsive and downloadable", async ({
         .digest("hex"),
     ).toBe(sample.sha256);
   }
+  await dialog.getByText("Overall model evaluation", { exact: true }).click();
+  await expect(dialog.locator(".model-validation")).toContainText("334,777");
+  await expect(
+    dialog.getByRole("region", { name: "Sample results" }),
+  ).not.toContainText("334,777");
   await page.setViewportSize({ width: 390, height: 844 });
   await expect(dialog).toBeVisible();
   expect(

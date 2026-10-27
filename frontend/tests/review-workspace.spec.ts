@@ -10,6 +10,11 @@ test("review counts follow visible playback and completed inspection keeps the f
   page.on("pageerror", (error) => errors.push(error.message));
   await page.goto("/");
   await page.getByRole("button", { name: "Samples", exact: true }).click();
+  const response = page.waitForResponse(
+    (r) =>
+      r.url().endsWith("/api/v1/simulations") &&
+      r.request().method() === "POST",
+  );
   await page.getByRole("button", { name: "Open in workspace" }).click();
   await expect(
     page.getByRole("button", { name: "Payments 250", exact: true }),
@@ -21,11 +26,6 @@ test("review counts follow visible playback and completed inspection keeps the f
     .locator(".react-flow__viewport")
     .getAttribute("style");
   await page.screenshot({ path: testInfo.outputPath("before-simulation.png") });
-  const response = page.waitForResponse(
-    (r) =>
-      r.url().endsWith("/api/v1/simulations") &&
-      r.request().method() === "POST",
-  );
   await page.getByRole("button", { name: "Simulate", exact: true }).click();
   const run = await (await response).json();
   const flagged = run.events.filter(
@@ -38,6 +38,7 @@ test("review counts follow visible playback and completed inspection keeps the f
     .click();
   const totals = overview.locator("strong");
   await expect(totals).toHaveText(["0", "0", "0"]);
+  await expect(overview).toHaveCSS("transform", "none");
   const initialSummaryBox = await overview.boundingBox();
   const numberPositions = () =>
     totals.evaluateAll((nodes) =>
@@ -129,8 +130,21 @@ test("review counts follow visible playback and completed inspection keeps the f
     `${frauds} of ${frauds} labeled frauds flagged`,
   );
   await expect(
-    page.getByText("Score evaluation", { exact: true }),
-  ).toBeHidden();
+    results.getByRole("region", { name: "Where alerts concentrate" }),
+  ).toBeVisible();
+  await expect(
+    results.getByRole("region", { name: "Patterns worth investigating" }),
+  ).toBeVisible();
+  for (const removed of [
+    "Score evaluation",
+    "Additional analysis",
+    "Run information",
+    "Ranked payments",
+    "Experimental card reviews",
+  ])
+    await expect(
+      page.getByRole("complementary", { name: "Completed run totals" }),
+    ).not.toContainText(removed);
   await page.getByRole("button", { name: "Close results" }).click();
   await threshold.press("End");
   const at100 = run.events.filter(
@@ -187,7 +201,7 @@ test("review counts follow visible playback and completed inspection keeps the f
       exact: true,
     }),
   ).toHaveCount(1);
-  await expect(detail).toContainText("fixed review cutoff");
+  await expect(detail).toContainText("model review cutoff");
   await expect(detail.locator(".continuous-score")).toHaveCount(0);
   const selectedMerchant = page.locator(
     `[data-node="${flagged[0].merchantId}"]`,
@@ -218,6 +232,13 @@ test("review counts follow visible playback and completed inspection keeps the f
     "data-transitioning",
     "false",
   );
+  await expect(detail.locator(".contribution-list li")).toHaveCount(5);
+  await expect(
+    detail.getByRole("figure", {
+      name: "From starting estimate to final probability",
+    }),
+  ).toBeVisible();
+  await expect(detail.locator(".contribution-track")).toHaveCount(0);
   await page.screenshot({ path: testInfo.outputPath("payment-detail.png") });
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
   await page.getByRole("button", { name: "Results", exact: true }).click();
@@ -227,25 +248,22 @@ test("review counts follow visible playback and completed inspection keeps the f
   ).toHaveCSS("opacity", "1");
   await page.screenshot({ path: testInfo.outputPath("dataset-results.png") });
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
-  await page.getByText("Additional analysis", { exact: true }).click();
-  await page.getByText("Score evaluation", { exact: true }).click();
-  const evaluation = page.getByRole("region", {
-    name: "Score evaluation",
+  await expect(
+    page.getByRole("region", { name: "Score evaluation", exact: true }),
+  ).toHaveCount(0);
+  const nextFlagged = page.getByRole("button", {
+    name: "Next flagged",
     exact: true,
   });
-  await expect(evaluation.getByRole("slider")).toHaveCount(0);
-  await expect(
-    evaluation.getByRole("button", { name: /Preview|Reset.*cutoff/ }),
-  ).toHaveCount(0);
-  const ranking = evaluation
-    .locator("details")
-    .filter({
-      has: page.locator("summary", { hasText: "Ranking & calibration" }),
-    })
-    .first();
-  await expect(ranking).not.toHaveAttribute("open");
-  await evaluation.getByText("Ranking & calibration", { exact: true }).click();
-  await expect(evaluation.getByText(/Average precision:/)).toBeVisible();
+  const replayButton = page.getByRole("button", {
+    name: "Replay",
+    exact: true,
+  });
+  expect(
+    await nextFlagged.evaluate((element) => getComputedStyle(element).color),
+  ).toBe(
+    await replayButton.evaluate((element) => getComputedStyle(element).color),
+  );
   await page.getByRole("button", { name: "Close results" }).click();
   await page.setViewportSize({ width: 390, height: 844 });
   await page.getByRole("button", { name: "Next flagged", exact: true }).click();

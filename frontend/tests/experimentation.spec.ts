@@ -1,9 +1,6 @@
 import { fillModelInputs } from "./workspace-helpers";
 import { openExampleWorkspace, selectExample } from "./workspace-helpers";
 import { test, expect } from "@playwright/test";
-import type { Document } from "../src/domain/types";
-import type { Run } from "../src/domain/runs";
-import { compareRuns, rateDifference } from "../src/domain/comparison";
 
 test.beforeEach(async ({ page }) => {
   await openExampleWorkspace(page);
@@ -49,91 +46,19 @@ test("blank construction, unlabeled simulation and policy editing", async ({
   await page.getByRole("button", { name: "Results", exact: true }).click();
   await expect(
     page.getByRole("complementary", { name: "Completed run totals" }),
-  ).toContainText("Truth metrics: N/A");
+  ).toContainText("No outcome labels");
   await page.getByRole("button", { name: "Edit scenario" }).click();
   await page.getByRole("button", { name: "About this workspace" }).click();
   await page.getByText("Scenario options", { exact: true }).click();
   await page.getByRole("button", { name: "Policy & costs" }).click();
   await page.getByLabel("Cost per review · USD").fill("0.00");
   await page.getByRole("button", { name: "Simulate", exact: true }).click();
-  await page.getByRole("button", { name: "Compare runs" }).click();
   await expect(
-    page.getByRole("complementary", { name: "Comparison details" }),
-  ).toContainText("Cost assumptions changed");
-});
-
-test("comparison distinguishes labels, population, versions, null rates and other-account history", async ({
-  request,
-}) => {
-  const doc: Document = await (
-    await request.get("/api/v1/templates/shared-device-cluster")
-  ).json();
-  for (const node of doc.scenario.nodes)
-    if (node.type === "account") node.usualCountryCodes.push("CA");
-  const run = async (): Promise<Run> => {
-    const response = await request.post("/api/v1/simulations", {
-      data: { scenario: doc.scenario },
-    });
-    expect(response.ok()).toBe(true);
-    return response.json();
-  };
-  const first = await run();
-  const reordered = structuredClone(first);
-  for (const node of reordered.scenarioSnapshot.nodes) {
-    if (node.type !== "account") continue;
-    node.usualCountryCodes.reverse();
-    node.usualMerchantCategories.reverse();
-  }
-  for (const payment of reordered.scenarioSnapshot.payments)
-    payment.unavailableRules = [];
-  const unchanged = compareRuns(first, reordered);
-  expect(unchanged.basis).toEqual(["Same analytical inputs"]);
-  expect(unchanged.events).toHaveLength(first.events.length);
-  for (const event of unchanged.events) {
-    expect(event.reasons).toEqual([]);
-    expect(event.changed).toBe(false);
-  }
-  doc.scenario.payments.find((p) => p.id === "H09")!.deviceId = "device-c";
-  const second = await run();
-  expect(
-    compareRuns(first, second).events.find((e) => e.id === "H10")!.reasons,
-  ).toEqual(["Earlier payment history changed"]);
-  doc.scenario.groundTruth.H10 = "legitimate";
-  const relabeled = await run();
-  expect(compareRuns(second, relabeled)).toMatchObject({
-    labelsChanged: true,
-    coverageChanged: false,
-    populationChanged: false,
-  });
-  delete doc.scenario.groundTruth.H01;
-  const partial = await run();
-  expect(compareRuns(relabeled, partial).coverageChanged).toBe(true);
-  doc.scenario.payments = doc.scenario.payments.filter((p) => p.id !== "H01");
-  const removed = await run();
-  expect(compareRuns(partial, removed)).toMatchObject({
-    removed: 1,
-    added: 0,
-    populationChanged: true,
-  });
-  expect(compareRuns(removed, partial).added).toBe(1);
-  const versioned = structuredClone(removed);
-  versioned.engineVersion = "engine-test";
-  expect(compareRuns(removed, versioned).basis).toContain(
-    "Engine/rules changed",
+    page.getByRole("main", { name: "RiskFlow run snapshot" }),
+  ).toBeVisible();
+  await expect(page.getByRole("button", { name: "Compare runs" })).toHaveCount(
+    0,
   );
-  expect(rateDifference(null, { numerator: 1, denominator: 2 })).toBeNull();
-  expect(
-    rateDifference(
-      { numerator: 0, denominator: 0 },
-      { numerator: 1, denominator: 2 },
-    ),
-  ).toBeNull();
-  expect(
-    rateDifference(
-      { numerator: 1, denominator: 4 },
-      { numerator: 1, denominator: 2 },
-    ),
-  ).toBe(25);
 });
 
 test("session-only workspace removes the legacy draft and never stores new data", async ({

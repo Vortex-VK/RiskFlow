@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { readFile } from "node:fs/promises";
-import { syntheticModelCsv } from "./workspace-helpers";
+import { syntheticModelCsv, setPlaybackSpeed } from "./workspace-helpers";
 function csvRows(text: string): Record<string, string>[] {
   const rows: string[][] = [];
   let row: string[] = [],
@@ -36,7 +36,7 @@ function csvRows(text: string): Record<string, string>[] {
 
 test("subtle sector links reveal exact source payments without crowding the overview", async ({
   page,
-}) => {
+}, testInfo) => {
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
   const csv = new Map(
@@ -93,14 +93,20 @@ test("subtle sector links reveal exact source payments without crowding the over
     page.getByRole("region", { name: "Connection evidence" }),
   ).toHaveCount(0);
   await page.mouse.move(10, 10);
-  await page.locator(".connection-target").first().press("Enter");
+  await page.mouse.click(midpoint.x, midpoint.y);
+  await expect(page.locator(".connection-target:focus")).toHaveCSS(
+    "outline-style",
+    "none",
+  );
   const panel = page.getByRole("region", { name: "Connection evidence" });
   await expect(panel).toBeVisible();
-  await expect(panel).toContainText("not a payment between sectors");
-  const options = panel
-    .getByRole("combobox", { name: "Connection", exact: true })
-    .locator("option");
-  expect(await options.count()).toBeGreaterThan(shown);
+  await expect(
+    panel.getByRole("button", { name: "View flagged payments", exact: true }),
+  ).toHaveCount(0);
+  await expect(panel).toContainText("Run a simulation to see review decisions");
+  await expect(
+    panel.getByText("Browse connections", { exact: true }),
+  ).toHaveCount(0);
   const entity = panel.getByRole("combobox", { name: "Shared object" });
   const value = await entity.inputValue();
   await expect(page.locator(".atlas-cloud")).toHaveAttribute(
@@ -114,16 +120,14 @@ test("subtle sector links reveal exact source payments without crowding the over
     account: "account_id",
     device: "device_id",
   }[match[2]!]!;
-  const ids = await panel
-    .locator(".connection-payments button")
-    .allTextContents();
+  const ids = await panel.locator(".connection-payment-id").allTextContents();
   expect(ids.length).toBeGreaterThan(1);
   for (const id of ids) {
     expect(csv.has(id)).toBe(true);
     expect(csv.get(id)![field]).toBe(match[1]);
   }
   await page.screenshot({
-    path: "../docs/screenshots/atlas-connection-evidence.png",
+    path: testInfo.outputPath("shared-connection.png"),
   });
   const violations = (
     await new AxeBuilder({ page })
@@ -131,11 +135,6 @@ test("subtle sector links reveal exact source payments without crowding the over
       .analyze()
   ).violations;
   expect(violations).toEqual([]);
-  const last = (await options.last().getAttribute("value"))!;
-  await panel
-    .getByRole("combobox", { name: "Connection", exact: true })
-    .selectOption(last);
-  await expect(page.locator(`[data-connection="${last}"]`)).toHaveCount(1);
   await page.keyboard.press("Escape");
   await expect(panel).toHaveCount(0);
   await expect(page.getByRole("button", { name: /^Connections/ })).toHaveCount(
@@ -143,7 +142,7 @@ test("subtle sector links reveal exact source payments without crowding the over
   );
   await page.locator(".connection-target").first().press("Enter");
   const payment = panel.locator(".connection-payments button").first();
-  const id = await payment.textContent();
+  const id = await payment.locator(".connection-payment-id").textContent();
   await payment.click();
   await expect(page.locator(".hierarchy-stage")).toHaveAttribute(
     "data-detail",
@@ -166,5 +165,96 @@ test("subtle sector links reveal exact source payments without crowding the over
   expect(new Date(`${time}Z`).toISOString()).toBe(
     new Date(csv.get(id!)!.timestamp!).toISOString(),
   );
+  expect(errors).toEqual([]);
+});
+
+test("shared connections follow playback and threshold, and open the real payment explanation", async ({
+  page,
+}, testInfo) => {
+  const errors: string[] = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  await page.goto("/");
+  await page.getByRole("button", { name: "Samples", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Open in workspace", exact: true })
+    .click();
+  await page.getByRole("button", { name: "Simulate", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Reset playback", exact: true })
+    .click();
+  const threshold = page.getByRole("slider", {
+    name: /^Probability threshold/,
+  });
+  await threshold.press("Home");
+  await page.locator(".connection-target").first().press("Enter");
+  const panel = page.getByRole("region", {
+    name: "Connection evidence",
+    exact: true,
+  });
+  const totals = panel.locator(".connection-summary strong");
+  await expect(panel).toBeVisible();
+  const counts = await totals.allTextContents();
+  const total = counts[1]!;
+  expect(Number(total.replaceAll(",", ""))).toBeGreaterThan(0);
+  expect(counts[2]).toBe("0");
+  await expect(
+    panel.getByRole("button", { name: "View flagged payments", exact: true }),
+  ).toHaveCount(0);
+  await expect(panel.locator(".connection-payment-status").first()).toHaveText(
+    "Not yet assessed",
+  );
+  await setPlaybackSpeed(page, 10);
+  await page.getByRole("button", { name: "Play", exact: true }).click();
+  await expect(page.getByRole("status")).toContainText("Run complete", {
+    timeout: 30000,
+  });
+  await expect(totals).toHaveText([counts[0]!, total, total]);
+  await expect(panel.locator(".connection-filters button")).toHaveText([
+    "View all payments",
+    "View flagged payments",
+  ]);
+  await panel
+    .getByRole("button", { name: "View flagged payments", exact: true })
+    .click();
+  await expect(
+    panel.locator(".connection-payment-heading .connection-flag").first(),
+  ).toHaveText("Flagged");
+  await threshold.press("End");
+  await expect(totals).toHaveText([counts[0]!, total, "0"]);
+  await expect(
+    panel.getByRole("button", { name: "View flagged payments", exact: true }),
+  ).toHaveCount(0);
+  await expect(
+    panel.getByRole("button", { name: "View all payments", exact: true }),
+  ).toHaveAttribute("aria-pressed", "true");
+  await panel
+    .getByRole("button", { name: "View all payments", exact: true })
+    .click();
+  await expect(panel.locator(".connection-payment-status").first()).toHaveText(
+    "No alert",
+  );
+  await threshold.press("Home");
+  await panel
+    .getByRole("button", { name: "View flagged payments", exact: true })
+    .click();
+  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
+  await panel.screenshot({
+    path: testInfo.outputPath("shared-connection-review.png"),
+  });
+  const payment = panel.locator(".connection-payment").first();
+  const id = await payment.getAttribute("data-payment-id");
+  const overview = page.getByRole("region", { name: "Run assessment summary" });
+  const before = await overview.locator("strong").allTextContents();
+  await payment.click();
+  const detail = page.getByRole("complementary", {
+    name: "Payment explanation",
+    exact: true,
+  });
+  await expect(detail).toContainText(id!);
+  await expect(panel).toHaveCount(0);
+  await expect(overview.locator("strong")).toHaveText(before);
+  await expect(
+    detail.getByRole("region", { name: "Model explanation", exact: true }),
+  ).toBeVisible();
   expect(errors).toEqual([]);
 });

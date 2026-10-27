@@ -54,7 +54,6 @@ type Link = Edge<
     count: number;
     context: boolean;
     highlighted: boolean;
-    comparison?: string;
     pulse?: number;
     risk?: "review" | "block";
     temporal?: "future" | "observed" | "familiar";
@@ -116,7 +115,7 @@ function LinkView({ id, data, selected }: EdgeProps<Link>) {
         style={{
           stroke: data.risk
             ? color
-            : selected || data.highlighted || data.comparison
+            : selected || data.highlighted
               ? "var(--accent)"
               : "var(--edge)",
           filter: undefined,
@@ -150,13 +149,13 @@ function LinkView({ id, data, selected }: EdgeProps<Link>) {
           />
         </g>
       )}
-      {(data.count > 1 || data.comparison) && (
+      {data.count > 1 && (
         <text
           x={(x1 + x2) / 2}
           y={(y1 + y2) / 2 - 7}
-          className={`${styles.edgeLabel} ${data.comparison ? styles.comparisonLabel : ""}`}
+          className={styles.edgeLabel}
         >
-          {data.comparison || data.count}
+          {data.count}
         </text>
       )}
     </>
@@ -177,7 +176,6 @@ export function DetailGraph({
   decisions = [],
   inspect,
   restoreViewport = false,
-  comparison,
   placing = null,
   connecting = null,
   chooseTarget,
@@ -213,7 +211,6 @@ export function DetailGraph({
   }[];
   inspect?: (selection: Selection) => void;
   restoreViewport?: boolean;
-  comparison?: Record<string, string>;
   placing?: Entity["type"] | null;
   connecting?: string | null;
   chooseTarget?: (id: string) => void;
@@ -495,7 +492,6 @@ export function DetailGraph({
         context,
         highlighted: related,
         ...(!context && risks.has(id) ? { risk: risks.get(id)! } : {}),
-        ...(comparison?.[id] ? { comparison: comparison[id] } : {}),
         ...(temporal ? { temporal } : {}),
         ...(!context && activePaths.has(id)
           ? { pulse: activePaths.get(id)! }
@@ -512,11 +508,9 @@ export function DetailGraph({
             ? flaggedObjects.has(source) && flaggedObjects.has(target)
             : risks.has(id))
             ? 0.12
-            : comparison && !comparison[id]
+            : !readOnly && payment && !related
               ? 0.2
-              : !readOnly && payment && !related
-                ? 0.2
-                : 1,
+              : 1,
       },
       ariaLabel: `${a.name} to ${b.name}, ${context ? `${temporal || ""} relationship` : `${count} ${readOnly ? "revealed " : ""}payments`}`,
     });

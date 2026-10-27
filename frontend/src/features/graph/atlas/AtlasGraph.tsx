@@ -444,10 +444,13 @@ export function AtlasGraph(props: GraphProps) {
               viewport={camera}
               disabled={transitioning}
               flaggedIds={props.flaggedIds}
+              revealedIds={props.revealedIds}
               flaggedOnly={props.flaggedOnly}
               inspectPayment={
                 props.snapshot
-                  ? undefined
+                  ? props.inspect
+                    ? (id) => props.inspect?.({ kind: "payment", id })
+                    : undefined
                   : (id) => workspace.select({ kind: "payment", id })
               }
             />

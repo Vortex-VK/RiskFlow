@@ -172,6 +172,7 @@
   pointer-events: stroke;
   cursor: pointer;
 }
+.connection-target:focus,
 .connection-target:focus-visible {
   outline: none;
 }
@@ -245,40 +246,117 @@
   font-family: inherit;
   font-size: 12px;
 }
-.connection-source {
-  margin-top: 18px;
-  padding-top: 12px;
-  border-top: 1px solid var(--line);
+.connection-details header {
+  align-items: flex-start;
+}
+.connection-details h2 {
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 400;
+}
+.connection-details h2 span {
+  display: block;
+  margin-top: 5px;
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.connection-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+.connection-summary strong,
+.connection-summary span {
+  display: block;
+}
+.connection-summary strong {
+  font-size: 23px;
+  font-variant-numeric: tabular-nums;
+}
+.connection-summary span {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.connection-flag {
+  color: var(--transaction-review);
+}
+.connection-scope,
+.connection-context {
+  font-size: 11px;
+}
+.connection-value {
+  font-variant-numeric: tabular-nums;
+}
+.connection-value strong {
+  color: var(--transaction-review);
+  font-weight: 500;
+}
+.connection-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+.connection-filters button {
+  padding: 7px 9px;
+  font-size: 11px;
+}
+.connection-filters button[aria-pressed="true"] {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 .connection-payments {
   list-style: none;
   padding: 0;
+  margin: 12px 0;
 }
 .connection-payments li {
   margin: 8px 0;
-  overflow-wrap: anywhere;
 }
-.connection-payments li > span {
+.connection-payment {
   display: block;
-  line-height: 1.6;
-  font-size: 11px;
-}
-.connection-payments button {
-  border: 0;
-  padding: 0;
-  background: none;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  background: transparent;
   text-align: left;
   font-size: 12px;
-  color: var(--accent);
+  color: var(--text);
 }
-.connection-source nav {
+.connection-payment-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-variant-numeric: tabular-nums;
+}
+.connection-participants,
+.connection-payment-meta,
+.connection-payment-id {
+  display: block;
+  margin-top: 5px;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+.connection-payment-meta,
+.connection-payment-id,
+.connection-payment-status {
+  font-size: 10px;
+  color: var(--muted);
+}
+.connection-pagination {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 6px;
   font-size: 11px;
 }
-.connection-source nav button {
+.connection-pagination button {
   font-size: 11px;
   padding: 5px 8px;
 }

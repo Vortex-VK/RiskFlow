@@ -1,7 +1,10 @@
 import { useMemo } from "react";
 import type { components } from "../../api/generated";
 import type { DeepReadonly } from "../../domain/runs";
-import { summarizeReview } from "../../domain/review";
+import { summarizeReview, reviewContext } from "../../domain/review";
+import { RunInsights } from "./RunInsights";
+import type { ReviewGroup } from "../../domain/runInsights";
+import type { Scenario } from "../../domain/types";
 import { money } from "../../domain/types";
 
 type Event = DeepReadonly<components["schemas"]["EventResult"]>;
@@ -13,15 +16,23 @@ export function DatasetResults({
   truth,
   threshold,
   inspectFlagged,
+  scenario,
+  inspectGroup,
 }: {
   events: readonly Event[];
   truth: Readonly<Record<string, string>>;
   threshold: number | null;
   inspectFlagged: () => void;
+  scenario: Scenario;
+  inspectGroup: (group: ReviewGroup) => void;
 }) {
   const result = useMemo(
     () => summarizeReview(events, truth, threshold),
     [events, truth, threshold],
+  );
+  const context = useMemo(
+    () => reviewContext(events, threshold),
+    [events, threshold],
   );
   const total = events.length;
   const maxBin = Math.max(1, ...result.bins);
@@ -75,73 +86,31 @@ export function DatasetResults({
       >
         Inspect {result.reviews.toLocaleString()} flagged payments
       </button>
-      <h3>Detection on labeled payments</h3>
-      {result.labeled ? (
-        <>
-          <p className="result-scope">
-            {result.labeled.toLocaleString()} of {total.toLocaleString()}{" "}
-            payments labeled
-          </p>
-          <div className="result-grid result-detection">
+      <RunInsights
+        events={events}
+        scenario={scenario}
+        threshold={threshold}
+        inspectGroup={inspectGroup}
+      />
+      {!!context.historyAssessed && (
+        <section aria-label="Review context" className="review-context">
+          <h3>Available purchase history</h3>
+          <dl className="facts">
             <div>
-              <strong>{result.tp}</strong>
-              <span>frauds found</span>
-              <small>
-                {result.tp} of {result.tp + result.fn} labeled frauds flagged
-              </small>
-            </div>
-            <div className="result-review">
-              <strong>{result.fn}</strong>
-              <span>frauds missed</span>
-              <small>Labeled frauds outside the review queue</small>
-            </div>
-            <div className="result-review">
-              <strong>{result.fp}</strong>
-              <span>false alerts</span>
-              <small>Legitimate payments sent for review</small>
+              <dt>Payments with no prior purchase history</dt>
+              <dd>{context.noHistory}</dd>
             </div>
             <div>
-              <strong>{result.tn}</strong>
-              <span>correctly unflagged</span>
-              <small>Legitimate payments with no alert</small>
-            </div>
-          </div>
-          <dl className="result-rates">
-            <div>
-              <dt>Precision</dt>
-              <dd>{percent(result.precision)}</dd>
-              <dd className="result-interpretation">
-                <small>
-                  {result.tp + result.fp
-                    ? `${result.tp} of ${result.tp + result.fp} labeled alerts are fraud`
-                    : "No labeled alerts to evaluate"}
-                </small>
-              </dd>
-            </div>
-            <div>
-              <dt>Recall</dt>
-              <dd>{percent(result.recall)}</dd>
-              <dd className="result-interpretation">
-                <small>
-                  {result.tp + result.fn
-                    ? `${result.tp} of ${result.tp + result.fn} labeled frauds found`
-                    : "No labeled frauds to evaluate"}
-                </small>
-              </dd>
+              <dt>Payments with fewer than 10 prior purchases</dt>
+              <dd>{context.shortHistory}</dd>
             </div>
           </dl>
-          {result.labeled < total && (
-            <p className="result-scope">
-              {total - result.labeled} unlabeled payments excluded from
-              detection metrics.
-            </p>
-          )}
-        </>
-      ) : (
-        <p>
-          No labels in this dataset. Fraud found, missed, and false alerts
-          cannot be measured.
-        </p>
+          <p className="fineprint">
+            History counts use earlier completed purchases available to this
+            assessment. Limited history describes available context, not a fraud
+            finding.
+          </p>
+        </section>
       )}
       {result.bins.some(Boolean) && (
         <section
@@ -161,6 +130,101 @@ export function DatasetResults({
             </div>
           ))}
         </section>
+      )}
+      <h3>
+        {result.labeled ? "Detection on supplied labels" : "Outcome labels"}
+      </h3>
+      {result.labeled ? (
+        <>
+          <p className="result-scope">
+            {result.labeled.toLocaleString()} of {total.toLocaleString()}{" "}
+            payments labeled. Metrics compare with supplied outcomes, not with
+            the model’s own predictions.
+          </p>
+          <div className="result-grid result-detection">
+            {result.tp + result.fn > 0 && (
+              <>
+                <div>
+                  <strong>{result.tp}</strong>
+                  <span>frauds found</span>
+                  <small>
+                    {result.tp} of {result.tp + result.fn} labeled frauds
+                    flagged
+                  </small>
+                </div>
+                <div className="result-review">
+                  <strong>{result.fn}</strong>
+                  <span>frauds missed</span>
+                  <small>Labeled frauds outside the review queue</small>
+                </div>
+              </>
+            )}
+            {result.fp + result.tn > 0 && (
+              <>
+                <div className="result-review">
+                  <strong>{result.fp}</strong>
+                  <span>false alerts</span>
+                  <small>Legitimate payments sent for review</small>
+                </div>
+                <div>
+                  <strong>{result.tn}</strong>
+                  <span>correctly unflagged</span>
+                  <small>Legitimate payments with no alert</small>
+                </div>
+              </>
+            )}
+          </div>
+          <dl className="result-rates">
+            {result.precision !== null && (
+              <div>
+                <dt>Precision</dt>
+                <dd>{percent(result.precision)}</dd>
+                <dd className="result-interpretation">
+                  <small>
+                    {result.tp + result.fp
+                      ? `${result.tp} of ${result.tp + result.fp} labeled alerts are fraud`
+                      : "No labeled alerts to evaluate"}
+                  </small>
+                </dd>
+              </div>
+            )}
+            {result.recall !== null && (
+              <div>
+                <dt>Recall</dt>
+                <dd>{percent(result.recall)}</dd>
+                <dd className="result-interpretation">
+                  <small>
+                    {result.tp + result.fn
+                      ? `${result.tp} of ${result.tp + result.fn} labeled frauds found`
+                      : "No labeled frauds to evaluate"}
+                  </small>
+                </dd>
+              </div>
+            )}
+          </dl>
+          {result.precision === null && (
+            <p className="metric-note">
+              No labeled payments were flagged, so precision cannot be assessed.
+            </p>
+          )}
+          {result.recall === null && (
+            <p className="metric-note">
+              No fraudulent labels were supplied, so recall cannot be assessed.
+            </p>
+          )}
+          {result.labeled < total && (
+            <p className="result-scope">
+              {total - result.labeled} unlabeled payments excluded from
+              detection metrics.
+            </p>
+          )}
+        </>
+      ) : (
+        <p>
+          No outcome labels supplied. Review workload and flagged value are
+          measurable; fraud caught, false alerts, precision and recall require
+          independently known outcomes.
+        </p>
       )}
     </section>
   );

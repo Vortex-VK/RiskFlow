@@ -42,6 +42,7 @@ def test_simulation_budget_expires_and_cannot_be_bypassed_with_forwarding_header
         assert response.headers["retry-after"] == "60"
         assert response.headers["cache-control"] == "no-store"
         assert response.json()["error"]["code"] == "demo_busy"
+        assert client.post("/api/v1/explanations").status_code == 429
         for path in ["/", "/samples/ibm/first-five.csv", "/api/v1/health"]:
             assert client.get(path).is_success
         now[0] += 60

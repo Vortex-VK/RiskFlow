@@ -15,7 +15,7 @@ test("original generated CSV is rejected at import and preserves the existing gr
     );
   await page.getByRole("button", { name: "Preview graph" }).click();
   await expect(page.getByRole("alert")).toContainText("1953 of 1953 payments");
-  await expect(page.getByRole("alert")).toContainText("Use Datasets");
+  await expect(page.getByRole("alert")).toContainText("choose Graph only");
   await expect(
     page.getByRole("region", { name: "Import preview" }),
   ).toHaveCount(0);
@@ -103,6 +103,8 @@ test("assumption-based generated CSV keeps labels unknown and exposes scoped pro
   await expect(
     page.getByRole("main", { name: "RiskFlow run snapshot" }),
   ).toBeVisible();
-  await page.getByRole("button", { name: "Inspect payments", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Inspect payments", exact: true })
+    .click();
   await expect(page.getByRole("status")).not.toContainText("Extra inputs");
 });

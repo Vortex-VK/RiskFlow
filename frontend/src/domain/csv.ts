@@ -1,11 +1,24 @@
 import { MAX_CSV_BYTES, MAX_PAYMENTS, MAX_OBJECTS } from "./limits";
 import { identifier } from "../api/decode";
 import { assertIntegrity, blank } from "./commands";
-import { canonical } from "./comparison";
 import { categories, country, parseMoney } from "./types";
 import type { Association, Document, Entity, Payment } from "./types";
 import { csvMoney, normalizeCsvDate } from "./csv-values";
 import type { DateOptions } from "./csv-values";
+
+function canonical(value: unknown): string {
+  const sort = (v: unknown): unknown =>
+    Array.isArray(v)
+      ? v.map(sort)
+      : v && typeof v === "object"
+        ? Object.fromEntries(
+            Object.entries(v)
+              .sort(([a], [b]) => a.localeCompare(b))
+              .map(([key, val]) => [key, sort(val)]),
+          )
+        : v;
+  return JSON.stringify(sort(value));
+}
 
 export const csvFields = [
   "payment_id",

@@ -299,3 +299,39 @@
     top: 46%;
   }
 }
+
+.sample-library .model-validation {
+  border-top: 1px solid var(--line);
+  margin: 0;
+  padding: 18px 24px;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.sample-library .validation-numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.sample-library .validation-numbers strong {
+  display: block;
+  font-size: 22px;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}
+.sample-library .validation-numbers span {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+}
+.sample-library .model-validation summary {
+  cursor: pointer;
+  color: var(--text);
+}
+.sample-library .model-validation h3 {
+  font-size: 13px;
+  font-weight: 500;
+  margin: 20px 0 16px;
+}
+.sample-library .model-validation p {
+  color: var(--muted);
+}

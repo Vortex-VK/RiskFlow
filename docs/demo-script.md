@@ -1,5 +1,7 @@
 # RiskFlow local walkthrough
 
+> Historical recording script for the retired rule-based interface. The recording automation was removed during the October 2026 cleanup; the sequence below does not describe the current app.
+
 `demo/riskflow-demo.webm` is a captioned, silent recording of the actual local production app using synthetic fixtures. It is approximately 76 seconds, 1366 × 768. Captions are recording-only overlays; the app does not show them normally.
 
 | Time | Action and claim |

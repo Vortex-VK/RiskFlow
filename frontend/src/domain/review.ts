@@ -30,6 +30,30 @@ export function reviewIds(
   );
 }
 
+export function reviewContext(
+  events: readonly (ReviewEvent & {
+    accountId: string;
+    merchantId: string;
+    model?:
+      (NonNullable<ReviewEvent["model"]> & { historyCount: number }) | null;
+  })[],
+  threshold: number | null = null,
+) {
+  const reviewed = events.filter((event) => needsReview(event, threshold));
+  const assessed = events.filter((event) => event.model);
+  return {
+    accounts: new Set(events.map((event) => event.accountId)).size,
+    merchants: new Set(events.map((event) => event.merchantId)).size,
+    reviewAccounts: new Set(reviewed.map((event) => event.accountId)).size,
+    reviewMerchants: new Set(reviewed.map((event) => event.merchantId)).size,
+    historyAssessed: assessed.length,
+    noHistory: assessed.filter((event) => event.model!.historyCount === 0)
+      .length,
+    shortHistory: assessed.filter((event) => event.model!.historyCount < 10)
+      .length,
+  };
+}
+
 export function summarizeReview(
   events: readonly (ReviewEvent & { eventId: string; amountMinor: number })[],
   truth: Readonly<Record<string, string>>,

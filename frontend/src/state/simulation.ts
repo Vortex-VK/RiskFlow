@@ -2,8 +2,11 @@ import { create } from "zustand";
 import type { Document } from "../domain/types";
 import { freeze, projectAnalyticalInput } from "../domain/runs";
 import type { DeepReadonly, Run } from "../domain/runs";
-import { decodeRun } from "../api/decodeRun";
-import { requireModelService } from "../api/modelService";
+import {
+  prepareSimulation,
+  takePreparedSimulation,
+  discardPreparation,
+} from "../api/prepareSimulation";
 import { useWorkspace } from "./workspace";
 import type { AssessmentRun } from "../api/decodeAssessment";
 
@@ -15,7 +18,6 @@ export type CapturedRun = DeepReadonly<{
 }>;
 interface SimulationState {
   latest: CapturedRun | null;
-  previous: CapturedRun | null;
   pending: boolean;
   error: string;
   viewing: boolean;
@@ -27,11 +29,9 @@ interface SimulationState {
   edit: () => void;
 }
 let generation = 0;
-let controller: AbortController | null = null;
 
 export const useSimulation = create<SimulationState>((set, get) => ({
   latest: null,
-  previous: null,
   pending: false,
   error: "",
   viewing: false,
@@ -43,8 +43,7 @@ export const useSimulation = create<SimulationState>((set, get) => ({
     if (!run.simulation) return;
     const { simulation, document, ...assessment } = run;
     generation++;
-    controller?.abort();
-    controller = null;
+    discardPreparation();
     set({
       latest: freeze({
         result: structuredClone(simulation),
@@ -52,7 +51,6 @@ export const useSimulation = create<SimulationState>((set, get) => ({
         projection: projectAnalyticalInput(document.scenario),
         assessment: structuredClone(assessment),
       }),
-      previous: null,
       pending: false,
       error: "",
       viewing: true,
@@ -82,77 +80,14 @@ export const useSimulation = create<SimulationState>((set, get) => ({
     const session = workspace.sessionId;
     const projection = projectAnalyticalInput(submitted.scenario);
     const token = ++generation;
-    controller = new AbortController();
-    const signal = AbortSignal.any([
-      controller.signal,
-      AbortSignal.timeout(30000),
-    ]);
     set({ pending: true, error: "", playing: false });
     const current = () =>
       token === generation &&
       session === useWorkspace.getState().sessionId &&
       !useWorkspace.getState().dirty;
     try {
-      await requireModelService(signal);
-      if (!current()) return;
-      const response = await fetch("/api/v1/simulations", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ scenario: submitted.scenario }),
-        signal,
-      });
-      if (!response.headers.get("content-type")?.startsWith("application/json"))
-        throw new Error(
-          "The server returned an unexpected response. Try again.",
-        );
-      const data: unknown = await response.json();
-      if (!response.ok) {
-        let message = `Simulation failed (${response.status}). Try again.`;
-        if (
-          (response.status === 422 ||
-            response.status === 429 ||
-            response.status === 503) &&
-          data &&
-          typeof data === "object" &&
-          "error" in data
-        ) {
-          const error = data.error;
-          if (
-            error &&
-            typeof error === "object" &&
-            "message" in error &&
-            typeof error.message === "string"
-          )
-            message = error.message;
-          if (
-            error &&
-            typeof error === "object" &&
-            "issues" in error &&
-            Array.isArray(error.issues)
-          ) {
-            const messages = error.issues.flatMap((issue: unknown) =>
-              issue &&
-              typeof issue === "object" &&
-              "message" in issue &&
-              typeof issue.message === "string"
-                ? [
-                    "path" in issue && typeof issue.path === "string"
-                      ? `${issue.path}: ${issue.message}`
-                      : issue.message,
-                  ]
-                : [],
-            );
-            if (messages.length)
-              message =
-                messages.slice(0, 5).join(" ") +
-                (messages.length > 5
-                  ? ` (${messages.length - 5} more issues.)`
-                  : "");
-          }
-        }
-        throw new Error(message);
-      }
-      const result = decodeRun(data, submitted);
+      const result = await takePreparedSimulation(submitted);
+      if (!result) return;
       if (!current()) return;
       const captured = freeze({
         result: structuredClone(result),
@@ -163,7 +98,6 @@ export const useSimulation = create<SimulationState>((set, get) => ({
         projection,
       });
       set({
-        previous: get().latest,
         latest: captured,
         viewing: true,
         elapsed: 0,
@@ -181,7 +115,6 @@ export const useSimulation = create<SimulationState>((set, get) => ({
       });
     } finally {
       if (current()) {
-        controller = null;
         set({ pending: false });
       }
     }
@@ -204,15 +137,31 @@ useWorkspace.subscribe((next, previous) => {
     next.historyRevision !== previous.historyRevision
   ) {
     generation++;
-    controller?.abort();
-    controller = null;
+    discardPreparation(
+      replacement && !useSimulation.getState().pending
+        ? (next.document ?? undefined)
+        : undefined,
+    );
     useSimulation.setState({
       pending: false,
       playing: false,
       error: "",
-      ...(replacement
-        ? { latest: null, previous: null, viewing: false, elapsed: 0 }
-        : {}),
+      ...(replacement ? { latest: null, viewing: false, elapsed: 0 } : {}),
     });
+  }
+  if (replacement && next.document && !next.dirty) {
+    // Let the imported graph paint before starting model work.
+    const session = next.sessionId;
+    setTimeout(() => {
+      const current = useWorkspace.getState();
+      if (
+        current.sessionId === session &&
+        current.document &&
+        !current.dirty &&
+        !useSimulation.getState().pending &&
+        !useSimulation.getState().viewing
+      )
+        void prepareSimulation(current.document)?.catch(() => {});
+    }, 0);
   }
 });

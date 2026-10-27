@@ -640,8 +640,8 @@ function Workspace() {
                   Select anything to look closer.
                 </p>
                 <p>
-                  Drag objects to rearrange them. Drag empty canvas to pan.
-                  Zoom out to see more of the network.
+                  Drag objects to rearrange them. Drag empty canvas to pan. Zoom
+                  out to see more of the network.
                 </p>
                 <p>
                   Right-drag between an account and another object to connect
@@ -664,9 +664,10 @@ function Workspace() {
                   new workspace.
                 </p>
                 <p className="fineprint">
-                  Fraud estimates use IBM and authored synthetic transactions.
-                  Simulate to inspect model alerts, history support and
-                  completed run totals.
+                  Detect suspicious payments, inspect the factors behind each
+                  prediction, and measure fraud detection on labeled data. Open
+                  Results after a run for dataset outcomes. Overall model
+                  evaluation is available in Samples.
                 </p>
                 <details>
                   <summary>Scenario options</summary>
@@ -818,7 +819,7 @@ function Workspace() {
           </div>
           <footer className="bottom-bar">
             <div className="draft-label">
-              Session only <span>· Illustrative model</span>
+              Session only <span>· Fraud risk analysis</span>
             </div>
             <nav className="tools" aria-label="Workspace tools">
               <button

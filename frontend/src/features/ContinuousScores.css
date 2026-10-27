@@ -1,5 +1,4 @@
-.continuous-scores,
-.score-explorer {
+.continuous-scores {
   border-top: 1px solid #4c6665;
   margin-top: 1rem;
   padding-top: 1rem;
@@ -28,8 +27,7 @@
 .continuous-score p {
   margin: 0.35rem 0;
 }
-.continuous-scores .high-estimated-risk,
-.score-explorer .high-estimated-risk {
+.continuous-scores .high-estimated-risk {
   border-left: 3px solid #ffc975;
   padding-left: 0.75rem;
   background: #30291d;
@@ -38,47 +36,14 @@
   color: #ffe0a6;
   font-weight: 600;
 }
-.score-explorer label {
-  display: block;
-  margin: 0.65rem 0;
-}
-.score-explorer input[type="range"],
-.score-explorer select {
-  width: 100%;
-}
-.score-explorer table {
-  width: 100%;
-  font-size: 0.85rem;
-  text-align: left;
-  border-collapse: collapse;
-}
-.score-explorer td,
-.score-explorer th {
-  padding: 0.3rem;
-  border-bottom: 1px solid #40504f;
-}
-.evaluation-summary {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin: 18px 0;
-}
-.evaluation-summary > div {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 14px;
-}
-.evaluation-summary strong {
-  display: block;
-  color: var(--transaction-review);
-  font-size: 28px;
-  line-height: 1.3;
-  font-variant-numeric: tabular-nums;
-}
-.evaluation-summary span {
-  display: block;
-  color: var(--muted);
+.run-inspector .metric-note {
   font-size: 12px;
-  line-height: 1.5;
-  margin-top: 5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.review-context .facts {
+  font-size: 12px;
+}
+.review-context dd {
+  white-space: nowrap;
 }

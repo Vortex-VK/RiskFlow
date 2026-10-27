@@ -397,7 +397,7 @@ test("malformed metrics, future evidence and snapshot mismatches preserve the la
   await page.getByRole("button", { name: "Inspect H10", exact: true }).click();
   await expect(
     page.getByRole("complementary", { name: "Payment explanation" }),
-  ).toContainText("Assessment evidence");
+  ).toContainText("Available evidence");
 });
 
 test("replay is accessible in dark mode and works with reduced motion on mobile", async ({

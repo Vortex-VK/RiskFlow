@@ -42,3 +42,11 @@ The backend test count decreased because tests of removed training pipelines wer
 ## Reproducibility boundary
 
 Serving the app and running its regression suite do not require original datasets or generated training caches. Current benchmark summaries, sample lineage and compact prediction receipts remain available. Historical Markdown retains the sequence of experiments and their limitations, but retired training commands and some old generated-artifact links no longer resolve. Rebuilding those research pipelines would require reconstructing their code and derived datasets; this cleanup does not claim full training reproducibility.
+
+## Interface cleanup: 2026-10-27
+
+Removed 20 obsolete source, test and recording files: the unused score explorer, experimental card review queue, saved-dataset screens and client, comparison screen and helpers, stale sample metadata, and browser suites dedicated to retired screens. Mixed browser suites retain their current-workspace tests. Compare runs, its extra simulation snapshot and comparison-only graph styles were removed. CSV identity checks retain the shared canonicalization logic locally.
+
+Removed generated Python/tool caches, old browser-test outputs, scratch scripts and screenshots, and empty retired directories (approximately 51 MiB). Active development logs, local dependencies, the rebuilt production frontend, all seven model bundles, original training data, saved databases, and compatibility decoders/fixtures were retained. Source files and unique scratch artifacts were backed up outside the project to `%TEMP%/riskflow-cleanup-20261027` before removal. The README and import guidance now describe the available interface; the former recording guide is marked historical.
+
+Verification: 263 frontend unit tests, 251 backend tests, and 15 targeted browser tests passed. TypeScript, ESLint and the production build passed. The browser checks cover reruns without Compare runs, model preparation and explanations, shared connections, playback counters, threshold-aware results and CSV validation. The build retains its existing large-chunk warning. An entry-point import audit (including JavaScript implementations paired with declarations) found no orphan frontend modules. No model contracts or prediction fixtures were changed for this cleanup.

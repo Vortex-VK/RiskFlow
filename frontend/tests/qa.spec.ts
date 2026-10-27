@@ -439,39 +439,6 @@ test("service failure retry and failed rerun preserve usable state", async ({
   ).toContainText("16 payments");
 });
 
-test("comparison filters, captured context and every disclosure remain accessible", async ({
-  page,
-}) => {
-  await button(page, "Simulate").click();
-  await button(page, "Edit scenario").click();
-  await button(page, "Payments 16").click();
-  await button(page, "Payment H09").click();
-  await page
-    .getByRole("combobox", { name: "Device", exact: true })
-    .selectOption("device-c");
-  await button(page, "Simulate").click();
-  await button(page, "Compare runs").click();
-  const panel = page.getByRole("complementary", { name: "Comparison details" });
-  await expect(panel).toContainText("Scenario facts changed");
-  await selectNode(page, "device-shared");
-  await expect(button(page, "Compare H01")).toHaveCount(0);
-  await button(page, "Show all changes").click();
-  await button(page, "Compare H09").click();
-  await expandDetails(panel);
-  await expect(
-    page.getByRole("region", { name: "Payment changes" }),
-  ).toContainText("Payment record edited.");
-  await expect(panel).toContainText("Shared device");
-  await expect(panel).toContainText("Casey's phone");
-  await button(page, "Before").click();
-  await expect(button(page, "Before")).toHaveAttribute("aria-pressed", "true");
-  await button(page, "After").click();
-  await button(page, "Back to replay").click();
-  await button(page, "Compare runs").click();
-  await button(page, "Edit scenario").click();
-  await expect(button(page, "Simulate")).toBeEnabled();
-});
-
 test("small-screen import, policy and connection panels remain operable in dark mode", async ({
   page,
 }) => {

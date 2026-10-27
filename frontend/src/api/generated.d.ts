@@ -4,6 +4,23 @@
  */
 
 export interface paths {
+    "/api/v1/explanations": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Explanation */
+        post: operations["explainPayment"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/health": {
         parameters: {
             query?: never;
@@ -844,6 +861,25 @@ export interface components {
              */
             version: "margin-index-v1" | "fraud-probability-v1" | "fraud-probability-v2";
         };
+        /** ExplanationRequest */
+        ExplanationRequest: {
+            /** Eventid */
+            eventId: string;
+            /** Expectedrawmargin */
+            expectedRawMargin: number;
+            /** Modelbundlesha256 */
+            modelBundleSha256: string;
+            scenario: components["schemas"]["ScenarioDefinition"];
+        };
+        /** FeatureContribution */
+        FeatureContribution: {
+            /** Contribution */
+            contribution: number;
+            /** Feature */
+            feature: string;
+            /** Value */
+            value: string | number | null;
+        };
         /** Features */
         Features: {
             /** Amountminor */
@@ -1324,6 +1360,27 @@ export interface components {
             /** Unavailablerules */
             unavailableRules?: ("unusual_amount" | "payment_velocity" | "new_device" | "unusual_location" | "merchant_category_deviation" | "shared_device_accounts")[];
         };
+        /** PaymentExplanation */
+        PaymentExplanation: {
+            /** Basevalue */
+            baseValue: number;
+            /** Contributions */
+            contributions: components["schemas"]["FeatureContribution"][];
+            /** Eventid */
+            eventId: string;
+            /**
+             * Method
+             * @default tree-shap-final-head-v1
+             * @constant
+             */
+            method: "tree-shap-final-head-v1";
+            /** Modelbundlesha256 */
+            modelBundleSha256: string;
+            /** Probability */
+            probability: number;
+            /** Rawmargin */
+            rawMargin: number;
+        };
         /** Position */
         Position: {
             /** X */
@@ -1679,6 +1736,75 @@ export interface components {
 }
 export type $defs = Record<string, never>;
 export interface operations {
+    explainPayment: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ExplanationRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["PaymentExplanation"];
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Content Too Large */
+            413: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Unsupported Media Type */
+            415: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+        };
+    };
     getHealth: {
         parameters: {
             query?: never;

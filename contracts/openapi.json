@@ -2053,6 +2053,77 @@
         "title": "EvidenceScore",
         "type": "object"
       },
+      "ExplanationRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "eventId": {
+            "not": {
+              "enum": [
+                "__proto__",
+                "prototype",
+                "constructor"
+              ]
+            },
+            "pattern": "^[A-Za-z0-9_-]{1,64}$",
+            "title": "Eventid",
+            "type": "string"
+          },
+          "expectedRawMargin": {
+            "title": "Expectedrawmargin",
+            "type": "number"
+          },
+          "modelBundleSha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Modelbundlesha256",
+            "type": "string"
+          },
+          "scenario": {
+            "$ref": "#/components/schemas/ScenarioDefinition"
+          }
+        },
+        "required": [
+          "scenario",
+          "eventId",
+          "modelBundleSha256",
+          "expectedRawMargin"
+        ],
+        "title": "ExplanationRequest",
+        "type": "object"
+      },
+      "FeatureContribution": {
+        "additionalProperties": false,
+        "properties": {
+          "contribution": {
+            "title": "Contribution",
+            "type": "number"
+          },
+          "feature": {
+            "title": "Feature",
+            "type": "string"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value"
+          }
+        },
+        "required": [
+          "feature",
+          "value",
+          "contribution"
+        ],
+        "title": "FeatureContribution",
+        "type": "object"
+      },
       "Features": {
         "additionalProperties": false,
         "properties": {
@@ -4916,6 +4987,64 @@
         "title": "PaymentEvent",
         "type": "object"
       },
+      "PaymentExplanation": {
+        "additionalProperties": false,
+        "properties": {
+          "baseValue": {
+            "title": "Basevalue",
+            "type": "number"
+          },
+          "contributions": {
+            "items": {
+              "$ref": "#/components/schemas/FeatureContribution"
+            },
+            "title": "Contributions",
+            "type": "array"
+          },
+          "eventId": {
+            "not": {
+              "enum": [
+                "__proto__",
+                "prototype",
+                "constructor"
+              ]
+            },
+            "pattern": "^[A-Za-z0-9_-]{1,64}$",
+            "title": "Eventid",
+            "type": "string"
+          },
+          "method": {
+            "const": "tree-shap-final-head-v1",
+            "default": "tree-shap-final-head-v1",
+            "title": "Method",
+            "type": "string"
+          },
+          "modelBundleSha256": {
+            "title": "Modelbundlesha256",
+            "type": "string"
+          },
+          "probability": {
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Probability",
+            "type": "number"
+          },
+          "rawMargin": {
+            "title": "Rawmargin",
+            "type": "number"
+          }
+        },
+        "required": [
+          "eventId",
+          "modelBundleSha256",
+          "baseValue",
+          "rawMargin",
+          "probability",
+          "contributions"
+        ],
+        "title": "PaymentExplanation",
+        "type": "object"
+      },
       "Position": {
         "additionalProperties": false,
         "properties": {
@@ -6057,6 +6186,84 @@
   },
   "openapi": "3.1.0",
   "paths": {
+    "/api/v1/explanations": {
+      "post": {
+        "operationId": "explainPayment",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExplanationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentExplanation"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Content Too Large"
+          },
+          "415": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unsupported Media Type"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Explanation"
+      }
+    },
     "/api/v1/health": {
       "get": {
         "operationId": "getHealth",

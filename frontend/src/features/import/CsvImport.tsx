@@ -1,3 +1,4 @@
+import { prepareSimulation } from "../../api/prepareSimulation";
 import { CloseIcon } from "../CloseIcon";
 import { useEffect, useRef, useState } from "react";
 import {
@@ -92,8 +93,8 @@ export function CsvImport({
         to 10,000 rows, 1,000 objects, and 5 MB. USD only. This session only.
       </p>
       <p>
-        Graph investigation works independently of model scoring. Use Datasets
-        to retain records and describe their purchase history.
+        Graph investigation works independently of model scoring. Choose Graph
+        only to explore a file without the inputs required for simulation.
       </p>
       <label>
         Import purpose
@@ -112,8 +113,9 @@ export function CsvImport({
       </label>
       {purpose === "model" && (
         <p>
-          Requires compatible fields. Matching columns do not validate the
-          synthetic IBM model for this source; outputs are experimental alerts.
+          Score payments using transaction behavior, account history and
+          merchant context. Compatible fields are required; review alerts
+          alongside your source data.
         </p>
       )}
       <p>
@@ -421,6 +423,8 @@ export function CsvImport({
               setErrors(result.errors);
               setWarnings(result.warnings);
               setPreview(result.document);
+              if (purpose === "model" && result.document)
+                void prepareSimulation(result.document)?.catch(() => {});
             }}
           >
             Preview graph

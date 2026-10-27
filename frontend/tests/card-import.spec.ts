@@ -61,53 +61,11 @@ for (const file of ["unlabeled", "labeled"]) {
     await expect(
       page.getByRole("main", { name: "RiskFlow run snapshot" }),
     ).toBeVisible();
-    await page.getByRole("button", { name: "Inspect payments", exact: true }).click();
+    await page
+      .getByRole("button", { name: "Inspect payments", exact: true })
+      .click();
     await expect(page.getByRole("status")).not.toContainText(
       "missing model inputs",
     );
   });
 }
-
-test("retained native card import previews, assesses and reopens the full dataset", async ({
-  page,
-}) => {
-  test.setTimeout(120000);
-  await page.goto("/");
-  await page.getByRole("button", { name: "Datasets", exact: true }).click();
-  const panel = page.getByRole("region", {
-    name: "Saved datasets",
-    exact: true,
-  });
-  await panel.getByLabel("Dataset name").fill("Native card test");
-  await panel.getByLabel("Source namespace").fill("native-card-test");
-  await panel
-    .getByRole("button", { name: "Create dataset", exact: true })
-    .click();
-  await expect(panel.getByLabel("Import into this dataset")).toBeEnabled();
-  const id = await panel.getByLabel("Open dataset").inputValue();
-  await panel
-    .getByLabel("Import into this dataset")
-    .setInputFiles("../fixtures/evaluations/card-format-10000/unlabeled.csv");
-  await panel.getByRole("button", { name: "Preview retained import" }).click();
-  const preview = panel.getByRole("region", {
-    name: "Retained import preview",
-  });
-  await expect(preview).toContainText("10000 added", { timeout: 30000 });
-  await expect(preview).toContainText("0 rows retained without assessment");
-  await expect(preview).toContainText("Card export: User + Card");
-  await panel.getByRole("button", { name: "Commit records" }).click();
-  await panel.getByLabel("Analysis mode").selectOption("model");
-  await panel.getByRole("button", { name: "Assess retained history" }).click();
-  const results = panel.getByRole("region", {
-    name: "Retained assessment results",
-  });
-  await expect(results).toContainText("10000 partial", { timeout: 30000 });
-  await page.reload();
-  await page.getByRole("button", { name: "Datasets", exact: true }).click();
-  await panel.getByLabel("Open dataset").selectOption(id);
-  await panel.getByText("Saved assessments (1)", { exact: true }).click();
-  await panel
-    .getByRole("button", { name: /revision 1.*10000 records/ })
-    .click();
-  await expect(results).toContainText("10000 partial", { timeout: 30000 });
-});

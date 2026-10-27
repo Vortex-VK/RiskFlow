@@ -15,9 +15,11 @@ from app.api.frontend import mount_frontend
 from app.api.public_demo import PublicDemo
 from app.api.v2 import router as history_router
 from app.domain.engine import ENGINE_VERSION, simulate
+from app.domain.explanation import explain_payment
 from app.domain.model_inputs import UnsupportedModelInput
 from app.domain.validation import validate_scenario
 from app.schemas.behavioral import AnalysisCapabilities
+from app.schemas.explanation import ExplanationRequest, PaymentExplanation
 from app.schemas.responses import ErrorResponse, HealthResponse, TemplateSummary, ValidationResult
 from app.schemas.scenario import ScenarioDocument, ScenarioRequest
 from app.schemas.simulation import RunResult
@@ -166,6 +168,15 @@ def simulation(payload: ScenarioRequest, request: Request) -> RunResult | JSONRe
         run_id=str(uuid4()),
         completed_at=datetime.now(UTC).isoformat(timespec="milliseconds").replace("+00:00", "Z"),
     )
+
+
+@app.post(
+    "/api/v1/explanations", response_model=PaymentExplanation, operation_id="explainPayment"
+)
+def explanation(payload: ExplanationRequest) -> PaymentExplanation:
+    if validate_scenario(payload.scenario):
+        raise HTTPException(422, "Correct the scenario before requesting an explanation.")
+    return explain_payment(payload)
 
 
 if not public_demo:

@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
-from catboost import CatBoostClassifier
+from catboost import CatBoostClassifier, Pool
 
 from ml.artifacts import digest
 from ml.card_priority_runtime import MANIFEST_SHA256 as REVIEW_SHA
@@ -48,20 +48,44 @@ class Runtime:
         z = np.clip(self.manifest["slope"] * raw + self.manifest["intercept"], -35, 35)
         return 1 / (1 + np.exp(-z))
 
+    def inputs(self, frame: Any) -> tuple[dict[str, Any], Any]:
+        """Build exactly the inputs consumed by the frozen final decision model."""
+        scores, old_paths = self.base.predict(frame)
+        pattern, proposals = self.reviewer.predict(frame, old_paths["alert"])
+        priority, _ = self.reviewer.prioritize(frame, proposals)
+        online = frame.channel.eq("Online Transaction").to_numpy()
+        eligible = ~online & frame.history_samples.ge(10).to_numpy()
+        data = frame.copy()
+        data["v8_margin"] = np.where(online, scores["online_specialist"], scores["coverage"])
+        data["pattern_margin"] = np.where(eligible, pattern, np.nan)
+        data["priority_margin"] = np.where(eligible, priority, np.nan)
+        return scores, data[self.manifest["features"]]
+
+    def explain(self, frame: Any, index: int) -> tuple[Any, Any, float]:
+        """Tree SHAP of the final head, not end-to-end attribution of upstream models."""
+        try:
+            with LOCK:
+                _, data = self.inputs(frame)
+                row = data.iloc[[index]]
+                pool = Pool(row, cat_features=self.model.get_cat_feature_indices())
+                values = np.asarray(
+                    self.model.get_feature_importance(pool, type="ShapValues", thread_count=2),
+                    dtype=float,
+                )[0]
+                raw = float(self.model.predict(pool, prediction_type="RawFormulaVal")[0])
+                if not np.isfinite(values).all() or not np.isclose(values.sum(), raw, atol=1e-7):
+                    raise ValueError("Attributions do not reconstruct the model output")
+                return row.iloc[0], values, raw
+        except ModelUnavailable:
+            raise
+        except Exception as exc:
+            raise ModelUnavailable("This payment's model explanation is unavailable.") from exc
+
     def predict(self, frame: Any) -> tuple[dict[str, Any], dict[str, Any]]:
         try:
             with LOCK:
-                scores, old_paths = self.base.predict(frame)
-                pattern, proposals = self.reviewer.predict(frame, old_paths["alert"])
-                priority, _ = self.reviewer.prioritize(frame, proposals)
+                scores, data = self.inputs(frame)
                 online = frame.channel.eq("Online Transaction").to_numpy()
-                eligible = ~online & frame.history_samples.ge(10).to_numpy()
-                data = frame.copy()
-                data["v8_margin"] = np.where(
-                    online, scores["online_specialist"], scores["coverage"]
-                )
-                data["pattern_margin"] = np.where(eligible, pattern, np.nan)
-                data["priority_margin"] = np.where(eligible, priority, np.nan)
                 raw = np.asarray(
                     self.model.predict(
                         data[self.manifest["features"]],

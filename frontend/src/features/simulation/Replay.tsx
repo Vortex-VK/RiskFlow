@@ -1,14 +1,15 @@
+import { PaymentEvidence, AssessmentScope } from "./PaymentEvidence";
+import { panelDuration } from "../Presence";
 import { CloseIcon } from "../CloseIcon";
-import { assessmentText, isLearnedEngine } from "../../domain/model";
+import { isLearnedEngine } from "../../domain/model";
 import {
   recentTransactionGlows,
   TRANSACTION_GLOW_DURATION,
 } from "../graph/growth";
 import { PaymentPages } from "../PaymentPages";
 import { CardPatternDetails } from "../CardPatternDetails";
-import { CardReviewQueue } from "../CardReviewQueue";
 import { ContinuousScores } from "../ContinuousScores";
-import { ScoreExplorer } from "../ScoreExplorer";
+import type { ReviewGroup } from "../../domain/runInsights";
 import { DatasetResults } from "./DatasetResults";
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { useReactFlow } from "@xyflow/react";
@@ -23,7 +24,6 @@ import {
 import { useSimulation } from "../../state/simulation";
 import type { CapturedRun } from "../../state/simulation";
 import { Graph } from "../graph/Graph";
-import { Comparison } from "../results/Comparison";
 import { needsReview, reviewIds } from "../../domain/review";
 import "./replay.css";
 
@@ -45,6 +45,27 @@ export function Replay({
   openSamples: () => void;
 }) {
   const state = useSimulation();
+  const [overviewMotion, setOverviewMotion] = useState<
+    "entering" | "idle" | "exiting"
+  >("entering");
+  useEffect(() => {
+    if (overviewMotion === "idle") return;
+    // The fallback also handles disabled animations and background tabs.
+    const duration =
+      overviewMotion === "entering"
+        ? panelDuration()
+        : Math.min(280, panelDuration());
+    const timer = setTimeout(() => {
+      if (overviewMotion === "exiting") useSimulation.getState().edit();
+      else setOverviewMotion("idle");
+    }, duration);
+    return () => clearTimeout(timer);
+  }, [overviewMotion]);
+  function exitSimulation() {
+    useSimulation.setState({ playing: false });
+    if (!panelDuration()) state.edit();
+    else setOverviewMotion("exiting");
+  }
   const flow = useReactFlow();
   const document = useMemo(
     () => decodeDocument(structuredClone(captured.document)),
@@ -101,10 +122,10 @@ export function Replay({
     "events" | "event" | "results" | "object" | null
   >(null);
   const [selected, setSelected] = useState(-1);
-  const [comparing, setComparing] = useState(false);
   const [selection, setSelection] = useState<Selection>(null);
   const [evidenceIds, setEvidenceIds] = useState<readonly string[]>([]);
   const [flaggedOnly, setFlaggedOnly] = useState(false);
+  const [reviewGroup, setReviewGroup] = useState<ReviewGroup | null>(null);
   const revealed = useMemo(
     () => run.events.slice(0, position.cursor + 1),
     [run, position.cursor],
@@ -131,7 +152,13 @@ export function Replay({
       })),
     [revealed, threshold],
   );
-  const paymentEvents = flaggedOnly ? flaggedEvents : run.events;
+  const paymentEvents = useMemo(() => {
+    if (reviewGroup) {
+      const ids = new Set(reviewGroup.eventIds);
+      return flaggedEvents.filter((e) => ids.has(e.eventId));
+    }
+    return flaggedOnly ? flaggedEvents : run.events;
+  }, [reviewGroup, flaggedOnly, flaggedEvents, run.events]);
   const revealedIds = useMemo(
     () => revealed.map((event) => event.eventId),
     [revealed],
@@ -170,13 +197,13 @@ export function Replay({
 
   useEffect(() => {
     const escape = (event: KeyboardEvent) => {
-      if (event.key !== "Escape" || comparing) return;
+      if (event.key !== "Escape") return;
       setPanel(null);
       setEvidenceIds([]);
     };
     window.addEventListener("keydown", escape);
     return () => window.removeEventListener("keydown", escape);
-  }, [comparing]);
+  }, []);
 
   useEffect(() => {
     if (!state.playing) return;
@@ -234,6 +261,11 @@ export function Replay({
     });
   }
   const inspect = (s: Selection) => {
+    if (s?.kind === "payment") {
+      const index = run.events.findIndex((e) => e.eventId === s.id);
+      if (index >= 0) inspectPayment(index);
+      return;
+    }
     useSimulation.setState({ playing: false });
     setSelection(s);
     setPanel(s ? "object" : null);
@@ -262,14 +294,6 @@ export function Replay({
       )
     : [];
   const m = run.metrics;
-  if (comparing && state.previous)
-    return (
-      <Comparison
-        before={state.previous}
-        after={captured}
-        close={() => setComparing(false)}
-      />
-    );
   return (
     <main
       className={`workspace replay ${panel ? "panel-open" : ""} ${flaggedOnly ? "flagged-only" : ""}`}
@@ -316,21 +340,12 @@ export function Replay({
           >
             Samples
           </button>
-          {state.previous && !retained && (
-            <button
-              onClick={() => {
-                useSimulation.setState({ playing: false });
-                setComparing(true);
-              }}
-            >
-              Compare runs
-            </button>
-          )}
           <button
             aria-expanded={panel === "events"}
             aria-controls="run-payments"
             onClick={() => {
               useSimulation.setState({ playing: false });
+              setReviewGroup(null);
               setPanel(panel === "events" ? null : "events");
             }}
           >
@@ -349,7 +364,7 @@ export function Replay({
         </div>
       </header>
       <section
-        className={`run-overview${probabilityScores.length ? " has-threshold" : ""}`}
+        className={`run-overview is-${overviewMotion}${probabilityScores.length ? " has-threshold" : ""}`}
         aria-label="Run assessment summary"
       >
         <div className="overview-counts">
@@ -361,6 +376,7 @@ export function Replay({
             className="review-total"
             disabled={!flaggedIds.size}
             onClick={() => {
+              setReviewGroup(null);
               setFlaggedOnly(true);
               useSimulation.setState({ playing: false });
               setPanel("events");
@@ -376,7 +392,10 @@ export function Replay({
           <button
             className="flagged-filter"
             aria-pressed={flaggedOnly}
-            onClick={() => setFlaggedOnly(!flaggedOnly)}
+            onClick={() => {
+              setReviewGroup(null);
+              setFlaggedOnly(!flaggedOnly);
+            }}
           >
             Flagged only
           </button>
@@ -437,14 +456,27 @@ export function Replay({
           >
             <CloseIcon />
           </button>
-          <h2>{flaggedOnly ? "Payments for review" : "Payments"}</h2>
+          <h2>
+            {reviewGroup?.label ??
+              (flaggedOnly ? "Payments for review" : "Payments")}
+          </h2>
+          {reviewGroup && (
+            <p>
+              {paymentEvents.length} matching flagged payments{" "}
+              <button onClick={() => setReviewGroup(null)}>
+                All flagged payments
+              </button>
+            </p>
+          )}
           <p>
             Completed model results. Select a payment to inspect its evidence.
           </p>
-          {!paymentEvents.length && <p>No payments need review in this run.</p>}
+          {!paymentEvents.length && (
+            <p>No flagged payments match this selection.</p>
+          )}
           <div className="event-list run-event-list">
             <PaymentPages
-              key={flaggedOnly ? "flagged" : "all"}
+              key={reviewGroup?.label ?? (flaggedOnly ? "flagged" : "all")}
               items={paymentEvents}
               identify={(e) => sourceId(e.eventId)}
             >
@@ -531,48 +563,13 @@ export function Replay({
             }
           </p>
           {event.model ? (
-            <section aria-label="Assessment evidence">
-              <h3>
-                {needsReview(event, threshold)
-                  ? "Why this payment needs review"
-                  : "Assessment evidence"}
-              </h3>
-              <ul className="assessment-reasons">
-                <li>
-                  {threshold !== null && event.model.score?.probabilityAvailable
-                    ? `The estimate is ${needsReview(event, threshold) ? "at or above" : "below"} your ${threshold.toFixed(1)}% preview threshold.`
-                    : event.model.alert
-                      ? "The model estimate crossed its fixed review cutoff."
-                      : "The model estimate stayed below its fixed review cutoff."}
-                </li>
-                <li>
-                  {event.model.historyCount} prior completed purchases were
-                  available for this assessment.
-                </li>
-              </ul>
-              <details>
-                <summary>Raw model margins</summary>
-                <p>
-                  {event.model.detectionPaths.length
-                    ? `Alert paths: ${event.model.detectionPaths.map(title).join(", ")}`
-                    : "No model alert threshold crossed."}
-                </p>
-                <p>
-                  Uncalibrated model outputs, not fraud probabilities or
-                  additive rule points.
-                </p>
-                <dl className="facts">
-                  {Object.entries(event.model.rawScores).map(
-                    ([name, value]) => (
-                      <div key={name}>
-                        <dt>{title(name)}</dt>
-                        <dd>{value.toFixed(4)}</dd>
-                      </div>
-                    ),
-                  )}
-                </dl>
-              </details>
-            </section>
+            <PaymentEvidence
+              truth={run.scenarioSnapshot.groundTruth[event.eventId]}
+              key={`${run.runId}:${event.eventId}`}
+              scenario={document.scenario}
+              event={event}
+              threshold={threshold}
+            />
           ) : (
             <p>
               Raw points {event.rawScore}
@@ -698,24 +695,14 @@ export function Replay({
               ))}
             </details>
           )}
-          <details>
-            <summary>Model limitations</summary>
-            <p>
-              Estimates are based on synthetic data and are not confirmed fraud.
-              Reliability on this upload is unverified. Confirmed merchant-fraud
-              feedback is unavailable.
-            </p>
-            <p>
-              Available history and model outputs explain the assessment
-              context; they do not establish a specific cause for the
-              prediction.
-            </p>
-            <p className="fineprint">
-              Synthetic truth label:{" "}
-              {run.scenarioSnapshot.groundTruth[event.eventId] || "Unlabeled"}.
-              Labels are excluded from scoring.
-            </p>
-          </details>
+          {!event.model && (
+            <details>
+              <summary>Assessment scope</summary>
+              <AssessmentScope
+                truth={run.scenarioSnapshot.groundTruth[event.eventId]}
+              />
+            </details>
+          )}
         </aside>
       )}
       {panel === "object" && selection && (
@@ -804,10 +791,18 @@ export function Replay({
             {m.totalCount} payments · {money(m.totalAmountMinor)}
           </h2>
           <DatasetResults
+            scenario={document.scenario}
+            inspectGroup={(group) => {
+              useSimulation.setState({ playing: false });
+              setFlaggedOnly(true);
+              setReviewGroup(group);
+              setPanel("events");
+            }}
             events={run.events}
             truth={run.scenarioSnapshot.groundTruth}
             threshold={threshold}
             inspectFlagged={() => {
+              setReviewGroup(null);
               setFlaggedOnly(true);
               setPanel("events");
             }}
@@ -822,66 +817,6 @@ export function Replay({
               retained records not assessed.
             </p>
           )}
-          <details className="additional-analysis">
-            <summary>Additional analysis</summary>
-            <ScoreExplorer
-              events={run.events}
-              truth={run.scenarioSnapshot.groundTruth}
-              sourceId={sourceId}
-              inspect={(e) => inspectPayment(e.sequenceIndex)}
-            />
-            {run.events.some((e) => e.cardPattern) && (
-              <details className="card-pattern-review">
-                <summary>
-                  Experimental card reviews (
-                  {run.events.filter((e) => e.cardPattern).length})
-                </summary>
-                <section aria-label="Additional card reviews">
-                  <h3>
-                    {run.events.filter((e) => e.cardPattern).length} additional
-                    card reviews
-                  </h3>
-                  <p>
-                    {
-                      run.events.filter(
-                        (e) =>
-                          e.cardPattern &&
-                          run.scenarioSnapshot.groundTruth[e.eventId] ===
-                            "fraudulent",
-                      ).length
-                    }{" "}
-                    fraudulent,{" "}
-                    {
-                      run.events.filter(
-                        (e) =>
-                          e.cardPattern &&
-                          run.scenarioSnapshot.groundTruth[e.eventId] ===
-                            "legitimate",
-                      ).length
-                    }{" "}
-                    legitimate among labeled suggestions.
-                  </p>
-                  <CardReviewQueue
-                    events={run.events}
-                    truth={run.scenarioSnapshot.groundTruth}
-                    sourceId={sourceId}
-                    inspect={(e) => inspectPayment(e.sequenceIndex)}
-                  />
-                </section>
-              </details>
-            )}
-            <details>
-              <summary>Run information</summary>
-              <p>
-                {run.completedAt}
-                <br />
-                Run {run.runId}
-              </p>
-              {run.warnings.map((w) => (
-                <p key={w.code}>{assessmentText(w.message)}</p>
-              ))}
-            </details>
-          </details>
         </aside>
       )}
       <div className="status" role="status" aria-live="polite">
@@ -927,7 +862,10 @@ export function Replay({
           </span>
         </div>
         <nav className="tools playback" aria-label="Playback controls">
-          <button onClick={state.edit}>
+          <button
+            onClick={exitSimulation}
+            disabled={overviewMotion === "exiting"}
+          >
             {retained ? "Back to dataset" : "Edit scenario"}
           </button>
           <button

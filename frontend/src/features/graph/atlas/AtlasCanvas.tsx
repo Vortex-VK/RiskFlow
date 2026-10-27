@@ -503,6 +503,7 @@ export const AtlasCanvas = memo(function AtlasCanvas({
   disabled,
   inspectPayment,
   flaggedIds,
+  revealedIds,
   flaggedOnly = false,
 }: {
   inspectPayment?: ((id: string) => void) | undefined;
@@ -513,8 +514,13 @@ export const AtlasCanvas = memo(function AtlasCanvas({
   viewport: Viewport;
   disabled: boolean;
   flaggedIds?: ReadonlySet<string> | undefined;
+  revealedIds?: readonly string[] | undefined;
   flaggedOnly?: boolean | undefined;
 }) {
+  const assessedIds = useMemo(
+    () => (revealedIds ? new Set(revealedIds) : undefined),
+    [revealedIds],
+  );
   const links = useMemo(
     () => sectorConnections(sector, entities),
     [sector, entities],
@@ -650,14 +656,21 @@ export const AtlasCanvas = memo(function AtlasCanvas({
       {selected && selection && (
         <ConnectionDetails
           key={sector.group.id}
-          links={links}
-          visible={drawn.length}
           selected={selected}
           entityId={selection.entityId}
-          choose={(id) => choose(links.find((l) => l.id === id)!)}
           chooseEntity={(entityId) => setSelection({ ...selection, entityId })}
           close={() => setSelection(null)}
-          inspect={inspectPayment}
+          inspect={
+            inspectPayment
+              ? (id) => {
+                  setSelection(null);
+                  inspectPayment(id);
+                }
+              : undefined
+          }
+          entities={entities}
+          assessedIds={assessedIds}
+          flaggedIds={flaggedIds}
         />
       )}
     </div>

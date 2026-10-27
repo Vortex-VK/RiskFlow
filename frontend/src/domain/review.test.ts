@@ -1,5 +1,59 @@
 import { describe, expect, it } from "vitest";
-import { needsReview, reviewIds, summarizeReview } from "./review";
+import {
+  needsReview,
+  reviewIds,
+  summarizeReview,
+  reviewContext,
+} from "./review";
+
+it("describes affected entities and history without needing outcome labels", () => {
+  const events = [
+    {
+      decision: "review",
+      accountId: "a",
+      merchantId: "m",
+      model: {
+        alert: true,
+        historyCount: 0,
+        score: { value: 95, probabilityAvailable: true },
+      },
+    },
+    {
+      decision: "review",
+      accountId: "a",
+      merchantId: "n",
+      model: {
+        alert: true,
+        historyCount: 9,
+        score: { value: 90, probabilityAvailable: true },
+      },
+    },
+    {
+      decision: "approve",
+      accountId: "b",
+      merchantId: "m",
+      model: {
+        alert: false,
+        historyCount: 10,
+        score: { value: 10, probabilityAvailable: true },
+      },
+    },
+  ];
+  expect(reviewContext(events)).toEqual({
+    accounts: 2,
+    merchants: 2,
+    reviewAccounts: 1,
+    reviewMerchants: 2,
+    historyAssessed: 3,
+    noHistory: 1,
+    shortHistory: 2,
+  });
+  expect(reviewContext(events, 100)).toMatchObject({
+    reviewAccounts: 0,
+    reviewMerchants: 0,
+    noHistory: 1,
+  });
+});
 
 describe("recorded review decisions", () => {
   it("uses model alerts instead of legacy decisions or display probabilities", () => {

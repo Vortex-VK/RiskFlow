@@ -4,6 +4,7 @@ import type { Document } from "../../domain/types";
 import { catalog, loadSample, sampleUrl } from "./samples";
 import "./samples.css";
 import { panelDuration } from "../Presence";
+import { ModelValidation } from "./ModelValidation";
 
 const number = (value: number) => value.toLocaleString("en-US");
 
@@ -204,6 +205,7 @@ export function SampleLibrary({
           )}
         </section>
       </div>
+      <ModelValidation />
       <footer className="sample-footer">
         <span>Curated synthetic examples</span>
         <div>
