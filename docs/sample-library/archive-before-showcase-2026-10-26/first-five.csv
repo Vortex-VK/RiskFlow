@@ -1,6 +1,0 @@
-User,Card,Year,Month,Day,Time,Amount,Use Chip,Merchant Name,Merchant City,Merchant State,Zip,MCC,Errors?,Is Fraud?
-424,1,2018,2,1,08:07,$9.59,Chip Transaction,-6761066196029841443,Seattle,WA,98136.0,5310,,No
-424,4,2018,2,1,08:54,$4.11,Swipe Transaction,-1828885217332015017,Seattle,WA,98122.0,5812,,No
-424,1,2018,2,2,01:06,$120.00,Chip Transaction,-4282466774399734331,Seattle,WA,98146.0,4829,,No
-424,0,2018,2,2,09:48,$3.38,Chip Transaction,-3573329020209088012,Seattle,WA,98122.0,5541,,No
-424,0,2018,2,2,10:03,$24.15,Chip Transaction,-5475680618560174533,Seattle,WA,98198.0,5942,,No

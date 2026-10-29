@@ -1,5 +1,0 @@
-{
-  "corrected_protocol_sha256": "9d2f80bdad2dcb9f7fd0062638907659a05b0c08628ea82991f86eb4e612e7f6",
-  "initial_protocol_sha256": "779d8350c79c70aefbe2d5c5927c720a19ab8406e3076faeb21e4f5d8f5c8803",
-  "reason": "Pre-evaluation schema smoke test rejected merchant names as IDs and timestamps without milliseconds. Use deterministic merchant hash preserving identity and append .000 milliseconds while retaining seconds. All seven tests pass. No population, outcomes, model or policy changes. No transfer predictions or metrics yet."
-}

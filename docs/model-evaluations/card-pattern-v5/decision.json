@@ -1,9 +1,0 @@
-{
-  "base_engine": "Upload-v8 remains frozen.",
-  "bundle_sha256": "47db3ad7245bcb988d3ea22b575771b9a5bd8536eec1a96c9af71386b0195b97",
-  "decision": "Install prioritization only; original v1 lead set is unchanged.",
-  "exposure": "Priority role chosen after exposed regression results; not independently validated. No retraining, threshold tuning, general accuracy or increased recall claim.",
-  "priority_frozen_sha256": "3f23afe4624f35d86e18f2a58f24f829396ba37cbd35c9859645e7ef4ff45b62",
-  "reason": "V2 rejected as replacement: fewer scenario frauds. Frozen weights/cutoff are useful to prioritize existing leads without suppressing any. V3 confirmation rejected; V4 failed calibration and was not evaluated on scenarios/final data.",
-  "scope": "Prioritized is a review order, not a calibrated fraud probability."
-}
