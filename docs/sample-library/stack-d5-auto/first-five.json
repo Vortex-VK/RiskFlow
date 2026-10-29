@@ -1,0 +1,37 @@
+[
+  {
+    "alert": false,
+    "eventId": "CSV_002",
+    "fraud": false,
+    "rawMargin": -5.326813409208052,
+    "sourceRow": 7016924
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_003",
+    "fraud": false,
+    "rawMargin": -5.0063373166258724,
+    "sourceRow": 18537042
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_004",
+    "fraud": false,
+    "rawMargin": -5.114040949485284,
+    "sourceRow": 8790116
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_005",
+    "fraud": false,
+    "rawMargin": -4.496085672149387,
+    "sourceRow": 8790117
+  },
+  {
+    "alert": true,
+    "eventId": "CSV_006",
+    "fraud": true,
+    "rawMargin": -3.735556692524542,
+    "sourceRow": 15435793
+  }
+]

@@ -937,7 +937,7 @@
             "type": "string"
           },
           "historyCount": {
-            "maximum": 10000.0,
+            "maximum": 25000.0,
             "minimum": 10.0,
             "title": "Historycount",
             "type": "integer"
@@ -962,7 +962,7 @@
             "type": "array"
           },
           "priorHourAttempts": {
-            "maximum": 10000.0,
+            "maximum": 25000.0,
             "minimum": 0.0,
             "title": "Priorhourattempts",
             "type": "integer"
@@ -1024,7 +1024,7 @@
             "type": "string"
           },
           "historyCount": {
-            "maximum": 10000.0,
+            "maximum": 25000.0,
             "minimum": 10.0,
             "title": "Historycount",
             "type": "integer"
@@ -1059,6 +1059,82 @@
           "prioritized"
         ],
         "title": "CardPatternScores",
+        "type": "object"
+      },
+      "ComparativeCheck": {
+        "additionalProperties": false,
+        "properties": {
+          "contribution": {
+            "title": "Contribution",
+            "type": "number"
+          },
+          "feature": {
+            "title": "Feature",
+            "type": "string"
+          },
+          "observations": {
+            "items": {
+              "$ref": "#/components/schemas/ComparativeObservation"
+            },
+            "title": "Observations",
+            "type": "array"
+          }
+        },
+        "required": [
+          "feature",
+          "contribution",
+          "observations"
+        ],
+        "title": "ComparativeCheck",
+        "type": "object"
+      },
+      "ComparativeObservation": {
+        "additionalProperties": false,
+        "properties": {
+          "contribution": {
+            "title": "Contribution",
+            "type": "number"
+          },
+          "feature": {
+            "title": "Feature",
+            "type": "string"
+          },
+          "referenceValue": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Referencevalue"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value"
+          }
+        },
+        "required": [
+          "feature",
+          "value",
+          "contribution",
+          "referenceValue"
+        ],
+        "title": "ComparativeObservation",
         "type": "object"
       },
       "ContextAssociation": {
@@ -1290,7 +1366,7 @@
             "type": "integer"
           },
           "count": {
-            "maximum": 10000.0,
+            "maximum": 25000.0,
             "minimum": 0.0,
             "title": "Count",
             "type": "integer"
@@ -1785,7 +1861,7 @@
             "type": "array"
           },
           "sequenceIndex": {
-            "exclusiveMaximum": 10000.0,
+            "exclusiveMaximum": 25000.0,
             "minimum": 0.0,
             "title": "Sequenceindex",
             "type": "integer"
@@ -1864,7 +1940,7 @@
           "eventCount": {
             "anyOf": [
               {
-                "maximum": 10000.0,
+                "maximum": 25000.0,
                 "minimum": 0.0,
                 "type": "integer"
               },
@@ -2179,7 +2255,7 @@
           "fiveMinuteAttemptCount": {
             "anyOf": [
               {
-                "maximum": 10000.0,
+                "maximum": 25000.0,
                 "minimum": 1.0,
                 "type": "integer"
               },
@@ -2203,7 +2279,7 @@
           "sharedDeviceAccountCount": {
             "anyOf": [
               {
-                "maximum": 1000.0,
+                "maximum": 5000.0,
                 "minimum": 1.0,
                 "type": "integer"
               },
@@ -4607,7 +4683,7 @@
             "type": "object"
           },
           "flaggedCount": {
-            "maximum": 10000.0,
+            "maximum": 25000.0,
             "minimum": 0.0,
             "title": "Flaggedcount",
             "type": "integer"
@@ -4623,20 +4699,20 @@
             ]
           },
           "labeledCount": {
-            "maximum": 10000.0,
+            "maximum": 25000.0,
             "minimum": 0.0,
             "title": "Labeledcount",
             "type": "integer"
           },
           "reviewWorkload": {
-            "maximum": 10000.0,
+            "maximum": 25000.0,
             "minimum": 0.0,
             "title": "Reviewworkload",
             "type": "integer"
           },
           "ruleTriggerCounts": {
             "additionalProperties": {
-              "maximum": 10000.0,
+              "maximum": 25000.0,
               "minimum": 0.0,
               "type": "integer"
             },
@@ -4655,7 +4731,7 @@
           },
           "scoreBins": {
             "additionalProperties": {
-              "maximum": 10000.0,
+              "maximum": 25000.0,
               "minimum": 0.0,
               "type": "integer"
             },
@@ -4669,7 +4745,7 @@
             "type": "integer"
           },
           "totalCount": {
-            "maximum": 10000.0,
+            "maximum": 25000.0,
             "minimum": 0.0,
             "title": "Totalcount",
             "type": "integer"
@@ -4685,7 +4761,7 @@
             ]
           },
           "unlabeledCount": {
-            "maximum": 10000.0,
+            "maximum": 25000.0,
             "minimum": 0.0,
             "title": "Unlabeledcount",
             "type": "integer"
@@ -6005,7 +6081,7 @@
                 }
               ]
             },
-            "maxItems": 1000,
+            "maxItems": 5000,
             "title": "Nodes",
             "type": "array"
           },
@@ -6013,7 +6089,7 @@
             "items": {
               "$ref": "#/components/schemas/PaymentEvent"
             },
-            "maxItems": 10000,
+            "maxItems": 25000,
             "title": "Payments",
             "type": "array"
           },
@@ -6191,6 +6267,115 @@
         "title": "SignalAvailability",
         "type": "object"
       },
+      "StackComparisonExplanation": {
+        "additionalProperties": false,
+        "properties": {
+          "checks": {
+            "items": {
+              "$ref": "#/components/schemas/ComparativeCheck"
+            },
+            "title": "Checks",
+            "type": "array"
+          },
+          "eventId": {
+            "not": {
+              "enum": [
+                "__proto__",
+                "prototype",
+                "constructor"
+              ]
+            },
+            "pattern": "^[A-Za-z0-9_-]{1,64}$",
+            "title": "Eventid",
+            "type": "string"
+          },
+          "method": {
+            "const": "grouped-shapley-head-attribution-v1",
+            "default": "grouped-shapley-head-attribution-v1",
+            "title": "Method",
+            "type": "string"
+          },
+          "modelBundleSha256": {
+            "title": "Modelbundlesha256",
+            "type": "string"
+          },
+          "referenceEventId": {
+            "not": {
+              "enum": [
+                "__proto__",
+                "prototype",
+                "constructor"
+              ]
+            },
+            "pattern": "^[A-Za-z0-9_-]{1,64}$",
+            "title": "Referenceeventid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "eventId",
+          "referenceEventId",
+          "modelBundleSha256",
+          "checks"
+        ],
+        "title": "StackComparisonExplanation",
+        "type": "object"
+      },
+      "StackComparisonRequest": {
+        "additionalProperties": false,
+        "properties": {
+          "eventId": {
+            "not": {
+              "enum": [
+                "__proto__",
+                "prototype",
+                "constructor"
+              ]
+            },
+            "pattern": "^[A-Za-z0-9_-]{1,64}$",
+            "title": "Eventid",
+            "type": "string"
+          },
+          "expectedRawMargin": {
+            "title": "Expectedrawmargin",
+            "type": "number"
+          },
+          "expectedReferenceRawMargin": {
+            "title": "Expectedreferencerawmargin",
+            "type": "number"
+          },
+          "modelBundleSha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "title": "Modelbundlesha256",
+            "type": "string"
+          },
+          "referenceEventId": {
+            "not": {
+              "enum": [
+                "__proto__",
+                "prototype",
+                "constructor"
+              ]
+            },
+            "pattern": "^[A-Za-z0-9_-]{1,64}$",
+            "title": "Referenceeventid",
+            "type": "string"
+          },
+          "scenario": {
+            "$ref": "#/components/schemas/ScenarioDefinition"
+          }
+        },
+        "required": [
+          "scenario",
+          "eventId",
+          "modelBundleSha256",
+          "expectedRawMargin",
+          "referenceEventId",
+          "expectedReferenceRawMargin"
+        ],
+        "title": "StackComparisonRequest",
+        "type": "object"
+      },
       "StackPaymentExplanation": {
         "additionalProperties": false,
         "properties": {
@@ -6279,13 +6464,13 @@
             "type": "string"
           },
           "nodeCount": {
-            "maximum": 1000.0,
+            "maximum": 5000.0,
             "minimum": 0.0,
             "title": "Nodecount",
             "type": "integer"
           },
           "paymentCount": {
-            "maximum": 10000.0,
+            "maximum": 25000.0,
             "minimum": 0.0,
             "title": "Paymentcount",
             "type": "integer"
@@ -6558,6 +6743,84 @@
           }
         },
         "summary": "Explanation"
+      }
+    },
+    "/api/v1/explanations/compare": {
+      "post": {
+        "operationId": "comparePaymentChecks",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StackComparisonRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StackComparisonExplanation"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Content Too Large"
+          },
+          "415": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unsupported Media Type"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Comparison Explanation"
       }
     },
     "/api/v1/health": {

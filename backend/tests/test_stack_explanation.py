@@ -39,7 +39,7 @@ def test_stack_explanation_reconstructs_frozen_score_and_ignores_labels(client, 
         stack_case["expectedRawMargin"],
         abs_tol=1e-7,
     )
-    assert {f["label"] for f in data["facts"]} >= {"Purchase amount", "Merchant history"}
+    assert {f["label"] for f in data["facts"]} >= {"Purchase amount", "At this merchant"}
     scenario = {**stack_case["scenario"], "groundTruth": {}}
     changed = client.post("/api/v1/explanations", json={**stack_case, "scenario": scenario})
     assert changed.json() == data
@@ -117,4 +117,4 @@ def test_amount_comparison_excludes_equal_time_peers_and_future_rows(client, sta
     assert facts["Purchase amount"]["value"] == "$640.00"
     assert "$160.00" in facts["Purchase amount"]["comparison"]
     assert "5 earlier purchases" in facts["Purchase amount"]["comparison"]
-    assert facts["Previous hour"]["value"] == "1 purchases"
+    assert facts["Previous hour"]["value"] == "1 purchase"

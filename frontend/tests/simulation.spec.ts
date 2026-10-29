@@ -1,3 +1,4 @@
+import { setPlaybackPosition } from "./workspace-helpers";
 import { openExampleWorkspace, setPlaybackSpeed } from "./workspace-helpers";
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
@@ -397,7 +398,7 @@ test("malformed metrics, future evidence and snapshot mismatches preserve the la
   await page.getByRole("button", { name: "Inspect H10", exact: true }).click();
   await expect(
     page.getByRole("complementary", { name: "Payment explanation" }),
-  ).toContainText("Merchant history");
+  ).toContainText("At this merchant");
 });
 
 test("replay is accessible in dark mode and works with reduced motion on mobile", async ({
@@ -475,9 +476,7 @@ test("replay is accessible in dark mode and works with reduced motion on mobile"
   expect(thirdPayment.x + thirdPayment.width).toBeLessThanOrEqual(390);
   await expect(mobilePayments).not.toContainText(/\d{2}:\d{2}:\d{2}/);
   await page.getByRole("button", { name: "Close events" }).click();
-  await page
-    .getByRole("button", { name: "Reset playback", exact: true })
-    .click();
+  await setPlaybackPosition(page, -1);
   await page.getByRole("button", { name: "Play", exact: true }).click();
   await expect(page.getByRole("status")).not.toContainText("0/16 revealed");
   await page.getByRole("button", { name: "Pause", exact: true }).click();
@@ -500,16 +499,12 @@ test("all playback settings advance 25 percent faster with the default still at 
   page,
 }) => {
   await page.getByRole("button", { name: "Simulate", exact: true }).click();
-  await page
-    .getByRole("button", { name: "Reset playback", exact: true })
-    .click();
+  await setPlaybackPosition(page, -1);
   await expect(page.getByLabel("Playback speed")).toHaveValue("3");
   await page.clock.install();
   await page.clock.pauseAt(new Date());
   for (const speed of [0.1, 0.25, 0.5, 1, 2, 5, 10]) {
-    await page
-      .getByRole("button", { name: "Reset playback", exact: true })
-      .click();
+    await setPlaybackPosition(page, -1);
     await setPlaybackSpeed(page, speed);
     await page.getByRole("button", { name: "Play", exact: true }).click();
     await page.clock.runFor(640 / speed - 20);
@@ -526,9 +521,7 @@ test("transaction pulses and risk highlights follow playback while inspection pr
   await page.getByText("Scenario options", { exact: true }).click();
   await page.getByRole("button", { name: /^Account Takeover/ }).click();
   await page.getByRole("button", { name: "Simulate", exact: true }).click();
-  await page
-    .getByRole("button", { name: "Reset playback", exact: true })
-    .click();
+  await setPlaybackPosition(page, -1);
   await setPlaybackSpeed(page, 0.1);
   await page.getByRole("button", { name: "Play", exact: true }).click();
   const pulse = page.locator(".payment-pulse");
@@ -603,9 +596,7 @@ test("transaction pulses and risk highlights follow playback while inspection pr
     viewport!,
   );
   await expect(pulse).toHaveCount(0);
-  await page
-    .getByRole("button", { name: "Reset playback", exact: true })
-    .click();
+  await setPlaybackPosition(page, -1);
   await expect(
     page.locator('.react-flow__edge-path[style*="--transaction-review"]'),
   ).toHaveCount(0);

@@ -140,7 +140,7 @@ test("continuous sector map: import, fixed canvas, smooth camera, detail, themes
   ).toContainText("interactive detail");
   await expect(
     page.getByRole("complementary", { name: "Payment explanation" }),
-  ).toContainText("Merchant history");
+  ).toContainText("At this merchant");
   expect(errors).toEqual([]);
   const frames = trace.frames.sort((a, b) => a - b);
   await writeFile(

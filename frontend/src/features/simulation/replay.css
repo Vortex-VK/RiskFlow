@@ -29,7 +29,8 @@
   left: 28px;
   display: block;
   width: max-content;
-  max-width: calc(100vw - 56px);
+  /* Reserve inspector space even when closed so opening it cannot resize us. */
+  max-width: calc(100vw - 470px);
   padding: 11px 14px;
   border: 1px solid var(--line);
   border-radius: 12px;
@@ -73,15 +74,25 @@ html[data-motion="off"] .run-overview {
 .run-overview .overview-counts {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
 }
-.run-overview .overview-counts > div,
-.run-overview .review-total {
+.run-overview .overview-metric {
+  display: grid;
+}
+.run-overview .overview-value,
+.run-overview .overview-reserve {
+  grid-area: 1 / 1;
   display: flex;
   align-items: baseline;
+  justify-content: center;
   gap: 8px;
 }
-.run-overview strong {
+.run-overview .overview-reserve {
+  visibility: hidden;
+  pointer-events: none;
+}
+.run-overview strong,
+.run-overview .overview-number-reserve {
   display: inline-block;
   flex-shrink: 0;
   text-align: right;
@@ -96,17 +107,30 @@ html[data-motion="off"] .run-overview {
   white-space: nowrap;
 }
 .run-overview .review-total {
-  border: 0;
+  border: 1px solid transparent;
+  border-bottom-color: var(--transaction-review);
+  border-radius: 0;
   background: transparent;
-  padding: 0;
-  color: var(--transaction-review);
+  padding: 7px 10px;
+  color: var(--text);
+}
+.run-overview .review-total:hover:not(:disabled),
+.run-overview .review-total[aria-expanded="true"] {
+  background: transparent;
+  color: var(--text);
+  box-shadow: 0 1px 0 var(--transaction-review);
 }
 .run-overview .review-total span {
+  color: inherit;
+}
+.run-overview .review-total:not(:disabled) strong {
   color: var(--transaction-review);
 }
 .run-overview .review-total:disabled {
   opacity: 1;
   color: var(--muted);
+  border-bottom-color: var(--line);
+  background: transparent;
 }
 .run-overview .review-total:disabled span {
   color: var(--muted);
@@ -123,13 +147,6 @@ html[data-motion="off"] .run-overview {
   border-color: var(--transaction-review);
   color: var(--transaction-review);
   background: #30211e;
-}
-.replay.panel-open .run-overview {
-  max-width: calc(100vw - 470px);
-  gap: 18px;
-}
-.replay.panel-open .overview-counts {
-  gap: 16px;
 }
 .threshold-control {
   border-top: 1px solid var(--line);
@@ -351,6 +368,29 @@ html[data-motion="off"] .run-overview {
   stroke: var(--muted);
   stroke-width: 0.7;
   stroke-dasharray: 2 2;
+}
+.priority-total rect {
+  stroke: var(--contribution-color);
+  stroke-width: 1.2;
+}
+.priority-total .plot-axis {
+  fill: var(--text);
+  font-weight: 600;
+}
+.priority-total-cap {
+  stroke: var(--contribution-color);
+  stroke-width: 2;
+}
+.priority-review-cutoff line {
+  stroke: var(--text);
+  stroke-width: 1.4;
+  stroke-dasharray: 3 2;
+}
+.priority-review-cutoff text {
+  fill: var(--text);
+  font-size: 9px;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
 }
 .probability-cutoff {
   stroke: #ededed;
@@ -643,6 +683,7 @@ html[data-motion="off"] .run-overview {
 }
 .transaction-sector:has(.sector-review-count) .sector-name-crowded {
   opacity: 1;
+  pointer-events: auto;
 }
 .transaction-sector:has(.sector-review-count)
   .sector-name-crowded
@@ -655,25 +696,26 @@ html[data-motion="off"] .run-overview {
 .transaction-sector:has(.sector-review-count):hover
   .sector-name-crowded
   .sector-factor-label,
-.transaction-sector:has(.sector-review-count):focus-visible
+.transaction-sector:has(.sector-review-count):focus-within
   .sector-name-crowded
   .sector-factor-label {
   display: inline;
 }
 @media (max-width: 1100px) {
-  .replay.panel-open .run-overview {
+  .replay .run-overview {
     max-width: calc(100vw - 450px);
     flex-wrap: wrap;
     gap: 10px 16px;
   }
-  .replay.panel-open .overview-counts {
+  .replay .overview-counts {
     flex-wrap: wrap;
     gap: 10px 16px;
   }
-  .replay.panel-open .run-overview strong {
+  .replay .run-overview strong,
+  .replay .run-overview .overview-number-reserve {
     font-size: 20px;
   }
-  .replay.panel-open .run-overview .no-alert-total {
+  .replay .run-overview .no-alert-total {
     display: none;
   }
   .replay .status {
@@ -681,7 +723,7 @@ html[data-motion="off"] .run-overview {
   }
 }
 @media (max-width: 600px) {
-  .run-overview,
+  .replay .run-overview,
   .replay:has(.hierarchy-navigation) .run-overview {
     top: 116px;
     left: 12px;
@@ -692,16 +734,18 @@ html[data-motion="off"] .run-overview {
     width: auto;
     justify-content: space-between;
   }
-  .run-overview strong {
+  .run-overview strong,
+  .run-overview .overview-number-reserve {
     font-size: 20px;
   }
   .run-overview .overview-counts {
     gap: 12px;
     justify-content: space-between;
   }
-  .run-overview .overview-counts > div,
-  .run-overview .review-total {
+  .run-overview .overview-value,
+  .run-overview .overview-reserve {
     flex-direction: column;
+    align-items: center;
     gap: 2px;
   }
   .run-overview span {
@@ -765,11 +809,6 @@ html[data-motion="off"] .run-overview {
   border-left: 1px solid var(--muted);
   pointer-events: none;
 }
-.capacity-control > small {
-  display: block;
-  font-size: 11px;
-  color: var(--muted);
-}
 .stack-evidence .queue-decision {
   font-size: 12px;
   color: var(--muted);
@@ -789,4 +828,195 @@ html[data-motion="off"] .run-overview {
 }
 .stack-evidence .probability-endpoints {
   justify-content: space-between;
+}
+.payment-score-review {
+  --contribution-color: var(--transaction-review);
+}
+.payment-score-clear {
+  --contribution-color: var(--approve);
+}
+.selected-priority-score strong {
+  color: var(--contribution-color);
+}
+.plot-zero {
+  stroke: var(--muted);
+  stroke-width: 1.25;
+}
+.priority-check-columns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 0 0 10px 20px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.priority-check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.priority-check-list > li {
+  border-top: 1px solid var(--line);
+}
+.priority-check-list .expert-observations,
+.priority-check-list .remaining-factors {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.replay .run-inspector .priority-check-heading {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: baseline;
+  padding: 15px 0;
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.5;
+  list-style: none;
+}
+.priority-check-heading::-webkit-details-marker {
+  display: none;
+}
+.priority-check-heading::before {
+  content: "";
+}
+summary.priority-check-heading::before {
+  content: "▸";
+  color: var(--muted);
+}
+details[open] > summary.priority-check-heading::before {
+  content: "▾";
+}
+.priority-check-heading strong {
+  font-weight: 600;
+}
+.priority-check-list .priority-contribution,
+.check-contributions .check-points {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--contribution-color);
+  white-space: nowrap;
+}
+.priority-input-comparison {
+  margin: -6px 0 14px 20px;
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: normal;
+  line-height: 1.5;
+}
+.remaining-factor-list {
+  list-style: none;
+  margin: 0 0 16px 20px;
+  padding: 0;
+}
+.remaining-factor-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 7px 0;
+  font-size: 11px;
+  color: var(--muted);
+}
+.remaining-factor-list strong {
+  color: var(--contribution-color);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.replay .run-inspector .remaining-empty {
+  margin-left: 20px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.priority-check-body {
+  padding: 0 0 18px 20px;
+}
+.contribution-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.contribution-columns,
+.check-contributions .contribution-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(60px, 1fr) 46px;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 6px;
+}
+.contribution-columns {
+  color: var(--muted);
+  font-size: 10px;
+  padding-top: 0;
+  padding-bottom: 6px;
+}
+.contribution-columns > :last-child {
+  text-align: right;
+}
+.contribution-axis {
+  display: flex;
+  justify-content: space-between;
+  font-variant-numeric: tabular-nums;
+}
+.check-contributions .contribution-row {
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  text-align: left;
+  color: var(--text);
+  font-size: 11px;
+  line-height: 1.5;
+}
+.contribution-observation {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.contribution-observation .observation-name {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+.contribution-observation strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+}
+.contribution-observation .merchant-code {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+}
+.check-contributions .check-points {
+  font-size: 12px;
+}
+.contribution-track {
+  position: relative;
+  display: block;
+  height: 22px;
+  background: linear-gradient(var(--line), var(--line)) center / 100% 1px
+    no-repeat;
+}
+.contribution-track::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--muted);
+  opacity: 0.6;
+}
+.contribution-fill {
+  position: absolute;
+  top: 7px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--contribution-color);
+}
+.contribution-rows .other-context {
+  border-top: 1px solid var(--line);
+  margin-top: 4px;
 }

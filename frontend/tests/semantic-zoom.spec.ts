@@ -116,7 +116,7 @@ test("zooming out of final detail returns to its parent, while one scroll stays 
   expect(await zoom(page)).toBeCloseTo(before, 4);
 });
 
-test("zoom buttons return from detail to the overview without a Fit control", async ({
+test("wheel zoom returns from detail to the overview without a Fit control", async ({
   page,
 }) => {
   await fixture(page);
@@ -129,7 +129,8 @@ test("zoom buttons return from detail to the overview without a Fit control", as
     "false",
   );
   await page.waitForTimeout(300);
-  await page.getByRole("button", { name: "Zoom out", exact: true }).click();
+  await page.mouse.move(600, 400);
+  await page.mouse.wheel(0, 100);
   await page.waitForTimeout(300);
   await expect(page.locator(".hierarchy-stage")).toHaveAttribute(
     "data-detail",
@@ -141,12 +142,15 @@ test("zoom buttons return from detail to the overview without a Fit control", as
       "false"
     )
       break;
-    await page.getByRole("button", { name: "Zoom out", exact: true }).click();
+    await page.mouse.move(600, 400);
+    await page.mouse.wheel(0, 100);
     await page.waitForTimeout(300);
   }
   await expect(page.getByTestId("cluster-overview")).toHaveAttribute(
     "data-group",
     "all",
   );
-  await expect(page.getByRole("button", { name: "Fit network to canvas" })).toHaveCount(0);
+  await expect(
+    page.getByRole("button", { name: "Fit network to canvas" }),
+  ).toHaveCount(0);
 });

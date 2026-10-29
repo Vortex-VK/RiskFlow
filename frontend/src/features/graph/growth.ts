@@ -52,6 +52,13 @@ export function firingOpacity(progress: number) {
 }
 
 export const TRANSACTION_GLOW_DURATION = 2400;
+// Red takes over as the original blue pulse decays, without an empty interval
+// or a second entrance. The blue pulse keeps its original timing and curve.
+export function riskOpacity(progress: number | undefined) {
+  if (progress === undefined) return 1;
+  return progress < 0.035 ? 0 : 1 - firingOpacity(progress);
+}
+
 export function recentTransactionGlows(
   schedule: readonly { start: number }[],
   elapsed: number,

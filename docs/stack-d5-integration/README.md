@@ -46,15 +46,13 @@ Tests also cover deterministic daily ceilings and ties, label exclusion,
 chronology, optional fields, unsupported rows, artifact corruption, saved-result
 reopening, API decoding and browser import/replay behavior.
 
-The six sample CSV files were not changed or reselected. Their displayed
-results were recomputed at the new daily budget and saved separately under
-`docs/sample-library/stack-d5/`. This policy can perform worse on old curated
-demos: the 250-row sample yields 0/15 detections and 7 false alerts; the
-10,000-row sample yields 38/123 detections and 222 false alerts. These files were
-previously selected using the old engine. Neither their earlier nor their
-current results establish performance for arbitrary users' uploads. Changing
-review budgets requires explicit evaluation rather than relabeling a percentile
-as a probability threshold. Fresh representative outcomes are still needed.
+The sample library was refreshed on 2026-10-29 for the current automatic
+upload-wide queue. It retains the small IBM walkthrough and uses five curated
+Sparkov account-history windows. The [sample library](../sample-library/README.md)
+records selection methods, provenance, current metrics, false alerts and misses.
+Old IBM CSVs and daily-policy receipts remain for historical regression checks;
+the active cards use `stack-d5-auto/` receipts. These intentionally selected
+examples are not fresh representative validation.
 
 ## Reproduction and packaging
 

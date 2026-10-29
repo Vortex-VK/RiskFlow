@@ -17,9 +17,16 @@ from app.api.v2 import router as history_router
 from app.domain.engine import ENGINE_VERSION, simulate
 from app.domain.explanation import explain_payment
 from app.domain.model_inputs import UnsupportedModelInput
+from app.domain.stack_explanation import explain_comparison
 from app.domain.validation import validate_scenario
 from app.schemas.behavioral import AnalysisCapabilities
-from app.schemas.explanation import ExplanationRequest, PaymentExplanation, StackPaymentExplanation
+from app.schemas.explanation import (
+    ExplanationRequest,
+    PaymentExplanation,
+    StackComparisonExplanation,
+    StackComparisonRequest,
+    StackPaymentExplanation,
+)
 from app.schemas.responses import ErrorResponse, HealthResponse, TemplateSummary, ValidationResult
 from app.schemas.scenario import ScenarioDocument, ScenarioRequest
 from app.schemas.simulation import RunResult
@@ -177,6 +184,17 @@ def explanation(payload: ExplanationRequest) -> PaymentExplanation | StackPaymen
     if validate_scenario(payload.scenario):
         raise HTTPException(422, "Correct the scenario before requesting an explanation.")
     return explain_payment(payload)
+
+
+@app.post(
+    "/api/v1/explanations/compare",
+    response_model=StackComparisonExplanation,
+    operation_id="comparePaymentChecks",
+)
+def comparison_explanation(payload: StackComparisonRequest) -> StackComparisonExplanation:
+    if validate_scenario(payload.scenario):
+        raise HTTPException(422, "Correct the scenario before requesting an explanation.")
+    return explain_comparison(payload)
 
 
 if not public_demo:

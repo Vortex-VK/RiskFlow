@@ -13,7 +13,7 @@ import type { ColumnMapping, CsvTable, ImportDefaults } from "../../domain/csv";
 import type { Document } from "../../domain/types";
 import sampleCsvUrl from "../../assets/sample-payments.csv?url";
 import { decodeCsvBytes } from "../../domain/csv-values";
-import { MAX_CSV_BYTES } from "../../domain/limits";
+import { MAX_CSV_BYTES, MAX_PAYMENTS } from "../../domain/limits";
 import { csvDefaults } from "../../domain/csv-defaults";
 
 export function CsvImport({
@@ -107,13 +107,16 @@ export function CsvImport({
         </a>
       </p>
       <button className="wide" onClick={browseSamples}>
-        Browse IBM samples
+        Browse samples
       </button>
       <label className="file-picker">
         <strong>
           {fileName ? "Choose another CSV" : "Choose a CSV or drop it here"}
         </strong>
-        <span>{fileName || "USD · Up to 10,000 rows · 5 MB"}</span>
+        <span>
+          {fileName ||
+            `USD · Up to ${MAX_PAYMENTS.toLocaleString("en-US")} rows · 5 MB`}
+        </span>
         <input
           aria-label="CSV file"
           type="file"

@@ -392,6 +392,14 @@ test("clear board is visible, turns red on hover, and preserves edits on cancel"
   await expect(clear).toHaveCSS("background-color", normalHover.background);
   await expect(clear).toHaveCSS("padding", normalHover.padding);
   await expect(clear).toHaveCSS("color", "rgb(239, 163, 155)");
+  const clearBox = (await clear.boundingBox())!;
+  const redoBox = (await page
+    .getByRole("button", { name: "Redo", exact: true })
+    .boundingBox())!;
+  expect(clearBox.y + clearBox.height / 2).toBeCloseTo(
+    redoBox.y + redoBox.height / 2,
+    0,
+  );
   await clear.focus();
   await page.keyboard.press("Shift+Tab");
   await page.keyboard.press("Tab");
@@ -420,26 +428,10 @@ test("clear board is visible, turns red on hover, and preserves edits on cancel"
   await expect(
     page.getByRole("button", { name: "Payments 0", exact: true }),
   ).toBeVisible();
-  await expect(clear).toBeEnabled();
-  await expect(
-    page
-      .getByRole("navigation", { name: "Workspace tools" })
-      .getByRole("button", { name: "Clear board" }),
-  ).toBeVisible();
-  await clear.hover();
-  await expect(clear).toHaveCSS("background-color", normalHover.background);
-  await expect(clear).toHaveCSS("color", "rgb(239, 163, 155)");
-  const clearBox = (await clear.boundingBox())!;
-  const redoBox = (await page
-    .getByRole("button", { name: "Redo", exact: true })
-    .boundingBox())!;
-  expect(clearBox.y + clearBox.height / 2).toBeCloseTo(
-    redoBox.y + redoBox.height / 2,
-    0,
-  );
+  await expect(page.locator(".workspace-bar")).toHaveCount(0);
   await expect(
     page.getByRole("button", { name: "Simulate", exact: true }),
-  ).toBeDisabled();
+  ).toHaveCount(0);
   await expect(page.getByRole("region", { name: "Get started" })).toBeVisible();
   await page.getByRole("button", { name: "Samples", exact: true }).click();
   await page

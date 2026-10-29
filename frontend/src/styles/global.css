@@ -1327,3 +1327,22 @@ body:has(.connection-preview) .tour-coach {
     animation: none;
   }
 }
+
+/* Playback and edit announcements remain available to assistive technology. */
+.status {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  padding: 0;
+}
+.workspace-error {
+  position: absolute;
+  top: 82px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: min(650px, 85vw);
+  padding: 12px 16px;
+  z-index: 8;
+}

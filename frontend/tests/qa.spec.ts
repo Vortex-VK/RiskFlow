@@ -1,3 +1,4 @@
+import { setPlaybackPosition } from "./workspace-helpers";
 import { fillModelInputs, connectOnCanvas } from "./workspace-helpers";
 import {
   openExampleWorkspace,
@@ -183,9 +184,9 @@ for (const templateId of [
       fixture.scenario.nodes.length,
     );
     await button(page, "Simulate").click();
-    await button(page, "Reset playback").click();
-    await button(page, "Next event").click();
-    await button(page, "Previous event").click();
+    await setPlaybackPosition(page, -1);
+    await setPlaybackPosition(page, 0);
+    await setPlaybackPosition(page, -1);
     await expect(page.getByRole("status")).toContainText(
       `0/${expected.events.length} revealed`,
     );
@@ -219,7 +220,7 @@ for (const templateId of [
     await button(page, "Close events").click();
     await button(page, "Play again").click();
     await button(page, "Pause").click();
-    await button(page, "Replay").click();
+    await button(page, "Play").click();
     await button(page, "Pause").click();
     for (const speed of [0.1, 0.25, 0.5, 1, 2, 5, 10])
       await setPlaybackSpeed(page, speed);
@@ -251,9 +252,11 @@ test("all node editors, camera controls, and dirty edit guards work", async ({
 }) => {
   const view = page.locator(".react-flow__viewport");
   const before = await view.getAttribute("style");
-  await button(page, "Zoom in").click();
+  await page.mouse.move(600, 400);
+  await page.mouse.wheel(0, -100);
   await expect(view).not.toHaveAttribute("style", before!);
-  await button(page, "Zoom out").click();
+  await page.mouse.move(600, 400);
+  await page.mouse.wheel(0, 100);
   await page.mouse.move(700, 450);
   await page.mouse.wheel(0, 160);
   for (const [id, field, value] of [

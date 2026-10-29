@@ -4,15 +4,14 @@ import { csvDefaults } from "../../domain/csv-defaults";
 import { MAX_OBJECTS, MAX_PAYMENTS } from "../../domain/limits";
 import { catalog, sampleDocument } from "./samples";
 
-const files = import.meta.glob<string>("../../../public/samples/ibm/*.csv", {
+const files = import.meta.glob<string>("../../../public/samples/**/*.csv", {
   query: "?raw",
   import: "default",
   eager: true,
 });
-const contentFor = (file: string) =>
-  files[`../../../public/samples/ibm/${file}`]!;
+const contentFor = (file: string) => files[`../../../public/samples/${file}`]!;
 
-describe("IBM sample assets", () => {
+describe("Curated sample assets", () => {
   for (const sample of catalog.samples) {
     it(`${sample.id} is a complete, labeled, model-compatible import`, async () => {
       const content = contentFor(sample.file);

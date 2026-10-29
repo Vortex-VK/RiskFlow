@@ -1,3 +1,4 @@
+import { setPlaybackPosition } from "./workspace-helpers";
 import { setReviewCapacity } from "./workspace-helpers";
 import { uploadQueueRun } from "./workspace-helpers";
 import { expect, test } from "@playwright/test";
@@ -36,15 +37,13 @@ test("review counts follow visible playback and completed inspection keeps the f
   );
   expect(flagged.length).toBeGreaterThan(1);
   const overview = page.getByRole("region", { name: "Run assessment summary" });
-  await page
-    .getByRole("button", { name: "Reset playback", exact: true })
-    .click();
+  await setPlaybackPosition(page, -1);
   const totals = overview.locator("strong");
   await expect(totals).toHaveText(["0", "0", "0"]);
   await expect(overview).toHaveCSS("transform", "none");
   const initialSummaryBox = await overview.boundingBox();
   const numberPositions = () =>
-    totals.evaluateAll((nodes) =>
+    overview.locator(".overview-metric").evaluateAll((nodes) =>
       nodes.map((node) => {
         const box = node.getBoundingClientRect();
         return { x: box.x, width: box.width };
@@ -67,7 +66,7 @@ test("review counts follow visible playback and completed inspection keeps the f
       );
   // Step through real results, including both alert and no-alert payments.
   for (let count = 1; count <= 8; count++) {
-    await page.getByRole("button", { name: "Next event", exact: true }).click();
+    await setPlaybackPosition(page, count - 1);
     const reviewCount = run.events
       .slice(0, count)
       .filter((e: { model: { alert: boolean } }) => e.model.alert).length;
@@ -82,9 +81,7 @@ test("review counts follow visible playback and completed inspection keeps the f
     expect(await numberPositions()).toEqual(initialNumberPositions);
   }
   await expect(page.getByLabel("Probability threshold")).toHaveCount(0);
-  await page
-    .getByRole("button", { name: "Previous event", exact: true })
-    .click();
+  await setPlaybackPosition(page, 6);
   const previousReviews = run.events
     .slice(0, 7)
     .filter((e: { model: { alert: boolean } }) => e.model.alert).length;
@@ -245,7 +242,7 @@ test("review counts follow visible playback and completed inspection keeps the f
     exact: true,
   });
   const replayButton = page.getByRole("button", {
-    name: "Replay",
+    name: "Play again",
     exact: true,
   });
   expect(

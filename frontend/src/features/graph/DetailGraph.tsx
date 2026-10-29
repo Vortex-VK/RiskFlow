@@ -1,5 +1,5 @@
 import { readGraphView, rememberGraphView } from "./view-memory";
-import { firingOpacity, growthTree } from "./growth";
+import { firingOpacity, growthTree, riskOpacity } from "./growth";
 import {
   useCallback,
   useEffect,
@@ -24,6 +24,7 @@ import type {
   Viewport,
 } from "@xyflow/react";
 import type { Document, Entity, Position, Selection } from "../../domain/types";
+import type { ReviewGroup } from "../../domain/runInsights";
 import { groupId } from "../../domain/types";
 import { clone } from "../../domain/commands";
 import { guarded, useWorkspace } from "../../state/workspace";
@@ -56,6 +57,7 @@ type Link = Edge<
     highlighted: boolean;
     pulse?: number;
     risk?: "review" | "block";
+    riskOpacity?: number;
     temporal?: "future" | "observed" | "familiar";
   },
   "link"
@@ -119,7 +121,11 @@ function LinkView({ id, data, selected }: EdgeProps<Link>) {
               ? "var(--accent)"
               : "var(--edge)",
           filter: undefined,
-          strokeWidth: data.risk || selected || data.highlighted ? 2 : 1.2,
+          strokeWidth: data.risk
+            ? 1 + (data.riskOpacity ?? 1)
+            : selected || data.highlighted
+              ? 2
+              : 1.2,
           strokeDasharray: data.context
             ? data.temporal === "future"
               ? "1 8"
@@ -127,7 +133,11 @@ function LinkView({ id, data, selected }: EdgeProps<Link>) {
                 ? "8 5"
                 : "3 6"
             : undefined,
-          opacity: data.temporal === "future" ? 0.25 : 1,
+          opacity: data.risk
+            ? data.riskOpacity
+            : data.temporal === "future"
+              ? 0.25
+              : 1,
         }}
       />
       {data.pulse !== undefined && (
@@ -196,6 +206,7 @@ export function DetailGraph({
   focusPaymentId?: string | undefined;
   flaggedIds?: ReadonlySet<string>;
   flaggedOnly?: boolean;
+  inspectReviewGroup?: ((group: ReviewGroup) => void) | undefined;
   add: (kind: Entity["type"], point: Position) => void;
   snapshot?: Document;
   eventId?: string;
@@ -449,6 +460,19 @@ export function DetailGraph({
     }
     return result;
   }, [decisions]);
+  const progressByEvent = new Map(pulses.map((p) => [p.eventId, p.progress]));
+  const riskStrengths = new Map<string, number>();
+  for (const event of decisions) {
+    if (event.decision !== "review" && event.decision !== "block") continue;
+    const key = groupId(event.accountId, event.merchantId);
+    riskStrengths.set(
+      key,
+      Math.max(
+        riskStrengths.get(key) ?? 0,
+        riskOpacity(progressByEvent.get(event.eventId)),
+      ),
+    );
+  }
   const edges: Link[] = [];
   const link = (
     id: string,
@@ -491,7 +515,9 @@ export function DetailGraph({
         count,
         context,
         highlighted: related,
-        ...(!context && risks.has(id) ? { risk: risks.get(id)! } : {}),
+        ...(!context && risks.has(id)
+          ? { risk: risks.get(id)!, riskOpacity: riskStrengths.get(id)! }
+          : {}),
         ...(temporal ? { temporal } : {}),
         ...(!context && activePaths.has(id)
           ? { pulse: activePaths.get(id)! }
@@ -797,6 +823,7 @@ export function DetailGraph({
         </defs>
       </svg>
       <ReactFlow<ObjectNode, Link>
+        proOptions={{ hideAttribution: true }}
         {...(hierarchyViewport || remembered?.viewport
           ? { defaultViewport: hierarchyViewport || remembered!.viewport }
           : {})}

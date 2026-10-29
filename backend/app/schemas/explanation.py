@@ -53,3 +53,26 @@ class StackPaymentExplanation(ResultModel):
     contributions: list[FeatureContribution]
     facts: list[RankingFact]
     experts: list[ExpertExplanation]
+
+
+class StackComparisonRequest(ExplanationRequest):
+    reference_event_id: Identifier
+    expected_reference_raw_margin: Finite
+
+
+class ComparativeObservation(FeatureContribution):
+    reference_value: str | Finite | None
+
+
+class ComparativeCheck(ResultModel):
+    feature: str
+    contribution: Finite
+    observations: list[ComparativeObservation]
+
+
+class StackComparisonExplanation(ResultModel):
+    event_id: Identifier
+    reference_event_id: Identifier
+    model_bundle_sha256: str
+    method: Literal["grouped-shapley-head-attribution-v1"] = "grouped-shapley-head-attribution-v1"
+    checks: list[ComparativeCheck]

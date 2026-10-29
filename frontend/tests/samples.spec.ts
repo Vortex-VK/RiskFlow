@@ -1,3 +1,4 @@
+import { rankedQueue } from "../src/domain/reviewQueue";
 import { expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { createHash } from "node:crypto";
@@ -26,7 +27,7 @@ test("sample library is dismissible, responsive and downloadable", async ({
     /Upload-v\d|What to explore|Source & assumptions/,
   );
   await expect(dialog.getByRole("button", { pressed: true })).toContainText(
-    "Card fraud across accounts",
+    catalog.samples.find((s) => s.id === catalog.defaultSampleId)!.title,
   );
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
   for (const sample of catalog.samples) {
@@ -48,7 +49,7 @@ test("sample library is dismissible, responsive and downloadable", async ({
     const downloadEvent = page.waitForEvent("download");
     await dialog.getByRole("link", { name: "Download CSV" }).click();
     const download = await downloadEvent;
-    expect(download.suggestedFilename()).toBe(`riskflow-ibm-${sample.file}`);
+    expect(download.suggestedFilename()).toBe(`riskflow-${sample.id}.csv`);
     expect(
       createHash("sha256")
         .update(readFileSync((await download.path())!))
@@ -81,7 +82,7 @@ test("sample library is dismissible, responsive and downloadable", async ({
 });
 
 for (const sample of catalog.samples) {
-  test(`${sample.rows} IBM transactions load and reproduce the recorded live Stack-d5 results`, async ({
+  test(`${sample.rows} sample transactions load and reproduce the recorded live Stack-d5 results`, async ({
     page,
   }) => {
     test.setTimeout(90000);
@@ -128,13 +129,38 @@ for (const sample of catalog.samples) {
     };
     const expected = JSON.parse(
       readFileSync(`../${catalog.resultsDirectory}/${sample.id}.json`, "utf8"),
-    ) as { eventId: string; alert: boolean; fraud: boolean }[];
+    ) as {
+      eventId: string;
+      alert: boolean;
+      fraud: boolean;
+      rawMargin: number;
+    }[];
+    const queue = rankedQueue(run.events);
+    const selectedIds = new Set(
+      queue.ordered
+        .slice(0, queue.suggestion.count)
+        .map((event) => event.eventId),
+    );
+    expect(queue.suggestion.count).toBe(sample.alertCount);
+    await expect(
+      page.getByRole("slider", { name: "Review capacity", exact: true }),
+    ).toHaveValue(String(sample.alertCount));
     const predictions = new Map<string, boolean>(
-      run.events.map((event) => [event.eventId, event.model!.alert]),
+      run.events.map((event) => [
+        event.eventId,
+        selectedIds.has(event.eventId),
+      ]),
+    );
+    const scores = new Map(
+      run.events.map((event) => [
+        event.eventId,
+        event.model!.ranking!.rawMargin,
+      ]),
     );
     for (const event of expected) {
       const alert = predictions.get(event.eventId);
       expect(alert).toBe(event.alert);
+      expect(scores.get(event.eventId)).toBeCloseTo(event.rawMargin, 6);
       expect(run.scenarioSnapshot.groundTruth[event.eventId]).toBe(
         event.fraud ? "fraudulent" : "legitimate",
       );
@@ -174,8 +200,9 @@ test("a failed or cancelled sample load leaves the workspace intact", async ({
   page,
 }) => {
   await page.goto("/");
-  await page.route("**/samples/ibm/online-episode.csv", (route) =>
-    route.fulfill({ status: 503, body: "Unavailable" }),
+  await page.route(
+    `**/samples/${catalog.samples.find((s) => s.id === catalog.defaultSampleId)!.file}`,
+    (route) => route.fulfill({ status: 503, body: "Unavailable" }),
   );
   await page.getByRole("button", { name: "Samples", exact: true }).click();
   const dialog = page.getByRole("dialog");
@@ -187,20 +214,27 @@ test("a failed or cancelled sample load leaves the workspace intact", async ({
   await expect(
     page.getByRole("button", { name: "Payments 0", exact: true }),
   ).toBeVisible();
-  await page.unroute("**/samples/ibm/online-episode.csv");
+  await page.unroute(
+    `**/samples/${catalog.samples.find((s) => s.id === catalog.defaultSampleId)!.file}`,
+  );
   let release!: () => void;
   const pending = new Promise<void>((resolve) => {
     release = resolve;
   });
-  await page.route("**/samples/ibm/online-episode.csv", async (route) => {
-    await pending;
-    await route.fulfill({
-      path: "public/samples/ibm/online-episode.csv",
-      contentType: "text/csv",
-    });
-  });
+  await page.route(
+    `**/samples/${catalog.samples.find((s) => s.id === catalog.defaultSampleId)!.file}`,
+    async (route) => {
+      await pending;
+      await route.fulfill({
+        path: `public/samples/${catalog.samples.find((s) => s.id === catalog.defaultSampleId)!.file}`,
+        contentType: "text/csv",
+      });
+    },
+  );
   await page.getByRole("button", { name: "Samples", exact: true }).click();
-  const requested = page.waitForRequest("**/samples/ibm/online-episode.csv");
+  const requested = page.waitForRequest(
+    `**/samples/${catalog.samples.find((s) => s.id === catalog.defaultSampleId)!.file}`,
+  );
   await dialog.getByRole("button", { name: "Open in workspace" }).click();
   await requested;
   await dialog.getByRole("button", { name: "Close sample library" }).click();
@@ -216,7 +250,7 @@ test("samples respect edited work and remain available from CSV import", async (
 }) => {
   await page.goto("/");
   await page.getByRole("button", { name: "Import CSV", exact: true }).click();
-  await page.getByRole("button", { name: /Browse IBM samples/ }).click();
+  await page.getByRole("button", { name: /Browse samples/ }).click();
   const library = page.getByRole("dialog", { name: "Start with a sample." });
   await library.getByRole("button", { name: /First five payments/ }).click();
   await library.getByRole("button", { name: "Open in workspace" }).click();

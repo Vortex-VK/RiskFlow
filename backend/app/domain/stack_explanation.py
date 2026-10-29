@@ -7,13 +7,41 @@ from starlette.exceptions import HTTPException
 
 from app.domain.stack_inputs import scenario_frame
 from app.schemas.explanation import (
+    ComparativeCheck,
     ExpertExplanation,
     ExplanationRequest,
     FeatureContribution,
     RankingFact,
+    StackComparisonExplanation,
+    StackComparisonRequest,
     StackPaymentExplanation,
 )
+from ml.stack_comparison import compare_checks
 from ml.stack_runtime import MANIFEST_SHA256, runtime
+
+
+def explain_comparison(payload: StackComparisonRequest) -> StackComparisonExplanation:
+    if payload.model_bundle_sha256 != MANIFEST_SHA256:
+        raise HTTPException(409, "This saved result uses a different model version.")
+    payments = sorted(payload.scenario.payments, key=lambda p: (p.occurred_at, p.id))
+    indices = {payment.id: i for i, payment in enumerate(payments)}
+    if payload.event_id not in indices or payload.reference_event_id not in indices:
+        raise HTTPException(404, "Payment not found in this snapshot.")
+    selected, reference, checks = compare_checks(
+        scenario_frame(payments), indices[payload.event_id], indices[payload.reference_event_id]
+    )
+    if not math.isclose(
+        selected, payload.expected_raw_margin, abs_tol=1e-7, rel_tol=0
+    ) or not math.isclose(
+        reference, payload.expected_reference_raw_margin, abs_tol=1e-7, rel_tol=0
+    ):
+        raise HTTPException(409, "This snapshot does not reproduce the saved scores.")
+    return StackComparisonExplanation(
+        event_id=payload.event_id,
+        reference_event_id=payload.reference_event_id,
+        model_bundle_sha256=MANIFEST_SHA256,
+        checks=[ComparativeCheck.model_validate(check) for check in checks],
+    )
 
 
 def explain_stack(payload: ExplanationRequest) -> StackPaymentExplanation:
@@ -41,19 +69,22 @@ def explain_stack(payload: ExplanationRequest) -> StackPaymentExplanation:
             label="Purchase amount",
             value=f"${current.amount:,.2f}",
             comparison=(
-                f"{current.amount / baseline:.1f}× the ${baseline:,.2f} typical amount "
-                f"across {len(history)} earlier purchases"
+                f"{current.amount / baseline:.1f}× usual ${baseline:,.2f} · "
+                f"{len(history)} earlier purchases"
                 if baseline is not None
-                else f"{len(history)} earlier purchases; at least 5 needed for comparison"
+                else f"{len(history)} earlier {'purchase' if len(history) == 1 else 'purchases'}"
+                " · 5 needed to compare"
             ),
         )
     )
     seen = int(prior.merchant_id.eq(current.merchant_id).sum())
     facts.append(
         RankingFact(
-            label="Merchant history",
-            value=f"{seen} earlier purchases",
-            comparison=f"Out of {len(prior)} earlier purchases by this account",
+            label="At this merchant",
+            value=f"{seen} earlier {'purchase' if seen == 1 else 'purchases'}",
+            comparison=(
+                f"Account history: {len(prior)} {'purchase' if len(prior) == 1 else 'purchases'}"
+            ),
         )
     )
     if normalized.calendar_hour.notna().all():
@@ -61,7 +92,7 @@ def explain_stack(payload: ExplanationRequest) -> StackPaymentExplanation:
         facts.append(
             RankingFact(
                 label="Previous hour",
-                value=f"{count} purchases",
+                value=f"{count} {'purchase' if count == 1 else 'purchases'}",
                 comparison="Earlier purchases only",
             )
         )
@@ -77,9 +108,9 @@ def explain_stack(payload: ExplanationRequest) -> StackPaymentExplanation:
         count = int(prior.channel.eq(current.channel).sum())
         facts.append(
             RankingFact(
-                label="Payment channel",
-                value=str(current.channel),
-                comparison=f"Used in {count} of {len(prior)} earlier purchases",
+                label="Payment method",
+                value=str(current.channel).removesuffix(" Transaction"),
+                comparison=f"Used before: {count} of {len(prior)} purchases",
             )
         )
     return StackPaymentExplanation(

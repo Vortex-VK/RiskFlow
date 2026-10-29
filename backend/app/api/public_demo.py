@@ -48,7 +48,8 @@ class PublicDemo:
             while window and window[0] <= now - 60:
                 window.popleft()
         simulation = (
-            path in {"/api/v1/simulations", "/api/v1/explanations"} and scope["method"] == "POST"
+            path in {"/api/v1/simulations", "/api/v1/explanations", "/api/v1/explanations/compare"}
+            and scope["method"] == "POST"
         )
         retry_after = 0
         if len(self.requests) >= 60:

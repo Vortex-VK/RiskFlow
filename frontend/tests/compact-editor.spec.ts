@@ -38,18 +38,20 @@ test("starter context sits below the name and saves name plus context in one und
   await expect(
     page.getByRole("button", { name: "Device & location connected" }),
   ).toBeDisabled();
-  await page.getByRole("button", { name: "Undo", exact: true }).click();
+  await page.locator(".react-flow__node").first().focus();
+  await page.keyboard.press("Control+z");
   await expect(page.locator(".react-flow__node")).toHaveCount(1);
   await expect(page.getByLabel("Name", { exact: true })).toHaveValue(
     "New account",
   );
-  await page.getByRole("button", { name: "Redo", exact: true }).click();
+  await page.keyboard.press("Control+Shift+z");
   await expect(page.locator(".react-flow__node")).toHaveCount(3);
   await page.getByLabel("Name", { exact: true }).fill("Saved with Enter");
   await page.getByLabel("Name", { exact: true }).press("Enter");
-  await expect(details(page).getByRole("heading")).toHaveText(
-    "Saved with Enter",
-  );
+  await expect(details(page)).toHaveCount(0);
+  await expect(
+    page.locator(".react-flow__node").filter({ hasText: "Saved with Enter" }),
+  ).toHaveCount(1);
   await expect(page.locator(".react-flow__node")).toHaveCount(3);
   await page.getByRole("button", { name: "Objects", exact: true }).click();
   await page.getByRole("button", { name: "Add merchant", exact: true }).click();

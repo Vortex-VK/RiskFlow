@@ -446,6 +446,7 @@ export function AtlasGraph(props: GraphProps) {
               flaggedIds={props.flaggedIds}
               revealedIds={props.revealedIds}
               flaggedOnly={props.flaggedOnly}
+              inspectReviewGroup={props.inspectReviewGroup}
               inspectPayment={
                 props.snapshot
                   ? props.inspect

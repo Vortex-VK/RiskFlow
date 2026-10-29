@@ -1,3 +1,4 @@
+import { setPlaybackPosition } from "./workspace-helpers";
 import { setReviewCapacity } from "./workspace-helpers";
 import { uploadQueueRun } from "./workspace-helpers";
 import { expect, test } from "@playwright/test";
@@ -43,11 +44,9 @@ test("CSV preparation starts before Simulate and its result powers playback and 
   await setReviewCapacity(page, 10);
   const startupMs = Date.now() - start;
   expect(submissions).toBe(1);
-  await page
-    .getByRole("button", { name: "Reset playback", exact: true })
-    .click();
+  await setPlaybackPosition(page, -1);
   await expect(overview.locator("strong")).toHaveText(["0", "0", "0"]);
-  await page.getByRole("button", { name: "Next event", exact: true }).click();
+  await setPlaybackPosition(page, 0);
   const reviews = Number(run.events[0].model.alert);
   await expect(overview.locator("strong")).toHaveText([
     "1",
@@ -69,7 +68,7 @@ test("CSV preparation starts before Simulate and its result powers playback and 
   });
   await expect(detail).toContainText("Purchase amount");
   await expect(
-    detail.getByRole("figure", { name: "How inputs move review priority" }),
+    detail.getByRole("figure", { name: "How checks change priority points" }),
   ).toBeVisible();
   await expect(
     detail.getByRole("region", { name: "Ranking evidence" }),

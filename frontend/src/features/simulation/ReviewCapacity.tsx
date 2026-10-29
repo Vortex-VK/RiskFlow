@@ -12,7 +12,6 @@ export function ReviewCapacity({
   suggestion: ReturnType<typeof suggestCapacity>;
   onChange: (value: number | null) => void;
 }) {
-  const suggested = count === suggestion.count;
   // The 14px thumb travels inside the track, so its center stops 7px from either end.
   const position = (value: number) => {
     const fraction = total ? 1 - value / total : 1;
@@ -50,17 +49,9 @@ export function ReviewCapacity({
             } as CSSProperties
           }
           aria-valuetext={`${count} of ${total} transactions`}
-          aria-describedby="review-capacity-note"
           onChange={(e) => update(Number(e.target.value))}
         />
       </div>
-      <small id="review-capacity-note">
-        {suggested
-          ? suggestion.reason === "small"
-            ? "Starting queue"
-            : "Score-based suggestion"
-          : "Adjusted review queue"}
-      </small>
     </div>
   );
 }

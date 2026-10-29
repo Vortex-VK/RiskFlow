@@ -42,6 +42,8 @@ export function rankedQueue(
     });
   return {
     ordered,
+    // Use the first of the two central payments for even-sized uploads.
+    middle: ordered[Math.floor((ordered.length - 1) / 2)],
     ranks: new Map(ordered.map((e, i) => [e.eventId, i + 1])),
     suggestion: suggestCapacity(
       ordered.map((e) => e.model!.ranking!.rawMargin),

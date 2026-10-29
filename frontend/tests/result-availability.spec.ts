@@ -1,3 +1,4 @@
+import { setPlaybackPosition } from "./workspace-helpers";
 import { uploadQueueRun } from "./workspace-helpers";
 import { expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
@@ -120,9 +121,7 @@ test("insight links follow recorded review selections without advancing playback
   const scenario = response.request().postDataJSON().scenario as Scenario;
   await page.getByRole("button", { name: "Build graph", exact: true }).click();
   await page.getByRole("button", { name: "Simulate", exact: true }).click();
-  await page
-    .getByRole("button", { name: "Reset playback", exact: true })
-    .click();
+  await setPlaybackPosition(page, -1);
   const overview = page.getByRole("region", { name: "Run assessment summary" });
   await expect(page.getByLabel("Probability threshold")).toHaveCount(0);
   await page.getByRole("button", { name: "Results", exact: true }).click();
@@ -201,7 +200,7 @@ test("insight links follow recorded review selections without advancing playback
   const detail = page.getByRole("complementary", {
     name: "Payment explanation",
   });
-  await expect(detail).toContainText("Review priority");
+  await expect(detail).toContainText("Review order");
   await expect(
     detail.getByRole("region", { name: "Ranking evidence" }),
   ).toBeVisible();

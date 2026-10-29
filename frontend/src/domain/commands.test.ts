@@ -82,12 +82,16 @@ describe("wire values and edit commands", () => {
   it("fails an oversized starter insertion atomically", () => {
     const document = blank(new Date("2026-01-01"));
     const account = newNode("account", document.scenario.scenarioStartAt);
-    let full = addNode(document, account, { x: 0, y: 0 });
-    for (let index = 0; index < MAX_OBJECTS - 2; index++)
-      full = addNode(full, newNode("merchant", full.scenario.scenarioStartAt), {
+    const full = addNode(document, account, { x: 0, y: 0 });
+    for (let index = 0; index < MAX_OBJECTS - 2; index++) {
+      const merchant = newNode("merchant", full.scenario.scenarioStartAt);
+      full.scenario.nodes.push(merchant);
+      full.view.positions[merchant.id] = {
         x: index * 130,
         y: 200,
-      });
+      };
+    }
+    assertIntegrity(full);
     const before = JSON.stringify(full);
     expect(() => starterContext(full, account.id)).toThrow();
     expect(JSON.stringify(full)).toBe(before);

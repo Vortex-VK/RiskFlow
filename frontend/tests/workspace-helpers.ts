@@ -152,3 +152,20 @@ export async function openExampleWorkspace(page: Page) {
   ).toHaveCount(0);
   await selectExample(page);
 }
+
+// Set up a paused replay point for evidence tests without exposing stepping controls.
+export async function setPlaybackPosition(page: Page, index: number) {
+  const close = page.locator(".run-inspector > .close").first();
+  if (await close.isVisible()) await close.click();
+  await page.evaluate(async (index) => {
+    const { useSimulation } = await import("/src/state/simulation.ts");
+    const { presentationSchedule } = await import("/src/domain/runs.ts");
+    const schedule = presentationSchedule(
+      useSimulation.getState().latest!.result.events,
+    );
+    useSimulation.setState({
+      elapsed: index < 0 ? 0 : schedule[index]!.end,
+      playing: false,
+    });
+  }, index);
+}

@@ -1,5 +1,5 @@
 import { test, expect, type Page } from "@playwright/test";
-import { openExampleWorkspace, syntheticModelCsv } from "./workspace-helpers";
+import { openExampleWorkspace } from "./workspace-helpers";
 
 async function camera(page: Page) {
   return page.locator(".react-flow__viewport").evaluate((element) => {
@@ -32,13 +32,7 @@ for (const view of ["small", "overview", "leaf"] as const) {
       await page
         .getByRole("button", { name: "Import CSV", exact: true })
         .click();
-      await page.getByLabel("CSV file").setInputFiles({
-        name: "synthetic-model-inputs.csv",
-        mimeType: "text/csv",
-        buffer: await syntheticModelCsv(
-          "../fixtures/imports/riskflow_transactions_s3_285.csv",
-        ),
-      });
+      await page.getByLabel("CSV file").setInputFiles("public/samples/ibm/online-episode.csv");
       await page.getByRole("button", { name: "Preview graph" }).click();
       await page.getByRole("button", { name: "Build graph" }).click();
       await expect(page.locator(".graph-stage")).not.toHaveClass(
@@ -65,7 +59,8 @@ for (const view of ["small", "overview", "leaf"] as const) {
         );
       }
     }
-    await page.getByRole("button", { name: "Zoom in", exact: true }).click();
+    await page.mouse.move(600, 400);
+    await page.mouse.wheel(0, -100);
     await page.waitForTimeout(350);
     await page.mouse.move(200, 680);
     await page.mouse.down();

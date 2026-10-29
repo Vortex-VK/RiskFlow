@@ -132,7 +132,8 @@ test("touch placement works at a changed canvas zoom with reduced motion", async
   const page = await context.newPage();
   await openExampleWorkspace(page);
   await expect(page.locator(".react-flow__node")).toHaveCount(15);
-  await page.getByRole("button", { name: "Zoom in", exact: true }).click();
+  await page.mouse.move(600, 400);
+  await page.mouse.wheel(0, -100);
   await page.getByRole("button", { name: "Objects", exact: true }).click();
   const home = await center(page, "merchant");
   const rest = await source(page, "merchant")

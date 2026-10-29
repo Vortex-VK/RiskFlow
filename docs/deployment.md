@@ -10,7 +10,7 @@ Public-demo mode keeps CSV workspaces and simulations transient:
 
 - Saved-dataset routes return 404 and are omitted from the API schema. No server-side datasets or assessments are saved.
 - One simulation runs at a time. A rolling minute admits at most 20 simulations and 60 total API writes. These limits are global per process. Busy responses use 429 with `Retry-After`.
-- The existing 16 MiB JSON request, 5 MB browser CSV, and 10,000-payment limits remain unchanged.
+- The transaction limit is 25,000 payments. The 16 MiB JSON request and 5 MB browser CSV limits are unchanged.
 - Run one worker and one instance for these in-memory limits. Multiple instances require a shared limiter.
 
 Do not disable public-demo mode on an anonymous public service: local retained-history functionality uses shared SQLite without user authentication or ownership checks. Local development retains its existing saved-dataset functionality.

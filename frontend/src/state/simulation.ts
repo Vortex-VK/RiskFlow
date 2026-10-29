@@ -63,6 +63,7 @@ export const useSimulation = create<SimulationState>((set, get) => ({
     const workspace = useWorkspace.getState();
     if (
       !workspace.document ||
+      workspace.revealGraph ||
       workspace.dirty ||
       workspace.dragging ||
       get().pending

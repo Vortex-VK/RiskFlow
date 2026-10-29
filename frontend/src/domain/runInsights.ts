@@ -7,7 +7,11 @@ type InsightEvent = ReviewEvent & {
   merchantId: string;
   amountMinor: number;
 };
-export type ReviewGroup = { label: string; eventIds: readonly string[] };
+export type ReviewGroup = {
+  label: string;
+  eventIds: readonly string[];
+  visibleOnly?: boolean;
+};
 export const patternDefinitions = [
   {
     id: "repeat",

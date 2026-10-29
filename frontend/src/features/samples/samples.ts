@@ -13,7 +13,7 @@ type SampleSource = Pick<
 >;
 
 export function sampleUrl(file: string) {
-  return `${import.meta.env.BASE_URL}samples/ibm/${file}`;
+  return `${import.meta.env.BASE_URL}samples/${file}`;
 }
 
 export function sampleDocument(

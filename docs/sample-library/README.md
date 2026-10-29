@@ -1,48 +1,78 @@
 # Sample library
 
-Choose **Samples** in the editing or playback toolbar. Open an example and select **Simulate**, or download its CSV and import it manually. The 250-row example is selected initially.
+Choose **Samples** in the editing or playback toolbar. The 250-payment example
+is selected initially. Open it and select **Simulate**, or download the same CSV.
 
-## Fixed-budget reference results
+## Current default results
 
-The installed model is **Stack-d5**. This reference table uses its original fixed daily review queue: `ceil(0.01 * assessed purchases)` per UTC day. Scores are rankings, not calibrated fraud probabilities. Small days can produce an overall review rate above 1%.
+These results use the installed **Stack-d5** model and the same automatic,
+upload-wide review capacity as the app. They do not use the older daily 1% policy.
+The queue is adjustable; [calculation and explanation method](../stack-d5-integration/review-controls.md).
 
-Replay now offers an automatic upload-wide queue and a Review capacity control. Its results can differ from this fixed-budget table. [Queue and explanation method](../stack-d5-integration/review-controls.md).
+| Sample | Source | Payments | Labeled fraud | Caught | Missed | False alerts | Selected for review |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| First five payments | IBM TabFormer | 5 | 1 | 1 | 0 | 0 | 1 |
+| A short fraud burst | Sparkov | 50 | 7 | 7 | 0 | 0 | 7 |
+| Two accounts, one incident | Sparkov | 250 | 5 | 4 | 1 | 6 | 10 |
+| A thousand everyday purchases | Sparkov | 1,000 | 18 | 17 | 1 | 34 | 51 |
+| Twelve account histories | Sparkov | 5,000 | 63 | 57 | 6 | 86 | 143 |
+| The full workspace | Sparkov | 10,000 | 93 | 86 | 7 | 176 | 262 |
 
-The first three examples were selected on 2026-10-26 for successful detections with the previous Upload-v9 engine. Their source rows are unchanged; the table below reports the current stack on those same files.
+These are curated demonstrations selected using known outcomes and current-model
+results, not independent or representative accuracy estimates. The 5- and 50-row
+examples are focused incidents, not ordinary fraud prevalence. Larger examples
+have 0.93%-2% labeled fraud and retain their misses and false alerts. No thresholds,
+model weights, purchase amounts, categories or labels were tuned to the examples.
+Each CSV supplies its own prior history; no hidden warmup or fraud feedback is used.
 
-| Sample | Rows | Fraud | Caught | Missed | False alerts |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| first-five | 5 | 1 | 1 | 0 | 0 |
-| short-history | 50 | 5 | 0 | 5 | 2 |
-| online-episode | 250 | 15 | 0 | 15 | 7 |
-| mixed-channels | 1,000 | 19 | 8 | 11 | 164 |
-| many-accounts | 5,000 | 113 | 27 | 86 | 102 |
-| full-workspace | 10,000 | 123 | 38 | 85 | 222 |
+## Sources and selection
 
-These curated, overlapping demonstrations are exposed development evidence, not a representative accuracy estimate. The 250-row example now catches none of its 15 labeled frauds at this budget. Each file starts its own history; supplying more history or changing the upload can change scores and queue membership. No sample rows or labels were changed for the integration.
+The 5-row IBM walkthrough is retained unchanged because it still demonstrates the
+current model clearly. Its [attribution](../../frontend/public/samples/ibm/ATTRIBUTION.txt)
+and Apache-2.0 license remain with the original assets.
 
-[Current receipts](stack-d5/catalog.json) record Stack-d5 results. Historical Upload-v9 receipts remain local; their different review policy is not an equal-budget model comparison. The separate card-review demo remains available as a CSV regression fixture but is absent from the Samples menu.
+The other five samples use [Sparkov simulated credit-card transactions](https://www.kaggle.com/datasets/kartik2112/fraud-detection),
+dataset version 1, `fraudTest.csv`. The publisher lists CC0 (Public Domain).
+The original source archive SHA-256 is
+`4e32829b9ba5a6b17af707c513c15204011044df0e8971e431cedca3d8c0a8a1`.
+[Attribution and transformations](../../frontend/public/samples/sparkov/ATTRIBUTION.txt).
 
-[Selection receipt](showcase-selection-2026-10-26.json) records the source rows and original selection outcomes. Superseded samples and catalogs remain in the local archive, excluded from Git. The internal ID `online-episode` labels the current card-fraud example.
+Account cohorts are fixed groups of adjacent sorted source account IDs. Each
+sample keeps every transaction in a contiguous chronological interval of its
+cohort, including normal purchases surrounding the incident. Windows were
+selected for useful detections, subject to a 2.5% fraud cap for the larger examples.
+The focused 50-row incident allowed up to eight frauds. Selection by observed F1,
+candidate counts, account cohorts, window offsets, exact source rows and CSV hashes
+are recorded in the [selection receipt](showcase-selection-2026-10-29.json).
+Source-wide windows were also evaluated but not selected.
 
-## Provenance
+Original amounts, timestamps, transaction identities, categories, merchant
+identities and labels are retained. USD and UTC are explicit adapter conventions;
+the source timestamps have no timezone. Account display aliases are added, and
+merchant display names omit the universal `fraud_` prefix; neither changes scoring.
+Unused simulated personal fields are omitted. Missing channel, status, device and
+merchant geography stay unknown; customer location is not substituted for merchant
+location. Labels are separate from all prediction inputs.
 
-- Source: the local IBM TabFormer synthetic transaction file, `training_data/raw/ibm/credit_card_transactions-ibm_v2.csv`, containing 24,386,900 rows. SHA-256: `b01fa323c98522f8c710c7f7242581860c97c50183f1c5fa9e772e5c674a7f15`.
-- Original positive-purchase field values and fraud labels are retained. Negative and zero amounts are excluded; positive failed attempts remain. Blank Errors? denotes completed purchases.
-- The [catalog](../../frontend/src/features/samples/catalog.json) records exact source windows, row counts, CSV hashes and measured results. Adjacent per-sample JSON files retain source-line provenance; [current receipts](stack-d5/catalog.json) record the installed results.
-- User + Card identifies an instrument. USD and UTC are disclosed adapter conventions. Merchant geography does not identify customer location. Outcome labels never enter predictors.
-- These samples were selected from previously inspected data. They are not a new holdout. IBM labels are simulator outcomes, not bank adjudications. The source license is distributed with the sample CSVs.
-- The largest example fits the existing 10,000-payment browser limit and uses the grouped graph.
+These source datasets have been exposed during development. The word `Test` in
+the source filename does not make these curated samples an independent evaluation.
+Private user uploads are not included in the public sample library.
 
-## Maintenance
+## Reproduction
 
-Recompute metrics without changing CSVs:
+[Catalog](../../frontend/src/features/samples/catalog.json) and
+[current score receipts](stack-d5-auto/catalog.json) record the current automatic
+queue. Per-sample receipt files contain raw scores, flags and original labels;
+`sources/` contains exact source-line provenance. Browser tests compare live model
+scores and the UI's queue with the receipts, including a label-removal check.
 
 ```powershell
 $env:PYTHONPATH = 'backend'
 backend/.venv/Scripts/python.exe scripts/refresh_samples.py
 ```
 
-The helper verifies CSV hashes and applies the installed model. The backend regression suite checks frozen stack margins, queue decisions and historical explanation compatibility without training caches.
-
-The public repository includes only the curated synthetic sample subset, its lineage and current results. Original datasets and historical research reports remain local. See the [repository policy](../repository-policy.md).
+This verifies the CSV hashes and recomputes results without reselecting samples or
+changing CSVs. Original full datasets and exploratory candidate results stay local.
+Old IBM CSVs remain for compatibility tests; historical daily-policy receipts stay
+in `stack-d5/`. They are not the active library's results. Largest active sample:
+10,000 payments, within the current 25,000-payment and 5,000-object limits.

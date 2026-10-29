@@ -17,7 +17,7 @@ export function SampleLibrary({
 }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const controller = useRef<AbortController | null>(null);
-  const [selected, setSelected] = useState("online-episode");
+  const [selected, setSelected] = useState(catalog.defaultSampleId);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [closing, setClosing] = useState(false);
@@ -141,7 +141,7 @@ export function SampleLibrary({
               <dd>{number(sample.rows)}</dd>
             </div>
             <div>
-              <dt>Card histories</dt>
+              <dt>Accounts</dt>
               <dd>{number(sample.accounts)}</dd>
             </div>
             <div>
@@ -150,11 +150,10 @@ export function SampleLibrary({
             </div>
           </dl>
           <section className="sample-outcomes" aria-label="Sample results">
-            <h3>Fixed-budget reference results</h3>
+            <h3>Default review results</h3>
             <p>
-              Historical 1% daily policy. The adjustable upload queue can
-              produce different results; these examples are not independent
-              validation.
+              Current automatic review capacity. Curated examples, not an
+              independent accuracy benchmark.
             </p>
             <div className="sample-detection-heading">
               <span>Selected for review</span>
@@ -198,7 +197,7 @@ export function SampleLibrary({
             <a
               className="sample-download"
               href={sampleUrl(sample.file)}
-              download={`riskflow-ibm-${sample.file}`}
+              download={`riskflow-${sample.id}.csv`}
             >
               Download CSV <span aria-hidden="true">↓</span>
             </a>
@@ -214,19 +213,19 @@ export function SampleLibrary({
       <footer className="sample-footer">
         <span>Curated synthetic examples</span>
         <div>
-          <a href={catalog.sourceUrl} target="_blank" rel="noreferrer">
-            IBM TabFormer
+          <a href={sample.sourceUrl} target="_blank" rel="noreferrer">
+            {sample.sourceName}
           </a>
           {" · "}
           <a
-            href={sampleUrl("ATTRIBUTION.txt")}
+            href={sampleUrl(sample.attributionFile)}
             target="_blank"
             rel="noreferrer"
           >
             Attribution
           </a>
           {" · "}
-          <a href={sampleUrl("LICENSE.txt")} target="_blank" rel="noreferrer">
+          <a href={sample.licenseUrl} target="_blank" rel="noreferrer">
             License
           </a>
         </div>

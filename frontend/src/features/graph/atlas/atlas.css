@@ -80,25 +80,53 @@
 .transaction-sector:focus-visible {
   outline: none;
 }
+.sector-open {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  pointer-events: none;
+  cursor: grab;
+}
+.sector-open:hover {
+  background: none;
+}
+.sector-label {
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 2px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+}
+.sector-label:hover {
+  background: transparent;
+}
 .territory-hit {
   fill: transparent;
   stroke: none;
   pointer-events: all;
 }
-.transaction-sector:hover .sector-name,
-.transaction-sector:focus-visible .sector-name {
+.transaction-sector:hover .sector-factor-label,
+.transaction-sector:focus-within .sector-factor-label {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 .transaction-sector:disabled {
   opacity: 1;
 }
-.sector-name-crowded {
+.sector-name.sector-name-crowded {
   opacity: 0;
+  pointer-events: none;
 }
 .transaction-sector:hover .sector-name-crowded,
-.transaction-sector:focus-visible .sector-name-crowded {
+.transaction-sector:focus-within .sector-name-crowded {
   opacity: 1;
+  pointer-events: auto;
 }
 .sector-name {
   position: absolute;
@@ -112,7 +140,8 @@
   overflow-wrap: anywhere;
   text-wrap: balance;
   line-height: 1.6;
-  pointer-events: none;
+  pointer-events: auto;
+  cursor: pointer;
   paint-order: stroke;
   background: var(--canvas);
   border-radius: 0.3em;
@@ -129,7 +158,7 @@
   color: var(--muted);
 }
 .transaction-sector:hover .sector-payment-count,
-.transaction-sector:focus-visible .sector-payment-count {
+.transaction-sector:focus-within .sector-payment-count {
   display: block;
 }
 .hierarchy-stage[data-detail="true"] .node-material {

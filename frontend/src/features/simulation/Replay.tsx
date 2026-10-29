@@ -6,6 +6,7 @@ import {
   recentTransactionGlows,
   TRANSACTION_GLOW_DURATION,
 } from "../graph/growth";
+import { useReducedMotion } from "../useReducedMotion";
 import { PaymentPages } from "../PaymentPages";
 import { CardPatternDetails } from "../CardPatternDetails";
 import { ContinuousScores } from "../ContinuousScores";
@@ -14,7 +15,7 @@ import { DatasetResults } from "./DatasetResults";
 import { ReviewCapacity } from "./ReviewCapacity";
 import { rankedQueue, applyCapacity } from "../../domain/reviewQueue";
 import { ProbabilityThreshold } from "./ProbabilityThreshold";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useReactFlow } from "@xyflow/react";
 import { decodeDocument } from "../../api/decode";
 import { money, groupId } from "../../domain/types";
@@ -33,10 +34,29 @@ import "./replay.css";
 const title = (value: string) => value.replaceAll("_", " ");
 const noAction = () => {};
 
-function OverviewCount({ value }: { value: number }) {
-  const formatted = value.toLocaleString();
+function OverviewCount({
+  value,
+  width,
+  label,
+}: {
+  value: number;
+  width: number;
+  label: string;
+}) {
   return (
-    <strong style={{ inlineSize: `${formatted.length}ch` }}>{formatted}</strong>
+    <span className="overview-metric">
+      <span className="overview-reserve" aria-hidden="true">
+        <span
+          className="overview-number-reserve"
+          style={{ inlineSize: `${width}ch` }}
+        />
+        <span>{label}</span>
+      </span>
+      <span className="overview-value">
+        <strong>{value.toLocaleString()}</strong>{" "}
+        <span>{label}</span>
+      </span>
+    </span>
   );
 }
 
@@ -75,6 +95,7 @@ export function Replay({
     [captured],
   );
   const original = captured.result;
+  const overviewCountWidth = original.events.length.toLocaleString().length;
   const stack = original.engineVersion === "engine-ml-stack-d5";
   const sourceIds = useMemo(
     () =>
@@ -162,6 +183,12 @@ export function Replay({
   const [evidenceIds, setEvidenceIds] = useState<readonly string[]>([]);
   const [flaggedOnly, setFlaggedOnly] = useState(false);
   const [reviewGroup, setReviewGroup] = useState<ReviewGroup | null>(null);
+  const inspectReviewGroup = useCallback((group: ReviewGroup) => {
+    useSimulation.setState({ playing: false });
+    setReviewGroup(group);
+    setFlaggedOnly(true);
+    setPanel("events");
+  }, []);
   const revealed = useMemo(
     () => run.events.slice(0, position.cursor + 1),
     [run, position.cursor],
@@ -173,8 +200,18 @@ export function Replay({
     [revealed, threshold],
   );
   const flaggedEvents = useMemo(
-    () => run.events.filter((e) => needsReview(e, threshold)),
-    [run, threshold],
+    () =>
+      run.events
+        .filter((e) => needsReview(e, threshold))
+        .sort(
+          (a, b) =>
+            (queue.ranks.get(a.eventId) ?? Number.MAX_SAFE_INTEGER) -
+              (queue.ranks.get(b.eventId) ?? Number.MAX_SAFE_INTEGER) ||
+            (b.model?.score?.value ?? b.riskScore ?? 0) -
+              (a.model?.score?.value ?? a.riskScore ?? 0) ||
+            a.sequenceIndex - b.sequenceIndex,
+        ),
+    [run, threshold, queue.ranks],
   );
   const graphDecisions = useMemo(
     () =>
@@ -191,10 +228,14 @@ export function Replay({
   const paymentEvents = useMemo(() => {
     if (reviewGroup) {
       const ids = new Set(reviewGroup.eventIds);
-      return flaggedEvents.filter((e) => ids.has(e.eventId));
+      return flaggedEvents.filter(
+        (e) =>
+          ids.has(e.eventId) &&
+          (!reviewGroup.visibleOnly || flaggedIds.has(e.eventId)),
+      );
     }
     return flaggedOnly ? flaggedEvents : run.events;
-  }, [reviewGroup, flaggedOnly, flaggedEvents, run.events]);
+  }, [reviewGroup, flaggedOnly, flaggedEvents, flaggedIds, run.events]);
   const revealedIds = useMemo(
     () => revealed.map((event) => event.eventId),
     [revealed],
@@ -206,6 +247,7 @@ export function Replay({
     current?.occurredAt || run.scenarioSnapshot.scenarioStartAt;
   const end = schedule.at(-1)?.end || 0;
   const [afterglow, setAfterglow] = useState(0);
+  const reducedMotion = useReducedMotion();
   useEffect(() => {
     let frame = 0;
     const start = performance.now();
@@ -223,13 +265,15 @@ export function Replay({
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
   }, [position.completed, captured]);
-  const pulses = recentTransactionGlows(
-    schedule,
-    state.elapsed + (position.completed ? afterglow : 0),
-  ).map((p) => ({
-    eventId: run.events[p.index]!.eventId,
-    progress: p.progress,
-  }));
+  const pulses = reducedMotion
+    ? []
+    : recentTransactionGlows(
+        schedule,
+        state.elapsed + (position.completed ? afterglow : 0),
+      ).map((p) => ({
+        eventId: run.events[p.index]!.eventId,
+        progress: p.progress,
+      }));
 
   useEffect(() => {
     const escape = (event: KeyboardEvent) => {
@@ -268,15 +312,6 @@ export function Replay({
     };
   }, [state.playing, end, captured]);
 
-  function seek(index: number) {
-    useSimulation.setState({
-      elapsed: index < 0 ? 0 : schedule[index]!.end,
-      playing: false,
-    });
-    setSelected(index);
-    setEvidenceIds([]);
-    setPanel(null);
-  }
   function inspectPayment(index: number) {
     useSimulation.setState({ playing: false });
     setSelected(index);
@@ -288,12 +323,12 @@ export function Replay({
       flaggedEvents.find((e) => e.sequenceIndex > selected) || flaggedEvents[0];
     if (next) inspectPayment(next.sequenceIndex);
   }
-  function play(restart = false) {
+  function play() {
     setPanel(null);
     setEvidenceIds([]);
     useSimulation.setState({
       playing: true,
-      ...(restart || position.completed ? { elapsed: 0 } : {}),
+      ...(position.completed ? { elapsed: 0 } : {}),
     });
   }
   const inspect = (s: Selection) => {
@@ -344,6 +379,7 @@ export function Replay({
         decisions={graphDecisions}
         flaggedIds={flaggedIds}
         flaggedOnly={flaggedOnly}
+        inspectReviewGroup={inspectReviewGroup}
         evidenceIds={evidenceIds}
         focusPaymentId={event?.eventId}
         contextTime={contextTime}
@@ -406,11 +442,16 @@ export function Replay({
       >
         <div className="overview-counts">
           <div>
-            <OverviewCount value={revealed.length} />
-            <span>assessed</span>
+            <OverviewCount
+              value={revealed.length}
+              width={overviewCountWidth}
+              label="assessed"
+            />
           </div>
           <button
             className="review-total"
+            aria-expanded={panel === "events" && flaggedOnly && !reviewGroup}
+            aria-controls="run-payments"
             disabled={!flaggedIds.size}
             onClick={() => {
               setReviewGroup(null);
@@ -418,13 +459,20 @@ export function Replay({
               useSimulation.setState({ playing: false });
               setPanel("events");
             }}
-            aria-label={`${flaggedIds.size} need review — inspect flagged payments`}
+            aria-label={`${flaggedIds.size.toLocaleString()} need review — inspect flagged payments`}
           >
-            <OverviewCount value={flaggedIds.size} /> <span>need review</span>
+            <OverviewCount
+              value={flaggedIds.size}
+              width={overviewCountWidth}
+              label="need review"
+            />
           </button>
           <div className="no-alert-total">
-            <OverviewCount value={revealed.length - flaggedIds.size} />
-            <span>no alert</span>
+            <OverviewCount
+              value={revealed.length - flaggedIds.size}
+              width={overviewCountWidth}
+              label="no alert"
+            />
           </div>
           <button
             className="flagged-filter"
@@ -473,14 +521,6 @@ export function Replay({
             {reviewGroup?.label ??
               (flaggedOnly ? "Payments for review" : "Payments")}
           </h2>
-          {reviewGroup && (
-            <p>
-              {paymentEvents.length} matching flagged payments{" "}
-              <button onClick={() => setReviewGroup(null)}>
-                All flagged payments
-              </button>
-            </p>
-          )}
           <p>
             Completed model results. Select a payment to inspect its evidence.
           </p>
@@ -547,7 +587,7 @@ export function Replay({
               <strong>{score(event)}</strong>
               <span>
                 {event.model?.ranking
-                  ? "Review priority"
+                  ? "Review order"
                   : event.model?.score?.probabilityAvailable
                     ? "Estimated fraud probability"
                     : "Model score"}
@@ -565,7 +605,20 @@ export function Replay({
             </p>
           )}
           <p>
-            {event.occurredAt} · UTC
+            {new Intl.DateTimeFormat("en-US", {
+              month: "short",
+              day: "numeric",
+              year: "numeric",
+              timeZone: "UTC",
+              ...(event.model?.ranking?.timePrecision === "day"
+                ? {}
+                : ({
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hourCycle: "h23",
+                  } as const)),
+            }).format(new Date(event.occurredAt))}{" "}
+            · UTC
             <br />
             {
               document.scenario.nodes.find((n) => n.id === event.accountId)
@@ -590,18 +643,9 @@ export function Replay({
                       rank: queue.ranks.get(event.eventId)!,
                       total: queue.ordered.length,
                       capacity,
-                      rankAt: (score) =>
-                        1 +
-                        queue.ordered.filter(
-                          (other) =>
-                            other.eventId !== event.eventId &&
-                            (other.model!.ranking!.rawMargin > score ||
-                              (other.model!.ranking!.rawMargin === score &&
-                                (sourceIds.get(other.eventId) ??
-                                  other.eventId) <
-                                  (sourceIds.get(event.eventId) ??
-                                    event.eventId))),
-                        ).length,
+                      comparison: queue.middle!,
+                      reviewCutoff:
+                        capacity > 0 ? queue.ordered[capacity - 1]! : null,
                     }
                   : undefined
               }
@@ -866,13 +910,8 @@ export function Replay({
       <div className="status" role="status" aria-live="polite">
         {position.cursor >= 0 && !position.completed && !event && (
           <>
-            <button
-              className={`revealed-decision decision-${run.events[position.cursor]!.decision}`}
-              onClick={() => inspectPayment(position.cursor)}
-            >
-              Payment {sourceId(run.events[position.cursor]!.eventId)} ·{" "}
-              {outcome(run.events[position.cursor]!)}
-            </button>
+            Payment {sourceId(run.events[position.cursor]!.eventId)} {"\u00b7"}{" "}
+            {outcome(run.events[position.cursor]!)}
             <br />
           </>
         )}
@@ -892,34 +931,12 @@ export function Replay({
         )}
       </div>
       <footer className="bottom-bar">
-        <div className="draft-label">
-          {retained ? "Saved assessment" : "Run snapshot"}{" "}
-          <span>
-            ·{" "}
-            {isLearnedEngine(run.engineVersion)
-              ? run.engineVersion === "engine-ml-stack-d5"
-                ? "Upload review queue · not a fraud probability"
-                : run.events.some((e) => e.model?.probabilityAvailable)
-                  ? "Estimated fraud probabilities"
-                  : "Uncalibrated scores"
-              : retained
-                ? "Retrospective rules · not fraud probability"
-                : "Synthetic model"}
-          </span>
-        </div>
         <nav className="tools playback" aria-label="Playback controls">
           <button
             onClick={exitSimulation}
             disabled={overviewMotion === "exiting"}
           >
             {retained ? "Back to dataset" : "Edit scenario"}
-          </button>
-          <button
-            aria-label="Previous event"
-            disabled={position.cursor < 0}
-            onClick={() => seek(position.cursor - 1)}
-          >
-            Previous
           </button>
           <button
             onClick={() =>
@@ -934,15 +951,6 @@ export function Replay({
                 ? "Play again"
                 : "Play"}
           </button>
-          <button
-            aria-label="Next event"
-            disabled={!schedule.length || position.completed}
-            onClick={() => seek(position.cursor + 1)}
-          >
-            Next
-          </button>
-          <button onClick={() => play(true)}>Replay</button>
-          <button onClick={() => seek(-1)}>Reset playback</button>
           {!!flaggedEvents.length && (
             <button className="next-flagged" onClick={nextFlagged}>
               Next flagged

@@ -1,0 +1,302 @@
+[
+  {
+    "eventId": "SP-886bf3b36d5c521d478e9b829a5aae89",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 431029,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-e71fc6febc1c866a70afbf1c78ce4ccc",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 433452,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-bde0a05ec185193407041c2ceaafe8bf",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 434986,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-b913861bbfea584c88d2695e8aefafbe",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 435616,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-a22baa0d4e4dc6dca90bbeeeb6020f44",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 436397,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-ddcc94e9dbced449757a026bb642cc0f",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 436449,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-4f09425ec99eb3bc3c558d4ecfca41b1",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 437884,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-ab4fe4669dafb441b7b3bccf2e74b21d",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 439064,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-2ab5de06bf21fa8d88c1fbae4b5de7a1",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 439296,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-71f3314e2cf01574fe8e35115c1b0faa",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 440210,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-28bdbe5d13a63176a9cc8e10b2aa696f",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 440936,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-bb7087997dfe84a3ede1dae52e43dc1f",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 441104,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-fddde36023d591fab4a8a1335c7c232a",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 441472,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-739b410c23aaed33412f3d3a949ab2b0",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 441498,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-4f300f2d4108a1e20a5c5bd6737c6218",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 441968,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-428bd9195bdc6d92d4e00fe6b117acf1",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 442984,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-c3c7f4ebee66f1fbea97c50c9a415b6b",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 445043,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-3f0bcaecedaf3f9fb6cc2e20fbf929ee",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 446896,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-3908c90a0e652811df892a5b2bf10145",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 450554,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-dbf96688d69723bf1f8b681d240874b7",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 450611,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-0be2939f62bf5b8648b1544e098e7b88",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 450887,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-a73b7c2eef9045287aa82d5f2ce6724e",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 451459,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-b79dad0ce8a1d06fc619971f61ab7819",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 451989,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-8a62387081fd19da92008aacc3f3367a",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 452798,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-de213f4a81b31fad6d785f43e938930a",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 452989,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-fef1347284de9ecfa9c3191613f04000",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 455618,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-cf3da975315eb2ed84b9812b81f8aca0",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 455837,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-b1a5e30415310d6cd323aaa6b196b3a4",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 456140,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-9a6277af857efe35775ffec25f49575a",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 456507,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-679a7ae38ff67198b050d651ce276a1d",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 457077,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-99bfa74957998e46aff1063e8616b6e8",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 457135,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-f98e327eb38d4f630b67e4cd20d79b1b",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 457428,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-af412129c4e0a1cd4459ab1cf4ac1443",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 457910,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-d47b39af620acb158044e367be06225c",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 458278,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-e0c66ac64d71309390335d23bcaadf7c",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 458452,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-6ab6a4b6293ffdd7b43e2bb9ead0ca82",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 458908,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-e05e322926d38d4cc45126a258c286e8",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 459193,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-6b7fccb231d7f5e00c109151039dc12a",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 459869,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-2029793c35099d9ced90f7b05ee9c0b4",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 460328,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-5beae5bea8a3f67d8c3ffa3ea080e5ec",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 460450,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-22bef0d93672316fe3639bf1568a1b2c",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 460728,
+    "fraud": true
+  },
+  {
+    "eventId": "SP-cd4172ed4c50a7d20734f86383b431ab",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 462764,
+    "fraud": true
+  },
+  {
+    "eventId": "SP-455799d91bb448b697c23be76ca78c7f",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 464353,
+    "fraud": true
+  },
+  {
+    "eventId": "SP-eab5d4dd83a9f54a3f772ca361cc7170",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 464442,
+    "fraud": true
+  },
+  {
+    "eventId": "SP-d2f3136c630bedef4444306113e1c5ca",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 464454,
+    "fraud": true
+  },
+  {
+    "eventId": "SP-9974618d5ba0b42358355c1c13a5df37",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 464571,
+    "fraud": true
+  },
+  {
+    "eventId": "SP-475d1afb1ac28118151d7f3010e34755",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 467783,
+    "fraud": true
+  },
+  {
+    "eventId": "SP-d37ef9c7b375ef2686b1cb7792b09dda",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 470101,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-4e8af4628dc8c932394e4db4e2063c51",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 470619,
+    "fraud": false
+  },
+  {
+    "eventId": "SP-547d14a46a9828a37763bb5ee786ec4c",
+    "sourceFile": "fraudTest.csv",
+    "sourceRow": 471282,
+    "fraud": false
+  }
+]

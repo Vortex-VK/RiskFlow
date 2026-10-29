@@ -1,3 +1,4 @@
+import { setPlaybackPosition } from "./workspace-helpers";
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { readFile } from "node:fs/promises";
@@ -180,9 +181,7 @@ test("shared connections follow playback and the recorded queue, and open the re
     .getByRole("button", { name: "Open in workspace", exact: true })
     .click();
   await page.getByRole("button", { name: "Simulate", exact: true }).click();
-  await page
-    .getByRole("button", { name: "Reset playback", exact: true })
-    .click();
+  await setPlaybackPosition(page, -1);
   await page.locator(".connection-target").first().press("Enter");
   const panel = page.getByRole("region", {
     name: "Connection evidence",

@@ -1,4 +1,4 @@
-import { firingOpacity } from "../growth";
+import { firingOpacity, riskOpacity } from "../growth";
 import { memo, useLayoutEffect, useMemo, useRef, useState } from "react";
 import type { Position } from "../../../domain/types";
 import { useViewport } from "@xyflow/react";
@@ -57,7 +57,7 @@ const CurrentCanvas = memo(function CurrentCanvas({
     let totalBoost = 0,
       visibleCount = 0;
     for (const stroke of strokes) {
-      const alpha = Math.round(stroke.strength * 12) / 12;
+      const alpha = Math.round(stroke.strength * 60) / 60;
       if (alpha <= 0) continue;
       const x1 = (stroke.a.x - offset.x) * viewport.zoom + viewport.x;
       const y1 = (stroke.a.y - offset.y) * viewport.zoom + viewport.y;
@@ -113,7 +113,9 @@ const CurrentCanvas = memo(function CurrentCanvas({
       context.lineWidth = 2.2 + 1.6 * boost;
       context.stroke(path);
       context.globalAlpha = alpha * (0.8 + 0.15 * boost);
-      context.lineWidth = kind === "risk" ? 1.65 : 0.75;
+      // Start at the blue line's width and settle into the red emphasis as
+      // its color takes over, rather than introducing a thick second line.
+      context.lineWidth = kind === "risk" ? 0.75 + (0.9 * alpha) / 0.95 : 0.75;
       context.stroke(path);
     }
     for (const { x, y, color, alpha, boost } of endpoints.values()) {
@@ -192,17 +194,26 @@ export function TransactionOverlay({
   const risks = useMemo(() => {
     const result = new Map<
       string,
-      { path: NonNullable<ReturnType<typeof geometry.get>>; decision: string }
+      {
+        path: NonNullable<ReturnType<typeof geometry.get>>;
+        decision: string;
+        eventIds: string[];
+      }
     >();
     for (const event of decisions) {
       const path = geometry.get(event.eventId);
-      if (
-        path &&
-        (event.decision === "block" ||
-          (event.decision === "review" &&
-            result.get(path.key)?.decision !== "block"))
-      )
-        result.set(path.key, { path, decision: event.decision });
+      if (!path || !["block", "review"].includes(event.decision)) continue;
+      const previous = result.get(path.key);
+      if (previous) {
+        previous.eventIds.push(event.eventId);
+        if (event.decision === "block") previous.decision = "block";
+      } else {
+        result.set(path.key, {
+          path,
+          decision: event.decision,
+          eventIds: [event.eventId],
+        });
+      }
     }
     return [...result.values()];
   }, [geometry, decisions]);
@@ -210,16 +221,20 @@ export function TransactionOverlay({
     () => sectorOffset(root, sector.group.id)!,
     [root, sector.group.id],
   );
-  const riskStrokes = useMemo(
-    () =>
-      risks.map(({ path, decision }) => ({
-        a: path.a,
-        b: path.b,
-        color: decision === "block" ? "#ff5365" : "#ff8d7b",
-        strength: 0.95,
-      })),
-    [risks],
-  );
+  const progressByEvent = new Map(pulses.map((p) => [p.eventId, p.progress]));
+  const riskStrokes = risks.map(({ path, decision, eventIds }) => ({
+    a: path.a,
+    b: path.b,
+    color: decision === "block" ? "#ff5365" : "#ff8d7b",
+    // A later payment must not erase an already visible flagged connection.
+    strength:
+      0.95 *
+      eventIds.reduce(
+        (opacity, id) =>
+          Math.max(opacity, riskOpacity(progressByEvent.get(id))),
+        0,
+      ),
+  }));
   const activePaths = new Map<
     string,
     { path: NonNullable<ReturnType<typeof geometry.get>>; progress: number }

@@ -2,7 +2,7 @@ export function ModelValidation() {
   return (
     <details className="model-validation">
       <summary>Model evaluation scope</summary>
-      <h3>Stack-d5 ? installed ranking model</h3>
+      <h3>Stack-d5 ranking model</h3>
       <p>
         Eight frozen experts and prior transaction context feed a nonlinear
         ranking model. Auto suggests an upload-wide queue from score separation;
@@ -15,9 +15,11 @@ export function ModelValidation() {
         account history.
       </p>
       <p>
-        Sample results use this engine on fixed, previously curated IBM files.
-        They are demonstrations, not representative accuracy estimates. Supplied
-        labels stay separate from scoring.
+        These IBM and Sparkov samples were selected for clear detections with
+        the current automatic queue. Original purchase values and fraud labels
+        are preserved. Focused incidents can have higher fraud rates than an
+        ordinary upload; larger examples retain misses and false alerts.
+        Supplied labels stay separate from scoring.
       </p>
     </details>
   );

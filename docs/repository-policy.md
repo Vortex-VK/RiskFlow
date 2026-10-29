@@ -22,7 +22,9 @@ CSV files are ignored except for reviewed synthetic fixtures, the browser's
 sample asset and downloadable samples. These explicit exceptions support tests
 and the Samples interface; never put private uploads in those directories.
 The IBM examples are curated subsets of synthetic TabFormer transactions and
-include their existing license notice. Original source datasets are excluded.
+include their existing license notice. Sparkov samples are curated synthetic
+subsets under the publisher's CC0 designation, with attribution and exact lineage.
+Original source datasets are excluded.
 
 Versioned weights under `backend/model_artifacts/` are deliberate public assets.
 The older bundles support historical explanations. Their filenames, manifests

@@ -418,6 +418,9 @@ function Workspace() {
   }
 
   function simulate() {
+    const workspace = useWorkspace.getState();
+    if (workspace.revealGraph || !workspace.document?.scenario.payments.length)
+      return;
     if (useWorkspace.getState().dirty)
       window.document
         .querySelector<HTMLFormElement>("form[data-scenario-form]")
@@ -441,6 +444,8 @@ function Workspace() {
   ).length;
   const simulationUnavailable =
     !document.scenario.payments.length || unsupportedPayments > 0;
+  const simulationBarReady =
+    document.scenario.payments.length > 0 && !state.revealGraph;
   return (
     <>
       {replacement && (
@@ -809,6 +814,11 @@ function Workspace() {
                 </p>
               </section>
             )}
+          {(simulation.error || loadError) && (
+            <div className="workspace-error card" role="alert">
+              {simulation.error || loadError}
+            </div>
+          )}
           <div className="status" role="status" aria-live="polite">
             {simulation.error ||
               loadError ||
@@ -816,59 +826,42 @@ function Workspace() {
                 ? "Simulating your scenario…"
                 : stale
                   ? "Changes not simulated. Last results remain a run snapshot."
-                  : state.message || "Select an object to look closer.")}
+                  : state.message)}
           </div>
-          <footer className="bottom-bar">
-            <div className="draft-label">
-              Session only <span>· Fraud risk analysis</span>
-            </div>
-            <nav className="tools" aria-label="Workspace tools">
-              <button
-                className="simulate"
-                disabled={
-                  simulation.pending || (simulationUnavailable && !state.dirty)
-                }
-                onClick={simulate}
-              >
-                {simulation.pending ? "Simulating…" : "Simulate"}
-              </button>
-              {simulation.latest && (
-                <button
-                  onClick={() =>
-                    guarded(() => {
-                      closeEditor();
-                      useSimulation.setState({ viewing: true, playing: false });
-                    })
-                  }
-                >
-                  Last run
-                </button>
-              )}
-              <button
-                data-tour="undo"
-                disabled={!state.past.length || state.dirty}
-                onClick={state.undo}
-              >
-                Undo
-              </button>
-              <button
-                data-tour="redo"
-                disabled={!state.future.length || state.dirty}
-                onClick={state.redo}
-              >
-                Redo
-              </button>
-              <ClearBoardButton onClick={clearBoard} />
-            </nav>
-            <div className="tools camera">
-              <button aria-label="Zoom out" onClick={() => void flow.zoomOut()}>
-                −
-              </button>
-              <button aria-label="Zoom in" onClick={() => void flow.zoomIn()}>
-                +
-              </button>
-            </div>
-          </footer>
+          <Presence>
+            {simulationBarReady && (
+              <footer className="bottom-bar workspace-bar">
+                <nav className="tools" aria-label="Workspace tools">
+                  <button
+                    className="simulate"
+                    disabled={
+                      simulation.pending ||
+                      (simulationUnavailable && !state.dirty)
+                    }
+                    onClick={simulate}
+                  >
+                    {simulation.pending ? "Simulating…" : "Simulate"}
+                  </button>
+                  {simulation.latest && (
+                    <button
+                      onClick={() =>
+                        guarded(() => {
+                          closeEditor();
+                          useSimulation.setState({
+                            viewing: true,
+                            playing: false,
+                          });
+                        })
+                      }
+                    >
+                      Last run
+                    </button>
+                  )}
+                  <ClearBoardButton onClick={clearBoard} />
+                </nav>
+              </footer>
+            )}
+          </Presence>
         </main>
       )}
       {tutorialOpen && (

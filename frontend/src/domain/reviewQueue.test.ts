@@ -4,6 +4,21 @@ import fixture from "../../../fixtures/runtime/stack-d5/run.json";
 import type { EventResult } from "./runs";
 
 describe("upload review capacity", () => {
+  it("selects a stable middle payment from the full ranking, including even, single and empty uploads", () => {
+    const events = (fixture.events as EventResult[]).slice(0, 6);
+    const even = rankedQueue(events);
+    expect(even.middle).toBe(even.ordered[2]);
+    const odd = rankedQueue(events.slice(0, 5));
+    expect(odd.middle).toBe(odd.ordered[2]);
+    expect(
+      rankedQueue(applyCapacity(events, even.ranks, 1)).middle?.eventId,
+    ).toBe(even.middle?.eventId);
+    expect(rankedQueue([...events].reverse()).middle?.eventId).toBe(
+      even.middle?.eventId,
+    );
+    expect(rankedQueue(events.slice(0, 1)).middle).toBe(events[0]);
+    expect(rankedQueue([]).middle).toBeUndefined();
+  });
   it("does not force alerts when scores do not separate", () => {
     expect(suggestCapacity([]).count).toBe(0);
     expect(suggestCapacity(Array(100).fill(3)).count).toBe(0);

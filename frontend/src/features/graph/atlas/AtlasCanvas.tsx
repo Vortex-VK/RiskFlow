@@ -23,6 +23,7 @@ import {
 } from "./connections";
 import { ConnectionDetails } from "./ConnectionDetails";
 import "./atlas.css";
+import type { ReviewGroup } from "../../../domain/runInsights";
 
 function bridgePath(link: SectorConnection) {
   const a = link.start,
@@ -123,6 +124,7 @@ type TerritoryNode = Node<
     enter: (id: string) => void;
     disabled: boolean;
     reviewCount: number;
+    inspectReviews: (() => void) | undefined;
     flaggedOnly: boolean;
   },
   "territory"
@@ -132,47 +134,75 @@ function Territory({ data }: NodeProps<TerritoryNode>) {
   const { sector } = data;
   const r = sector.radius;
   return (
-    <button
+    <div
       className="transaction-sector nodrag"
+      role="group"
+      tabIndex={-1}
       data-leaf={sector.children.length === 0}
       data-payment-count={sector.group.payments.length}
       data-review-count={data.reviewCount}
       data-muted={data.flaggedOnly && !data.reviewCount}
-      disabled={data.disabled}
-      aria-label={`Open ${sector.group.label}${data.reviewCount ? ` ${data.reviewCount} for review` : ""}${sector.group.reference ? ` Sector ${sector.group.reference}` : ""}, ${sector.group.payments.length.toLocaleString()} payments`}
+      aria-label={groupLabel(sector.group)}
       aria-description={sector.group.reason}
       title={`${groupLabel(sector.group)}\n${sector.group.reason}`}
-      onClick={() => data.enter(sector.group.id)}
+      onKeyDown={(e) => {
+        if (
+          e.target === e.currentTarget &&
+          !data.disabled &&
+          (e.key === "Enter" || e.key === " ")
+        ) {
+          e.preventDefault();
+          data.enter(sector.group.id);
+        }
+      }}
       style={{ width: r * 2, height: r * 2, fontSize: 12 / zoom }}
     >
-      <svg
-        viewBox={`${-r} ${-r} ${r * 2} ${r * 2}`}
-        width={r * 2}
-        height={r * 2}
-        aria-hidden="true"
+      <button
+        className="sector-open"
+        tabIndex={-1}
+        disabled={data.disabled}
+        onClick={() => data.enter(sector.group.id)}
+        aria-label={`Open cluster area ${groupLabel(sector.group)}`}
       >
-        <path
-          className="territory-hit"
-          data-sector={sector.group.id}
-          d={territoryPath(sector.territory)}
-        />
-      </svg>
+        <svg
+          viewBox={`${-r} ${-r} ${r * 2} ${r * 2}`}
+          width={r * 2}
+          height={r * 2}
+          aria-hidden="true"
+        >
+          <path
+            className="territory-hit"
+            data-sector={sector.group.id}
+            d={territoryPath(sector.territory)}
+          />
+        </svg>
+      </button>
       <span
         className={`sector-name${r * zoom < Math.min(85, Math.max(32, sector.group.label.length * 2)) ? " sector-name-crowded" : ""}`}
-        style={
-          sector.children.length
-            ? {
-                top: Math.min(...sector.territory.map((p) => p.y)) + r,
-                transform: "translate(-50%, -110%)",
-              }
-            : undefined
-        }
+        style={{
+          maxWidth: Math.max(100, Math.min(264, r * 2 * zoom * 0.9)) / zoom,
+        }}
       >
-        <span className="sector-factor-label">{sector.group.label}</span>{" "}
+        <button
+          className="sector-label"
+          disabled={data.disabled}
+          onClick={() => data.enter(sector.group.id)}
+          aria-label={`Open ${groupLabel(sector.group)}, ${sector.group.payments.length.toLocaleString()} payments`}
+        >
+          <span className="sector-factor-label">{sector.group.label}</span>
+        </button>{" "}
         {data.reviewCount > 0 && (
-          <span className="sector-review-count">
+          <button
+            className="sector-review-count nodrag nopan"
+            disabled={data.disabled || !data.inspectReviews}
+            aria-label={`${data.reviewCount} for review in ${groupLabel(sector.group)}: inspect payments`}
+            onClick={(e) => {
+              e.stopPropagation();
+              data.inspectReviews?.();
+            }}
+          >
             {data.reviewCount} for review
-          </span>
+          </button>
         )}{" "}
         {sector.group.reference && (
           <span className="sector-reference">
@@ -183,7 +213,7 @@ function Territory({ data }: NodeProps<TerritoryNode>) {
           {sector.group.payments.length.toLocaleString()} payments
         </span>
       </span>
-    </button>
+    </div>
   );
 }
 const nodeTypes = { territory: Territory };
@@ -502,11 +532,13 @@ export const AtlasCanvas = memo(function AtlasCanvas({
   viewport,
   disabled,
   inspectPayment,
+  inspectReviewGroup,
   flaggedIds,
   revealedIds,
   flaggedOnly = false,
 }: {
   inspectPayment?: ((id: string) => void) | undefined;
+  inspectReviewGroup?: ((group: ReviewGroup) => void) | undefined;
   root: Sector;
   sector: Sector;
   entities: Entity[];
@@ -589,10 +621,18 @@ export const AtlasCanvas = memo(function AtlasCanvas({
           reviewCount: c.sector.group.payments.filter((p) =>
             flaggedIds?.has(p.id),
           ).length,
+          inspectReviews: inspectReviewGroup
+            ? () =>
+                inspectReviewGroup({
+                  label: `${groupLabel(c.sector.group)} · For review`,
+                  eventIds: c.sector.group.payments.map((p) => p.id),
+                  visibleOnly: true,
+                })
+            : undefined,
         },
         ariaLabel: `${groupLabel(c.sector.group)}, ${c.sector.group.payments.length} payments`,
       })),
-    [sector, disabled, enter, flaggedIds, flaggedOnly],
+    [sector, disabled, enter, flaggedIds, flaggedOnly, inspectReviewGroup],
   );
   return (
     <div
@@ -631,6 +671,7 @@ export const AtlasCanvas = memo(function AtlasCanvas({
       onDragStart={(e) => e.preventDefault()}
     >
       <ReactFlow
+        proOptions={{ hideAttribution: true }}
         nodes={nodes}
         edges={[]}
         nodeTypes={nodeTypes}

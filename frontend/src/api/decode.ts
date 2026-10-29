@@ -225,7 +225,7 @@ export function decodeDocument(value: unknown): Document {
   for (const raw of list(
     s.payments,
     MAX_PAYMENTS,
-    "payments (maximum 10,000)",
+    `payments (maximum ${MAX_PAYMENTS.toLocaleString("en-US")})`,
   )) {
     const p = object(
       raw,

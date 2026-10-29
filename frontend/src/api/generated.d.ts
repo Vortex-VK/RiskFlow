@@ -21,6 +21,23 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/explanations/compare": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Comparison Explanation */
+        post: operations["comparePaymentChecks"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/health": {
         parameters: {
             query?: never;
@@ -610,6 +627,26 @@ export interface components {
              * @constant
              */
             version: "card-scores-v1";
+        };
+        /** ComparativeCheck */
+        ComparativeCheck: {
+            /** Contribution */
+            contribution: number;
+            /** Feature */
+            feature: string;
+            /** Observations */
+            observations: components["schemas"]["ComparativeObservation"][];
+        };
+        /** ComparativeObservation */
+        ComparativeObservation: {
+            /** Contribution */
+            contribution: number;
+            /** Feature */
+            feature: string;
+            /** Referencevalue */
+            referenceValue: string | number | null;
+            /** Value */
+            value: string | number | null;
         };
         /** ContextAssociation */
         ContextAssociation: {
@@ -1752,6 +1789,37 @@ export interface components {
              */
             ruleId: "unusual_amount" | "payment_velocity" | "new_device" | "unusual_location" | "merchant_category_deviation" | "shared_device_accounts";
         };
+        /** StackComparisonExplanation */
+        StackComparisonExplanation: {
+            /** Checks */
+            checks: components["schemas"]["ComparativeCheck"][];
+            /** Eventid */
+            eventId: string;
+            /**
+             * Method
+             * @default grouped-shapley-head-attribution-v1
+             * @constant
+             */
+            method: "grouped-shapley-head-attribution-v1";
+            /** Modelbundlesha256 */
+            modelBundleSha256: string;
+            /** Referenceeventid */
+            referenceEventId: string;
+        };
+        /** StackComparisonRequest */
+        StackComparisonRequest: {
+            /** Eventid */
+            eventId: string;
+            /** Expectedrawmargin */
+            expectedRawMargin: number;
+            /** Expectedreferencerawmargin */
+            expectedReferenceRawMargin: number;
+            /** Modelbundlesha256 */
+            modelBundleSha256: string;
+            /** Referenceeventid */
+            referenceEventId: string;
+            scenario: components["schemas"]["ScenarioDefinition"];
+        };
         /** StackPaymentExplanation */
         StackPaymentExplanation: {
             /** Basevalue */
@@ -1858,6 +1926,75 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["PaymentExplanation"] | components["schemas"]["StackPaymentExplanation"];
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Content Too Large */
+            413: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Unsupported Media Type */
+            415: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Internal Server Error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+        };
+    };
+    comparePaymentChecks: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["StackComparisonRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["StackComparisonExplanation"];
                 };
             };
             /** @description Not Found */

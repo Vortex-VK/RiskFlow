@@ -3,6 +3,8 @@ import {
   growthTree,
   recentTransactionGlows,
   firingOpacity,
+  riskOpacity,
+  TRANSACTION_GLOW_DURATION,
   GROWTH_WAVE_DURATION,
   GROWTH_DURATION,
 } from "./growth";
@@ -59,5 +61,24 @@ describe("transaction afterglow", () => {
     ).toBeGreaterThan(0.04);
     expect(recentTransactionGlows(schedule, 0)).toEqual([]);
     expect(recentTransactionGlows(schedule, 4200)).toEqual([]);
+  });
+
+  it("crossfades red along the original blue decay without a gap or second entrance", () => {
+    const schedule = [{ start: 400 }];
+    const at = (age: number) =>
+      recentTransactionGlows(schedule, 400 + age)[0]?.progress;
+    expect(riskOpacity(at(40))).toBe(0);
+    for (const age of [84, 200, 400, 800, 1600, 2399]) {
+      const progress = at(age)!;
+      const blue = firingOpacity(progress);
+      const red = riskOpacity(progress);
+      expect(blue).toBeGreaterThan(0);
+      expect(blue + red).toBeCloseTo(1);
+      if (age > 84) expect(red).toBeGreaterThan(0);
+    }
+    expect(firingOpacity(1)).toBe(0);
+    expect(at(TRANSACTION_GLOW_DURATION)).toBeUndefined();
+    expect(riskOpacity(at(TRANSACTION_GLOW_DURATION))).toBe(1);
+    expect(riskOpacity(at(40))).toBe(0);
   });
 });
