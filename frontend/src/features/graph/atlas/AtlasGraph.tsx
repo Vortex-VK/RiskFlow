@@ -125,7 +125,11 @@ export function AtlasGraph(props: GraphProps) {
   }, []);
   const remember = useCallback(() => {
     if (busy.current) return;
-    let savedLayouts = layouts;
+    // Replay rearrangements belong to this inspection; share its camera back
+    // to the editor without replacing the editor's undoable object positions.
+    let savedLayouts = props.snapshot
+      ? (remembered?.layouts ?? new Map<string, Record<string, Position>>())
+      : layouts;
     if (!props.snapshot && !current.children.length) {
       const positions = useWorkspace.getState().document?.view.positions;
       if (positions)
@@ -143,7 +147,12 @@ export function AtlasGraph(props: GraphProps) {
       path,
       layouts: savedLayouts,
     });
-  }, [memoryKey, flow, path, layouts, current, props.snapshot]);
+  }, [memoryKey, flow, path, layouts, current, props.snapshot, remembered]);
+  const rememberRef = useRef(remember);
+  useLayoutEffect(() => {
+    rememberRef.current = remember;
+    remember();
+  }, [remember, document.view.positions]);
   useLayoutEffect(() => {
     const unsubscribe = store.subscribe((next, previous) => {
       if (next.transform !== previous.transform) remember();
@@ -164,7 +173,7 @@ export function AtlasGraph(props: GraphProps) {
           void flow.setViewport(returnCamera, { duration: milliseconds });
         timer = setTimeout(() => {
           busy.current = false;
-          remember();
+          rememberRef.current();
           setTransitioning(false);
         }, milliseconds + 50);
       });
@@ -173,7 +182,7 @@ export function AtlasGraph(props: GraphProps) {
       cancelAnimationFrame(frame);
       clearTimeout(timer);
     };
-  }, [camera, returnCamera, flow, remember]);
+  }, [camera, returnCamera, flow]);
 
   const navigate = useCallback(
     async (ids: string[], preserveViewport = false) => {
@@ -285,7 +294,9 @@ export function AtlasGraph(props: GraphProps) {
   useSemanticZoom({
     sector: sectors.get(current.id)!,
     parent: chain.length > 1 ? chain.at(-2)!.id : null,
-    busy: transitioning || (!props.snapshot && workspace.dirty),
+    busy:
+      transitioning ||
+      (!props.snapshot && (workspace.dirty || !!workspace.dragging)),
     fittedZoom: (sector) => sectorCamera(sector, !!props.snapshot).zoom,
     navigate: (id) => {
       if (current.id.startsWith(id + "/")) {
@@ -355,8 +366,16 @@ export function AtlasGraph(props: GraphProps) {
       });
     };
   }, [current, scope, props.snapshot]);
+  const installedSector = useRef<string | null>(null);
   useLayoutEffect(() => {
-    if (props.snapshot || current.children.length) return;
+    if (props.snapshot || current.children.length) {
+      installedSector.current = null;
+      return;
+    }
+    // A committed move clones the scenario and rebuilds sectors. Only install
+    // their saved layout on entry, never over the user's just-committed position.
+    if (installedSector.current === current.id) return;
+    installedSector.current = current.id;
     const state = useWorkspace.getState();
     if (!state.document) return;
     const positions = sectors.get(current.id)!.positions;
@@ -369,7 +388,23 @@ export function AtlasGraph(props: GraphProps) {
         },
       },
     });
-  }, [current.id, sectors, props.snapshot]);
+  }, [current.id, current.children.length, sectors, props.snapshot]);
+  const saveInspectionLayout = (positions: Record<string, Position>) => {
+    const saved = new Map(layouts).set(
+      sectorLayoutKey(current),
+      Object.fromEntries(
+        [...current.entityIds]
+          .filter((id) => positions[id])
+          .map((id) => [id, positions[id]!]),
+      ),
+    );
+    setLayoutCache({
+      root,
+      entities: document.scenario.nodes,
+      layouts: saved,
+      sectors: buildAtlasMap(root, document.scenario.nodes, saved),
+    });
+  };
   const paymentScope = useMemo(
     () => new Set(current.payments.map((p) => p.id)),
     [current],
@@ -471,6 +506,7 @@ export function AtlasGraph(props: GraphProps) {
             scope={scope}
             paymentScope={paymentScope}
             hierarchyViewport={camera}
+            onInspectionLayoutChange={saveInspectionLayout}
           />
         )}
       </div>

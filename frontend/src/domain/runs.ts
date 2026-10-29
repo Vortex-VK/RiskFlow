@@ -99,7 +99,7 @@ export function projectAnalyticalInput(scenario: Scenario): string {
   return normalizedScenario(scenario, true);
 }
 
-export const PLAYBACK_SPEEDS: readonly number[] = [0.1, 0.25, 0.5, 1, 2, 5, 10];
+export const PLAYBACK_SPEEDS: readonly number[] = [0.25, 0.5, 1, 2, 5];
 
 export function presentationSchedule(
   events: readonly { occurredAt: string }[],
@@ -119,12 +119,10 @@ export function presentationSchedule(
     return { start, end: start + 400 };
   });
   const duration = schedule.at(-1)?.end || 0;
-  // Preserve small scenarios; progressively shorten large runs while retaining
-  // every event. At the existing 1.25 clock rate, the floor is 24 seconds at 1x.
-  const budget = Math.max(
-    30_000,
-    120_000 * Math.sqrt(60 / Math.max(60, events.length)),
-  );
+  // At 1x, allow 100ms per payment (10 payments/second), with up to 3 seconds
+  // for tiny examples and a 24-second cap. Convert to the existing 1.25 clock.
+  // Only compress: a naturally shorter schedule never gains artificial waits.
+  const budget = 1.25 * Math.min(24_000, Math.max(3_000, events.length * 100));
   const scale = duration > budget ? budget / duration : 1;
   return schedule.map((s) => ({ start: s.start * scale, end: s.end * scale }));
 }

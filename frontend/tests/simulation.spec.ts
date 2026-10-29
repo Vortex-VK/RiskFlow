@@ -38,7 +38,7 @@ test("completed playback shows run totals while H16 and H10 keep their own decis
   ).toBeVisible();
   await expect(
     page.getByRole("slider", { name: "Playback speed" }),
-  ).toHaveValue("3");
+  ).toHaveValue("2");
   await setPlaybackSpeed(page, 2);
   await dragAccount();
   await expect(
@@ -153,7 +153,7 @@ test("paused and completed dragging keeps objects visible and connections mounte
   const graphElements = page.locator(".react-flow__node, .react-flow__edge");
   for (const completed of [false, true]) {
     if (completed) {
-      await setPlaybackSpeed(page, 10);
+      await setPlaybackSpeed(page, 5);
       await page.getByRole("button", { name: "Play", exact: true }).click();
       await expect(page.getByRole("status")).toContainText("Run complete");
     }
@@ -262,7 +262,7 @@ test("revealed payments use decision colors in dark mode without losing accessib
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.getByRole("button", { name: "Simulate", exact: true }).click();
-  await setPlaybackSpeed(page, 10);
+  await setPlaybackSpeed(page, 5);
   await expect(page.getByRole("status")).toContainText("Run complete");
   await page
     .getByRole("button", { name: "Inspect payments", exact: true })
@@ -500,10 +500,10 @@ test("all playback settings advance 25 percent faster with the default still at 
 }) => {
   await page.getByRole("button", { name: "Simulate", exact: true }).click();
   await setPlaybackPosition(page, -1);
-  await expect(page.getByLabel("Playback speed")).toHaveValue("3");
+  await expect(page.getByLabel("Playback speed")).toHaveValue("2");
   await page.clock.install();
   await page.clock.pauseAt(new Date());
-  for (const speed of [0.1, 0.25, 0.5, 1, 2, 5, 10]) {
+  for (const speed of [0.25, 0.5, 1, 2, 5]) {
     await setPlaybackPosition(page, -1);
     await setPlaybackSpeed(page, speed);
     await page.getByRole("button", { name: "Play", exact: true }).click();
@@ -522,7 +522,7 @@ test("transaction pulses and risk highlights follow playback while inspection pr
   await page.getByRole("button", { name: /^Account Takeover/ }).click();
   await page.getByRole("button", { name: "Simulate", exact: true }).click();
   await setPlaybackPosition(page, -1);
-  await setPlaybackSpeed(page, 0.1);
+  await setPlaybackSpeed(page, 0.25);
   await page.getByRole("button", { name: "Play", exact: true }).click();
   const pulse = page.locator(".payment-pulse");
   await expect(pulse).toBeVisible();
@@ -547,7 +547,7 @@ test("transaction pulses and risk highlights follow playback while inspection pr
   await expect(page.locator('.status[role="status"]')).toHaveText(
     pausedStatus!,
   );
-  await setPlaybackSpeed(page, 10);
+  await setPlaybackSpeed(page, 5);
   await page.getByRole("button", { name: "Play", exact: true }).click();
   await expect(page.getByRole("status")).toContainText("Run complete");
   await expect(pulse).toHaveCount(0);

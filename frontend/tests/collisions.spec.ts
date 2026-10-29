@@ -145,7 +145,7 @@ test("running, paused and completed snapshots push locally and leave editor posi
   for (const state of ["running", "paused", "complete"]) {
     if (state === "paused") await button(page, "Pause").click();
     if (state === "complete") {
-      await setPlaybackSpeed(page, 10);
+      await setPlaybackSpeed(page, 5);
       await button(page, "Play").click();
       await expect(page.getByRole("status")).toContainText("Run complete");
     }

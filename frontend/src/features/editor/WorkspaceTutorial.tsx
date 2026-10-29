@@ -192,8 +192,12 @@ export function WorkspaceTutorial({
   useTutorialInteractions(selectorKey, !samplesOpen);
 
   useEffect(() => {
-    // Keep the objects themselves available for the connection gesture.
-    if (phase === "connect" && workspace.selection && !workspace.dirty)
+    // Clear the completed form before opening the drawer or connecting objects.
+    if (
+      (phase === "merchant" || phase === "connect") &&
+      workspace.selection &&
+      !workspace.dirty
+    )
       workspace.select(null);
   }, [phase, workspace]);
 

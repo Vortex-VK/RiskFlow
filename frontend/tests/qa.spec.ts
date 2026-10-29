@@ -222,7 +222,7 @@ for (const templateId of [
     await button(page, "Pause").click();
     await button(page, "Play").click();
     await button(page, "Pause").click();
-    for (const speed of [0.1, 0.25, 0.5, 1, 2, 5, 10])
+    for (const speed of [0.25, 0.5, 1, 2, 5])
       await setPlaybackSpeed(page, speed);
     await button(page, "Fit").click();
     await button(page, "Results").click();

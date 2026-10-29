@@ -720,9 +720,12 @@ html[data-motion="off"] .run-overview {
   }
 }
 @media (max-width: 600px) {
+  .workspace.replay {
+    --mobile-panel-bottom: calc(76px + env(safe-area-inset-bottom));
+  }
   .replay .run-overview,
   .replay:has(.hierarchy-navigation) .run-overview {
-    top: 116px;
+    top: var(--mobile-panel-top);
     left: 12px;
     right: 12px;
     max-width: none;
@@ -752,14 +755,14 @@ html[data-motion="off"] .run-overview {
     display: none;
   }
   .replay .hierarchy-navigation {
-    top: 188px;
+    top: calc(var(--mobile-panel-top) + 72px);
     left: 12px;
     right: 12px;
     max-width: calc(100vw - 24px);
     font-size: 10px;
   }
   .replay:has(.has-threshold) .hierarchy-navigation {
-    top: 282px;
+    top: calc(var(--mobile-panel-top) + 166px);
   }
   .replay.panel-open .run-overview {
     display: none;
@@ -768,14 +771,16 @@ html[data-motion="off"] .run-overview {
     display: none;
   }
   .replay .run-inspector {
-    top: 118px;
-    left: 12px;
-    right: 12px;
+    top: var(--mobile-panel-top);
+    left: 8px;
+    right: 8px;
     width: auto;
-    max-height: calc(100dvh - 285px);
+    max-height: calc(
+      100dvh - var(--mobile-panel-top) - var(--mobile-panel-bottom)
+    );
   }
   .replay .payment-explanation {
-    padding: 20px;
+    padding: 16px;
   }
   .payment-estimate strong {
     font-size: 32px;
@@ -785,6 +790,13 @@ html[data-motion="off"] .run-overview {
   }
   .replay .status {
     bottom: 148px;
+  }
+}
+
+@media (max-width: 399px) {
+  .workspace.replay {
+    /* Leave room for the speed control to wrap below the playback buttons. */
+    --mobile-panel-bottom: calc(108px + env(safe-area-inset-bottom));
   }
 }
 

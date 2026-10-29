@@ -199,7 +199,7 @@ test("shared connections follow playback and the recorded queue, and open the re
   await expect(panel.locator(".connection-payment-status").first()).toHaveText(
     "Not yet assessed",
   );
-  await setPlaybackSpeed(page, 10);
+  await setPlaybackSpeed(page, 5);
   await page.getByRole("button", { name: "Play", exact: true }).click();
   await expect(page.getByRole("status")).toContainText("Run complete", {
     timeout: 30000,

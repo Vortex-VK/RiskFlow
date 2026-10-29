@@ -91,7 +91,7 @@ test("review counts follow visible playback and completed inspection keeps the f
     String(7 - previousReviews),
   ]);
   expect(await sumGroupCounts()).toBe(previousReviews);
-  await setPlaybackSpeed(page, 10);
+  await setPlaybackSpeed(page, 5);
   await page.getByRole("button", { name: "Play", exact: true }).click();
   await expect(page.getByRole("status")).toContainText("Run complete", {
     timeout: 30000,

@@ -83,7 +83,7 @@ export async function syntheticModelCsv(path: string) {
 }
 
 export async function setPlaybackSpeed(page: Page, speed: number) {
-  const stops = [0.1, 0.25, 0.5, 1, 2, 5, 10];
+  const stops = [0.25, 0.5, 1, 2, 5];
   expect(stops).toContain(speed);
   const slider = page.getByRole("slider", { name: "Playback speed" });
   await slider.press("Home");

@@ -2,6 +2,9 @@ import type { Position } from "../../domain/types";
 
 export const GROWTH_WAVE_DURATION = 1700;
 export const GROWTH_DURATION = GROWTH_WAVE_DURATION + 5200;
+export const DETAIL_GROWTH_DURATION = 1500;
+export const DETAIL_NODE_FADE = 350;
+export const DETAIL_GROWTH_SPREAD = 600;
 // Traverse real relationships. Disconnected components grow independently;
 // the entrance order is visual staging, not the graph construction algorithm.
 export function growthTree<T extends Position>(

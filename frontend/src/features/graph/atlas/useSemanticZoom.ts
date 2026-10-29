@@ -61,6 +61,8 @@ export function useSemanticZoom(config: {
       intentAt = 0;
     let anchor: Position | null = null;
     let pending = false;
+    const touches = new Map<number, Position>();
+    let pinchDistance = 0;
     const readyAt = performance.now() + 250;
     const reset = () => {
       clearTimeout(timer);
@@ -104,6 +106,34 @@ export function useSemanticZoom(config: {
         )
       )
         reset();
+      if (
+        event.pointerType === "touch" &&
+        event.target instanceof Element &&
+        event.target.closest(".hierarchy-stage .react-flow")
+      ) {
+        touches.set(event.pointerId, { x: event.clientX, y: event.clientY });
+        if (touches.size === 2) {
+          const [a, b] = [...touches.values()];
+          pinchDistance = Math.hypot(a!.x - b!.x, a!.y - b!.y);
+        }
+      }
+    };
+    const move = (event: PointerEvent) => {
+      if (!touches.has(event.pointerId)) return;
+      touches.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      if (touches.size !== 2) return;
+      const [a, b] = [...touches.values()];
+      const distance = Math.hypot(a!.x - b!.x, a!.y - b!.y);
+      if (!pinchDistance || Math.abs(distance - pinchDistance) < 0.5) return;
+      intent(distance > pinchDistance ? 1 : -1, {
+        x: (a!.x + b!.x) / 2,
+        y: (a!.y + b!.y) / 2,
+      });
+      pinchDistance = distance;
+    };
+    const up = (event: PointerEvent) => {
+      touches.delete(event.pointerId);
+      pinchDistance = 0;
     };
     const check = () => {
       const c = latest.current;
@@ -150,12 +180,18 @@ export function useSemanticZoom(config: {
     window.addEventListener("wheel", wheel, { capture: true, passive: true });
     window.addEventListener("click", click, true);
     window.addEventListener("pointerdown", down, true);
+    window.addEventListener("pointermove", move, true);
+    window.addEventListener("pointerup", up, true);
+    window.addEventListener("pointercancel", up, true);
     return () => {
       clearTimeout(timer);
       unsubscribe();
       window.removeEventListener("wheel", wheel, true);
       window.removeEventListener("click", click, true);
       window.removeEventListener("pointerdown", down, true);
+      window.removeEventListener("pointermove", move, true);
+      window.removeEventListener("pointerup", up, true);
+      window.removeEventListener("pointercancel", up, true);
     };
   }, [group, busy, flow, store]);
 }

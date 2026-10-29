@@ -1,5 +1,11 @@
 import { readGraphView, rememberGraphView } from "./view-memory";
-import { firingOpacity, growthTree, riskOpacity } from "./growth";
+import {
+  DETAIL_GROWTH_SPREAD,
+  DETAIL_NODE_FADE,
+  firingOpacity,
+  growthTree,
+  riskOpacity,
+} from "./growth";
 import {
   useCallback,
   useEffect,
@@ -54,6 +60,7 @@ type Link = Edge<
     radiusEnd: number;
     count: number;
     context: boolean;
+    entranceDelay: number;
     highlighted: boolean;
     pulse?: number;
     risk?: "review" | "block";
@@ -104,7 +111,10 @@ function LinkView({ id, data, selected }: EdgeProps<Link>) {
     ? `var(--transaction-${data.risk})`
     : "var(--transaction-cyan)";
   return (
-    <>
+    <g
+      className="detail-link-reveal"
+      style={{ animationDelay: `${data.entranceDelay}ms` }}
+    >
       <BaseEdge
         id={id}
         path={`M${x1},${y1}L${x2},${y2}`}
@@ -168,7 +178,7 @@ function LinkView({ id, data, selected }: EdgeProps<Link>) {
           {data.count}
         </text>
       )}
-    </>
+    </g>
   );
 }
 
@@ -197,6 +207,7 @@ export function DetailGraph({
   memoryKey,
   flaggedIds,
   flaggedOnly = false,
+  onInspectionLayoutChange,
 }: {
   memoryKey?: string;
   navigationTarget?: HTMLElement | null;
@@ -207,6 +218,7 @@ export function DetailGraph({
   flaggedIds?: ReadonlySet<string>;
   flaggedOnly?: boolean;
   inspectReviewGroup?: ((group: ReviewGroup) => void) | undefined;
+  onInspectionLayoutChange?: (positions: Record<string, Position>) => void;
   add: (kind: Entity["type"], point: Position) => void;
   snapshot?: Document;
   eventId?: string;
@@ -273,6 +285,34 @@ export function DetailGraph({
   const [remembered] = useState(() =>
     !scope && memoryKey ? readGraphView(memoryKey) : undefined,
   );
+  const fitImportedGraph = (width: number, height: number): Viewport => {
+    const points = visibleNodes.map(
+      (node) => document.view.positions[node.id]!,
+    );
+    if (!points.length) return document.view.viewport;
+    const left = Math.min(...points.map((p) => p.x)) - 70;
+    const right = Math.max(...points.map((p) => p.x)) + 70;
+    const top = Math.min(...points.map((p) => p.y)) - 70;
+    const bottom = Math.max(...points.map((p) => p.y)) + 70;
+    const zoom = Math.max(
+      0.25,
+      Math.min(
+        1.1,
+        Math.max(100, width - 96) / (right - left),
+        Math.max(100, height - 220) / (bottom - top),
+      ),
+    );
+    return {
+      x: width / 2 - ((left + right) / 2) * zoom,
+      y: height / 2 + 20 - ((top + bottom) / 2) * zoom,
+      zoom,
+    };
+  };
+  const [importViewport] = useState(() =>
+    !scope && !remembered && workspace.revealGraph
+      ? fitImportedGraph(window.innerWidth, window.innerHeight)
+      : undefined,
+  );
   const motionRef = useRef<ReturnType<typeof createElasticNodes> | null>(null);
   const [measurements, setMeasurements] = useState<
     Record<string, NonNullable<ObjectNode["measured"]>>
@@ -300,6 +340,8 @@ export function DetailGraph({
     Record<string, Position>
   >({});
   const inspectionPositionsRef = useRef<Record<string, Position>>({});
+  const inspectionLayoutChange = useRef(onInspectionLayoutChange);
+  inspectionLayoutChange.current = onInspectionLayoutChange;
   function moveForInspection(next: Record<string, Position>) {
     inspectionPositionsRef.current = next;
     setInspectionPositions(next);
@@ -384,12 +426,20 @@ export function DetailGraph({
     for (const p of visiblePayments) connect(p.accountId, p.merchantId);
     for (const a of document.scenario.associations)
       connect(a.accountId, a.targetId);
-    return new Map(growthTree(points, links).map((b) => [b.point.id, b.time]));
+    const branches = growthTree(points, links);
+    const latest = Math.max(1, ...branches.map((branch) => branch.time));
+    return new Map(
+      branches.map((branch) => [
+        branch.point.id,
+        scope ? branch.time : (branch.time / latest) * DETAIL_GROWTH_SPREAD,
+      ]),
+    );
   }, [
     visibleNodes,
     visiblePayments,
     document.view.positions,
     document.scenario.associations,
+    scope,
   ]);
   const nodes: ObjectNode[] = visibleNodes.map((entity) => ({
     id: entity.id,
@@ -514,6 +564,9 @@ export function DetailGraph({
         radiusEnd: radius(b),
         count,
         context,
+        entranceDelay:
+          Math.max(growth.get(source) || 0, growth.get(target) || 0) +
+          DETAIL_NODE_FADE,
         highlighted: related,
         ...(!context && risks.has(id)
           ? { risk: risks.get(id)!, riskOpacity: riskStrengths.get(id)! }
@@ -611,6 +664,8 @@ export function DetailGraph({
       endDrag: (_id, cancelled, moved) => {
         if (readOnly) {
           if (cancelled) moveForInspection(inspectionOrigin);
+          else if (moved)
+            inspectionLayoutChange.current?.(inspectionPositionsRef.current);
           return;
         }
         const s = useWorkspace.getState();
@@ -763,6 +818,7 @@ export function DetailGraph({
             });
             motionRef.current?.contact(result.contacts);
             moveForInspection(result.positions);
+            inspectionLayoutChange.current?.(result.positions);
             return;
           }
           guarded(() => {
@@ -824,8 +880,11 @@ export function DetailGraph({
       </svg>
       <ReactFlow<ObjectNode, Link>
         proOptions={{ hideAttribution: true }}
-        {...(hierarchyViewport || remembered?.viewport
-          ? { defaultViewport: hierarchyViewport || remembered!.viewport }
+        {...(hierarchyViewport || remembered?.viewport || importViewport
+          ? {
+              defaultViewport:
+                hierarchyViewport || remembered?.viewport || importViewport!,
+            }
           : {})}
         nodes={nodes}
         onNodesChange={onNodesChange}
@@ -871,6 +930,15 @@ export function DetailGraph({
             }
             if (remembered) {
               void flow.setViewport(remembered.viewport);
+              return;
+            }
+            if (importViewport) {
+              void flow.setViewport(
+                fitImportedGraph(
+                  container.current!.clientWidth,
+                  container.current!.clientHeight,
+                ),
+              );
               return;
             }
             if (readOnly || restoreViewport) {

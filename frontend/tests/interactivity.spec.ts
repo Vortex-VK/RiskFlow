@@ -81,6 +81,7 @@ test("hands-on tour advances only after real actions and can finish a complete s
   };
   await place("account", 600, 400);
   await phase("edit");
+  await expect(page.locator("#object-drawer")).toHaveCount(0);
   await expect(
     page.locator(
       ".tour-focus[data-tour-target='[data-tour=\"starter-context\"]']",
@@ -296,6 +297,61 @@ test("mobile keyboard placement stays interactive and invalid edits do not advan
   await page.getByRole("button", { name: "Skip tour" }).click();
   await expect(tour).toHaveCount(0);
   await expect(page.locator(".react-flow__node")).toHaveCount(3);
+});
+
+test("mobile tour closes the drawer for account setup and clears the form for merchant placement", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/");
+  await page.getByRole("button", { name: "Show tutorial" }).click();
+  await page.getByRole("button", { name: "Objects", exact: true }).click();
+  const account = (await page
+    .locator('[data-tray-id="tray-account"]')
+    .boundingBox())!;
+  await page.mouse.move(
+    account.x + account.width / 2,
+    account.y + account.height / 2,
+  );
+  await page.mouse.down();
+  await page.mouse.move(240, 430, { steps: 12 });
+  await page.mouse.up();
+  await expect(page.locator(".tutorial-tour")).toHaveAttribute(
+    "data-phase",
+    "edit",
+  );
+  await expect(page.locator("#object-drawer")).toBeHidden();
+  const starter = page.getByRole("button", { name: "Create starter context" });
+  await expect
+    .poll(async () => {
+      const button = (await starter.boundingBox())!;
+      const coach = (await page.locator(".tour-coach").boundingBox())!;
+      return button.y + button.height < coach.y;
+    })
+    .toBe(true);
+  await page
+    .getByRole("textbox", { name: "Name", exact: true })
+    .fill("Mobile practice");
+  await starter.click();
+  await expect(page.locator(".tutorial-tour")).toHaveAttribute(
+    "data-phase",
+    "merchant",
+  );
+  await expect(
+    page.getByRole("complementary", { name: "Selection details" }),
+  ).toHaveCount(0);
+  await page.getByRole("button", { name: "Objects", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Add merchant", exact: true })
+    .press("Enter");
+  await page.getByRole("button", { name: "Place at center" }).click();
+  await expect(page.locator(".tutorial-tour")).toHaveAttribute(
+    "data-phase",
+    "connect",
+  );
+  await expect(page.locator("#object-drawer")).toBeHidden();
+  await expectClearConnectionTargets(page);
 });
 
 test("skipping the interactive tour preserves an existing unapplied edit", async ({

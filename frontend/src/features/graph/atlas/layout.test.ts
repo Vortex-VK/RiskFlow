@@ -222,6 +222,17 @@ describe("continuous transaction atlas", () => {
     );
     expect(rebuilt.get(leaf.group.id)!.positions).toEqual(edited);
     expect(leaf.positions[id]).not.toEqual(edited[id]);
+    const cloud = sectorCloud(
+      rebuilt.get(root.id)!,
+      new Map(scenario.nodes.map((node) => [node.id, node])),
+    );
+    const moved = cloud.points.find(
+      (point) => point.id === id && point.leaf === leaf.group.id,
+    )!;
+    const offset = sectorOffset(rebuilt.get(root.id)!, leaf.group.id)!;
+    expect(moved.x).toBeCloseTo(edited[id]!.x + offset.x, 6);
+    expect(moved.y).toBeCloseTo(edited[id]!.y + offset.y, 6);
+    expect(cloud.links.some(([a, b]) => a === moved || b === moved)).toBe(true);
     for (const [key, sector] of atlas) {
       expect(rebuilt.get(key)!.children.map((c) => c.center)).toEqual(
         sector.children.map((c) => c.center),

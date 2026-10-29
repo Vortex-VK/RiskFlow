@@ -89,43 +89,47 @@ describe("captured runs and analytical identity", () => {
 });
 
 describe("presentation clock", () => {
-  it("increases the per-payment pace with dataset size while preserving small runs", () => {
-    const scheduleFor = (count: number) =>
-      presentationSchedule(
-        Array.from({ length: count }, () => ({
-          occurredAt: "2026-10-20T09:00:00Z",
-        })),
-      );
-    expect(scheduleFor(60)[1]).toEqual({ start: 1050, end: 1450 });
-    let previousInterval = Infinity;
-    for (const count of [60, 232, 1000, 10000]) {
-      const schedule = scheduleFor(count);
-      const interval = schedule[1]!.start - schedule[0]!.start;
-      expect(interval).toBeLessThan(previousInterval);
-      expect(schedule).toHaveLength(count);
-      previousInterval = interval;
+  it("finishes small uploads sooner and caps large ones regardless of timestamp gaps", () => {
+    for (const gap of [0, 86_400_000]) {
+      for (const [count, seconds] of [
+        [50, 5],
+        [100, 10],
+        [250, 24],
+        [1000, 24],
+        [10000, 24],
+      ] as const) {
+        const schedule = presentationSchedule(
+          Array.from({ length: count }, (_, index) => ({
+            occurredAt: new Date(
+              Date.UTC(2026, 0, 1) + index * gap,
+            ).toISOString(),
+          })),
+        );
+        expect(schedule).toHaveLength(count);
+        expect(schedule.at(-1)!.end / 1.25).toBeCloseTo(seconds * 1000);
+      }
     }
-    expect(scheduleFor(1000).at(-1)!.end / 1.25).toBeCloseTo(24_000);
-    expect(scheduleFor(10000).at(-1)!.end / 1.25).toBeCloseTo(24_000);
   });
-  it("fits the hero schedule into 12.4 seconds at 2× without using event order as time", () => {
+  it("keeps tiny examples readable and preserves playback positions when compressed", () => {
     const schedule = presentationSchedule(
       decodeDocument(hero).scenario.payments,
     );
-    expect(schedule[0]).toEqual({ start: 400, end: 800 });
-    expect(schedule.at(-1)!.end / 2).toBe(12400);
+    expect(schedule.at(-1)!.end / 1.25).toBe(3000);
+    expect(schedule.at(-1)!.end / (1.25 * 2)).toBe(1500);
     expect(playbackPosition(schedule, 0)).toEqual({
       cursor: -1,
       active: -1,
       progress: 0,
       completed: false,
     });
-    expect(playbackPosition(schedule, 600)).toMatchObject({
+    const first = schedule[0]!;
+    const midpoint = playbackPosition(schedule, (first.start + first.end) / 2);
+    expect(midpoint).toMatchObject({
       cursor: -1,
       active: 0,
-      progress: 0.5,
     });
-    expect(playbackPosition(schedule, 800)).toMatchObject({
+    expect(midpoint.progress).toBeCloseTo(0.5);
+    expect(playbackPosition(schedule, first.end)).toMatchObject({
       cursor: 0,
       active: -1,
     });

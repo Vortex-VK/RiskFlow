@@ -87,8 +87,8 @@ test("a new object belongs to its creation sector across navigation and undo/red
   await enter(second!);
   const object = page.locator(`.react-flow__node[data-id="${id}"]`);
   await expect(object).toHaveCount(0);
-  await page.getByRole("button", { name: "Undo", exact: true }).click();
-  await page.getByRole("button", { name: "Redo", exact: true }).click();
+  await page.keyboard.press("Control+z");
+  await page.keyboard.press("Control+Shift+z");
   await expect(object).toHaveCount(0);
   await overview();
   await enter(first!);

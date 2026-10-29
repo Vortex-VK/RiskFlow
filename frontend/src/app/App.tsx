@@ -343,7 +343,7 @@ function Workspace() {
         ...(pose ? { pose } : {}),
         contacts: pushed.contacts,
       });
-      if (!fromTray) setPanel(null);
+      if (!fromTray || tutorialOpen) setPanel(null);
       setDraft(null);
       setPlacing(null);
       setConnecting(null);
