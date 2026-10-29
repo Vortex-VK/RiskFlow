@@ -1,0 +1,51 @@
+transaction_id,timestamp,account_id,account_name,merchant_id,merchant_name,merchant_category,mcc,amount,currency,channel,status,is_fraud,scenario_note
+DEMO-50-00001,2026-03-01T08:20:50Z,A0003,Account 003,M0002,Maple Cafe 1-1,dining,5812,9.87,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00002,2026-03-01T11:31:14Z,A0001,Account 001,M0001,Maple Market 1-1,groceries,5411,54.81,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00003,2026-03-01T15:10:20Z,A0006,Account 006,M0022,Home Delivery,retail,5200,221.49,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00004,2026-03-01T22:42:00Z,A0002,Account 002,M0011,Harbor Fuel 2-1,transport,5541,34.39,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00005,2026-03-02T09:45:15Z,A0004,Account 004,M0010,Harbor Cafe 2-1,dining,5812,22.21,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00006,2026-03-02T11:11:02Z,A0005,Account 005,M0002,Maple Cafe 1-1,dining,5812,25.76,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00007,2026-03-03T16:49:11Z,A0001,Account 001,M0002,Maple Cafe 1-1,dining,5812,20.13,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00008,2026-03-04T08:39:30Z,A0003,Account 003,M0001,Maple Market 1-1,groceries,5411,102.57,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00009,2026-03-04T15:18:10Z,A0005,Account 005,M0001,Maple Market 1-1,groceries,5411,46.02,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00010,2026-03-05T19:35:09Z,A0004,Account 004,M0010,Harbor Cafe 2-1,dining,5812,22.93,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00011,2026-03-06T07:52:54Z,A0006,Account 006,M0011,Harbor Fuel 2-1,transport,5541,27.53,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00012,2026-03-06T10:08:22Z,A0004,Account 004,M0012,Harbor Pharmacy 2-1,other,5912,78.25,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00013,2026-03-06T10:51:10Z,A0005,Account 005,M0004,Maple Pharmacy 1-1,other,5912,14.53,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00014,2026-03-06T10:52:02Z,A0006,Account 006,M0014,Harbor Home 2-1,retail,5200,50.00,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00015,2026-03-06T13:50:08Z,A0003,Account 003,M0012,Harbor Pharmacy 2-1,other,5912,44.86,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00016,2026-03-06T16:10:05Z,A0004,Account 004,M0010,Harbor Cafe 2-1,dining,5812,31.46,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00017,2026-03-06T17:26:25Z,A0005,Account 005,M0001,Maple Market 1-1,groceries,5411,60.83,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00018,2026-03-07T07:18:23Z,A0005,Account 005,M0001,Maple Market 1-1,groceries,5411,52.53,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00019,2026-03-07T09:05:38Z,A0006,Account 006,M0012,Harbor Pharmacy 2-1,other,5912,16.21,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00020,2026-03-07T09:50:01Z,A0006,Account 006,M0011,Harbor Fuel 2-1,transport,5541,64.51,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00021,2026-03-07T09:55:10Z,A0005,Account 005,M0001,Maple Market 1-1,groceries,5411,50.71,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00022,2026-03-07T11:46:32Z,A0002,Account 002,M0011,Harbor Fuel 2-1,transport,5541,42.23,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00023,2026-03-07T16:50:14Z,A0006,Account 006,M0017,Metro Grocery,groceries,5411,40.62,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00024,2026-03-07T22:14:09Z,A0003,Account 003,M0002,Maple Cafe 1-1,dining,5812,32.56,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00025,2026-03-08T10:57:55Z,A0006,Account 006,M0011,Harbor Fuel 2-1,transport,5541,50.80,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00026,2026-03-08T11:36:57Z,A0002,Account 002,M0009,Harbor Market 2-1,groceries,5411,57.83,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00027,2026-03-08T13:43:10Z,A0003,Account 003,M0004,Maple Pharmacy 1-1,other,5912,28.90,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00028,2026-03-08T17:21:05Z,A0001,Account 001,M0004,Maple Pharmacy 1-1,other,5912,24.31,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00029,2026-03-08T18:02:56Z,A0004,Account 004,M0010,Harbor Cafe 2-1,dining,5812,21.09,USD,Online Transaction,completed,0,ordinary purchase
+DEMO-50-00030,2026-03-09T03:25:00Z,A0006,Account 006,M0023,Digital Store,electronics,5732,49.44,USD,Online Transaction,completed,1,card misuse: small purchase
+DEMO-50-00031,2026-03-09T03:28:05Z,A0006,Account 006,M0023,Digital Store,electronics,5732,594.03,USD,Online Transaction,completed,1,card misuse: purchase burst
+DEMO-50-00032,2026-03-09T07:45:49Z,A0005,Account 005,M0003,Maple Fuel 1-1,transport,5541,25.98,USD,Online Transaction,completed,0,ordinary purchase
+DEMO-50-00033,2026-03-09T20:21:47Z,A0004,Account 004,M0013,Harbor Clothing 2-1,retail,5651,296.37,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00034,2026-03-09T20:32:50Z,A0002,Account 002,M0011,Harbor Fuel 2-1,transport,5541,50.19,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00035,2026-03-09T21:08:10Z,A0002,Account 002,M0016,Harbor Hotel 2-1,travel,7011,147.61,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00036,2026-03-10T12:34:56Z,A0005,Account 005,M0004,Maple Pharmacy 1-1,other,5912,27.26,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00037,2026-03-10T16:48:43Z,A0005,Account 005,M0003,Maple Fuel 1-1,transport,5541,35.46,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00038,2026-03-11T07:06:01Z,A0003,Account 003,M0002,Maple Cafe 1-1,dining,5812,30.43,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00039,2026-03-11T09:52:44Z,A0001,Account 001,M0017,Metro Grocery,groceries,5411,37.30,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00040,2026-03-11T19:16:12Z,A0004,Account 004,M0012,Harbor Pharmacy 2-1,other,5912,31.98,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00041,2026-03-12T07:45:48Z,A0005,Account 005,M0001,Maple Market 1-1,groceries,5411,30.97,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00042,2026-03-12T14:49:01Z,A0001,Account 001,M0004,Maple Pharmacy 1-1,other,5912,56.16,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00043,2026-03-12T15:32:01Z,A0006,Account 006,M0010,Harbor Cafe 2-1,dining,5812,9.17,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00044,2026-03-12T22:12:57Z,A0004,Account 004,M0011,Harbor Fuel 2-1,transport,5541,80.24,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00045,2026-03-13T13:39:48Z,A0002,Account 002,M0012,Harbor Pharmacy 2-1,other,5912,48.66,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00046,2026-03-13T14:19:45Z,A0004,Account 004,M0009,Harbor Market 2-1,groceries,5411,236.25,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00047,2026-03-13T16:39:13Z,A0006,Account 006,M0011,Harbor Fuel 2-1,transport,5541,47.50,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00048,2026-03-13T20:51:43Z,A0004,Account 004,M0010,Harbor Cafe 2-1,dining,5812,26.53,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00049,2026-03-14T20:16:53Z,A0002,Account 002,M0011,Harbor Fuel 2-1,transport,5541,45.67,USD,Chip Transaction,completed,0,ordinary purchase
+DEMO-50-00050,2026-03-14T21:01:51Z,A0005,Account 005,M0001,Maple Market 1-1,groceries,5411,31.19,USD,Chip Transaction,completed,0,ordinary purchase

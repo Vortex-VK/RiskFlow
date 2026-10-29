@@ -47,10 +47,10 @@ chronology, optional fields, unsupported rows, artifact corruption, saved-result
 reopening, API decoding and browser import/replay behavior.
 
 The sample library was refreshed on 2026-10-29 for the current automatic
-upload-wide queue. It retains the small IBM walkthrough and uses five curated
-Sparkov account-history windows. The [sample library](../sample-library/README.md)
+upload-wide queue. It retains the small IBM walkthrough and uses five authored
+synthetic shopping scenarios. The [sample library](../sample-library/README.md)
 records selection methods, provenance, current metrics, false alerts and misses.
-Old IBM CSVs and daily-policy receipts remain for historical regression checks;
+Historical IBM CSVs and lineage live under `fixtures/samples/ibm/` for regression checks;
 the active cards use `stack-d5-auto/` receipts. These intentionally selected
 examples are not fresh representative validation.
 

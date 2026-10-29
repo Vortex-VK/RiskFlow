@@ -32,7 +32,7 @@ for (const view of ["small", "overview", "leaf"] as const) {
       await page
         .getByRole("button", { name: "Import CSV", exact: true })
         .click();
-      await page.getByLabel("CSV file").setInputFiles("public/samples/ibm/online-episode.csv");
+      await page.getByLabel("CSV file").setInputFiles("../fixtures/samples/ibm/online-episode.csv");
       await page.getByRole("button", { name: "Preview graph" }).click();
       await page.getByRole("button", { name: "Build graph" }).click();
       await expect(page.locator(".graph-stage")).not.toHaveClass(

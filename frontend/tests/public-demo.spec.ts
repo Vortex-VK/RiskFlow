@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { rankedQueue } from "../src/domain/reviewQueue";
 import catalog from "../src/features/samples/catalog.json" with { type: "json" };
 
 test("largest sample finishes within the UI request timeout", async ({
@@ -30,11 +31,7 @@ test("largest sample finishes within the UI request timeout", async ({
   await page.getByRole("button", { name: "Simulate", exact: true }).click();
   const result = await captured.promise;
   expect(result.events).toHaveLength(sample.rows);
-  expect(
-    result.events.filter(
-      (event: { model?: { alert: boolean } }) => event.model?.alert,
-    ),
-  ).toHaveLength(sample.alertCount);
+  expect(rankedQueue(result.events).suggestion.count).toBe(sample.alertCount);
   expect(Date.now() - started).toBeLessThan(30000);
   console.log(`${sample.rows} payments: ${Date.now() - started} ms`);
   await expect(
@@ -61,18 +58,14 @@ test("public build opens a sample and imports a CSV through the real engine", as
   expect(response.ok()).toBe(true);
   const result = await response.json();
   expect(result.events).toHaveLength(sample.rows);
-  expect(
-    result.events.filter(
-      (event: { model?: { alert: boolean } }) => event.model?.alert,
-    ),
-  ).toHaveLength(sample.alertCount);
+  expect(rankedQueue(result.events).suggestion.count).toBe(sample.alertCount);
   await page
     .getByRole("button", { name: "Edit scenario", exact: true })
     .click();
   await page.getByRole("button", { name: "Import CSV", exact: true }).click();
   await page
     .getByLabel("CSV file")
-    .setInputFiles(`public/samples/ibm/${sample.file}`);
+    .setInputFiles(`public/samples/${sample.file}`);
   await page.getByRole("button", { name: "Preview graph" }).click();
   await page.getByRole("button", { name: "Build graph" }).click();
   const imported = page.waitForResponse("**/api/v1/simulations");

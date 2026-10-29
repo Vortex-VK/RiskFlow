@@ -18,7 +18,7 @@ test("CSV preparation starts before Simulate and its result powers playback and 
   await page.getByRole("button", { name: "Import CSV", exact: true }).click();
   await page
     .getByLabel("CSV file")
-    .setInputFiles("public/samples/ibm/many-accounts.csv");
+    .setInputFiles("../fixtures/samples/ibm/many-accounts.csv");
   const prepared = page.waitForResponse((response) =>
     response.url().endsWith("/api/v1/simulations"),
   );
@@ -66,7 +66,8 @@ test("CSV preparation starts before Simulate and its result powers playback and 
   const detail = page.getByRole("complementary", {
     name: "Payment explanation",
   });
-  await expect(detail).toContainText("Purchase amount");
+  // A cold comparison evaluates both payments against the full 5,000-row history.
+  await expect(detail).toContainText("Purchase amount", { timeout: 30000 });
   await expect(
     detail.getByRole("figure", { name: "How checks change priority points" }),
   ).toBeVisible();
@@ -106,7 +107,7 @@ test("CSV preparation starts before Simulate and its result powers playback and 
     "not independent validation",
   );
   await expect(samples.locator(".model-validation")).toContainText(
-    "exposed development datasets",
+    "five development datasets",
   );
   await expect(
     samples.getByRole("region", { name: "Sample results" }),

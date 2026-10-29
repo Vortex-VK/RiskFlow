@@ -304,7 +304,10 @@ describe("sector-wide connection names", () => {
       "Shared devices",
       "Shared devices",
     ]);
-    expect(new Set(root.children.map(groupLabel)).size).toBe(2);
+    expect(root.children.map(groupLabel)).toEqual([
+      "Shared devices 1",
+      "Shared devices 2",
+    ]);
     expect(root.children.map((g) => g.payments.length)).toEqual([30, 30]);
     expect(
       buildHierarchy({

@@ -1,5 +1,5 @@
 {
-  "source": "frontend/public/samples/ibm/*.csv",
+  "source": "fixtures/samples/ibm/*.csv; first-five remains at frontend/public/samples/ibm/first-five.csv",
   "samples": {
     "first-five": {
       "rows": 5,

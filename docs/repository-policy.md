@@ -21,9 +21,11 @@ are not dependencies of the public checkout.
 CSV files are ignored except for reviewed synthetic fixtures, the browser's
 sample asset and downloadable samples. These explicit exceptions support tests
 and the Samples interface; never put private uploads in those directories.
-The IBM examples are curated subsets of synthetic TabFormer transactions and
-include their existing license notice. Sparkov samples are curated synthetic
-subsets under the publisher's CC0 designation, with attribution and exact lineage.
+The IBM walkthrough and compatibility fixtures are curated subsets of synthetic
+TabFormer transactions and include their existing license notice. Five authored
+synthetic scenarios are CC0, with a deterministic generator and recorded selection.
+Test-only IBM CSVs and lineage live under `fixtures/samples/ibm/`; only current
+demonstrations are shipped under `frontend/public/samples/`.
 Original source datasets are excluded.
 
 Versioned weights under `backend/model_artifacts/` are deliberate public assets.

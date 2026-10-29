@@ -161,13 +161,13 @@ export function buildHierarchy(scenario: Scenario): TransactionGroup {
     const labels = new Map<string, number>();
     for (const child of group.children)
       labels.set(child.label, (labels.get(child.label) ?? 0) + 1);
+    const occurrences = new Map<string, number>();
     for (const child of group.children)
-      if (labels.get(child.label)! > 1)
-        child.reference = child.id
-          .split("/")
-          .slice(1)
-          .map((n) => Number(n) + 1)
-          .join(".");
+      if (labels.get(child.label)! > 1) {
+        const number = (occurrences.get(child.label) ?? 0) + 1;
+        occurrences.set(child.label, number);
+        child.reference = String(number);
+      }
     return group;
   }
   return build(
@@ -214,4 +214,4 @@ export function sharedEntities(
 }
 
 export const groupLabel = (group: TransactionGroup) =>
-  group.label + (group.reference ? ` · ${group.reference}` : "");
+  group.label + (group.reference ? ` ${group.reference}` : "");

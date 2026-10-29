@@ -19,10 +19,12 @@ b01fa323c98522f8c710c7f7242581860c97c50183f1c5fa9e772e5c674a7f15
 These are synthetic transactions, not real customer records. The local source
 is an IBM-format release; byte-equivalence to the current upstream archive has
 not been established. No personal demographic or card-detail files are used.
-Selection rules and file hashes are in frontend/src/features/samples/catalog.json
-in the project. Source-row lineage and
-per-event verification are in the project's docs/sample-library directory.
+The active five-payment walkthrough is listed in
+frontend/src/features/samples/catalog.json, with current results and source-row
+lineage under docs/sample-library/stack-d5-auto/. Historical test-only subsets
+and their source lineage are under fixtures/samples/ibm/; frozen coverage-model
+hashes and decisions are in fixtures/model/coverage-samples.json.
 
 The examples were curated to illustrate known episodes, including missed fraud.
 They are not an independent validation set. USD and UTC are import conventions.
-Outcome labels are used for comparison only and never enter V13 predictors.
+Outcome labels are used for comparison only and never enter scoring inputs.

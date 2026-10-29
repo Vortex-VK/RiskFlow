@@ -12,7 +12,7 @@ test("CSV points reconcile above, at and below the middle; failed reference retr
   await page
     .getByLabel("CSV file")
     .setInputFiles(
-      process.env.RISKFLOW_TEST_CSV ?? "public/samples/ibm/online-episode.csv",
+      process.env.RISKFLOW_TEST_CSV ?? "../fixtures/samples/ibm/online-episode.csv",
     );
   const prepared = page.waitForResponse((r) =>
     r.url().endsWith("/api/v1/simulations"),

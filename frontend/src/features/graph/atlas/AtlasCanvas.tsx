@@ -178,7 +178,7 @@ function Territory({ data }: NodeProps<TerritoryNode>) {
         </svg>
       </button>
       <span
-        className={`sector-name${r * zoom < Math.min(85, Math.max(32, sector.group.label.length * 2)) ? " sector-name-crowded" : ""}`}
+        className={`sector-name${r * zoom < Math.min(85, Math.max(32, groupLabel(sector.group).length * 2)) ? " sector-name-crowded" : ""}`}
         style={{
           maxWidth: Math.max(100, Math.min(264, r * 2 * zoom * 0.9)) / zoom,
         }}
@@ -189,7 +189,9 @@ function Territory({ data }: NodeProps<TerritoryNode>) {
           onClick={() => data.enter(sector.group.id)}
           aria-label={`Open ${groupLabel(sector.group)}, ${sector.group.payments.length.toLocaleString()} payments`}
         >
-          <span className="sector-factor-label">{sector.group.label}</span>
+          <span className="sector-factor-label">
+            {groupLabel(sector.group)}
+          </span>
         </button>{" "}
         {data.reviewCount > 0 && (
           <button
@@ -203,11 +205,6 @@ function Territory({ data }: NodeProps<TerritoryNode>) {
           >
             {data.reviewCount} for review
           </button>
-        )}{" "}
-        {sector.group.reference && (
-          <span className="sector-reference">
-            Sector {sector.group.reference}
-          </span>
         )}{" "}
         <span className="sector-payment-count">
           {sector.group.payments.length.toLocaleString()} payments

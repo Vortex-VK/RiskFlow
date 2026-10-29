@@ -1,4 +1,4 @@
-﻿"""Reproduce sample receipts using Stack-d5 and the UI's automatic upload queue.
+"""Reproduce sample receipts using Stack-d5 and the UI's automatic upload queue.
 
 CSV hashes are verified; this script never selects samples or edits their rows.
 """
@@ -9,7 +9,6 @@ import math
 
 import numpy as np
 import pandas as pd
-
 from app.domain.stack_inputs import scenario_frame
 from ml.artifacts import ROOT, digest, write_json
 from ml.sample_inputs import payments
@@ -21,21 +20,32 @@ def sample_inputs(rows):
         return scenario_frame(payments(rows)), {
             f"CSV_{i + 2:03}": row["Is Fraud?"] == "Yes" for i, row in enumerate(rows)
         }
-    # Normalized Sparkov sample columns match the browser's CSV ranking adapter.
-    frame = pd.DataFrame({
-        "payment_id": [r["transaction_id"] for r in rows],
-        "namespace": "scenario",
-        "account_id": [r["account_id"] for r in rows],
-        "merchant_id": [r["merchant_id"] for r in rows],
-        "amount": [float(r["amount"]) for r in rows],
-        "currency": [r["currency"] for r in rows],
-        "activity_type": "purchase",
-        "timestamp": [r["timestamp"] for r in rows],
-        "precision": "second",
-        "category": [r["merchant_category"] for r in rows],
-        "channel": "", "completed": np.nan,
-        "merchant_region": "", "merchant_city": "",
-    })
+    # Normalized sample columns match the browser's CSV ranking adapter.
+    frame = pd.DataFrame(
+        {
+            "payment_id": [r["transaction_id"] for r in rows],
+            "namespace": "scenario",
+            "account_id": [r["account_id"] for r in rows],
+            "merchant_id": [r["merchant_id"] for r in rows],
+            "amount": [float(r["amount"]) for r in rows],
+            "currency": [r["currency"] for r in rows],
+            "activity_type": "purchase",
+            "timestamp": [r["timestamp"] for r in rows],
+            "precision": "second",
+            "category": [r.get("mcc") or r["merchant_category"] for r in rows],
+            "channel": [r.get("channel", "") for r in rows],
+            "completed": [
+                1.0
+                if r.get("status", "").lower() in {"completed", "posted", "settled"}
+                else 0.0
+                if r.get("status", "").lower() in {"failed", "declined"}
+                else np.nan
+                for r in rows
+            ],
+            "merchant_region": [r.get("merchant_state", "") for r in rows],
+            "merchant_city": [r.get("merchant_city", "") for r in rows],
+        }
+    )
     return frame, {r["transaction_id"]: r["is_fraud"] == "1" for r in rows}
 
 
@@ -43,9 +53,9 @@ def automatic_queue(scores, ids):
     if not len(scores) or np.min(scores) == np.max(scores):
         count = 0
     elif len(scores) < 20:
-        count = math.ceil(len(scores) * .01)
+        count = math.ceil(len(scores) * 0.01)
     else:
-        q1, q3 = np.quantile(scores, [.25, .75], method="linear")
+        q1, q3 = np.quantile(scores, [0.25, 0.75], method="linear")
         count = int(np.sum(scores > q3 + 1.5 * (q3 - q1)))
     selected = np.zeros(len(scores), dtype=bool)
     selected[np.lexsort((np.asarray(ids, dtype=str), -scores))[:count]] = True
@@ -54,6 +64,7 @@ def automatic_queue(scores, ids):
 
 def refresh() -> None:
     from app.domain.engine import ENGINE_VERSION
+
     if ENGINE_VERSION != "engine-ml-stack-d5":
         raise ValueError("Install Stack-d5 before refreshing its active catalog")
     path = ROOT / "frontend/src/features/samples/catalog.json"
@@ -81,13 +92,22 @@ def refresh() -> None:
         lineage = {item["eventId"]: item for item in original}
         predictions = [
             {**lineage[identifier], "alert": bool(alert), "rawMargin": float(score)}
-            for identifier, alert, score in zip(frame.payment_id, detected, scores, strict=True)
+            for identifier, alert, score in zip(
+                frame.payment_id, detected, scores, strict=True
+            )
         ]
         write_json(report / f"{sample['id']}.json", predictions)
         sample["metrics"] = counts
         sample["alertCount"] = int(detected.sum())
-        print(json.dumps({"sample": sample["id"], "review": sample["alertCount"], **counts}), flush=True)
-    catalog.update(model="Stack-d5", policy="upload-score-tail", bundleSha256=MANIFEST_SHA256)
+        print(
+            json.dumps(
+                {"sample": sample["id"], "review": sample["alertCount"], **counts}
+            ),
+            flush=True,
+        )
+    catalog.update(
+        model="Stack-d5", policy="upload-score-tail", bundleSha256=MANIFEST_SHA256
+    )
     write_json(path, catalog)
     write_json(report / "catalog.json", catalog)
 

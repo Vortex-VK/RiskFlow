@@ -27,10 +27,10 @@ def test_packaged_coverage_matches_every_frozen_sample_decision(name):
     receipts = json.loads((ROOT / "fixtures/model/coverage-samples.json").read_text())
     assert receipts["bundle_sha256"] == MANIFEST_SHA256
     receipt = receipts["samples"][name]
-    assert digest(ROOT / f"frontend/public/samples/ibm/{name}.csv") == receipt["sha256"]
-    rows = pd.read_csv(
-        ROOT / f"frontend/public/samples/ibm/{name}.csv", dtype=str, keep_default_na=False
-    ).to_dict("records")
+    directory = "frontend/public/samples/ibm" if name == "first-five" else "fixtures/samples/ibm"
+    path = ROOT / directory / f"{name}.csv"
+    assert digest(path) == receipt["sha256"]
+    rows = pd.read_csv(path, dtype=str, keep_default_na=False).to_dict("records")
     frame = feature_frame(payments(rows))
     scores, paths = runtime().predict(frame)
     assert len(frame) == receipt["rows"]

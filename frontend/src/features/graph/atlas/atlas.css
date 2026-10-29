@@ -152,11 +152,6 @@
   font-size: 0.85em;
   color: var(--muted);
 }
-.sector-reference {
-  display: block;
-  font-size: 0.8em;
-  color: var(--muted);
-}
 .transaction-sector:hover .sector-payment-count,
 .transaction-sector:focus-within .sector-payment-count {
   display: block;

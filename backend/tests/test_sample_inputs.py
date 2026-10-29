@@ -8,7 +8,7 @@ from ml.sample_inputs import payments
 
 
 def test_upload_adapter_preserves_card_identity_and_excludes_outcomes():
-    path = ROOT / "frontend/public/samples/ibm/short-history.csv"
+    path = ROOT / "fixtures/samples/ibm/short-history.csv"
     with path.open(newline="") as stream:
         rows = list(csv.DictReader(stream))
     baseline = payments(rows)

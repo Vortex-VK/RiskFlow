@@ -687,10 +687,7 @@ html[data-motion="off"] .run-overview {
 }
 .transaction-sector:has(.sector-review-count)
   .sector-name-crowded
-  .sector-factor-label,
-.transaction-sector:has(.sector-review-count)
-  .sector-name-crowded
-  .sector-reference {
+  .sector-factor-label {
   display: none;
 }
 .transaction-sector:has(.sector-review-count):hover

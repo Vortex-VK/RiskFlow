@@ -77,12 +77,13 @@ def main():
 
     catalog = json.loads((ROOT / "frontend/src/features/samples/catalog.json").read_text())
     for sample in catalog["samples"]:
-        content, headers = request("/samples/ibm/" + sample["file"])
+        content, headers = request("/samples/" + sample["file"])
         assert len(content) == sample["bytes"]
         assert hashlib.sha256(content).hexdigest() == sample["sha256"]
         assert headers["Cache-Control"] == "no-cache"
-    for asset in ["ATTRIBUTION.txt", "LICENSE.txt"]:
-        content, _ = request("/samples/ibm/" + asset)
+    attribution_files = {sample["attributionFile"] for sample in catalog["samples"]}
+    for asset in sorted(attribution_files | {"ibm/LICENSE.txt", "scenarios/README.txt"}):
+        content, _ = request("/samples/" + asset)
         assert content
 
     templates, _ = request("/api/v1/templates")
