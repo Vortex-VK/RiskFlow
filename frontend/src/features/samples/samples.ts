@@ -1,3 +1,4 @@
+import { unsupportedRankingInput } from "../../domain/model";
 import catalog from "./catalog.json";
 import { buildCsvDocument, initialMapping, parseCsv } from "../../domain/csv";
 import { csvDefaults } from "../../domain/csv-defaults";
@@ -33,7 +34,7 @@ export function sampleDocument(
     );
   if (
     result.document.scenario.payments.length !== sample.rows ||
-    result.document.scenario.payments.some((payment) => !payment.modelInput)
+    result.document.scenario.payments.some(unsupportedRankingInput)
   )
     throw new Error("This sample is missing required model inputs.");
   return result.document;

@@ -53,7 +53,7 @@ def test_priority_rejects_missing_and_corrupt_packages(tmp_path: Path):
         Runtime(tmp_path)
 
 
-def test_priority_evidence_survives_retained_storage(tmp_path: Path):
+def test_stack_ranking_replaces_extra_card_queue_and_survives_storage(tmp_path: Path):
     source = ROOT / "frontend/public/samples/card-pattern-demo.csv"
     store = HistoryStore(tmp_path / "priority.sqlite3")
     dataset = store.create(DatasetCreate(name="Priority", source_namespace="authored")).id
@@ -65,11 +65,6 @@ def test_priority_evidence_survives_retained_storage(tmp_path: Path):
     )
     store.commit(dataset, preview.id)
     run = store.assess(dataset, 1)
-    reviews = [a.card_pattern for a in run.assessments if a.card_pattern]
-    assert len(reviews) == 1
-    assert all(r.version == "card-pattern-v5" and r.priority for r in reviews)
-    assert all(
-        (r.priority.level == "prioritized") == (r.priority.margin >= r.priority.threshold)
-        for r in reviews
-    )
+    assert all(a.card_pattern is None for a in run.assessments)
+    assert all(a.model.ranking and not a.model.probability_available for a in run.assessments)
     assert HistoryStore(store.path).run(dataset, run.id) == run

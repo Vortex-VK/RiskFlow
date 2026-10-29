@@ -1,9 +1,10 @@
 import math
+from pathlib import Path
 
 import pytest
 from fastapi.testclient import TestClient
 
-from app.domain.engine import simulate
+from app.schemas.simulation import RunResult
 from app.templates.catalog import load_template
 from ml.adaptation_runtime import MANIFEST_SHA256
 
@@ -11,7 +12,12 @@ from ml.adaptation_runtime import MANIFEST_SHA256
 @pytest.fixture(scope="module")
 def explanation_case():
     scenario = load_template("shared-device-cluster").scenario
-    run = simulate(scenario)
+    run = RunResult.model_validate_json(
+        (
+            Path(__file__).resolve().parents[2]
+            / "fixtures/runtime/shared-device-cluster-upload-v9.json"
+        ).read_bytes()
+    )
     event = max(run.events, key=lambda e: e.model.score.value)
     return scenario, event
 

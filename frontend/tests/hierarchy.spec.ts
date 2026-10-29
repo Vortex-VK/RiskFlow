@@ -127,7 +127,9 @@ test("continuous sector map: import, fixed canvas, smooth camera, detail, themes
   await page.getByRole("button", { name: "Simulate", exact: true }).click();
   const run = await (await response).json();
   expect(run.events).toHaveLength(3434);
-  await page.getByRole("button", { name: "Inspect payments", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Inspect payments", exact: true })
+    .click();
   const last = run.events.at(-1);
   await page.getByRole("textbox", { name: "Find payment" }).fill(last.eventId);
   await page
@@ -138,7 +140,7 @@ test("continuous sector map: import, fixed canvas, smooth camera, detail, themes
   ).toContainText("interactive detail");
   await expect(
     page.getByRole("complementary", { name: "Payment explanation" }),
-  ).toContainText("Available evidence");
+  ).toContainText("Merchant history");
   expect(errors).toEqual([]);
   const frames = trace.frames.sort((a, b) => a - b);
   await writeFile(
@@ -253,7 +255,9 @@ test("10,000-payment full point map remains one canvas", async ({
   await expect(
     page.getByRole("button", { name: "Inspect payments", exact: true }),
   ).toBeVisible({ timeout: 30000 });
-  await page.getByRole("button", { name: "Inspect payments", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Inspect payments", exact: true })
+    .click();
   await page.getByRole("textbox", { name: "Find payment" }).fill("P09999");
   await page
     .getByRole("button", { name: "Inspect P09999", exact: true })

@@ -63,7 +63,7 @@ def test_retained_api_roundtrip_isolation_and_model_health(history_client: TestC
     assert client.post(base + "/runs", json={"revision": 1, "mode": "as_known"}).status_code == 422
     assert client.post(base + "/runs", json={"revision": 99}).status_code == 422
     assert client.get(base + "/events?limit=0").status_code == 422
-    assert client.get("/api/v1/health").json()["engineVersion"] == "engine-ml-upload-v9"
+    assert client.get("/api/v1/health").json()["engineVersion"] == "engine-ml-stack-d5"
 
 
 def test_api_rejects_conflicting_preview_without_mutation(history_client: TestClient) -> None:

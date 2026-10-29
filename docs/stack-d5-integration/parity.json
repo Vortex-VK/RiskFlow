@@ -1,0 +1,104 @@
+{
+  "bundle_sha256": "672cc88772a0f878b4a3d631e94de920ef08687702eb1e90f4c516bb1d7909ff",
+  "scope": "Migration parity only; exposed development data",
+  "cases": [
+    {
+      "case": "chronological_tail",
+      "rows": 6711,
+      "assessed": 6711,
+      "max_margin_difference": 0.0,
+      "queue_equal": true
+    },
+    {
+      "case": "new_customers",
+      "rows": 3259,
+      "assessed": 3259,
+      "max_margin_difference": 0.0,
+      "queue_equal": true
+    },
+    {
+      "case": "low_prevalence",
+      "rows": 3095,
+      "assessed": 3095,
+      "max_margin_difference": 0.0,
+      "queue_equal": true
+    },
+    {
+      "case": "legitimate_shift",
+      "rows": 3763,
+      "assessed": 3763,
+      "max_margin_difference": 0.0,
+      "queue_equal": true
+    },
+    {
+      "case": "business_workflow",
+      "rows": 3260,
+      "assessed": 3260,
+      "max_margin_difference": 0.0,
+      "queue_equal": true
+    },
+    {
+      "case": "short_history",
+      "rows": 235,
+      "assessed": 235,
+      "max_margin_difference": 0.0,
+      "queue_equal": true
+    },
+    {
+      "case": "optional_fields_absent",
+      "rows": 3259,
+      "assessed": 3259,
+      "max_margin_difference": 0.0,
+      "queue_equal": true
+    },
+    {
+      "case": "bank_statement",
+      "rows": 3259,
+      "assessed": 0,
+      "scope": "All rows unsupported; no score produced"
+    },
+    {
+      "case": "damaged_fields",
+      "rows": 3259,
+      "assessed": 2995,
+      "max_margin_difference": 0.0,
+      "queue_equal": true
+    },
+    {
+      "case": "previous_authored",
+      "rows": 7602,
+      "assessed": 7602,
+      "max_margin_difference": 0.0,
+      "queue_equal": true
+    },
+    {
+      "case": "ibm_1000",
+      "rows": 1000,
+      "assessed": 1000,
+      "max_margin_difference": 0.0,
+      "queue_equal": true
+    },
+    {
+      "case": "ibm_5000",
+      "rows": 5000,
+      "assessed": 5000,
+      "max_margin_difference": 0.0,
+      "queue_equal": true
+    },
+    {
+      "case": "ibm_10000",
+      "rows": 10000,
+      "assessed": 10000,
+      "max_margin_difference": 0.0,
+      "queue_equal": true
+    },
+    {
+      "case": "mixed_date_precision",
+      "rows": 300,
+      "assessed": 300,
+      "max_margin_difference": 0.0,
+      "queue_equal": true
+    }
+  ],
+  "seconds": 29.017681100056507
+}

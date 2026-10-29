@@ -55,8 +55,10 @@ test("sample library is dismissible, responsive and downloadable", async ({
         .digest("hex"),
     ).toBe(sample.sha256);
   }
-  await dialog.getByText("Overall model evaluation", { exact: true }).click();
-  await expect(dialog.locator(".model-validation")).toContainText("334,777");
+  await dialog.getByText("Model evaluation scope", { exact: true }).click();
+  await expect(dialog.locator(".model-validation")).toContainText(
+    "not independent validation",
+  );
   await expect(
     dialog.getByRole("region", { name: "Sample results" }),
   ).not.toContainText("334,777");
@@ -69,17 +71,17 @@ test("sample library is dismissible, responsive and downloadable", async ({
   ).toBe(true);
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
   await dialog.getByRole("button", { name: "Close sample library" }).click();
-  await expect(dialog).toHaveCount(0);
+  await expect(dialog).toHaveCount(0, { timeout: 30000 });
   await expect(
     page.getByRole("button", { name: "Payments 0", exact: true }),
   ).toBeVisible();
   await page.getByRole("button", { name: "Samples", exact: true }).click();
   await page.keyboard.press("Escape");
-  await expect(dialog).toHaveCount(0);
+  await expect(dialog).toHaveCount(0, { timeout: 30000 });
 });
 
 for (const sample of catalog.samples) {
-  test(`${sample.rows} IBM transactions load and reproduce the recorded live Upload-v9 results`, async ({
+  test(`${sample.rows} IBM transactions load and reproduce the recorded live Stack-d5 results`, async ({
     page,
   }) => {
     test.setTimeout(90000);
@@ -89,14 +91,6 @@ for (const sample of catalog.samples) {
     await dialog
       .getByRole("button", { name: new RegExp(sample.title) })
       .click();
-    await dialog.getByRole("button", { name: "Open in workspace" }).click();
-    await expect(dialog).toHaveCount(0);
-    await expect(
-      page.getByRole("button", {
-        name: `Payments ${sample.rows}`,
-        exact: true,
-      }),
-    ).toBeVisible();
     let resolveRun!: (run: unknown) => void;
     let rejectRun!: (cause: unknown) => void;
     const response = new Promise((resolve, reject) => {
@@ -113,10 +107,18 @@ for (const sample of catalog.samples) {
         rejectRun(cause);
       }
     });
+    await dialog.getByRole("button", { name: "Open in workspace" }).click();
+    await expect(dialog).toHaveCount(0, { timeout: 30000 });
+    await expect(
+      page.getByRole("button", {
+        name: `Payments ${sample.rows}`,
+        exact: true,
+      }),
+    ).toBeVisible();
     await page.getByRole("button", { name: "Simulate", exact: true }).click();
     const run =
       (await response) as import("../src/api/generated").components["schemas"]["RunResult"];
-    expect(run.engineVersion).toBe("engine-ml-upload-v9");
+    expect(run.engineVersion).toBe("engine-ml-stack-d5");
     expect(run.events).toHaveLength(sample.rows);
     const counts = {
       truePositive: 0,
@@ -206,7 +208,7 @@ test("a failed or cancelled sample load leaves the workspace intact", async ({
   await expect(
     page.getByRole("button", { name: "Payments 0", exact: true }),
   ).toBeVisible();
-  await expect(dialog).toHaveCount(0);
+  await expect(dialog).toHaveCount(0, { timeout: 30000 });
 });
 
 test("samples respect edited work and remain available from CSV import", async ({

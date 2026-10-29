@@ -7,10 +7,10 @@
     "Is Fraud? is used only to compare outcomes, never as a model input.",
     "Card IDs are not devices. Missing graph context is explicitly unknown."
   ],
-  "bundleSha256": "58c9c2497c36ccd85c1553214ed104713d174dd4970ea6553f72bb8498495e67",
-  "model": "Upload-v9",
-  "policy": "mixed-source",
-  "resultsDirectory": "docs/sample-library/upload-v9",
+  "bundleSha256": "672cc88772a0f878b4a3d631e94de920ef08687702eb1e90f4c516bb1d7909ff",
+  "model": "Stack-d5",
+  "policy": "daily-1pct",
+  "resultsDirectory": "docs/sample-library/stack-d5",
   "samples": [
     {
       "accounts": 4,
@@ -34,7 +34,7 @@
         "truePositive": 1
       },
       "rows": 5,
-      "selection": "Contiguous data rows 4409 through 4413 of the unchanged full-workspace.csv; selected for complete detection with zero false alerts under the installed policy.",
+      "selection": "Contiguous data rows 4409 through 4413 of the unchanged full-workspace.csv; selected for complete detection with zero false alerts under the historical Upload-v9 policy.",
       "sha256": "4e09c19d5b5777107139ff8fc09c38104b227e1ad1aad4bfc04988ee9b554576",
       "start": "2018-08-09",
       "tag": "A small start",
@@ -42,7 +42,7 @@
     },
     {
       "accounts": 27,
-      "alertCount": 5,
+      "alertCount": 2,
       "bytes": 4917,
       "channels": {
         "Chip Transaction": 36,
@@ -57,13 +57,13 @@
       "id": "short-history",
       "merchants": 40,
       "metrics": {
-        "falseNegative": 0,
-        "falsePositive": 0,
-        "trueNegative": 45,
-        "truePositive": 5
+        "falseNegative": 5,
+        "falsePositive": 2,
+        "trueNegative": 43,
+        "truePositive": 0
       },
       "rows": 50,
-      "selection": "Contiguous data rows 4403 through 4452 of the unchanged full-workspace.csv; selected for complete detection with zero false alerts under the installed policy.",
+      "selection": "Contiguous data rows 4403 through 4452 of the unchanged full-workspace.csv; selected for complete detection with zero false alerts under the historical Upload-v9 policy.",
       "sha256": "1cc75d210f4d01a08943b9ebd01b925d303409b74c3293ff33dd71f5681f4af8",
       "start": "2018-08-09",
       "tag": "Cold start",
@@ -71,7 +71,7 @@
     },
     {
       "accounts": 46,
-      "alertCount": 15,
+      "alertCount": 7,
       "bytes": 24252,
       "channels": {
         "Chip Transaction": 179,
@@ -86,13 +86,13 @@
       "id": "online-episode",
       "merchants": 114,
       "metrics": {
-        "falseNegative": 0,
-        "falsePositive": 0,
-        "trueNegative": 235,
-        "truePositive": 15
+        "falseNegative": 15,
+        "falsePositive": 7,
+        "trueNegative": 228,
+        "truePositive": 0
       },
       "rows": 250,
-      "selection": "Contiguous data rows 7686 through 7935 of the unchanged full-workspace.csv; selected for complete detection with zero false alerts under the installed policy.",
+      "selection": "Contiguous data rows 7686 through 7935 of the unchanged full-workspace.csv; selected for complete detection with zero false alerts under the historical Upload-v9 policy.",
       "sha256": "1ae2e5dfe4f8d28bf7ccbea2e83018acc52d8443d0e42508b29a594ceb1b0caa",
       "start": "2018-11-02",
       "tag": "Start here",
@@ -100,7 +100,7 @@
     },
     {
       "accounts": 4,
-      "alertCount": 19,
+      "alertCount": 172,
       "bytes": 99869,
       "channels": {
         "Chip Transaction": 234,
@@ -115,10 +115,10 @@
       "id": "mixed-channels",
       "merchants": 66,
       "metrics": {
-        "falseNegative": 0,
-        "falsePositive": 0,
-        "trueNegative": 981,
-        "truePositive": 19
+        "falseNegative": 11,
+        "falsePositive": 164,
+        "trueNegative": 817,
+        "truePositive": 8
       },
       "rows": 1000,
       "selection": "Last 1,000 positive purchases for user 1497 in 2018.",
@@ -129,7 +129,7 @@
     },
     {
       "accounts": 53,
-      "alertCount": 83,
+      "alertCount": 129,
       "bytes": 485912,
       "channels": {
         "Chip Transaction": 3627,
@@ -144,10 +144,10 @@
       "id": "many-accounts",
       "merchants": 467,
       "metrics": {
-        "falseNegative": 30,
-        "falsePositive": 0,
-        "trueNegative": 4887,
-        "truePositive": 83
+        "falseNegative": 86,
+        "falsePositive": 102,
+        "trueNegative": 4785,
+        "truePositive": 27
       },
       "rows": 5000,
       "selection": "Last 5,000 positive purchases in 2018 across the 13 selected users.",
@@ -158,7 +158,7 @@
     },
     {
       "accounts": 54,
-      "alertCount": 93,
+      "alertCount": 260,
       "bytes": 967637,
       "channels": {
         "Chip Transaction": 7224,
@@ -173,10 +173,10 @@
       "id": "full-workspace",
       "merchants": 590,
       "metrics": {
-        "falseNegative": 30,
-        "falsePositive": 0,
-        "trueNegative": 9877,
-        "truePositive": 93
+        "falseNegative": 85,
+        "falsePositive": 222,
+        "trueNegative": 9655,
+        "truePositive": 38
       },
       "rows": 10000,
       "selection": "Last 10,000 positive purchases in 2018 across the 13 selected users.",
@@ -190,5 +190,5 @@
   "source": "IBM synthetic credit-card transactions",
   "sourceSha256": "b01fa323c98522f8c710c7f7242581860c97c50183f1c5fa9e772e5c674a7f15",
   "sourceUrl": "https://github.com/IBM/TabFormer",
-  "version": 6
+  "version": 7
 }

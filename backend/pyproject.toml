@@ -47,5 +47,5 @@ init_forbid_extra = true
 init_typed = true
 
 [[tool.mypy.overrides]]
-module = ["sortedcontainers.*", "catboost.*", "interpret.*", "sklearn.*", "threadpoolctl.*"]
+module = ["sortedcontainers.*", "catboost.*", "interpret.*", "sklearn.*", "threadpoolctl.*", "pandas.*"]
 ignore_missing_imports = true

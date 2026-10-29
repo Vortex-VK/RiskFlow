@@ -204,7 +204,7 @@ export function initialMapping(headers: string[]): ColumnMapping {
     debit: ["debits", "withdrawal", "withdrawals", "money_out"],
     credit: ["credits", "deposit", "deposits", "money_in"],
     transaction_type: ["reporting_category"],
-    label: ["ground_truth"],
+    label: ["ground_truth", "is_fraud", "isfraud", "is_fraud?"],
     channel: ["use_chip"],
     merchant_zip: ["zip"],
     card_errors: ["errors?"],
@@ -411,7 +411,13 @@ export function buildCsvDocument(
         throw new Error("Transaction type is missing.");
       if (
         type &&
-        !["charge", "payment", "purchase", "bill_payment"].includes(type)
+        ![
+          "charge",
+          "payment",
+          "purchase",
+          "bill_payment",
+          "authorization",
+        ].includes(type)
       ) {
         excluded++;
         continue;
@@ -680,9 +686,11 @@ export function buildCsvDocument(
         if (!associationRows.has(key)) associationRows.set(key, row.line);
       }
       const sourceLabel = read(row, "label");
+      const fraudColumn = /^is[ _]?fraud\??$/i.test(mapping.label.trim());
       const label =
-        cardExport && /^(yes|no)$/i.test(sourceLabel)
-          ? sourceLabel.toLowerCase() === "yes"
+        (cardExport && /^(yes|no)$/i.test(sourceLabel)) ||
+        (fraudColumn && /^(1|0|yes|no|true|false)$/i.test(sourceLabel))
+          ? /^(1|yes|true)$/i.test(sourceLabel)
             ? "fraudulent"
             : "legitimate"
           : sourceLabel;
@@ -693,7 +701,7 @@ export function buildCsvDocument(
         label !== "fraudulent"
       )
         throw new Error(
-          "Label must be legitimate, fraudulent, unlabeled, or empty.",
+          "Label must be legitimate, fraudulent, unlabeled, or empty. Fraud-flag columns also accept 0/1 or true/false.",
         );
       if (label === "legitimate" || label === "fraudulent")
         document.scenario.groundTruth[paymentId] = label;
@@ -706,6 +714,21 @@ export function buildCsvDocument(
         occurredAt: time,
         amountMinor: amount,
         category: paymentCategory,
+        rankingInput: {
+          timePrecision: parsedDate.dateOnly ? "day" : "second",
+          activityType: type || "purchase",
+          category: read(row, "mcc") || sourceCategory || "",
+          channel: read(row, "channel"),
+          completed: ["completed", "posted", "settled"].includes(status)
+            ? true
+            : ["failed", "declined"].includes(status)
+              ? false
+              : null,
+          merchantRegion: read(row, "merchant_state"),
+          merchantCity: read(row, "merchant_city"),
+          sourcePaymentId: paymentId,
+          merchantIdProvided: Boolean(read(row, "merchant_id")),
+        },
         modelInput: (() => {
           const channel = read(row, "channel");
           const mcc = (read(row, "mcc") || sourceCategory).match(
@@ -779,7 +802,7 @@ export function buildCsvDocument(
     );
   if (dateOnlyFound) {
     warnings.add(
-      "Dates without times use midnight UTC for display only. Simulation requires precise transaction times; date-only payments cannot be scored.",
+      "Dates without times use midnight UTC for display only. History uses whole-day batches and omits calendar signals when any date-only rows are present.",
     );
     for (const payment of document.scenario.payments)
       payment.unavailableRules = [
@@ -792,7 +815,7 @@ export function buildCsvDocument(
   }
   if (document.scenario.payments.some((p) => !p.modelInput))
     warnings.add(
-      "Limited data: Simulation needs precise times, channel, four-digit MCC and completion status. Missing model inputs prevent simulation. Unknown device/location objects are display placeholders.",
+      "Optional category, channel, completion status or geography may be missing. Ranking retains unknown values; sparse data can reduce performance. Device/location objects are display placeholders.",
     );
   if (errors.length)
     return {

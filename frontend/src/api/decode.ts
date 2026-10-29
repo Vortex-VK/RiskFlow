@@ -241,6 +241,7 @@ export function decodeDocument(value: unknown): Document {
         "sourceCategory",
         "unavailableRules",
         "modelInput",
+        "rankingInput",
       ],
       "payment",
     );
@@ -256,6 +257,39 @@ export function decodeDocument(value: unknown): Document {
     )
       fail("payment category");
     if (p.sourceCategory != null) text(p.sourceCategory, "source category");
+    if (p.rankingInput != null) {
+      const input = object(
+        p.rankingInput,
+        [
+          "activityType",
+          "timePrecision",
+          "category",
+          "channel",
+          "completed",
+          "merchantRegion",
+          "merchantCity",
+          "sourcePaymentId",
+          "merchantIdProvided",
+        ],
+        "ranking input",
+      );
+      if (
+        !["day", "second"].includes(String(input.timePrecision)) ||
+        (input.completed !== null && typeof input.completed !== "boolean") ||
+        typeof input.merchantIdProvided !== "boolean"
+      )
+        fail("ranking input");
+      for (const key of [
+        "category",
+        "channel",
+        "merchantRegion",
+        "merchantCity",
+      ])
+        if (typeof input[key] !== "string" || input[key].length > 160)
+          fail("ranking input");
+      text(input.activityType, "activity type", 40);
+      text(input.sourcePaymentId, "source payment ID", 512);
+    }
     if (p.modelInput != null) {
       const input = object(
         p.modelInput,

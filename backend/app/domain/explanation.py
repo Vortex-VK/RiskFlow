@@ -3,12 +3,22 @@ import math
 import numpy as np
 from starlette.exceptions import HTTPException
 
-from app.schemas.explanation import ExplanationRequest, FeatureContribution, PaymentExplanation
+from app.schemas.explanation import (
+    ExplanationRequest,
+    FeatureContribution,
+    PaymentExplanation,
+    StackPaymentExplanation,
+)
 from ml.adaptation_runtime import MANIFEST_SHA256, runtime
 from ml.features.upload_context import feature_frame
 
 
-def explain_payment(payload: ExplanationRequest) -> PaymentExplanation:
+def explain_payment(payload: ExplanationRequest) -> PaymentExplanation | StackPaymentExplanation:
+    from app.domain.stack_explanation import explain_stack
+    from ml.stack_runtime import MANIFEST_SHA256 as STACK_SHA
+
+    if payload.model_bundle_sha256 == STACK_SHA:
+        return explain_stack(payload)
     if payload.model_bundle_sha256 != MANIFEST_SHA256:
         raise HTTPException(409, "This saved result uses a different model version.")
     payment = next((p for p in payload.scenario.payments if p.id == payload.event_id), None)

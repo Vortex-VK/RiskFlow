@@ -6,6 +6,7 @@ import {
 import type { DeepReadonly, EventResult } from "../../domain/runs";
 import type { Scenario } from "../../domain/types";
 import { needsReview } from "../../domain/review";
+import { StackEvidence, type QueueContext } from "./StackEvidence";
 import { ContributionExplanation } from "./ContributionExplanation";
 
 const cache = new WeakMap<Scenario, Map<string, PaymentExplanation>>();
@@ -108,13 +109,18 @@ export function PaymentEvidence({
   event,
   threshold,
   truth,
+  queue,
 }: {
   scenario: Scenario;
   event: DeepReadonly<EventResult>;
   threshold: number | null;
   truth: string | undefined;
+  queue?: QueueContext | undefined;
 }) {
   const model = event.model!;
+  if (model.ranking && queue) {
+    return <StackEvidence scenario={scenario} event={event} queue={queue} />;
+  }
   const score = model.score;
   const payment = scenario.payments.find((p) => p.id === event.eventId);
   const input = payment?.modelInput;

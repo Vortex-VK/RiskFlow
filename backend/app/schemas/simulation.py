@@ -94,21 +94,35 @@ class CardPatternScores(ResultModel):
     prioritized: bool
 
 
+class RankingEvidence(ResultModel):
+    raw_margin: Annotated[float, Field(allow_inf_nan=False)]
+    priority_percentile: Annotated[float, Field(ge=0, le=100, allow_inf_nan=False)]
+    review_fraction: Annotated[float, Field(ge=0.01, le=0.01)] = 0.01
+    review_policy: Literal["daily"] = "daily"
+    day_timezone: Literal["UTC"] = "UTC"
+    time_precision: Literal["day", "second"]
+    available_fields: list[str]
+    missing_fields: list[str]
+
+
 class ModelEvaluation(ResultModel):
-    version: Literal["ml-v13", "ml-upload-v5", "ml-upload-v7", "ml-upload-v8", "ml-upload-v9"] = (
-        "ml-v13"
-    )
-    policy: Literal["depth6", "recall85", "balanced", "precision95", "mixed-source"] = "depth6"
+    version: Literal[
+        "ml-v13", "ml-upload-v5", "ml-upload-v7", "ml-upload-v8", "ml-upload-v9", "ml-stack-d5"
+    ] = "ml-v13"
+    policy: Literal[
+        "depth6", "recall85", "balanced", "precision95", "mixed-source", "review-budget"
+    ] = "depth6"
     bundle_sha256: str
     alert: bool
     raw_scores: dict[str, float]
     detection_paths: list[str]
     history_count: int
     feedback_available: Literal[False] = False
-    evidence_scope: Literal["synthetic_benchmark"] = "synthetic_benchmark"
+    evidence_scope: Literal["synthetic_benchmark", "exposed_development"] = "synthetic_benchmark"
     upload_domain_validated: Literal[False] = False
     probability_available: bool = False
     score: EvidenceScore | None = None
+    ranking: RankingEvidence | None = None
 
 
 class CardPatternPriority(ResultModel):
@@ -203,7 +217,8 @@ class SimulationResult(ResultModel):
         "engine-ml-upload-v7",
         "engine-ml-upload-v8",
         "engine-ml-upload-v9",
-    ] = "engine-ml-upload-v9"
+        "engine-ml-stack-d5",
+    ] = "engine-ml-stack-d5"
     rule_set_version: Literal[
         "rules-v1",
         "v13-depth6",
@@ -211,7 +226,8 @@ class SimulationResult(ResultModel):
         "upload-v7-balanced",
         "upload-v8-precision95",
         "upload-v9-mixed-source",
-    ] = "upload-v9-mixed-source"
+        "stack-d5-daily-1pct",
+    ] = "stack-d5-daily-1pct"
     schema_version: Literal[1] = 1
     scenario_snapshot: ScenarioDefinition
     events: list[EventResult]

@@ -78,8 +78,10 @@ export function decodeRun(
   const sequence = run.engineVersion === "engine-ml-upload-v5";
   const coverage = run.engineVersion === "engine-ml-upload-v7";
   const precision = run.engineVersion === "engine-ml-upload-v8";
+  const stacked = run.engineVersion === "engine-ml-stack-d5";
   const adapted = run.engineVersion === "engine-ml-upload-v9";
   const learned =
+    stacked ||
     adapted ||
     precision ||
     coverage ||
@@ -94,17 +96,19 @@ export function decodeRun(
             ? "engine-v2"
             : "engine-v1")) ||
     run.ruleSetVersion !==
-      (adapted
-        ? "upload-v9-mixed-source"
-        : precision
-          ? "upload-v8-precision95"
-          : coverage
-            ? "upload-v7-balanced"
-            : sequence
-              ? "upload-v5-recall85"
-              : learned
-                ? "v13-depth6"
-                : "rules-v1") ||
+      (stacked
+        ? "stack-d5-daily-1pct"
+        : adapted
+          ? "upload-v9-mixed-source"
+          : precision
+            ? "upload-v8-precision95"
+            : coverage
+              ? "upload-v7-balanced"
+              : sequence
+                ? "upload-v5-recall85"
+                : learned
+                  ? "v13-depth6"
+                  : "rules-v1") ||
     run.schemaVersion !== 1
   )
     fail();
@@ -168,17 +172,19 @@ export function decodeRun(
     if (learned) {
       const model = decodeModel(event.model);
       if (
-        !payment.modelInput ||
+        (!stacked && !payment.modelInput) ||
         model.version !==
-          (adapted
-            ? "ml-upload-v9"
-            : precision
-              ? "ml-upload-v8"
-              : coverage
-                ? "ml-upload-v7"
-                : sequence
-                  ? "ml-upload-v5"
-                  : "ml-v13") ||
+          (stacked
+            ? "ml-stack-d5"
+            : adapted
+              ? "ml-upload-v9"
+              : precision
+                ? "ml-upload-v8"
+                : coverage
+                  ? "ml-upload-v7"
+                  : sequence
+                    ? "ml-upload-v5"
+                    : "ml-v13") ||
         event.rawScore !== null ||
         event.riskScore !== null ||
         list(event.ruleEvaluations, 6, "rules").length ||

@@ -205,6 +205,7 @@ export function decodeAssessment(value: unknown): AssessmentRun {
             "assessment-v2.7",
             "assessment-v2.8",
             "assessment-v2.9",
+            "assessment-v2.10",
             "assessment-behavioral-v1",
           ].includes(String(data.assessmentVersion)) &&
           ["retrospective", "as_known"].includes(String(data.mode)))),
@@ -219,6 +220,7 @@ export function decodeAssessment(value: unknown): AssessmentRun {
             "assessment-v2.7",
             "assessment-v2.8",
             "assessment-v2.9",
+            "assessment-v2.10",
           ].includes(String(data.assessmentVersion))
         ? data.analysisMode === "model"
         : data.analysisMode === undefined || data.analysisMode === "v13",
@@ -279,15 +281,17 @@ export function decodeAssessment(value: unknown): AssessmentRun {
   )
     requireValue(
       simulation.engineVersion ===
-        (data.assessmentVersion === "assessment-v2.9"
-          ? "engine-ml-upload-v9"
-          : data.assessmentVersion === "assessment-v2.8"
-            ? "engine-ml-upload-v8"
-            : data.assessmentVersion === "assessment-v2.7"
-              ? "engine-ml-upload-v7"
-              : data.assessmentVersion === "assessment-v2.6"
-                ? "engine-ml-upload-v5"
-                : "engine-ml-v13"),
+        (data.assessmentVersion === "assessment-v2.10"
+          ? "engine-ml-stack-d5"
+          : data.assessmentVersion === "assessment-v2.9"
+            ? "engine-ml-upload-v9"
+            : data.assessmentVersion === "assessment-v2.8"
+              ? "engine-ml-upload-v8"
+              : data.assessmentVersion === "assessment-v2.7"
+                ? "engine-ml-upload-v7"
+                : data.assessmentVersion === "assessment-v2.6"
+                  ? "engine-ml-upload-v5"
+                  : "engine-ml-v13"),
       "assessment engine",
     );
   const results = new Map(
@@ -357,6 +361,7 @@ export function decodeAssessment(value: unknown): AssessmentRun {
         "assessment-v2.7",
         "assessment-v2.8",
         "assessment-v2.9",
+        "assessment-v2.10",
       ].includes(String(data.assessmentVersion))
     ) {
       requireValue(

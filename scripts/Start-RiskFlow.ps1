@@ -16,7 +16,7 @@ New-Item -ItemType Directory -Force -Path $logDirectory | Out-Null
 $backendProcess = $null
 $frontendProcess = $null
 try {
-    $backendProcess = Start-Process -FilePath $pythonExecutable -ArgumentList @('-m', 'uvicorn', 'app.main:app', '--host', '127.0.0.1', '--port', '8000') -WorkingDirectory $projectRoot -WindowStyle Hidden -PassThru -RedirectStandardOutput (Join-Path $logDirectory 'backend.log') -RedirectStandardError (Join-Path $logDirectory 'backend-error.log')
+    $backendProcess = Start-Process -FilePath $pythonExecutable -ArgumentList @('-m', 'uvicorn', 'app.main:app', '--host', '127.0.0.1', '--port', '8000', '--reload', '--reload-dir', 'backend/app', '--reload-dir', 'backend/ml') -WorkingDirectory $projectRoot -WindowStyle Hidden -PassThru -RedirectStandardOutput (Join-Path $logDirectory 'backend.log') -RedirectStandardError (Join-Path $logDirectory 'backend-error.log')
     $frontendProcess = Start-Process -FilePath $nodeExecutable -ArgumentList @('"' + $viteExecutable + '"') -WorkingDirectory (Join-Path $projectRoot 'frontend') -WindowStyle Hidden -PassThru -RedirectStandardOutput (Join-Path $logDirectory 'frontend.log') -RedirectStandardError (Join-Path $logDirectory 'frontend-error.log')
     foreach ($url in @('http://127.0.0.1:8000/api/v1/health', 'http://127.0.0.1:5173')) {
         $ready = $false

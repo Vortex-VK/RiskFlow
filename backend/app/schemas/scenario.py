@@ -139,6 +139,18 @@ class ModelInput(WireModel):
     merchant_zip: Annotated[str, Field(max_length=20)] = ""
 
 
+class RankingInput(WireModel):
+    time_precision: Literal["day", "second"]
+    activity_type: Annotated[str, Field(max_length=40)]
+    category: Annotated[str, Field(max_length=160)]
+    channel: Annotated[str, Field(max_length=160)]
+    completed: bool | None
+    merchant_region: Annotated[str, Field(max_length=160)]
+    merchant_city: Annotated[str, Field(max_length=160)]
+    source_payment_id: Annotated[str, Field(min_length=1, max_length=512)]
+    merchant_id_provided: bool
+
+
 class PaymentEvent(WireModel):
     id: Identifier
     account_id: Identifier
@@ -150,6 +162,7 @@ class PaymentEvent(WireModel):
     category: Category | None = None
     source_category: Name | None = None
     model_input: ModelInput | None = None
+    ranking_input: RankingInput | None = None
     unavailable_rules: Annotated[list[RuleId], Field(max_length=6)] = Field(default_factory=list)
 
     @model_validator(mode="after")

@@ -626,6 +626,7 @@
               "assessment-v2.7",
               "assessment-v2.8",
               "assessment-v2.9",
+              "assessment-v2.10",
               "assessment-behavioral-v1"
             ],
             "title": "Assessmentversion",
@@ -2051,6 +2052,38 @@
           "distance"
         ],
         "title": "EvidenceScore",
+        "type": "object"
+      },
+      "ExpertExplanation": {
+        "additionalProperties": false,
+        "properties": {
+          "baseValue": {
+            "title": "Basevalue",
+            "type": "number"
+          },
+          "contributions": {
+            "items": {
+              "$ref": "#/components/schemas/FeatureContribution"
+            },
+            "title": "Contributions",
+            "type": "array"
+          },
+          "expert": {
+            "title": "Expert",
+            "type": "string"
+          },
+          "rawMargin": {
+            "title": "Rawmargin",
+            "type": "number"
+          }
+        },
+        "required": [
+          "expert",
+          "baseValue",
+          "rawMargin",
+          "contributions"
+        ],
+        "title": "ExpertExplanation",
         "type": "object"
       },
       "ExplanationRequest": {
@@ -4695,8 +4728,11 @@
             "type": "array"
           },
           "evidenceScope": {
-            "const": "synthetic_benchmark",
             "default": "synthetic_benchmark",
+            "enum": [
+              "synthetic_benchmark",
+              "exposed_development"
+            ],
             "title": "Evidencescope",
             "type": "string"
           },
@@ -4717,7 +4753,8 @@
               "recall85",
               "balanced",
               "precision95",
-              "mixed-source"
+              "mixed-source",
+              "review-budget"
             ],
             "title": "Policy",
             "type": "string"
@@ -4726,6 +4763,16 @@
             "default": false,
             "title": "Probabilityavailable",
             "type": "boolean"
+          },
+          "ranking": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/RankingEvidence"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "rawScores": {
             "additionalProperties": {
@@ -4757,7 +4804,8 @@
               "ml-upload-v5",
               "ml-upload-v7",
               "ml-upload-v8",
-              "ml-upload-v9"
+              "ml-upload-v9",
+              "ml-stack-d5"
             ],
             "title": "Version",
             "type": "string"
@@ -4944,6 +4992,16 @@
             "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$",
             "title": "Occurredat",
             "type": "string"
+          },
+          "rankingInput": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/RankingInput"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "sourceCategory": {
             "anyOf": [
@@ -5383,6 +5441,167 @@
         "title": "ProfileSignal",
         "type": "object"
       },
+      "RankingEvidence": {
+        "additionalProperties": false,
+        "properties": {
+          "availableFields": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Availablefields",
+            "type": "array"
+          },
+          "dayTimezone": {
+            "const": "UTC",
+            "default": "UTC",
+            "title": "Daytimezone",
+            "type": "string"
+          },
+          "missingFields": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missingfields",
+            "type": "array"
+          },
+          "priorityPercentile": {
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Prioritypercentile",
+            "type": "number"
+          },
+          "rawMargin": {
+            "title": "Rawmargin",
+            "type": "number"
+          },
+          "reviewFraction": {
+            "default": 0.01,
+            "maximum": 0.01,
+            "minimum": 0.01,
+            "title": "Reviewfraction",
+            "type": "number"
+          },
+          "reviewPolicy": {
+            "const": "daily",
+            "default": "daily",
+            "title": "Reviewpolicy",
+            "type": "string"
+          },
+          "timePrecision": {
+            "enum": [
+              "day",
+              "second"
+            ],
+            "title": "Timeprecision",
+            "type": "string"
+          }
+        },
+        "required": [
+          "rawMargin",
+          "priorityPercentile",
+          "timePrecision",
+          "availableFields",
+          "missingFields"
+        ],
+        "title": "RankingEvidence",
+        "type": "object"
+      },
+      "RankingFact": {
+        "additionalProperties": false,
+        "properties": {
+          "comparison": {
+            "title": "Comparison",
+            "type": "string"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "value": {
+            "title": "Value",
+            "type": "string"
+          }
+        },
+        "required": [
+          "label",
+          "value",
+          "comparison"
+        ],
+        "title": "RankingFact",
+        "type": "object"
+      },
+      "RankingInput": {
+        "additionalProperties": false,
+        "properties": {
+          "activityType": {
+            "maxLength": 40,
+            "title": "Activitytype",
+            "type": "string"
+          },
+          "category": {
+            "maxLength": 160,
+            "title": "Category",
+            "type": "string"
+          },
+          "channel": {
+            "maxLength": 160,
+            "title": "Channel",
+            "type": "string"
+          },
+          "completed": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Completed"
+          },
+          "merchantCity": {
+            "maxLength": 160,
+            "title": "Merchantcity",
+            "type": "string"
+          },
+          "merchantIdProvided": {
+            "title": "Merchantidprovided",
+            "type": "boolean"
+          },
+          "merchantRegion": {
+            "maxLength": 160,
+            "title": "Merchantregion",
+            "type": "string"
+          },
+          "sourcePaymentId": {
+            "maxLength": 512,
+            "minLength": 1,
+            "title": "Sourcepaymentid",
+            "type": "string"
+          },
+          "timePrecision": {
+            "enum": [
+              "day",
+              "second"
+            ],
+            "title": "Timeprecision",
+            "type": "string"
+          }
+        },
+        "required": [
+          "timePrecision",
+          "activityType",
+          "category",
+          "channel",
+          "completed",
+          "merchantRegion",
+          "merchantCity",
+          "sourcePaymentId",
+          "merchantIdProvided"
+        ],
+        "title": "RankingInput",
+        "type": "object"
+      },
       "Rate": {
         "additionalProperties": false,
         "properties": {
@@ -5567,7 +5786,7 @@
             "type": "string"
           },
           "engineVersion": {
-            "default": "engine-ml-upload-v9",
+            "default": "engine-ml-stack-d5",
             "enum": [
               "engine-v1",
               "engine-v2",
@@ -5576,7 +5795,8 @@
               "engine-ml-upload-v5",
               "engine-ml-upload-v7",
               "engine-ml-upload-v8",
-              "engine-ml-upload-v9"
+              "engine-ml-upload-v9",
+              "engine-ml-stack-d5"
             ],
             "title": "Engineversion",
             "type": "string"
@@ -5592,14 +5812,15 @@
             "$ref": "#/components/schemas/Metrics"
           },
           "ruleSetVersion": {
-            "default": "upload-v9-mixed-source",
+            "default": "stack-d5-daily-1pct",
             "enum": [
               "rules-v1",
               "v13-depth6",
               "upload-v5-recall85",
               "upload-v7-balanced",
               "upload-v8-precision95",
-              "upload-v9-mixed-source"
+              "upload-v9-mixed-source",
+              "stack-d5-daily-1pct"
             ],
             "title": "Rulesetversion",
             "type": "string"
@@ -5970,6 +6191,73 @@
         "title": "SignalAvailability",
         "type": "object"
       },
+      "StackPaymentExplanation": {
+        "additionalProperties": false,
+        "properties": {
+          "baseValue": {
+            "title": "Basevalue",
+            "type": "number"
+          },
+          "contributions": {
+            "items": {
+              "$ref": "#/components/schemas/FeatureContribution"
+            },
+            "title": "Contributions",
+            "type": "array"
+          },
+          "eventId": {
+            "not": {
+              "enum": [
+                "__proto__",
+                "prototype",
+                "constructor"
+              ]
+            },
+            "pattern": "^[A-Za-z0-9_-]{1,64}$",
+            "title": "Eventid",
+            "type": "string"
+          },
+          "experts": {
+            "items": {
+              "$ref": "#/components/schemas/ExpertExplanation"
+            },
+            "title": "Experts",
+            "type": "array"
+          },
+          "facts": {
+            "items": {
+              "$ref": "#/components/schemas/RankingFact"
+            },
+            "title": "Facts",
+            "type": "array"
+          },
+          "method": {
+            "const": "tree-shap-stack-head-v1",
+            "default": "tree-shap-stack-head-v1",
+            "title": "Method",
+            "type": "string"
+          },
+          "modelBundleSha256": {
+            "title": "Modelbundlesha256",
+            "type": "string"
+          },
+          "rawMargin": {
+            "title": "Rawmargin",
+            "type": "number"
+          }
+        },
+        "required": [
+          "eventId",
+          "modelBundleSha256",
+          "baseValue",
+          "rawMargin",
+          "contributions",
+          "facts",
+          "experts"
+        ],
+        "title": "StackPaymentExplanation",
+        "type": "object"
+      },
       "TemplateSummary": {
         "additionalProperties": false,
         "properties": {
@@ -6204,7 +6492,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PaymentExplanation"
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/PaymentExplanation"
+                    },
+                    {
+                      "$ref": "#/components/schemas/StackPaymentExplanation"
+                    }
+                  ],
+                  "title": "Response Explainpayment"
                 }
               }
             },

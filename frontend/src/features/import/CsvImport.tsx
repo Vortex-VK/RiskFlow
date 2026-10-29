@@ -1,3 +1,4 @@
+import { unsupportedRankingInput } from "../../domain/model";
 import { prepareSimulation } from "../../api/prepareSimulation";
 import { CloseIcon } from "../CloseIcon";
 import { useEffect, useRef, useState } from "react";
@@ -371,14 +372,14 @@ export function CsvImport({
             <p>
               Missing observations use the first payment for each
               account–device/location pair. Missing familiarity stays unknown;
-              missing labels stay unlabeled. Simulation uses exact MCC,
-              transaction channel, completion status and purchase history.
+              missing labels stay unlabeled. Simulation uses purchase history
+              and any supplied category, channel, status and merchant geography.
               Device familiarity is not a predictor.
             </p>
             <p>
-              Simulation uses fixed alert thresholds and sends alerts to review,
-              with no automatic blocking. Illustrative cost assumptions can be
-              edited in Policy &amp; costs.
+              Auto suggests a review queue from the upload?s score distribution.
+              Adjust its size during replay. No payments are automatically
+              blocked.
             </p>
           </details>
           <button
@@ -390,13 +391,11 @@ export function CsvImport({
                 height: window.innerHeight,
               });
               const payments = result.document?.scenario.payments ?? [];
-              const unsupported = payments.filter(
-                (payment) => !payment.modelInput,
-              );
+              const unsupported = payments.filter(unsupportedRankingInput);
               if (purpose === "model" && unsupported.length) {
                 setErrors([
                   `Cannot import for simulation: ${unsupported.length} of ${payments.length} payments have missing or unsupported simulation inputs.`,
-                  "Map precise timestamps, four-digit MCCs, transaction channels (Chip Transaction, Online Transaction or Swipe Transaction), and completion status (completed, failed or declined). To explore this file without scoring, choose Graph only above.",
+                  "Map stable merchant IDs and purchase, charge or authorization activity to score purchases. Category, channel, status and merchant geography are optional. To explore this file without scoring, choose Graph only above.",
                 ]);
                 setWarnings([]);
                 setPreview(null);

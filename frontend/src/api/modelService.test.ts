@@ -25,7 +25,7 @@ it("requires a healthy model service and uses an uncached readiness request", as
     Response.json({
       status: "ok",
       schemaVersion: 1,
-      engineVersion: "engine-ml-upload-v9",
+      engineVersion: "engine-ml-stack-d5",
     }),
   );
   vi.stubGlobal("fetch", request);

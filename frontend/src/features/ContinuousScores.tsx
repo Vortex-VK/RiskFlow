@@ -57,6 +57,20 @@ export function ContinuousScores({
     DeepReadonly<components["schemas"]["CardPatternScores"]> | null | undefined;
   includePrimary?: boolean;
 }) {
+  if (model?.ranking)
+    return (
+      <section aria-label="Review priority" className="continuous-scores">
+        <h3>Review priority</h3>
+        <output>
+          {model.ranking.priorityPercentile.toFixed(2)} / 100 percentile
+        </output>
+        <p>
+          Relative to this upload's assessed purchases. Higher means higher
+          review priority, not a measured probability of fraud. Use the review
+          capacity control to select transactions for investigation.
+        </p>
+      </section>
+    );
   if (!model?.score) return null;
   return (
     <section aria-label="Continuous model scores" className="continuous-scores">

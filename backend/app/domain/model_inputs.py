@@ -7,7 +7,7 @@ from typing import Any
 from pydantic import ValidationError
 
 from app.domain.features.purchase import Observation
-from app.domain.ingestion import eligibility
+from app.domain.stack_inputs import stack_eligibility
 from app.schemas.history import FinancialEvent
 from app.schemas.scenario import ModelInput, PaymentEvent
 from ml.features.context import context_rows
@@ -22,12 +22,7 @@ class UnsupportedModelInput(ValueError):
 
 
 def model_eligibility(event: FinancialEvent) -> str | None:
-    return eligibility(event) or (
-        None
-        if source_input(event) is not None
-        else "The model requires precise time, merchant ID, four-digit MCC, supported channel "
-        "and completed/failed/declined status, with valid optional merchant geography."
-    )
+    return stack_eligibility(event)
 
 
 def source_input(event: FinancialEvent) -> ModelInput | None:

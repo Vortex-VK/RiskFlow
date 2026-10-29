@@ -11,6 +11,8 @@ import { CardPatternDetails } from "../CardPatternDetails";
 import { ContinuousScores } from "../ContinuousScores";
 import type { ReviewGroup } from "../../domain/runInsights";
 import { DatasetResults } from "./DatasetResults";
+import { ReviewCapacity } from "./ReviewCapacity";
+import { rankedQueue, applyCapacity } from "../../domain/reviewQueue";
 import { ProbabilityThreshold } from "./ProbabilityThreshold";
 import { useEffect, useMemo, useState } from "react";
 import { useReactFlow } from "@xyflow/react";
@@ -72,8 +74,45 @@ export function Replay({
     () => decodeDocument(structuredClone(captured.document)),
     [captured],
   );
-  const run = captured.result;
-  const [threshold, setThreshold] = useState(90);
+  const original = captured.result;
+  const stack = original.engineVersion === "engine-ml-stack-d5";
+  const sourceIds = useMemo(
+    () =>
+      new Map(
+        document.scenario.payments.map((p) => [
+          p.id,
+          p.rankingInput?.sourcePaymentId ?? p.id,
+        ]),
+      ),
+    [document],
+  );
+  const queue = useMemo(
+    () => rankedQueue(original.events, sourceIds),
+    [original, sourceIds],
+  );
+  const [capacityOverride, setCapacityOverride] = useState<{
+    runId: string;
+    count: number;
+  } | null>(null);
+  const manual =
+    capacityOverride?.runId === original.runId ? capacityOverride.count : null;
+  const capacity = Math.max(
+    0,
+    Math.min(queue.ordered.length, manual ?? queue.suggestion.count),
+  );
+  const run = useMemo(
+    () =>
+      stack
+        ? {
+            ...original,
+            events: applyCapacity(original.events, queue.ranks, capacity),
+          }
+        : original,
+    [original, stack, queue, capacity],
+  );
+  const [probabilityThreshold, setThreshold] = useState(90);
+  const threshold =
+    run.engineVersion === "engine-ml-stack-d5" ? null : probabilityThreshold;
   const probabilityScores = useMemo(
     () =>
       run.events.flatMap((e) =>
@@ -99,9 +138,11 @@ export function Replay({
         : event.decision;
   const score = (event: (typeof run.events)[number]) =>
     event.model
-      ? event.model.score
-        ? `${event.model.score.value.toFixed(2)}${event.model.score.probabilityAvailable ? "%" : "/100"}`
-        : "Score unavailable"
+      ? event.model.ranking
+        ? `#${queue.ranks.get(event.eventId)} of ${queue.ordered.length}`
+        : event.model.score
+          ? `${event.model.score.value.toFixed(2)}${event.model.score.probabilityAvailable ? "%" : "/100"}`
+          : "Score unavailable"
       : retained && assessments.get(event.eventId)?.score === null
         ? "No score"
         : `${event.riskScore}/100`;
@@ -360,7 +401,7 @@ export function Replay({
         </div>
       </header>
       <section
-        className={`run-overview is-${overviewMotion}${probabilityScores.length ? " has-threshold" : ""}`}
+        className={`run-overview is-${overviewMotion}${probabilityScores.length || stack ? " has-threshold" : ""}`}
         aria-label="Run assessment summary"
       >
         <div className="overview-counts">
@@ -396,8 +437,23 @@ export function Replay({
             Flagged only
           </button>
         </div>
+        {stack && (
+          <ReviewCapacity
+            count={capacity}
+            total={queue.ordered.length}
+            suggestion={queue.suggestion}
+            onChange={(count) =>
+              setCapacityOverride(
+                count === null ? null : { runId: original.runId, count },
+              )
+            }
+          />
+        )}
         {!!probabilityScores.length && (
-          <ProbabilityThreshold threshold={threshold} onChange={setThreshold} />
+          <ProbabilityThreshold
+            threshold={probabilityThreshold}
+            onChange={setThreshold}
+          />
         )}
       </section>
       {panel === "events" && (
@@ -490,9 +546,11 @@ export function Replay({
             <div className="payment-estimate">
               <strong>{score(event)}</strong>
               <span>
-                {event.model?.score?.probabilityAvailable
-                  ? "Estimated fraud probability"
-                  : "Model score"}
+                {event.model?.ranking
+                  ? "Review priority"
+                  : event.model?.score?.probabilityAvailable
+                    ? "Estimated fraud probability"
+                    : "Model score"}
               </span>
             </div>
           </div>
@@ -526,6 +584,27 @@ export function Replay({
               scenario={document.scenario}
               event={event}
               threshold={threshold}
+              queue={
+                stack
+                  ? {
+                      rank: queue.ranks.get(event.eventId)!,
+                      total: queue.ordered.length,
+                      capacity,
+                      rankAt: (score) =>
+                        1 +
+                        queue.ordered.filter(
+                          (other) =>
+                            other.eventId !== event.eventId &&
+                            (other.model!.ranking!.rawMargin > score ||
+                              (other.model!.ranking!.rawMargin === score &&
+                                (sourceIds.get(other.eventId) ??
+                                  other.eventId) <
+                                  (sourceIds.get(event.eventId) ??
+                                    event.eventId))),
+                        ).length,
+                    }
+                  : undefined
+              }
             />
           ) : (
             <p>
@@ -762,6 +841,7 @@ export function Replay({
               setReviewGroup(group);
               setPanel("events");
             }}
+            queueCapacity={stack ? capacity : undefined}
             events={run.events}
             truth={run.scenarioSnapshot.groundTruth}
             threshold={threshold}
@@ -817,9 +897,11 @@ export function Replay({
           <span>
             ·{" "}
             {isLearnedEngine(run.engineVersion)
-              ? run.events.some((e) => e.model?.probabilityAvailable)
-                ? "Estimated fraud probabilities"
-                : "Uncalibrated scores"
+              ? run.engineVersion === "engine-ml-stack-d5"
+                ? "Upload review queue · not a fraud probability"
+                : run.events.some((e) => e.model?.probabilityAvailable)
+                  ? "Estimated fraud probabilities"
+                  : "Uncalibrated scores"
               : retained
                 ? "Retrospective rules · not fraud probability"
                 : "Synthetic model"}

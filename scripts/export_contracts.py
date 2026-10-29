@@ -14,6 +14,9 @@ from ml.precision_runtime import BUNDLE as V8
 from ml.precision_runtime import MANIFEST_SHA256 as V8_SHA
 from ml.probability_runtime import MANIFEST_SHA256 as PROBABILITY_SHA
 from ml.probability_runtime import runtime as probability_runtime
+from ml.stack_runtime import BUNDLE as STACK_BUNDLE
+from ml.stack_runtime import EXPERTS, REVIEW_FRACTION
+from ml.stack_runtime import MANIFEST_SHA256 as STACK_SHA
 
 destination = Path(__file__).resolve().parents[1] / "contracts" / "openapi.json"
 destination.parent.mkdir(exist_ok=True)
@@ -26,6 +29,30 @@ destination.write_text(json.dumps(app.openapi(), indent=2, sort_keys=True) + "\n
     encoding="utf-8",
 )
 print(f"Exported {destination.name}")
+
+(destination.parent / "stack-spec.json").write_text(
+    json.dumps(
+        {
+            "bundle_sha256": STACK_SHA,
+            "experts": EXPERTS,
+            "review_fraction": REVIEW_FRACTION,
+            "review_policy": "daily",
+            "explanation_features": json.loads((STACK_BUNDLE / "manifest.json").read_text())[
+                "models"
+            ]["stack_d5"]["features"],
+            "expert_features": {
+                name: entry["features"]
+                for name, entry in json.loads((STACK_BUNDLE / "manifest.json").read_text())[
+                    "models"
+                ].items()
+                if name in EXPERTS
+            },
+        },
+        indent=2,
+    )
+    + "\n",
+    encoding="utf-8",
+)
 
 manifests = {}
 for name, directory, expected in (

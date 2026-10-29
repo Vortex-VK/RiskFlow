@@ -32,11 +32,19 @@ function fieldsFor(record: Entity | Payment | Association): Fields {
     fields.amount = (record.amountMinor / 100).toFixed(2);
   if ("amountMinor" in record) {
     const model = record.modelInput;
-    fields.channel = model?.channel ?? "";
+    fields.channel = record.rankingInput?.channel ?? model?.channel ?? "";
     fields.mcc = model?.mcc ?? "";
-    fields.completed = model ? String(model.completed) : "";
-    fields.merchantState = model?.merchantState ?? "";
-    fields.merchantCity = model?.merchantCity ?? "";
+    fields.completed = record.rankingInput
+      ? record.rankingInput.completed === null
+        ? ""
+        : String(record.rankingInput.completed)
+      : model
+        ? String(model.completed)
+        : "";
+    fields.merchantState =
+      record.rankingInput?.merchantRegion ?? model?.merchantState ?? "";
+    fields.merchantCity =
+      record.rankingInput?.merchantCity ?? model?.merchantCity ?? "";
     fields.merchantZip = model?.merchantZip ?? "";
   }
   if ("typicalAmountMinor" in record)
@@ -259,6 +267,35 @@ function RecordFields({
               ? merchant.category
               : "other",
         };
+        // Preserve unknown imported fields when editing unrelated graph context.
+        if (payment.rankingInput) {
+          if (
+            ![
+              "Chip Transaction",
+              "Online Transaction",
+              "Swipe Transaction",
+            ].includes(payment.modelInput!.channel)
+          )
+            payment.modelInput = null;
+          const previous = fieldsFor(record);
+          payment.rankingInput = { ...payment.rankingInput };
+          for (const [field, target] of [
+            ["mcc", "category"],
+            ["channel", "channel"],
+            ["merchantState", "merchantRegion"],
+            ["merchantCity", "merchantCity"],
+          ] as const)
+            if (fields[field] !== previous[field])
+              payment.rankingInput[target] = fields[field] || "";
+          if (fields.completed !== previous.completed)
+            payment.rankingInput.completed = fields.completed
+              ? fields.completed !== "false"
+              : null;
+          if (fields.occurredAt !== previous.occurredAt)
+            payment.rankingInput.timePrecision = "second";
+          if (fields.merchantId !== previous.merchantId)
+            payment.rankingInput.merchantIdProvided = true;
+        }
         if (creating) next.scenario.payments.push(payment);
         else
           next.scenario.payments = next.scenario.payments.map((p) =>

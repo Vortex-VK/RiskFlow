@@ -1,6 +1,9 @@
-from app.domain.card_pattern import card_scores, reviews
+from typing import Any
+
+import pandas as pd
+
 from app.domain.metrics import evaluate_metrics
-from app.domain.model_scores import adaptation_score
+from app.domain.stack_inputs import scenario_frame
 from app.domain.validation import validate_scenario
 from app.schemas.scenario import AccountNode, ScenarioDefinition
 from app.schemas.simulation import (
@@ -8,16 +11,15 @@ from app.schemas.simulation import (
     Features,
     ModelEvaluation,
     ModelingWarning,
+    RankingEvidence,
     SimulationResult,
 )
-from ml.adaptation_runtime import MANIFEST_SHA256, runtime
-from ml.features.upload_context import feature_frame
-from ml.runtime import ModelUnavailable
+from ml.stack_runtime import MANIFEST_SHA256, runtime
 
-ENGINE_VERSION = "engine-ml-upload-v9"
+ENGINE_VERSION = "engine-ml-stack-d5"
 
 
-def simulate(scenario: ScenarioDefinition) -> SimulationResult:
+def simulate(scenario: ScenarioDefinition, canonical: Any = None) -> SimulationResult:
     if validate_scenario(scenario):
         raise ValueError("Scenario must pass validation before simulation.")
     snapshot = scenario.model_copy(deep=True)
@@ -28,22 +30,24 @@ def simulate(scenario: ScenarioDefinition) -> SimulationResult:
             node.usual_merchant_categories.sort()
     snapshot.associations.sort(key=lambda a: a.id)
     snapshot.payments.sort(key=lambda p: (p.occurred_at, p.id))
-    frame = feature_frame(snapshot.payments)
-    scores, paths = runtime().predict(frame)
-    review_warning = []
-    try:
-        card_values = card_scores(frame, paths["alert"])
-        suggestions = reviews(frame, paths["alert"], card_values)
-    except ModelUnavailable:
-        suggestions = [None] * len(frame)
-        card_values = [None] * len(frame)
-        review_warning.append(
-            ModelingWarning(
-                code="card_pattern_unavailable",
-                message="Card-pattern review is unavailable. Upload-v9 model results are complete; "
-                "no additional review suggestions were produced.",
+    data = scenario_frame(snapshot.payments) if canonical is None else canonical
+    frame, scores, selected, history = runtime().predict(data)
+    percentiles = pd.Series(scores["stack_d5"]).rank(pct=True).to_numpy() * 100
+    optional = ["category", "channel", "completed", "merchant_region", "merchant_city"]
+    available = [
+        [
+            name
+            for name in optional
+            if pd.notna(row.get(name))
+            and str(row.get(name, "")).strip().lower()
+            not in {"", "none", "nan", "null", "unknown", "n/a"}
+            and not (
+                name in {"merchant_region", "merchant_city"}
+                and str(row.get(name, "")).strip().upper() == "ONLINE"
             )
-        )
+        ]
+        for _, row in frame.iterrows()
+    ]
     events = [
         EventResult(
             event_id=p.id,
@@ -66,31 +70,25 @@ def simulate(scenario: ScenarioDefinition) -> SimulationResult:
             rule_evaluations=[],
             raw_score=None,
             risk_score=None,
-            decision="review" if paths["alert"][index] else "approve",
-            card_pattern=suggestions[index],
-            card_scores=card_values[index],
+            decision="review" if selected[index] else "approve",
+            card_pattern=None,
+            card_scores=None,
             model=ModelEvaluation(
-                version="ml-upload-v9",
-                policy="mixed-source",
+                version="ml-stack-d5",
+                policy="review-budget",
                 bundle_sha256=MANIFEST_SHA256,
-                alert=bool(paths["alert"][index]),
+                alert=bool(selected[index]),
                 raw_scores={name: float(values[index]) for name, values in scores.items()},
-                detection_paths=[
-                    name for name, values in paths.items() if name != "alert" and values[index]
-                ],
-                history_count=int(frame.iloc[index]["history_samples"]),
-                probability_available=True,
-                score=adaptation_score(
-                    float(
-                        scores[
-                            "adapted_online"
-                            if p.model_input and p.model_input.channel == "Online Transaction"
-                            else "adapted_card"
-                        ][index]
-                    ),
-                    "adapted_online"
-                    if p.model_input and p.model_input.channel == "Online Transaction"
-                    else "adapted_card",
+                detection_paths=["review_queue"] if selected[index] else [],
+                history_count=int(history[index]),
+                evidence_scope="exposed_development",
+                probability_available=False,
+                ranking=RankingEvidence(
+                    raw_margin=float(scores["stack_d5"][index]),
+                    priority_percentile=float(percentiles[index]),
+                    time_precision="day" if frame.calendar_hour.isna().any() else "second",
+                    available_fields=available[index],
+                    missing_fields=[name for name in optional if name not in available[index]],
                 ),
             ),
         )
@@ -100,43 +98,31 @@ def simulate(scenario: ScenarioDefinition) -> SimulationResult:
         scenario_snapshot=snapshot,
         events=events,
         metrics=evaluate_metrics(events, snapshot.ground_truth, snapshot.cost_assumptions),
-        warnings=review_warning
-        + [
+        warnings=[
             ModelingWarning(
-                code="probability_scope",
-                message="Scores estimate fraud probability using a model trained on IBM and "
-                "authored synthetic data. "
-                "Calibration has not been validated for this upload's source. Each model's "
-                "reference probability cutoff is shown separately; it is not necessarily 50%. "
-                "Raw margins and the selected card/online policy are recorded. "
-                "Probability threshold previews do not change saved decisions.",
+                code="ranking_scope",
+                message="Stack-d5 combines eight frozen expert scores with prior history. "
+                "Review priority is a within-upload percentile, not a fraud probability. "
+                "Performance on a new source is unverified; development labels were exposed.",
             ),
             ModelingWarning(
-                code="card_pattern_scope",
-                message="Card-pattern suggestions are experimental behavioral reviews, separate "
-                "from Upload-v9 alerts. They do not change model decisions or fraud metrics, "
-                "and do not identify counterfeit cards or establish fraud.",
-            ),
-            ModelingWarning(
-                code="model_scope",
-                message="Upload-v9 is an experimental IBM/authored model using frozen thresholds.  "
-                "Matching fields do not establish validity for this upload's source. "
-                "Review means a model alert; approve means no alert, not a payment "
-                "authorization. No automatic blocking. Raw model margins are not probabilities. "
-                "Legacy rule thresholds and device/location baselines do not affect scoring.",
+                code="review_budget",
+                message="Retrospective review selects the highest scores within each UTC day: "
+                "ceil(1% of assessed purchases), ties by stable payment ID. Small days can exceed "
+                "1% overall. Adding records can change the queue and percentiles. No alert does "
+                "not establish safety. Review does not authorize or block a payment.",
             ),
             ModelingWarning(
                 code="incomplete_data",
-                message="Features use only this submitted history. "
-                "Confirmed delayed merchant-fraud feedback is unavailable and encoded as "
-                "zero support. Short histories and missing merchant geography may reduce "
-                "performance. Synthetic benchmark metrics do not describe this upload.",
+                message="Only supported purchases contribute to history. Missing optional fields "
+                "remain unknown. Short histories can reduce performance. Labels and device "
+                "identities are excluded from scoring; merchant-fraud feedback is unavailable.",
             ),
             ModelingWarning(
                 code="attempt_history",
-                message="Features use strictly earlier events. "
-                "Equal-time events cannot influence each other. Completion status updates "
-                "future spending history; current labels are excluded from inference.",
+                message="Features use strictly earlier observations; equal-time peers cannot "
+                "affect each other. Date-only rows make all history use whole-day batches "
+                "and omit calendar signals. Queues use the entire submitted day retrospectively.",
             ),
         ],
     )

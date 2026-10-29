@@ -150,15 +150,20 @@ export function SampleLibrary({
             </div>
           </dl>
           <section className="sample-outcomes" aria-label="Sample results">
-            <h3>Results</h3>
+            <h3>Fixed-budget reference results</h3>
+            <p>
+              Historical 1% daily policy. The adjustable upload queue can
+              produce different results; these examples are not independent
+              validation.
+            </p>
             <div className="sample-detection-heading">
-              <span>Flagged as potential fraud</span>
+              <span>Selected for review</span>
               <strong>{percentage}</strong>
             </div>
             <div
               className="sample-detection-bar"
               role="meter"
-              aria-label="Transactions flagged as potential fraud"
+              aria-label="Transactions selected for review"
               aria-valuemin={0}
               aria-valuemax={100}
               aria-valuenow={flaggedPercent}

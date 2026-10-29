@@ -5,7 +5,7 @@ import pytest
 from fastapi.testclient import TestClient
 
 from app.domain.engine import simulate
-from app.domain.model_inputs import UnsupportedModelInput, feature_frame
+from app.domain.model_inputs import feature_frame
 from app.main import app
 from app.schemas.assessments import AssessmentRun
 from app.templates.catalog import load_template
@@ -23,13 +23,16 @@ def test_real_model_scores_are_label_and_legacy_policy_independent():
             node.typical_amount_minor = 1
     after = simulate(scenario)
     assert baseline.events == after.events
-    assert all(e.model is not None and len(e.model.raw_scores) == 10 for e in after.events)
+    assert all(e.model is not None and len(e.model.raw_scores) == 9 for e in after.events)
     assert all(e.risk_score is None and not e.rule_evaluations for e in after.events)
     assert all(e.decision == ("review" if e.model.alert else "approve") for e in after.events)
     scenario.payments[-1].amount_minor *= 10
     changed = simulate(scenario)
     assert changed.events[-1].model.raw_scores != after.events[-1].model.raw_scores
-    assert changed.events[:-1] == after.events[:-1]
+    assert [e.model.raw_scores for e in changed.events[:-1]] == [
+        e.model.raw_scores for e in after.events[:-1]
+    ]
+    # Retrospective percentiles and queues may change when a later row changes.
 
 
 def test_equal_time_feature_batches_and_account_scope_use_only_prior_history():
@@ -55,16 +58,16 @@ def test_equal_time_feature_batches_and_account_scope_use_only_prior_history():
     assert isolated.loc["later", "merchant_distinct_accounts_1h"] == 2
 
 
-def test_missing_model_inputs_fail_explicitly_without_rule_fallback():
+def test_missing_optional_inputs_are_ranked_without_rule_fallback():
     scenario = load_template("everyday-purchases").scenario
     scenario.payments[0].model_input = None
-    with pytest.raises(UnsupportedModelInput):
-        simulate(scenario)
+    run = simulate(scenario)
+    assert run.events[0].model.ranking and not run.events[0].model.probability_available
     response = TestClient(app).post(
         "/api/v1/simulations", json={"scenario": scenario.model_dump(by_alias=True)}
     )
-    assert response.status_code == 422
-    assert response.json()["error"]["code"] == "unsupported_model_input"
+    assert response.status_code == 200
+    assert response.json()["events"][0]["ruleEvaluations"] == []
 
 
 def test_missing_and_corrupt_artifacts_are_rejected_before_deserialization(tmp_path):

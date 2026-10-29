@@ -9,7 +9,6 @@ import pytest
 from app.domain.card_pattern import reviews
 from app.domain.engine import simulate
 from app.schemas.history import DatasetCreate, ImportRequest
-from app.schemas.simulation import CardPatternReview
 from app.storage.history import HistoryStore
 from app.templates.catalog import load_template
 from ml.artifacts import ROOT
@@ -81,55 +80,18 @@ def test_packages_reject_missing_or_corrupt_artifacts(tmp_path: Path, cls, bundl
         cls(tmp_path)
 
 
-def test_optional_review_failure_preserves_frozen_model_and_metrics(monkeypatch):
+def test_stack_has_no_dependency_on_optional_legacy_reviewers(monkeypatch):
     scenario = load_template("shared-device-cluster").scenario
     before = simulate(scenario)
 
     def unavailable(*args):
-        raise ModelUnavailable("Reviewer missing")
+        raise AssertionError("Legacy review must not run in the stack engine")
 
-    monkeypatch.setattr("app.domain.engine.reviews", unavailable)
+    monkeypatch.setattr("app.domain.card_pattern.reviews", unavailable)
+    monkeypatch.setattr("app.domain.card_pattern.card_scores", unavailable)
     after = simulate(scenario)
-    assert before.metrics == after.metrics
-    assert [e.model for e in before.events] == [e.model for e in after.events]
-    assert [e.decision for e in before.events] == [e.decision for e in after.events]
-    assert all(e.card_pattern is None for e in after.events)
-    assert any(w.code == "card_pattern_unavailable" for w in after.warnings)
-
-
-def test_adding_review_suggestions_preserves_model_metrics(monkeypatch):
-    scenario = load_template("everyday-purchases").scenario
-    payment = scenario.payments[0]
-    scenario.payments = [
-        payment.model_copy(
-            update={"id": f"history-{i}", "occurred_at": f"2026-10-21T12:{i:02}:00.000Z"}
-        )
-        for i in range(24)
-    ]
-    scenario.ground_truth = {}
-    baseline = simulate(scenario)
-
-    def suggest(frame, alerts, *args):
-        return [
-            CardPatternReview(
-                bundle_sha256="a" * 64,
-                margin=1.0,
-                threshold=0.0,
-                history_count=int(row.history_samples),
-                prior_hour_attempts=int(row.attempts_1h),
-                amount_percentile=0.5,
-                observations=["Test history.", "Test comparison."],
-            )
-            if row.history_samples >= 10 and not alerts[i]
-            else None
-            for i, row in frame.iterrows()
-        ]
-
-    monkeypatch.setattr("app.domain.engine.reviews", suggest)
-    after = simulate(scenario)
-    assert any(e.card_pattern for e in after.events)
-    assert after.metrics == baseline.metrics
-    assert [e.model for e in after.events] == [e.model for e in baseline.events]
+    assert before == after
+    assert all(e.card_pattern is None and e.card_scores is None for e in after.events)
 
 
 def test_retained_card_reviews_survive_reopen_without_changing_model_recommendations(tmp_path):
@@ -145,8 +107,9 @@ def test_retained_card_reviews_survive_reopen_without_changing_model_recommendat
     assert preview.can_commit
     store.commit(dataset, preview.id)
     run = store.assess(dataset, 1)
-    assert run.assessment_version == "assessment-v2.9"
+    assert run.assessment_version == "assessment-v2.10"
     suggested = [a for a in run.assessments if a.card_pattern]
-    assert len(suggested) == 1
+    assert len(suggested) == 0
+    assert all(a.model.ranking for a in run.assessments)
     assert all(a.recommendation == "no_alert" and not a.model.alert for a in suggested)
     assert HistoryStore(store.path).run(dataset, run.id) == run

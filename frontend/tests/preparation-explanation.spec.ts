@@ -1,3 +1,5 @@
+import { setReviewCapacity } from "./workspace-helpers";
+import { uploadQueueRun } from "./workspace-helpers";
 import { expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 
@@ -23,7 +25,7 @@ test("CSV preparation starts before Simulate and its result powers playback and 
   await page.getByRole("button", { name: "Preview graph" }).click();
   const response = await prepared;
   expect(response.ok()).toBe(true);
-  const run = await response.json();
+  const run = uploadQueueRun(await response.json(), 10);
   const preparationMs = Date.now() - preparationStart;
   expect(run.events).toHaveLength(5000);
   expect(submissions).toBe(1);
@@ -38,6 +40,7 @@ test("CSV preparation starts before Simulate and its result powers playback and 
   await page.getByRole("button", { name: "Simulate", exact: true }).click();
   const overview = page.getByRole("region", { name: "Run assessment summary" });
   await expect(overview).toBeVisible();
+  await setReviewCapacity(page, 10);
   const startupMs = Date.now() - start;
   expect(submissions).toBe(1);
   await page
@@ -45,15 +48,14 @@ test("CSV preparation starts before Simulate and its result powers playback and 
     .click();
   await expect(overview.locator("strong")).toHaveText(["0", "0", "0"]);
   await page.getByRole("button", { name: "Next event", exact: true }).click();
-  const reviews = Number(run.events[0].model.score.value >= 90);
+  const reviews = Number(run.events[0].model.alert);
   await expect(overview.locator("strong")).toHaveText([
     "1",
     String(reviews),
     String(1 - reviews),
   ]);
   const flagged = run.events.find(
-    (event: { model: { score: { value: number } } }) =>
-      event.model.score.value >= 90,
+    (event: { model: { alert: boolean } }) => event.model.alert,
   );
   await page.getByRole("button", { name: "Flagged only", exact: true }).click();
   await page
@@ -65,13 +67,13 @@ test("CSV preparation starts before Simulate and its result powers playback and 
   const detail = page.getByRole("complementary", {
     name: "Payment explanation",
   });
+  await expect(detail).toContainText("Purchase amount");
   await expect(
-    detail.getByRole("heading", { name: "Review decision", exact: true }),
+    detail.getByRole("figure", { name: "How inputs move review priority" }),
   ).toBeVisible();
   await expect(
-    detail.getByRole("heading", { name: "Available evidence", exact: true }),
+    detail.getByRole("region", { name: "Ranking evidence" }),
   ).toBeVisible();
-  await expect(detail.locator(".contribution-list li")).toHaveCount(5);
   await expect(overview.locator("strong")).toHaveText([
     "1",
     String(reviews),
@@ -86,12 +88,12 @@ test("CSV preparation starts before Simulate and its result powers playback and 
   });
   await expect(results).not.toContainText("334,777");
   await expect(results).not.toContainText("97.72%");
-  await expect(results).not.toContainText("Overall model evaluation");
+  await expect(results).not.toContainText("Model evaluation scope");
   const outcomes = [0, 0, 0, 0];
   for (const event of run.events) {
     const label = run.scenarioSnapshot.groundTruth[event.eventId];
     if (!label) continue;
-    const flagged = event.model.score.value >= 90;
+    const flagged = event.model.alert;
     const index = label === "fraudulent" ? (flagged ? 0 : 1) : flagged ? 2 : 3;
     outcomes[index]!++;
   }
@@ -100,10 +102,12 @@ test("CSV preparation starts before Simulate and its result powers playback and 
   );
   await page.getByRole("button", { name: "Samples", exact: true }).click();
   const samples = page.getByRole("dialog", { name: "Start with a sample." });
-  await samples.getByText("Overall model evaluation", { exact: true }).click();
-  await expect(samples.locator(".model-validation")).toContainText("334,777");
+  await samples.getByText("Model evaluation scope", { exact: true }).click();
   await expect(samples.locator(".model-validation")).toContainText(
-    "independent of the selected sample",
+    "not independent validation",
+  );
+  await expect(samples.locator(".model-validation")).toContainText(
+    "exposed development datasets",
   );
   await expect(
     samples.getByRole("region", { name: "Sample results" }),

@@ -145,7 +145,7 @@ html[data-motion="off"] .run-overview {
 .threshold-control .threshold-value {
   color: var(--transaction-review);
 }
-.threshold-control input {
+.threshold-control input[type="range"] {
   appearance: none;
   display: block;
   width: 100%;
@@ -156,7 +156,7 @@ html[data-motion="off"] .run-overview {
   background: transparent;
   cursor: pointer;
 }
-.threshold-control input::-webkit-slider-runnable-track {
+.threshold-control input[type="range"]::-webkit-slider-runnable-track {
   height: 5px;
   border-radius: 3px;
   background: linear-gradient(
@@ -165,7 +165,7 @@ html[data-motion="off"] .run-overview {
     var(--transaction-review) var(--threshold-position) 100%
   );
 }
-.threshold-control input::-moz-range-track {
+.threshold-control input[type="range"]::-moz-range-track {
   height: 5px;
   border-radius: 3px;
   background: linear-gradient(
@@ -174,7 +174,7 @@ html[data-motion="off"] .run-overview {
     var(--transaction-review) var(--threshold-position) 100%
   );
 }
-.threshold-control input::-webkit-slider-thumb {
+.threshold-control input[type="range"]::-webkit-slider-thumb {
   appearance: none;
   width: 14px;
   height: 14px;
@@ -184,7 +184,7 @@ html[data-motion="off"] .run-overview {
   background: var(--text);
   box-shadow: 0 0 0 1px var(--muted);
 }
-.threshold-control input::-moz-range-thumb {
+.threshold-control input[type="range"]::-moz-range-thumb {
   width: 10px;
   height: 10px;
   border: 2px solid var(--panel-solid);
@@ -745,4 +745,48 @@ html[data-motion="off"] .run-overview {
   .replay .status {
     bottom: 148px;
   }
+}
+
+.capacity-control .threshold-heading {
+  align-items: center;
+  gap: 8px;
+}
+.capacity-control .threshold-heading label {
+  margin-right: auto;
+}
+/* The marker identifies the initial suggestion without adding another control. */
+.capacity-track {
+  position: relative;
+}
+.capacity-default-marker {
+  position: absolute;
+  top: 23px;
+  height: 4px;
+  border-left: 1px solid var(--muted);
+  pointer-events: none;
+}
+.capacity-control > small {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+}
+.stack-evidence .queue-decision {
+  font-size: 12px;
+  color: var(--muted);
+}
+.stack-facts dd {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.stack-facts small {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: normal;
+}
+.stack-facts > div {
+  align-items: start;
+}
+.stack-evidence .probability-endpoints {
+  justify-content: space-between;
 }

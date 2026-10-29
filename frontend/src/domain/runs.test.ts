@@ -12,7 +12,7 @@ import { useWorkspace } from "../state/workspace";
 import { useSimulation } from "../state/simulation";
 
 describe("captured runs and analytical identity", () => {
-  it("normalizes optional API categories and treats only normalized categories as analytical facts", () => {
+  it("normalizes optional categories and treats source categories as ranking inputs", () => {
     const scenario = decodeDocument(structuredClone(hero)).scenario;
     const original = normalizedScenario(scenario);
     const originalFacts = projectAnalyticalInput(scenario);
@@ -20,7 +20,7 @@ describe("captured runs and analytical identity", () => {
     scenario.payments[0]!.sourceCategory = null;
     expect(normalizedScenario(scenario)).toBe(original);
     scenario.payments[0]!.sourceCategory = "supermarket";
-    expect(projectAnalyticalInput(scenario)).toBe(originalFacts);
+    expect(projectAnalyticalInput(scenario)).not.toBe(originalFacts);
     scenario.payments[0]!.category = "groceries";
     expect(projectAnalyticalInput(scenario)).not.toBe(originalFacts);
   });

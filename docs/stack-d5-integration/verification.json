@@ -1,0 +1,221 @@
+{
+  "engine": "engine-ml-stack-d5",
+  "accepted_candidate": "stack_d5",
+  "bundle_sha256": "672cc88772a0f878b4a3d631e94de920ef08687702eb1e90f4c516bb1d7909ff",
+  "head_sha256": "49c5c10940731b31fe77977099da046f408e660538d1a27444bf30983e601fde",
+  "scope": "Integration and migration verification, not independent fraud validation",
+  "backend_tests_passed": 257,
+  "frontend_unit_tests_passed": 266,
+  "browser_cases_passed_after_fixes": 37,
+  "browser_cases": [
+    {
+      "file": "tests\\card-import.spec.ts",
+      "test": "native unlabeled card CSV imports all 10,000 rows with label-independent Stack-d5 predictions",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\card-import.spec.ts",
+      "test": "native labeled card CSV imports all 10,000 rows with label-independent Stack-d5 predictions",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\card-pattern.spec.ts",
+      "test": "results use the stack queue without separate legacy specialist alerts",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\connection-evidence.spec.ts",
+      "test": "subtle sector links reveal exact source payments without crowding the overview",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\connection-evidence.spec.ts",
+      "test": "shared connections follow playback and the recorded queue, and open the real payment explanation",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\generated-data.spec.ts",
+      "test": "original generated CSV is rejected at import and preserves the existing graph",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\generated-data.spec.ts",
+      "test": "a mixed valid and unsupported import cannot reuse an earlier preview and can be corrected",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\generated-data.spec.ts",
+      "test": "assumption-based generated CSV keeps labels unknown and exposes scoped ranking evidence",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\model.spec.ts",
+      "test": "an old running backend gives restart guidance and retry preserves the draft",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\model.spec.ts",
+      "test": "stack replay shows model evidence and preserves predictions when old device context changes",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\preparation-explanation.spec.ts",
+      "test": "CSV preparation starts before Simulate and its result powers playback and explanations",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\result-availability.spec.ts",
+      "test": "unlabeled results show only supported measurements",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\result-availability.spec.ts",
+      "test": "legitimate-only results show only supported measurements",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\result-availability.spec.ts",
+      "test": "fraud-only partial results show only supported measurements",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\result-availability.spec.ts",
+      "test": "both classes partial results show only supported measurements",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\result-availability.spec.ts",
+      "test": "insight links follow recorded review selections without advancing playback",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\review-workspace.spec.ts",
+      "test": "review counts follow visible playback and completed inspection keeps the final graph",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\samples.spec.ts",
+      "test": "sample library is dismissible, responsive and downloadable",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\samples.spec.ts",
+      "test": "5 IBM transactions load and reproduce the recorded live Stack-d5 results",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\samples.spec.ts",
+      "test": "50 IBM transactions load and reproduce the recorded live Stack-d5 results",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\samples.spec.ts",
+      "test": "250 IBM transactions load and reproduce the recorded live Stack-d5 results",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\samples.spec.ts",
+      "test": "1000 IBM transactions load and reproduce the recorded live Stack-d5 results",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\samples.spec.ts",
+      "test": "5000 IBM transactions load and reproduce the recorded live Stack-d5 results",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\samples.spec.ts",
+      "test": "10000 IBM transactions load and reproduce the recorded live Stack-d5 results",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\samples.spec.ts",
+      "test": "a failed or cancelled sample load leaves the workspace intact",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\samples.spec.ts",
+      "test": "samples respect edited work and remain available from CSV import",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\simulation.spec.ts",
+      "test": "completed playback shows run totals while H16 and H10 keep their own decisions",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\simulation.spec.ts",
+      "test": "paused and completed dragging keeps objects visible and connections mounted",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\simulation.spec.ts",
+      "test": "revealed payments use decision colors in dark mode without losing accessible labels",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\simulation.spec.ts",
+      "test": "invalid buffer prevents request; late and malformed responses cannot replace results",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\simulation.spec.ts",
+      "test": "malformed metrics, future evidence and snapshot mismatches preserve the last run",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\simulation.spec.ts",
+      "test": "replay is accessible in dark mode and works with reduced motion on mobile",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\simulation.spec.ts",
+      "test": "all playback settings advance 25 percent faster with the default still at 1x",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\simulation.spec.ts",
+      "test": "transaction pulses and risk highlights follow playback while inspection preserves the clock",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\simulation.spec.ts",
+      "test": "grey transition carries from pending simulation into replay without flashing color",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\stack-integration.spec.ts",
+      "test": "installed stack powers replay, priorities and the recorded review budget",
+      "status": "passed"
+    },
+    {
+      "file": "tests\\stack-integration.spec.ts",
+      "test": "date-only CSV with missing optional fields can be imported and ranked",
+      "status": "passed"
+    }
+  ],
+  "checks": {
+    "ruff": "passed",
+    "mypy": "passed",
+    "typescript": "passed",
+    "eslint": "passed",
+    "prettier": "passed",
+    "production_build": "passed",
+    "production_http_smoke": "passed"
+  },
+  "migration": {
+    "cases": 14,
+    "input_rows": 54002,
+    "assessed_rows": 50479,
+    "max_margin_difference": 0.0,
+    "review_queues_equal": true
+  },
+  "preserved": {
+    "frozen_research_selection_and_features": true,
+    "original_model_files": 9,
+    "sample_csv_files": 6,
+    "historical_model_packages": true
+  },
+  "new_package_bytes": 8896668,
+  "deployment": "local integration only; hosted deployment not performed"
+}

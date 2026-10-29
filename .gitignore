@@ -24,6 +24,7 @@ coverage/
 .coverage.*
 htmlcov/
 test-results/
+test-results-*/
 playwright-report/
 blob-report/
 *.tsbuildinfo
@@ -47,7 +48,15 @@ blob-report/
 # Private runtime data, uploads and original training datasets
 .data/
 /training_data/
+/training data/
+/data/
+/datasets/
+/research/
+/experiments/
+/notebooks/
 /uploads/
+/exports/
+/backups/
 *.db
 *.db-*
 *.sqlite
@@ -55,9 +64,56 @@ blob-report/
 *.sqlite3
 *.sqlite3-*
 
-# Local diagnostics of user-supplied uploads (not app fixtures or public samples)
-/docs/evaluations/realistic-card-4000/
-/scripts/diagnose_realistic_card_upload.py
+# Dataset exports and training outputs; only reviewed application assets are public.
+*.csv
+*.tsv
+*.parquet
+*.arrow
+*.feather
+*.h5
+*.hdf5
+*.joblib
+*.pkl
+*.pickle
+*.cbm
+*.npy
+*.npz
+*.pt
+*.pth
+*.safetensors
+*.ipynb
+*.zip
+*.7z
+*.tar
+*.tar.gz
+!/fixtures/**/*.csv
+!/frontend/public/samples/**/*.csv
+!/frontend/src/assets/sample-payments.csv
+!/backend/model_artifacts/**/*.cbm
+!/backend/model_artifacts/**/*.pkl
+!/backend/model_artifacts/**/*.npz
+
+# Internal plans stay local, including their former locations.
+/plan.md
+/RiskFlow_Studio_Codex_Project_Spec.md
+
+# Publish current product docs, sample provenance and compact integration receipts.
+# Research reports, screenshots and machine-specific maintenance inventories stay local.
+/docs/*
+!/docs/deployment.md
+!/docs/repository-policy.md
+!/docs/sample-library/
+!/docs/stack-d5-integration/
+/docs/sample-library/archive-before-showcase-*/
+/docs/sample-library/upload-v9/
+/docs/sample-library/provenance-and-runtime-audit.json
+/docs/sample-library/verification.json
+
+# Credential exports and local service configuration
+.netrc
+credentials.json
+service-account*.json
+*.keystore
 
 # Machine/editor and assistant-local state
 .codex/
@@ -71,5 +127,5 @@ desktop.ini
 *.swo
 *~
 
-# Keep backend/model_artifacts, fixtures, public samples and dependency lockfiles.
+# Keep reviewed backend/model_artifacts, fixtures, public samples and lockfiles.
 # They are required to reproduce and run the application from a fresh checkout.

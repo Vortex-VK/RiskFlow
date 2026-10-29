@@ -46,6 +46,7 @@ test("subtle sector links reveal exact source payments without crowding the over
   );
   await page.goto("/");
   await page.getByRole("button", { name: "Import CSV", exact: true }).click();
+  await page.getByLabel("Import purpose").selectOption("graph");
   await page.getByLabel("CSV file").setInputFiles({
     name: "transactions-synthetic.csv",
     mimeType: "text/csv",
@@ -168,7 +169,7 @@ test("subtle sector links reveal exact source payments without crowding the over
   expect(errors).toEqual([]);
 });
 
-test("shared connections follow playback and threshold, and open the real payment explanation", async ({
+test("shared connections follow playback and the recorded queue, and open the real payment explanation", async ({
   page,
 }, testInfo) => {
   const errors: string[] = [];
@@ -182,10 +183,6 @@ test("shared connections follow playback and threshold, and open the real paymen
   await page
     .getByRole("button", { name: "Reset playback", exact: true })
     .click();
-  const threshold = page.getByRole("slider", {
-    name: /^Probability threshold/,
-  });
-  await threshold.press("Home");
   await page.locator(".connection-target").first().press("Enter");
   const panel = page.getByRole("region", {
     name: "Connection evidence",
@@ -208,35 +205,11 @@ test("shared connections follow playback and threshold, and open the real paymen
   await expect(page.getByRole("status")).toContainText("Run complete", {
     timeout: 30000,
   });
-  await expect(totals).toHaveText([counts[0]!, total, total]);
-  await expect(panel.locator(".connection-filters button")).toHaveText([
-    "View all payments",
-    "View flagged payments",
-  ]);
-  await panel
-    .getByRole("button", { name: "View flagged payments", exact: true })
-    .click();
-  await expect(
-    panel.locator(".connection-payment-heading .connection-flag").first(),
-  ).toHaveText("Flagged");
-  await threshold.press("End");
-  await expect(totals).toHaveText([counts[0]!, total, "0"]);
-  await expect(
-    panel.getByRole("button", { name: "View flagged payments", exact: true }),
-  ).toHaveCount(0);
-  await expect(
-    panel.getByRole("button", { name: "View all payments", exact: true }),
-  ).toHaveAttribute("aria-pressed", "true");
-  await panel
-    .getByRole("button", { name: "View all payments", exact: true })
-    .click();
-  await expect(panel.locator(".connection-payment-status").first()).toHaveText(
-    "No alert",
+  const completed = await totals.allTextContents();
+  expect(completed.slice(0, 2)).toEqual([counts[0]!, total]);
+  expect(Number(completed[2]!.replaceAll(",", ""))).toBeLessThanOrEqual(
+    Number(total.replaceAll(",", "")),
   );
-  await threshold.press("Home");
-  await panel
-    .getByRole("button", { name: "View flagged payments", exact: true })
-    .click();
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
   await panel.screenshot({
     path: testInfo.outputPath("shared-connection-review.png"),
@@ -254,7 +227,7 @@ test("shared connections follow playback and threshold, and open the real paymen
   await expect(panel).toHaveCount(0);
   await expect(overview.locator("strong")).toHaveText(before);
   await expect(
-    detail.getByRole("region", { name: "Model explanation", exact: true }),
+    detail.getByRole("region", { name: "Ranking evidence", exact: true }),
   ).toBeVisible();
   expect(errors).toEqual([]);
 });

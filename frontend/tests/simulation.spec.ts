@@ -48,7 +48,7 @@ test("completed playback shows run totals while H16 and H10 keep their own decis
   });
   await dragAccount();
   await expect(page.getByRole("status")).toContainText(
-    "16 no alert · 0 for review · 0 blocked",
+    "15 no alert \u00b7 1 for review",
   );
   await expect(page.getByRole("status")).not.toContainText("0/100");
   await expect(page.getByRole("status")).not.toContainText("Time compressed");
@@ -267,8 +267,8 @@ test("revealed payments use decision colors in dark mode without losing accessib
     .getByRole("button", { name: "Inspect payments", exact: true })
     .click();
   const tray = page.getByRole("region", { name: "Run events" });
-  await expect(tray.locator(".decision-approve")).toHaveCount(16);
-  await expect(tray.locator(".decision-review")).toHaveCount(0);
+  await expect(tray.locator(".decision-approve")).toHaveCount(15);
+  await expect(tray.locator(".decision-review")).toHaveCount(1);
   await expect(tray.locator(".decision-block")).toHaveCount(0);
   await expect(
     tray.getByRole("button", { name: "Inspect H01", exact: true }),
@@ -291,7 +291,7 @@ test("revealed payments use decision colors in dark mode without losing accessib
           (els) =>
             new Set(els.map((el) => getComputedStyle(el).backgroundColor)).size,
         ),
-    ).toBe(1);
+    ).toBe(2);
     expect(
       (
         await new AxeBuilder({ page })
@@ -332,7 +332,7 @@ test("invalid buffer prevents request; late and malformed responses cannot repla
   });
   await page.getByRole("button", { name: "Simulate", exact: true }).click();
   await expect(page.getByRole("status")).toContainText(
-    /inconsistent|Unknown detection path/,
+    /inconsistent|Unknown detection path/i,
   );
   await expect(page.getByRole("button", { name: "Last run" })).toBeVisible();
   await page.unroute("**/api/v1/simulations");
@@ -385,7 +385,7 @@ test("malformed metrics, future evidence and snapshot mismatches preserve the la
     });
     await page.getByRole("button", { name: "Simulate", exact: true }).click();
     await expect(page.getByRole("status")).toContainText(
-      /inconsistent|Unknown detection path/,
+      /inconsistent|Unknown detection path/i,
     );
     await expect(page.getByRole("button", { name: "Last run" })).toBeVisible();
     await page.unroute("**/api/v1/simulations");
@@ -397,7 +397,7 @@ test("malformed metrics, future evidence and snapshot mismatches preserve the la
   await page.getByRole("button", { name: "Inspect H10", exact: true }).click();
   await expect(
     page.getByRole("complementary", { name: "Payment explanation" }),
-  ).toContainText("Available evidence");
+  ).toContainText("Merchant history");
 });
 
 test("replay is accessible in dark mode and works with reduced motion on mobile", async ({
@@ -412,19 +412,23 @@ test("replay is accessible in dark mode and works with reduced motion on mobile"
       expect(Math.abs(box.x + box.width / 2 - width / 2)).toBeLessThan(1);
       expect(box.x).toBeGreaterThanOrEqual(0);
       expect(box.x + box.width).toBeLessThanOrEqual(width);
-      const camera = (await page.locator(".bottom-bar .camera").boundingBox())!;
-      const overlap =
-        Math.max(
-          0,
-          Math.min(box.x + box.width, camera.x + camera.width) -
-            Math.max(box.x, camera.x),
-        ) *
-        Math.max(
-          0,
-          Math.min(box.y + box.height, camera.y + camera.height) -
-            Math.max(box.y, camera.y),
-        );
-      expect(overlap).toBe(0);
+      if (await page.locator(".bottom-bar .camera").count()) {
+        const camera = (await page
+          .locator(".bottom-bar .camera")
+          .boundingBox())!;
+        const overlap =
+          Math.max(
+            0,
+            Math.min(box.x + box.width, camera.x + camera.width) -
+              Math.max(box.x, camera.x),
+          ) *
+          Math.max(
+            0,
+            Math.min(box.y + box.height, camera.y + camera.height) -
+              Math.max(box.y, camera.y),
+          );
+        expect(overlap).toBe(0);
+      }
     }
   };
   await page.emulateMedia({ reducedMotion: "reduce" });
@@ -657,8 +661,15 @@ test("grey transition carries from pending simulation into replay without flashi
   });
   expect(minimum).toBeGreaterThan(0.98);
   await page.getByRole("button", { name: "Pause", exact: true }).click();
-  await expect(page.locator(".react-flow__node-object").first()).toHaveCSS(
-    "filter",
-    "grayscale(0)",
-  );
+  await expect
+    .poll(() =>
+      page.evaluate(() =>
+        Number(
+          getComputedStyle(document.documentElement).getPropertyValue(
+            "--graph-saturation",
+          ),
+        ),
+      ),
+    )
+    .toBe(0);
 });

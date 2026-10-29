@@ -8,6 +8,15 @@
 .cache
 .data
 training_data
+training data
+data
+datasets
+research
+experiments
+notebooks
+uploads
+exports
+backups
 .git
 .codex
 .agents
@@ -17,5 +26,16 @@ training_data
 **/.env.*
 frontend/dist
 frontend/test-results
+frontend/test-results-*
 frontend/playwright-report
 docs
+plan.md
+RiskFlow_Studio_Codex_Project_Spec.md
+**/.ssh
+**/.netrc
+**/credentials.json
+**/service-account*.json
+**/*.key
+**/*.pem
+**/*.p12
+**/*.pfx

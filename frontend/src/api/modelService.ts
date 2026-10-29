@@ -14,7 +14,7 @@ export async function requireModelService(signal?: AbortSignal): Promise<void> {
     !health ||
     typeof health !== "object" ||
     !("engineVersion" in health) ||
-    health.engineVersion !== "engine-ml-upload-v9" ||
+    health.engineVersion !== "engine-ml-stack-d5" ||
     !("schemaVersion" in health) ||
     health.schemaVersion !== 1 ||
     !("status" in health) ||

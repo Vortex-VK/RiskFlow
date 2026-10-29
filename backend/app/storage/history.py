@@ -291,7 +291,9 @@ class HistoryStore:
             populations = (
                 {
                     entry.event_id: entry
-                    for entry in reconcile_lifecycle([event for _, event in decoded]).entries
+                    for entry in reconcile_lifecycle(
+                        [event for _, event in decoded], allow_unknown_status=True
+                    ).entries
                 }
                 if event_id is None
                 else {}

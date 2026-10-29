@@ -87,12 +87,9 @@ def test_scores_survive_retention_and_do_not_depend_on_evaluation_labels(tmp_pat
     )
     store.commit(dataset, preview.id)
     run = store.assess(dataset, 1)
-    assert all(a.model and a.model.score for a in run.assessments)
-    assert all(
-        a.model.probability_available and a.model.score.probability_available
-        for a in run.assessments
-    )
-    assert any(a.card_scores and not a.card_pattern for a in run.assessments)
+    assert all(a.model and a.model.ranking for a in run.assessments)
+    assert all(not a.model.probability_available and a.model.score is None for a in run.assessments)
+    assert all(a.card_scores is None and a.card_pattern is None for a in run.assessments)
     assert HistoryStore(store.path).run(dataset, run.id) == run
     scenario = run.simulation.scenario_snapshot.model_copy(deep=True)
     scenario.ground_truth = {}

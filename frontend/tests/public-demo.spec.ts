@@ -9,8 +9,6 @@ test("largest sample finishes within the UI request timeout", async ({
   await page.getByRole("button", { name: "Samples", exact: true }).click();
   const library = page.getByRole("dialog", { name: "Start with a sample." });
   await library.getByRole("button", { name: new RegExp(sample.title) }).click();
-  await library.getByRole("button", { name: "Open in workspace" }).click();
-  await expect(library).toHaveCount(0, { timeout: 30000 });
   // Capture the large result before Chromium evicts it from its inspector cache.
   const captured =
     Promise.withResolvers<
@@ -26,6 +24,8 @@ test("largest sample finishes within the UI request timeout", async ({
       captured.reject(error);
     }
   });
+  await library.getByRole("button", { name: "Open in workspace" }).click();
+  await expect(library).toHaveCount(0, { timeout: 30000 });
   const started = Date.now();
   await page.getByRole("button", { name: "Simulate", exact: true }).click();
   const result = await captured.promise;
@@ -50,12 +50,12 @@ test("public build opens a sample and imports a CSV through the real engine", as
   await page.getByRole("button", { name: "Samples", exact: true }).click();
   const library = page.getByRole("dialog", { name: "Start with a sample." });
   await library.getByRole("button", { name: new RegExp(sample.title) }).click();
+  const simulation = page.waitForResponse("**/api/v1/simulations");
   await library.getByRole("button", { name: "Open in workspace" }).click();
   await expect(library).toHaveCount(0);
   await expect(
     page.getByRole("button", { name: `Payments ${sample.rows}`, exact: true }),
   ).toBeVisible();
-  const simulation = page.waitForResponse("**/api/v1/simulations");
   await page.getByRole("button", { name: "Simulate", exact: true }).click();
   const response = await simulation;
   expect(response.ok()).toBe(true);

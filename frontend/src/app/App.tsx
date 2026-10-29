@@ -1,3 +1,4 @@
+import { unsupportedRankingInput } from "../domain/model";
 import { CloseIcon } from "../features/CloseIcon";
 import { ClearBoardButton } from "../features/ClearBoardButton";
 import { PaymentPages } from "../features/PaymentPages";
@@ -436,7 +437,7 @@ function Workspace() {
   const stale =
     simulation.latest && analyticalInput !== simulation.latest.projection;
   const unsupportedPayments = document.scenario.payments.filter(
-    (payment) => !payment.modelInput,
+    unsupportedRankingInput,
   ).length;
   const simulationUnavailable =
     !document.scenario.payments.length || unsupportedPayments > 0;

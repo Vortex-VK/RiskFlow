@@ -91,7 +91,7 @@ export function RunInsights({
             ))}
           </>
         ) : (
-          <p>No alerts at the selected threshold.</p>
+          <p>No alerts under the current review policy.</p>
         )}
       </section>
       <section
@@ -136,7 +136,7 @@ export function RunInsights({
           <p>
             {insights.flagged
               ? "No flagged payments match the repeat-attempt, rapid-activity, channel-change or shared-device checks."
-              : "No flagged payments to investigate at this threshold."}
+              : "No flagged payments to investigate under the current review policy."}
           </p>
         )}
         {!!patterns.missingDevice && (

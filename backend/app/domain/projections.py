@@ -5,6 +5,7 @@ from app.domain.identity import scoped_id
 from app.domain.ingestion import eligibility
 from app.domain.lifecycle import reconcile_lifecycle
 from app.domain.model_inputs import source_input
+from app.domain.stack_inputs import history_frame, stack_eligibility
 from app.domain.validation import validate_scenario
 from app.schemas.history import Dataset, FinancialEvent
 from app.schemas.scenario import ScenarioDocument
@@ -17,15 +18,18 @@ EARLIEST = "1900-01-01T00:00:00.000Z"
 def project_history(
     dataset: Dataset, events: list[FinancialEvent], *, model_only: bool = False
 ) -> ScenarioDocument:
-    attempts = {entry.event_id for entry in reconcile_lifecycle(events).entries if entry.attempt}
+    attempts = {
+        entry.event_id
+        for entry in reconcile_lifecycle(events, allow_unknown_status=model_only).entries
+        if entry.attempt
+    }
     inputs = {event.id: source_input(event) for event in events}
     eligible = sorted(
         (
             event
             for event in events
             if event.id in attempts
-            and eligibility(event) is None
-            and (not model_only or inputs[event.id] is not None)
+            and (stack_eligibility(event) if model_only else eligibility(event)) is None
         ),
         key=lambda event: (event.occurred_at, event.id),
     )
@@ -35,7 +39,8 @@ def project_history(
     merchant_categories: dict[str, set[str]] = defaultdict(set)
     profiles: dict[str, dict[str, object]] = defaultdict(dict)
     precise_times = all(event.time_precision == "instant" for event in eligible)
-    for event in eligible:
+    canonical = history_frame(eligible).to_dict("records")
+    for event, inputs_row in zip(eligible, canonical, strict=True):
         source = event.source_namespace
         account = scoped_id("account", source, event.account_id)
         merchant_key = event.merchant_id or scoped_id(
@@ -142,6 +147,23 @@ def project_history(
                 "category": event.category,
                 "sourceCategory": event.source_category,
                 "modelInput": inputs[event.id],
+                "rankingInput": {
+                    "timePrecision": inputs_row["precision"],
+                    "activityType": inputs_row["activity_type"],
+                    "category": inputs_row["category"],
+                    "channel": inputs_row["channel"],
+                    "completed": {
+                        "completed": True,
+                        "posted": True,
+                        "settled": True,
+                        "failed": False,
+                        "declined": False,
+                    }.get(event.status),
+                    "merchantRegion": inputs_row["merchant_region"],
+                    "merchantCity": inputs_row["merchant_city"],
+                    "sourcePaymentId": inputs_row["payment_id"],
+                    "merchantIdProvided": bool(event.merchant_id),
+                },
                 "unavailableRules": sorted(set(unavailable)),
             }
         )

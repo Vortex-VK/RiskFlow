@@ -18,7 +18,7 @@ def test_health_reports_the_installed_engine(client: TestClient) -> None:
     assert client.get("/api/v1/health").json() == {
         "status": "ok",
         "schemaVersion": 1,
-        "engineVersion": "engine-ml-upload-v9",
+        "engineVersion": "engine-ml-stack-d5",
     }
 
 
@@ -181,9 +181,9 @@ def test_simulation_http_is_complete_and_rejects_semantically_invalid_drafts(
     first = client.post("/api/v1/simulations", json={"scenario": scenario})
     assert first.status_code == 200
     body = first.json()
-    assert body["engineVersion"] == "engine-ml-upload-v9" and len(body["events"]) == 16
+    assert body["engineVersion"] == "engine-ml-stack-d5" and len(body["events"]) == 16
     assert body["events"][9]["riskScore"] is None
-    assert body["events"][9]["model"]["version"] == "ml-upload-v9"
+    assert body["events"][9]["model"]["version"] == "ml-stack-d5"
     assert body["metrics"]["decisions"]["block"]["count"] == 0
     second = client.post("/api/v1/simulations", json={"scenario": scenario}).json()
     assert body.pop("runId") != second.pop("runId")

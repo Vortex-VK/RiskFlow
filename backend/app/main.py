@@ -19,14 +19,13 @@ from app.domain.explanation import explain_payment
 from app.domain.model_inputs import UnsupportedModelInput
 from app.domain.validation import validate_scenario
 from app.schemas.behavioral import AnalysisCapabilities
-from app.schemas.explanation import ExplanationRequest, PaymentExplanation
+from app.schemas.explanation import ExplanationRequest, PaymentExplanation, StackPaymentExplanation
 from app.schemas.responses import ErrorResponse, HealthResponse, TemplateSummary, ValidationResult
 from app.schemas.scenario import ScenarioDocument, ScenarioRequest
 from app.schemas.simulation import RunResult
 from app.templates.catalog import list_templates, load_template
-from ml.adaptation_runtime import runtime
-from ml.probability_runtime import runtime as probability_runtime
-from ml.runtime import ModelUnavailable
+from ml.common import ModelUnavailable
+from ml.stack_runtime import runtime
 
 app = FastAPI(
     title="RiskFlow API",
@@ -104,14 +103,13 @@ async def handle_model_input(request: Request, exc: UnsupportedModelInput) -> JS
 
 @app.exception_handler(ModelUnavailable)
 async def handle_model_unavailable(request: Request, exc: ModelUnavailable) -> JSONResponse:
-    logger.error("Upload-v9 unavailable", exc_info=exc)
+    logger.error("Stack-d5 unavailable", exc_info=exc)
     return error_response(503, "model_unavailable", str(exc), request.state.request_id)
 
 
 @app.get("/api/v1/health", response_model=HealthResponse, operation_id="getHealth")
 def health() -> HealthResponse:
     runtime()
-    probability_runtime()
     return HealthResponse(status="ok", schemaVersion=1, engineVersion=ENGINE_VERSION)
 
 
@@ -171,9 +169,11 @@ def simulation(payload: ScenarioRequest, request: Request) -> RunResult | JSONRe
 
 
 @app.post(
-    "/api/v1/explanations", response_model=PaymentExplanation, operation_id="explainPayment"
+    "/api/v1/explanations",
+    response_model=PaymentExplanation | StackPaymentExplanation,
+    operation_id="explainPayment",
 )
-def explanation(payload: ExplanationRequest) -> PaymentExplanation:
+def explanation(payload: ExplanationRequest) -> PaymentExplanation | StackPaymentExplanation:
     if validate_scenario(payload.scenario):
         raise HTTPException(422, "Correct the scenario before requesting an explanation.")
     return explain_payment(payload)

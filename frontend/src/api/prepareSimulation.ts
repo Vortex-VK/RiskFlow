@@ -1,3 +1,4 @@
+import { unsupportedRankingInput } from "../domain/model";
 import type { Document } from "../domain/types";
 import { normalizedScenario } from "../domain/runs";
 import type { Run } from "../domain/runs";
@@ -33,7 +34,7 @@ export function discardPreparation(document?: Document) {
 export function prepareSimulation(document: Document): Promise<Run> | null {
   if (
     !document.scenario.payments.length ||
-    document.scenario.payments.some((p) => !p.modelInput)
+    document.scenario.payments.some(unsupportedRankingInput)
   )
     return null;
   const key = normalizedScenario(document.scenario);

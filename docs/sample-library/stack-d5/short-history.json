@@ -1,0 +1,302 @@
+[
+  {
+    "alert": false,
+    "eventId": "CSV_002",
+    "fraud": false,
+    "sourceRow": 5042988
+  },
+  {
+    "alert": true,
+    "eventId": "CSV_003",
+    "fraud": false,
+    "sourceRow": 18880616
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_004",
+    "fraud": false,
+    "sourceRow": 18549572
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_005",
+    "fraud": false,
+    "sourceRow": 7010762
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_006",
+    "fraud": false,
+    "sourceRow": 15431975
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_007",
+    "fraud": false,
+    "sourceRow": 15431977
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_008",
+    "fraud": false,
+    "sourceRow": 7016924
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_009",
+    "fraud": false,
+    "sourceRow": 18537042
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_010",
+    "fraud": false,
+    "sourceRow": 8790116
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_011",
+    "fraud": false,
+    "sourceRow": 8790117
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_012",
+    "fraud": true,
+    "sourceRow": 15435793
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_013",
+    "fraud": true,
+    "sourceRow": 15435794
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_014",
+    "fraud": false,
+    "sourceRow": 8790118
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_015",
+    "fraud": false,
+    "sourceRow": 17612494
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_016",
+    "fraud": false,
+    "sourceRow": 12416671
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_017",
+    "fraud": false,
+    "sourceRow": 8790119
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_018",
+    "fraud": false,
+    "sourceRow": 8779878
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_019",
+    "fraud": false,
+    "sourceRow": 18537043
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_020",
+    "fraud": false,
+    "sourceRow": 9785934
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_021",
+    "fraud": false,
+    "sourceRow": 22826844
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_022",
+    "fraud": false,
+    "sourceRow": 8774554
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_023",
+    "fraud": false,
+    "sourceRow": 12418177
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_024",
+    "fraud": false,
+    "sourceRow": 18868834
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_025",
+    "fraud": false,
+    "sourceRow": 16630822
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_026",
+    "fraud": false,
+    "sourceRow": 21760857
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_027",
+    "fraud": false,
+    "sourceRow": 15435795
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_028",
+    "fraud": false,
+    "sourceRow": 18549573
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_029",
+    "fraud": false,
+    "sourceRow": 22826845
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_030",
+    "fraud": false,
+    "sourceRow": 5023138
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_031",
+    "fraud": false,
+    "sourceRow": 18549574
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_032",
+    "fraud": false,
+    "sourceRow": 18880617
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_033",
+    "fraud": false,
+    "sourceRow": 18517966
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_034",
+    "fraud": false,
+    "sourceRow": 5023139
+  },
+  {
+    "alert": true,
+    "eventId": "CSV_035",
+    "fraud": false,
+    "sourceRow": 22837290
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_036",
+    "fraud": false,
+    "sourceRow": 7011980
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_037",
+    "fraud": false,
+    "sourceRow": 21754120
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_038",
+    "fraud": false,
+    "sourceRow": 16630823
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_039",
+    "fraud": false,
+    "sourceRow": 18868835
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_040",
+    "fraud": false,
+    "sourceRow": 5042989
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_041",
+    "fraud": false,
+    "sourceRow": 22826846
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_042",
+    "fraud": true,
+    "sourceRow": 15435796
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_043",
+    "fraud": false,
+    "sourceRow": 18549575
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_044",
+    "fraud": true,
+    "sourceRow": 15435797
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_045",
+    "fraud": false,
+    "sourceRow": 18517967
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_046",
+    "fraud": false,
+    "sourceRow": 18521929
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_047",
+    "fraud": false,
+    "sourceRow": 17610274
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_048",
+    "fraud": false,
+    "sourceRow": 7014384
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_049",
+    "fraud": false,
+    "sourceRow": 18517968
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_050",
+    "fraud": false,
+    "sourceRow": 16630824
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_051",
+    "fraud": true,
+    "sourceRow": 15435798
+  }
+]

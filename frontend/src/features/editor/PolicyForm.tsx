@@ -51,9 +51,9 @@ export function PolicyForm({ close }: { close: () => void }) {
       </button>
       <h2>Policy &amp; costs</h2>
       <p>
-        Simulation uses fixed alert thresholds. Alerts go to review; no payments
-        are blocked. Costs are illustrative assumptions and do not change model
-        predictions.
+        Review capacity selects the highest-ranked purchases across the upload.
+        Adjust it during replay. Costs are illustrative and do not change
+        rankings.
       </p>
       <form
         data-scenario-form

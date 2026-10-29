@@ -29,3 +29,27 @@ class PaymentExplanation(ResultModel):
     raw_margin: Finite
     probability: Annotated[float, Field(ge=0, le=100, allow_inf_nan=False)]
     contributions: list[FeatureContribution]
+
+
+class RankingFact(ResultModel):
+    label: str
+    value: str
+    comparison: str
+
+
+class ExpertExplanation(ResultModel):
+    expert: str
+    base_value: Finite
+    raw_margin: Finite
+    contributions: list[FeatureContribution]
+
+
+class StackPaymentExplanation(ResultModel):
+    event_id: Identifier
+    model_bundle_sha256: str
+    method: Literal["tree-shap-stack-head-v1"] = "tree-shap-stack-head-v1"
+    base_value: Finite
+    raw_margin: Finite
+    contributions: list[FeatureContribution]
+    facts: list[RankingFact]
+    experts: list[ExpertExplanation]

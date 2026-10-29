@@ -2,6 +2,35 @@ import { expect, type Page } from "@playwright/test";
 import type { Document } from "../src/domain/types";
 import { readFile } from "node:fs/promises";
 import { parseCsv } from "../src/domain/csv";
+import { rankedQueue, applyCapacity } from "../src/domain/reviewQueue";
+import type { Run } from "../src/domain/runs";
+
+export async function setReviewCapacity(page: Page, count: number) {
+  const slider = page.getByRole("slider", {
+    name: "Review capacity",
+    exact: true,
+  });
+  await slider.press("Home");
+  for (let i = 0; i < count; i++) await slider.press("ArrowLeft");
+}
+
+export function uploadQueueRun(run: Run, count?: number) {
+  const ids = new Map(
+    run.scenarioSnapshot.payments.map((p) => [
+      p.id,
+      p.rankingInput?.sourcePaymentId ?? p.id,
+    ]),
+  );
+  const queue = rankedQueue(run.events, ids);
+  return {
+    ...run,
+    events: applyCapacity(
+      run.events,
+      queue.ranks,
+      count ?? queue.suggestion.count,
+    ),
+  };
+}
 
 export async function fillModelInputs(page: Page) {
   if (

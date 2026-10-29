@@ -18,10 +18,12 @@ export function DatasetResults({
   inspectFlagged,
   scenario,
   inspectGroup,
+  queueCapacity,
 }: {
   events: readonly Event[];
   truth: Readonly<Record<string, string>>;
   threshold: number | null;
+  queueCapacity?: number | undefined;
   inspectFlagged: () => void;
   scenario: Scenario;
   inspectGroup: (group: ReviewGroup) => void;
@@ -40,9 +42,11 @@ export function DatasetResults({
     <section className="dataset-results" aria-label="Dataset results">
       <p className="result-scope">
         Entire dataset ·{" "}
-        {threshold === null
-          ? "Model defaults"
-          : `${threshold}% threshold preview`}
+        {queueCapacity !== undefined
+          ? `Top ${queueCapacity} across this upload`
+          : threshold === null
+            ? "Recorded review policy"
+            : `${threshold}% threshold preview`}
       </p>
       <div className="result-grid">
         <div className="result-review">
@@ -94,6 +98,12 @@ export function DatasetResults({
       />
       {!!context.historyAssessed && (
         <section aria-label="Review context" className="review-context">
+          {events.some((e) => e.model?.ranking) && (
+            <p>
+              Review follows the current upload queue. Capacity changes the
+              selection, not the scores. No alert does not establish safety.
+            </p>
+          )}
           <h3>Available purchase history</h3>
           <dl className="facts">
             <div>
@@ -106,7 +116,7 @@ export function DatasetResults({
             </div>
           </dl>
           <p className="fineprint">
-            History counts use earlier completed purchases available to this
+            History counts use earlier purchase observations available to this
             assessment. Limited history describes available context, not a fraud
             finding.
           </p>

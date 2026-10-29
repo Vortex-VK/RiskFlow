@@ -1,3 +1,4 @@
+import { unsupportedRankingInput } from "../domain/model";
 import { create } from "zustand";
 import type { Document } from "../domain/types";
 import { freeze, projectAnalyticalInput } from "../domain/runs";
@@ -68,11 +69,11 @@ export const useSimulation = create<SimulationState>((set, get) => ({
     )
       return;
     const submitted = structuredClone(workspace.document);
-    const missing = submitted.scenario.payments.filter((p) => !p.modelInput);
+    const missing = submitted.scenario.payments.filter(unsupportedRankingInput);
     if (!submitted.scenario.payments.length || missing.length) {
       set({
         error: missing.length
-          ? `${missing.length} payments need precise time, transaction channel, four-digit MCC and completion status. Edit their payment details or reimport with these fields.`
+          ? `${missing.length} payments need stable merchant IDs and a supported purchase activity type. Reimport with these fields.`
           : "Add a payment before simulating.",
       });
       return;

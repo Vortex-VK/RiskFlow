@@ -34,6 +34,7 @@ function stable(value: unknown): unknown {
                 "category",
                 "sourceCategory",
                 "modelInput",
+                "rankingInput",
               ].includes(key)
             ),
         )
@@ -88,9 +89,7 @@ export function normalizedScenario(
         ),
       ),
       payments: s.payments.map((payment) =>
-        Object.fromEntries(
-          Object.entries(payment).filter(([key]) => key !== "sourceCategory"),
-        ),
+        Object.fromEntries(Object.entries(payment)),
       ),
     }),
   );

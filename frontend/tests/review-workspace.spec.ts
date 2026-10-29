@@ -1,3 +1,5 @@
+import { setReviewCapacity } from "./workspace-helpers";
+import { uploadQueueRun } from "./workspace-helpers";
 import { expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { setPlaybackSpeed } from "./workspace-helpers";
@@ -27,9 +29,10 @@ test("review counts follow visible playback and completed inspection keeps the f
     .getAttribute("style");
   await page.screenshot({ path: testInfo.outputPath("before-simulation.png") });
   await page.getByRole("button", { name: "Simulate", exact: true }).click();
-  const run = await (await response).json();
+  const run = uploadQueueRun(await (await response).json(), 10);
+  await setReviewCapacity(page, 10);
   const flagged = run.events.filter(
-    (e: { model: { score: { value: number } } }) => e.model.score.value >= 90,
+    (e: { model: { alert: boolean } }) => e.model.alert,
   );
   expect(flagged.length).toBeGreaterThan(1);
   const overview = page.getByRole("region", { name: "Run assessment summary" });
@@ -67,10 +70,7 @@ test("review counts follow visible playback and completed inspection keeps the f
     await page.getByRole("button", { name: "Next event", exact: true }).click();
     const reviewCount = run.events
       .slice(0, count)
-      .filter(
-        (e: { model: { score: { value: number } } }) =>
-          e.model.score.value >= 90,
-      ).length;
+      .filter((e: { model: { alert: boolean } }) => e.model.alert).length;
     await expect(totals).toHaveText([
       String(count),
       String(reviewCount),
@@ -81,21 +81,13 @@ test("review counts follow visible playback and completed inspection keeps the f
     expect(await overview.boundingBox()).toEqual(initialSummaryBox);
     expect(await numberPositions()).toEqual(initialNumberPositions);
   }
-  const threshold = page.getByRole("slider", {
-    name: /^Probability threshold/,
-  });
-  await threshold.press("Home");
-  await expect(totals).toHaveText(["8", "8", "0"]);
-  expect(await sumGroupCounts()).toBe(8);
-  await threshold.fill("90");
+  await expect(page.getByLabel("Probability threshold")).toHaveCount(0);
   await page
     .getByRole("button", { name: "Previous event", exact: true })
     .click();
   const previousReviews = run.events
     .slice(0, 7)
-    .filter(
-      (e: { model: { score: { value: number } } }) => e.model.score.value >= 90,
-    ).length;
+    .filter((e: { model: { alert: boolean } }) => e.model.alert).length;
   await expect(totals).toHaveText([
     "7",
     String(previousReviews),
@@ -118,24 +110,14 @@ test("review counts follow visible playback and completed inspection keeps the f
   await expect(page.getByRole("button", { name: /^Connections/ })).toHaveCount(
     0,
   );
-  await threshold.press("Home");
-  await expect(totals).toHaveText(["250", "250", "0"]);
-  await expect(page.getByRole("status")).toContainText(
-    "0 no alert \u00b7 250 for review \u00b7 Threshold preview",
-  );
-  expect(await sumGroupCounts()).toBe(250);
   await page.getByRole("button", { name: "Results", exact: true }).click();
   const results = page.getByRole("region", { name: "Dataset results" });
-  await expect(results).toContainText("0% threshold preview");
+  await expect(results).toContainText("Top 10 across this upload");
   await expect(
-    results.getByRole("button", { name: "Inspect 250 flagged payments" }),
+    results.getByRole("button", {
+      name: `Inspect ${flagged.length} flagged payments`,
+    }),
   ).toBeVisible();
-  const frauds = Object.values(run.scenarioSnapshot.groundTruth).filter(
-    (label) => label === "fraudulent",
-  ).length;
-  await expect(results).toContainText(
-    `${frauds} of ${frauds} labeled frauds flagged`,
-  );
   await expect(
     results.getByRole("region", { name: "Where alerts concentrate" }),
   ).toBeVisible();
@@ -153,12 +135,6 @@ test("review counts follow visible playback and completed inspection keeps the f
       page.getByRole("complementary", { name: "Completed run totals" }),
     ).not.toContainText(removed);
   await page.getByRole("button", { name: "Close results" }).click();
-  await threshold.press("End");
-  const at100 = run.events.filter(
-    (e: { model: { score: { value: number } } }) => e.model.score.value >= 100,
-  ).length;
-  await expect(totals).toHaveText(["250", String(at100), String(250 - at100)]);
-  await threshold.fill("90");
   await expect(totals).toHaveText([
     "250",
     String(flagged.length),
@@ -210,11 +186,14 @@ test("review counts follow visible playback and completed inspection keeps the f
   await expect(
     detail
       .locator(".payment-verdict")
-      .getByText(`${flagged[0].model.score.value.toFixed(2)}%`, {
-        exact: true,
-      }),
+      .getByText(
+        `#${run.events.filter((e) => e.model!.ranking!.rawMargin > flagged[0].model!.ranking!.rawMargin).length + 1} of ${run.events.length}`,
+        {
+          exact: true,
+        },
+      ),
   ).toHaveCount(1);
-  await expect(detail).toContainText("Meets 90.00% threshold · For review.");
+  await expect(detail).toContainText("Inside your");
   await expect(detail.locator(".continuous-score")).toHaveCount(0);
   const selectedMerchant = page.locator(
     `[data-node="${flagged[0].merchantId}"]`,
@@ -245,17 +224,14 @@ test("review counts follow visible playback and completed inspection keeps the f
     "data-transitioning",
     "false",
   );
-  await expect(detail.locator(".contribution-list li")).toHaveCount(5);
   await expect(
-    detail.getByRole("figure", {
-      name: "From starting estimate to final probability",
-    }),
+    detail.getByRole("region", { name: "Ranking evidence" }),
   ).toBeVisible();
   await expect(detail.locator(".contribution-track")).toHaveCount(0);
   await page.screenshot({ path: testInfo.outputPath("payment-detail.png") });
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
   await page.getByRole("button", { name: "Results", exact: true }).click();
-  await expect(results).toContainText("90% threshold preview");
+  await expect(results).toContainText("Top 10 across this upload");
   await expect(
     page.getByRole("complementary", { name: "Completed run totals" }),
   ).toHaveCSS("opacity", "1");

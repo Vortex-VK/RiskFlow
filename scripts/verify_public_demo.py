@@ -95,11 +95,9 @@ def main():
         run, _ = request("/api/v1/simulations", payload)
         result = json.loads(run)
         assert len(result["events"]) == template["paymentCount"]
-        assert result["engineVersion"] == "engine-ml-upload-v9"
+        assert result["engineVersion"] == "engine-ml-stack-d5"
         if template["id"] == "shared-device-cluster":
-            expected = json.loads(
-                (ROOT / "fixtures/runtime/shared-device-cluster-upload-v9.json").read_text()
-            )
+            expected = json.loads((ROOT / "fixtures/runtime/stack-d5/run.json").read_text())
             same_prediction(result["events"], expected["events"])
             same_prediction(result["metrics"], expected["metrics"])
         print(f"{template['id']}: {time.monotonic() - started:.2f}s", flush=True)

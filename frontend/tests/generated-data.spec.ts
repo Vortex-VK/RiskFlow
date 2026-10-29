@@ -34,7 +34,7 @@ test("a mixed valid and unsupported import cannot reuse an earlier preview and c
   await page.getByRole("button", { name: "Import CSV", exact: true }).click();
   await page.getByLabel("Import purpose").selectOption("model");
   const valid =
-    "timestamp,amount,merchant_name,channel,mcc,status\n2026-10-20T09:00:00Z,12,Shop,Chip Transaction,5411,completed";
+    "timestamp,amount,merchant_id,channel,mcc,status\n2026-10-20T09:00:00Z,12,Shop,Chip Transaction,5411,completed";
   const upload = async (text: string) => {
     await page.getByLabel("CSV file").setInputFiles({
       name: "payments.csv",
@@ -46,7 +46,7 @@ test("a mixed valid and unsupported import cannot reuse an earlier preview and c
   await upload(valid);
   await expect(page.getByRole("button", { name: "Build graph" })).toBeVisible();
   await upload(
-    valid + "\n2026-10-20T10:00:00Z,20,Shop,Chip Transaction,,completed",
+    valid + "\n2026-10-20T10:00:00Z,20,,Chip Transaction,5411,completed",
   );
   await expect(page.getByRole("alert")).toContainText("1 of 2 payments");
   await expect(page.getByRole("button", { name: "Build graph" })).toHaveCount(
@@ -63,7 +63,7 @@ test("a mixed valid and unsupported import cannot reuse an earlier preview and c
   ).toBeVisible();
 });
 
-test("assumption-based generated CSV keeps labels unknown and exposes scoped probability estimates", async ({
+test("assumption-based generated CSV keeps labels unknown and exposes scoped ranking evidence", async ({
   page,
 }) => {
   test.setTimeout(90000);
@@ -90,14 +90,14 @@ test("assumption-based generated CSV keeps labels unknown and exposes scoped pro
   const received = await response;
   expect(received.ok()).toBe(true);
   const result = await received.json();
-  expect(result.engineVersion).toBe("engine-ml-upload-v9");
+  expect(result.engineVersion).toBe("engine-ml-stack-d5");
   expect(result.events).toHaveLength(1615);
   expect(result.metrics.labeledCount).toBe(0);
   expect(
     result.events.every(
       (e: { model: { probabilityAvailable: boolean; version: string } }) =>
-        e.model.probabilityAvailable === true &&
-        e.model.version === "ml-upload-v9",
+        e.model.probabilityAvailable === false &&
+        e.model.version === "ml-stack-d5",
     ),
   ).toBe(true);
   await expect(

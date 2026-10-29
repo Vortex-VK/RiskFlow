@@ -18,7 +18,9 @@ def kind_of(event: FinancialEvent) -> str:
     return "purchase" if event.activity_type in PURCHASES else "unsupported"
 
 
-def reconcile_lifecycle(events: list[FinancialEvent]) -> LifecycleReport:
+def reconcile_lifecycle(
+    events: list[FinancialEvent], *, allow_unknown_status: bool = False
+) -> LifecycleReport:
     ordered = sorted(events, key=lambda event: (event.occurred_at, event.id))
     by_source = {
         (event.source_namespace, event.account_id, event.source_event_id): event for event in events
@@ -37,7 +39,10 @@ def reconcile_lifecycle(events: list[FinancialEvent]) -> LifecycleReport:
         attempt = (
             kind in {"purchase", "authorization"}
             and event.direction in OUTGOING
-            and event.status in ATTEMPTS
+            and (
+                event.status in ATTEMPTS
+                or (allow_unknown_status and event.status in {"", "unknown", "unspecified"})
+            )
             and event.amount_minor != 0
         )
         entry = LifecycleEntry(

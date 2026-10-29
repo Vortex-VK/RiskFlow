@@ -73,6 +73,7 @@ class AssessmentRun(HistoryModel):
         "assessment-v2.7",
         "assessment-v2.8",
         "assessment-v2.9",
+        "assessment-v2.10",
         "assessment-behavioral-v1",
     ] = "assessment-v2.1"
     document: ScenarioDocument

@@ -443,7 +443,7 @@ export interface components {
              * @default assessment-v2.1
              * @enum {string}
              */
-            assessmentVersion: "assessment-v2.1" | "assessment-v2.2" | "assessment-v2.3" | "assessment-v2.4" | "assessment-v2.5" | "assessment-v2.6" | "assessment-v2.7" | "assessment-v2.8" | "assessment-v2.9" | "assessment-behavioral-v1";
+            assessmentVersion: "assessment-v2.1" | "assessment-v2.2" | "assessment-v2.3" | "assessment-v2.4" | "assessment-v2.5" | "assessment-v2.6" | "assessment-v2.7" | "assessment-v2.8" | "assessment-v2.9" | "assessment-v2.10" | "assessment-behavioral-v1";
             /** Assessments */
             assessments: components["schemas"]["Assessment"][];
             /** Datasetid */
@@ -861,6 +861,17 @@ export interface components {
              */
             version: "margin-index-v1" | "fraud-probability-v1" | "fraud-probability-v2";
         };
+        /** ExpertExplanation */
+        ExpertExplanation: {
+            /** Basevalue */
+            baseValue: number;
+            /** Contributions */
+            contributions: components["schemas"]["FeatureContribution"][];
+            /** Expert */
+            expert: string;
+            /** Rawmargin */
+            rawMargin: number;
+        };
         /** ExplanationRequest */
         ExplanationRequest: {
             /** Eventid */
@@ -1262,9 +1273,9 @@ export interface components {
             /**
              * Evidencescope
              * @default synthetic_benchmark
-             * @constant
+             * @enum {string}
              */
-            evidenceScope: "synthetic_benchmark";
+            evidenceScope: "synthetic_benchmark" | "exposed_development";
             /**
              * Feedbackavailable
              * @default false
@@ -1278,12 +1289,13 @@ export interface components {
              * @default depth6
              * @enum {string}
              */
-            policy: "depth6" | "recall85" | "balanced" | "precision95" | "mixed-source";
+            policy: "depth6" | "recall85" | "balanced" | "precision95" | "mixed-source" | "review-budget";
             /**
              * Probabilityavailable
              * @default false
              */
             probabilityAvailable: boolean;
+            ranking?: components["schemas"]["RankingEvidence"] | null;
             /** Rawscores */
             rawScores: {
                 [key: string]: number;
@@ -1300,7 +1312,7 @@ export interface components {
              * @default ml-v13
              * @enum {string}
              */
-            version: "ml-v13" | "ml-upload-v5" | "ml-upload-v7" | "ml-upload-v8" | "ml-upload-v9";
+            version: "ml-v13" | "ml-upload-v5" | "ml-upload-v7" | "ml-upload-v8" | "ml-upload-v9" | "ml-stack-d5";
         };
         /** ModelInput */
         ModelInput: {
@@ -1355,6 +1367,7 @@ export interface components {
             modelInput?: components["schemas"]["ModelInput"] | null;
             /** Occurredat */
             occurredAt: string;
+            rankingInput?: components["schemas"]["RankingInput"] | null;
             /** Sourcecategory */
             sourceCategory?: string | null;
             /** Unavailablerules */
@@ -1503,6 +1516,72 @@ export interface components {
             /** Windowstart */
             windowStart: string;
         };
+        /** RankingEvidence */
+        RankingEvidence: {
+            /** Availablefields */
+            availableFields: string[];
+            /**
+             * Daytimezone
+             * @default UTC
+             * @constant
+             */
+            dayTimezone: "UTC";
+            /** Missingfields */
+            missingFields: string[];
+            /** Prioritypercentile */
+            priorityPercentile: number;
+            /** Rawmargin */
+            rawMargin: number;
+            /**
+             * Reviewfraction
+             * @default 0.01
+             */
+            reviewFraction: number;
+            /**
+             * Reviewpolicy
+             * @default daily
+             * @constant
+             */
+            reviewPolicy: "daily";
+            /**
+             * Timeprecision
+             * @enum {string}
+             */
+            timePrecision: "day" | "second";
+        };
+        /** RankingFact */
+        RankingFact: {
+            /** Comparison */
+            comparison: string;
+            /** Label */
+            label: string;
+            /** Value */
+            value: string;
+        };
+        /** RankingInput */
+        RankingInput: {
+            /** Activitytype */
+            activityType: string;
+            /** Category */
+            category: string;
+            /** Channel */
+            channel: string;
+            /** Completed */
+            completed: boolean | null;
+            /** Merchantcity */
+            merchantCity: string;
+            /** Merchantidprovided */
+            merchantIdProvided: boolean;
+            /** Merchantregion */
+            merchantRegion: string;
+            /** Sourcepaymentid */
+            sourcePaymentId: string;
+            /**
+             * Timeprecision
+             * @enum {string}
+             */
+            timePrecision: "day" | "second";
+        };
         /** Rate */
         Rate: {
             /** Denominator */
@@ -1565,19 +1644,19 @@ export interface components {
             completedAt: string;
             /**
              * Engineversion
-             * @default engine-ml-upload-v9
+             * @default engine-ml-stack-d5
              * @enum {string}
              */
-            engineVersion: "engine-v1" | "engine-v2" | "engine-v3" | "engine-ml-v13" | "engine-ml-upload-v5" | "engine-ml-upload-v7" | "engine-ml-upload-v8" | "engine-ml-upload-v9";
+            engineVersion: "engine-v1" | "engine-v2" | "engine-v3" | "engine-ml-v13" | "engine-ml-upload-v5" | "engine-ml-upload-v7" | "engine-ml-upload-v8" | "engine-ml-upload-v9" | "engine-ml-stack-d5";
             /** Events */
             events: components["schemas"]["EventResult"][];
             metrics: components["schemas"]["Metrics"];
             /**
              * Rulesetversion
-             * @default upload-v9-mixed-source
+             * @default stack-d5-daily-1pct
              * @enum {string}
              */
-            ruleSetVersion: "rules-v1" | "v13-depth6" | "upload-v5-recall85" | "upload-v7-balanced" | "upload-v8-precision95" | "upload-v9-mixed-source";
+            ruleSetVersion: "rules-v1" | "v13-depth6" | "upload-v5-recall85" | "upload-v7-balanced" | "upload-v8-precision95" | "upload-v9-mixed-source" | "stack-d5-daily-1pct";
             /** Runid */
             runId: string;
             scenarioSnapshot: components["schemas"]["ScenarioDefinition"];
@@ -1673,6 +1752,29 @@ export interface components {
              */
             ruleId: "unusual_amount" | "payment_velocity" | "new_device" | "unusual_location" | "merchant_category_deviation" | "shared_device_accounts";
         };
+        /** StackPaymentExplanation */
+        StackPaymentExplanation: {
+            /** Basevalue */
+            baseValue: number;
+            /** Contributions */
+            contributions: components["schemas"]["FeatureContribution"][];
+            /** Eventid */
+            eventId: string;
+            /** Experts */
+            experts: components["schemas"]["ExpertExplanation"][];
+            /** Facts */
+            facts: components["schemas"]["RankingFact"][];
+            /**
+             * Method
+             * @default tree-shap-stack-head-v1
+             * @constant
+             */
+            method: "tree-shap-stack-head-v1";
+            /** Modelbundlesha256 */
+            modelBundleSha256: string;
+            /** Rawmargin */
+            rawMargin: number;
+        };
         /** TemplateSummary */
         TemplateSummary: {
             /** Id */
@@ -1755,7 +1857,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["PaymentExplanation"];
+                    "application/json": components["schemas"]["PaymentExplanation"] | components["schemas"]["StackPaymentExplanation"];
                 };
             };
             /** @description Not Found */

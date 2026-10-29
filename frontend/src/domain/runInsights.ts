@@ -81,10 +81,10 @@ export function findInvestigationPatterns(payments: Scenario["payments"]) {
           found.add("repeat");
         const previous = channels.get(p.accountId);
         if (
-          p.modelInput?.channel &&
+          (p.rankingInput?.channel || p.modelInput?.channel) &&
           previous?.size === 1 &&
           !previous.has(undefined) &&
-          !previous.has(p.modelInput.channel)
+          !previous.has(p.rankingInput?.channel || p.modelInput?.channel)
         )
           found.add("channel");
       }
@@ -110,7 +110,7 @@ export function findInvestigationPatterns(payments: Scenario["payments"]) {
       channelSet.add(
         p.unavailableRules?.includes("payment_velocity")
           ? undefined
-          : p.modelInput?.channel,
+          : p.rankingInput?.channel || p.modelInput?.channel,
       );
       batchChannels.set(p.accountId, channelSet);
       if (

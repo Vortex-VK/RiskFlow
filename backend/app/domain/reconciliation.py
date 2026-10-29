@@ -90,7 +90,8 @@ def preview_import(
             raise ValueError("Retained datasets currently support at most 20,000 source events.")
         project_history(dataset, list(by_id.values()))
         populations = {
-            item.event_id: item for item in reconcile_lifecycle(list(by_id.values())).entries
+            item.event_id: item
+            for item in reconcile_lifecycle(list(by_id.values()), allow_unknown_status=True).entries
         }
         rows = [
             row.model_copy(

@@ -6,4 +6,4 @@ These compact JSON files were extracted from the existing frozen research output
 - `card-scenarios-alerts.json`: original base-model alert identities for that authored input.
 - `coverage-samples.json`: original coverage-component alert identities and row counts for all six checked IBM samples.
 
-Runtime tests also verify causality, label independence, artifact integrity and persistence. These receipts are regression evidence, not a fresh model evaluation. The source reports remain under `docs/model-evaluations/`.
+Runtime tests also verify causality, label independence, artifact integrity and persistence. These receipts are regression evidence, not a fresh model evaluation. The source research reports are retained locally and excluded from the public repository.

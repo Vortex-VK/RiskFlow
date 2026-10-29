@@ -31,7 +31,7 @@ try:
                 assert json.load(response) == {
                     "status": "ok",
                     "schemaVersion": 1,
-                    "engineVersion": "engine-ml-upload-v9",
+                    "engineVersion": "engine-ml-stack-d5",
                 }
             break
         except (URLError, TimeoutError):
@@ -62,12 +62,10 @@ try:
     )
     with urlopen(request, timeout=3) as response:
         result = json.load(response)
-        assert result["events"][9]["model"]["version"] == "ml-upload-v9"
+        assert result["events"][9]["model"]["version"] == "ml-stack-d5"
         assert result["events"][9]["riskScore"] is None
         frozen = json.loads(
-            (root / "fixtures/runtime/shared-device-cluster-upload-v9.json").read_text(
-                encoding="utf-8"
-            )
+            (root / "fixtures/runtime/stack-d5/run.json").read_text(encoding="utf-8")
         )
         assert result["events"] == frozen["events"]
         assert result["metrics"] == frozen["metrics"]

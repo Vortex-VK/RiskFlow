@@ -29,6 +29,20 @@ const build = (text: string, assumptions = defaults) => {
   return buildCsvDocument(table, initialMapping(table.headers), assumptions);
 };
 
+it("recognizes explicit fraud flags without changing model inputs", () => {
+  const labeled = build(`${header},is_fraud\n${first},1\n${second},0`).document!
+    .scenario;
+  const unlabeled = build(`${header}\n${first}\n${second}`).document!.scenario;
+  expect(Object.values(labeled.groundTruth).sort()).toEqual([
+    "fraudulent",
+    "legitimate",
+  ]);
+  expect(labeled.payments).toEqual(unlabeled.payments);
+  expect(
+    build(`${header},is_fraud\n${first},maybe`).errors.length,
+  ).toBeGreaterThan(0);
+});
+
 it("keeps retained source-row limits separate from sandbox payments", () => {
   const limits = {
     maxRows: MAX_RETAINED_IMPORT_ROWS,

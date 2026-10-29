@@ -11,7 +11,7 @@ const fixture = decodeAssessment(retained);
 const health = {
   status: "ok",
   schemaVersion: 1,
-  engineVersion: "engine-ml-upload-v9",
+  engineVersion: "engine-ml-stack-d5",
 };
 afterEach(() => {
   discardPreparation();
@@ -66,7 +66,7 @@ it("failed background work is retryable and invalid input does not start work", 
     fixture.simulation?.runId,
   );
   const incomplete = structuredClone(fixture.document);
-  incomplete.scenario.payments[0]!.modelInput = null;
+  incomplete.scenario.payments = [];
   expect(prepareSimulation(incomplete)).toBeNull();
   expect(fetcher).toHaveBeenCalledTimes(3);
 });

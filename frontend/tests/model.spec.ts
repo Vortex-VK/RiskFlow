@@ -34,7 +34,7 @@ test("an old running backend gives restart guidance and retry preserves the draf
   expect(submissions).toBe(1);
 });
 
-test("upload-v9 replay shows model evidence and preserves predictions when old device context changes", async ({
+test("stack replay shows model evidence and preserves predictions when old device context changes", async ({
   page,
 }) => {
   const response = page.waitForResponse(
@@ -45,19 +45,17 @@ test("upload-v9 replay shows model evidence and preserves predictions when old d
   await openExampleWorkspace(page);
   await page.getByRole("button", { name: "Simulate", exact: true }).click();
   const first = await (await response).json();
-  expect(first.engineVersion).toBe("engine-ml-upload-v9");
+  expect(first.engineVersion).toBe("engine-ml-stack-d5");
   await page
     .getByRole("button", { name: "Inspect payments", exact: true })
     .click();
   await page.getByRole("button", { name: "Inspect H10", exact: true }).click();
   const evidence = page.getByRole("region", {
-    name: "Model explanation",
+    name: "Ranking evidence",
   });
-  await expect(evidence.locator(".contribution-list li")).toHaveCount(5);
-  await evidence
-    .getByText("Calculation and model-score details", { exact: true })
-    .click();
-  await expect(evidence).toContainText("not percentage points");
+  await expect(evidence).toContainText("Purchase amount");
+  await evidence.getByText("About these comparisons", { exact: true }).click();
+  await expect(evidence).toContainText("not individual fraud reasons");
   await expect(page.locator("body")).not.toContainText(
     /Upload-v\d|\bV13\b|\bV[89] (card|online)\b/,
   );

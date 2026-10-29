@@ -2,13 +2,14 @@ import json
 import pickle
 from functools import lru_cache
 from pathlib import Path
-from threading import RLock
 from typing import Any
 
 import numpy as np
 from threadpoolctl import threadpool_limits
 
 from ml.artifacts import digest
+from ml.common import LOCK as LOCK
+from ml.common import ModelUnavailable as ModelUnavailable
 from ml.models import score
 from ml.policies.combined import apply as combined
 from ml.policies.online import episode
@@ -17,11 +18,6 @@ from ml.policies.thresholds import alerts
 
 MANIFEST_SHA256 = "62eacb03874a2892fbff6f38becfe8cde512ef3b9b0dbb81e50c7e20756ea046"
 BUNDLE = Path(__file__).resolve().parents[1] / "model_artifacts/v13"
-LOCK = RLock()
-
-
-class ModelUnavailable(RuntimeError):
-    pass
 
 
 class Runtime:
