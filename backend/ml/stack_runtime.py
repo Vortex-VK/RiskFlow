@@ -1,6 +1,7 @@
 """Frozen stack_d5 inference. No labels, fitting, or research imports at runtime."""
 
 import json
+from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
@@ -28,6 +29,22 @@ EXPERTS = [
     "handbook_expert",
 ]
 REVIEW_FRACTION = 0.01
+
+
+@dataclass(frozen=True)
+class ScoredSnapshot:
+    """Request-local scores and the exact inputs used to produce them.
+
+    Callers treat the frames as read-only. Nothing is retained on the shared
+    runtime, so a later request always builds its own payment history.
+    """
+
+    normalized: Any
+    scores: dict[str, Any]
+    selected: Any
+    history: Any
+    expert_frame: Any
+    head_inputs: Any
 
 
 def daily_queue(data: Any, scores: Any) -> Any:
@@ -76,6 +93,10 @@ class Runtime:
             raise ModelUnavailable("Stack-d5 package is missing or incompatible.") from exc
 
     def predict(self, data: Any) -> tuple[Any, dict[str, Any], Any, Any]:
+        snapshot = self.score_snapshot(data)
+        return snapshot.normalized, snapshot.scores, snapshot.selected, snapshot.history
+
+    def score_snapshot(self, data: Any) -> ScoredSnapshot:
         """All rows must satisfy the purchase contract. Never silently drop a payment."""
         try:
             with LOCK:
@@ -90,7 +111,14 @@ class Runtime:
                 ):
                     raise ValueError("Unsupported stack inputs")
                 if d.empty:
-                    return d, {}, np.zeros(0, dtype=bool), np.zeros(0, dtype=int)
+                    return ScoredSnapshot(
+                        d,
+                        {},
+                        np.zeros(0, dtype=bool),
+                        np.zeros(0, dtype=int),
+                        pd.DataFrame(),
+                        pd.DataFrame(),
+                    )
                 clean = d.copy()
                 for column in ["account_id", "merchant_id"]:
                     clean[column] = [
@@ -118,21 +146,23 @@ class Runtime:
                     z["expert_" + name] = np.log(q / (1 - q))
                 inputs = pd.concat(
                     [pd.DataFrame(z), portable[PORTABLE].reset_index(drop=True)], axis=1
-                )
+                )[self.manifest["models"]["stack_d5"]["features"]]
                 raw["stack_d5"] = np.asarray(
                     self.models["stack_d5"].predict(
-                        inputs[self.manifest["models"]["stack_d5"]["features"]],
+                        inputs,
                         prediction_type="RawFormulaVal",
                         thread_count=2,
                     )
                 )
                 if not all(np.isfinite(value).all() for value in raw.values()):
                     raise ValueError("Nonfinite model output")
-                return (
+                return ScoredSnapshot(
                     d,
                     raw,
                     daily_queue(d, raw["stack_d5"]),
                     np.rint(np.expm1(portable.p_log_history_n)).astype(int).to_numpy(),
+                    frame,
+                    inputs,
                 )
         except ModelUnavailable:
             raise
@@ -140,27 +170,12 @@ class Runtime:
             raise ModelUnavailable("Stack-d5 inference failed; no fallback was produced.") from exc
 
     def explain(self, data: Any, index: int) -> tuple[Any, Any, Any, float, Any]:
-        """Explain the frozen head, reconstructing its exact inputs from frozen expert scores."""
+        """Explain the frozen head using the inputs from this request's scoring pass."""
         try:
             with LOCK:
-                normalized, scores, _, _ = self.predict(data)
-                clean = normalized.copy()
-                for column in ["account_id", "merchant_id"]:
-                    clean[column] = [
-                        str((a, b)) for a, b in zip(clean.namespace, clean[column], strict=True)
-                    ]
-                portable = build(clean)
-                z = {}
-                for name, (values, cumulative) in zip(EXPERTS, self.reference, strict=True):
-                    q = np.clip(
-                        np.interp(scores[name], values, cumulative, left=0, right=1),
-                        1e-5,
-                        1 - 1e-5,
-                    )
-                    z["expert_" + name] = np.log(q / (1 - q))
-                inputs = pd.concat(
-                    [pd.DataFrame(z), portable[PORTABLE].reset_index(drop=True)], axis=1
-                )[self.manifest["models"]["stack_d5"]["features"]]
+                snapshot = self.score_snapshot(data)
+                normalized, scores = snapshot.normalized, snapshot.scores
+                inputs = snapshot.head_inputs
                 values = self.models["stack_d5"].get_feature_importance(
                     Pool(inputs.iloc[[index]]), type="ShapValues", thread_count=2
                 )[0]
@@ -172,8 +187,7 @@ class Runtime:
                 expert_positions = sorted(
                     range(len(EXPERTS)), key=lambda i: abs(values[i]), reverse=True
                 )[:2]
-                legacy, _ = legacy_frame(clean)
-                expert_frame = pd.concat([portable, legacy], axis=1)
+                expert_frame = snapshot.expert_frame
                 explanations = []
                 for position in expert_positions:
                     name = EXPERTS[position]

@@ -16,8 +16,6 @@ import pandas as pd
 from catboost import Pool
 
 from ml.common import LOCK, ModelUnavailable
-from ml.features.stack.compatibility import legacy_frame
-from ml.features.stack.features import PORTABLE, build
 from ml.stack_runtime import EXPERTS, runtime
 
 
@@ -55,25 +53,11 @@ def compare_checks(
     try:
         with LOCK:
             engine = runtime()
-            normalized, scores, _, _ = engine.predict(data)
-            clean = normalized.copy()
-            for column in ["account_id", "merchant_id"]:
-                clean[column] = [
-                    str((a, b)) for a, b in zip(clean.namespace, clean[column], strict=True)
-                ]
-            portable = build(clean)
-            legacy, _ = legacy_frame(clean)
-            expert_frame = pd.concat([portable, legacy], axis=1)
-            z = {}
-            for name, (values, cumulative) in zip(EXPERTS, engine.reference, strict=True):
-                q = np.clip(
-                    np.interp(scores[name], values, cumulative, left=0, right=1), 1e-5, 1 - 1e-5
-                )
-                z["expert_" + name] = np.log(q / (1 - q))
-            names = engine.manifest["models"]["stack_d5"]["features"]
-            inputs = pd.concat(
-                [pd.DataFrame(z), portable[PORTABLE].reset_index(drop=True)], axis=1
-            )[names]
+            snapshot = engine.score_snapshot(data)
+            scores = snapshot.scores
+            expert_frame = snapshot.expert_frame
+            inputs = snapshot.head_inputs
+            names = list(inputs.columns)
             head = engine.models["stack_d5"]
             pair = head.get_feature_importance(
                 Pool(inputs.iloc[[reference, selected]]), type="ShapValues", thread_count=2
