@@ -60,6 +60,42 @@ test("sample library is dismissible, responsive and downloadable", async ({
   await expect(dialog.locator(".model-validation")).toContainText(
     "not independent validation",
   );
+  await expect(dialog.locator(".validation-numbers")).toContainText("80.1%");
+  await expect(dialog.locator(".model-validation")).toContainText("484,663");
+  await expect(dialog.locator(".model-validation")).not.toContainText(
+    "Earlier model",
+  );
+  await expect(
+    dialog.locator(".validation-results-table tbody tr"),
+  ).toHaveCount(5);
+  await expect(dialog.locator(".model-validation")).not.toContainText(
+    "Public model benchmarks",
+  );
+  const explanation = dialog.getByRole("region", {
+    name: "Explained review priorities",
+  });
+  await expect(explanation).toContainText(
+    "exact point contribution beside each value",
+  );
+  const engine = dialog.getByRole("region", {
+    name: "How the scoring engine works",
+  });
+  await expect(engine).toContainText("8 specialist models");
+  await expect(engine).toContainText("33 history measures");
+  await expect(engine).toContainText("A final model combines");
+  await expect(dialog.locator(".validation-strength-grid")).toHaveCount(0);
+  const evaluationDownload = page.waitForEvent("download");
+  await dialog.getByRole("link", { name: "Download evaluation data" }).click();
+  const evaluationFile = await evaluationDownload;
+  const evaluation = JSON.parse(
+    readFileSync((await evaluationFile.path())!, "utf8"),
+  );
+  expect(evaluation.model).toBe("Stack-d5");
+  expect(evaluation.datasets).toHaveLength(5);
+  expect(evaluation).not.toHaveProperty("publishedReference");
+  expect(evaluation.capabilities.modelBundleBytes).toBe(8896668);
+  expect(evaluation.capabilities.explanation.checkedLevels).toBe(2);
+  expect(evaluation.workspaceLimits.payments).toBe(25000);
   await expect(
     dialog.getByRole("region", { name: "Sample results" }),
   ).not.toContainText("334,777");

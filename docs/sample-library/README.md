@@ -3,6 +3,47 @@
 Choose **Samples** in the editing or playback toolbar. The 250-payment example
 is selected initially. Open it and select **Simulate**, or download the same CSV.
 
+## Engine evaluation panel
+
+**Model evaluation scope** shows a separate development evaluation of the installed
+Stack-d5 head, not the curated samples or the Auto queue. The compact
+[evaluation data](../../frontend/src/features/samples/evaluation.json) records all five
+source populations, counts, the installed head hash and original receipt hash.
+It can also be downloaded from the panel. No transaction records are included.
+
+The source is the recorded `nonlinear-stack-v2/reports/source-metrics.csv`, filtered
+to `cohort=all`, `policy=batch`, `budget=0.05`, model `stack_d5`.
+The 484,663 payments comprise IBM TabFormer, Sparkov, Fraud Detection Handbook,
+Household simulation and BankSim. Each dataset reviews its top 5%, rounded up.
+Mean fraud recall gives each dataset equal weight: **80.1%** for Stack-d5.
+Per-source detections and false alerts are available under Results by dataset;
+the headline is not pooled accuracy or review precision.
+
+The panel leads with two user-facing benefits: the measured fraud capture at a
+limited review budget, and inspectable point contributions explaining a payment's
+priority. A short engine description explains how eight specialist models feed
+a final combining model with 33 history measures, and how Auto suggests a queue.
+Technical capacity and package details stay in the downloadable data rather than
+being presented as evidence of detection quality.
+
+The packaged scoring bundle occupies **8,896,668 bytes (8.9 MB decimal)**: nine
+CatBoost models, reference scales and the manifest. File sizes are recorded in the
+snapshot. This excludes application code, runtime dependencies and in-memory
+transaction data. Inference uses CPU and does not require a GPU or external model
+API; this is not a comparative latency or memory benchmark.
+
+Explainability is quantified by **two levels of checked arithmetic**, displayed
+at **0.1-point precision**: observation contributions sum to each expanded check,
+and check contributions sum to the centered priority score. Remaining context is
+included explicitly. These are reconstruction guarantees for displayed results,
+not a percentage of human comprehension or proof of fraud. See the
+[calculation method](../stack-d5-integration/review-controls.md).
+The downloaded evaluation data includes these definitions and current limits.
+
+The model hash matches the locked research candidate and installed bundle.
+These sources were exposed during development, so this is not independent
+validation, an industry comparison or an estimate for arbitrary uploads.
+
 ## Current default results
 
 These results use the installed **Stack-d5** model and the same automatic,

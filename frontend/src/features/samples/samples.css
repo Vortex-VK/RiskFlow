@@ -309,19 +309,98 @@
 }
 .sample-library .validation-numbers {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 22px 0;
 }
-.sample-library .validation-numbers strong {
-  display: block;
-  font-size: 22px;
+.sample-library .validation-numbers > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.sample-library .validation-numbers dd {
+  order: -1;
+  margin: 0;
+  font-size: clamp(18px, 3vw, 26px);
+  font-weight: 600;
   font-variant-numeric: tabular-nums;
   color: var(--accent);
 }
-.sample-library .validation-numbers span {
-  display: block;
-  margin-top: 6px;
+.sample-library .validation-numbers dt {
   font-size: 11px;
+  color: var(--muted);
+}
+.validation-strengths {
+  margin-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.validation-strengths strong,
+.validation-engine strong {
+  color: var(--text);
+  font-weight: 600;
+}
+.validation-source-results {
+  margin: 18px 0;
+}
+.validation-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+.validation-table caption {
+  text-align: left;
+  color: var(--text);
+  font-weight: 500;
+  padding: 8px 0;
+}
+.validation-table th,
+.validation-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--line);
+  text-align: right;
+}
+.validation-table th:first-child {
+  text-align: left;
+  padding-left: 0;
+}
+.validation-table th:last-child,
+.validation-table td:last-child {
+  padding-right: 0;
+}
+.validation-table th {
+  font-weight: 400;
+}
+.validation-table thead {
+  color: var(--muted);
+}
+.validation-table td strong {
+  white-space: nowrap;
+  font-weight: 500;
+}
+.validation-table td span {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+}
+.sample-library .validation-scope {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+.validation-download {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+@media (max-width: 700px) {
+  .sample-library .model-validation {
+    padding: 18px 20px;
+  }
+  .validation-table {
+    font-size: 11px;
+  }
+  .validation-table th,
+  .validation-table td {
+    padding: 10px 4px;
+  }
 }
 .sample-library .model-validation summary {
   cursor: pointer;
