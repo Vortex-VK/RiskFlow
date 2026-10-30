@@ -51,6 +51,18 @@ python3 scripts/measure_container_capacity.py --image riskflow:public
 
 On a dedicated Linux test machine, use `sudo python3 scripts/measure_container_capacity.py --image riskflow:public --cold-cache` to reproduce CI's cold file-cache measurements. Stop other RiskFlow containers first. Do not clear the file cache on a shared or production host.
 
-The `container-capacity` workflow artifact contains JSON measurements and server logs. Inspect `requests_succeeded`, `within_ui_timeout`, `container_state.OOMKilled`, memory events and peak memory in each report. A completed experiment can report a failed capacity profile; a green workflow alone is not proof that every profile fits. Measurements include Linux cgroup memory, including charged file cache, rather than only process RSS. The frontend request timeout is 30 seconds.
+The `container-capacity` workflow artifact contains JSON measurements and server logs. Inspect `requests_succeeded`, `within_ui_timeout`, `container_state.OOMKilled`, memory events and peak memory in each report. A completed experiment can report a failed capacity profile; a green workflow alone is not proof that every profile fits. Measurements include Linux cgroup memory, including charged file cache, rather than only process RSS. The frontend request timeout is 30 seconds; the experiment permits 180 seconds so slow responses can be measured and reported as unsuitable for the UI.
+
+### Measured results: October 30, 2026
+
+The [cold-cache Linux run](https://github.com/Vortex-VK/RiskFlow/actions/runs/41087727231) tested application changes at commit `6818a3733d792839bee705277c12a95f3403da72`. All six fresh containers completed their requests, stayed healthy, and recorded zero OOM kills, with swap disabled.
+
+| Container resources | Sample peak | Maximum-graph peak | Simulation time | Interpretation |
+| --- | --- | --- | --- | --- |
+| 512 MiB, 1 CPU | 512.0 MiB | 512.0 MiB | 7.2–8.0 s | Completed, but reached the memory ceiling and required cache reclamation |
+| 1 GiB, 1 CPU | 545.7 MiB | 601.3 MiB | 7.2–8.0 s | Completed with memory headroom |
+| 512 MiB, 0.1 CPU | 512.0 MiB | 512.0 MiB | 83.1–86.6 s | Completed under the experiment's extended timeout; exceeds the UI's 30 s timeout |
+
+Keep the 10,000-payment limit. These workloads can run at 512 MiB with 1 CPU, but a free tier providing roughly 1 CPU and 1 GiB RAM is the better hosting target. A strict 0.1-CPU allocation is too slow for the largest uploads with the current UI timeout. This verifies the tested workloads, not every possible CSV or a particular hosting provider. The earlier warm-cache experiment undercounted charged file pages and is not the basis of this recommendation.
 
 The historical [October 26 Linux check](https://github.com/Vortex-VK/RiskFlow/actions/runs/40398823801) recorded a 557.1 MiB peak across the entire test suite and processed its older 10,000-payment sample in about 11 seconds. That predates the current engine and sample changes and is not an isolated current-request measurement. Verify cold starts and latency on the actual service before hosting; no specific free host is currently configured or verified.
