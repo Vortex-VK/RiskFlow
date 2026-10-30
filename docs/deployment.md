@@ -38,7 +38,7 @@ Local browser checks use installed Chrome; CI uses Playwright Chromium. `RISKFLO
 
 ## Linux capacity experiment
 
-The workflow also runs fresh containers with 512 MiB / 1 CPU, 1 GiB / 1 CPU, and 512 MiB / 0.1 CPU. Each container has swap disabled. The client runs outside the measured container. Payloads use the real frontend CSV importer: the 10,000-payment sample and a copy expanded to the maximum 3,000 objects and 12,000 associations. Each request includes API validation, response serialization and gzip compression. The 1-CPU profiles repeat simulations, explanations and comparisons three times per payload; the 0.1-CPU profile runs once per payload.
+The workflow also runs fresh containers with 512 MiB / 1 CPU, 1 GiB / 1 CPU, and 512 MiB / 0.1 CPU. Each payload gets its own container, with swap disabled. On the dedicated CI runner, the earlier smoke-test container is stopped and the host file cache is cleared before each measurement, so file pages cannot remain charged to an earlier test container. The client runs outside the measured container. Payloads use the real frontend CSV importer: the 10,000-payment sample and a copy expanded to the maximum 3,000 objects and 12,000 associations. Each request includes API validation, response serialization and gzip compression. The 1-CPU profiles repeat simulations, explanations and comparisons three times per payload; the 0.1-CPU profile runs once per payload.
 
 After building the image, run on a Linux Docker host:
 
@@ -48,6 +48,8 @@ node scripts/export-capacity-payloads.mjs ../.cache/capacity-payloads
 cd ..
 python3 scripts/measure_container_capacity.py --image riskflow:public
 ```
+
+On a dedicated Linux test machine, use `sudo python3 scripts/measure_container_capacity.py --image riskflow:public --cold-cache` to reproduce CI's cold file-cache measurements. Stop other RiskFlow containers first. Do not clear the file cache on a shared or production host.
 
 The `container-capacity` workflow artifact contains JSON measurements and server logs. Inspect `requests_succeeded`, `within_ui_timeout`, `container_state.OOMKilled`, memory events and peak memory in each report. A completed experiment can report a failed capacity profile; a green workflow alone is not proof that every profile fits. Measurements include Linux cgroup memory, including charged file cache, rather than only process RSS. The frontend request timeout is 30 seconds.
 

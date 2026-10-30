@@ -26,18 +26,24 @@ def read_pairs(path):
     }
 
 
-def measure(image, payloads, output, memory_mib, cpus, repeats):
-    name = f"riskflow-capacity-{os.getpid()}-{memory_mib}-{cpus}"
+def measure(image, payload_path, output, memory_mib, cpus, repeats, cold_cache):
+    name = f"riskflow-capacity-{os.getpid()}-{memory_mib}-{cpus}-{payload_path.stem}"
     report = {
         "memory_limit_mib": memory_mib,
         "cpus": cpus,
         "swap_allowed": False,
+        "payload": payload_path.stem,
+        "cold_file_cache": cold_cache,
         "stages": [],
         "requests_succeeded": False,
         "within_ui_timeout": False,
     }
     cgroup = None
     try:
+        if cold_cache:
+            # Only use on a dedicated experiment host: this clears its file cache.
+            os.sync()
+            Path("/proc/sys/vm/drop_caches").write_text("3\n")
         docker(
             "run",
             "-d",
@@ -114,33 +120,33 @@ def measure(image, payloads, output, memory_mib, cpus, repeats):
             )
             return result
 
-        for source in sorted(payloads.glob("*.json")):
-            payload = json.loads(source.read_text())
-            prefix = source.stem
-            validation = measured(f"{prefix}/validate", "/api/v1/scenarios/validate", payload)
-            assert validation["valid"], validation
-            for repeat in range(1, repeats + 1):
-                result = measured(f"{prefix}/simulation-{repeat}", "/api/v1/simulations", payload)
-                assert len(result["events"]) == 10000
-                event = max(result["events"], key=lambda e: e["model"]["ranking"]["rawMargin"])
-                reference = min(result["events"], key=lambda e: e["model"]["ranking"]["rawMargin"])
-                explanation = {
-                    **payload,
-                    "eventId": event["eventId"],
-                    "modelBundleSha256": event["model"]["bundleSha256"],
-                    "expectedRawMargin": event["model"]["ranking"]["rawMargin"],
-                }
-                del result
-                measured(f"{prefix}/explanation-{repeat}", "/api/v1/explanations", explanation)
-                measured(
-                    f"{prefix}/comparison-{repeat}",
-                    "/api/v1/explanations/compare",
-                    {
-                        **explanation,
-                        "referenceEventId": reference["eventId"],
-                        "expectedReferenceRawMargin": reference["model"]["ranking"]["rawMargin"],
-                    },
-                )
+        source = payload_path
+        payload = json.loads(source.read_text())
+        prefix = source.stem
+        validation = measured(f"{prefix}/validate", "/api/v1/scenarios/validate", payload)
+        assert validation["valid"], validation
+        for repeat in range(1, repeats + 1):
+            result = measured(f"{prefix}/simulation-{repeat}", "/api/v1/simulations", payload)
+            assert len(result["events"]) == 10000
+            event = max(result["events"], key=lambda e: e["model"]["ranking"]["rawMargin"])
+            reference = min(result["events"], key=lambda e: e["model"]["ranking"]["rawMargin"])
+            explanation = {
+                **payload,
+                "eventId": event["eventId"],
+                "modelBundleSha256": event["model"]["bundleSha256"],
+                "expectedRawMargin": event["model"]["ranking"]["rawMargin"],
+            }
+            del result
+            measured(f"{prefix}/explanation-{repeat}", "/api/v1/explanations", explanation)
+            measured(
+                f"{prefix}/comparison-{repeat}",
+                "/api/v1/explanations/compare",
+                {
+                    **explanation,
+                    "referenceEventId": reference["eventId"],
+                    "expectedReferenceRawMargin": reference["model"]["ranking"]["rawMargin"],
+                },
+            )
         snapshot("finished")
         report["requests_succeeded"] = True
         report["within_ui_timeout"] = all(
@@ -161,7 +167,9 @@ def measure(image, payloads, output, memory_mib, cpus, repeats):
             (output / f"{name}.log").write_text(docker("logs", name))
         finally:
             docker("rm", "-f", name)
-        (output / f"{memory_mib}m-{cpus}cpu.json").write_text(json.dumps(report, indent=2))
+        (output / f"{memory_mib}m-{cpus}cpu-{payload_path.stem}.json").write_text(
+            json.dumps(report, indent=2)
+        )
         print(
             json.dumps(
                 {
@@ -181,6 +189,11 @@ def main():
     parser.add_argument("--image", default="riskflow:ci")
     parser.add_argument("--payloads", type=Path, default=Path(".cache/capacity-payloads"))
     parser.add_argument("--output", type=Path, default=Path(".cache/capacity-results"))
+    parser.add_argument(
+        "--cold-cache",
+        action="store_true",
+        help="Clear the host file cache before each container; requires root on a dedicated host",
+    )
     args = parser.parse_args()
     assert len(list(args.payloads.glob("*.json"))) == 2, (
         "Generate the two CSV-derived payloads first"
@@ -188,7 +201,12 @@ def main():
     args.output.mkdir(parents=True, exist_ok=True)
     reports = []
     for memory_mib, cpus, repeats in [(512, 1, 3), (1024, 1, 3), (512, 0.1, 1)]:
-        reports.append(measure(args.image, args.payloads, args.output, memory_mib, cpus, repeats))
+        for payload in sorted(args.payloads.glob("*.json"), reverse=True):
+            reports.append(
+                measure(
+                    args.image, payload, args.output, memory_mib, cpus, repeats, args.cold_cache
+                )
+            )
     (args.output / "summary.json").write_text(json.dumps(reports, indent=2))
 
 
