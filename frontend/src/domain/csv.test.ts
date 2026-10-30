@@ -29,12 +29,12 @@ const build = (text: string, assumptions = defaults) => {
   return buildCsvDocument(table, initialMapping(table.headers), assumptions);
 };
 
-it("imports 25,000 payments without increasing object, association or file limits", () => {
+it("imports 10,000 payments at the workspace limit", () => {
   const result = build(
-    `${header}\n${Array.from({ length: 25_000 }, (_, i) => first.replace("P1", `P${i}`)).join("\n")}`,
+    `${header}\n${Array.from({ length: 10_000 }, (_, i) => first.replace("P1", `P${i}`)).join("\n")}`,
   );
   expect(result.errors).toEqual([]);
-  expect(result.document!.scenario.payments).toHaveLength(25_000);
+  expect(result.document!.scenario.payments).toHaveLength(10_000);
   expect(result.document!.scenario.nodes).toHaveLength(4);
 });
 
@@ -60,7 +60,7 @@ it("keeps retained source-row limits separate from sandbox payments", () => {
   const source = `id\n${Array.from({ length: 20_000 }, (_, i) => i).join("\n")}`;
   expect(parseCsv(source, limits).rows).toHaveLength(20_000);
   expect(() => parseCsv(`${source}\n20000`, limits)).toThrow("20,000 rows");
-  expect(parseCsv(source).rows).toHaveLength(20_000);
+  expect(() => parseCsv(source)).toThrow("10,000 rows");
 });
 
 it("allows retained text up to its byte ceiling without widening the sandbox", () => {
@@ -257,11 +257,11 @@ describe("CSV input and automatic graph construction", () => {
     expect(() => parseCsv("x".repeat(5_000_001))).toThrow("text size");
     expect(() =>
       parseCsv(
-        `${header}\n${Array.from({ length: 25001 }, (_, i) => first.replace("P1", `P${i}`)).join("\n")}`,
+        `${header}\n${Array.from({ length: 10001 }, (_, i) => first.replace("P1", `P${i}`)).join("\n")}`,
       ),
-    ).toThrow("25,000 rows");
+    ).toThrow("10,000 rows");
     const table = parseCsv(
-      `${header}\n${Array.from({ length: 1251 }, (_, i) => `P${i},2026-10-20T09:00:00Z,1,A${i},M${i},D${i},L${i}`).join("\n")}`,
+      `${header}\n${Array.from({ length: 751 }, (_, i) => `P${i},2026-10-20T09:00:00Z,1,A${i},M${i},D${i},L${i}`).join("\n")}`,
     );
     const original = structuredClone(table);
     const result = buildCsvDocument(
@@ -271,7 +271,7 @@ describe("CSV input and automatic graph construction", () => {
     );
     expect(result.document).toBeNull();
     expect(result.errors).toHaveLength(1);
-    expect(result.errors[0]).toContain("5,004 objects; the limit is 5,000");
+    expect(result.errors[0]).toContain("3,004 objects; the limit is 3,000");
     expect(table).toEqual(original);
   });
   it("supports column mapping and UTC offsets while rejecting invalid assumptions", () => {
