@@ -39,6 +39,22 @@ jobs:
       - name: Verify sample and import in a browser
         working-directory: frontend
         run: npx playwright test --config playwright.public.config.ts
+      - name: Prepare capacity experiment using the browser CSV importer
+        working-directory: frontend
+        run: node scripts/export-capacity-payloads.mjs ../.cache/capacity-payloads
+      - name: Measure constrained Linux containers without swap
+        run: |
+          docker stats --no-stream riskflow
+          docker exec riskflow cat /sys/fs/cgroup/memory.peak
+          docker stop riskflow
+          sudo python3 scripts/measure_container_capacity.py --cold-cache
+      - name: Save capacity measurements
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: container-capacity
+          path: .cache/capacity-results/
+          retention-days: 7
       - name: Record container resources and logs
         if: always()
         run: |

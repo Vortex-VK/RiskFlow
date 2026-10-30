@@ -937,7 +937,7 @@
             "type": "string"
           },
           "historyCount": {
-            "maximum": 25000.0,
+            "maximum": 10000.0,
             "minimum": 10.0,
             "title": "Historycount",
             "type": "integer"
@@ -962,7 +962,7 @@
             "type": "array"
           },
           "priorHourAttempts": {
-            "maximum": 25000.0,
+            "maximum": 10000.0,
             "minimum": 0.0,
             "title": "Priorhourattempts",
             "type": "integer"
@@ -1024,7 +1024,7 @@
             "type": "string"
           },
           "historyCount": {
-            "maximum": 25000.0,
+            "maximum": 10000.0,
             "minimum": 10.0,
             "title": "Historycount",
             "type": "integer"
@@ -1366,7 +1366,7 @@
             "type": "integer"
           },
           "count": {
-            "maximum": 25000.0,
+            "maximum": 10000.0,
             "minimum": 0.0,
             "title": "Count",
             "type": "integer"
@@ -1861,7 +1861,7 @@
             "type": "array"
           },
           "sequenceIndex": {
-            "exclusiveMaximum": 25000.0,
+            "exclusiveMaximum": 10000.0,
             "minimum": 0.0,
             "title": "Sequenceindex",
             "type": "integer"
@@ -1940,7 +1940,7 @@
           "eventCount": {
             "anyOf": [
               {
-                "maximum": 25000.0,
+                "maximum": 10000.0,
                 "minimum": 0.0,
                 "type": "integer"
               },
@@ -2255,7 +2255,7 @@
           "fiveMinuteAttemptCount": {
             "anyOf": [
               {
-                "maximum": 25000.0,
+                "maximum": 10000.0,
                 "minimum": 1.0,
                 "type": "integer"
               },
@@ -2279,7 +2279,7 @@
           "sharedDeviceAccountCount": {
             "anyOf": [
               {
-                "maximum": 5000.0,
+                "maximum": 3000.0,
                 "minimum": 1.0,
                 "type": "integer"
               },
@@ -4683,7 +4683,7 @@
             "type": "object"
           },
           "flaggedCount": {
-            "maximum": 25000.0,
+            "maximum": 10000.0,
             "minimum": 0.0,
             "title": "Flaggedcount",
             "type": "integer"
@@ -4699,20 +4699,20 @@
             ]
           },
           "labeledCount": {
-            "maximum": 25000.0,
+            "maximum": 10000.0,
             "minimum": 0.0,
             "title": "Labeledcount",
             "type": "integer"
           },
           "reviewWorkload": {
-            "maximum": 25000.0,
+            "maximum": 10000.0,
             "minimum": 0.0,
             "title": "Reviewworkload",
             "type": "integer"
           },
           "ruleTriggerCounts": {
             "additionalProperties": {
-              "maximum": 25000.0,
+              "maximum": 10000.0,
               "minimum": 0.0,
               "type": "integer"
             },
@@ -4731,7 +4731,7 @@
           },
           "scoreBins": {
             "additionalProperties": {
-              "maximum": 25000.0,
+              "maximum": 10000.0,
               "minimum": 0.0,
               "type": "integer"
             },
@@ -4745,7 +4745,7 @@
             "type": "integer"
           },
           "totalCount": {
-            "maximum": 25000.0,
+            "maximum": 10000.0,
             "minimum": 0.0,
             "title": "Totalcount",
             "type": "integer"
@@ -4761,7 +4761,7 @@
             ]
           },
           "unlabeledCount": {
-            "maximum": 25000.0,
+            "maximum": 10000.0,
             "minimum": 0.0,
             "title": "Unlabeledcount",
             "type": "integer"
@@ -5991,7 +5991,7 @@
             "items": {
               "$ref": "#/components/schemas/ContextAssociation"
             },
-            "maxItems": 20000,
+            "maxItems": 12000,
             "title": "Associations",
             "type": "array"
           },
@@ -6081,7 +6081,7 @@
                 }
               ]
             },
-            "maxItems": 5000,
+            "maxItems": 3000,
             "title": "Nodes",
             "type": "array"
           },
@@ -6089,7 +6089,7 @@
             "items": {
               "$ref": "#/components/schemas/PaymentEvent"
             },
-            "maxItems": 25000,
+            "maxItems": 10000,
             "title": "Payments",
             "type": "array"
           },
@@ -6464,13 +6464,13 @@
             "type": "string"
           },
           "nodeCount": {
-            "maximum": 5000.0,
+            "maximum": 3000.0,
             "minimum": 0.0,
             "title": "Nodecount",
             "type": "integer"
           },
           "paymentCount": {
-            "maximum": 25000.0,
+            "maximum": 10000.0,
             "minimum": 0.0,
             "title": "Paymentcount",
             "type": "integer"

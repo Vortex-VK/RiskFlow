@@ -95,7 +95,7 @@ test("sample library is dismissible, responsive and downloadable", async ({
   expect(evaluation).not.toHaveProperty("publishedReference");
   expect(evaluation.capabilities.modelBundleBytes).toBe(8896668);
   expect(evaluation.capabilities.explanation.checkedLevels).toBe(2);
-  expect(evaluation.workspaceLimits.payments).toBe(25000);
+  expect(evaluation.workspaceLimits.payments).toBe(10000);
   await expect(
     dialog.getByRole("region", { name: "Sample results" }),
   ).not.toContainText("334,777");

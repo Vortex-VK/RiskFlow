@@ -5,6 +5,7 @@ RUN npm ci
 COPY frontend/ ./
 COPY contracts/ /build/contracts/
 COPY fixtures/ /build/fixtures/
+COPY backend/model_artifacts/stack-d5/manifest.json /build/backend/model_artifacts/stack-d5/manifest.json
 RUN npm run build
 
 FROM python:3.13-slim-bookworm
