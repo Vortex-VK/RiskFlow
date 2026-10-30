@@ -5,6 +5,7 @@ from fastapi import FastAPI
 from fastapi.testclient import TestClient
 from starlette.responses import Response
 
+from app.api.boundary import RequestBoundary
 from app.api.public_demo import PublicDemo
 
 
@@ -60,21 +61,35 @@ def test_all_api_writes_have_a_bounded_budget(monkeypatch):
 
 
 @pytest.mark.parametrize("finish", ["success", "failure", "cancel"])
-def test_concurrent_simulations_reject_without_queueing_and_release_on_exit(finish):
+@pytest.mark.parametrize(
+    "first_path,second_path",
+    [
+        ("/api/v1/simulations", "/api/v1/simulations"),
+        ("/api/v1/simulations", "/api/v1/scenarios/validate"),
+        ("/api/v1/scenarios/validate", "/api/v1/simulations"),
+        ("/api/v1/scenarios/validate", "/api/v1/scenarios/validate"),
+        ("/api/v1/simulations", "/not-an-api-route"),
+        ("/not-an-api-route", "/api/v1/scenarios/validate"),
+    ],
+)
+def test_concurrent_writes_reject_without_queueing_and_release_on_exit(
+    finish, first_path, second_path
+):
     async def exercise():
         entered = asyncio.Event()
         release = asyncio.Event()
+        fail = finish == "failure"
 
         async def endpoint(scope, receive, send):
             entered.set()
             await release.wait()
-            if finish == "failure":
+            if fail:
                 raise RuntimeError("Inference failed")
             await Response()(scope, receive, send)
 
         demo = PublicDemo(endpoint)
 
-        async def request():
+        async def request(path):
             messages = []
 
             async def receive():
@@ -84,15 +99,15 @@ def test_concurrent_simulations_reject_without_queueing_and_release_on_exit(fini
                 messages.append(message)
 
             await demo(
-                {"type": "http", "path": "/api/v1/simulations", "method": "POST"},
+                {"type": "http", "path": path, "method": "POST"},
                 receive,
                 send,
             )
             return messages[0]["status"]
 
-        first = asyncio.create_task(request())
+        first = asyncio.create_task(request(first_path))
         await asyncio.wait_for(entered.wait(), timeout=2)
-        assert await request() == 429
+        assert await request(second_path) == 429
         if finish == "cancel":
             first.cancel()
             with pytest.raises(asyncio.CancelledError):
@@ -104,6 +119,54 @@ def test_concurrent_simulations_reject_without_queueing_and_release_on_exit(fini
                     await first
             else:
                 assert await first == 200
-        assert not demo.simulating
+        fail = False
+        release.set()
+        assert await request(second_path) == 200
+
+    asyncio.run(exercise())
+
+
+def test_stalled_body_times_out_before_parsing_and_releases_public_slot(monkeypatch):
+    monkeypatch.setattr("app.api.boundary.MAX_BODY_RECEIVE_SECONDS", 0.02)
+
+    async def exercise():
+        calls = []
+
+        async def endpoint(scope, receive, send):
+            calls.append((await receive())["body"])
+            await Response()(scope, receive, send)
+
+        demo = PublicDemo(RequestBoundary(endpoint))
+
+        async def request(stall):
+            sent = []
+
+            async def receive():
+                if stall:
+                    await asyncio.Event().wait()
+                return {"type": "http.request", "body": b"{}", "more_body": False}
+
+            async def send(message):
+                sent.append(message)
+
+            await asyncio.wait_for(
+                demo(
+                    {
+                        "type": "http",
+                        "path": "/api/v1/simulations",
+                        "method": "POST",
+                        "headers": [(b"content-type", b"application/json")],
+                    },
+                    receive,
+                    send,
+                ),
+                timeout=2,
+            )
+            return sent[0]["status"]
+
+        assert await request(True) == 408
+        assert calls == []
+        assert await request(False) == 200
+        assert calls == [b"{}"]
 
     asyncio.run(exercise())

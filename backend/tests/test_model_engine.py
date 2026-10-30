@@ -1,4 +1,6 @@
+import json
 from pathlib import Path
+from unittest.mock import Mock
 
 import numpy as np
 import pytest
@@ -70,16 +72,30 @@ def test_missing_optional_inputs_are_ranked_without_rule_fallback():
     assert response.json()["events"][0]["ruleEvaluations"] == []
 
 
-def test_missing_and_corrupt_artifacts_are_rejected_before_deserialization(tmp_path):
-    with pytest.raises(ModelUnavailable):
+@pytest.mark.parametrize(
+    "damage", ["missing manifest", "missing model", "corrupt manifest", "corrupt model"]
+)
+def test_missing_and_corrupt_artifacts_are_rejected_before_deserialization(
+    tmp_path, monkeypatch, damage
+):
+    manifest = BUNDLE / "manifest.json"
+    if damage != "missing manifest":
+        (tmp_path / "manifest.json").write_bytes(manifest.read_bytes())
+    if damage == "corrupt manifest":
+        (tmp_path / "manifest.json").write_text("{}")
+    if damage == "corrupt model":
+        first_model = next(iter(json.loads(manifest.read_text())["models"].values()))
+        (tmp_path / first_model["packages"][0]["file"]).write_bytes(b"corrupt")
+    deserialize = Mock(side_effect=AssertionError("Unverified model was deserialized"))
+    monkeypatch.setattr("ml.runtime.pickle.loads", deserialize)
+    with pytest.raises(ModelUnavailable) as failure:
         Runtime(tmp_path)
-    (tmp_path / "manifest.json").write_bytes((BUNDLE / "manifest.json").read_bytes())
-    (tmp_path / "baseline-0.pkl").write_bytes(b"corrupt")
-    with pytest.raises(ModelUnavailable):
-        Runtime(tmp_path)
-    (tmp_path / "manifest.json").write_text("{}")
-    with pytest.raises(ModelUnavailable):
-        Runtime(tmp_path)
+    deserialize.assert_not_called()
+    if damage.startswith("missing"):
+        assert isinstance(failure.value.__cause__, FileNotFoundError)
+    else:
+        assert isinstance(failure.value.__cause__, ValueError)
+        assert "hash mismatch" in str(failure.value.__cause__)
 
 
 def test_unavailable_model_returns_503_not_a_successful_rule_score(monkeypatch):

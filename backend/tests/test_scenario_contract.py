@@ -101,7 +101,7 @@ def test_view_rejects_unusable_coordinates(document: dict[str, Any], coordinate:
 
 
 @pytest.mark.parametrize(
-    "collection,limit", [("nodes", 5000), ("payments", 25_000), ("associations", 20_000)]
+    "collection,limit", [("nodes", 3000), ("payments", 10_000), ("associations", 12_000)]
 )
 def test_collection_limits_are_enforced(
     document: dict[str, Any], collection: str, limit: int
@@ -118,24 +118,24 @@ def test_incomplete_draft_is_structurally_valid(document: dict[str, Any]) -> Non
     assert ScenarioDefinition.model_validate(scenario).payments == []
 
 
-def test_scenario_accepts_25000_payments(document: dict[str, Any]) -> None:
+def test_scenario_accepts_10000_payments(document: dict[str, Any]) -> None:
     payment = document["scenario"]["payments"][0]
-    document["scenario"]["payments"] = [{**payment, "id": f"payment-{i}"} for i in range(25_000)]
+    document["scenario"]["payments"] = [{**payment, "id": f"payment-{i}"} for i in range(10_000)]
     document["scenario"]["groundTruth"] = {}
-    assert len(ScenarioDocument.model_validate(document).scenario.payments) == 25_000
+    assert len(ScenarioDocument.model_validate(document).scenario.payments) == 10_000
 
 
-def test_scenario_accepts_5000_objects_including_1000_accounts(document: dict[str, Any]) -> None:
+def test_scenario_accepts_3000_objects_including_1000_accounts(document: dict[str, Any]) -> None:
     scenario = document["scenario"]
     account = next(node for node in scenario["nodes"] if node["type"] == "account")
     merchant = next(node for node in scenario["nodes"] if node["type"] == "merchant")
     scenario["nodes"] = [
         {**account, "id": f"account-{i}"} for i in range(1000)
-    ] + [{**merchant, "id": f"merchant-{i}"} for i in range(4000)]
+    ] + [{**merchant, "id": f"merchant-{i}"} for i in range(2000)]
     scenario.update(payments=[], associations=[], groundTruth={})
     document["view"]["positions"] = {
         node["id"]: {"x": 0, "y": 0} for node in scenario["nodes"]
     }
     result = ScenarioDocument.model_validate(document)
-    assert len(result.scenario.nodes) == 5000
+    assert len(result.scenario.nodes) == 3000
     assert sum(node.type == "account" for node in result.scenario.nodes) == 1000

@@ -32,6 +32,7 @@ from app.schemas.scenario import ScenarioDocument, ScenarioRequest
 from app.schemas.simulation import RunResult
 from app.templates.catalog import list_templates, load_template
 from ml.common import ModelUnavailable
+from ml.stack_runtime import MANIFEST_SHA256 as STACK_MANIFEST_SHA256
 from ml.stack_runtime import runtime
 
 app = FastAPI(
@@ -181,6 +182,8 @@ def simulation(payload: ScenarioRequest, request: Request) -> RunResult | JSONRe
     operation_id="explainPayment",
 )
 def explanation(payload: ExplanationRequest) -> PaymentExplanation | StackPaymentExplanation:
+    if public_demo and payload.model_bundle_sha256 != STACK_MANIFEST_SHA256:
+        raise HTTPException(409, "The public demo only explains the current model.")
     if validate_scenario(payload.scenario):
         raise HTTPException(422, "Correct the scenario before requesting an explanation.")
     return explain_payment(payload)

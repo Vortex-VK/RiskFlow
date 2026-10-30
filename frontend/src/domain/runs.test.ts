@@ -12,18 +12,22 @@ import { useWorkspace } from "../state/workspace";
 import { useSimulation } from "../state/simulation";
 
 describe("captured runs and analytical identity", () => {
-  it("normalizes optional categories and treats source categories as ranking inputs", () => {
+  it("normalizes null and absent optional categories identically", () => {
     const scenario = decodeDocument(structuredClone(hero)).scenario;
     const original = normalizedScenario(scenario);
-    const originalFacts = projectAnalyticalInput(scenario);
     scenario.payments[0]!.category = null;
     scenario.payments[0]!.sourceCategory = null;
     expect(normalizedScenario(scenario)).toBe(original);
-    scenario.payments[0]!.sourceCategory = "supermarket";
-    expect(projectAnalyticalInput(scenario)).not.toBe(originalFacts);
-    scenario.payments[0]!.category = "groceries";
-    expect(projectAnalyticalInput(scenario)).not.toBe(originalFacts);
   });
+  it.each(["category", "sourceCategory"] as const)(
+    "includes %s independently in analytical identity",
+    (field) => {
+      const scenario = decodeDocument(structuredClone(hero)).scenario;
+      const original = projectAnalyticalInput(scenario);
+      scenario.payments[0]![field] = "groceries";
+      expect(projectAnalyticalInput(scenario)).not.toBe(original);
+    },
+  );
   it("condenses large playback without dropping events or changing event order", () => {
     const input = Array.from({ length: 10000 }, () => ({
       occurredAt: "2026-10-20T09:00:00.000Z",
@@ -77,14 +81,20 @@ describe("captured runs and analytical identity", () => {
       normalizedScenario(decodeDocument(hero).scenario),
     );
   });
-  it("deep freezes an isolated captured document", () => {
-    const draft = decodeDocument(structuredClone(hero));
-    const captured = freeze(structuredClone(draft));
-    draft.scenario.payments[0]!.amountMinor++;
-    expect(captured.scenario.payments[0]!.amountMinor).not.toBe(
-      draft.scenario.payments[0]!.amountMinor,
-    );
-    expect(Object.isFrozen(captured.scenario.payments[0])).toBe(true);
+  it("prevents mutations to captured documents, nested arrays and payments", () => {
+    const document = decodeDocument(structuredClone(hero));
+    const original = structuredClone(document);
+    freeze(document);
+    expect(() => {
+      document.scenario = structuredClone(original.scenario);
+    }).toThrow(TypeError);
+    expect(() => {
+      document.scenario.payments.pop();
+    }).toThrow(TypeError);
+    expect(() => {
+      document.scenario.payments[0]!.amountMinor++;
+    }).toThrow(TypeError);
+    expect(document).toEqual(original);
   });
 });
 
@@ -115,7 +125,6 @@ describe("presentation clock", () => {
       decodeDocument(hero).scenario.payments,
     );
     expect(schedule.at(-1)!.end / 1.25).toBe(3000);
-    expect(schedule.at(-1)!.end / (1.25 * 2)).toBe(1500);
     expect(playbackPosition(schedule, 0)).toEqual({
       cursor: -1,
       active: -1,

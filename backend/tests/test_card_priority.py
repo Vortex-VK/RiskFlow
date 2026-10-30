@@ -42,7 +42,7 @@ def test_priority_preserves_every_original_lead_and_is_strictly_prior(purchases)
     pd.testing.assert_frame_equal(full, before)
 
 
-def test_priority_rejects_missing_and_corrupt_packages(tmp_path: Path):
+def test_priority_rejects_missing_packages_and_corrupt_manifest(tmp_path: Path):
     with pytest.raises(ModelUnavailable):
         Runtime(tmp_path)
     (tmp_path / "manifest.json").write_bytes((BUNDLE / "manifest.json").read_bytes())
@@ -53,7 +53,7 @@ def test_priority_rejects_missing_and_corrupt_packages(tmp_path: Path):
         Runtime(tmp_path)
 
 
-def test_stack_ranking_replaces_extra_card_queue_and_survives_storage(tmp_path: Path):
+def test_stack_ranking_replaces_extra_card_queue_and_survives_storage(tmp_path: Path, purchases):
     source = ROOT / "frontend/public/samples/card-pattern-demo.csv"
     store = HistoryStore(tmp_path / "priority.sqlite3")
     dataset = store.create(DatasetCreate(name="Priority", source_namespace="authored")).id
@@ -65,6 +65,7 @@ def test_stack_ranking_replaces_extra_card_queue_and_survives_storage(tmp_path: 
     )
     store.commit(dataset, preview.id)
     run = store.assess(dataset, 1)
+    assert len(run.assessments) == len(purchases) > 0
     assert all(a.card_pattern is None for a in run.assessments)
     assert all(a.model.ranking and not a.model.probability_available for a in run.assessments)
     assert HistoryStore(store.path).run(dataset, run.id) == run

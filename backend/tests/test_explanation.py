@@ -1,5 +1,6 @@
 import math
 from pathlib import Path
+from unittest.mock import Mock
 
 import pytest
 from fastapi.testclient import TestClient
@@ -29,6 +30,18 @@ def request_for(scenario, event):
         "modelBundleSha256": MANIFEST_SHA256,
         "expectedRawMargin": event.model.score.raw_margin,
     }
+
+
+def test_public_demo_rejects_historical_models_before_loading(
+    client, monkeypatch, explanation_case
+):
+    scenario, event = explanation_case
+    explain = Mock(side_effect=AssertionError("Historical models must not load in the public demo"))
+    monkeypatch.setattr("app.main.public_demo", True)
+    monkeypatch.setattr("app.main.explain_payment", explain)
+    response = client.post("/api/v1/explanations", json=request_for(scenario, event))
+    assert response.status_code == 409
+    explain.assert_not_called()
 
 
 def test_shap_reconstructs_saved_prediction_and_ignores_labels(

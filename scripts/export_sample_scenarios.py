@@ -2,9 +2,10 @@
 
 import json
 
-from ml.artifacts import ROOT, digest, write_json
 from refresh_samples import refresh
 from sample_scenarios import generate
+
+from ml.artifacts import ROOT, digest, write_json
 
 
 def main():
@@ -68,22 +69,39 @@ def main():
                 "attributionFile": "scenarios/ATTRIBUTION.txt",
                 "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
                 "lineageFile": lineage_file,
-                "selection": f"Complete authored {choice['family']} ledger, seed {choice['seed']}. Selected for detection quality and rendered graph structure; no rows removed or relabeled after scoring.",
-                "guidance": "Explore shared shops and repeat visits, inspect the review queue, then compare with the supplied scenario labels.",
+                "selection": (
+                    f"Complete authored {choice['family']} ledger, seed {choice['seed']}. "
+                    "Selected for detection quality and rendered graph structure; "
+                    "no rows removed or relabeled after scoring."
+                ),
+                "guidance": (
+                    "Explore shared shops and repeat visits, inspect the review queue, "
+                    "then compare with the supplied scenario labels."
+                ),
             }
         )
     catalog.update(
         version=9,
         samples=samples,
         source="IBM TabFormer and authored RiskFlow synthetic scenarios",
-        selectionScope="Curated demonstrations selected using known outcomes and current automatic queue performance, not independent or representative validation. Authored scenarios illustrate mostly in-store spending followed by online card misuse; they do not represent all fraud types.",
+        selectionScope=(
+            "Curated demonstrations selected using known outcomes and current automatic queue "
+            "performance, not independent or representative validation. Authored scenarios "
+            "illustrate mostly in-store spending followed by online card misuse; "
+            "they do not represent all fraud types."
+        ),
         assumptions=[
-            "Authored accounts, merchants, amounts, UTC timestamps and incident labels are fictional; they are generated before scoring.",
-            "Complete candidate ledgers are retained. No rows are removed or relabeled in response to scores.",
-            "The chosen scenario family assumes mostly in-store spending, repeat shops, shared merchants and occasional online misuse. Rates are scenario assumptions, not measured population rates.",
+            "Authored accounts, merchants, amounts, UTC timestamps and incident labels are "
+            "fictional; they are generated before scoring.",
+            "Complete candidate ledgers are retained. "
+            "No rows are removed or relabeled in response to scores.",
+            "The chosen scenario family assumes mostly in-store spending, repeat shops, shared "
+            "merchants and occasional online misuse. Rates are scenario assumptions, "
+            "not measured population rates.",
             "Each CSV starts its own history; no hidden warmup or fraud feedback is supplied.",
             "Labels and scenario notes are used for evaluation only, never scoring.",
-            "The original five-payment IBM walkthrough remains unchanged with its original attribution.",
+            "The original five-payment IBM walkthrough remains unchanged "
+            "with its original attribution.",
         ],
     )
     write_json(path, catalog)

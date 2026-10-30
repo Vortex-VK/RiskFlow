@@ -9,6 +9,7 @@ import math
 
 import numpy as np
 import pandas as pd
+
 from app.domain.stack_inputs import scenario_frame
 from ml.artifacts import ROOT, digest, write_json
 from ml.sample_inputs import payments

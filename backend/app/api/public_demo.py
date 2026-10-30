@@ -21,7 +21,7 @@ class PublicDemo:
         self.app = app
         self.requests: deque[float] = deque()
         self.simulations: deque[float] = deque()
-        self.simulating = False
+        self.processing = False
 
     async def __call__(self, scope: Scope, receive: Receive, send: Send) -> None:
         if scope["type"] != "http":
@@ -34,7 +34,7 @@ class PublicDemo:
                 404, "not_found", "Saved datasets are unavailable in this demo.", request_id
             )(scope, receive, send)
             return
-        if not path.startswith("/api/") or scope["method"] not in {
+        if scope["method"] not in {
             "POST",
             "PUT",
             "PATCH",
@@ -56,7 +56,7 @@ class PublicDemo:
             retry_after = max(1, math.ceil(60 - (now - self.requests[0])))
         elif simulation and len(self.simulations) >= 20:
             retry_after = max(1, math.ceil(60 - (now - self.simulations[0])))
-        elif simulation and self.simulating:
+        elif self.processing:
             retry_after = 2
         if retry_after:
             response = error_response(
@@ -71,11 +71,12 @@ class PublicDemo:
             return
 
         self.requests.append(now)
+        # Admit before RequestBoundary buffers the body, including validation and
+        # unknown routes. A per-minute budget alone does not bound live memory.
+        self.processing = True
         if simulation:
             self.simulations.append(now)
-            self.simulating = True
         try:
             await self.app(scope, receive, send)
         finally:
-            if simulation:
-                self.simulating = False
+            self.processing = False

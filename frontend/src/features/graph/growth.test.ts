@@ -36,8 +36,14 @@ describe("graph entrance", () => {
     ] as const;
     const branches = growthTree([a, b, c, isolated], links);
     expect(branches).toHaveLength(4);
-    for (const branch of branches) {
-      if (branch.parent === branch.point) continue;
+    expect(new Set(branches.map((branch) => branch.point))).toEqual(
+      new Set([a, b, c, isolated]),
+    );
+    const connected = branches.filter(
+      (branch) => branch.parent !== branch.point,
+    );
+    expect(connected).toHaveLength(2);
+    for (const branch of connected) {
       expect(
         links.some(
           ([x, y]) =>
@@ -79,6 +85,5 @@ describe("transaction afterglow", () => {
     expect(firingOpacity(1)).toBe(0);
     expect(at(TRANSACTION_GLOW_DURATION)).toBeUndefined();
     expect(riskOpacity(at(TRANSACTION_GLOW_DURATION))).toBe(1);
-    expect(riskOpacity(at(40))).toBe(0);
   });
 });

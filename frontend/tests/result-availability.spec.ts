@@ -1,12 +1,9 @@
-import { setPlaybackPosition } from "./workspace-helpers";
+import { setPlaybackPosition, setReviewCapacity } from "./workspace-helpers";
 import { uploadQueueRun } from "./workspace-helpers";
 import { expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 import { readFileSync } from "node:fs";
 import { parseCsv } from "../src/domain/csv";
-import type { EventResult } from "../src/domain/runs";
-import type { Scenario } from "../src/domain/types";
-import { findInvestigationPatterns } from "../src/domain/runInsights";
 
 const table = parseCsv(readFileSync("src/assets/sample-payments.csv", "utf8"));
 const labelColumn = table.headers.indexOf("label");
@@ -109,7 +106,7 @@ test("insight links follow recorded review selections without advancing playback
   await page.getByRole("button", { name: "Import CSV", exact: true }).click();
   await page
     .getByLabel("CSV file")
-    .setInputFiles("public/samples/card-pattern-demo.csv");
+    .setInputFiles("src/assets/sample-payments.csv");
   const pending = page.waitForResponse((r) =>
     r.url().endsWith("/api/v1/simulations"),
   );
@@ -117,10 +114,11 @@ test("insight links follow recorded review selections without advancing playback
     .getByRole("button", { name: "Preview graph", exact: true })
     .click();
   const response = await pending;
-  const run = uploadQueueRun(await response.json());
-  const scenario = response.request().postDataJSON().scenario as Scenario;
+  expect(response.ok()).toBe(true);
+  expect((await response.json()).events).toHaveLength(3);
   await page.getByRole("button", { name: "Build graph", exact: true }).click();
   await page.getByRole("button", { name: "Simulate", exact: true }).click();
+  await setReviewCapacity(page, 3);
   await setPlaybackPosition(page, -1);
   const overview = page.getByRole("region", { name: "Run assessment summary" });
   await expect(page.getByLabel("Probability threshold")).toHaveCount(0);
@@ -128,74 +126,44 @@ test("insight links follow recorded review selections without advancing playback
   const concentration = page.getByRole("region", {
     name: "Where alerts concentrate",
   });
-  const groups = new Map<string, EventResult[]>();
-  for (const e of run.events.filter((e) => e.model?.alert))
-    groups.set(e.accountId, [...(groups.get(e.accountId) ?? []), e]);
-  const largest = [...groups.values()].sort(
-    (a, b) =>
-      b.length - a.length ||
-      b.reduce((n, e) => n + e.amountMinor, 0) -
-        a.reduce((n, e) => n + e.amountMinor, 0) ||
-      a[0]!.accountId.localeCompare(b[0]!.accountId),
-  )[0]!;
   await concentration.locator(".concentration-row").first().click();
   const queue = page.getByRole("region", { name: "Run events" });
-  await expect(queue).toContainText(
-    `${largest.length} matching flagged payments`,
-  );
-  await expect(queue.locator(".payment-result")).toHaveCount(
-    Math.min(60, largest.length),
-  );
-  for (const e of largest.slice(0, 60))
+  await expect(
+    queue.getByRole("heading", { name: "Accounts: Alice", exact: true }),
+  ).toBeVisible();
+  await expect(queue.locator(".payment-result")).toHaveCount(2);
+  for (const id of ["CSV01", "CSV02"])
     await expect(
-      queue.getByRole("button", { name: `Inspect ${e.eventId}`, exact: true }),
+      queue.getByRole("button", { name: `Inspect ${id}`, exact: true }),
     ).toBeVisible();
   await expect(overview.locator("strong")).toHaveText(["0", "0", "0"]);
   await page.getByRole("button", { name: "Results", exact: true }).click();
   const patterns = page.getByRole("region", {
     name: "Patterns worth investigating",
   });
-  const expected = findInvestigationPatterns(scenario.payments);
-  const repeatIds = run.events
-    .filter(
-      (e) => e.model?.alert && expected.matches.get(e.eventId)?.has("repeat"),
-    )
-    .map((e) => e.eventId);
-  if (repeatIds.length) {
-    await patterns
-      .getByRole("button", {
-        name: "Inspect payments: repeat merchant attempts",
-        exact: true,
-      })
-      .click();
-    await expect(queue).toContainText(
-      `${repeatIds.length} matching flagged payments`,
-    );
-  } else {
-    await expect(
-      patterns.getByRole("button", {
-        name: "Inspect payments: repeat merchant attempts",
-        exact: true,
-      }),
-    ).toHaveCount(0);
-    await page
-      .getByRole("button", {
-        name: `Inspect ${run.events.filter((e) => e.model?.alert).length} flagged payments`,
-        exact: true,
-      })
-      .click();
-  }
-  if (repeatIds.length)
-    await queue
-      .getByRole("button", { name: "All flagged payments", exact: true })
-      .click();
+  // CSV02 repeats Alice's merchant after 3 minutes; CSV01 has no history,
+  // and CSV03 belongs to Bob. Keep this expectation independent of the detector.
+  await patterns
+    .getByRole("button", {
+      name: "Inspect payments: repeat merchant attempts",
+      exact: true,
+    })
+    .click();
+  await expect(queue.locator(".payment-result")).toHaveCount(1);
+  await expect(
+    queue.getByRole("button", { name: "Inspect CSV02", exact: true }),
+  ).toBeVisible();
+  await page.getByRole("button", { name: "Results", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Inspect 3 flagged payments", exact: true })
+    .click();
+  await expect(queue.locator(".payment-result")).toHaveCount(3);
   await expect(
     queue.getByRole("heading", { name: "Payments for review", exact: true }),
   ).toBeVisible();
   await expect(overview.locator("strong")).toHaveText(["0", "0", "0"]);
-  const selected = run.events.find((e) => e.model?.alert)!;
   await queue
-    .getByRole("button", { name: `Inspect ${selected.eventId}`, exact: true })
+    .getByRole("button", { name: "Inspect CSV02", exact: true })
     .click();
   const detail = page.getByRole("complementary", {
     name: "Payment explanation",

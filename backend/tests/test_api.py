@@ -22,6 +22,17 @@ def test_health_reports_the_installed_engine(client: TestClient) -> None:
     }
 
 
+@pytest.mark.parametrize("path", ["/api/v1/health", "/api/v1/missing"])
+def test_api_responses_disable_caching_sniffing_and_embedding(
+    client: TestClient, path: str
+) -> None:
+    response = client.get(path)
+    assert response.headers["cache-control"] == "no-store"
+    assert response.headers["x-content-type-options"] == "nosniff"
+    assert response.headers["x-frame-options"] == "DENY"
+    assert response.headers["referrer-policy"] == "no-referrer"
+
+
 def test_template_catalog_and_documents_match_canonical_fixtures(client: TestClient) -> None:
     response = client.get("/api/v1/templates")
     assert response.status_code == 200
@@ -164,6 +175,8 @@ def test_internal_failure_is_safe_and_has_request_id(
     assert response.json()["error"]["message"] == "The server could not complete the request."
     assert str(tmp_path) not in response.text
     assert len(response.json()["error"]["requestId"]) == 36
+    assert response.headers["cache-control"] == "no-store"
+    assert response.headers["x-content-type-options"] == "nosniff"
 
 
 def test_openapi_describes_strict_nodes_and_complete_simulation() -> None:

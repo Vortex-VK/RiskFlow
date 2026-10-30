@@ -1,6 +1,7 @@
 import base64
 import json
 from pathlib import Path
+from unittest.mock import Mock
 
 import numpy as np
 import pandas as pd
@@ -41,13 +42,26 @@ def test_per_day_ceiling_and_ties_not_aggregate_budget():
     assert np.flatnonzero(selected).tolist() == [0, 1, 101]
 
 
-def test_missing_and_corrupt_stack_artifacts_fail_closed(tmp_path):
-    with pytest.raises(ModelUnavailable):
+@pytest.mark.parametrize(
+    "damage", ["missing manifest", "missing model", "corrupt manifest", "corrupt model"]
+)
+def test_missing_and_corrupt_stack_artifacts_fail_before_loading(tmp_path, monkeypatch, damage):
+    if damage != "missing manifest":
+        (tmp_path / "manifest.json").write_bytes((BUNDLE / "manifest.json").read_bytes())
+    if damage == "corrupt manifest":
+        (tmp_path / "manifest.json").write_text("{}")
+    if damage == "corrupt model":
+        (tmp_path / "v2.cbm").write_bytes(b"corrupt")
+    load = Mock(side_effect=AssertionError("Unverified model was loaded"))
+    monkeypatch.setattr("ml.stack_runtime.CatBoostClassifier.load_model", load)
+    with pytest.raises(ModelUnavailable) as failure:
         Runtime(tmp_path)
-    (tmp_path / "manifest.json").write_bytes((BUNDLE / "manifest.json").read_bytes())
-    (tmp_path / "v2.cbm").write_bytes(b"corrupt")
-    with pytest.raises(ModelUnavailable):
-        Runtime(tmp_path)
+    load.assert_not_called()
+    if damage.startswith("missing"):
+        assert isinstance(failure.value.__cause__, FileNotFoundError)
+    else:
+        assert isinstance(failure.value.__cause__, ValueError)
+        assert "mismatch" in str(failure.value.__cause__)
 
 
 def test_portable_upload_coverage_date_batches_reopening_and_projection_parity(tmp_path):
@@ -84,13 +98,17 @@ def test_portable_upload_coverage_date_batches_reopening_and_projection_parity(t
     assert replay.events == run.simulation.events
 
 
-def test_future_and_equal_time_changes_do_not_change_earlier_raw_scores():
+def test_future_changes_affect_the_changed_rows_but_not_earlier_raw_scores():
     data = pd.read_csv(FIXTURES / "new_customers.csv", dtype=str, keep_default_na=False)
     _, before, _, _ = runtime().predict(data)
     times = pd.to_datetime(data.timestamp, utc=True)
     boundary = times.max()
+    assert times.lt(boundary).any()
     data.loc[times.eq(boundary), "amount"] = "99999"
     _, after, _, _ = runtime().predict(data)
+    assert not np.array_equal(
+        before["stack_d5"][times.eq(boundary)], after["stack_d5"][times.eq(boundary)]
+    )
     for key in before:
         np.testing.assert_array_equal(
             before[key][times.lt(boundary)], after[key][times.lt(boundary)]

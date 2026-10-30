@@ -25,6 +25,10 @@ def test_single_service_serves_assets_without_swallowing_api_or_unknown_paths(
     with TestClient(application) as client:
         assert client.get("/").headers["content-type"].startswith("text/html")
         assert client.get("/").headers["cache-control"] == "no-cache"
+        policy = client.get("/").headers["content-security-policy"]
+        assert "script-src 'self';" in policy
+        assert "object-src 'none';" in policy
+        assert "frame-ancestors 'none';" in policy
         assert client.get("/assets/app.js").status_code == 200
         assert client.get("/assets/app.js").headers["cache-control"] == (
             "public, max-age=31536000, immutable"

@@ -31,4 +31,15 @@ def mount_frontend(app: FastAPI, directory: Path) -> None:
 
     @app.get("/", include_in_schema=False)
     def home() -> FileResponse:
-        return FileResponse(index, headers={"Cache-Control": "no-cache"})
+        return FileResponse(
+            index,
+            headers={
+                "Cache-Control": "no-cache",
+                "Content-Security-Policy": (
+                    "default-src 'self'; script-src 'self'; "
+                    "style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; "
+                    "connect-src 'self'; object-src 'none'; base-uri 'none'; "
+                    "frame-ancestors 'none'; form-action 'self'"
+                ),
+            },
+        )

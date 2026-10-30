@@ -59,7 +59,7 @@ The Dockerfile builds the frontend and packages the same API and weights. It ena
 
 ## Public hosting
 
-Public deployment is deferred. Run RiskFlow locally using the instructions above. Provider-specific deployment configuration has been removed; the portable Docker build and its verification checks remain available for future use. Any future hosting must stay free. See [container documentation](docs/deployment.md).
+No hosting provider is configured. The portable Docker build enables anonymous public-demo mode and is verified by HTTP and browser checks. Target 1 CPU and 1 GiB RAM for the 10,000-payment limit; choose a provider's recurring free allowance based on actual usage. See [container documentation](docs/deployment.md) and [security boundaries](SECURITY.md).
 
 ## Verification and maintenance
 

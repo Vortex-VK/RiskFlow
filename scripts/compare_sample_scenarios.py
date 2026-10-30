@@ -9,9 +9,10 @@ import json
 from pathlib import Path
 
 import numpy as np
-from ml.stack_runtime import runtime
 from refresh_samples import automatic_queue, sample_inputs
 from sample_scenarios import FAMILIES, SIZES, generate
+
+from ml.stack_runtime import runtime
 
 
 def evaluate(rows):
