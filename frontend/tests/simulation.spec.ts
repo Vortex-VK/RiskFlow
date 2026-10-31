@@ -517,7 +517,7 @@ test("all playback settings advance 25 percent faster with the default still at 
 test("transaction pulses and risk highlights follow playback while inspection preserves the clock", async ({
   page,
 }) => {
-  await page.getByRole("button", { name: "About this workspace" }).click();
+  await page.getByRole("button", { name: "Samples", exact: true }).click();
   await page.getByText("Scenario options", { exact: true }).click();
   await page.getByRole("button", { name: /^Account Takeover/ }).click();
   await page.getByRole("button", { name: "Simulate", exact: true }).click();

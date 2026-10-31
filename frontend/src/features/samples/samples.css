@@ -416,3 +416,7 @@
 .sample-library .model-validation p {
   color: var(--muted);
 }
+
+.scenario-options {
+  margin: 20px 32px;
+}

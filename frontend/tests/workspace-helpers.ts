@@ -137,10 +137,10 @@ export function addIndependentActivity(document: Document) {
 }
 
 export async function selectExample(page: Page) {
-  await page.getByRole("button", { name: "About this workspace" }).click();
+  await page.getByRole("button", { name: "Samples", exact: true }).click();
   await page.getByText("Scenario options", { exact: true }).click();
   await page.getByRole("button", { name: /^Shared Device Cluster/ }).click();
-  await expect(page.locator(".about")).toHaveCount(0);
+  await expect(page.locator(".sample-library")).toHaveCount(0);
 }
 
 // Existing editor journeys exercise an explicit example in dark mode.

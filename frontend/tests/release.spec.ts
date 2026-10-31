@@ -46,7 +46,9 @@ test("idle surfaces move while centers, labels, edges and history stay still; re
   ).toHaveCount(0);
   await expect(surface).toHaveCSS("background-color", "rgb(36, 36, 36)");
   await page.screenshot({ path: "../docs/screenshots/release-tray-dark.png" });
-  await page.getByRole("button", { name: "About this workspace" }).click();
+  await expect(
+    page.getByRole("button", { name: "About this workspace" }),
+  ).toHaveCount(0);
   await expect(
     page.getByRole("checkbox", { name: "Animate objects" }),
   ).toHaveCount(0);

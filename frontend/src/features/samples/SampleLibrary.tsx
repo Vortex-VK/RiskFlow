@@ -1,5 +1,5 @@
 import { CloseIcon } from "../CloseIcon";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import type { Document } from "../../domain/types";
 import { catalog, loadSample, sampleUrl } from "./samples";
 import "./samples.css";
@@ -11,7 +11,9 @@ const number = (value: number) => value.toLocaleString("en-US");
 export function SampleLibrary({
   close,
   install,
+  options,
 }: {
+  options?: ReactNode;
   close: () => void;
   install: (document: Document) => void;
 }) {
@@ -209,6 +211,7 @@ export function SampleLibrary({
           )}
         </section>
       </div>
+      {options}
       <ModelValidation />
       <footer className="sample-footer">
         <span>Curated synthetic examples</span>

@@ -140,7 +140,7 @@ test("cascade deletion asks once and undo restores the full context", async ({
 test("blank scenario can be built through keyboard-accessible forms and independent duplicate payments", async ({
   page,
 }) => {
-  await page.getByRole("button", { name: "About this workspace" }).click();
+  await page.getByRole("button", { name: "Samples", exact: true }).click();
   await page.getByText("Scenario options", { exact: true }).click();
   await page.getByRole("button", { name: "New blank scenario" }).click();
   await expect(page.locator(".react-flow__node")).toHaveCount(0);

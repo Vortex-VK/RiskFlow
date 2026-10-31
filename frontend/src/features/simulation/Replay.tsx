@@ -53,8 +53,7 @@ function OverviewCount({
         <span>{label}</span>
       </span>
       <span className="overview-value">
-        <strong>{value.toLocaleString()}</strong>{" "}
-        <span>{label}</span>
+        <strong>{value.toLocaleString()}</strong> <span>{label}</span>
       </span>
     </span>
   );
@@ -63,9 +62,11 @@ function OverviewCount({
 export function Replay({
   captured,
   openSamples,
+  openTutorial,
 }: {
   captured: CapturedRun;
   openSamples: () => void;
+  openTutorial: () => void;
 }) {
   const state = useSimulation();
   const [overviewMotion, setOverviewMotion] = useState<
@@ -288,6 +289,7 @@ export function Replay({
   useEffect(() => {
     if (!state.playing) return;
     let frame = 0;
+    let timer: ReturnType<typeof setTimeout> | undefined;
     let previous = performance.now();
     const tick = (now: number) => {
       const s = useSimulation.getState();
@@ -298,16 +300,25 @@ export function Replay({
       );
       previous = now;
       useSimulation.setState({ elapsed, playing: elapsed < end });
-      if (elapsed < end) frame = requestAnimationFrame(tick);
+      if (elapsed < end) schedule();
+    };
+    // Hidden tabs throttle rendering. Keep the clock moving using elapsed
+    // real time, then catch up immediately when the page becomes visible.
+    const schedule = () => {
+      if (window.document.hidden)
+        timer = setTimeout(() => tick(performance.now()), 250);
+      else frame = requestAnimationFrame(tick);
     };
     const visibility = () => {
-      if (window.document.hidden) useSimulation.setState({ playing: false });
+      cancelAnimationFrame(frame);
+      clearTimeout(timer);
+      tick(performance.now());
     };
-    if (window.document.hidden) visibility();
-    else frame = requestAnimationFrame(tick);
+    schedule();
     window.document.addEventListener("visibilitychange", visibility);
     return () => {
       cancelAnimationFrame(frame);
+      clearTimeout(timer);
       window.document.removeEventListener("visibilitychange", visibility);
     };
   }, [state.playing, end, captured]);
@@ -369,6 +380,7 @@ export function Replay({
     <main
       className={`workspace replay ${panel ? "panel-open" : ""} ${flaggedOnly ? "flagged-only" : ""}`}
       aria-label="RiskFlow run snapshot"
+      data-playback-complete={position.completed}
     >
       <Graph
         key={run.runId}
@@ -433,6 +445,18 @@ export function Replay({
             }}
           >
             Results
+          </button>
+          <button
+            className="icon-button"
+            aria-label="Show tutorial"
+            title="Tutorial"
+            aria-haspopup="dialog"
+            onClick={() => {
+              useSimulation.setState({ playing: false });
+              openTutorial();
+            }}
+          >
+            ?
           </button>
         </div>
       </header>

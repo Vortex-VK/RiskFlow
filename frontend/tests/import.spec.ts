@@ -226,7 +226,7 @@ test("CSV errors and cancellation preserve graph; dirty replacement supports can
   await expect(page.locator(".react-flow__node")).toHaveCount(6);
   await page.locator(".react-flow__node").first().focus();
   await page.keyboard.press("ArrowRight");
-  await page.getByRole("button", { name: "About this workspace" }).click();
+  await page.getByRole("button", { name: "Samples", exact: true }).click();
   await page.getByText("Scenario options", { exact: true }).click();
   await page.getByRole("button", { name: "New blank scenario" }).click();
   await page

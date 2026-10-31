@@ -1,18 +1,55 @@
 import { useLayoutEffect, useRef } from "react";
+import { isTutorialAction } from "./tutorialActions";
 
 // Only highlighted controls can start an action. A gesture that starts there
 // can cross the shade (dragging an object or drawing a connection).
-export function useTutorialInteractions(selectorKey: string, enabled = true) {
+export function useTutorialInteractions(
+  selectorKey: string,
+  enabled = true,
+  readOnlyKey = "",
+) {
   const pointers = useRef(new Set<number>());
   useLayoutEffect(() => {
     if (!enabled) return;
     const selectors = selectorKey.split("|").filter(Boolean);
+    const blockedSelectors = readOnlyKey.split("|").filter(Boolean);
+    const blocked = new Map<
+      Element,
+      { disabled: string | null; title: string | null }
+    >();
+    const markBlocked = () => {
+      for (const selector of blockedSelectors) {
+        for (const element of document.querySelectorAll(selector)) {
+          if (blocked.has(element)) continue;
+          blocked.set(element, {
+            disabled: element.getAttribute("aria-disabled"),
+            title: element.getAttribute("title"),
+          });
+          element.setAttribute("aria-disabled", "true");
+          element.setAttribute("data-tour-blocked", "true");
+          element.removeAttribute("title");
+        }
+      }
+    };
+    const observer = new MutationObserver(markBlocked);
+    if (blockedSelectors.length) {
+      markBlocked();
+      observer.observe(document.body, { childList: true, subtree: true });
+    }
+    const readOnly = (target: EventTarget | null) =>
+      target instanceof Element &&
+      readOnlyKey
+        .split("|")
+        .filter(Boolean)
+        .some((selector) => !!target.closest(selector));
     const allowed = (target: EventTarget | null) => {
+      if (isTutorialAction()) return true;
       if (!(target instanceof Element)) return false;
+      if (readOnly(target)) return false;
       const control =
         target.closest(".tour-coach") ||
         selectors
-          .map((selector) => document.querySelector(selector))
+          .flatMap((selector) => [...document.querySelectorAll(selector)])
           .find((element) => element?.contains(target));
       // Decorative SVGs inside active buttons are aria-hidden, but clickable.
       return !!control && !control.closest('[inert], [aria-hidden="true"]');
@@ -38,6 +75,12 @@ export function useTutorialInteractions(selectorKey: string, enabled = true) {
       if (!startedHere && !allowed(event.target)) stop(event);
     };
     const interaction = (event: Event) => {
+      // Read-only evidence can still be scrolled, including on touch screens.
+      if (
+        (event.type === "wheel" || event.type === "touchstart") &&
+        readOnly(event.target)
+      )
+        return;
       if (!allowed(event.target)) stop(event);
     };
     const focus = (event: FocusEvent) => {
@@ -105,6 +148,17 @@ export function useTutorialInteractions(selectorKey: string, enabled = true) {
     if (!pointers.current.size && !allowed(document.activeElement))
       focusCoach();
     return () => {
+      observer.disconnect();
+      for (const [element, before] of blocked) {
+        element.removeAttribute("data-tour-blocked");
+        for (const [attribute, value] of [
+          ["aria-disabled", before.disabled],
+          ["title", before.title],
+        ] as const) {
+          if (value === null) element.removeAttribute(attribute);
+          else element.setAttribute(attribute, value);
+        }
+      }
       window.removeEventListener("pointerdown", pointerDown, true);
       window.removeEventListener("pointermove", pointerMove, true);
       window.removeEventListener("pointerup", pointerEnd, true);
@@ -121,5 +175,5 @@ export function useTutorialInteractions(selectorKey: string, enabled = true) {
       window.removeEventListener("keydown", keyboard, true);
       window.removeEventListener("focusin", focus, true);
     };
-  }, [selectorKey, enabled]);
+  }, [selectorKey, enabled, readOnlyKey]);
 }

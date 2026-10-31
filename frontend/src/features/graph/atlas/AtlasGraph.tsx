@@ -465,6 +465,8 @@ export function AtlasGraph(props: GraphProps) {
     <>
       <div
         className="hierarchy-stage"
+        data-tour-depth={path.length}
+        data-tour-sector={current.id}
         data-detail={!current.children.length}
         data-transitioning={transitioning}
         aria-busy={transitioning}

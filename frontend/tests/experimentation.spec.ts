@@ -12,7 +12,7 @@ test.beforeEach(async ({ page }) => {
 test("blank construction, unlabeled simulation and policy editing", async ({
   page,
 }) => {
-  await page.getByRole("button", { name: "About this workspace" }).click();
+  await page.getByRole("button", { name: "Samples", exact: true }).click();
   await page.getByText("Scenario options", { exact: true }).click();
   await page.getByRole("button", { name: "New blank scenario" }).click();
   await page.getByRole("button", { name: "Objects", exact: true }).click();
@@ -48,7 +48,7 @@ test("blank construction, unlabeled simulation and policy editing", async ({
     page.getByRole("complementary", { name: "Completed run totals" }),
   ).toContainText("No outcome labels");
   await page.getByRole("button", { name: "Edit scenario" }).click();
-  await page.getByRole("button", { name: "About this workspace" }).click();
+  await page.getByRole("button", { name: "Samples", exact: true }).click();
   await page.getByText("Scenario options", { exact: true }).click();
   await page.getByRole("button", { name: "Policy & costs" }).click();
   await page.getByLabel("Cost per review · USD").fill("0.00");

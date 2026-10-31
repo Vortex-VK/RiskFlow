@@ -56,6 +56,9 @@ test("hands-on tour advances only after real actions and can finish a complete s
   await page.goto("/");
   await page.evaluate(() => localStorage.removeItem("riskflow:tutorial:v2"));
   await page.reload();
+  await page
+    .getByRole("button", { name: "Build your own graph", exact: true })
+    .click();
   const tour = page.locator(".tutorial-tour");
   const phase = (value: string) =>
     expect(tour).toHaveAttribute("data-phase", value);
@@ -137,9 +140,13 @@ test("hands-on tour advances only after real actions and can finish a complete s
   await page.getByRole("button", { name: "Add", exact: true }).click();
   await phase("simulate");
   await page.getByRole("button", { name: "Simulate", exact: true }).click();
+  await expect(page.locator(".replay")).toHaveAttribute(
+    "data-playback-complete",
+    "true",
+  );
   await phase("results");
   await expect(page.locator("#tutorial-text")).toContainText(
-    "payment totals, risk scores, and review workload",
+    "payment totals, review priorities, and workload",
   );
   await expect(tour.locator(".kicker")).toContainText("8 of 9");
   await page.getByRole("button", { name: "Results", exact: true }).click();
@@ -147,6 +154,7 @@ test("hands-on tour advances only after real actions and can finish a complete s
     page.getByRole("complementary", { name: "Completed run totals" }),
   ).toBeVisible();
   await phase("results");
+  await tour.getByRole("button", { name: "Next", exact: true }).click();
   await phase("samples");
   await expect(tour.locator(".kicker")).toContainText("9 of 9");
   await expect(
@@ -215,6 +223,9 @@ test("connection tutorial avoids both objects after resizing and moving them", a
 }) => {
   await page.goto("/");
   await page.getByRole("button", { name: "Show tutorial" }).click();
+  await page
+    .getByRole("button", { name: "Build your own graph", exact: true })
+    .click();
   for (const kind of ["account", "merchant"]) {
     await page.getByRole("button", { name: "Objects", exact: true }).click();
     await page
@@ -265,6 +276,9 @@ test("mobile keyboard placement stays interactive and invalid edits do not advan
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
   await page.getByRole("button", { name: "Show tutorial" }).click();
+  await page
+    .getByRole("button", { name: "Build your own graph", exact: true })
+    .click();
   const tour = page.locator(".tutorial-tour");
   await page.getByRole("button", { name: "Objects", exact: true }).click();
   await page
@@ -294,7 +308,7 @@ test("mobile keyboard placement stays interactive and invalid edits do not advan
   expect(coach.x + coach.width).toBeLessThanOrEqual(390);
   expect(coach.y + coach.height).toBeLessThanOrEqual(844);
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
-  await page.getByRole("button", { name: "Skip tour" }).click();
+  await page.getByRole("button", { name: "Close tutorial" }).click();
   await expect(tour).toHaveCount(0);
   await expect(page.locator(".react-flow__node")).toHaveCount(3);
 });
@@ -306,6 +320,9 @@ test("mobile tour closes the drawer for account setup and clears the form for me
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
   await page.getByRole("button", { name: "Show tutorial" }).click();
+  await page
+    .getByRole("button", { name: "Build your own graph", exact: true })
+    .click();
   await page.getByRole("button", { name: "Objects", exact: true }).click();
   const account = (await page
     .locator('[data-tray-id="tray-account"]')
@@ -354,7 +371,7 @@ test("mobile tour closes the drawer for account setup and clears the form for me
   await expectClearConnectionTargets(page);
 });
 
-test("skipping the interactive tour preserves an existing unapplied edit", async ({
+test("canceling the build tutorial replacement preserves an existing unapplied edit", async ({
   page,
 }) => {
   await openExampleWorkspace(page);
@@ -363,11 +380,14 @@ test("skipping the interactive tour preserves an existing unapplied edit", async
   const name = page.getByRole("textbox", { name: "Name", exact: true });
   await name.fill("Keep this draft");
   await page.getByRole("button", { name: "Show tutorial" }).click();
-  await expect(page.locator(".tutorial-tour")).toHaveAttribute(
-    "data-phase",
-    "prepare",
-  );
-  await page.getByRole("button", { name: "Skip tour" }).click();
+  await page
+    .getByRole("button", { name: "Build your own graph", exact: true })
+    .click();
+  await page
+    .getByRole("dialog", { name: "Replace this workspace?" })
+    .getByRole("button", { name: "Cancel", exact: true })
+    .click();
+  await page.getByRole("button", { name: "Close tutorial" }).click();
   await expect(page.locator(".tutorial-tour")).toHaveCount(0);
   await expect(name).toHaveValue("Keep this draft");
   await expect(page.locator(".react-flow__node")).toHaveCount(15);
@@ -376,18 +396,24 @@ test("skipping the interactive tour preserves an existing unapplied edit", async
 test("dimmed objects and controls reject mouse and keyboard actions until the tour closes", async ({
   page,
 }) => {
-  await openExampleWorkspace(page);
-  const account = node(page, "account-a");
-  await account.focus();
-  await page.keyboard.press("Enter");
-  await page.getByLabel("Name", { exact: true }).fill("Keep this change");
-  await page.getByRole("button", { name: "Apply", exact: true }).click();
-  await expect(
-    page.getByRole("complementary", { name: "Selection details" }),
-  ).toHaveCount(0);
+  await page.goto("/");
   await page.getByRole("button", { name: "Show tutorial" }).click();
+  await page
+    .getByRole("button", { name: "Build your own graph", exact: true })
+    .click();
+  const tour = page.locator(".tutorial-tour");
+  await tour.getByRole("button", { name: "Next", exact: true }).click();
+  await expect(tour).toHaveAttribute("data-phase", "account");
+  await tour.getByRole("button", { name: "Next", exact: true }).click();
+  await page.getByLabel("Name", { exact: true }).fill("Keep this change");
+  await tour.getByRole("button", { name: "Next", exact: true }).click();
+  await expect(tour).toHaveAttribute("data-phase", "merchant");
+  const account = page
+    .locator(".react-flow__node")
+    .filter({ has: page.locator(".node-account") });
+  const accountId = (await account.getAttribute("data-id"))!;
   const before = await account.getAttribute("style");
-  const point = await center(page, "account-a");
+  const point = await center(page, accountId);
   await page.mouse.move(point.x, point.y);
   await page.mouse.down();
   await page.mouse.move(point.x + 100, point.y + 70, { steps: 8 });
@@ -398,12 +424,13 @@ test("dimmed objects and controls reject mouse and keyboard actions until the to
     page.getByRole("complementary", { name: "Selection details" }),
   ).toHaveCount(0);
   await page
-    .getByRole("button", { name: "Clear board", exact: true })
+    .getByRole("button", { name: "Import CSV", exact: true })
     .evaluate((button: HTMLButtonElement) => button.click());
   await page
     .getByRole("button", { name: "Samples", exact: true })
     .evaluate((button: HTMLButtonElement) => button.click());
-  await expect(page.locator(".react-flow__node")).toHaveCount(15);
+  await expect(page.locator(".react-flow__node")).toHaveCount(3);
+  await expect(page.locator(".import-inspector")).toHaveCount(0);
   await expect(
     page.getByRole("button", { name: "Close sample library" }),
   ).toHaveCount(0);
@@ -418,16 +445,12 @@ test("dimmed objects and controls reject mouse and keyboard actions until the to
       ),
     ).toBe(true);
   }
-  await page.getByRole("button", { name: "Skip tour" }).click();
+  await page.getByRole("button", { name: "Close tutorial" }).click();
   await expect(page.locator(".tutorial-tour")).toHaveCount(0);
   await account.focus();
   await page.keyboard.press("Enter");
   await expect(page.getByLabel("Name", { exact: true })).toHaveValue(
     "Keep this change",
-  );
-  await page.getByRole("button", { name: "Undo", exact: true }).click();
-  await expect(page.getByLabel("Name", { exact: true })).toHaveValue(
-    "Alex Morgan",
   );
 });
 
@@ -449,11 +472,9 @@ test("clear board is visible, turns red on hover, and preserves edits on cancel"
   await expect(clear).toHaveCSS("padding", normalHover.padding);
   await expect(clear).toHaveCSS("color", "rgb(239, 163, 155)");
   const clearBox = (await clear.boundingBox())!;
-  const redoBox = (await page
-    .getByRole("button", { name: "Redo", exact: true })
-    .boundingBox())!;
+  const simulateBox = (await simulate.boundingBox())!;
   expect(clearBox.y + clearBox.height / 2).toBeCloseTo(
-    redoBox.y + redoBox.height / 2,
+    simulateBox.y + simulateBox.height / 2,
     0,
   );
   await clear.focus();
@@ -538,7 +559,9 @@ test("close icons are centered across workspace panels and the motion toggle is 
   await check("Close details");
   await page.getByRole("button", { name: "Samples", exact: true }).click();
   await check("Close sample library");
-  await page.getByRole("button", { name: "About this workspace" }).click();
+  await expect(
+    page.getByRole("button", { name: "About this workspace" }),
+  ).toHaveCount(0);
   await expect(
     page.getByRole("checkbox", { name: "Animate objects" }),
   ).toHaveCount(0);
@@ -581,7 +604,8 @@ test("right-drag opens a payment draft in either direction and adding can be und
   await expect(
     page.getByRole("button", { name: "Payments 17", exact: true }),
   ).toBeVisible();
-  await page.getByRole("button", { name: "Undo", exact: true }).click();
+  await node(page, "account-a").focus();
+  await page.keyboard.press("Control+z");
   await expect(
     page.getByRole("button", { name: "Payments 16", exact: true }),
   ).toBeVisible();
@@ -658,36 +682,42 @@ test("the supplied 9000-row export is blocked before graph creation by default",
   await page.getByRole("button", { name: "Preview graph" }).click();
   await expect(
     page.getByRole("region", { name: "Import preview" }),
-  ).toContainText("Missing model inputs prevent simulation");
+  ).toContainText("Explore these payments without running a fraud model.");
   await page.getByRole("button", { name: "Build graph" }).click();
   await expect(
+    page.getByRole("button", { name: "Payments 7612", exact: true }),
+  ).toBeVisible();
+  await expect(
     page.getByRole("button", { name: "Simulate", exact: true }),
-  ).toBeDisabled();
+  ).toHaveCount(0);
   await expect(
     page.getByRole("navigation", { name: "Workspace tools" }),
-  ).not.toContainText("payments need model inputs");
+  ).toHaveCount(0);
 });
 
 test("panels animate on exit and disclosures respect reduced motion", async ({
   page,
 }) => {
   await page.goto("/");
-  await page.getByRole("button", { name: "About this workspace" }).click();
+  await page.getByRole("button", { name: "Samples", exact: true }).click();
   await page.getByText("Scenario options", { exact: true }).click();
-  const disclosure = page.locator(".about details");
+  const disclosure = page.locator(".scenario-options");
   await expect(disclosure).toHaveAttribute("open");
   expect(
     await disclosure.evaluate(
       (el) => getComputedStyle(el, "::details-content").transitionDuration,
     ),
   ).toContain("0.42s");
-  await page.getByRole("button", { name: "About this workspace" }).click();
-  const exit = page.locator('.presence[data-visible="false"] > .about');
-  await expect(exit).toHaveCSS("transition-duration", "0.42s");
-  await expect(page.locator(".about")).toHaveCount(0);
+  await page.getByRole("button", { name: "Close sample library" }).click();
+  const exit = page.locator('.sample-library[data-closing="true"]');
+  await expect(exit).toHaveCSS("animation-duration", "0.42s");
+  await expect(page.locator(".sample-library")).toHaveCount(0);
   await page.emulateMedia({ reducedMotion: "reduce" });
-  await page.getByRole("button", { name: "About this workspace" }).click();
-  await expect(page.locator(".about")).toHaveCSS("animation-name", "none");
+  await page.getByRole("button", { name: "Samples", exact: true }).click();
+  await expect(page.locator(".sample-library")).toHaveCSS(
+    "animation-name",
+    "none",
+  );
   expect(
     await disclosure.evaluate(
       (el) => getComputedStyle(el, "::details-content").transitionDuration,
@@ -702,7 +732,6 @@ test("menus fade in and out without shifting tray objects, including a quick reo
   for (const [label, selector] of [
     ["Objects", ".object-tray"],
     ["Import CSV", ".import-inspector"],
-    ["About this workspace", ".about"],
   ]) {
     for (const opening of [true, false]) {
       const sample = await page.evaluate(

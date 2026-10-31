@@ -22,7 +22,7 @@ const selectNode = async (page: Page, id: string) => {
   await page.keyboard.press("Enter");
 };
 const options = async (page: Page) => {
-  await button(page, "About this workspace").click();
+  await button(page, "Samples").click();
   await page.getByText("Scenario options", { exact: true }).click();
 };
 const expandDetails = async (root: Locator) => {
@@ -425,7 +425,7 @@ test("service failure retry and failed rerun preserve usable state", async ({
   await expect(page.getByRole("status")).toContainText("503");
   await expect(page.locator(".react-flow__node")).toHaveCount(0);
   await page.unroute("**/api/v1/templates/shared-device-cluster");
-  await button(page, "About this workspace").click();
+  await button(page, "Samples").click();
   await selectExample(page);
   await expect(page.locator(".react-flow__node")).toHaveCount(15);
   await button(page, "Simulate").click();

@@ -16,7 +16,7 @@ import {
   assertIntegrity,
   paymentDefault,
 } from "../domain/commands";
-import { kinds, money, orderedPayments } from "../domain/types";
+import { money, orderedPayments } from "../domain/types";
 import type { Document, Entity, Position } from "../domain/types";
 import { guarded, useWorkspace } from "../state/workspace";
 import { Graph } from "../features/graph/Graph";
@@ -34,6 +34,8 @@ import { PolicyForm } from "../features/editor/PolicyForm";
 import { ReplaceDialog } from "../features/editor/ReplaceDialog";
 import { SampleLibrary } from "../features/samples/SampleLibrary";
 import { WorkspaceTutorial } from "../features/editor/WorkspaceTutorial";
+import { TutorialIntro } from "../features/editor/TutorialIntro";
+import { GraphTutorial } from "../features/editor/GraphTutorial";
 import { Presence } from "../features/Presence";
 
 function changed(document: Document, baseline: string) {
@@ -53,9 +55,9 @@ function Workspace() {
     components["schemas"]["TemplateSummary"][]
   >([]);
   const [loadError, setLoadError] = useState("");
-  const [panel, setPanel] = useState<
-    "add" | "payments" | "about" | "import" | null
-  >(null);
+  const [panel, setPanel] = useState<"add" | "payments" | "import" | null>(
+    null,
+  );
   const [draft, setDraft] = useState<Draft | null>(null);
   const [editSession, setEditSession] = useState(0);
   const [navigationTarget, setNavigationTarget] =
@@ -74,6 +76,13 @@ function Workspace() {
   const [restoreView, setRestoreView] = useState(false);
   const [policyOpen, setPolicyOpen] = useState(false);
   const [samplesOpen, setSamplesOpen] = useState(false);
+  const [tutorialMode, setTutorialMode] = useState<"intro" | "graph" | "build">(
+    "intro",
+  );
+  const tutorialCandidate = useRef<{
+    document: Document;
+    mode: "graph" | "build";
+  } | null>(null);
   const [tutorialOpen, setTutorialOpen] = useState(() => {
     try {
       return localStorage.getItem("riskflow:tutorial:v2") !== "seen";
@@ -88,6 +97,24 @@ function Workspace() {
     } catch {
       /* Optional preference. */
     }
+  }
+  function buildTutorial() {
+    startTutorial(blank(), "build");
+  }
+  function startGraphTutorial(candidate: Document) {
+    startTutorial(candidate, "graph");
+  }
+  function startTutorial(candidate: Document, mode: "graph" | "build") {
+    tutorialCandidate.current = { document: candidate, mode };
+    const current = useWorkspace.getState();
+    if (
+      current.dirty ||
+      current.document?.scenario.nodes.length ||
+      current.document?.scenario.payments.length
+    ) {
+      setTutorialOpen(false);
+      setReplacement(candidate);
+    } else install(candidate);
   }
   const [arrival, setArrival] = useState<{
     id: string;
@@ -111,12 +138,17 @@ function Workspace() {
 
   const importedCandidate = useRef<Document | null>(null);
   function install(candidate: Document) {
+    const tutorial =
+      tutorialCandidate.current?.document === candidate
+        ? tutorialCandidate.current
+        : null;
     setArrival(null);
     setPolicyOpen(false);
     setRestoreView(true);
     state.replace(candidate);
     useWorkspace.setState({
-      revealGraph: importedCandidate.current === candidate,
+      revealGraph:
+        importedCandidate.current === candidate || tutorial?.mode === "graph",
     });
     importedCandidate.current = null;
     loadSequence.current++;
@@ -127,6 +159,12 @@ function Workspace() {
     setPlacing(null);
     setConnecting(null);
     setNewObject(null);
+    if (tutorial) {
+      tutorialCandidate.current = null;
+      setSamplesOpen(false);
+      setTutorialMode(tutorial.mode);
+      setTutorialOpen(true);
+    }
   }
   function replace(candidate: Document) {
     assertIntegrity(candidate);
@@ -450,12 +488,74 @@ function Workspace() {
     <>
       {replacement && (
         <ReplaceDialog
-          cancel={() => setReplacement(null)}
+          cancel={() => {
+            setReplacement(null);
+            if (tutorialCandidate.current) {
+              tutorialCandidate.current = null;
+              setTutorialMode("intro");
+              setTutorialOpen(true);
+            }
+          }}
           discard={() => install(replacement)}
         />
       )}
       {samplesOpen && (
         <SampleLibrary
+          options={
+            <details className="scenario-options">
+              <summary>Scenario options</summary>
+              {templates.map((t) => (
+                <button
+                  className="menu-item"
+                  key={t.id}
+                  onClick={() => {
+                    setSamplesOpen(false);
+                    void load(t.id);
+                  }}
+                >
+                  {t.title}
+                  <small>
+                    {t.nodeCount} objects · {t.paymentCount} payments
+                  </small>
+                </button>
+              ))}
+              <hr />
+              <button
+                className="wide"
+                onClick={() =>
+                  guarded(() => {
+                    closeEditor();
+                    setPanel(null);
+                    setSamplesOpen(false);
+                    setPolicyOpen(true);
+                  })
+                }
+              >
+                Policy &amp; costs
+              </button>
+              <hr />
+              <button
+                className="wide"
+                onClick={() => {
+                  setSamplesOpen(false);
+                  replace(blank());
+                }}
+              >
+                New blank scenario
+              </button>
+              {document.scenario.sourceTemplateId && (
+                <button
+                  className="wide"
+                  onClick={() => {
+                    setSamplesOpen(false);
+                    void load(document.scenario.sourceTemplateId!);
+                  }}
+                >
+                  Reset to template
+                </button>
+              )}
+            </details>
+          }
           close={() => setSamplesOpen(false)}
           install={(candidate) => {
             setSamplesOpen(false);
@@ -469,6 +569,10 @@ function Workspace() {
           key={simulation.latest.result.runId}
           captured={simulation.latest}
           openSamples={openSamples}
+          openTutorial={() => {
+            setTutorialMode("intro");
+            setTutorialOpen(true);
+          }}
         />
       ) : (
         <main className="workspace" aria-label="RiskFlow graph workspace">
@@ -549,38 +653,12 @@ function Workspace() {
                 onClick={() => {
                   if (tutorialOpen) closeTutorial();
                   else {
+                    setTutorialMode("intro");
                     setTutorialOpen(true);
                   }
                 }}
               >
                 ?
-              </button>
-              <button
-                className="icon-button"
-                aria-label="About this workspace"
-                title="Project info"
-                aria-expanded={panel === "about"}
-                onClick={() => setPanel(panel === "about" ? null : "about")}
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                  aria-hidden="true"
-                >
-                  <circle cx="12" cy="12" r="9" />
-                  <path d="M12 11v6" />
-                  <circle
-                    cx="12"
-                    cy="7.5"
-                    r="0.9"
-                    fill="currentColor"
-                    stroke="none"
-                  />
-                </svg>
               </button>
             </div>
           </header>
@@ -637,89 +715,6 @@ function Workspace() {
               )}
             </Presence>
           </div>
-          <Presence>
-            {panel === "about" && (
-              <section className="card about">
-                <h2>A space to explore risk.</h2>
-                <p>
-                  Add objects, connect their context, and create payments.
-                  Select anything to look closer.
-                </p>
-                <p>
-                  Drag objects to rearrange them. Drag empty canvas to pan. Zoom
-                  out to see more of the network.
-                </p>
-                <p>
-                  Right-drag between an account and another object to connect
-                  them. With a keyboard, focus an object and press C, then
-                  select the object to connect.
-                </p>
-                <div className="category-key">
-                  {kinds.map((k) => (
-                    <span className={`node-${k}`} key={k}>
-                      <i />
-                      {k}
-                    </span>
-                  ))}
-                </div>
-                <hr />
-                <p>
-                  Arrow keys move a focused object. Ctrl/Cmd+Z undoes a
-                  committed edit. Escape cancels dragging. Objects, imported
-                  data, and results last for this session. Refreshing starts a
-                  new workspace.
-                </p>
-                <p className="fineprint">
-                  Detect suspicious payments, inspect the factors behind each
-                  prediction, and measure fraud detection on labeled data. Open
-                  Results after a run for dataset outcomes. Overall model
-                  evaluation is available in Samples.
-                </p>
-                <details>
-                  <summary>Scenario options</summary>
-                  {templates.map((t) => (
-                    <button
-                      className="menu-item"
-                      key={t.id}
-                      onClick={() => void load(t.id)}
-                    >
-                      {t.title}
-                      <small>
-                        {t.nodeCount} objects · {t.paymentCount} payments
-                      </small>
-                    </button>
-                  ))}
-                  <hr />
-                  <button
-                    className="wide"
-                    onClick={() =>
-                      guarded(() => {
-                        closeEditor();
-                        setPanel(null);
-                        setPolicyOpen(true);
-                      })
-                    }
-                  >
-                    Policy &amp; costs
-                  </button>
-                  <hr />
-                  <button className="wide" onClick={() => replace(blank())}>
-                    New blank scenario
-                  </button>
-                  {document.scenario.sourceTemplateId && (
-                    <button
-                      className="wide"
-                      onClick={() =>
-                        void load(document.scenario.sourceTemplateId!)
-                      }
-                    >
-                      Reset to template
-                    </button>
-                  )}
-                </details>
-              </section>
-            )}
-          </Presence>
           {(placing || connecting) && (
             <section className="card placement-bar" aria-label="Canvas action">
               <p>
@@ -864,8 +859,33 @@ function Workspace() {
           </Presence>
         </main>
       )}
-      {tutorialOpen && (
+      {tutorialOpen && tutorialMode === "intro" && (
+        <TutorialIntro
+          start={startGraphTutorial}
+          build={buildTutorial}
+          close={closeTutorial}
+        />
+      )}
+      {tutorialOpen && tutorialMode === "graph" && (
+        <GraphTutorial
+          close={closeTutorial}
+          samples={() => {
+            closeTutorial();
+            openSamples();
+          }}
+          importCsv={() => {
+            closeTutorial();
+            useSimulation.setState({ viewing: false, playing: false });
+            setPanel("import");
+          }}
+        />
+      )}
+      {tutorialOpen && tutorialMode === "build" && (
         <WorkspaceTutorial
+          addObject={add}
+          connectObjects={(account, merchant) =>
+            chooseTarget(merchant, account)
+          }
           close={closeTutorial}
           showObjects={showObjects}
           panel={panel}

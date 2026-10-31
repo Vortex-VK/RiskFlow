@@ -104,7 +104,7 @@ test("close discards dirty object, transaction and context drafts and leaves men
   await page.getByLabel("Familiar since · UTC").fill("2026-01-15T01:00");
   await page.getByRole("button", { name: "Close details" }).click();
   await expect(details(page)).toHaveCount(0);
-  await page.getByRole("button", { name: "About this workspace" }).click();
+  await page.getByRole("button", { name: "Samples", exact: true }).click();
   await page.getByText("Scenario options", { exact: true }).click();
   await page.getByRole("button", { name: "Policy & costs" }).click();
   const cost = await page.getByLabel("Cost per review · USD").inputValue();
@@ -113,7 +113,7 @@ test("close discards dirty object, transaction and context drafts and leaves men
   await expect(
     page.getByRole("complementary", { name: "Policy and costs" }),
   ).toHaveCount(0);
-  await page.getByRole("button", { name: "About this workspace" }).click();
+  await page.getByRole("button", { name: "Samples", exact: true }).click();
   await page.getByText("Scenario options", { exact: true }).click();
   await page.getByRole("button", { name: "Policy & costs" }).click();
   await expect(page.getByLabel("Cost per review · USD")).toHaveValue(cost);
