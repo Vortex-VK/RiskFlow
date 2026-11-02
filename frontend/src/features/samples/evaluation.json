@@ -1,0 +1,98 @@
+{
+  "model": "Stack-d5",
+  "headSha256": "49c5c10940731b31fe77977099da046f408e660538d1a27444bf30983e601fde",
+  "expertCount": 8,
+  "historyFeatureCount": 33,
+  "policy": "Top 5% of each dataset, rounded up; one batch per dataset",
+  "reviewFraction": 0.05,
+  "scope": "Exposed development datasets; not independent validation. Equal-weight mean of per-dataset fraud recall. Not the app automatic review capacity or curated sample results.",
+  "sourceReceipt": "research/nonlinear-stack-v2/reports/source-metrics.csv",
+  "sourceReceiptSha256": "765a3ef0bd36da1cbc5afe3d5722685630c6e6fa440d43179cc1c50f52f47ded",
+  "datasets": [
+    {
+      "id": "ibm",
+      "name": "IBM TabFormer",
+      "rows": 186320,
+      "assessed": 186320,
+      "fraud": 276,
+      "reviews": 9316,
+      "detections": 237,
+      "false_alerts": 9079,
+      "averagePrecision": 0.1617385553920989
+    },
+    {
+      "id": "sparkov",
+      "name": "Sparkov",
+      "rows": 232669,
+      "assessed": 232669,
+      "fraud": 996,
+      "reviews": 11634,
+      "detections": 956,
+      "false_alerts": 10678,
+      "averagePrecision": 0.8040142021743372
+    },
+    {
+      "id": "handbook",
+      "name": "Fraud Detection Handbook",
+      "rows": 18401,
+      "assessed": 18401,
+      "fraud": 174,
+      "reviews": 921,
+      "detections": 93,
+      "false_alerts": 828,
+      "averagePrecision": 0.477976660699883
+    },
+    {
+      "id": "household",
+      "name": "Household simulation",
+      "rows": 26135,
+      "assessed": 26135,
+      "fraud": 1859,
+      "reviews": 1307,
+      "detections": 1273,
+      "false_alerts": 34,
+      "averagePrecision": 0.8418578360746387
+    },
+    {
+      "id": "banksim",
+      "name": "BankSim",
+      "rows": 21138,
+      "assessed": 21138,
+      "fraud": 259,
+      "reviews": 1057,
+      "detections": 250,
+      "false_alerts": 807,
+      "averagePrecision": 0.7507319612824553
+    }
+  ],
+  "capabilities": {
+    "modelBundleBytes": 8896668,
+    "modelBundleFiles": {
+      "handbook_expert.cbm": 299576,
+      "household_expert.cbm": 308940,
+      "ibm_expert.cbm": 307172,
+      "manifest.json": 13865,
+      "pooled.cbm": 225364,
+      "reference.npz": 6292359,
+      "relative.cbm": 278552,
+      "rich.cbm": 296104,
+      "sparkov_expert.cbm": 309348,
+      "stack_d5.cbm": 248152,
+      "v2.cbm": 317236
+    },
+    "bundleScope": "Nine frozen model files, reference scales and manifest; excludes application code, runtime dependencies and in-memory data.",
+    "inferenceDevice": "CPU",
+    "gpuRequired": false,
+    "externalModelApiRequired": false,
+    "explanation": {
+      "checkedLevels": 2,
+      "displayPointStep": 0.1,
+      "method": "Final-head SHAP differences and exact grouped Shapley attribution for expanded expert checks.",
+      "checks": [
+        "Displayed check contributions sum to the priority score.",
+        "Expanded observation contributions sum to their check contribution."
+      ],
+      "scope": "Arithmetic reconstruction at both displayed levels; not a measured comprehension score or proof that a payment is fraudulent."
+    }
+  }
+}

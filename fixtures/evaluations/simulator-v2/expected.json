@@ -1,0 +1,29 @@
+{
+  "sourceHashes": {
+    "riskflow_simulator_realistic_2400.csv": "8bc3c68d0db6f58fedfc16ec549562452fd8615fd705774c3703631aac8120da",
+    "riskflow_simulator_reference_profiles.csv": "d59d8e6ccac22b11ee7adc93bfe59a9d1260cf53f6409590a87699b9d5265ecd",
+    "riskflow_simulator_test_guide.md": "434f06c3ca8d5bac8fcc287aa791f7011d3803f3476cd97d640f30210e8da809"
+  },
+  "sourceRows": 2400,
+  "eligiblePayments": 1953,
+  "decisions": {
+    "approve": 1933,
+    "review": 16,
+    "block": 4
+  },
+  "burstScores": [
+    20,
+    20,
+    45,
+    45,
+    70,
+    70,
+    80,
+    80
+  ],
+  "rules": {
+    "payment_velocity": 18,
+    "shared_device_accounts": 9,
+    "new_device": 918
+  }
+}

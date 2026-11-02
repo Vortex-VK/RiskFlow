@@ -1,0 +1,70 @@
+from pathlib import Path
+
+import pytest
+from fastapi import FastAPI
+from fastapi.testclient import TestClient
+
+from app.api.frontend import mount_frontend
+
+
+def test_single_service_serves_assets_without_swallowing_api_or_unknown_paths(
+    tmp_path: Path,
+) -> None:
+    (tmp_path / "assets").mkdir()
+    (tmp_path / "index.html").write_text("<html>RiskFlow</html>")
+    (tmp_path / "assets" / "app.js").write_text("document.title = 'RiskFlow';")
+    (tmp_path / "samples").mkdir()
+    (tmp_path / "samples" / "example.csv").write_bytes(b"id,amount\n1,20\n")
+    (tmp_path / "landing").mkdir()
+    image_bytes = b"\x89PNG\r\n\x1a\n"
+    for name in ("graph-overview.png", "graph-overview@2x.png"):
+        (tmp_path / "landing" / name).write_bytes(image_bytes)
+    application = FastAPI()
+
+    @application.get("/api/v1/health")
+    def health() -> dict[str, str]:
+        return {"status": "ok"}
+
+    mount_frontend(application, tmp_path)
+    with TestClient(application) as client:
+        assert client.get("/").headers["content-type"].startswith("text/html")
+        assert client.get("/").headers["cache-control"] == "no-cache"
+        policy = client.get("/").headers["content-security-policy"]
+        assert "script-src 'self';" in policy
+        assert "object-src 'none';" in policy
+        assert "frame-ancestors 'none';" in policy
+        assert client.get("/assets/app.js").status_code == 200
+        assert client.get("/assets/app.js").headers["cache-control"] == (
+            "public, max-age=31536000, immutable"
+        )
+        assert client.get("/api/v1/health").json() == {"status": "ok"}
+        sample = client.get("/samples/example.csv")
+        assert sample.content == b"id,amount\n1,20\n"
+        assert sample.headers["cache-control"] == "no-cache"
+        for name in ("graph-overview.png", "graph-overview@2x.png"):
+            image = client.get(f"/landing/{name}")
+            assert image.status_code == 200
+            assert image.content == image_bytes
+            assert image.headers["content-type"] == "image/png"
+            assert image.headers["cache-control"] == "no-cache"
+            unchanged = client.get(
+                f"/landing/{name}", headers={"If-None-Match": image.headers["etag"]}
+            )
+            assert unchanged.status_code == 304
+            assert unchanged.headers["cache-control"] == "no-cache"
+        for path in (
+            "/api/v1/missing",
+            "/missing",
+            "/assets/missing.js",
+            "/assets/%2e%2e/index.html",
+            "/samples/%2e%2e/index.html",
+            "/samples/missing.csv",
+            "/landing/missing.png",
+            "/landing/%2e%2e/index.html",
+        ):
+            assert client.get(path).status_code == 404
+
+
+def test_missing_production_build_fails_fast(tmp_path: Path) -> None:
+    with pytest.raises(RuntimeError, match="Build the frontend"):
+        mount_frontend(FastAPI(), tmp_path)

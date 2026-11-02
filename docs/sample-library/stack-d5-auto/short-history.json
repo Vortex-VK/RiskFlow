@@ -1,0 +1,402 @@
+[
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00001",
+    "fraud": false,
+    "rawMargin": -4.269292129513811,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 2
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00002",
+    "fraud": false,
+    "rawMargin": -4.161446975076086,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 3
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00003",
+    "fraud": false,
+    "rawMargin": -2.0870943043525703,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 4
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00004",
+    "fraud": false,
+    "rawMargin": -3.9236669798946573,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 5
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00005",
+    "fraud": false,
+    "rawMargin": -4.70095567802747,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 6
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00006",
+    "fraud": false,
+    "rawMargin": -3.6606282366776863,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 7
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00007",
+    "fraud": false,
+    "rawMargin": -3.2016590796879596,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 8
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00008",
+    "fraud": false,
+    "rawMargin": -3.585040279697466,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 9
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00009",
+    "fraud": false,
+    "rawMargin": -3.4035892020173333,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 10
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00010",
+    "fraud": false,
+    "rawMargin": -4.98342187317289,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 11
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00011",
+    "fraud": false,
+    "rawMargin": -3.4393722000825138,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 12
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00012",
+    "fraud": false,
+    "rawMargin": -4.234316528174523,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 13
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00013",
+    "fraud": false,
+    "rawMargin": -5.288064573900716,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 14
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00014",
+    "fraud": false,
+    "rawMargin": -4.127150350551178,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 15
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00015",
+    "fraud": false,
+    "rawMargin": -4.394731009027674,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 16
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00016",
+    "fraud": false,
+    "rawMargin": -4.5557096557340735,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 17
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00017",
+    "fraud": false,
+    "rawMargin": -3.963019295964745,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 18
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00018",
+    "fraud": false,
+    "rawMargin": -4.05356513062152,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 19
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00019",
+    "fraud": false,
+    "rawMargin": -3.5954821862212607,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 20
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00020",
+    "fraud": false,
+    "rawMargin": -3.474950656159681,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 21
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00021",
+    "fraud": false,
+    "rawMargin": -5.146162385290422,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 22
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00022",
+    "fraud": false,
+    "rawMargin": -3.5576287169472076,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 23
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00023",
+    "fraud": false,
+    "rawMargin": -4.654129601494038,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 24
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00024",
+    "fraud": false,
+    "rawMargin": -3.9657227053742097,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 25
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00025",
+    "fraud": false,
+    "rawMargin": -4.857417808928887,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 26
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00026",
+    "fraud": false,
+    "rawMargin": -4.357189350667397,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 27
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00027",
+    "fraud": false,
+    "rawMargin": -3.8626720778032935,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 28
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00028",
+    "fraud": false,
+    "rawMargin": -4.608712521644236,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 29
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00029",
+    "fraud": false,
+    "rawMargin": -5.56167223103413,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 30
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-50-00030",
+    "fraud": true,
+    "rawMargin": 2.497389474760066,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 31
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-50-00031",
+    "fraud": true,
+    "rawMargin": 6.054301016667456,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 32
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00032",
+    "fraud": false,
+    "rawMargin": -5.276935198288007,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 33
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00033",
+    "fraud": false,
+    "rawMargin": -4.758099443129259,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 34
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00034",
+    "fraud": false,
+    "rawMargin": -5.36149008269927,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 35
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00035",
+    "fraud": false,
+    "rawMargin": -3.9103341233543976,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 36
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00036",
+    "fraud": false,
+    "rawMargin": -3.6374227278498794,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 37
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00037",
+    "fraud": false,
+    "rawMargin": -4.48073866796435,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 38
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00038",
+    "fraud": false,
+    "rawMargin": -5.00262728643242,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 39
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00039",
+    "fraud": false,
+    "rawMargin": -5.932833147809862,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 40
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00040",
+    "fraud": false,
+    "rawMargin": -4.062541457479338,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 41
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00041",
+    "fraud": false,
+    "rawMargin": -5.375364126042622,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 42
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00042",
+    "fraud": false,
+    "rawMargin": -3.031936974671053,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 43
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00043",
+    "fraud": false,
+    "rawMargin": -3.283183344431427,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 44
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00044",
+    "fraud": false,
+    "rawMargin": -5.063768805254737,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 45
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00045",
+    "fraud": false,
+    "rawMargin": -4.905420767381183,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 46
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00046",
+    "fraud": false,
+    "rawMargin": -1.6037511763007088,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 47
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00047",
+    "fraud": false,
+    "rawMargin": -4.56378347807419,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 48
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00048",
+    "fraud": false,
+    "rawMargin": -5.00802925282634,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 49
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00049",
+    "fraud": false,
+    "rawMargin": -5.149528972283289,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 50
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-50-00050",
+    "fraud": false,
+    "rawMargin": -6.465734053270685,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 51
+  }
+]

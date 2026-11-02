@@ -1,0 +1,17 @@
+.card-pattern-review {
+  border: 1px solid #5c8f98;
+  border-radius: 10px;
+  padding: 14px;
+  margin-block: 16px;
+  background: color-mix(in srgb, #77ced3 7%, transparent);
+}
+
+.card-pattern-review h3 {
+  margin-top: 0;
+}
+.card-pattern-review li {
+  margin-block: 6px;
+}
+.card-pattern-review .fineprint {
+  overflow-wrap: anywhere;
+}

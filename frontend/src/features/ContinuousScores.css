@@ -1,0 +1,49 @@
+.continuous-scores {
+  border-top: 1px solid #4c6665;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+.continuous-score {
+  margin: 1rem 0;
+}
+.continuous-score > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+.continuous-score output {
+  font-variant-numeric: tabular-nums;
+  font-size: 1.1rem;
+  color: #ace3d8;
+  white-space: nowrap;
+}
+.continuous-score meter {
+  width: 100%;
+  height: 0.65rem;
+  margin-top: 0.5rem;
+  accent-color: #8ad2c0;
+}
+.continuous-score p {
+  margin: 0.35rem 0;
+}
+.continuous-scores .high-estimated-risk {
+  border-left: 3px solid #ffc975;
+  padding-left: 0.75rem;
+  background: #30291d;
+}
+.high-estimate-label {
+  color: #ffe0a6;
+  font-weight: 600;
+}
+.run-inspector .metric-note {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.review-context .facts {
+  font-size: 12px;
+}
+.review-context dd {
+  white-space: nowrap;
+}

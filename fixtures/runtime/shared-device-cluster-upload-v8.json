@@ -1,0 +1,1424 @@
+{
+  "engineVersion": "engine-ml-upload-v8",
+  "ruleSetVersion": "upload-v8-precision95",
+  "schemaVersion": 1,
+  "scenarioSnapshot": {
+    "schemaVersion": 1,
+    "id": "shared-device-cluster",
+    "name": "Shared Device Cluster",
+    "description": "Illustrative synthetic purchases for V13 replay. MCC and channel are authored demo inputs; labels are story annotations, not measured model performance.",
+    "sourceTemplateId": "shared-device-cluster",
+    "sourceTemplateVersion": 2,
+    "scenarioStartAt": "2026-01-15T00:00:00.000Z",
+    "currency": "USD",
+    "nodes": [
+      {
+        "id": "account-a",
+        "name": "Alex Morgan",
+        "type": "account",
+        "openedAt": "2025-01-15T00:00:00.000Z",
+        "typicalAmountMinor": 5000,
+        "usualCountryCodes": [
+          "US"
+        ],
+        "usualMerchantCategories": [
+          "dining",
+          "groceries",
+          "retail"
+        ]
+      },
+      {
+        "id": "account-b",
+        "name": "Blair Chen",
+        "type": "account",
+        "openedAt": "2025-01-15T00:00:00.000Z",
+        "typicalAmountMinor": 5000,
+        "usualCountryCodes": [
+          "US"
+        ],
+        "usualMerchantCategories": [
+          "dining",
+          "groceries",
+          "retail"
+        ]
+      },
+      {
+        "id": "account-c",
+        "name": "Casey Reed",
+        "type": "account",
+        "openedAt": "2025-01-15T00:00:00.000Z",
+        "typicalAmountMinor": 5000,
+        "usualCountryCodes": [
+          "US"
+        ],
+        "usualMerchantCategories": [
+          "dining",
+          "groceries",
+          "retail"
+        ]
+      },
+      {
+        "id": "device-a",
+        "name": "Alex's phone",
+        "type": "device",
+        "description": null
+      },
+      {
+        "id": "device-b",
+        "name": "Blair's phone",
+        "type": "device",
+        "description": null
+      },
+      {
+        "id": "device-c",
+        "name": "Casey's phone",
+        "type": "device",
+        "description": null
+      },
+      {
+        "id": "device-shared",
+        "name": "Shared device",
+        "type": "device",
+        "description": null
+      },
+      {
+        "id": "dining",
+        "name": "Sunday Table",
+        "type": "merchant",
+        "category": "dining",
+        "countryCode": "US"
+      },
+      {
+        "id": "electronics-1",
+        "name": "Circuit Supply",
+        "type": "merchant",
+        "category": "electronics",
+        "countryCode": "US"
+      },
+      {
+        "id": "electronics-2",
+        "name": "Volt Electronics",
+        "type": "merchant",
+        "category": "electronics",
+        "countryCode": "US"
+      },
+      {
+        "id": "grocery",
+        "name": "Juniper Market",
+        "type": "merchant",
+        "category": "groceries",
+        "countryCode": "US"
+      },
+      {
+        "id": "location-a",
+        "name": "Brooklyn · US",
+        "type": "location",
+        "countryCode": "US",
+        "regionLabel": null
+      },
+      {
+        "id": "location-b",
+        "name": "Austin · US",
+        "type": "location",
+        "countryCode": "US",
+        "regionLabel": null
+      },
+      {
+        "id": "location-c",
+        "name": "Portland · US",
+        "type": "location",
+        "countryCode": "US",
+        "regionLabel": null
+      },
+      {
+        "id": "retail",
+        "name": "Common Goods",
+        "type": "merchant",
+        "category": "retail",
+        "countryCode": "US"
+      }
+    ],
+    "associations": [
+      {
+        "id": "account-a-device-a-link",
+        "type": "accountDevice",
+        "accountId": "account-a",
+        "targetId": "device-a",
+        "observedAt": "2026-01-14T00:00:00.000Z",
+        "knownFrom": "2026-01-14T00:00:00.000Z"
+      },
+      {
+        "id": "account-a-device-shared-link",
+        "type": "accountDevice",
+        "accountId": "account-a",
+        "targetId": "device-shared",
+        "observedAt": "2026-01-15T10:00:00.000Z",
+        "knownFrom": null
+      },
+      {
+        "id": "account-a-location-a-link",
+        "type": "accountLocation",
+        "accountId": "account-a",
+        "targetId": "location-a",
+        "observedAt": "2026-01-14T00:00:00.000Z",
+        "knownFrom": "2026-01-14T00:00:00.000Z"
+      },
+      {
+        "id": "account-b-device-b-link",
+        "type": "accountDevice",
+        "accountId": "account-b",
+        "targetId": "device-b",
+        "observedAt": "2026-01-14T00:00:00.000Z",
+        "knownFrom": "2026-01-14T00:00:00.000Z"
+      },
+      {
+        "id": "account-b-device-shared-link",
+        "type": "accountDevice",
+        "accountId": "account-b",
+        "targetId": "device-shared",
+        "observedAt": "2026-01-15T10:01:00.000Z",
+        "knownFrom": null
+      },
+      {
+        "id": "account-b-location-b-link",
+        "type": "accountLocation",
+        "accountId": "account-b",
+        "targetId": "location-b",
+        "observedAt": "2026-01-14T00:00:00.000Z",
+        "knownFrom": "2026-01-14T00:00:00.000Z"
+      },
+      {
+        "id": "account-c-device-c-link",
+        "type": "accountDevice",
+        "accountId": "account-c",
+        "targetId": "device-c",
+        "observedAt": "2026-01-14T00:00:00.000Z",
+        "knownFrom": "2026-01-14T00:00:00.000Z"
+      },
+      {
+        "id": "account-c-device-shared-link",
+        "type": "accountDevice",
+        "accountId": "account-c",
+        "targetId": "device-shared",
+        "observedAt": "2026-01-15T10:02:00.000Z",
+        "knownFrom": null
+      },
+      {
+        "id": "account-c-location-c-link",
+        "type": "accountLocation",
+        "accountId": "account-c",
+        "targetId": "location-c",
+        "observedAt": "2026-01-14T00:00:00.000Z",
+        "knownFrom": "2026-01-14T00:00:00.000Z"
+      }
+    ],
+    "payments": [
+      {
+        "id": "H01",
+        "accountId": "account-a",
+        "merchantId": "grocery",
+        "deviceId": "device-a",
+        "locationId": "location-a",
+        "occurredAt": "2026-01-15T09:00:00.000Z",
+        "amountMinor": 1800,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5411",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      },
+      {
+        "id": "H02",
+        "accountId": "account-b",
+        "merchantId": "retail",
+        "deviceId": "device-b",
+        "locationId": "location-b",
+        "occurredAt": "2026-01-15T09:10:00.000Z",
+        "amountMinor": 4200,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5311",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      },
+      {
+        "id": "H03",
+        "accountId": "account-c",
+        "merchantId": "dining",
+        "deviceId": "device-c",
+        "locationId": "location-c",
+        "occurredAt": "2026-01-15T09:20:00.000Z",
+        "amountMinor": 2500,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5812",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      },
+      {
+        "id": "H04",
+        "accountId": "account-a",
+        "merchantId": "retail",
+        "deviceId": "device-a",
+        "locationId": "location-a",
+        "occurredAt": "2026-01-15T09:30:00.000Z",
+        "amountMinor": 5500,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5311",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      },
+      {
+        "id": "H05",
+        "accountId": "account-b",
+        "merchantId": "grocery",
+        "deviceId": "device-b",
+        "locationId": "location-b",
+        "occurredAt": "2026-01-15T09:40:00.000Z",
+        "amountMinor": 3000,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5411",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      },
+      {
+        "id": "H06",
+        "accountId": "account-c",
+        "merchantId": "dining",
+        "deviceId": "device-c",
+        "locationId": "location-c",
+        "occurredAt": "2026-01-15T09:50:00.000Z",
+        "amountMinor": 4500,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5812",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      },
+      {
+        "id": "H07",
+        "accountId": "account-a",
+        "merchantId": "electronics-1",
+        "deviceId": "device-shared",
+        "locationId": "location-a",
+        "occurredAt": "2026-01-15T10:00:00.000Z",
+        "amountMinor": 18000,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5732",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      },
+      {
+        "id": "H08",
+        "accountId": "account-b",
+        "merchantId": "electronics-2",
+        "deviceId": "device-shared",
+        "locationId": "location-b",
+        "occurredAt": "2026-01-15T10:01:00.000Z",
+        "amountMinor": 18000,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5732",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      },
+      {
+        "id": "H09",
+        "accountId": "account-c",
+        "merchantId": "electronics-1",
+        "deviceId": "device-shared",
+        "locationId": "location-c",
+        "occurredAt": "2026-01-15T10:02:00.000Z",
+        "amountMinor": 18000,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5732",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      },
+      {
+        "id": "H10",
+        "accountId": "account-a",
+        "merchantId": "electronics-2",
+        "deviceId": "device-shared",
+        "locationId": "location-a",
+        "occurredAt": "2026-01-15T10:03:00.000Z",
+        "amountMinor": 24000,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5732",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      },
+      {
+        "id": "H11",
+        "accountId": "account-b",
+        "merchantId": "electronics-1",
+        "deviceId": "device-shared",
+        "locationId": "location-b",
+        "occurredAt": "2026-01-15T10:04:00.000Z",
+        "amountMinor": 24000,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5732",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      },
+      {
+        "id": "H12",
+        "accountId": "account-a",
+        "merchantId": "electronics-2",
+        "deviceId": "device-shared",
+        "locationId": "location-a",
+        "occurredAt": "2026-01-15T10:05:00.000Z",
+        "amountMinor": 9000,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5732",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      },
+      {
+        "id": "H13",
+        "accountId": "account-b",
+        "merchantId": "electronics-1",
+        "deviceId": "device-shared",
+        "locationId": "location-b",
+        "occurredAt": "2026-01-15T10:06:00.000Z",
+        "amountMinor": 9000,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5732",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      },
+      {
+        "id": "H14",
+        "accountId": "account-a",
+        "merchantId": "grocery",
+        "deviceId": "device-a",
+        "locationId": "location-a",
+        "occurredAt": "2026-01-15T11:00:00.000Z",
+        "amountMinor": 2800,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5411",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      },
+      {
+        "id": "H15",
+        "accountId": "account-b",
+        "merchantId": "dining",
+        "deviceId": "device-b",
+        "locationId": "location-b",
+        "occurredAt": "2026-01-15T11:10:00.000Z",
+        "amountMinor": 3500,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5812",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      },
+      {
+        "id": "H16",
+        "accountId": "account-c",
+        "merchantId": "retail",
+        "deviceId": "device-c",
+        "locationId": "location-c",
+        "occurredAt": "2026-01-15T11:20:00.000Z",
+        "amountMinor": 4800,
+        "category": null,
+        "sourceCategory": null,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5311",
+          "completed": true,
+          "merchantState": "",
+          "merchantCity": "",
+          "merchantZip": ""
+        },
+        "unavailableRules": []
+      }
+    ],
+    "groundTruth": {
+      "H01": "legitimate",
+      "H02": "legitimate",
+      "H03": "legitimate",
+      "H04": "legitimate",
+      "H05": "legitimate",
+      "H06": "legitimate",
+      "H07": "fraudulent",
+      "H08": "fraudulent",
+      "H09": "fraudulent",
+      "H10": "fraudulent",
+      "H11": "fraudulent",
+      "H12": "fraudulent",
+      "H13": "fraudulent",
+      "H14": "legitimate",
+      "H15": "legitimate",
+      "H16": "legitimate"
+    },
+    "ruleSetVersion": "rules-v1",
+    "policy": {
+      "version": 1,
+      "reviewThreshold": 40,
+      "blockThreshold": 70
+    },
+    "costAssumptions": {
+      "approvedFraudLossBps": 10000,
+      "reviewCostMinor": 300,
+      "falseBlockCostMinor": 1500
+    },
+    "seed": null
+  },
+  "events": [
+    {
+      "eventId": "H01",
+      "sequenceIndex": 0,
+      "occurredAt": "2026-01-15T09:00:00.000Z",
+      "amountMinor": 1800,
+      "accountId": "account-a",
+      "merchantId": "grocery",
+      "deviceId": "device-a",
+      "locationId": "location-a",
+      "features": {
+        "amountMinor": 1800,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": false,
+        "rawScores": {
+          "baseline": -16.158873417639185,
+          "cb": -8.788648890821197,
+          "depth6": 0.5751221780166399,
+          "online_cb": -5.983085779350878,
+          "online_ebm": -4.41306341943236,
+          "base_margin": -9.504641557368315,
+          "coverage": -12.703700304136373,
+          "online_specialist": 2.305983000857213
+        },
+        "detectionPaths": [],
+        "historyCount": 0,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "approve"
+    },
+    {
+      "eventId": "H02",
+      "sequenceIndex": 1,
+      "occurredAt": "2026-01-15T09:10:00.000Z",
+      "amountMinor": 4200,
+      "accountId": "account-b",
+      "merchantId": "retail",
+      "deviceId": "device-b",
+      "locationId": "location-b",
+      "features": {
+        "amountMinor": 4200,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": false,
+        "rawScores": {
+          "baseline": -14.542813856608522,
+          "cb": -8.807438864163853,
+          "depth6": -1.0360252594414752,
+          "online_cb": -5.5890880219393395,
+          "online_ebm": 3.459503063377442,
+          "base_margin": -7.220210665753089,
+          "coverage": -12.703031718475085,
+          "online_specialist": -3.2819526997359265
+        },
+        "detectionPaths": [],
+        "historyCount": 0,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "approve"
+    },
+    {
+      "eventId": "H03",
+      "sequenceIndex": 2,
+      "occurredAt": "2026-01-15T09:20:00.000Z",
+      "amountMinor": 2500,
+      "accountId": "account-c",
+      "merchantId": "dining",
+      "deviceId": "device-c",
+      "locationId": "location-c",
+      "features": {
+        "amountMinor": 2500,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": false,
+        "rawScores": {
+          "baseline": -18.44686300582365,
+          "cb": -8.86498137679791,
+          "depth6": 0.5848301266471606,
+          "online_cb": -5.991966873043443,
+          "online_ebm": -3.796552195861209,
+          "base_margin": -9.47329881949648,
+          "coverage": -12.81873069078096,
+          "online_specialist": 2.329748089190805
+        },
+        "detectionPaths": [],
+        "historyCount": 0,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "approve"
+    },
+    {
+      "eventId": "H04",
+      "sequenceIndex": 3,
+      "occurredAt": "2026-01-15T09:30:00.000Z",
+      "amountMinor": 5500,
+      "accountId": "account-a",
+      "merchantId": "retail",
+      "deviceId": "device-a",
+      "locationId": "location-a",
+      "features": {
+        "amountMinor": 5500,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": false,
+        "rawScores": {
+          "baseline": -3.6619050554393517,
+          "cb": -8.638406965128155,
+          "depth6": -0.5820234953345781,
+          "online_cb": -4.938354895531866,
+          "online_ebm": 2.499757735351241,
+          "base_margin": -6.080100935345374,
+          "coverage": -10.306858588011055,
+          "online_specialist": -3.5710428832026775
+        },
+        "detectionPaths": [],
+        "historyCount": 1,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "approve"
+    },
+    {
+      "eventId": "H05",
+      "sequenceIndex": 4,
+      "occurredAt": "2026-01-15T09:40:00.000Z",
+      "amountMinor": 3000,
+      "accountId": "account-b",
+      "merchantId": "grocery",
+      "deviceId": "device-b",
+      "locationId": "location-b",
+      "features": {
+        "amountMinor": 3000,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": false,
+        "rawScores": {
+          "baseline": -7.5160370207744815,
+          "cb": -7.73570365439641,
+          "depth6": -0.6729641013572308,
+          "online_cb": -6.705537512113495,
+          "online_ebm": -7.294650903832102,
+          "base_margin": -8.264586334261958,
+          "coverage": -11.09270806302001,
+          "online_specialist": 3.1697187801768454
+        },
+        "detectionPaths": [],
+        "historyCount": 1,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "approve"
+    },
+    {
+      "eventId": "H06",
+      "sequenceIndex": 5,
+      "occurredAt": "2026-01-15T09:50:00.000Z",
+      "amountMinor": 4500,
+      "accountId": "account-c",
+      "merchantId": "dining",
+      "deviceId": "device-c",
+      "locationId": "location-c",
+      "features": {
+        "amountMinor": 4500,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": false,
+        "rawScores": {
+          "baseline": -8.796577266296023,
+          "cb": -9.526579195594147,
+          "depth6": -1.2616054836286181,
+          "online_cb": -7.484273358399051,
+          "online_ebm": -13.090986257342436,
+          "base_margin": -7.943104769860532,
+          "coverage": -10.841837700261545,
+          "online_specialist": 0.037597580345831556
+        },
+        "detectionPaths": [],
+        "historyCount": 1,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "approve"
+    },
+    {
+      "eventId": "H07",
+      "sequenceIndex": 6,
+      "occurredAt": "2026-01-15T10:00:00.000Z",
+      "amountMinor": 18000,
+      "accountId": "account-a",
+      "merchantId": "electronics-1",
+      "deviceId": "device-shared",
+      "locationId": "location-a",
+      "features": {
+        "amountMinor": 18000,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": false,
+        "rawScores": {
+          "baseline": -2.0802994296485045,
+          "cb": -5.315618913536562,
+          "depth6": 2.859544179998644,
+          "online_cb": -4.349066667676173,
+          "online_ebm": 5.8692576890827795,
+          "base_margin": -4.440744986589579,
+          "coverage": -10.74013469433224,
+          "online_specialist": 3.0559132427530447
+        },
+        "detectionPaths": [],
+        "historyCount": 2,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "approve"
+    },
+    {
+      "eventId": "H08",
+      "sequenceIndex": 7,
+      "occurredAt": "2026-01-15T10:01:00.000Z",
+      "amountMinor": 18000,
+      "accountId": "account-b",
+      "merchantId": "electronics-2",
+      "deviceId": "device-shared",
+      "locationId": "location-b",
+      "features": {
+        "amountMinor": 18000,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": false,
+        "rawScores": {
+          "baseline": -1.4618034970802385,
+          "cb": -5.489710308280428,
+          "depth6": 2.9464574472753045,
+          "online_cb": -4.3155652925153944,
+          "online_ebm": 5.770038990055028,
+          "base_margin": -4.701184122728403,
+          "coverage": -10.764972778084369,
+          "online_specialist": 3.456376768595285
+        },
+        "detectionPaths": [],
+        "historyCount": 2,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "approve"
+    },
+    {
+      "eventId": "H09",
+      "sequenceIndex": 8,
+      "occurredAt": "2026-01-15T10:02:00.000Z",
+      "amountMinor": 18000,
+      "accountId": "account-c",
+      "merchantId": "electronics-1",
+      "deviceId": "device-shared",
+      "locationId": "location-c",
+      "features": {
+        "amountMinor": 18000,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": false,
+        "rawScores": {
+          "baseline": -4.474553394800012,
+          "cb": -6.8936277102258385,
+          "depth6": 2.401639564795577,
+          "online_cb": -4.144191173310949,
+          "online_ebm": 2.3091979825709625,
+          "base_margin": -5.474310995361483,
+          "coverage": -11.279737239321847,
+          "online_specialist": 2.244356301797631
+        },
+        "detectionPaths": [],
+        "historyCount": 2,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "approve"
+    },
+    {
+      "eventId": "H10",
+      "sequenceIndex": 9,
+      "occurredAt": "2026-01-15T10:03:00.000Z",
+      "amountMinor": 24000,
+      "accountId": "account-a",
+      "merchantId": "electronics-2",
+      "deviceId": "device-shared",
+      "locationId": "location-a",
+      "features": {
+        "amountMinor": 24000,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": false,
+        "rawScores": {
+          "baseline": -12.189838871720351,
+          "cb": -7.8595612683933584,
+          "depth6": 0.5205612878619984,
+          "online_cb": -3.718246775066814,
+          "online_ebm": -1.1043084810896473,
+          "base_margin": -5.643352375100983,
+          "coverage": -10.060561036311478,
+          "online_specialist": 0.9612937152331829
+        },
+        "detectionPaths": [],
+        "historyCount": 3,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "approve"
+    },
+    {
+      "eventId": "H11",
+      "sequenceIndex": 10,
+      "occurredAt": "2026-01-15T10:04:00.000Z",
+      "amountMinor": 24000,
+      "accountId": "account-b",
+      "merchantId": "electronics-1",
+      "deviceId": "device-shared",
+      "locationId": "location-b",
+      "features": {
+        "amountMinor": 24000,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": false,
+        "rawScores": {
+          "baseline": -12.578920204357829,
+          "cb": -7.758731970308315,
+          "depth6": 0.984055955480672,
+          "online_cb": -3.59685727618643,
+          "online_ebm": 0.8445930418408713,
+          "base_margin": -5.180406830412807,
+          "coverage": -10.06928405942504,
+          "online_specialist": 1.2001191552912593
+        },
+        "detectionPaths": [],
+        "historyCount": 3,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "approve"
+    },
+    {
+      "eventId": "H12",
+      "sequenceIndex": 11,
+      "occurredAt": "2026-01-15T10:05:00.000Z",
+      "amountMinor": 9000,
+      "accountId": "account-a",
+      "merchantId": "electronics-2",
+      "deviceId": "device-shared",
+      "locationId": "location-a",
+      "features": {
+        "amountMinor": 9000,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": false,
+        "rawScores": {
+          "baseline": -14.526819695141404,
+          "cb": -8.30654029446972,
+          "depth6": 0.7665624957046955,
+          "online_cb": -5.231390802045561,
+          "online_ebm": -2.9555525716499136,
+          "base_margin": -4.57145180450185,
+          "coverage": -9.946476547464329,
+          "online_specialist": 1.6363765159675423
+        },
+        "detectionPaths": [],
+        "historyCount": 4,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "approve"
+    },
+    {
+      "eventId": "H13",
+      "sequenceIndex": 12,
+      "occurredAt": "2026-01-15T10:06:00.000Z",
+      "amountMinor": 9000,
+      "accountId": "account-b",
+      "merchantId": "electronics-1",
+      "deviceId": "device-shared",
+      "locationId": "location-b",
+      "features": {
+        "amountMinor": 9000,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": false,
+        "rawScores": {
+          "baseline": -14.259437233499423,
+          "cb": -8.146256528960677,
+          "depth6": 0.9691517179274778,
+          "online_cb": -5.136497839846615,
+          "online_ebm": -2.1406650815946273,
+          "base_margin": -5.004900516073938,
+          "coverage": -9.942494832349517,
+          "online_specialist": 1.4431823346076538
+        },
+        "detectionPaths": [],
+        "historyCount": 4,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "approve"
+    },
+    {
+      "eventId": "H14",
+      "sequenceIndex": 13,
+      "occurredAt": "2026-01-15T11:00:00.000Z",
+      "amountMinor": 2800,
+      "accountId": "account-a",
+      "merchantId": "grocery",
+      "deviceId": "device-a",
+      "locationId": "location-a",
+      "features": {
+        "amountMinor": 2800,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": false,
+        "rawScores": {
+          "baseline": -13.073903988489283,
+          "cb": -7.661010077027848,
+          "depth6": 0.03588954004018578,
+          "online_cb": -6.366069028855819,
+          "online_ebm": -4.001867274645802,
+          "base_margin": -4.4230105937906075,
+          "coverage": -10.182967734677074,
+          "online_specialist": 4.295595736211264
+        },
+        "detectionPaths": [],
+        "historyCount": 5,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "approve"
+    },
+    {
+      "eventId": "H15",
+      "sequenceIndex": 14,
+      "occurredAt": "2026-01-15T11:10:00.000Z",
+      "amountMinor": 3500,
+      "accountId": "account-b",
+      "merchantId": "dining",
+      "deviceId": "device-b",
+      "locationId": "location-b",
+      "features": {
+        "amountMinor": 3500,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": false,
+        "rawScores": {
+          "baseline": -12.715613125939013,
+          "cb": -6.635362120927638,
+          "depth6": 1.5466745497310068,
+          "online_cb": -3.1327790637574733,
+          "online_ebm": -0.70335168369193,
+          "base_margin": -5.184366161504337,
+          "coverage": -10.873869258257086,
+          "online_specialist": 5.501070938392451
+        },
+        "detectionPaths": [],
+        "historyCount": 5,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "approve"
+    },
+    {
+      "eventId": "H16",
+      "sequenceIndex": 15,
+      "occurredAt": "2026-01-15T11:20:00.000Z",
+      "amountMinor": 4800,
+      "accountId": "account-c",
+      "merchantId": "retail",
+      "deviceId": "device-c",
+      "locationId": "location-c",
+      "features": {
+        "amountMinor": 4800,
+        "typicalAmountMinor": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "unusualLocation": null,
+        "categoryDeviation": null,
+        "sharedDeviceAccountCount": null
+      },
+      "ruleEvaluations": [],
+      "rawScore": null,
+      "riskScore": null,
+      "model": {
+        "version": "ml-upload-v8",
+        "policy": "precision95",
+        "bundleSha256": "da7bfaa47a98c4034f2226d67e25195e478b49b57baba71f4cdbc7ac6846e606",
+        "alert": false,
+        "rawScores": {
+          "baseline": -3.510768989525644,
+          "cb": -6.32868919984971,
+          "depth6": -0.007417829704303144,
+          "online_cb": -3.7716450858859325,
+          "online_ebm": 5.293323411454123,
+          "base_margin": -2.624835016999797,
+          "coverage": -9.580037030473896,
+          "online_specialist": -0.9256273292669737
+        },
+        "detectionPaths": [],
+        "historyCount": 3,
+        "feedbackAvailable": false,
+        "evidenceScope": "synthetic_benchmark",
+        "uploadDomainValidated": false,
+        "probabilityAvailable": false
+      },
+      "cardPattern": null,
+      "decision": "approve"
+    }
+  ],
+  "metrics": {
+    "totalCount": 16,
+    "totalAmountMinor": 152600,
+    "decisions": {
+      "approve": {
+        "count": 16,
+        "amountMinor": 152600
+      },
+      "review": {
+        "count": 0,
+        "amountMinor": 0
+      },
+      "block": {
+        "count": 0,
+        "amountMinor": 0
+      }
+    },
+    "decisionRates": {
+      "approve": {
+        "numerator": 16,
+        "denominator": 16
+      },
+      "review": {
+        "numerator": 0,
+        "denominator": 16
+      },
+      "block": {
+        "numerator": 0,
+        "denominator": 16
+      }
+    },
+    "flaggedCount": 0,
+    "flaggedRate": {
+      "numerator": 0,
+      "denominator": 16
+    },
+    "reviewWorkload": 0,
+    "scoreBins": {
+      "0-19": 0,
+      "20-39": 0,
+      "40-59": 0,
+      "60-79": 0,
+      "80-100": 0
+    },
+    "ruleTriggerCounts": {
+      "unusual_amount": 0,
+      "payment_velocity": 0,
+      "new_device": 0,
+      "unusual_location": 0,
+      "merchant_category_deviation": 0,
+      "shared_device_accounts": 0
+    },
+    "labeledCount": 16,
+    "unlabeledCount": 0,
+    "truthMetrics": {
+      "fraudulent": {
+        "count": 7,
+        "amountMinor": 120000
+      },
+      "legitimate": {
+        "count": 9,
+        "amountMinor": 32600
+      },
+      "blockedFraud": {
+        "count": 0,
+        "amountMinor": 0
+      },
+      "approvedFraud": {
+        "count": 7,
+        "amountMinor": 120000
+      },
+      "pendingFraud": {
+        "count": 0,
+        "amountMinor": 0
+      },
+      "blockedLegitimate": {
+        "count": 0,
+        "amountMinor": 0
+      },
+      "legitimateBlockRate": {
+        "numerator": 0,
+        "denominator": 9
+      },
+      "fraudBlockRate": {
+        "numerator": 0,
+        "denominator": 7
+      },
+      "fraudApprovalRate": {
+        "numerator": 7,
+        "denominator": 7
+      }
+    },
+    "costs": {
+      "reviewOperatingCostAllMinor": 0,
+      "estimatedApprovedFraudLossMinor": 120000,
+      "labeledReviewCostMinor": 0,
+      "estimatedFalseBlockFrictionCostMinor": 0,
+      "illustrativeLabeledTotalCostMinor": 120000
+    }
+  },
+  "warnings": [
+    {
+      "code": "card_pattern_scope",
+      "message": "Card-pattern suggestions are experimental behavioral reviews, separate from Upload-v8 alerts. They do not change model decisions or fraud metrics, and do not identify counterfeit cards or establish fraud."
+    },
+    {
+      "code": "model_scope",
+      "message": "Upload-v8 is an experimental synthetic model using frozen thresholds. Matching fields do not establish validity for this upload's source. Review means a model alert; approve means no alert, not a payment authorization. No automatic blocking. Raw model margins are not probabilities. Legacy rule thresholds and device/location baselines do not affect scoring."
+    },
+    {
+      "code": "incomplete_data",
+      "message": "Features use only this submitted history. Confirmed delayed merchant-fraud feedback is unavailable and encoded as zero support. Short histories and missing merchant geography may reduce performance. Synthetic benchmark metrics do not describe this upload."
+    },
+    {
+      "code": "attempt_history",
+      "message": "Features use strictly earlier events. Equal-time events cannot influence each other. Completion status updates future spending history; current labels are excluded from inference."
+    }
+  ]
+}

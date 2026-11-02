@@ -1,0 +1,276 @@
+{
+  "scenario": {
+    "schemaVersion": 1,
+    "id": "stolen-card-burst",
+    "name": "Stolen Card Burst",
+    "description": "Illustrative synthetic purchases for V13 replay. MCC and channel are authored demo inputs; labels are story annotations, not measured model performance.",
+    "sourceTemplateId": "stolen-card-burst",
+    "sourceTemplateVersion": 2,
+    "scenarioStartAt": "2026-01-15T00:00:00.000Z",
+    "currency": "USD",
+    "nodes": [
+      {
+        "id": "account-a",
+        "type": "account",
+        "name": "Alex Morgan",
+        "openedAt": "2025-01-15T00:00:00.000Z",
+        "typicalAmountMinor": 5000,
+        "usualCountryCodes": [
+          "US"
+        ],
+        "usualMerchantCategories": [
+          "groceries",
+          "retail",
+          "dining"
+        ]
+      },
+      {
+        "id": "grocery",
+        "type": "merchant",
+        "name": "Juniper Market",
+        "category": "groceries",
+        "countryCode": "US"
+      },
+      {
+        "id": "retail",
+        "type": "merchant",
+        "name": "Common Goods",
+        "category": "retail",
+        "countryCode": "US"
+      },
+      {
+        "id": "electronics-1",
+        "type": "merchant",
+        "name": "Circuit Supply",
+        "category": "electronics",
+        "countryCode": "US"
+      },
+      {
+        "id": "electronics-2",
+        "type": "merchant",
+        "name": "Volt Electronics",
+        "category": "electronics",
+        "countryCode": "US"
+      },
+      {
+        "id": "device-a",
+        "type": "device",
+        "name": "Personal phone"
+      },
+      {
+        "id": "device-new",
+        "type": "device",
+        "name": "Unfamiliar device"
+      },
+      {
+        "id": "location-a",
+        "type": "location",
+        "name": "Home \u00b7 US",
+        "countryCode": "US"
+      }
+    ],
+    "associations": [
+      {
+        "id": "account-a-device-a-link",
+        "type": "accountDevice",
+        "accountId": "account-a",
+        "targetId": "device-a",
+        "observedAt": "2026-01-14T00:00:00.000Z",
+        "knownFrom": "2026-01-14T00:00:00.000Z"
+      },
+      {
+        "id": "account-a-location-a-link",
+        "type": "accountLocation",
+        "accountId": "account-a",
+        "targetId": "location-a",
+        "observedAt": "2026-01-14T00:00:00.000Z",
+        "knownFrom": "2026-01-14T00:00:00.000Z"
+      },
+      {
+        "id": "account-a-device-new-link",
+        "type": "accountDevice",
+        "accountId": "account-a",
+        "targetId": "device-new",
+        "observedAt": "2026-01-15T10:01:00.000Z",
+        "knownFrom": null
+      }
+    ],
+    "payments": [
+      {
+        "id": "burst-pay-01",
+        "occurredAt": "2026-01-15T09:00:00.000Z",
+        "accountId": "account-a",
+        "merchantId": "grocery",
+        "deviceId": "device-a",
+        "locationId": "location-a",
+        "amountMinor": 1800,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5411",
+          "completed": true
+        }
+      },
+      {
+        "id": "burst-pay-02",
+        "occurredAt": "2026-01-15T10:00:00.000Z",
+        "accountId": "account-a",
+        "merchantId": "retail",
+        "deviceId": "device-a",
+        "locationId": "location-a",
+        "amountMinor": 4200,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5311",
+          "completed": true
+        }
+      },
+      {
+        "id": "burst-pay-03",
+        "occurredAt": "2026-01-15T10:01:00.000Z",
+        "accountId": "account-a",
+        "merchantId": "electronics-1",
+        "deviceId": "device-new",
+        "locationId": "location-a",
+        "amountMinor": 18000,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5732",
+          "completed": true
+        }
+      },
+      {
+        "id": "burst-pay-04",
+        "occurredAt": "2026-01-15T10:02:00.000Z",
+        "accountId": "account-a",
+        "merchantId": "electronics-2",
+        "deviceId": "device-new",
+        "locationId": "location-a",
+        "amountMinor": 24000,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5732",
+          "completed": true
+        }
+      },
+      {
+        "id": "burst-pay-05",
+        "occurredAt": "2026-01-15T10:03:00.000Z",
+        "accountId": "account-a",
+        "merchantId": "electronics-1",
+        "deviceId": "device-new",
+        "locationId": "location-a",
+        "amountMinor": 36000,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5732",
+          "completed": true
+        }
+      },
+      {
+        "id": "burst-pay-06",
+        "occurredAt": "2026-01-15T10:04:00.000Z",
+        "accountId": "account-a",
+        "merchantId": "electronics-2",
+        "deviceId": "device-new",
+        "locationId": "location-a",
+        "amountMinor": 9000,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5732",
+          "completed": true
+        }
+      },
+      {
+        "id": "burst-pay-07",
+        "occurredAt": "2026-01-15T10:05:00.000Z",
+        "accountId": "account-a",
+        "merchantId": "electronics-1",
+        "deviceId": "device-new",
+        "locationId": "location-a",
+        "amountMinor": 32000,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5732",
+          "completed": true
+        }
+      },
+      {
+        "id": "burst-pay-08",
+        "occurredAt": "2026-01-15T10:06:00.000Z",
+        "accountId": "account-a",
+        "merchantId": "electronics-2",
+        "deviceId": "device-new",
+        "locationId": "location-a",
+        "amountMinor": 17000,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5732",
+          "completed": true
+        }
+      }
+    ],
+    "groundTruth": {
+      "burst-pay-01": "legitimate",
+      "burst-pay-02": "legitimate",
+      "burst-pay-03": "fraudulent",
+      "burst-pay-04": "fraudulent",
+      "burst-pay-05": "fraudulent",
+      "burst-pay-06": "fraudulent",
+      "burst-pay-07": "fraudulent",
+      "burst-pay-08": "fraudulent"
+    },
+    "ruleSetVersion": "rules-v1",
+    "policy": {
+      "version": 1,
+      "reviewThreshold": 40,
+      "blockThreshold": 70
+    },
+    "costAssumptions": {
+      "approvedFraudLossBps": 10000,
+      "reviewCostMinor": 300,
+      "falseBlockCostMinor": 1500
+    },
+    "seed": null
+  },
+  "view": {
+    "positions": {
+      "account-a": {
+        "x": 300,
+        "y": 250
+      },
+      "grocery": {
+        "x": 640,
+        "y": 50
+      },
+      "retail": {
+        "x": 700,
+        "y": 190
+      },
+      "electronics-1": {
+        "x": 700,
+        "y": 330
+      },
+      "electronics-2": {
+        "x": 640,
+        "y": 470
+      },
+      "device-a": {
+        "x": 50,
+        "y": 90
+      },
+      "device-new": {
+        "x": 40,
+        "y": 270
+      },
+      "location-a": {
+        "x": 50,
+        "y": 450
+      }
+    },
+    "viewport": {
+      "x": 0,
+      "y": 0,
+      "zoom": 1
+    }
+  }
+}

@@ -1,0 +1,2523 @@
+{
+  "schemaVersion": 2,
+  "id": "fixture-run",
+  "datasetId": "fixture-dataset",
+  "revision": 1,
+  "recordedAt": "2026-10-21T00:00:00.000Z",
+  "mode": "retrospective",
+  "knowledgeLimitation": "Retrospective analysis of accepted source records. Original source availability is not established for every record; this is not an as-known authorization backtest. Pending and declined purchases are attempts, not settled spending. Device observation is not proof of legitimacy. Scores are rule points, not fraud probabilities.",
+  "inputHash": "fd825acec530e37f6222271972c21d287f246f228ee149ec8953d749c0ab7662",
+  "analysisHash": "d4c5c4e204dc6461ec81febf714fd6e28f299984437a4ac53af83faa3873d04d",
+  "adapterVersion": "retained-v1",
+  "taxonomyVersion": "categories-v1",
+  "assessmentVersion": "assessment-v2.1",
+  "document": {
+    "scenario": {
+      "schemaVersion": 1,
+      "id": "fixture-dataset",
+      "name": "Burst reference",
+      "description": "Retained-history projection; unavailable inputs stay unknown.",
+      "sourceTemplateId": null,
+      "sourceTemplateVersion": null,
+      "scenarioStartAt": "2026-10-08T19:08:11.000Z",
+      "currency": "USD",
+      "nodes": [
+        {
+          "id": "account_9872b17336884899de0bae6767fdcdcf3c6e08ec",
+          "name": "ACC-RF-0029",
+          "type": "account",
+          "openedAt": "1900-01-01T00:00:00.000Z",
+          "typicalAmountMinor": 5000,
+          "usualCountryCodes": [
+            "US"
+          ],
+          "usualMerchantCategories": [
+            "other"
+          ]
+        },
+        {
+          "id": "account_b71b2a4598404c88588b0186da210a6c96b88beb",
+          "name": "ACC-RF-0043",
+          "type": "account",
+          "openedAt": "1900-01-01T00:00:00.000Z",
+          "typicalAmountMinor": 5000,
+          "usualCountryCodes": [
+            "US"
+          ],
+          "usualMerchantCategories": [
+            "other"
+          ]
+        },
+        {
+          "id": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+          "name": "ACC-RF-0067",
+          "type": "account",
+          "openedAt": "1900-01-01T00:00:00.000Z",
+          "typicalAmountMinor": 5000,
+          "usualCountryCodes": [
+            "US"
+          ],
+          "usualMerchantCategories": [
+            "other"
+          ]
+        },
+        {
+          "id": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "name": "DEV-RF-SHARED-ONLINE-7",
+          "type": "device",
+          "description": null
+        },
+        {
+          "id": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+          "name": "Online Market",
+          "type": "merchant",
+          "category": "retail",
+          "countryCode": "US"
+        },
+        {
+          "id": "missing_location_4e8fed21b77fd244fa8e03a6f66ef8663746c70b",
+          "name": "US",
+          "type": "location",
+          "countryCode": "US",
+          "regionLabel": null
+        },
+        {
+          "id": "missing_location_dce22da53f113672740b91ff27bb8935e3608e75",
+          "name": "US",
+          "type": "location",
+          "countryCode": "US",
+          "regionLabel": null
+        },
+        {
+          "id": "missing_location_e49f27abcb2594a326da18e42c64769784bd3cdb",
+          "name": "US",
+          "type": "location",
+          "countryCode": "US",
+          "regionLabel": null
+        }
+      ],
+      "associations": [
+        {
+          "id": "association_0ebbd586e445b3af144a712cedb67580d3491c11",
+          "type": "accountLocation",
+          "accountId": "account_9872b17336884899de0bae6767fdcdcf3c6e08ec",
+          "targetId": "missing_location_e49f27abcb2594a326da18e42c64769784bd3cdb",
+          "observedAt": "2026-10-08T19:08:11.000Z",
+          "knownFrom": null
+        },
+        {
+          "id": "association_1782d74e0f78641e4600bb7d67104c412b5b826d",
+          "type": "accountLocation",
+          "accountId": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+          "targetId": "missing_location_dce22da53f113672740b91ff27bb8935e3608e75",
+          "observedAt": "2026-10-08T19:09:05.000Z",
+          "knownFrom": null
+        },
+        {
+          "id": "association_53583548d19254e7eafd1975b6437067aeceb272",
+          "type": "accountDevice",
+          "accountId": "account_9872b17336884899de0bae6767fdcdcf3c6e08ec",
+          "targetId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "observedAt": "2026-10-08T19:08:11.000Z",
+          "knownFrom": null
+        },
+        {
+          "id": "association_7849fba09f8e07d1143a9cdf48125fc733fd83e4",
+          "type": "accountDevice",
+          "accountId": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+          "targetId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "observedAt": "2026-10-08T19:09:05.000Z",
+          "knownFrom": null
+        },
+        {
+          "id": "association_78669020048fcf35eb54ea6472c9076889152b7f",
+          "type": "accountLocation",
+          "accountId": "account_b71b2a4598404c88588b0186da210a6c96b88beb",
+          "targetId": "missing_location_4e8fed21b77fd244fa8e03a6f66ef8663746c70b",
+          "observedAt": "2026-10-08T19:08:40.000Z",
+          "knownFrom": null
+        },
+        {
+          "id": "association_f133a22b74651c3f12d4c9aecf5d2ef31b41b7e2",
+          "type": "accountDevice",
+          "accountId": "account_b71b2a4598404c88588b0186da210a6c96b88beb",
+          "targetId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "observedAt": "2026-10-08T19:08:40.000Z",
+          "knownFrom": null
+        }
+      ],
+      "payments": [
+        {
+          "id": "event_a9c84972f4881e064841d542e10f81f0f391c4a4",
+          "accountId": "account_9872b17336884899de0bae6767fdcdcf3c6e08ec",
+          "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+          "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "locationId": "missing_location_e49f27abcb2594a326da18e42c64769784bd3cdb",
+          "occurredAt": "2026-10-08T19:08:11.000Z",
+          "amountMinor": 1975,
+          "category": "retail",
+          "sourceCategory": "retail",
+          "unavailableRules": [
+            "merchant_category_deviation",
+            "unusual_amount",
+            "unusual_location"
+          ]
+        },
+        {
+          "id": "event_823ff5ef956e167ce85a62179eb6d5c82753d195",
+          "accountId": "account_b71b2a4598404c88588b0186da210a6c96b88beb",
+          "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+          "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "locationId": "missing_location_4e8fed21b77fd244fa8e03a6f66ef8663746c70b",
+          "occurredAt": "2026-10-08T19:08:40.000Z",
+          "amountMinor": 2742,
+          "category": "retail",
+          "sourceCategory": "retail",
+          "unavailableRules": [
+            "merchant_category_deviation",
+            "unusual_amount",
+            "unusual_location"
+          ]
+        },
+        {
+          "id": "event_eea819649f70940afe0567b0738f3efbf423a9a0",
+          "accountId": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+          "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+          "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "locationId": "missing_location_dce22da53f113672740b91ff27bb8935e3608e75",
+          "occurredAt": "2026-10-08T19:09:05.000Z",
+          "amountMinor": 3465,
+          "category": "retail",
+          "sourceCategory": "retail",
+          "unavailableRules": [
+            "merchant_category_deviation",
+            "unusual_amount",
+            "unusual_location"
+          ]
+        },
+        {
+          "id": "event_cece5e7c8a3093521b6f642ea81b90a05ebc9baf",
+          "accountId": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+          "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+          "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "locationId": "missing_location_dce22da53f113672740b91ff27bb8935e3608e75",
+          "occurredAt": "2026-10-08T19:09:28.000Z",
+          "amountMinor": 1615,
+          "category": "retail",
+          "sourceCategory": "retail",
+          "unavailableRules": [
+            "merchant_category_deviation",
+            "unusual_amount",
+            "unusual_location"
+          ]
+        },
+        {
+          "id": "event_fd008d79aac207f9a3db2aac3c0b6f3b36654130",
+          "accountId": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+          "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+          "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "locationId": "missing_location_dce22da53f113672740b91ff27bb8935e3608e75",
+          "occurredAt": "2026-10-08T19:09:59.000Z",
+          "amountMinor": 3129,
+          "category": "retail",
+          "sourceCategory": "retail",
+          "unavailableRules": [
+            "merchant_category_deviation",
+            "unusual_amount",
+            "unusual_location"
+          ]
+        },
+        {
+          "id": "event_21fcb99ee925088d340b99324a2b6251c5e70a5e",
+          "accountId": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+          "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+          "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "locationId": "missing_location_dce22da53f113672740b91ff27bb8935e3608e75",
+          "occurredAt": "2026-10-08T19:10:24.000Z",
+          "amountMinor": 975,
+          "category": "retail",
+          "sourceCategory": "retail",
+          "unavailableRules": [
+            "merchant_category_deviation",
+            "unusual_amount",
+            "unusual_location"
+          ]
+        },
+        {
+          "id": "event_ab7c6095020420c03f4391f00f52b277addafab4",
+          "accountId": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+          "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+          "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "locationId": "missing_location_dce22da53f113672740b91ff27bb8935e3608e75",
+          "occurredAt": "2026-10-08T19:10:59.000Z",
+          "amountMinor": 1595,
+          "category": "retail",
+          "sourceCategory": "retail",
+          "unavailableRules": [
+            "merchant_category_deviation",
+            "unusual_amount",
+            "unusual_location"
+          ]
+        },
+        {
+          "id": "event_92dda636b88672aa419cca2cea472e355c1a7f1d",
+          "accountId": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+          "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+          "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "locationId": "missing_location_dce22da53f113672740b91ff27bb8935e3608e75",
+          "occurredAt": "2026-10-08T19:11:32.000Z",
+          "amountMinor": 2419,
+          "category": "retail",
+          "sourceCategory": "retail",
+          "unavailableRules": [
+            "merchant_category_deviation",
+            "unusual_amount",
+            "unusual_location"
+          ]
+        }
+      ],
+      "groundTruth": {},
+      "ruleSetVersion": "rules-v1",
+      "policy": {
+        "version": 1,
+        "reviewThreshold": 40,
+        "blockThreshold": 70
+      },
+      "costAssumptions": {
+        "approvedFraudLossBps": 10000,
+        "reviewCostMinor": 300,
+        "falseBlockCostMinor": 1500
+      },
+      "seed": null
+    },
+    "view": {
+      "positions": {
+        "account_9872b17336884899de0bae6767fdcdcf3c6e08ec": {
+          "x": 140.0,
+          "y": 140.0
+        },
+        "account_b71b2a4598404c88588b0186da210a6c96b88beb": {
+          "x": 310.0,
+          "y": 140.0
+        },
+        "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134": {
+          "x": 480.0,
+          "y": 140.0
+        },
+        "device_93039a209ee4cdf9113fe9f297ad34971dabb55a": {
+          "x": 650.0,
+          "y": 140.0
+        },
+        "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1": {
+          "x": 820.0,
+          "y": 140.0
+        },
+        "missing_location_4e8fed21b77fd244fa8e03a6f66ef8663746c70b": {
+          "x": 990.0,
+          "y": 140.0
+        },
+        "missing_location_dce22da53f113672740b91ff27bb8935e3608e75": {
+          "x": 1160.0,
+          "y": 140.0
+        },
+        "missing_location_e49f27abcb2594a326da18e42c64769784bd3cdb": {
+          "x": 1330.0,
+          "y": 140.0
+        }
+      },
+      "viewport": {
+        "x": 0.0,
+        "y": 0.0,
+        "zoom": 0.5
+      }
+    }
+  },
+  "simulation": {
+    "engineVersion": "engine-v1",
+    "ruleSetVersion": "rules-v1",
+    "schemaVersion": 1,
+    "scenarioSnapshot": {
+      "schemaVersion": 1,
+      "id": "fixture-dataset",
+      "name": "Burst reference",
+      "description": "Retained-history projection; unavailable inputs stay unknown.",
+      "sourceTemplateId": null,
+      "sourceTemplateVersion": null,
+      "scenarioStartAt": "2026-10-08T19:08:11.000Z",
+      "currency": "USD",
+      "nodes": [
+        {
+          "id": "account_9872b17336884899de0bae6767fdcdcf3c6e08ec",
+          "name": "ACC-RF-0029",
+          "type": "account",
+          "openedAt": "1900-01-01T00:00:00.000Z",
+          "typicalAmountMinor": 5000,
+          "usualCountryCodes": [
+            "US"
+          ],
+          "usualMerchantCategories": [
+            "other"
+          ]
+        },
+        {
+          "id": "account_b71b2a4598404c88588b0186da210a6c96b88beb",
+          "name": "ACC-RF-0043",
+          "type": "account",
+          "openedAt": "1900-01-01T00:00:00.000Z",
+          "typicalAmountMinor": 5000,
+          "usualCountryCodes": [
+            "US"
+          ],
+          "usualMerchantCategories": [
+            "other"
+          ]
+        },
+        {
+          "id": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+          "name": "ACC-RF-0067",
+          "type": "account",
+          "openedAt": "1900-01-01T00:00:00.000Z",
+          "typicalAmountMinor": 5000,
+          "usualCountryCodes": [
+            "US"
+          ],
+          "usualMerchantCategories": [
+            "other"
+          ]
+        },
+        {
+          "id": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "name": "DEV-RF-SHARED-ONLINE-7",
+          "type": "device",
+          "description": null
+        },
+        {
+          "id": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+          "name": "Online Market",
+          "type": "merchant",
+          "category": "retail",
+          "countryCode": "US"
+        },
+        {
+          "id": "missing_location_4e8fed21b77fd244fa8e03a6f66ef8663746c70b",
+          "name": "US",
+          "type": "location",
+          "countryCode": "US",
+          "regionLabel": null
+        },
+        {
+          "id": "missing_location_dce22da53f113672740b91ff27bb8935e3608e75",
+          "name": "US",
+          "type": "location",
+          "countryCode": "US",
+          "regionLabel": null
+        },
+        {
+          "id": "missing_location_e49f27abcb2594a326da18e42c64769784bd3cdb",
+          "name": "US",
+          "type": "location",
+          "countryCode": "US",
+          "regionLabel": null
+        }
+      ],
+      "associations": [
+        {
+          "id": "association_0ebbd586e445b3af144a712cedb67580d3491c11",
+          "type": "accountLocation",
+          "accountId": "account_9872b17336884899de0bae6767fdcdcf3c6e08ec",
+          "targetId": "missing_location_e49f27abcb2594a326da18e42c64769784bd3cdb",
+          "observedAt": "2026-10-08T19:08:11.000Z",
+          "knownFrom": null
+        },
+        {
+          "id": "association_1782d74e0f78641e4600bb7d67104c412b5b826d",
+          "type": "accountLocation",
+          "accountId": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+          "targetId": "missing_location_dce22da53f113672740b91ff27bb8935e3608e75",
+          "observedAt": "2026-10-08T19:09:05.000Z",
+          "knownFrom": null
+        },
+        {
+          "id": "association_53583548d19254e7eafd1975b6437067aeceb272",
+          "type": "accountDevice",
+          "accountId": "account_9872b17336884899de0bae6767fdcdcf3c6e08ec",
+          "targetId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "observedAt": "2026-10-08T19:08:11.000Z",
+          "knownFrom": null
+        },
+        {
+          "id": "association_7849fba09f8e07d1143a9cdf48125fc733fd83e4",
+          "type": "accountDevice",
+          "accountId": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+          "targetId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "observedAt": "2026-10-08T19:09:05.000Z",
+          "knownFrom": null
+        },
+        {
+          "id": "association_78669020048fcf35eb54ea6472c9076889152b7f",
+          "type": "accountLocation",
+          "accountId": "account_b71b2a4598404c88588b0186da210a6c96b88beb",
+          "targetId": "missing_location_4e8fed21b77fd244fa8e03a6f66ef8663746c70b",
+          "observedAt": "2026-10-08T19:08:40.000Z",
+          "knownFrom": null
+        },
+        {
+          "id": "association_f133a22b74651c3f12d4c9aecf5d2ef31b41b7e2",
+          "type": "accountDevice",
+          "accountId": "account_b71b2a4598404c88588b0186da210a6c96b88beb",
+          "targetId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "observedAt": "2026-10-08T19:08:40.000Z",
+          "knownFrom": null
+        }
+      ],
+      "payments": [
+        {
+          "id": "event_a9c84972f4881e064841d542e10f81f0f391c4a4",
+          "accountId": "account_9872b17336884899de0bae6767fdcdcf3c6e08ec",
+          "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+          "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "locationId": "missing_location_e49f27abcb2594a326da18e42c64769784bd3cdb",
+          "occurredAt": "2026-10-08T19:08:11.000Z",
+          "amountMinor": 1975,
+          "category": "retail",
+          "sourceCategory": "retail",
+          "unavailableRules": [
+            "merchant_category_deviation",
+            "unusual_amount",
+            "unusual_location"
+          ]
+        },
+        {
+          "id": "event_823ff5ef956e167ce85a62179eb6d5c82753d195",
+          "accountId": "account_b71b2a4598404c88588b0186da210a6c96b88beb",
+          "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+          "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "locationId": "missing_location_4e8fed21b77fd244fa8e03a6f66ef8663746c70b",
+          "occurredAt": "2026-10-08T19:08:40.000Z",
+          "amountMinor": 2742,
+          "category": "retail",
+          "sourceCategory": "retail",
+          "unavailableRules": [
+            "merchant_category_deviation",
+            "unusual_amount",
+            "unusual_location"
+          ]
+        },
+        {
+          "id": "event_eea819649f70940afe0567b0738f3efbf423a9a0",
+          "accountId": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+          "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+          "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "locationId": "missing_location_dce22da53f113672740b91ff27bb8935e3608e75",
+          "occurredAt": "2026-10-08T19:09:05.000Z",
+          "amountMinor": 3465,
+          "category": "retail",
+          "sourceCategory": "retail",
+          "unavailableRules": [
+            "merchant_category_deviation",
+            "unusual_amount",
+            "unusual_location"
+          ]
+        },
+        {
+          "id": "event_cece5e7c8a3093521b6f642ea81b90a05ebc9baf",
+          "accountId": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+          "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+          "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "locationId": "missing_location_dce22da53f113672740b91ff27bb8935e3608e75",
+          "occurredAt": "2026-10-08T19:09:28.000Z",
+          "amountMinor": 1615,
+          "category": "retail",
+          "sourceCategory": "retail",
+          "unavailableRules": [
+            "merchant_category_deviation",
+            "unusual_amount",
+            "unusual_location"
+          ]
+        },
+        {
+          "id": "event_fd008d79aac207f9a3db2aac3c0b6f3b36654130",
+          "accountId": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+          "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+          "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "locationId": "missing_location_dce22da53f113672740b91ff27bb8935e3608e75",
+          "occurredAt": "2026-10-08T19:09:59.000Z",
+          "amountMinor": 3129,
+          "category": "retail",
+          "sourceCategory": "retail",
+          "unavailableRules": [
+            "merchant_category_deviation",
+            "unusual_amount",
+            "unusual_location"
+          ]
+        },
+        {
+          "id": "event_21fcb99ee925088d340b99324a2b6251c5e70a5e",
+          "accountId": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+          "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+          "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "locationId": "missing_location_dce22da53f113672740b91ff27bb8935e3608e75",
+          "occurredAt": "2026-10-08T19:10:24.000Z",
+          "amountMinor": 975,
+          "category": "retail",
+          "sourceCategory": "retail",
+          "unavailableRules": [
+            "merchant_category_deviation",
+            "unusual_amount",
+            "unusual_location"
+          ]
+        },
+        {
+          "id": "event_ab7c6095020420c03f4391f00f52b277addafab4",
+          "accountId": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+          "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+          "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "locationId": "missing_location_dce22da53f113672740b91ff27bb8935e3608e75",
+          "occurredAt": "2026-10-08T19:10:59.000Z",
+          "amountMinor": 1595,
+          "category": "retail",
+          "sourceCategory": "retail",
+          "unavailableRules": [
+            "merchant_category_deviation",
+            "unusual_amount",
+            "unusual_location"
+          ]
+        },
+        {
+          "id": "event_92dda636b88672aa419cca2cea472e355c1a7f1d",
+          "accountId": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+          "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+          "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+          "locationId": "missing_location_dce22da53f113672740b91ff27bb8935e3608e75",
+          "occurredAt": "2026-10-08T19:11:32.000Z",
+          "amountMinor": 2419,
+          "category": "retail",
+          "sourceCategory": "retail",
+          "unavailableRules": [
+            "merchant_category_deviation",
+            "unusual_amount",
+            "unusual_location"
+          ]
+        }
+      ],
+      "groundTruth": {},
+      "ruleSetVersion": "rules-v1",
+      "policy": {
+        "version": 1,
+        "reviewThreshold": 40,
+        "blockThreshold": 70
+      },
+      "costAssumptions": {
+        "approvedFraudLossBps": 10000,
+        "reviewCostMinor": 300,
+        "falseBlockCostMinor": 1500
+      },
+      "seed": null
+    },
+    "events": [
+      {
+        "eventId": "event_a9c84972f4881e064841d542e10f81f0f391c4a4",
+        "sequenceIndex": 0,
+        "occurredAt": "2026-10-08T19:08:11.000Z",
+        "amountMinor": 1975,
+        "accountId": "account_9872b17336884899de0bae6767fdcdcf3c6e08ec",
+        "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+        "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+        "locationId": "missing_location_e49f27abcb2594a326da18e42c64769784bd3cdb",
+        "features": {
+          "amountMinor": 1975,
+          "typicalAmountMinor": null,
+          "fiveMinuteAttemptCount": 1,
+          "newDevice": true,
+          "unusualLocation": null,
+          "categoryDeviation": null,
+          "sharedDeviceAccountCount": 1
+        },
+        "ruleEvaluations": [
+          {
+            "ruleId": "unusual_amount",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {
+              "mediumMultiple": 3,
+              "highMultiple": 6
+            },
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "payment_velocity",
+            "available": true,
+            "triggered": false,
+            "points": 0,
+            "measured": {
+              "attemptCount": 1
+            },
+            "thresholds": {
+              "windowSeconds": 300,
+              "mediumCount": 3,
+              "highCount": 5
+            },
+            "evidence": {
+              "eventCount": 0,
+              "eventIds": [],
+              "accountIds": [
+                "account_9872b17336884899de0bae6767fdcdcf3c6e08ec"
+              ],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": "2026-10-08T19:03:11.000Z",
+              "windowEnd": "2026-10-08T19:08:11.000Z"
+            },
+            "explanation": "1 attempted payments including this one in the inclusive five-minute window; contributes 0 points. All decisions count as attempts."
+          },
+          {
+            "ruleId": "new_device",
+            "available": true,
+            "triggered": true,
+            "points": 20,
+            "measured": {
+              "unfamiliar": true
+            },
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [
+                "association_53583548d19254e7eafd1975b6437067aeceb272"
+              ],
+              "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+              "locationId": null,
+              "observedAt": "2026-10-08T19:08:11.000Z",
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Device is not established as familiar at this event: 20 points."
+          },
+          {
+            "ruleId": "unusual_location",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "merchant_category_deviation",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "shared_device_accounts",
+            "available": true,
+            "triggered": false,
+            "points": 0,
+            "measured": {
+              "distinctAccountCount": 1
+            },
+            "thresholds": {
+              "windowSeconds": 300,
+              "accountCount": 3
+            },
+            "evidence": {
+              "eventCount": 1,
+              "eventIds": [
+                "event_a9c84972f4881e064841d542e10f81f0f391c4a4"
+              ],
+              "accountIds": [
+                "account_9872b17336884899de0bae6767fdcdcf3c6e08ec"
+              ],
+              "associationIds": [
+                "association_53583548d19254e7eafd1975b6437067aeceb272"
+              ],
+              "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": "2026-10-08T19:03:11.000Z",
+              "windowEnd": "2026-10-08T19:08:11.000Z"
+            },
+            "explanation": "1 distinct accounts used this device within the inclusive five-minute window, including this attempt: 0 points. Sharing describes usage, not proof of fraud."
+          }
+        ],
+        "rawScore": 20,
+        "riskScore": 20,
+        "decision": "approve"
+      },
+      {
+        "eventId": "event_823ff5ef956e167ce85a62179eb6d5c82753d195",
+        "sequenceIndex": 1,
+        "occurredAt": "2026-10-08T19:08:40.000Z",
+        "amountMinor": 2742,
+        "accountId": "account_b71b2a4598404c88588b0186da210a6c96b88beb",
+        "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+        "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+        "locationId": "missing_location_4e8fed21b77fd244fa8e03a6f66ef8663746c70b",
+        "features": {
+          "amountMinor": 2742,
+          "typicalAmountMinor": null,
+          "fiveMinuteAttemptCount": 1,
+          "newDevice": true,
+          "unusualLocation": null,
+          "categoryDeviation": null,
+          "sharedDeviceAccountCount": 2
+        },
+        "ruleEvaluations": [
+          {
+            "ruleId": "unusual_amount",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {
+              "mediumMultiple": 3,
+              "highMultiple": 6
+            },
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "payment_velocity",
+            "available": true,
+            "triggered": false,
+            "points": 0,
+            "measured": {
+              "attemptCount": 1
+            },
+            "thresholds": {
+              "windowSeconds": 300,
+              "mediumCount": 3,
+              "highCount": 5
+            },
+            "evidence": {
+              "eventCount": 0,
+              "eventIds": [],
+              "accountIds": [
+                "account_b71b2a4598404c88588b0186da210a6c96b88beb"
+              ],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": "2026-10-08T19:03:40.000Z",
+              "windowEnd": "2026-10-08T19:08:40.000Z"
+            },
+            "explanation": "1 attempted payments including this one in the inclusive five-minute window; contributes 0 points. All decisions count as attempts."
+          },
+          {
+            "ruleId": "new_device",
+            "available": true,
+            "triggered": true,
+            "points": 20,
+            "measured": {
+              "unfamiliar": true
+            },
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [
+                "association_f133a22b74651c3f12d4c9aecf5d2ef31b41b7e2"
+              ],
+              "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+              "locationId": null,
+              "observedAt": "2026-10-08T19:08:40.000Z",
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Device is not established as familiar at this event: 20 points."
+          },
+          {
+            "ruleId": "unusual_location",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "merchant_category_deviation",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "shared_device_accounts",
+            "available": true,
+            "triggered": false,
+            "points": 0,
+            "measured": {
+              "distinctAccountCount": 2
+            },
+            "thresholds": {
+              "windowSeconds": 300,
+              "accountCount": 3
+            },
+            "evidence": {
+              "eventCount": 2,
+              "eventIds": [
+                "event_a9c84972f4881e064841d542e10f81f0f391c4a4",
+                "event_823ff5ef956e167ce85a62179eb6d5c82753d195"
+              ],
+              "accountIds": [
+                "account_9872b17336884899de0bae6767fdcdcf3c6e08ec",
+                "account_b71b2a4598404c88588b0186da210a6c96b88beb"
+              ],
+              "associationIds": [
+                "association_53583548d19254e7eafd1975b6437067aeceb272",
+                "association_f133a22b74651c3f12d4c9aecf5d2ef31b41b7e2"
+              ],
+              "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": "2026-10-08T19:03:40.000Z",
+              "windowEnd": "2026-10-08T19:08:40.000Z"
+            },
+            "explanation": "2 distinct accounts used this device within the inclusive five-minute window, including this attempt: 0 points. Sharing describes usage, not proof of fraud."
+          }
+        ],
+        "rawScore": 20,
+        "riskScore": 20,
+        "decision": "approve"
+      },
+      {
+        "eventId": "event_eea819649f70940afe0567b0738f3efbf423a9a0",
+        "sequenceIndex": 2,
+        "occurredAt": "2026-10-08T19:09:05.000Z",
+        "amountMinor": 3465,
+        "accountId": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+        "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+        "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+        "locationId": "missing_location_dce22da53f113672740b91ff27bb8935e3608e75",
+        "features": {
+          "amountMinor": 3465,
+          "typicalAmountMinor": null,
+          "fiveMinuteAttemptCount": 1,
+          "newDevice": true,
+          "unusualLocation": null,
+          "categoryDeviation": null,
+          "sharedDeviceAccountCount": 3
+        },
+        "ruleEvaluations": [
+          {
+            "ruleId": "unusual_amount",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {
+              "mediumMultiple": 3,
+              "highMultiple": 6
+            },
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "payment_velocity",
+            "available": true,
+            "triggered": false,
+            "points": 0,
+            "measured": {
+              "attemptCount": 1
+            },
+            "thresholds": {
+              "windowSeconds": 300,
+              "mediumCount": 3,
+              "highCount": 5
+            },
+            "evidence": {
+              "eventCount": 0,
+              "eventIds": [],
+              "accountIds": [
+                "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134"
+              ],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": "2026-10-08T19:04:05.000Z",
+              "windowEnd": "2026-10-08T19:09:05.000Z"
+            },
+            "explanation": "1 attempted payments including this one in the inclusive five-minute window; contributes 0 points. All decisions count as attempts."
+          },
+          {
+            "ruleId": "new_device",
+            "available": true,
+            "triggered": true,
+            "points": 20,
+            "measured": {
+              "unfamiliar": true
+            },
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [
+                "association_7849fba09f8e07d1143a9cdf48125fc733fd83e4"
+              ],
+              "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+              "locationId": null,
+              "observedAt": "2026-10-08T19:09:05.000Z",
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Device is not established as familiar at this event: 20 points."
+          },
+          {
+            "ruleId": "unusual_location",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "merchant_category_deviation",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "shared_device_accounts",
+            "available": true,
+            "triggered": true,
+            "points": 25,
+            "measured": {
+              "distinctAccountCount": 3
+            },
+            "thresholds": {
+              "windowSeconds": 300,
+              "accountCount": 3
+            },
+            "evidence": {
+              "eventCount": 3,
+              "eventIds": [
+                "event_a9c84972f4881e064841d542e10f81f0f391c4a4",
+                "event_823ff5ef956e167ce85a62179eb6d5c82753d195",
+                "event_eea819649f70940afe0567b0738f3efbf423a9a0"
+              ],
+              "accountIds": [
+                "account_9872b17336884899de0bae6767fdcdcf3c6e08ec",
+                "account_b71b2a4598404c88588b0186da210a6c96b88beb",
+                "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134"
+              ],
+              "associationIds": [
+                "association_53583548d19254e7eafd1975b6437067aeceb272",
+                "association_f133a22b74651c3f12d4c9aecf5d2ef31b41b7e2",
+                "association_7849fba09f8e07d1143a9cdf48125fc733fd83e4"
+              ],
+              "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": "2026-10-08T19:04:05.000Z",
+              "windowEnd": "2026-10-08T19:09:05.000Z"
+            },
+            "explanation": "3 distinct accounts used this device within the inclusive five-minute window, including this attempt: 25 points. Sharing describes usage, not proof of fraud."
+          }
+        ],
+        "rawScore": 45,
+        "riskScore": 45,
+        "decision": "review"
+      },
+      {
+        "eventId": "event_cece5e7c8a3093521b6f642ea81b90a05ebc9baf",
+        "sequenceIndex": 3,
+        "occurredAt": "2026-10-08T19:09:28.000Z",
+        "amountMinor": 1615,
+        "accountId": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+        "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+        "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+        "locationId": "missing_location_dce22da53f113672740b91ff27bb8935e3608e75",
+        "features": {
+          "amountMinor": 1615,
+          "typicalAmountMinor": null,
+          "fiveMinuteAttemptCount": 2,
+          "newDevice": true,
+          "unusualLocation": null,
+          "categoryDeviation": null,
+          "sharedDeviceAccountCount": 3
+        },
+        "ruleEvaluations": [
+          {
+            "ruleId": "unusual_amount",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {
+              "mediumMultiple": 3,
+              "highMultiple": 6
+            },
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "payment_velocity",
+            "available": true,
+            "triggered": false,
+            "points": 0,
+            "measured": {
+              "attemptCount": 2
+            },
+            "thresholds": {
+              "windowSeconds": 300,
+              "mediumCount": 3,
+              "highCount": 5
+            },
+            "evidence": {
+              "eventCount": 1,
+              "eventIds": [
+                "event_eea819649f70940afe0567b0738f3efbf423a9a0"
+              ],
+              "accountIds": [
+                "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134"
+              ],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": "2026-10-08T19:04:28.000Z",
+              "windowEnd": "2026-10-08T19:09:28.000Z"
+            },
+            "explanation": "2 attempted payments including this one in the inclusive five-minute window; contributes 0 points. All decisions count as attempts."
+          },
+          {
+            "ruleId": "new_device",
+            "available": true,
+            "triggered": true,
+            "points": 20,
+            "measured": {
+              "unfamiliar": true
+            },
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [
+                "association_7849fba09f8e07d1143a9cdf48125fc733fd83e4"
+              ],
+              "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+              "locationId": null,
+              "observedAt": "2026-10-08T19:09:05.000Z",
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Device is not established as familiar at this event: 20 points."
+          },
+          {
+            "ruleId": "unusual_location",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "merchant_category_deviation",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "shared_device_accounts",
+            "available": true,
+            "triggered": true,
+            "points": 25,
+            "measured": {
+              "distinctAccountCount": 3
+            },
+            "thresholds": {
+              "windowSeconds": 300,
+              "accountCount": 3
+            },
+            "evidence": {
+              "eventCount": 4,
+              "eventIds": [
+                "event_a9c84972f4881e064841d542e10f81f0f391c4a4",
+                "event_823ff5ef956e167ce85a62179eb6d5c82753d195",
+                "event_eea819649f70940afe0567b0738f3efbf423a9a0",
+                "event_cece5e7c8a3093521b6f642ea81b90a05ebc9baf"
+              ],
+              "accountIds": [
+                "account_9872b17336884899de0bae6767fdcdcf3c6e08ec",
+                "account_b71b2a4598404c88588b0186da210a6c96b88beb",
+                "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134"
+              ],
+              "associationIds": [
+                "association_53583548d19254e7eafd1975b6437067aeceb272",
+                "association_f133a22b74651c3f12d4c9aecf5d2ef31b41b7e2",
+                "association_7849fba09f8e07d1143a9cdf48125fc733fd83e4"
+              ],
+              "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": "2026-10-08T19:04:28.000Z",
+              "windowEnd": "2026-10-08T19:09:28.000Z"
+            },
+            "explanation": "3 distinct accounts used this device within the inclusive five-minute window, including this attempt: 25 points. Sharing describes usage, not proof of fraud."
+          }
+        ],
+        "rawScore": 45,
+        "riskScore": 45,
+        "decision": "review"
+      },
+      {
+        "eventId": "event_fd008d79aac207f9a3db2aac3c0b6f3b36654130",
+        "sequenceIndex": 4,
+        "occurredAt": "2026-10-08T19:09:59.000Z",
+        "amountMinor": 3129,
+        "accountId": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+        "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+        "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+        "locationId": "missing_location_dce22da53f113672740b91ff27bb8935e3608e75",
+        "features": {
+          "amountMinor": 3129,
+          "typicalAmountMinor": null,
+          "fiveMinuteAttemptCount": 3,
+          "newDevice": true,
+          "unusualLocation": null,
+          "categoryDeviation": null,
+          "sharedDeviceAccountCount": 3
+        },
+        "ruleEvaluations": [
+          {
+            "ruleId": "unusual_amount",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {
+              "mediumMultiple": 3,
+              "highMultiple": 6
+            },
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "payment_velocity",
+            "available": true,
+            "triggered": true,
+            "points": 25,
+            "measured": {
+              "attemptCount": 3
+            },
+            "thresholds": {
+              "windowSeconds": 300,
+              "mediumCount": 3,
+              "highCount": 5
+            },
+            "evidence": {
+              "eventCount": 2,
+              "eventIds": [
+                "event_eea819649f70940afe0567b0738f3efbf423a9a0",
+                "event_cece5e7c8a3093521b6f642ea81b90a05ebc9baf"
+              ],
+              "accountIds": [
+                "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134"
+              ],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": "2026-10-08T19:04:59.000Z",
+              "windowEnd": "2026-10-08T19:09:59.000Z"
+            },
+            "explanation": "3 attempted payments including this one in the inclusive five-minute window; contributes 25 points. All decisions count as attempts."
+          },
+          {
+            "ruleId": "new_device",
+            "available": true,
+            "triggered": true,
+            "points": 20,
+            "measured": {
+              "unfamiliar": true
+            },
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [
+                "association_7849fba09f8e07d1143a9cdf48125fc733fd83e4"
+              ],
+              "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+              "locationId": null,
+              "observedAt": "2026-10-08T19:09:05.000Z",
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Device is not established as familiar at this event: 20 points."
+          },
+          {
+            "ruleId": "unusual_location",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "merchant_category_deviation",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "shared_device_accounts",
+            "available": true,
+            "triggered": true,
+            "points": 25,
+            "measured": {
+              "distinctAccountCount": 3
+            },
+            "thresholds": {
+              "windowSeconds": 300,
+              "accountCount": 3
+            },
+            "evidence": {
+              "eventCount": 5,
+              "eventIds": [
+                "event_a9c84972f4881e064841d542e10f81f0f391c4a4",
+                "event_823ff5ef956e167ce85a62179eb6d5c82753d195",
+                "event_eea819649f70940afe0567b0738f3efbf423a9a0",
+                "event_cece5e7c8a3093521b6f642ea81b90a05ebc9baf",
+                "event_fd008d79aac207f9a3db2aac3c0b6f3b36654130"
+              ],
+              "accountIds": [
+                "account_9872b17336884899de0bae6767fdcdcf3c6e08ec",
+                "account_b71b2a4598404c88588b0186da210a6c96b88beb",
+                "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134"
+              ],
+              "associationIds": [
+                "association_53583548d19254e7eafd1975b6437067aeceb272",
+                "association_f133a22b74651c3f12d4c9aecf5d2ef31b41b7e2",
+                "association_7849fba09f8e07d1143a9cdf48125fc733fd83e4"
+              ],
+              "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": "2026-10-08T19:04:59.000Z",
+              "windowEnd": "2026-10-08T19:09:59.000Z"
+            },
+            "explanation": "3 distinct accounts used this device within the inclusive five-minute window, including this attempt: 25 points. Sharing describes usage, not proof of fraud."
+          }
+        ],
+        "rawScore": 70,
+        "riskScore": 70,
+        "decision": "block"
+      },
+      {
+        "eventId": "event_21fcb99ee925088d340b99324a2b6251c5e70a5e",
+        "sequenceIndex": 5,
+        "occurredAt": "2026-10-08T19:10:24.000Z",
+        "amountMinor": 975,
+        "accountId": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+        "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+        "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+        "locationId": "missing_location_dce22da53f113672740b91ff27bb8935e3608e75",
+        "features": {
+          "amountMinor": 975,
+          "typicalAmountMinor": null,
+          "fiveMinuteAttemptCount": 4,
+          "newDevice": true,
+          "unusualLocation": null,
+          "categoryDeviation": null,
+          "sharedDeviceAccountCount": 3
+        },
+        "ruleEvaluations": [
+          {
+            "ruleId": "unusual_amount",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {
+              "mediumMultiple": 3,
+              "highMultiple": 6
+            },
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "payment_velocity",
+            "available": true,
+            "triggered": true,
+            "points": 25,
+            "measured": {
+              "attemptCount": 4
+            },
+            "thresholds": {
+              "windowSeconds": 300,
+              "mediumCount": 3,
+              "highCount": 5
+            },
+            "evidence": {
+              "eventCount": 3,
+              "eventIds": [
+                "event_eea819649f70940afe0567b0738f3efbf423a9a0",
+                "event_cece5e7c8a3093521b6f642ea81b90a05ebc9baf",
+                "event_fd008d79aac207f9a3db2aac3c0b6f3b36654130"
+              ],
+              "accountIds": [
+                "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134"
+              ],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": "2026-10-08T19:05:24.000Z",
+              "windowEnd": "2026-10-08T19:10:24.000Z"
+            },
+            "explanation": "4 attempted payments including this one in the inclusive five-minute window; contributes 25 points. All decisions count as attempts."
+          },
+          {
+            "ruleId": "new_device",
+            "available": true,
+            "triggered": true,
+            "points": 20,
+            "measured": {
+              "unfamiliar": true
+            },
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [
+                "association_7849fba09f8e07d1143a9cdf48125fc733fd83e4"
+              ],
+              "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+              "locationId": null,
+              "observedAt": "2026-10-08T19:09:05.000Z",
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Device is not established as familiar at this event: 20 points."
+          },
+          {
+            "ruleId": "unusual_location",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "merchant_category_deviation",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "shared_device_accounts",
+            "available": true,
+            "triggered": true,
+            "points": 25,
+            "measured": {
+              "distinctAccountCount": 3
+            },
+            "thresholds": {
+              "windowSeconds": 300,
+              "accountCount": 3
+            },
+            "evidence": {
+              "eventCount": 6,
+              "eventIds": [
+                "event_a9c84972f4881e064841d542e10f81f0f391c4a4",
+                "event_823ff5ef956e167ce85a62179eb6d5c82753d195",
+                "event_eea819649f70940afe0567b0738f3efbf423a9a0",
+                "event_cece5e7c8a3093521b6f642ea81b90a05ebc9baf",
+                "event_fd008d79aac207f9a3db2aac3c0b6f3b36654130",
+                "event_21fcb99ee925088d340b99324a2b6251c5e70a5e"
+              ],
+              "accountIds": [
+                "account_9872b17336884899de0bae6767fdcdcf3c6e08ec",
+                "account_b71b2a4598404c88588b0186da210a6c96b88beb",
+                "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134"
+              ],
+              "associationIds": [
+                "association_53583548d19254e7eafd1975b6437067aeceb272",
+                "association_f133a22b74651c3f12d4c9aecf5d2ef31b41b7e2",
+                "association_7849fba09f8e07d1143a9cdf48125fc733fd83e4"
+              ],
+              "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": "2026-10-08T19:05:24.000Z",
+              "windowEnd": "2026-10-08T19:10:24.000Z"
+            },
+            "explanation": "3 distinct accounts used this device within the inclusive five-minute window, including this attempt: 25 points. Sharing describes usage, not proof of fraud."
+          }
+        ],
+        "rawScore": 70,
+        "riskScore": 70,
+        "decision": "block"
+      },
+      {
+        "eventId": "event_ab7c6095020420c03f4391f00f52b277addafab4",
+        "sequenceIndex": 6,
+        "occurredAt": "2026-10-08T19:10:59.000Z",
+        "amountMinor": 1595,
+        "accountId": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+        "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+        "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+        "locationId": "missing_location_dce22da53f113672740b91ff27bb8935e3608e75",
+        "features": {
+          "amountMinor": 1595,
+          "typicalAmountMinor": null,
+          "fiveMinuteAttemptCount": 5,
+          "newDevice": true,
+          "unusualLocation": null,
+          "categoryDeviation": null,
+          "sharedDeviceAccountCount": 3
+        },
+        "ruleEvaluations": [
+          {
+            "ruleId": "unusual_amount",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {
+              "mediumMultiple": 3,
+              "highMultiple": 6
+            },
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "payment_velocity",
+            "available": true,
+            "triggered": true,
+            "points": 35,
+            "measured": {
+              "attemptCount": 5
+            },
+            "thresholds": {
+              "windowSeconds": 300,
+              "mediumCount": 3,
+              "highCount": 5
+            },
+            "evidence": {
+              "eventCount": 4,
+              "eventIds": [
+                "event_eea819649f70940afe0567b0738f3efbf423a9a0",
+                "event_cece5e7c8a3093521b6f642ea81b90a05ebc9baf",
+                "event_fd008d79aac207f9a3db2aac3c0b6f3b36654130",
+                "event_21fcb99ee925088d340b99324a2b6251c5e70a5e"
+              ],
+              "accountIds": [
+                "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134"
+              ],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": "2026-10-08T19:05:59.000Z",
+              "windowEnd": "2026-10-08T19:10:59.000Z"
+            },
+            "explanation": "5 attempted payments including this one in the inclusive five-minute window; contributes 35 points. All decisions count as attempts."
+          },
+          {
+            "ruleId": "new_device",
+            "available": true,
+            "triggered": true,
+            "points": 20,
+            "measured": {
+              "unfamiliar": true
+            },
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [
+                "association_7849fba09f8e07d1143a9cdf48125fc733fd83e4"
+              ],
+              "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+              "locationId": null,
+              "observedAt": "2026-10-08T19:09:05.000Z",
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Device is not established as familiar at this event: 20 points."
+          },
+          {
+            "ruleId": "unusual_location",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "merchant_category_deviation",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "shared_device_accounts",
+            "available": true,
+            "triggered": true,
+            "points": 25,
+            "measured": {
+              "distinctAccountCount": 3
+            },
+            "thresholds": {
+              "windowSeconds": 300,
+              "accountCount": 3
+            },
+            "evidence": {
+              "eventCount": 7,
+              "eventIds": [
+                "event_a9c84972f4881e064841d542e10f81f0f391c4a4",
+                "event_823ff5ef956e167ce85a62179eb6d5c82753d195",
+                "event_eea819649f70940afe0567b0738f3efbf423a9a0",
+                "event_cece5e7c8a3093521b6f642ea81b90a05ebc9baf",
+                "event_fd008d79aac207f9a3db2aac3c0b6f3b36654130",
+                "event_21fcb99ee925088d340b99324a2b6251c5e70a5e",
+                "event_ab7c6095020420c03f4391f00f52b277addafab4"
+              ],
+              "accountIds": [
+                "account_9872b17336884899de0bae6767fdcdcf3c6e08ec",
+                "account_b71b2a4598404c88588b0186da210a6c96b88beb",
+                "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134"
+              ],
+              "associationIds": [
+                "association_53583548d19254e7eafd1975b6437067aeceb272",
+                "association_f133a22b74651c3f12d4c9aecf5d2ef31b41b7e2",
+                "association_7849fba09f8e07d1143a9cdf48125fc733fd83e4"
+              ],
+              "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": "2026-10-08T19:05:59.000Z",
+              "windowEnd": "2026-10-08T19:10:59.000Z"
+            },
+            "explanation": "3 distinct accounts used this device within the inclusive five-minute window, including this attempt: 25 points. Sharing describes usage, not proof of fraud."
+          }
+        ],
+        "rawScore": 80,
+        "riskScore": 80,
+        "decision": "block"
+      },
+      {
+        "eventId": "event_92dda636b88672aa419cca2cea472e355c1a7f1d",
+        "sequenceIndex": 7,
+        "occurredAt": "2026-10-08T19:11:32.000Z",
+        "amountMinor": 2419,
+        "accountId": "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134",
+        "merchantId": "merchant_0d3c4fafc438cf36605eda4a112cf40b65740fe1",
+        "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+        "locationId": "missing_location_dce22da53f113672740b91ff27bb8935e3608e75",
+        "features": {
+          "amountMinor": 2419,
+          "typicalAmountMinor": null,
+          "fiveMinuteAttemptCount": 6,
+          "newDevice": true,
+          "unusualLocation": null,
+          "categoryDeviation": null,
+          "sharedDeviceAccountCount": 3
+        },
+        "ruleEvaluations": [
+          {
+            "ruleId": "unusual_amount",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {
+              "mediumMultiple": 3,
+              "highMultiple": 6
+            },
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "payment_velocity",
+            "available": true,
+            "triggered": true,
+            "points": 35,
+            "measured": {
+              "attemptCount": 6
+            },
+            "thresholds": {
+              "windowSeconds": 300,
+              "mediumCount": 3,
+              "highCount": 5
+            },
+            "evidence": {
+              "eventCount": 5,
+              "eventIds": [
+                "event_eea819649f70940afe0567b0738f3efbf423a9a0",
+                "event_cece5e7c8a3093521b6f642ea81b90a05ebc9baf",
+                "event_fd008d79aac207f9a3db2aac3c0b6f3b36654130",
+                "event_21fcb99ee925088d340b99324a2b6251c5e70a5e",
+                "event_ab7c6095020420c03f4391f00f52b277addafab4"
+              ],
+              "accountIds": [
+                "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134"
+              ],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": "2026-10-08T19:06:32.000Z",
+              "windowEnd": "2026-10-08T19:11:32.000Z"
+            },
+            "explanation": "6 attempted payments including this one in the inclusive five-minute window; contributes 35 points. All decisions count as attempts."
+          },
+          {
+            "ruleId": "new_device",
+            "available": true,
+            "triggered": true,
+            "points": 20,
+            "measured": {
+              "unfamiliar": true
+            },
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [
+                "association_7849fba09f8e07d1143a9cdf48125fc733fd83e4"
+              ],
+              "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+              "locationId": null,
+              "observedAt": "2026-10-08T19:09:05.000Z",
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Device is not established as familiar at this event: 20 points."
+          },
+          {
+            "ruleId": "unusual_location",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "merchant_category_deviation",
+            "available": false,
+            "triggered": false,
+            "points": 0,
+            "measured": {},
+            "thresholds": {},
+            "evidence": {
+              "eventCount": null,
+              "eventIds": [],
+              "accountIds": [],
+              "associationIds": [],
+              "deviceId": null,
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": null,
+              "windowEnd": null
+            },
+            "explanation": "Not evaluated: required source data is missing. No risk points were inferred."
+          },
+          {
+            "ruleId": "shared_device_accounts",
+            "available": true,
+            "triggered": true,
+            "points": 25,
+            "measured": {
+              "distinctAccountCount": 3
+            },
+            "thresholds": {
+              "windowSeconds": 300,
+              "accountCount": 3
+            },
+            "evidence": {
+              "eventCount": 8,
+              "eventIds": [
+                "event_a9c84972f4881e064841d542e10f81f0f391c4a4",
+                "event_823ff5ef956e167ce85a62179eb6d5c82753d195",
+                "event_eea819649f70940afe0567b0738f3efbf423a9a0",
+                "event_cece5e7c8a3093521b6f642ea81b90a05ebc9baf",
+                "event_fd008d79aac207f9a3db2aac3c0b6f3b36654130",
+                "event_21fcb99ee925088d340b99324a2b6251c5e70a5e",
+                "event_ab7c6095020420c03f4391f00f52b277addafab4",
+                "event_92dda636b88672aa419cca2cea472e355c1a7f1d"
+              ],
+              "accountIds": [
+                "account_9872b17336884899de0bae6767fdcdcf3c6e08ec",
+                "account_b71b2a4598404c88588b0186da210a6c96b88beb",
+                "account_f868b0dcde4e1ed43248fe99f1402ac2cf96b134"
+              ],
+              "associationIds": [
+                "association_53583548d19254e7eafd1975b6437067aeceb272",
+                "association_f133a22b74651c3f12d4c9aecf5d2ef31b41b7e2",
+                "association_7849fba09f8e07d1143a9cdf48125fc733fd83e4"
+              ],
+              "deviceId": "device_93039a209ee4cdf9113fe9f297ad34971dabb55a",
+              "locationId": null,
+              "observedAt": null,
+              "knownFrom": null,
+              "windowStart": "2026-10-08T19:06:32.000Z",
+              "windowEnd": "2026-10-08T19:11:32.000Z"
+            },
+            "explanation": "3 distinct accounts used this device within the inclusive five-minute window, including this attempt: 25 points. Sharing describes usage, not proof of fraud."
+          }
+        ],
+        "rawScore": 80,
+        "riskScore": 80,
+        "decision": "block"
+      }
+    ],
+    "metrics": {
+      "totalCount": 8,
+      "totalAmountMinor": 17915,
+      "decisions": {
+        "approve": {
+          "count": 2,
+          "amountMinor": 4717
+        },
+        "review": {
+          "count": 2,
+          "amountMinor": 5080
+        },
+        "block": {
+          "count": 4,
+          "amountMinor": 8118
+        }
+      },
+      "decisionRates": {
+        "approve": {
+          "numerator": 2,
+          "denominator": 8
+        },
+        "review": {
+          "numerator": 2,
+          "denominator": 8
+        },
+        "block": {
+          "numerator": 4,
+          "denominator": 8
+        }
+      },
+      "flaggedCount": 6,
+      "flaggedRate": {
+        "numerator": 6,
+        "denominator": 8
+      },
+      "reviewWorkload": 2,
+      "scoreBins": {
+        "0-19": 0,
+        "20-39": 2,
+        "40-59": 2,
+        "60-79": 2,
+        "80-100": 2
+      },
+      "ruleTriggerCounts": {
+        "unusual_amount": 0,
+        "payment_velocity": 4,
+        "new_device": 8,
+        "unusual_location": 0,
+        "merchant_category_deviation": 0,
+        "shared_device_accounts": 6
+      },
+      "labeledCount": 0,
+      "unlabeledCount": 8,
+      "truthMetrics": null,
+      "costs": {
+        "reviewOperatingCostAllMinor": 600,
+        "estimatedApprovedFraudLossMinor": null,
+        "labeledReviewCostMinor": null,
+        "estimatedFalseBlockFrictionCostMinor": null,
+        "illustrativeLabeledTotalCostMinor": null
+      }
+    },
+    "warnings": [
+      {
+        "code": "synthetic_model",
+        "message": "Rules and labels describe synthetic scenarios. Scores are not fraud probabilities; Review remains pending human decision."
+      },
+      {
+        "code": "attempt_history",
+        "message": "All attempts count toward history, including blocked payments. Equal timestamps use ASCII payment-ID order."
+      },
+      {
+        "code": "partial_labels",
+        "message": "Labeled subset: 0 of 8 payments. Truth metrics and illustrative loss/friction costs only describe labeled payments."
+      },
+      {
+        "code": "incomplete_data",
+        "message": "8 payments have incomplete source data. Unavailable rules were not evaluated. Scores and approval decisions reflect only available evidence; a low score does not establish safety."
+      }
+    ],
+    "runId": "fixture-run",
+    "completedAt": "2026-10-21T00:00:00.000Z"
+  },
+  "assessments": [
+    {
+      "eventId": "event_a9c84972f4881e064841d542e10f81f0f391c4a4",
+      "sourceEventId": "TXN-RFSIM-2026-002094",
+      "score": 20,
+      "coverage": "partial",
+      "evaluatedRules": 3,
+      "totalRules": 6,
+      "recommendation": "no_alert",
+      "reason": "Missing signals do not imply low risk.",
+      "signals": [
+        {
+          "ruleId": "unusual_amount",
+          "available": false,
+          "reason": "Amount baseline not supplied; historical learning is not enabled."
+        },
+        {
+          "ruleId": "payment_velocity",
+          "available": true,
+          "reason": null
+        },
+        {
+          "ruleId": "new_device",
+          "available": true,
+          "reason": null
+        },
+        {
+          "ruleId": "unusual_location",
+          "available": false,
+          "reason": "Usual or transaction location countries not supplied."
+        },
+        {
+          "ruleId": "merchant_category_deviation",
+          "available": false,
+          "reason": "Usual or transaction categories not supplied."
+        },
+        {
+          "ruleId": "shared_device_accounts",
+          "available": true,
+          "reason": null
+        }
+      ]
+    },
+    {
+      "eventId": "event_823ff5ef956e167ce85a62179eb6d5c82753d195",
+      "sourceEventId": "TXN-RFSIM-2026-002095",
+      "score": 20,
+      "coverage": "partial",
+      "evaluatedRules": 3,
+      "totalRules": 6,
+      "recommendation": "no_alert",
+      "reason": "Missing signals do not imply low risk.",
+      "signals": [
+        {
+          "ruleId": "unusual_amount",
+          "available": false,
+          "reason": "Amount baseline not supplied; historical learning is not enabled."
+        },
+        {
+          "ruleId": "payment_velocity",
+          "available": true,
+          "reason": null
+        },
+        {
+          "ruleId": "new_device",
+          "available": true,
+          "reason": null
+        },
+        {
+          "ruleId": "unusual_location",
+          "available": false,
+          "reason": "Usual or transaction location countries not supplied."
+        },
+        {
+          "ruleId": "merchant_category_deviation",
+          "available": false,
+          "reason": "Usual or transaction categories not supplied."
+        },
+        {
+          "ruleId": "shared_device_accounts",
+          "available": true,
+          "reason": null
+        }
+      ]
+    },
+    {
+      "eventId": "event_eea819649f70940afe0567b0738f3efbf423a9a0",
+      "sourceEventId": "TXN-RFSIM-2026-002096",
+      "score": 45,
+      "coverage": "partial",
+      "evaluatedRules": 3,
+      "totalRules": 6,
+      "recommendation": "review",
+      "reason": "Missing signals do not imply low risk.",
+      "signals": [
+        {
+          "ruleId": "unusual_amount",
+          "available": false,
+          "reason": "Amount baseline not supplied; historical learning is not enabled."
+        },
+        {
+          "ruleId": "payment_velocity",
+          "available": true,
+          "reason": null
+        },
+        {
+          "ruleId": "new_device",
+          "available": true,
+          "reason": null
+        },
+        {
+          "ruleId": "unusual_location",
+          "available": false,
+          "reason": "Usual or transaction location countries not supplied."
+        },
+        {
+          "ruleId": "merchant_category_deviation",
+          "available": false,
+          "reason": "Usual or transaction categories not supplied."
+        },
+        {
+          "ruleId": "shared_device_accounts",
+          "available": true,
+          "reason": null
+        }
+      ]
+    },
+    {
+      "eventId": "event_cece5e7c8a3093521b6f642ea81b90a05ebc9baf",
+      "sourceEventId": "TXN-RFSIM-2026-002097",
+      "score": 45,
+      "coverage": "partial",
+      "evaluatedRules": 3,
+      "totalRules": 6,
+      "recommendation": "review",
+      "reason": "Missing signals do not imply low risk.",
+      "signals": [
+        {
+          "ruleId": "unusual_amount",
+          "available": false,
+          "reason": "Amount baseline not supplied; historical learning is not enabled."
+        },
+        {
+          "ruleId": "payment_velocity",
+          "available": true,
+          "reason": null
+        },
+        {
+          "ruleId": "new_device",
+          "available": true,
+          "reason": null
+        },
+        {
+          "ruleId": "unusual_location",
+          "available": false,
+          "reason": "Usual or transaction location countries not supplied."
+        },
+        {
+          "ruleId": "merchant_category_deviation",
+          "available": false,
+          "reason": "Usual or transaction categories not supplied."
+        },
+        {
+          "ruleId": "shared_device_accounts",
+          "available": true,
+          "reason": null
+        }
+      ]
+    },
+    {
+      "eventId": "event_fd008d79aac207f9a3db2aac3c0b6f3b36654130",
+      "sourceEventId": "TXN-RFSIM-2026-002098",
+      "score": 70,
+      "coverage": "partial",
+      "evaluatedRules": 3,
+      "totalRules": 6,
+      "recommendation": "high_priority",
+      "reason": "Missing signals do not imply low risk.",
+      "signals": [
+        {
+          "ruleId": "unusual_amount",
+          "available": false,
+          "reason": "Amount baseline not supplied; historical learning is not enabled."
+        },
+        {
+          "ruleId": "payment_velocity",
+          "available": true,
+          "reason": null
+        },
+        {
+          "ruleId": "new_device",
+          "available": true,
+          "reason": null
+        },
+        {
+          "ruleId": "unusual_location",
+          "available": false,
+          "reason": "Usual or transaction location countries not supplied."
+        },
+        {
+          "ruleId": "merchant_category_deviation",
+          "available": false,
+          "reason": "Usual or transaction categories not supplied."
+        },
+        {
+          "ruleId": "shared_device_accounts",
+          "available": true,
+          "reason": null
+        }
+      ]
+    },
+    {
+      "eventId": "event_21fcb99ee925088d340b99324a2b6251c5e70a5e",
+      "sourceEventId": "TXN-RFSIM-2026-002099",
+      "score": 70,
+      "coverage": "partial",
+      "evaluatedRules": 3,
+      "totalRules": 6,
+      "recommendation": "high_priority",
+      "reason": "Missing signals do not imply low risk.",
+      "signals": [
+        {
+          "ruleId": "unusual_amount",
+          "available": false,
+          "reason": "Amount baseline not supplied; historical learning is not enabled."
+        },
+        {
+          "ruleId": "payment_velocity",
+          "available": true,
+          "reason": null
+        },
+        {
+          "ruleId": "new_device",
+          "available": true,
+          "reason": null
+        },
+        {
+          "ruleId": "unusual_location",
+          "available": false,
+          "reason": "Usual or transaction location countries not supplied."
+        },
+        {
+          "ruleId": "merchant_category_deviation",
+          "available": false,
+          "reason": "Usual or transaction categories not supplied."
+        },
+        {
+          "ruleId": "shared_device_accounts",
+          "available": true,
+          "reason": null
+        }
+      ]
+    },
+    {
+      "eventId": "event_ab7c6095020420c03f4391f00f52b277addafab4",
+      "sourceEventId": "TXN-RFSIM-2026-002100",
+      "score": 80,
+      "coverage": "partial",
+      "evaluatedRules": 3,
+      "totalRules": 6,
+      "recommendation": "high_priority",
+      "reason": "Missing signals do not imply low risk.",
+      "signals": [
+        {
+          "ruleId": "unusual_amount",
+          "available": false,
+          "reason": "Amount baseline not supplied; historical learning is not enabled."
+        },
+        {
+          "ruleId": "payment_velocity",
+          "available": true,
+          "reason": null
+        },
+        {
+          "ruleId": "new_device",
+          "available": true,
+          "reason": null
+        },
+        {
+          "ruleId": "unusual_location",
+          "available": false,
+          "reason": "Usual or transaction location countries not supplied."
+        },
+        {
+          "ruleId": "merchant_category_deviation",
+          "available": false,
+          "reason": "Usual or transaction categories not supplied."
+        },
+        {
+          "ruleId": "shared_device_accounts",
+          "available": true,
+          "reason": null
+        }
+      ]
+    },
+    {
+      "eventId": "event_92dda636b88672aa419cca2cea472e355c1a7f1d",
+      "sourceEventId": "TXN-RFSIM-2026-002101",
+      "score": 80,
+      "coverage": "partial",
+      "evaluatedRules": 3,
+      "totalRules": 6,
+      "recommendation": "high_priority",
+      "reason": "Missing signals do not imply low risk.",
+      "signals": [
+        {
+          "ruleId": "unusual_amount",
+          "available": false,
+          "reason": "Amount baseline not supplied; historical learning is not enabled."
+        },
+        {
+          "ruleId": "payment_velocity",
+          "available": true,
+          "reason": null
+        },
+        {
+          "ruleId": "new_device",
+          "available": true,
+          "reason": null
+        },
+        {
+          "ruleId": "unusual_location",
+          "available": false,
+          "reason": "Usual or transaction location countries not supplied."
+        },
+        {
+          "ruleId": "merchant_category_deviation",
+          "available": false,
+          "reason": "Usual or transaction categories not supplied."
+        },
+        {
+          "ruleId": "shared_device_accounts",
+          "available": true,
+          "reason": null
+        }
+      ]
+    }
+  ]
+}

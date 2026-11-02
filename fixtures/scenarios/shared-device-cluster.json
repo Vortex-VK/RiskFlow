@@ -1,0 +1,531 @@
+{
+  "scenario": {
+    "schemaVersion": 1,
+    "id": "shared-device-cluster",
+    "name": "Shared Device Cluster",
+    "description": "Illustrative synthetic purchases for V13 replay. MCC and channel are authored demo inputs; labels are story annotations, not measured model performance.",
+    "sourceTemplateId": "shared-device-cluster",
+    "sourceTemplateVersion": 2,
+    "scenarioStartAt": "2026-01-15T00:00:00.000Z",
+    "currency": "USD",
+    "nodes": [
+      {
+        "id": "account-a",
+        "type": "account",
+        "name": "Alex Morgan",
+        "openedAt": "2025-01-15T00:00:00.000Z",
+        "typicalAmountMinor": 5000,
+        "usualCountryCodes": [
+          "US"
+        ],
+        "usualMerchantCategories": [
+          "groceries",
+          "retail",
+          "dining"
+        ]
+      },
+      {
+        "id": "account-b",
+        "type": "account",
+        "name": "Blair Chen",
+        "openedAt": "2025-01-15T00:00:00.000Z",
+        "typicalAmountMinor": 5000,
+        "usualCountryCodes": [
+          "US"
+        ],
+        "usualMerchantCategories": [
+          "groceries",
+          "retail",
+          "dining"
+        ]
+      },
+      {
+        "id": "account-c",
+        "type": "account",
+        "name": "Casey Reed",
+        "openedAt": "2025-01-15T00:00:00.000Z",
+        "typicalAmountMinor": 5000,
+        "usualCountryCodes": [
+          "US"
+        ],
+        "usualMerchantCategories": [
+          "groceries",
+          "retail",
+          "dining"
+        ]
+      },
+      {
+        "id": "grocery",
+        "type": "merchant",
+        "name": "Juniper Market",
+        "category": "groceries",
+        "countryCode": "US"
+      },
+      {
+        "id": "retail",
+        "type": "merchant",
+        "name": "Common Goods",
+        "category": "retail",
+        "countryCode": "US"
+      },
+      {
+        "id": "dining",
+        "type": "merchant",
+        "name": "Sunday Table",
+        "category": "dining",
+        "countryCode": "US"
+      },
+      {
+        "id": "electronics-1",
+        "type": "merchant",
+        "name": "Circuit Supply",
+        "category": "electronics",
+        "countryCode": "US"
+      },
+      {
+        "id": "electronics-2",
+        "type": "merchant",
+        "name": "Volt Electronics",
+        "category": "electronics",
+        "countryCode": "US"
+      },
+      {
+        "id": "device-a",
+        "type": "device",
+        "name": "Alex's phone"
+      },
+      {
+        "id": "device-b",
+        "type": "device",
+        "name": "Blair's phone"
+      },
+      {
+        "id": "device-c",
+        "type": "device",
+        "name": "Casey's phone"
+      },
+      {
+        "id": "device-shared",
+        "type": "device",
+        "name": "Shared device"
+      },
+      {
+        "id": "location-a",
+        "type": "location",
+        "name": "Brooklyn \u00b7 US",
+        "countryCode": "US"
+      },
+      {
+        "id": "location-b",
+        "type": "location",
+        "name": "Austin \u00b7 US",
+        "countryCode": "US"
+      },
+      {
+        "id": "location-c",
+        "type": "location",
+        "name": "Portland \u00b7 US",
+        "countryCode": "US"
+      }
+    ],
+    "associations": [
+      {
+        "id": "account-a-device-a-link",
+        "type": "accountDevice",
+        "accountId": "account-a",
+        "targetId": "device-a",
+        "observedAt": "2026-01-14T00:00:00.000Z",
+        "knownFrom": "2026-01-14T00:00:00.000Z"
+      },
+      {
+        "id": "account-a-location-a-link",
+        "type": "accountLocation",
+        "accountId": "account-a",
+        "targetId": "location-a",
+        "observedAt": "2026-01-14T00:00:00.000Z",
+        "knownFrom": "2026-01-14T00:00:00.000Z"
+      },
+      {
+        "id": "account-a-device-shared-link",
+        "type": "accountDevice",
+        "accountId": "account-a",
+        "targetId": "device-shared",
+        "observedAt": "2026-01-15T10:00:00.000Z",
+        "knownFrom": null
+      },
+      {
+        "id": "account-b-device-b-link",
+        "type": "accountDevice",
+        "accountId": "account-b",
+        "targetId": "device-b",
+        "observedAt": "2026-01-14T00:00:00.000Z",
+        "knownFrom": "2026-01-14T00:00:00.000Z"
+      },
+      {
+        "id": "account-b-location-b-link",
+        "type": "accountLocation",
+        "accountId": "account-b",
+        "targetId": "location-b",
+        "observedAt": "2026-01-14T00:00:00.000Z",
+        "knownFrom": "2026-01-14T00:00:00.000Z"
+      },
+      {
+        "id": "account-b-device-shared-link",
+        "type": "accountDevice",
+        "accountId": "account-b",
+        "targetId": "device-shared",
+        "observedAt": "2026-01-15T10:01:00.000Z",
+        "knownFrom": null
+      },
+      {
+        "id": "account-c-device-c-link",
+        "type": "accountDevice",
+        "accountId": "account-c",
+        "targetId": "device-c",
+        "observedAt": "2026-01-14T00:00:00.000Z",
+        "knownFrom": "2026-01-14T00:00:00.000Z"
+      },
+      {
+        "id": "account-c-location-c-link",
+        "type": "accountLocation",
+        "accountId": "account-c",
+        "targetId": "location-c",
+        "observedAt": "2026-01-14T00:00:00.000Z",
+        "knownFrom": "2026-01-14T00:00:00.000Z"
+      },
+      {
+        "id": "account-c-device-shared-link",
+        "type": "accountDevice",
+        "accountId": "account-c",
+        "targetId": "device-shared",
+        "observedAt": "2026-01-15T10:02:00.000Z",
+        "knownFrom": null
+      }
+    ],
+    "payments": [
+      {
+        "id": "H01",
+        "occurredAt": "2026-01-15T09:00:00.000Z",
+        "accountId": "account-a",
+        "merchantId": "grocery",
+        "deviceId": "device-a",
+        "locationId": "location-a",
+        "amountMinor": 1800,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5411",
+          "completed": true
+        }
+      },
+      {
+        "id": "H02",
+        "occurredAt": "2026-01-15T09:10:00.000Z",
+        "accountId": "account-b",
+        "merchantId": "retail",
+        "deviceId": "device-b",
+        "locationId": "location-b",
+        "amountMinor": 4200,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5311",
+          "completed": true
+        }
+      },
+      {
+        "id": "H03",
+        "occurredAt": "2026-01-15T09:20:00.000Z",
+        "accountId": "account-c",
+        "merchantId": "dining",
+        "deviceId": "device-c",
+        "locationId": "location-c",
+        "amountMinor": 2500,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5812",
+          "completed": true
+        }
+      },
+      {
+        "id": "H04",
+        "occurredAt": "2026-01-15T09:30:00.000Z",
+        "accountId": "account-a",
+        "merchantId": "retail",
+        "deviceId": "device-a",
+        "locationId": "location-a",
+        "amountMinor": 5500,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5311",
+          "completed": true
+        }
+      },
+      {
+        "id": "H05",
+        "occurredAt": "2026-01-15T09:40:00.000Z",
+        "accountId": "account-b",
+        "merchantId": "grocery",
+        "deviceId": "device-b",
+        "locationId": "location-b",
+        "amountMinor": 3000,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5411",
+          "completed": true
+        }
+      },
+      {
+        "id": "H06",
+        "occurredAt": "2026-01-15T09:50:00.000Z",
+        "accountId": "account-c",
+        "merchantId": "dining",
+        "deviceId": "device-c",
+        "locationId": "location-c",
+        "amountMinor": 4500,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5812",
+          "completed": true
+        }
+      },
+      {
+        "id": "H07",
+        "occurredAt": "2026-01-15T10:00:00.000Z",
+        "accountId": "account-a",
+        "merchantId": "electronics-1",
+        "deviceId": "device-shared",
+        "locationId": "location-a",
+        "amountMinor": 18000,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5732",
+          "completed": true
+        }
+      },
+      {
+        "id": "H08",
+        "occurredAt": "2026-01-15T10:01:00.000Z",
+        "accountId": "account-b",
+        "merchantId": "electronics-2",
+        "deviceId": "device-shared",
+        "locationId": "location-b",
+        "amountMinor": 18000,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5732",
+          "completed": true
+        }
+      },
+      {
+        "id": "H09",
+        "occurredAt": "2026-01-15T10:02:00.000Z",
+        "accountId": "account-c",
+        "merchantId": "electronics-1",
+        "deviceId": "device-shared",
+        "locationId": "location-c",
+        "amountMinor": 18000,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5732",
+          "completed": true
+        }
+      },
+      {
+        "id": "H10",
+        "occurredAt": "2026-01-15T10:03:00.000Z",
+        "accountId": "account-a",
+        "merchantId": "electronics-2",
+        "deviceId": "device-shared",
+        "locationId": "location-a",
+        "amountMinor": 24000,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5732",
+          "completed": true
+        }
+      },
+      {
+        "id": "H11",
+        "occurredAt": "2026-01-15T10:04:00.000Z",
+        "accountId": "account-b",
+        "merchantId": "electronics-1",
+        "deviceId": "device-shared",
+        "locationId": "location-b",
+        "amountMinor": 24000,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5732",
+          "completed": true
+        }
+      },
+      {
+        "id": "H12",
+        "occurredAt": "2026-01-15T10:05:00.000Z",
+        "accountId": "account-a",
+        "merchantId": "electronics-2",
+        "deviceId": "device-shared",
+        "locationId": "location-a",
+        "amountMinor": 9000,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5732",
+          "completed": true
+        }
+      },
+      {
+        "id": "H13",
+        "occurredAt": "2026-01-15T10:06:00.000Z",
+        "accountId": "account-b",
+        "merchantId": "electronics-1",
+        "deviceId": "device-shared",
+        "locationId": "location-b",
+        "amountMinor": 9000,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5732",
+          "completed": true
+        }
+      },
+      {
+        "id": "H14",
+        "occurredAt": "2026-01-15T11:00:00.000Z",
+        "accountId": "account-a",
+        "merchantId": "grocery",
+        "deviceId": "device-a",
+        "locationId": "location-a",
+        "amountMinor": 2800,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5411",
+          "completed": true
+        }
+      },
+      {
+        "id": "H15",
+        "occurredAt": "2026-01-15T11:10:00.000Z",
+        "accountId": "account-b",
+        "merchantId": "dining",
+        "deviceId": "device-b",
+        "locationId": "location-b",
+        "amountMinor": 3500,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5812",
+          "completed": true
+        }
+      },
+      {
+        "id": "H16",
+        "occurredAt": "2026-01-15T11:20:00.000Z",
+        "accountId": "account-c",
+        "merchantId": "retail",
+        "deviceId": "device-c",
+        "locationId": "location-c",
+        "amountMinor": 4800,
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "mcc": "5311",
+          "completed": true
+        }
+      }
+    ],
+    "groundTruth": {
+      "H01": "legitimate",
+      "H02": "legitimate",
+      "H03": "legitimate",
+      "H04": "legitimate",
+      "H05": "legitimate",
+      "H06": "legitimate",
+      "H07": "fraudulent",
+      "H08": "fraudulent",
+      "H09": "fraudulent",
+      "H10": "fraudulent",
+      "H11": "fraudulent",
+      "H12": "fraudulent",
+      "H13": "fraudulent",
+      "H14": "legitimate",
+      "H15": "legitimate",
+      "H16": "legitimate"
+    },
+    "ruleSetVersion": "rules-v1",
+    "policy": {
+      "version": 1,
+      "reviewThreshold": 40,
+      "blockThreshold": 70
+    },
+    "costAssumptions": {
+      "approvedFraudLossBps": 10000,
+      "reviewCostMinor": 300,
+      "falseBlockCostMinor": 1500
+    },
+    "seed": null
+  },
+  "view": {
+    "positions": {
+      "account-a": {
+        "x": 350,
+        "y": 250
+      },
+      "account-b": {
+        "x": 720,
+        "y": 300
+      },
+      "account-c": {
+        "x": 490,
+        "y": 560
+      },
+      "grocery": {
+        "x": 200,
+        "y": 150
+      },
+      "retail": {
+        "x": 860,
+        "y": 140
+      },
+      "dining": {
+        "x": 920,
+        "y": 570
+      },
+      "electronics-1": {
+        "x": 180,
+        "y": 450
+      },
+      "electronics-2": {
+        "x": 900,
+        "y": 400
+      },
+      "device-a": {
+        "x": 280,
+        "y": 105
+      },
+      "device-b": {
+        "x": 680,
+        "y": 125
+      },
+      "device-c": {
+        "x": 350,
+        "y": 665
+      },
+      "device-shared": {
+        "x": 520,
+        "y": 370
+      },
+      "location-a": {
+        "x": 195,
+        "y": 320
+      },
+      "location-b": {
+        "x": 920,
+        "y": 280
+      },
+      "location-c": {
+        "x": 650,
+        "y": 660
+      }
+    },
+    "viewport": {
+      "x": 0,
+      "y": 0,
+      "zoom": 1
+    }
+  }
+}

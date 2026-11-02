@@ -1,0 +1,32 @@
+{
+  "assigned_mcc_by_source_category": {
+    "education": "8299",
+    "electronics": "5732",
+    "entertainment": "7999",
+    "fuel": "5541",
+    "groceries": "5411",
+    "health": "8099",
+    "personal_care": "7298",
+    "restaurants": "5812",
+    "retail": "5399",
+    "subscriptions": "4899",
+    "transport": "4121",
+    "travel": "4722"
+  },
+  "assumptions": [
+    "Only completed/declined/failed purchases are selected; pending and other financial activities remain outside model scoring.",
+    "MCCs are assigned from broad categories for this experiment, not established by the source.",
+    "ecommerce and mobile_app purchases are assumed Online Transaction.",
+    "Unknown pos technology is tested as both Chip Transaction and Swipe Transaction.",
+    "Merchant IDs are authored hashes of name+country, or name+country+city+state. Neither represents verified merchant identity.",
+    "Merchant city/state are preserved; ZIP remains missing. No device/IP location is substituted.",
+    "August reference profiles are not predictors for V13 and are not joined. The guide's rule-point expectations describe the retired engine.",
+    "No confirmed fraud labels or feedback are available. Cases identify situations, not fraudulent transactions."
+  ],
+  "scope": "Unlabeled generated-data sensitivity experiment. No tuning or training.",
+  "source_sha256": {
+    "riskflow_simulator_realistic_2400.csv": "8bc3c68d0db6f58fedfc16ec549562452fd8615fd705774c3703631aac8120da",
+    "riskflow_simulator_reference_profiles.csv": "d59d8e6ccac22b11ee7adc93bfe59a9d1260cf53f6409590a87699b9d5265ecd",
+    "riskflow_simulator_test_guide.md": "434f06c3ca8d5bac8fcc287aa791f7011d3803f3476cd97d640f30210e8da809"
+  }
+}

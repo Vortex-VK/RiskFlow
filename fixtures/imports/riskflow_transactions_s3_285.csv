@@ -1,0 +1,286 @@
+transaction_id,timestamp,account_id,amount,currency,direction,transaction_type,merchant_name,merchant_category,payment_method,channel,merchant_city,merchant_state,merchant_country,card_present,device_id,ip_country,status,description
+TXN-2026-S3-000001,2026-08-15T15:53:58Z,ACC-S3-0001,192.24,USD,debit,bill_payment,Auto Insurance,utilities,ach,online_banking,Minneapolis,MN,US,False,,US,completed,Bill payment - Auto Insurance
+TXN-2026-S3-000002,2026-08-15T16:47:37Z,ACC-S3-0005,52.38,USD,debit,bill_payment,Water Utility,utilities,ach,online_banking,Denver,CO,US,False,,US,completed,Bill payment - Water Utility
+TXN-2026-S3-000003,2026-08-16T03:58:29Z,ACC-S3-0003,59.32,USD,debit,purchase,Lowes,retail,credit_card,pos,Denver,CO,US,True,,,completed,Purchase - Lowes
+TXN-2026-S3-000004,2026-08-16T07:09:31Z,ACC-S3-0004,14.95,USD,debit,purchase,Audible,subscriptions,debit_card,ecommerce,Seattle,WA,US,False,DEV-S3-0004-01,US,completed,Monthly subscription - Audible
+TXN-2026-S3-000005,2026-08-16T15:16:33Z,ACC-S3-0011,144.85,USD,debit,bill_payment,Verizon Wireless,utilities,ach,online_banking,Charlotte,NC,US,False,,US,completed,Bill payment - Verizon Wireless
+TXN-2026-S3-000006,2026-08-16T18:46:02Z,ACC-S3-0008,45.10,USD,debit,purchase,Publix,groceries,credit_card,pos,Raleigh,NC,US,True,,,completed,Purchase - Publix
+TXN-2026-S3-000007,2026-08-16T18:59:00Z,ACC-S3-0001,17.47,USD,debit,purchase,Panera Bread,restaurants,credit_card,mobile_app,Minneapolis,MN,US,False,DEV-S3-0001-01,US,completed,Purchase - Panera Bread
+TXN-2026-S3-000008,2026-08-17T09:14:46Z,ACC-S3-0008,2.99,USD,debit,purchase,Google One,subscriptions,debit_card,ecommerce,Mountain View,CA,US,False,DEV-S3-0008-01,US,completed,Monthly subscription - Google One
+TXN-2026-S3-000009,2026-08-17T15:36:40Z,ACC-S3-0009,158.96,USD,debit,bill_payment,Duke Energy,utilities,ach,online_banking,Raleigh,NC,US,False,,US,completed,Bill payment - Duke Energy
+TXN-2026-S3-000010,2026-08-17T16:50:20Z,ACC-S3-0009,2.99,USD,debit,purchase,Google One,subscriptions,debit_card,ecommerce,Mountain View,CA,US,False,DEV-S3-0009-01,US,completed,Monthly subscription - Google One
+TXN-2026-S3-000011,2026-08-17T19:14:57Z,ACC-S3-0010,14.95,USD,debit,purchase,Audible,subscriptions,debit_card,ecommerce,San Diego,CA,US,False,DEV-S3-0010-01,US,completed,Monthly subscription - Audible
+TXN-2026-S3-000012,2026-08-17T23:22:23Z,ACC-S3-0002,31.40,USD,debit,purchase,Trader Joes,groceries,credit_card,pos,Charlotte,NC,US,True,,,completed,Purchase - Trader Joes
+TXN-2026-S3-000013,2026-08-18T00:19:32Z,ACC-S3-0002,29.19,USD,debit,purchase,Trader Joes,groceries,digital_wallet,pos,Charlotte,NC,US,True,,,completed,Purchase - Trader Joes
+TXN-2026-S3-000014,2026-08-18T06:05:39Z,ACC-S3-0011,14.95,USD,debit,purchase,Audible,subscriptions,debit_card,ecommerce,Charlotte,NC,US,False,DEV-S3-0011-01,US,completed,Monthly subscription - Audible
+TXN-2026-S3-000015,2026-08-18T19:34:39Z,ACC-S3-0007,93.59,USD,debit,purchase,Marshalls,retail,credit_card,pos,Raleigh,NC,US,True,,,completed,Purchase - Marshalls
+TXN-2026-S3-000016,2026-08-18T23:25:55Z,ACC-S3-0006,148.32,USD,debit,purchase,TJ Maxx,retail,debit_card,pos,Denver,CO,US,True,,,completed,Purchase - TJ Maxx
+TXN-2026-S3-000017,2026-08-18T23:39:49Z,ACC-S3-0008,22.61,USD,debit,purchase,AMC Theatres,entertainment,credit_card,ecommerce,Raleigh,NC,US,False,DEV-S3-0008-01,US,completed,Purchase - AMC Theatres
+TXN-2026-S3-000018,2026-08-20T01:01:13Z,ACC-S3-0003,5.93,USD,debit,purchase,Starbucks,restaurants,digital_wallet,pos,Denver,CO,US,True,,,completed,Purchase - Starbucks
+TXN-2026-S3-000019,2026-08-20T04:16:47Z,ACC-S3-0007,13.99,USD,debit,purchase,YouTube Premium,subscriptions,credit_card,ecommerce,Mountain View,CA,US,False,DEV-S3-0007-01,US,completed,Monthly subscription - YouTube Premium
+TXN-2026-S3-000020,2026-08-20T15:27:19Z,ACC-S3-0008,81.99,USD,debit,bill_payment,AT&T,utilities,ach,online_banking,Raleigh,NC,US,False,,US,completed,Bill payment - AT&T
+TXN-2026-S3-000021,2026-08-20T15:57:09Z,ACC-S3-0007,19.08,USD,debit,purchase,Local Cafe,restaurants,debit_card,mobile_app,Raleigh,NC,US,False,DEV-S3-0007-01,US,completed,Purchase - Local Cafe
+TXN-2026-S3-000022,2026-08-20T15:59:21Z,ACC-S3-0009,194.72,USD,debit,bill_payment,Auto Insurance,utilities,ach,online_banking,Raleigh,NC,US,False,,US,completed,Bill payment - Auto Insurance
+TXN-2026-S3-000023,2026-08-20T18:18:45Z,ACC-S3-0005,9.99,USD,debit,purchase,Hulu,subscriptions,credit_card,ecommerce,Denver,CO,US,False,DEV-S3-0005-01,US,completed,Monthly subscription - Hulu
+TXN-2026-S3-000024,2026-08-21T05:00:03Z,ACC-S3-0002,9.99,USD,debit,purchase,Apple Services,subscriptions,debit_card,ecommerce,Cupertino,CA,US,False,DEV-S3-0002-01,US,completed,Monthly subscription - Apple Services
+TXN-2026-S3-000025,2026-08-21T05:30:40Z,ACC-S3-0004,48.46,USD,debit,purchase,Home Depot,retail,digital_wallet,pos,Seattle,WA,US,True,,,completed,Purchase - Home Depot
+TXN-2026-S3-000026,2026-08-21T13:24:29Z,ACC-S3-0001,2.99,USD,debit,purchase,Google One,subscriptions,credit_card,ecommerce,Mountain View,CA,US,False,DEV-S3-0001-01,US,completed,Monthly subscription - Google One
+TXN-2026-S3-000027,2026-08-21T13:33:09Z,ACC-S3-0007,1863.03,USD,credit,salary,Payroll Direct Deposit,income,ach,ach,Raleigh,NC,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000028,2026-08-21T13:44:32Z,ACC-S3-0011,1770.15,USD,credit,salary,Workplace Payroll,income,ach,ach,Charlotte,NC,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000029,2026-08-21T15:39:46Z,ACC-S3-0003,2395.66,USD,credit,salary,Workplace Payroll,income,ach,ach,Denver,CO,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000030,2026-08-21T18:37:30Z,ACC-S3-0001,9.45,USD,debit,purchase,DoorDash,restaurants,debit_card,mobile_app,San Francisco,CA,US,False,DEV-S3-0001-01,US,completed,Purchase - DoorDash
+TXN-2026-S3-000031,2026-08-22T02:15:47Z,ACC-S3-0004,13.42,USD,debit,purchase,AMC Theatres,entertainment,debit_card,pos,Seattle,WA,US,True,,,completed,Purchase - AMC Theatres
+TXN-2026-S3-000032,2026-08-22T14:21:14Z,ACC-S3-0008,13.99,USD,debit,purchase,YouTube Premium,subscriptions,debit_card,ecommerce,Mountain View,CA,US,False,DEV-S3-0008-01,US,completed,Monthly subscription - YouTube Premium
+TXN-2026-S3-000033,2026-08-23T00:22:00Z,ACC-S3-0001,130.08,USD,debit,purchase,eBay,retail,credit_card,ecommerce,San Jose,CA,US,False,DEV-S3-0001-01,US,completed,Purchase - eBay
+TXN-2026-S3-000034,2026-08-23T17:51:54Z,ACC-S3-0006,144.60,USD,debit,bill_payment,Electric Utility,utilities,ach,online_banking,Denver,CO,US,False,,US,completed,Bill payment - Electric Utility
+TXN-2026-S3-000035,2026-08-23T18:10:51Z,ACC-S3-0005,152.02,USD,debit,bill_payment,Electric Utility,utilities,ach,online_banking,Denver,CO,US,False,,US,completed,Bill payment - Electric Utility
+TXN-2026-S3-000036,2026-08-24T15:04:01Z,ACC-S3-0007,107.50,USD,debit,bill_payment,Auto Insurance,utilities,ach,online_banking,Raleigh,NC,US,False,,US,completed,Bill payment - Auto Insurance
+TXN-2026-S3-000037,2026-08-24T15:11:49Z,ACC-S3-0008,34.21,USD,debit,transfer_out,Zelle,transfer,bank_transfer,mobile_app,Raleigh,NC,US,False,DEV-S3-0008-01,US,completed,Person-to-person payment sent
+TXN-2026-S3-000038,2026-08-24T16:12:39Z,ACC-S3-0006,125.11,USD,debit,bill_payment,Verizon Wireless,utilities,ach,online_banking,Denver,CO,US,False,,US,completed,Bill payment - Verizon Wireless
+TXN-2026-S3-000039,2026-08-24T18:24:45Z,ACC-S3-0007,63.29,USD,debit,purchase,Old Navy,retail,digital_wallet,ecommerce,Raleigh,NC,US,False,DEV-S3-0007-01,US,completed,Purchase - Old Navy
+TXN-2026-S3-000040,2026-08-25T12:05:29Z,ACC-S3-0008,3016.16,USD,credit,salary,Employer Payroll,income,ach,ach,Raleigh,NC,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000041,2026-08-25T13:01:11Z,ACC-S3-0003,11.99,USD,debit,purchase,Spotify,subscriptions,credit_card,ecommerce,New York,NY,US,False,DEV-S3-0003-01,US,completed,Monthly subscription - Spotify
+TXN-2026-S3-000042,2026-08-25T18:43:39Z,ACC-S3-0010,138.79,USD,debit,bill_payment,Verizon Wireless,utilities,ach,online_banking,San Diego,CA,US,False,,US,completed,Bill payment - Verizon Wireless
+TXN-2026-S3-000043,2026-08-25T21:52:06Z,ACC-S3-0010,19.24,USD,debit,purchase,Trader Joes,groceries,credit_card,pos,San Diego,CA,US,True,,,completed,Purchase - Trader Joes
+TXN-2026-S3-000044,2026-08-26T01:30:46Z,ACC-S3-0004,6.02,USD,debit,purchase,Urgent Care,health,credit_card,pos,Seattle,WA,US,True,,,completed,Purchase - Urgent Care
+TXN-2026-S3-000045,2026-08-26T02:00:55Z,ACC-S3-0004,504.28,USD,debit,purchase,eBay,retail,debit_card,ecommerce,San Jose,CA,US,False,DEV-S3-0004-01,US,completed,Purchase - eBay
+TXN-2026-S3-000046,2026-08-26T11:36:23Z,ACC-S3-0007,122.04,USD,debit,purchase,American Airlines,travel,debit_card,pos,Raleigh,NC,US,True,,,completed,Travel purchase - American Airlines
+TXN-2026-S3-000047,2026-08-26T14:09:21Z,ACC-S3-0006,9.99,USD,debit,purchase,Microsoft 365,subscriptions,debit_card,ecommerce,Redmond,WA,US,False,DEV-S3-0006-01,US,completed,Monthly subscription - Microsoft 365
+TXN-2026-S3-000048,2026-08-26T18:27:03Z,ACC-S3-0004,83.24,USD,debit,bill_payment,Spectrum,utilities,ach,online_banking,Seattle,WA,US,False,,US,completed,Bill payment - Spectrum
+TXN-2026-S3-000049,2026-08-26T18:43:23Z,ACC-S3-0004,90.78,USD,debit,bill_payment,T-Mobile,utilities,ach,online_banking,Seattle,WA,US,False,,US,completed,Bill payment - T-Mobile
+TXN-2026-S3-000050,2026-08-27T00:00:14Z,ACC-S3-0001,73.18,USD,debit,purchase,Marshalls,retail,debit_card,pos,Minneapolis,MN,US,True,,,completed,Purchase - Marshalls
+TXN-2026-S3-000051,2026-08-27T04:02:34Z,ACC-S3-0004,41.60,USD,debit,purchase,Chevron,fuel,digital_wallet,ecommerce,Seattle,WA,US,False,DEV-S3-0004-01,US,completed,Purchase - Chevron
+TXN-2026-S3-000052,2026-08-27T08:29:46Z,ACC-S3-0004,15.99,USD,debit,purchase,Disney+,subscriptions,debit_card,ecommerce,Seattle,WA,US,False,DEV-S3-0004-01,US,completed,Monthly subscription - Disney+
+TXN-2026-S3-000053,2026-08-27T14:11:00Z,ACC-S3-0002,7.61,USD,debit,purchase,Regal Cinemas,entertainment,credit_card,pos,Charlotte,NC,US,True,,,completed,Purchase - Regal Cinemas
+TXN-2026-S3-000054,2026-08-27T15:15:58Z,ACC-S3-0001,79.46,USD,debit,purchase,Lowes,retail,debit_card,ecommerce,Minneapolis,MN,US,False,DEV-S3-0001-01,US,completed,Purchase - Lowes
+TXN-2026-S3-000055,2026-08-27T21:55:26Z,ACC-S3-0001,23.33,USD,debit,purchase,Speedway,fuel,digital_wallet,pos,Minneapolis,MN,US,True,,,completed,Purchase - Speedway
+TXN-2026-S3-000056,2026-08-28T13:26:19Z,ACC-S3-0002,1801.91,USD,credit,salary,Workplace Payroll,income,ach,ach,Charlotte,NC,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000057,2026-08-28T13:46:46Z,ACC-S3-0009,3864.83,USD,credit,salary,Workplace Payroll,income,ach,ach,Raleigh,NC,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000058,2026-08-28T15:06:37Z,ACC-S3-0006,2989.26,USD,credit,salary,Payroll Direct Deposit,income,ach,ach,Denver,CO,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000059,2026-08-28T15:53:03Z,ACC-S3-0010,2032.78,USD,credit,salary,Employer Payroll,income,ach,ach,San Diego,CA,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000060,2026-08-28T16:27:34Z,ACC-S3-0004,2277.75,USD,credit,salary,Workplace Payroll,income,ach,ach,Seattle,WA,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000061,2026-08-28T23:34:34Z,ACC-S3-0007,18.87,USD,debit,purchase,Bowling Center,entertainment,credit_card,pos,Raleigh,NC,US,True,,,completed,Purchase - Bowling Center
+TXN-2026-S3-000062,2026-08-29T15:17:54Z,ACC-S3-0007,23.10,USD,debit,purchase,Starbucks,restaurants,debit_card,pos,Raleigh,NC,US,True,,,completed,Purchase - Starbucks
+TXN-2026-S3-000063,2026-08-29T16:23:11Z,ACC-S3-0007,63.29,USD,credit,refund,Old Navy,retail,digital_wallet,ecommerce,Raleigh,NC,US,False,DEV-S3-0007-01,US,completed,Merchant refund
+TXN-2026-S3-000064,2026-08-30T20:25:07Z,ACC-S3-0008,17.57,USD,debit,transfer_out,Bank Transfer,transfer,bank_transfer,online_banking,Raleigh,NC,US,False,DEV-S3-0008-01,US,completed,Person-to-person payment sent
+TXN-2026-S3-000065,2026-08-31T19:46:20Z,ACC-S3-0002,46.36,USD,debit,transfer_out,PayPal,transfer,bank_transfer,mobile_app,Charlotte,NC,US,False,DEV-S3-0002-01,US,completed,Person-to-person payment sent
+TXN-2026-S3-000066,2026-08-31T23:00:12Z,ACC-S3-0001,28.72,USD,debit,purchase,QuikTrip,fuel,digital_wallet,pos,Minneapolis,MN,US,True,,,completed,Purchase - QuikTrip
+TXN-2026-S3-000067,2026-08-31T23:10:19Z,ACC-S3-0001,16.96,USD,debit,purchase,Dominos,restaurants,debit_card,pos,Minneapolis,MN,US,True,,,completed,Purchase - Dominos
+TXN-2026-S3-000068,2026-09-01T06:24:59Z,ACC-S3-0002,11.99,USD,debit,purchase,Spotify,subscriptions,debit_card,ecommerce,New York,NY,US,False,DEV-S3-0002-01,US,completed,Monthly subscription - Spotify
+TXN-2026-S3-000069,2026-09-01T13:45:33Z,ACC-S3-0009,1244.02,USD,debit,bill_payment,Property Management,housing,ach,online_banking,Raleigh,NC,US,False,,US,completed,Monthly housing payment
+TXN-2026-S3-000070,2026-09-01T14:53:41Z,ACC-S3-0001,2658.41,USD,credit,salary,Workplace Payroll,income,ach,ach,Minneapolis,MN,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000071,2026-09-01T14:55:14Z,ACC-S3-0011,1377.89,USD,debit,bill_payment,Property Management,housing,ach,online_banking,Charlotte,NC,US,False,,US,completed,Monthly housing payment
+TXN-2026-S3-000072,2026-09-01T14:57:50Z,ACC-S3-0007,160.00,USD,debit,cash_withdrawal,Bank ATM,cash,debit_card,atm,Raleigh,NC,US,True,,,completed,ATM cash withdrawal
+TXN-2026-S3-000073,2026-09-01T15:30:07Z,ACC-S3-0003,1851.51,USD,debit,bill_payment,Property Management,housing,ach,online_banking,Denver,CO,US,False,,US,completed,Monthly housing payment
+TXN-2026-S3-000074,2026-09-02T05:04:24Z,ACC-S3-0006,31.03,USD,debit,purchase,Speedway,fuel,digital_wallet,pos,Denver,CO,US,True,,,completed,Purchase - Speedway
+TXN-2026-S3-000075,2026-09-02T15:14:14Z,ACC-S3-0004,74.29,USD,debit,purchase,Lowes,retail,credit_card,pos,Seattle,WA,US,True,,,completed,Purchase - Lowes
+TXN-2026-S3-000076,2026-09-02T22:29:19Z,ACC-S3-0008,258.23,USD,debit,purchase,Best Buy,retail,credit_card,pos,Raleigh,NC,US,True,,,completed,Purchase - Best Buy
+TXN-2026-S3-000077,2026-09-03T13:33:28Z,ACC-S3-0007,994.19,USD,debit,bill_payment,Property Management,housing,ach,online_banking,Raleigh,NC,US,False,,US,completed,Monthly housing payment
+TXN-2026-S3-000078,2026-09-03T16:29:34Z,ACC-S3-0004,1860.69,USD,debit,bill_payment,Mortgage Servicing,housing,ach,online_banking,Seattle,WA,US,False,,US,completed,Monthly housing payment
+TXN-2026-S3-000079,2026-09-03T16:43:51Z,ACC-S3-0006,2057.85,USD,debit,bill_payment,Mortgage Servicing,housing,ach,online_banking,Denver,CO,US,False,,US,completed,Monthly housing payment
+TXN-2026-S3-000080,2026-09-03T23:46:21Z,ACC-S3-0006,9.85,USD,debit,purchase,Local Cafe,restaurants,digital_wallet,ecommerce,Denver,CO,US,False,DEV-S3-0006-01,US,completed,Purchase - Local Cafe
+TXN-2026-S3-000081,2026-09-04T12:16:53Z,ACC-S3-0011,1690.46,USD,credit,salary,Workplace Payroll,income,ach,ach,Charlotte,NC,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000082,2026-09-04T13:02:02Z,ACC-S3-0007,1895.90,USD,credit,salary,Payroll Direct Deposit,income,ach,ach,Raleigh,NC,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000083,2026-09-04T15:43:01Z,ACC-S3-0003,2353.56,USD,credit,salary,Workplace Payroll,income,ach,ach,Denver,CO,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000084,2026-09-04T16:33:15Z,ACC-S3-0011,33.92,USD,debit,purchase,Aldi,groceries,debit_card,mobile_app,Charlotte,NC,US,False,DEV-S3-0011-01,US,completed,Purchase - Aldi
+TXN-2026-S3-000085,2026-09-04T16:41:25Z,ACC-S3-0009,153.59,USD,debit,transfer_out,PayPal,transfer,bank_transfer,mobile_app,Raleigh,NC,US,False,DEV-S3-0009-01,US,completed,Person-to-person payment sent
+TXN-2026-S3-000086,2026-09-05T10:53:15Z,ACC-S3-0001,15.99,USD,debit,purchase,Disney+,subscriptions,credit_card,ecommerce,Minneapolis,MN,US,False,DEV-S3-0001-01,US,completed,Monthly subscription - Disney+
+TXN-2026-S3-000087,2026-09-05T11:48:50Z,ACC-S3-0009,11.99,USD,debit,purchase,Spotify,subscriptions,debit_card,ecommerce,New York,NY,US,False,DEV-S3-0009-01,US,completed,Monthly subscription - Spotify
+TXN-2026-S3-000088,2026-09-05T11:49:10Z,ACC-S3-0009,60.39,USD,debit,purchase,BP,fuel,credit_card,mobile_app,Raleigh,NC,US,False,DEV-S3-0009-01,US,completed,Purchase - BP
+TXN-2026-S3-000089,2026-09-05T14:01:31Z,ACC-S3-0008,2497.80,USD,debit,bill_payment,Property Management,housing,ach,online_banking,Raleigh,NC,US,False,,US,completed,Monthly housing payment
+TXN-2026-S3-000090,2026-09-05T14:15:39Z,ACC-S3-0005,2383.48,USD,debit,bill_payment,Mortgage Servicing,housing,ach,online_banking,Denver,CO,US,False,,US,completed,Monthly housing payment
+TXN-2026-S3-000091,2026-09-05T14:22:18Z,ACC-S3-0007,70.33,USD,debit,bill_payment,Spectrum,utilities,ach,online_banking,Raleigh,NC,US,False,,US,completed,Bill payment - Spectrum
+TXN-2026-S3-000092,2026-09-05T14:50:19Z,ACC-S3-0002,1202.68,USD,debit,bill_payment,Property Management,housing,ach,online_banking,Charlotte,NC,US,False,,US,completed,Monthly housing payment
+TXN-2026-S3-000093,2026-09-05T17:10:03Z,ACC-S3-0010,1011.30,USD,debit,bill_payment,Mortgage Servicing,housing,ach,online_banking,San Diego,CA,US,False,,US,completed,Monthly housing payment
+TXN-2026-S3-000094,2026-09-06T15:22:38Z,ACC-S3-0011,84.20,USD,debit,bill_payment,AT&T,utilities,ach,online_banking,Charlotte,NC,US,False,,US,completed,Bill payment - AT&T
+TXN-2026-S3-000095,2026-09-06T17:58:27Z,ACC-S3-0003,107.15,USD,debit,bill_payment,T-Mobile,utilities,ach,online_banking,Denver,CO,US,False,,US,completed,Bill payment - T-Mobile
+TXN-2026-S3-000096,2026-09-06T20:06:16Z,ACC-S3-0008,28.56,USD,debit,purchase,Lidl,groceries,debit_card,pos,Raleigh,NC,US,True,,,completed,Purchase - Lidl
+TXN-2026-S3-000097,2026-09-06T20:20:43Z,ACC-S3-0004,169.33,USD,debit,transfer_out,PayPal,transfer,bank_transfer,mobile_app,Seattle,WA,US,False,DEV-S3-0004-01,US,completed,Person-to-person payment sent
+TXN-2026-S3-000098,2026-09-07T02:26:50Z,ACC-S3-0005,60.03,USD,debit,purchase,Exxon,fuel,debit_card,mobile_app,Denver,CO,US,False,DEV-S3-0005-01,US,completed,Purchase - Exxon
+TXN-2026-S3-000099,2026-09-07T16:49:35Z,ACC-S3-0003,70.31,USD,debit,bill_payment,Spectrum,utilities,ach,online_banking,Denver,CO,US,False,,US,completed,Bill payment - Spectrum
+TXN-2026-S3-000100,2026-09-08T16:59:01Z,ACC-S3-0002,54.03,USD,debit,purchase,Best Buy,retail,credit_card,pos,Charlotte,NC,US,True,,,completed,Purchase - Best Buy
+TXN-2026-S3-000101,2026-09-08T18:01:29Z,ACC-S3-0004,151.81,USD,debit,bill_payment,Electric Utility,utilities,ach,online_banking,Seattle,WA,US,False,,US,completed,Bill payment - Electric Utility
+TXN-2026-S3-000102,2026-09-09T00:45:06Z,ACC-S3-0009,109.88,USD,debit,purchase,Best Buy,retail,debit_card,ecommerce,Raleigh,NC,US,False,DEV-S3-0009-01,US,declined,Purchase - Best Buy
+TXN-2026-S3-000103,2026-09-09T21:34:41Z,ACC-S3-0003,36.21,USD,debit,purchase,Trader Joes,groceries,debit_card,mobile_app,Denver,CO,US,False,DEV-S3-0003-01,US,completed,Purchase - Trader Joes
+TXN-2026-S3-000104,2026-09-10T11:59:30Z,ACC-S3-0006,14.95,USD,debit,purchase,Audible,subscriptions,debit_card,ecommerce,Denver,CO,US,False,DEV-S3-0006-01,US,completed,Monthly subscription - Audible
+TXN-2026-S3-000105,2026-09-10T15:51:56Z,ACC-S3-0002,84.21,USD,debit,bill_payment,Electric Utility,utilities,ach,online_banking,Charlotte,NC,US,False,,US,completed,Bill payment - Electric Utility
+TXN-2026-S3-000106,2026-09-10T23:07:19Z,ACC-S3-0003,36.13,USD,debit,purchase,Trader Joes,groceries,credit_card,pos,Denver,CO,US,True,,,completed,Purchase - Trader Joes
+TXN-2026-S3-000107,2026-09-11T12:54:26Z,ACC-S3-0002,1777.97,USD,credit,salary,Workplace Payroll,income,ach,ach,Charlotte,NC,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000108,2026-09-11T14:21:06Z,ACC-S3-0003,22.66,USD,debit,purchase,Optical Center,health,credit_card,pos,Denver,CO,US,True,,,completed,Purchase - Optical Center
+TXN-2026-S3-000109,2026-09-11T14:56:46Z,ACC-S3-0009,4050.94,USD,credit,salary,Workplace Payroll,income,ach,ach,Raleigh,NC,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000110,2026-09-11T15:28:10Z,ACC-S3-0010,2085.50,USD,credit,salary,Employer Payroll,income,ach,ach,San Diego,CA,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000111,2026-09-11T15:55:47Z,ACC-S3-0006,3145.39,USD,credit,salary,Payroll Direct Deposit,income,ach,ach,Denver,CO,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000112,2026-09-11T16:35:34Z,ACC-S3-0004,2051.65,USD,credit,salary,Workplace Payroll,income,ach,ach,Seattle,WA,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000113,2026-09-11T17:57:31Z,ACC-S3-0006,88.13,USD,debit,bill_payment,Water Utility,utilities,ach,online_banking,Denver,CO,US,False,,US,completed,Bill payment - Water Utility
+TXN-2026-S3-000114,2026-09-11T20:48:00Z,ACC-S3-0004,14.63,USD,debit,purchase,DoorDash,restaurants,digital_wallet,mobile_app,San Francisco,CA,US,False,DEV-S3-0004-01,US,completed,Purchase - DoorDash
+TXN-2026-S3-000115,2026-09-12T00:57:18Z,ACC-S3-0006,14.14,USD,debit,purchase,Costco,groceries,debit_card,pos,Denver,CO,US,True,,,completed,Purchase - Costco
+TXN-2026-S3-000116,2026-09-12T11:11:35Z,ACC-S3-0002,18.80,USD,debit,purchase,CVS,retail,debit_card,ecommerce,Charlotte,NC,US,False,DEV-S3-0002-01,US,completed,Purchase - CVS
+TXN-2026-S3-000117,2026-09-12T15:13:22Z,ACC-S3-0004,50.00,USD,debit,purchase,Chevron,fuel,credit_card,pos,Seattle,WA,US,True,,,completed,Purchase - Chevron
+TXN-2026-S3-000118,2026-09-12T15:17:26Z,ACC-S3-0008,58.45,USD,debit,bill_payment,Water Utility,utilities,ach,online_banking,Raleigh,NC,US,False,,US,completed,Bill payment - Water Utility
+TXN-2026-S3-000119,2026-09-13T03:58:54Z,ACC-S3-0004,8.23,USD,debit,purchase,Chick-fil-A,restaurants,credit_card,pos,Seattle,WA,US,True,,,completed,Purchase - Chick-fil-A
+TXN-2026-S3-000120,2026-09-13T07:21:16Z,ACC-S3-0001,9.99,USD,debit,purchase,Hulu,subscriptions,credit_card,ecommerce,Minneapolis,MN,US,False,DEV-S3-0001-01,US,completed,Monthly subscription - Hulu
+TXN-2026-S3-000121,2026-09-13T14:52:48Z,ACC-S3-0002,95.46,USD,debit,bill_payment,Verizon Wireless,utilities,ach,online_banking,Charlotte,NC,US,False,,US,completed,Bill payment - Verizon Wireless
+TXN-2026-S3-000122,2026-09-13T16:20:56Z,ACC-S3-0002,84.28,USD,debit,bill_payment,T-Mobile,utilities,ach,online_banking,Charlotte,NC,US,False,,US,completed,Bill payment - T-Mobile
+TXN-2026-S3-000123,2026-09-13T17:15:56Z,ACC-S3-0009,37.30,USD,debit,purchase,Circle K,fuel,debit_card,pos,Raleigh,NC,US,True,,,completed,Purchase - Circle K
+TXN-2026-S3-000124,2026-09-15T01:21:28Z,ACC-S3-0004,35.87,USD,debit,purchase,CVS Pharmacy,health,debit_card,pos,Seattle,WA,US,True,,,completed,Purchase - CVS Pharmacy
+TXN-2026-S3-000125,2026-09-15T02:38:52Z,ACC-S3-0009,34.02,USD,debit,purchase,Harris Teeter,groceries,debit_card,pos,Raleigh,NC,US,True,,,completed,Purchase - Harris Teeter
+TXN-2026-S3-000126,2026-09-15T13:55:22Z,ACC-S3-0001,2795.05,USD,credit,salary,Workplace Payroll,income,ach,ach,Minneapolis,MN,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000127,2026-09-15T14:30:30Z,ACC-S3-0002,24.22,USD,debit,purchase,Chipotle,restaurants,digital_wallet,pos,Charlotte,NC,US,True,,,completed,Purchase - Chipotle
+TXN-2026-S3-000128,2026-09-15T16:57:20Z,ACC-S3-0001,121.73,USD,debit,bill_payment,Auto Insurance,utilities,ach,online_banking,Minneapolis,MN,US,False,,US,completed,Bill payment - Auto Insurance
+TXN-2026-S3-000129,2026-09-15T17:13:19Z,ACC-S3-0005,77.03,USD,debit,bill_payment,Water Utility,utilities,ach,online_banking,Denver,CO,US,False,,US,completed,Bill payment - Water Utility
+TXN-2026-S3-000130,2026-09-16T15:24:26Z,ACC-S3-0002,65.98,USD,debit,purchase,Walmart,retail,credit_card,ecommerce,Charlotte,NC,US,False,DEV-S3-0002-01,US,completed,Purchase - Walmart
+TXN-2026-S3-000131,2026-09-16T15:41:53Z,ACC-S3-0011,131.19,USD,debit,bill_payment,Verizon Wireless,utilities,ach,online_banking,Charlotte,NC,US,False,,US,completed,Bill payment - Verizon Wireless
+TXN-2026-S3-000132,2026-09-16T19:16:49Z,ACC-S3-0004,14.95,USD,debit,purchase,Audible,subscriptions,debit_card,ecommerce,Seattle,WA,US,False,DEV-S3-0004-01,US,completed,Monthly subscription - Audible
+TXN-2026-S3-000133,2026-09-17T12:00:55Z,ACC-S3-0008,2.99,USD,debit,purchase,Google One,subscriptions,debit_card,ecommerce,Mountain View,CA,US,False,DEV-S3-0008-01,US,completed,Monthly subscription - Google One
+TXN-2026-S3-000134,2026-09-17T12:53:53Z,ACC-S3-0010,14.95,USD,debit,purchase,Audible,subscriptions,debit_card,ecommerce,San Diego,CA,US,False,DEV-S3-0010-01,US,completed,Monthly subscription - Audible
+TXN-2026-S3-000135,2026-09-17T14:32:09Z,ACC-S3-0009,2.99,USD,debit,purchase,Google One,subscriptions,debit_card,ecommerce,Mountain View,CA,US,False,DEV-S3-0009-01,US,completed,Monthly subscription - Google One
+TXN-2026-S3-000136,2026-09-17T15:00:07Z,ACC-S3-0009,99.07,USD,debit,bill_payment,Duke Energy,utilities,ach,online_banking,Raleigh,NC,US,False,,US,completed,Bill payment - Duke Energy
+TXN-2026-S3-000137,2026-09-17T19:05:27Z,ACC-S3-0007,25.37,USD,debit,transfer_out,Venmo,transfer,bank_transfer,mobile_app,Raleigh,NC,US,False,DEV-S3-0007-01,US,completed,Person-to-person payment sent
+TXN-2026-S3-000138,2026-09-18T04:46:36Z,ACC-S3-0004,6.63,USD,debit,purchase,McDonalds,restaurants,credit_card,pos,Seattle,WA,US,True,,,completed,Purchase - McDonalds
+TXN-2026-S3-000139,2026-09-18T07:55:04Z,ACC-S3-0011,14.95,USD,debit,purchase,Audible,subscriptions,debit_card,ecommerce,Charlotte,NC,US,False,DEV-S3-0011-01,US,completed,Monthly subscription - Audible
+TXN-2026-S3-000140,2026-09-18T14:02:30Z,ACC-S3-0009,36.24,USD,debit,purchase,Walmart,groceries,debit_card,mobile_app,Raleigh,NC,US,False,DEV-S3-0009-01,US,completed,Purchase - Walmart
+TXN-2026-S3-000141,2026-09-18T14:22:01Z,ACC-S3-0007,1947.87,USD,credit,salary,Payroll Direct Deposit,income,ach,ach,Raleigh,NC,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000142,2026-09-18T14:41:48Z,ACC-S3-0003,2451.92,USD,credit,salary,Workplace Payroll,income,ach,ach,Denver,CO,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000143,2026-09-18T14:59:05Z,ACC-S3-0011,1616.97,USD,credit,salary,Workplace Payroll,income,ach,ach,Charlotte,NC,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000144,2026-09-18T16:21:02Z,ACC-S3-0004,15.30,USD,debit,purchase,Event Tickets,entertainment,debit_card,pos,Seattle,WA,US,True,,,completed,Purchase - Event Tickets
+TXN-2026-S3-000145,2026-09-18T17:24:08Z,ACC-S3-0002,37.07,USD,debit,purchase,Trader Joes,groceries,debit_card,pos,Charlotte,NC,US,True,,,completed,Purchase - Trader Joes
+TXN-2026-S3-000146,2026-09-18T18:49:07Z,ACC-S3-0002,46.42,USD,debit,purchase,AMC Theatres,entertainment,debit_card,pos,Charlotte,NC,US,True,,,completed,Purchase - AMC Theatres
+TXN-2026-S3-000147,2026-09-19T19:06:02Z,ACC-S3-0010,36.86,USD,debit,purchase,Best Buy,retail,credit_card,ecommerce,San Diego,CA,US,False,DEV-S3-0010-01,US,completed,Purchase - Best Buy
+TXN-2026-S3-000148,2026-09-19T19:39:55Z,ACC-S3-0001,30.73,USD,debit,purchase,Starbucks,restaurants,debit_card,pos,Minneapolis,MN,US,True,,,completed,Purchase - Starbucks
+TXN-2026-S3-000149,2026-09-19T20:18:49Z,ACC-S3-0004,31.39,USD,debit,purchase,Best Buy,retail,digital_wallet,pos,Seattle,WA,US,True,,,completed,Purchase - Best Buy
+TXN-2026-S3-000150,2026-09-19T21:34:16Z,ACC-S3-0010,75.35,USD,debit,purchase,Home Depot,retail,debit_card,pos,San Diego,CA,US,True,,,completed,Purchase - Home Depot
+TXN-2026-S3-000151,2026-09-20T04:23:35Z,ACC-S3-0007,13.99,USD,debit,purchase,YouTube Premium,subscriptions,credit_card,ecommerce,Mountain View,CA,US,False,DEV-S3-0007-01,US,completed,Monthly subscription - YouTube Premium
+TXN-2026-S3-000152,2026-09-20T06:32:35Z,ACC-S3-0005,9.99,USD,debit,purchase,Hulu,subscriptions,credit_card,ecommerce,Denver,CO,US,False,DEV-S3-0005-01,US,completed,Monthly subscription - Hulu
+TXN-2026-S3-000153,2026-09-20T15:04:00Z,ACC-S3-0009,159.73,USD,debit,bill_payment,Auto Insurance,utilities,ach,online_banking,Raleigh,NC,US,False,,US,completed,Bill payment - Auto Insurance
+TXN-2026-S3-000154,2026-09-20T15:49:57Z,ACC-S3-0008,98.52,USD,debit,bill_payment,AT&T,utilities,ach,online_banking,Raleigh,NC,US,False,,US,completed,Bill payment - AT&T
+TXN-2026-S3-000155,2026-09-20T21:12:42Z,ACC-S3-0011,43.58,USD,debit,purchase,Speedway,fuel,debit_card,mobile_app,Charlotte,NC,US,False,DEV-S3-0011-01,US,completed,Purchase - Speedway
+TXN-2026-S3-000156,2026-09-21T04:25:56Z,ACC-S3-0002,9.99,USD,debit,purchase,Apple Services,subscriptions,debit_card,ecommerce,Cupertino,CA,US,False,DEV-S3-0002-01,US,completed,Monthly subscription - Apple Services
+TXN-2026-S3-000157,2026-09-21T10:53:14Z,ACC-S3-0001,2.99,USD,debit,purchase,Google One,subscriptions,credit_card,ecommerce,Mountain View,CA,US,False,DEV-S3-0001-01,US,completed,Monthly subscription - Google One
+TXN-2026-S3-000158,2026-09-21T23:14:30Z,ACC-S3-0008,40.83,USD,debit,purchase,Publix,groceries,debit_card,pos,Raleigh,NC,US,True,,,completed,Purchase - Publix
+TXN-2026-S3-000159,2026-09-22T01:52:42Z,ACC-S3-0003,42.99,USD,debit,purchase,City Parking,transport,debit_card,mobile_app,Denver,CO,US,False,DEV-S3-0003-01,US,completed,Purchase - City Parking
+TXN-2026-S3-000160,2026-09-22T14:25:37Z,ACC-S3-0008,13.99,USD,debit,purchase,YouTube Premium,subscriptions,debit_card,ecommerce,Mountain View,CA,US,False,DEV-S3-0008-01,US,completed,Monthly subscription - YouTube Premium
+TXN-2026-S3-000161,2026-09-23T16:12:10Z,ACC-S3-0005,132.59,USD,debit,bill_payment,Electric Utility,utilities,ach,online_banking,Denver,CO,US,False,,US,completed,Bill payment - Electric Utility
+TXN-2026-S3-000162,2026-09-23T16:33:46Z,ACC-S3-0001,160.00,USD,debit,cash_withdrawal,Bank ATM,cash,debit_card,atm,Minneapolis,MN,US,True,,,completed,ATM cash withdrawal
+TXN-2026-S3-000163,2026-09-23T17:06:59Z,ACC-S3-0006,153.15,USD,debit,bill_payment,Electric Utility,utilities,ach,online_banking,Denver,CO,US,False,,US,completed,Bill payment - Electric Utility
+TXN-2026-S3-000164,2026-09-24T12:33:48Z,ACC-S3-0008,20.61,USD,debit,purchase,Bowling Center,entertainment,digital_wallet,pos,Raleigh,NC,US,True,,,completed,Purchase - Bowling Center
+TXN-2026-S3-000165,2026-09-24T15:28:28Z,ACC-S3-0007,90.33,USD,debit,bill_payment,Auto Insurance,utilities,ach,online_banking,Raleigh,NC,US,False,,US,completed,Bill payment - Auto Insurance
+TXN-2026-S3-000166,2026-09-24T17:10:40Z,ACC-S3-0008,28.83,USD,debit,purchase,Walmart,retail,credit_card,pos,Raleigh,NC,US,True,,,completed,Purchase - Walmart
+TXN-2026-S3-000167,2026-09-24T17:19:35Z,ACC-S3-0006,120.35,USD,debit,bill_payment,Verizon Wireless,utilities,ach,online_banking,Denver,CO,US,False,,US,completed,Bill payment - Verizon Wireless
+TXN-2026-S3-000168,2026-09-24T17:43:34Z,ACC-S3-0002,34.69,USD,debit,purchase,TJ Maxx,retail,credit_card,ecommerce,Charlotte,NC,US,False,DEV-S3-0002-01,US,completed,Purchase - TJ Maxx
+TXN-2026-S3-000169,2026-09-25T13:09:56Z,ACC-S3-0009,3947.45,USD,credit,salary,Workplace Payroll,income,ach,ach,Raleigh,NC,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000170,2026-09-25T13:29:40Z,ACC-S3-0008,2927.56,USD,credit,salary,Employer Payroll,income,ach,ach,Raleigh,NC,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000171,2026-09-25T13:29:57Z,ACC-S3-0002,1877.43,USD,credit,salary,Workplace Payroll,income,ach,ach,Charlotte,NC,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000172,2026-09-25T14:05:52Z,ACC-S3-0001,8.95,USD,debit,purchase,Urgent Care,health,debit_card,pos,Minneapolis,MN,US,True,,,completed,Purchase - Urgent Care
+TXN-2026-S3-000173,2026-09-25T15:33:11Z,ACC-S3-0006,2973.20,USD,credit,salary,Payroll Direct Deposit,income,ach,ach,Denver,CO,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000174,2026-09-25T16:10:09Z,ACC-S3-0003,11.99,USD,debit,purchase,Spotify,subscriptions,credit_card,ecommerce,New York,NY,US,False,DEV-S3-0003-01,US,completed,Monthly subscription - Spotify
+TXN-2026-S3-000175,2026-09-25T16:59:11Z,ACC-S3-0004,2276.09,USD,credit,salary,Workplace Payroll,income,ach,ach,Seattle,WA,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000176,2026-09-25T17:17:36Z,ACC-S3-0010,1894.95,USD,credit,salary,Employer Payroll,income,ach,ach,San Diego,CA,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000177,2026-09-25T19:06:33Z,ACC-S3-0010,68.72,USD,debit,bill_payment,Verizon Wireless,utilities,ach,online_banking,San Diego,CA,US,False,,US,completed,Bill payment - Verizon Wireless
+TXN-2026-S3-000178,2026-09-25T22:03:53Z,ACC-S3-0006,62.20,USD,debit,purchase,Walmart,retail,credit_card,pos,Denver,CO,US,True,,,completed,Purchase - Walmart
+TXN-2026-S3-000179,2026-09-26T16:58:33Z,ACC-S3-0006,9.99,USD,debit,purchase,Microsoft 365,subscriptions,debit_card,ecommerce,Redmond,WA,US,False,DEV-S3-0006-01,US,completed,Monthly subscription - Microsoft 365
+TXN-2026-S3-000180,2026-09-26T18:04:27Z,ACC-S3-0004,90.12,USD,debit,bill_payment,T-Mobile,utilities,ach,online_banking,Seattle,WA,US,False,,US,completed,Bill payment - T-Mobile
+TXN-2026-S3-000181,2026-09-26T18:34:03Z,ACC-S3-0004,64.54,USD,debit,bill_payment,Spectrum,utilities,ach,online_banking,Seattle,WA,US,False,,US,completed,Bill payment - Spectrum
+TXN-2026-S3-000182,2026-09-26T20:43:35Z,ACC-S3-0005,26.06,USD,debit,purchase,Amtrak,transport,debit_card,pos,Denver,CO,US,True,,,completed,Purchase - Amtrak
+TXN-2026-S3-000183,2026-09-26T21:56:20Z,ACC-S3-0009,9.19,USD,debit,purchase,Chick-fil-A,restaurants,debit_card,pos,Raleigh,NC,US,True,,,completed,Purchase - Chick-fil-A
+TXN-2026-S3-000184,2026-09-27T09:30:28Z,ACC-S3-0004,15.99,USD,debit,purchase,Disney+,subscriptions,debit_card,ecommerce,Seattle,WA,US,False,DEV-S3-0004-01,US,completed,Monthly subscription - Disney+
+TXN-2026-S3-000185,2026-09-27T22:15:02Z,ACC-S3-0007,31.39,USD,debit,purchase,Amazon Marketplace,retail,digital_wallet,ecommerce,Seattle,WA,US,False,DEV-S3-0007-01,US,completed,Purchase - Amazon Marketplace
+TXN-2026-S3-000186,2026-09-27T22:32:14Z,ACC-S3-0004,49.11,USD,debit,purchase,Etsy,retail,debit_card,ecommerce,Brooklyn,NY,US,False,DEV-S3-0004-01,US,completed,Purchase - Etsy
+TXN-2026-S3-000187,2026-09-28T00:14:48Z,ACC-S3-0004,102.94,USD,debit,purchase,Walmart,groceries,debit_card,pos,Seattle,WA,US,True,,,completed,Purchase - Walmart
+TXN-2026-S3-000188,2026-09-29T18:39:12Z,ACC-S3-0010,21.61,USD,debit,purchase,Campus Store,education,digital_wallet,ecommerce,San Diego,CA,US,False,DEV-S3-0010-01,US,completed,Purchase - Campus Store
+TXN-2026-S3-000189,2026-09-30T14:45:30Z,ACC-S3-0002,81.34,USD,debit,purchase,Marshalls,retail,credit_card,pos,Charlotte,NC,US,True,,,completed,Purchase - Marshalls
+TXN-2026-S3-000190,2026-09-30T15:48:50Z,ACC-S3-0009,66.84,USD,debit,purchase,TJ Maxx,retail,credit_card,pos,Raleigh,NC,US,True,,,completed,Purchase - TJ Maxx
+TXN-2026-S3-000191,2026-09-30T18:23:43Z,ACC-S3-0006,90.80,USD,debit,purchase,Exxon,fuel,digital_wallet,pos,Denver,CO,US,True,,,completed,Purchase - Exxon
+TXN-2026-S3-000192,2026-10-01T09:45:27Z,ACC-S3-0002,11.99,USD,debit,purchase,Spotify,subscriptions,debit_card,ecommerce,New York,NY,US,False,DEV-S3-0002-01,US,completed,Monthly subscription - Spotify
+TXN-2026-S3-000193,2026-10-01T13:32:51Z,ACC-S3-0011,1377.89,USD,debit,bill_payment,Property Management,housing,ach,online_banking,Charlotte,NC,US,False,,US,completed,Monthly housing payment
+TXN-2026-S3-000194,2026-10-01T13:51:43Z,ACC-S3-0009,1244.02,USD,debit,bill_payment,Property Management,housing,ach,online_banking,Raleigh,NC,US,False,,US,completed,Monthly housing payment
+TXN-2026-S3-000195,2026-10-01T14:08:18Z,ACC-S3-0003,1851.51,USD,debit,bill_payment,Property Management,housing,ach,online_banking,Denver,CO,US,False,,US,completed,Monthly housing payment
+TXN-2026-S3-000196,2026-10-01T14:44:01Z,ACC-S3-0001,2846.02,USD,credit,salary,Workplace Payroll,income,ach,ach,Minneapolis,MN,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000197,2026-10-01T22:09:28Z,ACC-S3-0007,6.81,USD,debit,purchase,Five Guys,restaurants,credit_card,pos,Raleigh,NC,US,True,,,completed,Purchase - Five Guys
+TXN-2026-S3-000198,2026-10-02T13:45:52Z,ACC-S3-0011,1714.88,USD,credit,salary,Workplace Payroll,income,ach,ach,Charlotte,NC,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000199,2026-10-02T14:00:20Z,ACC-S3-0007,1886.30,USD,credit,salary,Payroll Direct Deposit,income,ach,ach,Raleigh,NC,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000200,2026-10-02T14:03:20Z,ACC-S3-0003,2345.61,USD,credit,salary,Workplace Payroll,income,ach,ach,Denver,CO,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000201,2026-10-02T14:14:16Z,ACC-S3-0005,3789.73,USD,credit,salary,Employer Payroll,income,ach,ach,Denver,CO,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000202,2026-10-02T18:54:17Z,ACC-S3-0009,34.26,USD,debit,purchase,Nike,retail,credit_card,pos,Raleigh,NC,US,True,,,completed,Purchase - Nike
+TXN-2026-S3-000203,2026-10-02T19:00:34Z,ACC-S3-0005,11.79,USD,debit,purchase,Five Guys,restaurants,credit_card,pos,Denver,CO,US,True,,,completed,Purchase - Five Guys
+TXN-2026-S3-000204,2026-10-03T02:02:40Z,ACC-S3-0004,36.72,USD,debit,purchase,McDonalds,restaurants,debit_card,pos,Seattle,WA,US,True,,,completed,Purchase - McDonalds
+TXN-2026-S3-000205,2026-10-03T03:35:13Z,ACC-S3-0003,155.57,USD,debit,purchase,Walmart,retail,digital_wallet,pos,Denver,CO,US,True,,,completed,Purchase - Walmart
+TXN-2026-S3-000206,2026-10-03T13:57:14Z,ACC-S3-0007,994.19,USD,debit,bill_payment,Property Management,housing,ach,online_banking,Raleigh,NC,US,False,,US,completed,Monthly housing payment
+TXN-2026-S3-000207,2026-10-03T14:06:43Z,ACC-S3-0003,27.74,USD,debit,purchase,Target,groceries,credit_card,pos,Denver,CO,US,True,,,completed,Purchase - Target
+TXN-2026-S3-000208,2026-10-03T14:34:18Z,ACC-S3-0006,2057.85,USD,debit,bill_payment,Mortgage Servicing,housing,ach,online_banking,Denver,CO,US,False,,US,completed,Monthly housing payment
+TXN-2026-S3-000209,2026-10-03T14:39:04Z,ACC-S3-0007,7.55,USD,debit,purchase,Aldi,groceries,credit_card,pos,Raleigh,NC,US,True,,,completed,Purchase - Aldi
+TXN-2026-S3-000210,2026-10-03T16:35:27Z,ACC-S3-0004,1860.69,USD,debit,bill_payment,Mortgage Servicing,housing,ach,online_banking,Seattle,WA,US,False,,US,completed,Monthly housing payment
+TXN-2026-S3-000211,2026-10-03T20:41:25Z,ACC-S3-0004,110.42,USD,debit,purchase,University Bookstore,education,credit_card,ecommerce,Seattle,WA,US,False,DEV-S3-0004-01,US,completed,Purchase - University Bookstore
+TXN-2026-S3-000212,2026-10-04T00:51:32Z,ACC-S3-0004,94.67,USD,debit,purchase,TJ Maxx,retail,credit_card,ecommerce,Seattle,WA,US,False,DEV-S3-0004-01,US,completed,Purchase - TJ Maxx
+TXN-2026-S3-000213,2026-10-04T01:14:25Z,ACC-S3-0009,74.03,USD,debit,purchase,Whole Foods Market,groceries,credit_card,pos,Raleigh,NC,US,True,,,completed,Purchase - Whole Foods Market
+TXN-2026-S3-000214,2026-10-04T04:23:16Z,ACC-S3-0001,11.11,USD,debit,purchase,TJ Maxx,retail,credit_card,ecommerce,Minneapolis,MN,US,False,DEV-S3-0001-01,US,completed,Purchase - TJ Maxx
+TXN-2026-S3-000215,2026-10-04T16:42:45Z,ACC-S3-0006,30.27,USD,debit,purchase,Amazon Marketplace,retail,credit_card,ecommerce,Seattle,WA,US,False,DEV-S3-0006-01,US,completed,Purchase - Amazon Marketplace
+TXN-2026-S3-000216,2026-10-05T04:19:56Z,ACC-S3-0009,11.99,USD,debit,purchase,Spotify,subscriptions,debit_card,ecommerce,New York,NY,US,False,DEV-S3-0009-01,US,completed,Monthly subscription - Spotify
+TXN-2026-S3-000217,2026-10-05T13:03:50Z,ACC-S3-0002,1202.68,USD,debit,bill_payment,Property Management,housing,ach,online_banking,Charlotte,NC,US,False,,US,completed,Monthly housing payment
+TXN-2026-S3-000218,2026-10-05T14:06:08Z,ACC-S3-0005,2383.48,USD,debit,bill_payment,Mortgage Servicing,housing,ach,online_banking,Denver,CO,US,False,,US,completed,Monthly housing payment
+TXN-2026-S3-000219,2026-10-05T14:58:05Z,ACC-S3-0008,2497.80,USD,debit,bill_payment,Property Management,housing,ach,online_banking,Raleigh,NC,US,False,,US,completed,Monthly housing payment
+TXN-2026-S3-000220,2026-10-05T15:09:54Z,ACC-S3-0007,83.22,USD,debit,bill_payment,Spectrum,utilities,ach,online_banking,Raleigh,NC,US,False,,US,completed,Bill payment - Spectrum
+TXN-2026-S3-000221,2026-10-05T16:58:36Z,ACC-S3-0010,1011.30,USD,debit,bill_payment,Mortgage Servicing,housing,ach,online_banking,San Diego,CA,US,False,,US,completed,Monthly housing payment
+TXN-2026-S3-000222,2026-10-05T17:01:08Z,ACC-S3-0001,15.99,USD,debit,purchase,Disney+,subscriptions,credit_card,ecommerce,Minneapolis,MN,US,False,DEV-S3-0001-01,US,completed,Monthly subscription - Disney+
+TXN-2026-S3-000223,2026-10-05T18:58:54Z,ACC-S3-0001,37.81,USD,debit,purchase,BP,fuel,credit_card,ecommerce,Minneapolis,MN,US,False,DEV-S3-0001-01,US,completed,Purchase - BP
+TXN-2026-S3-000224,2026-10-06T02:14:30Z,ACC-S3-0009,37.25,USD,debit,purchase,Whole Foods Market,groceries,digital_wallet,pos,Raleigh,NC,US,True,,,completed,Purchase - Whole Foods Market
+TXN-2026-S3-000225,2026-10-06T03:32:18Z,ACC-S3-0007,8.88,USD,debit,purchase,Online Course,education,debit_card,ecommerce,Raleigh,NC,US,False,DEV-S3-0007-01,US,completed,Purchase - Online Course
+TXN-2026-S3-000226,2026-10-06T15:24:40Z,ACC-S3-0011,69.03,USD,debit,bill_payment,AT&T,utilities,ach,online_banking,Charlotte,NC,US,False,,US,completed,Bill payment - AT&T
+TXN-2026-S3-000227,2026-10-06T18:40:19Z,ACC-S3-0003,74.31,USD,debit,bill_payment,T-Mobile,utilities,ach,online_banking,Denver,CO,US,False,,US,completed,Bill payment - T-Mobile
+TXN-2026-S3-000228,2026-10-07T03:18:07Z,ACC-S3-0004,17.68,USD,debit,purchase,Speedway,fuel,debit_card,pos,Seattle,WA,US,True,,,completed,Purchase - Speedway
+TXN-2026-S3-000229,2026-10-07T15:44:37Z,ACC-S3-0009,64.00,USD,debit,purchase,Chipotle,restaurants,credit_card,pos,Raleigh,NC,US,True,,,completed,Purchase - Chipotle
+TXN-2026-S3-000230,2026-10-07T17:25:41Z,ACC-S3-0003,97.36,USD,debit,bill_payment,Spectrum,utilities,ach,online_banking,Denver,CO,US,False,,US,completed,Bill payment - Spectrum
+TXN-2026-S3-000231,2026-10-08T01:10:14Z,ACC-S3-0001,5.77,USD,debit,purchase,Best Buy,retail,credit_card,pos,Minneapolis,MN,US,True,,,completed,Purchase - Best Buy
+TXN-2026-S3-000232,2026-10-08T17:37:26Z,ACC-S3-0004,138.17,USD,debit,bill_payment,Electric Utility,utilities,ach,online_banking,Seattle,WA,US,False,,US,completed,Bill payment - Electric Utility
+TXN-2026-S3-000233,2026-10-09T13:04:42Z,ACC-S3-0009,3846.97,USD,credit,salary,Workplace Payroll,income,ach,ach,Raleigh,NC,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000234,2026-10-09T14:24:38Z,ACC-S3-0002,1850.51,USD,credit,salary,Workplace Payroll,income,ach,ach,Charlotte,NC,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000235,2026-10-09T15:07:09Z,ACC-S3-0010,1976.29,USD,credit,salary,Employer Payroll,income,ach,ach,San Diego,CA,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000236,2026-10-09T16:40:41Z,ACC-S3-0006,2933.64,USD,credit,salary,Payroll Direct Deposit,income,ach,ach,Denver,CO,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000237,2026-10-09T16:52:59Z,ACC-S3-0004,2144.39,USD,credit,salary,Workplace Payroll,income,ach,ach,Seattle,WA,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000238,2026-10-09T22:53:13Z,ACC-S3-0001,127.00,USD,debit,purchase,Target,groceries,digital_wallet,pos,Minneapolis,MN,US,True,,,completed,Purchase - Target
+TXN-2026-S3-000239,2026-10-10T01:25:30Z,ACC-S3-0007,98.27,USD,debit,purchase,Food Lion,groceries,credit_card,pos,Raleigh,NC,US,True,,,completed,Purchase - Food Lion
+TXN-2026-S3-000240,2026-10-10T11:14:27Z,ACC-S3-0006,14.95,USD,debit,purchase,Audible,subscriptions,debit_card,ecommerce,Denver,CO,US,False,DEV-S3-0006-01,US,completed,Monthly subscription - Audible
+TXN-2026-S3-000241,2026-10-10T15:47:48Z,ACC-S3-0002,125.37,USD,debit,bill_payment,Electric Utility,utilities,ach,online_banking,Charlotte,NC,US,False,,US,completed,Bill payment - Electric Utility
+TXN-2026-S3-000242,2026-10-11T01:29:58Z,ACC-S3-0010,89.26,USD,debit,purchase,Trader Joes,groceries,debit_card,pos,San Diego,CA,US,True,,,completed,Purchase - Trader Joes
+TXN-2026-S3-000243,2026-10-11T02:56:58Z,ACC-S3-0008,66.55,USD,debit,purchase,Lowes,retail,debit_card,ecommerce,Raleigh,NC,US,False,DEV-S3-0008-01,US,completed,Purchase - Lowes
+TXN-2026-S3-000244,2026-10-11T12:32:11Z,ACC-S3-0002,100.00,USD,debit,cash_withdrawal,Bank ATM,cash,debit_card,atm,Charlotte,NC,US,True,,,completed,ATM cash withdrawal
+TXN-2026-S3-000245,2026-10-11T17:07:38Z,ACC-S3-0006,50.19,USD,debit,bill_payment,Water Utility,utilities,ach,online_banking,Denver,CO,US,False,,US,completed,Bill payment - Water Utility
+TXN-2026-S3-000246,2026-10-12T05:16:34Z,ACC-S3-0006,22.70,USD,debit,purchase,Aldi,groceries,credit_card,pos,Denver,CO,US,True,,,completed,Purchase - Aldi
+TXN-2026-S3-000247,2026-10-12T15:31:39Z,ACC-S3-0008,74.44,USD,debit,bill_payment,Water Utility,utilities,ach,online_banking,Raleigh,NC,US,False,,US,completed,Bill payment - Water Utility
+TXN-2026-S3-000248,2026-10-13T06:01:44Z,ACC-S3-0001,9.99,USD,debit,purchase,Hulu,subscriptions,credit_card,ecommerce,Minneapolis,MN,US,False,DEV-S3-0001-01,US,completed,Monthly subscription - Hulu
+TXN-2026-S3-000249,2026-10-13T13:25:33Z,ACC-S3-0007,200.34,USD,debit,purchase,United Airlines,travel,debit_card,pos,Raleigh,NC,US,True,,,completed,Travel purchase - United Airlines
+TXN-2026-S3-000250,2026-10-13T15:18:26Z,ACC-S3-0002,117.26,USD,debit,bill_payment,Verizon Wireless,utilities,ach,online_banking,Charlotte,NC,US,False,,US,completed,Bill payment - Verizon Wireless
+TXN-2026-S3-000251,2026-10-13T15:29:17Z,ACC-S3-0002,61.19,USD,debit,bill_payment,T-Mobile,utilities,ach,online_banking,Charlotte,NC,US,False,,US,completed,Bill payment - T-Mobile
+TXN-2026-S3-000252,2026-10-14T19:49:26Z,ACC-S3-0008,39.84,USD,debit,purchase,Publix,groceries,credit_card,pos,Raleigh,NC,US,True,,,completed,Purchase - Publix
+TXN-2026-S3-000253,2026-10-15T14:49:24Z,ACC-S3-0001,2678.46,USD,credit,salary,Workplace Payroll,income,ach,ach,Minneapolis,MN,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000254,2026-10-15T15:04:36Z,ACC-S3-0001,130.05,USD,debit,bill_payment,Auto Insurance,utilities,ach,online_banking,Minneapolis,MN,US,False,,US,completed,Bill payment - Auto Insurance
+TXN-2026-S3-000255,2026-10-15T17:49:42Z,ACC-S3-0005,61.46,USD,debit,bill_payment,Water Utility,utilities,ach,online_banking,Denver,CO,US,False,,US,completed,Bill payment - Water Utility
+TXN-2026-S3-000256,2026-10-15T18:19:27Z,ACC-S3-0007,31.61,USD,debit,purchase,Aldi,groceries,debit_card,pos,Austin,TX,US,True,,,completed,Purchase - Aldi
+TXN-2026-S3-000257,2026-10-15T22:21:58Z,ACC-S3-0001,15.99,USD,credit,refund,Disney+,subscriptions,credit_card,ecommerce,Minneapolis,MN,US,False,DEV-S3-0001-01,US,completed,Merchant refund
+TXN-2026-S3-000258,2026-10-16T01:41:24Z,ACC-S3-0004,25.11,USD,debit,purchase,IKEA,retail,debit_card,ecommerce,Seattle,WA,US,False,DEV-S3-0004-01,US,completed,Purchase - IKEA
+TXN-2026-S3-000259,2026-10-16T12:38:30Z,ACC-S3-0004,14.95,USD,debit,purchase,Audible,subscriptions,debit_card,ecommerce,Seattle,WA,US,False,DEV-S3-0004-01,US,completed,Monthly subscription - Audible
+TXN-2026-S3-000260,2026-10-16T14:09:50Z,ACC-S3-0007,1905.29,USD,credit,salary,Payroll Direct Deposit,income,ach,ach,Raleigh,NC,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000261,2026-10-16T14:17:09Z,ACC-S3-0003,2441.76,USD,credit,salary,Workplace Payroll,income,ach,ach,Denver,CO,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000262,2026-10-16T14:56:15Z,ACC-S3-0011,1722.73,USD,credit,salary,Workplace Payroll,income,ach,ach,Charlotte,NC,US,False,,,completed,Direct deposit - payroll
+TXN-2026-S3-000263,2026-10-16T16:18:23Z,ACC-S3-0011,86.71,USD,debit,bill_payment,Verizon Wireless,utilities,ach,online_banking,Charlotte,NC,US,False,,US,completed,Bill payment - Verizon Wireless
+TXN-2026-S3-000264,2026-10-16T21:11:29Z,ACC-S3-0002,126.43,USD,debit,purchase,IKEA,retail,debit_card,pos,Charlotte,NC,US,True,,,completed,Purchase - IKEA
+TXN-2026-S3-000265,2026-10-17T02:21:34Z,ACC-S3-0007,6.16,USD,debit,purchase,DoorDash,restaurants,credit_card,mobile_app,San Francisco,CA,US,False,DEV-S3-0007-01,US,completed,Purchase - DoorDash
+TXN-2026-S3-000266,2026-10-17T07:33:24Z,ACC-S3-0008,2.99,USD,debit,purchase,Google One,subscriptions,debit_card,ecommerce,Mountain View,CA,US,False,DEV-S3-0008-01,US,completed,Monthly subscription - Google One
+TXN-2026-S3-000267,2026-10-17T09:17:51Z,ACC-S3-0009,2.99,USD,debit,purchase,Google One,subscriptions,debit_card,ecommerce,Mountain View,CA,US,False,DEV-S3-0009-01,US,completed,Monthly subscription - Google One
+TXN-2026-S3-000268,2026-10-17T13:49:54Z,ACC-S3-0011,24.43,USD,debit,purchase,Walmart,groceries,digital_wallet,mobile_app,Charlotte,NC,US,False,DEV-S3-0011-01,US,completed,Purchase - Walmart
+TXN-2026-S3-000269,2026-10-17T15:42:47Z,ACC-S3-0009,95.67,USD,debit,bill_payment,Duke Energy,utilities,ach,online_banking,Raleigh,NC,US,False,,US,completed,Bill payment - Duke Energy
+TXN-2026-S3-000270,2026-10-17T19:45:24Z,ACC-S3-0010,14.95,USD,debit,purchase,Audible,subscriptions,debit_card,ecommerce,San Diego,CA,US,False,DEV-S3-0010-01,US,completed,Monthly subscription - Audible
+TXN-2026-S3-000271,2026-10-17T20:43:27Z,ACC-S3-0008,305.76,USD,debit,purchase,Marriott Hotels,travel,debit_card,pos,Raleigh,NC,US,True,,,completed,Travel purchase - Marriott Hotels
+TXN-2026-S3-000272,2026-10-17T21:17:01Z,ACC-S3-0009,54.84,USD,debit,purchase,Whole Foods Market,groceries,credit_card,pos,Raleigh,NC,US,True,,,completed,Purchase - Whole Foods Market
+TXN-2026-S3-000273,2026-10-18T11:20:32Z,ACC-S3-0008,37.81,USD,debit,purchase,QuikTrip,fuel,debit_card,pos,Raleigh,NC,US,True,,,pending,Purchase - QuikTrip
+TXN-2026-S3-000274,2026-10-18T14:36:34Z,ACC-S3-0011,14.95,USD,debit,purchase,Audible,subscriptions,debit_card,ecommerce,Charlotte,NC,US,False,DEV-S3-0011-01,US,completed,Monthly subscription - Audible
+TXN-2026-S3-000275,2026-10-18T17:10:45Z,ACC-S3-0008,21.29,USD,debit,purchase,City Parking,transport,debit_card,mobile_app,Raleigh,NC,US,False,DEV-S3-0008-01,US,completed,Purchase - City Parking
+TXN-2026-S3-000276,2026-10-18T19:23:45Z,ACC-S3-0005,35.75,USD,debit,purchase,Lowes,retail,digital_wallet,pos,Denver,CO,US,True,,,completed,Purchase - Lowes
+TXN-2026-S3-000277,2026-10-18T20:15:43Z,ACC-S3-0007,50.45,USD,debit,purchase,Publix,groceries,credit_card,pos,Austin,TX,US,True,,,completed,Purchase - Publix
+TXN-2026-S3-000278,2026-10-19T00:21:56Z,ACC-S3-0004,24.76,USD,debit,purchase,Lyft,transport,credit_card,mobile_app,San Francisco,CA,US,False,DEV-S3-0004-01,US,completed,Purchase - Lyft
+TXN-2026-S3-000279,2026-10-19T00:42:36Z,ACC-S3-0008,29.91,USD,debit,purchase,QuikTrip,fuel,credit_card,pos,Raleigh,NC,US,True,,,completed,Purchase - QuikTrip
+TXN-2026-S3-000280,2026-10-20T05:32:49Z,ACC-S3-0007,13.99,USD,debit,purchase,YouTube Premium,subscriptions,credit_card,ecommerce,Mountain View,CA,US,False,DEV-S3-0007-01,US,completed,Monthly subscription - YouTube Premium
+TXN-2026-S3-000281,2026-10-20T14:42:55Z,ACC-S3-0008,102.22,USD,debit,bill_payment,AT&T,utilities,ach,online_banking,Raleigh,NC,US,False,,US,completed,Bill payment - AT&T
+TXN-2026-S3-000282,2026-10-20T15:44:20Z,ACC-S3-0007,212.33,USD,debit,purchase,Food Lion,groceries,credit_card,pos,Austin,TX,US,True,,,completed,Purchase - Food Lion
+TXN-2026-S3-000283,2026-10-20T16:04:03Z,ACC-S3-0005,9.99,USD,debit,purchase,Hulu,subscriptions,credit_card,ecommerce,Denver,CO,US,False,DEV-S3-0005-01,US,completed,Monthly subscription - Hulu
+TXN-2026-S3-000284,2026-10-20T16:46:37Z,ACC-S3-0009,181.16,USD,debit,bill_payment,Auto Insurance,utilities,ach,online_banking,Raleigh,NC,US,False,,US,completed,Bill payment - Auto Insurance
+TXN-2026-S3-000285,2026-10-20T20:02:08Z,ACC-S3-0010,3.38,USD,debit,purchase,Transit Pass,transport,credit_card,mobile_app,San Diego,CA,US,False,DEV-S3-0010-01,US,completed,Purchase - Transit Pass

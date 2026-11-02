@@ -1,0 +1,32 @@
+[
+  {
+    "alert": false,
+    "eventId": "CSV_002",
+    "fraud": false,
+    "sourceRow": 7016924
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_003",
+    "fraud": false,
+    "sourceRow": 18537042
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_004",
+    "fraud": false,
+    "sourceRow": 8790116
+  },
+  {
+    "alert": false,
+    "eventId": "CSV_005",
+    "fraud": false,
+    "sourceRow": 8790117
+  },
+  {
+    "alert": true,
+    "eventId": "CSV_006",
+    "fraud": true,
+    "sourceRow": 15435793
+  }
+]

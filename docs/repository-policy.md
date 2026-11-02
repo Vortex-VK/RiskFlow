@@ -1,0 +1,63 @@
+# Public repository contents
+
+The public project contains application code, dependency locks, API contracts,
+inference bundles, synthetic demo/test fixtures, sample provenance and compact
+integration receipts. A public checkout can serve and test the frozen engine;
+it does not reproduce training or the private research process.
+
+## Local-only material
+
+`.gitignore` excludes raw datasets, uploads, database files, research projects,
+notebooks, training outputs, internal plans, historical research reports,
+maintenance inventories, screenshots, test recordings, caches and credentials.
+Current product documentation is explicitly allowed under `docs/`; new internal
+reports there stay ignored by default. Docker excludes local material as well.
+
+The internal plans now live under `research/plans/` as `engine-roadmap.md`,
+`original-project-specification.md` and `model-implementation.md`. Packaging and
+research-parity tools live under `research/tools/`. These are local files and
+are not dependencies of the public checkout.
+
+CSV files are ignored except for reviewed synthetic fixtures, the browser's
+sample asset and downloadable samples. These explicit exceptions support tests
+and the Samples interface; never put private uploads in those directories.
+The IBM walkthrough and compatibility fixtures are curated subsets of synthetic
+TabFormer transactions and include their existing license notice. Five authored
+synthetic scenarios are CC0, with a deterministic generator and recorded selection.
+Test-only IBM CSVs and lineage live under `fixtures/samples/ibm/`; only current
+demonstrations are shipped under `frontend/public/samples/`.
+Original source datasets are excluded.
+
+Versioned weights under `backend/model_artifacts/` are deliberate public assets.
+The older bundles support historical explanations. Their filenames, manifests
+and numerical feature files are hash-sensitive and must not be renamed for
+cosmetic consistency. No independent fraud-validation claim follows from their
+inclusion; see the [model integration notes](stack-d5-integration/README.md).
+
+## Publication checks and history boundaries
+
+From the repository root, using Python 3.13:
+
+```powershell
+python scripts/check_public_repository.py
+python scripts/check_public_repository.py --export .cache/public-repository
+```
+
+The check rejects ignored files still tracked by Git, files over 50 MiB,
+symlinks, common credential patterns and local home-directory paths. It reports
+filenames without printing matched values. This is a limited automated check,
+not a complete secrets, personal-data or licensing audit.
+
+The export copies checked working-tree contents, including intended uncommitted
+changes, into a new directory. It omits `.git`, ignored local files and files
+deleted from the working tree. It never overwrites an existing export.
+
+The public repository starts from a reviewed source snapshot with fresh Git
+history. Original development history is retained in a separate private archive.
+Do not merge or push archive branches or local assistant checkpoints into this
+public repository: they can reintroduce internal research and maintenance files.
+
+Keep credentials, private uploads and research local even when working in this
+checkout. The checker reviews current files; it does not sanitize Git history or
+publish the repository. Removing a file in a later commit does not remove its
+earlier versions.

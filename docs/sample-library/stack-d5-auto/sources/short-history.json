@@ -1,0 +1,302 @@
+[
+  {
+    "eventId": "DEMO-50-00001",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 2
+  },
+  {
+    "eventId": "DEMO-50-00002",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 3
+  },
+  {
+    "eventId": "DEMO-50-00003",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 4
+  },
+  {
+    "eventId": "DEMO-50-00004",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 5
+  },
+  {
+    "eventId": "DEMO-50-00005",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 6
+  },
+  {
+    "eventId": "DEMO-50-00006",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 7
+  },
+  {
+    "eventId": "DEMO-50-00007",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 8
+  },
+  {
+    "eventId": "DEMO-50-00008",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 9
+  },
+  {
+    "eventId": "DEMO-50-00009",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 10
+  },
+  {
+    "eventId": "DEMO-50-00010",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 11
+  },
+  {
+    "eventId": "DEMO-50-00011",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 12
+  },
+  {
+    "eventId": "DEMO-50-00012",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 13
+  },
+  {
+    "eventId": "DEMO-50-00013",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 14
+  },
+  {
+    "eventId": "DEMO-50-00014",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 15
+  },
+  {
+    "eventId": "DEMO-50-00015",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 16
+  },
+  {
+    "eventId": "DEMO-50-00016",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 17
+  },
+  {
+    "eventId": "DEMO-50-00017",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 18
+  },
+  {
+    "eventId": "DEMO-50-00018",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 19
+  },
+  {
+    "eventId": "DEMO-50-00019",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 20
+  },
+  {
+    "eventId": "DEMO-50-00020",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 21
+  },
+  {
+    "eventId": "DEMO-50-00021",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 22
+  },
+  {
+    "eventId": "DEMO-50-00022",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 23
+  },
+  {
+    "eventId": "DEMO-50-00023",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 24
+  },
+  {
+    "eventId": "DEMO-50-00024",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 25
+  },
+  {
+    "eventId": "DEMO-50-00025",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 26
+  },
+  {
+    "eventId": "DEMO-50-00026",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 27
+  },
+  {
+    "eventId": "DEMO-50-00027",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 28
+  },
+  {
+    "eventId": "DEMO-50-00028",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 29
+  },
+  {
+    "eventId": "DEMO-50-00029",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 30
+  },
+  {
+    "eventId": "DEMO-50-00030",
+    "fraud": true,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 31
+  },
+  {
+    "eventId": "DEMO-50-00031",
+    "fraud": true,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 32
+  },
+  {
+    "eventId": "DEMO-50-00032",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 33
+  },
+  {
+    "eventId": "DEMO-50-00033",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 34
+  },
+  {
+    "eventId": "DEMO-50-00034",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 35
+  },
+  {
+    "eventId": "DEMO-50-00035",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 36
+  },
+  {
+    "eventId": "DEMO-50-00036",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 37
+  },
+  {
+    "eventId": "DEMO-50-00037",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 38
+  },
+  {
+    "eventId": "DEMO-50-00038",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 39
+  },
+  {
+    "eventId": "DEMO-50-00039",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 40
+  },
+  {
+    "eventId": "DEMO-50-00040",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 41
+  },
+  {
+    "eventId": "DEMO-50-00041",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 42
+  },
+  {
+    "eventId": "DEMO-50-00042",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 43
+  },
+  {
+    "eventId": "DEMO-50-00043",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 44
+  },
+  {
+    "eventId": "DEMO-50-00044",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 45
+  },
+  {
+    "eventId": "DEMO-50-00045",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 46
+  },
+  {
+    "eventId": "DEMO-50-00046",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 47
+  },
+  {
+    "eventId": "DEMO-50-00047",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 48
+  },
+  {
+    "eventId": "DEMO-50-00048",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 49
+  },
+  {
+    "eventId": "DEMO-50-00049",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 50
+  },
+  {
+    "eventId": "DEMO-50-00050",
+    "fraud": false,
+    "sourceFile": "scenarios/short-history.csv",
+    "sourceRow": 51
+  }
+]

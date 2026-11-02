@@ -1,0 +1,2002 @@
+[
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00001",
+    "fraud": false,
+    "rawMargin": -3.951802627686412,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 2
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00002",
+    "fraud": false,
+    "rawMargin": -3.8408695596933806,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 3
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00003",
+    "fraud": false,
+    "rawMargin": -3.612794274169144,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 4
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00004",
+    "fraud": false,
+    "rawMargin": -3.9020795305468514,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 5
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00005",
+    "fraud": false,
+    "rawMargin": -3.917961102856783,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 6
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00006",
+    "fraud": false,
+    "rawMargin": -3.342245320173093,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 7
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00007",
+    "fraud": false,
+    "rawMargin": -3.7502219086456834,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 8
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00008",
+    "fraud": false,
+    "rawMargin": -4.2732653714610915,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 9
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00009",
+    "fraud": false,
+    "rawMargin": -3.8432443411852506,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 10
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00010",
+    "fraud": false,
+    "rawMargin": -4.40565308911696,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 11
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00011",
+    "fraud": false,
+    "rawMargin": -3.365983235275452,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 12
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00012",
+    "fraud": false,
+    "rawMargin": -3.42918951360976,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 13
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00013",
+    "fraud": false,
+    "rawMargin": -3.642131793776224,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 14
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00014",
+    "fraud": false,
+    "rawMargin": -2.977303098514794,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 15
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00015",
+    "fraud": false,
+    "rawMargin": -3.8573100931700854,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 16
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00016",
+    "fraud": false,
+    "rawMargin": -3.981284174474898,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 17
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00017",
+    "fraud": false,
+    "rawMargin": -4.427244211761911,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 18
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00018",
+    "fraud": false,
+    "rawMargin": -4.763421649582044,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 19
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00019",
+    "fraud": false,
+    "rawMargin": -4.892154061802605,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 20
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00020",
+    "fraud": false,
+    "rawMargin": -4.925735247020256,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 21
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00021",
+    "fraud": false,
+    "rawMargin": -3.7381491616741545,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 22
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00022",
+    "fraud": false,
+    "rawMargin": -4.352034965927142,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 23
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00023",
+    "fraud": false,
+    "rawMargin": -3.932921207437804,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 24
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00024",
+    "fraud": false,
+    "rawMargin": -4.630739252570858,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 25
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00025",
+    "fraud": false,
+    "rawMargin": -4.6260151616736325,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 26
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00026",
+    "fraud": false,
+    "rawMargin": -3.5467666142191305,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 27
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00027",
+    "fraud": false,
+    "rawMargin": -3.6470438954705378,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 28
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00028",
+    "fraud": false,
+    "rawMargin": -3.734965565635203,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 29
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00029",
+    "fraud": false,
+    "rawMargin": -3.5846074876260356,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 30
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00030",
+    "fraud": false,
+    "rawMargin": -4.596551346399099,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 31
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00031",
+    "fraud": false,
+    "rawMargin": -4.471529617985797,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 32
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00032",
+    "fraud": false,
+    "rawMargin": -4.826130852149181,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 33
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00033",
+    "fraud": false,
+    "rawMargin": -5.162645730131924,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 34
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00034",
+    "fraud": false,
+    "rawMargin": -3.839631299716435,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 35
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00035",
+    "fraud": false,
+    "rawMargin": -4.292129375160385,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 36
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00036",
+    "fraud": false,
+    "rawMargin": -6.028464212119177,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 37
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00037",
+    "fraud": false,
+    "rawMargin": -4.623693570213011,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 38
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00038",
+    "fraud": false,
+    "rawMargin": -5.647823023592086,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 39
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00039",
+    "fraud": false,
+    "rawMargin": -3.7823422661837154,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 40
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00040",
+    "fraud": false,
+    "rawMargin": -4.658563127759857,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 41
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00041",
+    "fraud": false,
+    "rawMargin": -5.059659896551543,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 42
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00042",
+    "fraud": false,
+    "rawMargin": -3.548920454789661,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 43
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00043",
+    "fraud": false,
+    "rawMargin": -5.285703209922069,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 44
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00044",
+    "fraud": false,
+    "rawMargin": -4.9707465887333875,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 45
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00045",
+    "fraud": false,
+    "rawMargin": -4.076710526558398,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 46
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00046",
+    "fraud": false,
+    "rawMargin": -4.633913428809204,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 47
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00047",
+    "fraud": false,
+    "rawMargin": -4.112447980017265,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 48
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00048",
+    "fraud": false,
+    "rawMargin": -3.1403035508453936,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 49
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00049",
+    "fraud": false,
+    "rawMargin": -4.488047661757607,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 50
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00050",
+    "fraud": false,
+    "rawMargin": -2.678091529360412,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 51
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00051",
+    "fraud": false,
+    "rawMargin": -4.243420597147628,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 52
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00052",
+    "fraud": false,
+    "rawMargin": -5.2310566629811115,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 53
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00053",
+    "fraud": false,
+    "rawMargin": -3.59920875680058,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 54
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00054",
+    "fraud": false,
+    "rawMargin": -5.664959411963855,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 55
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00055",
+    "fraud": false,
+    "rawMargin": -4.187805235574471,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 56
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00056",
+    "fraud": false,
+    "rawMargin": -4.404828202704839,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 57
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00057",
+    "fraud": false,
+    "rawMargin": -4.021422143194816,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 58
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00058",
+    "fraud": false,
+    "rawMargin": -4.675504836351023,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 59
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00059",
+    "fraud": false,
+    "rawMargin": -3.952722311228724,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 60
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00060",
+    "fraud": false,
+    "rawMargin": -3.631012521825505,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 61
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00061",
+    "fraud": false,
+    "rawMargin": -4.731589380166218,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 62
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00062",
+    "fraud": false,
+    "rawMargin": -4.974183033171965,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 63
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00063",
+    "fraud": false,
+    "rawMargin": -4.781208143737525,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 64
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00064",
+    "fraud": false,
+    "rawMargin": -4.014220325003893,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 65
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00065",
+    "fraud": false,
+    "rawMargin": -5.662846497367338,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 66
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00066",
+    "fraud": false,
+    "rawMargin": -4.130265634443211,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 67
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00067",
+    "fraud": false,
+    "rawMargin": -5.096331114000069,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 68
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00068",
+    "fraud": false,
+    "rawMargin": -5.045152795313016,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 69
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00069",
+    "fraud": false,
+    "rawMargin": -4.554406246354786,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 70
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00070",
+    "fraud": false,
+    "rawMargin": -5.101124471995677,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 71
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00071",
+    "fraud": false,
+    "rawMargin": -4.008701251282341,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 72
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00072",
+    "fraud": false,
+    "rawMargin": -3.670746026707128,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 73
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00073",
+    "fraud": false,
+    "rawMargin": -5.197975852741345,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 74
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00074",
+    "fraud": false,
+    "rawMargin": -4.873665216383955,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 75
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00075",
+    "fraud": false,
+    "rawMargin": -3.9692839124504697,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 76
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00076",
+    "fraud": false,
+    "rawMargin": -4.622732401108289,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 77
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00077",
+    "fraud": false,
+    "rawMargin": -3.4345601341551424,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 78
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00078",
+    "fraud": false,
+    "rawMargin": -4.902122572183761,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 79
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00079",
+    "fraud": false,
+    "rawMargin": -3.6379889306660105,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 80
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00080",
+    "fraud": false,
+    "rawMargin": -4.99603181635298,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 81
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00081",
+    "fraud": false,
+    "rawMargin": -5.777715949687854,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 82
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00082",
+    "fraud": false,
+    "rawMargin": -5.112004652608257,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 83
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00083",
+    "fraud": false,
+    "rawMargin": -4.927883225519278,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 84
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00084",
+    "fraud": false,
+    "rawMargin": -6.431490780834304,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 85
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00085",
+    "fraud": false,
+    "rawMargin": -5.255650709678836,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 86
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00086",
+    "fraud": false,
+    "rawMargin": -5.1517771449753935,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 87
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00087",
+    "fraud": false,
+    "rawMargin": -4.566945603945908,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 88
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00088",
+    "fraud": false,
+    "rawMargin": -3.0758911310345862,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 89
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00089",
+    "fraud": false,
+    "rawMargin": -6.088971913676226,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 90
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00090",
+    "fraud": false,
+    "rawMargin": -2.6212317989672216,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 91
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00091",
+    "fraud": false,
+    "rawMargin": -3.867285961508838,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 92
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00092",
+    "fraud": false,
+    "rawMargin": -6.1493106164416815,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 93
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00093",
+    "fraud": false,
+    "rawMargin": -2.9650127107648605,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 94
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00094",
+    "fraud": false,
+    "rawMargin": -3.512330306212138,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 95
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00095",
+    "fraud": false,
+    "rawMargin": -4.629713620108369,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 96
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00096",
+    "fraud": false,
+    "rawMargin": -5.627194975296113,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 97
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00097",
+    "fraud": false,
+    "rawMargin": -4.942591703625889,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 98
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00098",
+    "fraud": false,
+    "rawMargin": -4.403571084952084,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 99
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00099",
+    "fraud": false,
+    "rawMargin": -3.873805013666612,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 100
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00100",
+    "fraud": false,
+    "rawMargin": -3.4062832102215026,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 101
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00101",
+    "fraud": false,
+    "rawMargin": -3.30390965872204,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 102
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00102",
+    "fraud": false,
+    "rawMargin": -4.6494857925351765,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 103
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00103",
+    "fraud": false,
+    "rawMargin": -5.371277444558145,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 104
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00104",
+    "fraud": false,
+    "rawMargin": -4.124748718939593,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 105
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00105",
+    "fraud": false,
+    "rawMargin": -4.984116474448893,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 106
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00106",
+    "fraud": false,
+    "rawMargin": -4.527045299261652,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 107
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00107",
+    "fraud": false,
+    "rawMargin": -4.169129414828268,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 108
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00108",
+    "fraud": false,
+    "rawMargin": -4.445144043553993,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 109
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00109",
+    "fraud": false,
+    "rawMargin": -4.984697738002144,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 110
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00110",
+    "fraud": false,
+    "rawMargin": -4.193220990229177,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 111
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00111",
+    "fraud": false,
+    "rawMargin": -5.717218581953003,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 112
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00112",
+    "fraud": false,
+    "rawMargin": -3.78610196996672,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 113
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00113",
+    "fraud": false,
+    "rawMargin": -5.842594362812931,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 114
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00114",
+    "fraud": false,
+    "rawMargin": -3.4385733310811792,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 115
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00115",
+    "fraud": false,
+    "rawMargin": -4.720861825664142,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 116
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00116",
+    "fraud": false,
+    "rawMargin": -4.714043373441401,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 117
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00117",
+    "fraud": false,
+    "rawMargin": -5.523069414665595,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 118
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00118",
+    "fraud": false,
+    "rawMargin": -4.1092180205323245,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 119
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00119",
+    "fraud": false,
+    "rawMargin": -4.396078091532852,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 120
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00120",
+    "fraud": false,
+    "rawMargin": -6.34808496121428,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 121
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00121",
+    "fraud": false,
+    "rawMargin": -3.1796789876617257,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 122
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00122",
+    "fraud": false,
+    "rawMargin": -6.354724317065061,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 123
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00123",
+    "fraud": false,
+    "rawMargin": -5.234582020337084,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 124
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00124",
+    "fraud": false,
+    "rawMargin": -5.841153099469053,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 125
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00125",
+    "fraud": false,
+    "rawMargin": -5.104990506190309,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 126
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00126",
+    "fraud": false,
+    "rawMargin": -5.960590440129159,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 127
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00127",
+    "fraud": false,
+    "rawMargin": -3.676411800651523,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 128
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00128",
+    "fraud": false,
+    "rawMargin": -6.531060043598604,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 129
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00129",
+    "fraud": false,
+    "rawMargin": -5.51987555174569,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 130
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00130",
+    "fraud": false,
+    "rawMargin": -5.119726760631813,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 131
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00131",
+    "fraud": false,
+    "rawMargin": -4.580932545033446,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 132
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00132",
+    "fraud": false,
+    "rawMargin": -4.711067037257739,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 133
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00133",
+    "fraud": false,
+    "rawMargin": -5.229328623906235,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 134
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00134",
+    "fraud": false,
+    "rawMargin": -3.985313247944704,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 135
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00135",
+    "fraud": false,
+    "rawMargin": -5.587793511020871,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 136
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00136",
+    "fraud": false,
+    "rawMargin": -5.552414297572103,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 137
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00137",
+    "fraud": false,
+    "rawMargin": -5.754441099874377,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 138
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00138",
+    "fraud": false,
+    "rawMargin": -4.703802678005679,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 139
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00139",
+    "fraud": false,
+    "rawMargin": -3.4566588741857887,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 140
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00140",
+    "fraud": false,
+    "rawMargin": -5.707922446693515,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 141
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00141",
+    "fraud": false,
+    "rawMargin": -5.249852493029671,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 142
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00142",
+    "fraud": false,
+    "rawMargin": -3.4027623716048945,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 143
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00143",
+    "fraud": false,
+    "rawMargin": -4.079411531753675,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 144
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00144",
+    "fraud": false,
+    "rawMargin": -4.9914744602264545,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 145
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00145",
+    "fraud": false,
+    "rawMargin": -6.085561679023963,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 146
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00146",
+    "fraud": false,
+    "rawMargin": -5.825502191753376,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 147
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00147",
+    "fraud": false,
+    "rawMargin": -5.828823408779169,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 148
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00148",
+    "fraud": false,
+    "rawMargin": -5.5335095646328645,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 149
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00149",
+    "fraud": false,
+    "rawMargin": -4.578952751634977,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 150
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00150",
+    "fraud": false,
+    "rawMargin": -4.410946484055808,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 151
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00151",
+    "fraud": false,
+    "rawMargin": -5.469015237741222,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 152
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00152",
+    "fraud": false,
+    "rawMargin": -4.560724343842031,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 153
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00153",
+    "fraud": false,
+    "rawMargin": -4.809642648421581,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 154
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00154",
+    "fraud": false,
+    "rawMargin": -5.875072219166164,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 155
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00155",
+    "fraud": false,
+    "rawMargin": -5.558400502026541,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 156
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00156",
+    "fraud": false,
+    "rawMargin": -5.405709277460532,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 157
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00157",
+    "fraud": false,
+    "rawMargin": -5.268084674666081,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 158
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00158",
+    "fraud": false,
+    "rawMargin": -2.6468840529672435,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 159
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00159",
+    "fraud": false,
+    "rawMargin": -5.037779933264713,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 160
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00160",
+    "fraud": false,
+    "rawMargin": -5.5599687781031735,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 161
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00161",
+    "fraud": false,
+    "rawMargin": -5.5120132863589335,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 162
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00162",
+    "fraud": false,
+    "rawMargin": -5.512976004372824,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 163
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00163",
+    "fraud": false,
+    "rawMargin": -4.973925000443113,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 164
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00164",
+    "fraud": false,
+    "rawMargin": -2.733802400201252,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 165
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00165",
+    "fraud": false,
+    "rawMargin": -3.5472110645553285,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 166
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00166",
+    "fraud": false,
+    "rawMargin": -4.350418612749047,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 167
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00167",
+    "fraud": false,
+    "rawMargin": -5.577143866450066,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 168
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00168",
+    "fraud": false,
+    "rawMargin": -4.186691773864702,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 169
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00169",
+    "fraud": false,
+    "rawMargin": -4.097026350385367,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 170
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-250-00170",
+    "fraud": true,
+    "rawMargin": 3.575302266053112,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 171
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00171",
+    "fraud": false,
+    "rawMargin": -6.211363025942137,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 172
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00172",
+    "fraud": false,
+    "rawMargin": -3.562268747665609,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 173
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00173",
+    "fraud": false,
+    "rawMargin": -4.7511372354523695,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 174
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00174",
+    "fraud": false,
+    "rawMargin": -7.145643586956306,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 175
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00175",
+    "fraud": false,
+    "rawMargin": -5.039754085954152,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 176
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00176",
+    "fraud": false,
+    "rawMargin": -4.361103238650715,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 177
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00177",
+    "fraud": false,
+    "rawMargin": -5.534154040773587,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 178
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00178",
+    "fraud": false,
+    "rawMargin": -5.79902819785869,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 179
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00179",
+    "fraud": false,
+    "rawMargin": -5.767799578102913,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 180
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00180",
+    "fraud": false,
+    "rawMargin": -5.670959315589251,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 181
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00181",
+    "fraud": false,
+    "rawMargin": -4.718552217403464,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 182
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00182",
+    "fraud": false,
+    "rawMargin": -4.376395126919817,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 183
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00183",
+    "fraud": false,
+    "rawMargin": -2.7847237363063377,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 184
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00184",
+    "fraud": false,
+    "rawMargin": -5.734474950957102,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 185
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00185",
+    "fraud": false,
+    "rawMargin": -6.262901417710951,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 186
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00186",
+    "fraud": false,
+    "rawMargin": -6.768203393863073,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 187
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00187",
+    "fraud": false,
+    "rawMargin": -6.177255466479528,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 188
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00188",
+    "fraud": false,
+    "rawMargin": -4.214864400573896,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 189
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00189",
+    "fraud": false,
+    "rawMargin": -5.941292192054916,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 190
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00190",
+    "fraud": false,
+    "rawMargin": -5.403840483500444,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 191
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00191",
+    "fraud": false,
+    "rawMargin": -5.021241143540579,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 192
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00192",
+    "fraud": false,
+    "rawMargin": -5.904304764617058,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 193
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00193",
+    "fraud": false,
+    "rawMargin": -6.1356290637142665,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 194
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00194",
+    "fraud": false,
+    "rawMargin": -6.186211792632524,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 195
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00195",
+    "fraud": false,
+    "rawMargin": -4.137054184744533,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 196
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00196",
+    "fraud": false,
+    "rawMargin": -5.533507088145805,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 197
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00197",
+    "fraud": false,
+    "rawMargin": -4.738012973584645,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 198
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00198",
+    "fraud": false,
+    "rawMargin": -3.7003884734831063,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 199
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00199",
+    "fraud": false,
+    "rawMargin": -4.589468600029113,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 200
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00200",
+    "fraud": false,
+    "rawMargin": -5.292845972224908,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 201
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00201",
+    "fraud": false,
+    "rawMargin": -4.034394274858113,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 202
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00202",
+    "fraud": false,
+    "rawMargin": -5.660706505061945,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 203
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00203",
+    "fraud": false,
+    "rawMargin": -4.935240385381415,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 204
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00204",
+    "fraud": false,
+    "rawMargin": -5.495544456211449,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 205
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00205",
+    "fraud": false,
+    "rawMargin": -4.418704902759844,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 206
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00206",
+    "fraud": false,
+    "rawMargin": -2.9633679358828884,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 207
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00207",
+    "fraud": false,
+    "rawMargin": -4.8473788146548165,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 208
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00208",
+    "fraud": false,
+    "rawMargin": -5.969255545578536,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 209
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00209",
+    "fraud": false,
+    "rawMargin": -6.0372206400817054,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 210
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00210",
+    "fraud": false,
+    "rawMargin": -3.276811250828295,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 211
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00211",
+    "fraud": false,
+    "rawMargin": -4.3743246952945505,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 212
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00212",
+    "fraud": false,
+    "rawMargin": -4.715620439859856,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 213
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00213",
+    "fraud": false,
+    "rawMargin": -4.641550316787952,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 214
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00214",
+    "fraud": false,
+    "rawMargin": -5.022930126265648,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 215
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00215",
+    "fraud": false,
+    "rawMargin": -5.0186992724654775,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 216
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00216",
+    "fraud": false,
+    "rawMargin": -5.226298887151916,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 217
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00217",
+    "fraud": false,
+    "rawMargin": -5.481437807503601,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 218
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00218",
+    "fraud": false,
+    "rawMargin": -5.514532508625014,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 219
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00219",
+    "fraud": false,
+    "rawMargin": -4.763665393716568,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 220
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00220",
+    "fraud": false,
+    "rawMargin": -5.122275671431181,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 221
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00221",
+    "fraud": false,
+    "rawMargin": -5.61005549397923,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 222
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00222",
+    "fraud": false,
+    "rawMargin": -5.1812156027168115,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 223
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00223",
+    "fraud": false,
+    "rawMargin": -5.522656112788654,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 224
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00224",
+    "fraud": false,
+    "rawMargin": -5.526692412568586,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 225
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00225",
+    "fraud": false,
+    "rawMargin": -6.277919400257653,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 226
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00226",
+    "fraud": false,
+    "rawMargin": -4.752231942390264,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 227
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00227",
+    "fraud": false,
+    "rawMargin": -5.498988264232408,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 228
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00228",
+    "fraud": false,
+    "rawMargin": -3.979708418463178,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 229
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00229",
+    "fraud": false,
+    "rawMargin": -5.579062008769032,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 230
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00230",
+    "fraud": false,
+    "rawMargin": -1.8963693230102971,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 231
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00231",
+    "fraud": false,
+    "rawMargin": -5.9612098040387815,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 232
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00232",
+    "fraud": false,
+    "rawMargin": -4.13805341350343,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 233
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00233",
+    "fraud": false,
+    "rawMargin": -4.289783485731898,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 234
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00234",
+    "fraud": false,
+    "rawMargin": -5.267348402764066,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 235
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00235",
+    "fraud": false,
+    "rawMargin": -4.438453627757181,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 236
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00236",
+    "fraud": false,
+    "rawMargin": -3.874713209899552,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 237
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00237",
+    "fraud": false,
+    "rawMargin": -5.282345626495071,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 238
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00238",
+    "fraud": false,
+    "rawMargin": -5.453455332455678,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 239
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-250-00239",
+    "fraud": true,
+    "rawMargin": 2.2685140585493437,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 240
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-250-00240",
+    "fraud": true,
+    "rawMargin": 5.1085022009410315,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 241
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-250-00241",
+    "fraud": true,
+    "rawMargin": 5.474731945981669,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 242
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00242",
+    "fraud": false,
+    "rawMargin": -5.928617918886816,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 243
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00243",
+    "fraud": false,
+    "rawMargin": -4.2096185366052294,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 244
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00244",
+    "fraud": false,
+    "rawMargin": -5.795955805213257,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 245
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00245",
+    "fraud": false,
+    "rawMargin": -4.921077937147827,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 246
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00246",
+    "fraud": false,
+    "rawMargin": -4.7231226392659815,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 247
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00247",
+    "fraud": false,
+    "rawMargin": -4.578274735047071,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 248
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00248",
+    "fraud": false,
+    "rawMargin": -5.549275992689107,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 249
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00249",
+    "fraud": false,
+    "rawMargin": -5.038911369658273,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 250
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-250-00250",
+    "fraud": false,
+    "rawMargin": -5.64104675959217,
+    "sourceFile": "scenarios/online-episode.csv",
+    "sourceRow": 251
+  }
+]

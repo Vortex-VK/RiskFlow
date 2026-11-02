@@ -1,0 +1,420 @@
+{
+  "accepted_record_sha256": "646d865a1100a7948263940536748bac07a6c2d4f00889f7e90e8ff1b4820aad",
+  "feature_version": "v13-runtime-v1",
+  "models": {
+    "baseline": {
+      "configuration": {
+        "family": "ebm",
+        "features": [
+          "log_amount",
+          "category",
+          "channel",
+          "hour",
+          "weekday",
+          "attempts_1h",
+          "attempts_24h",
+          "attempts_7d",
+          "log_spend_24h",
+          "log_spend_7d",
+          "log_mean_24h",
+          "log_mean_7d",
+          "merchant_recency_days",
+          "history_samples",
+          "history_span_days",
+          "history_age_days",
+          "ew_account_log_mean",
+          "ew_account_log_std",
+          "ew_account_support",
+          "ew_category_support",
+          "category_shrink_weight",
+          "shrunk_log_amount_z",
+          "account_log_amount_z",
+          "shrunk_category_log_mean",
+          "recent_log_mean_shift",
+          "merchant_frequency_soft",
+          "category_frequency_soft",
+          "channel_frequency_soft",
+          "activity_ratio",
+          "spend_ratio",
+          "attempts_5m",
+          "same_merchant_attempts_5m",
+          "distinct_merchants_1h",
+          "distinct_categories_1h",
+          "prior_failure_fraction_1h",
+          "last_channel_changed",
+          "last_merchant_changed",
+          "log_amount_over_previous_completed",
+          "hour_frequency_90d",
+          "merchant_attempts_1h",
+          "merchant_attempts_7d",
+          "merchant_distinct_accounts_1h",
+          "merchant_distinct_accounts_7d",
+          "merchant_failure_fraction_1h",
+          "merchant_rate_ratio",
+          "merchant_log_amount_z_7d",
+          "merchant_account_novel_7d",
+          "merchant_geo_available",
+          "geo_history_count",
+          "state_frequency_90d",
+          "city_frequency_90d",
+          "zip_frequency_90d",
+          "distinct_states_90d",
+          "state_recency_days",
+          "merchant_matured_count",
+          "merchant_matured_fraud",
+          "merchant_matured_rate"
+        ],
+        "interactions": 15,
+        "learning_rate": 0.03,
+        "max_delta_step": 1.0,
+        "max_rounds": 512,
+        "reg_lambda": 1.0
+      },
+      "packages": [
+        {
+          "file": "baseline-0.pkl",
+          "sha256": "81783ad651cfe8c47aa41d3eab5e5be74f89331e11363b8f0b595d50156df23a"
+        },
+        {
+          "file": "baseline-1.pkl",
+          "sha256": "abb5d8a62b89bdd84010f100663e9900cd4686c4da922391c189a78a8daf3e88"
+        }
+      ]
+    },
+    "cb": {
+      "configuration": {
+        "depth": 6,
+        "family": "catboost",
+        "features": [
+          "log_amount",
+          "category",
+          "channel",
+          "hour",
+          "weekday",
+          "attempts_1h",
+          "attempts_24h",
+          "attempts_7d",
+          "log_spend_24h",
+          "log_spend_7d",
+          "log_mean_24h",
+          "log_mean_7d",
+          "merchant_recency_days",
+          "history_samples",
+          "history_span_days",
+          "history_age_days",
+          "ew_account_log_mean",
+          "ew_account_log_std",
+          "ew_account_support",
+          "ew_category_support",
+          "category_shrink_weight",
+          "shrunk_log_amount_z",
+          "account_log_amount_z",
+          "shrunk_category_log_mean",
+          "recent_log_mean_shift",
+          "merchant_frequency_soft",
+          "category_frequency_soft",
+          "channel_frequency_soft",
+          "activity_ratio",
+          "spend_ratio",
+          "attempts_5m",
+          "same_merchant_attempts_5m",
+          "distinct_merchants_1h",
+          "distinct_categories_1h",
+          "prior_failure_fraction_1h",
+          "last_channel_changed",
+          "last_merchant_changed",
+          "log_amount_over_previous_completed",
+          "hour_frequency_90d",
+          "merchant_attempts_1h",
+          "merchant_attempts_7d",
+          "merchant_distinct_accounts_1h",
+          "merchant_distinct_accounts_7d",
+          "merchant_failure_fraction_1h",
+          "merchant_rate_ratio",
+          "merchant_log_amount_z_7d",
+          "merchant_account_novel_7d",
+          "merchant_geo_available",
+          "geo_history_count",
+          "state_frequency_90d",
+          "city_frequency_90d",
+          "zip_frequency_90d",
+          "distinct_states_90d",
+          "state_recency_days",
+          "merchant_matured_count",
+          "merchant_matured_fraud",
+          "merchant_matured_rate"
+        ],
+        "iterations": 500,
+        "l2_leaf_reg": 10
+      },
+      "packages": [
+        {
+          "file": "cb-0.pkl",
+          "sha256": "f3d863250ba428804a9afea5a1eebeb619da960e73a247b15d453d8327f21139"
+        },
+        {
+          "file": "cb-1.pkl",
+          "sha256": "414707a17e8de47fa32879b618f6fd22f6963a57a8e9058c419c0d32701e95ff"
+        }
+      ]
+    },
+    "depth6": {
+      "configuration": {
+        "depth": 6,
+        "family": "catboost",
+        "features": [
+          "log_amount",
+          "category",
+          "channel",
+          "hour",
+          "weekday",
+          "attempts_1h",
+          "attempts_24h",
+          "attempts_7d",
+          "log_spend_24h",
+          "log_spend_7d",
+          "log_mean_24h",
+          "log_mean_7d",
+          "merchant_recency_days",
+          "history_samples",
+          "history_span_days",
+          "history_age_days",
+          "ew_account_log_mean",
+          "ew_account_log_std",
+          "ew_account_support",
+          "ew_category_support",
+          "category_shrink_weight",
+          "shrunk_log_amount_z",
+          "account_log_amount_z",
+          "shrunk_category_log_mean",
+          "recent_log_mean_shift",
+          "merchant_frequency_soft",
+          "category_frequency_soft",
+          "channel_frequency_soft",
+          "activity_ratio",
+          "spend_ratio",
+          "attempts_5m",
+          "same_merchant_attempts_5m",
+          "distinct_merchants_1h",
+          "distinct_categories_1h",
+          "prior_failure_fraction_1h",
+          "last_channel_changed",
+          "last_merchant_changed",
+          "log_amount_over_previous_completed",
+          "hour_frequency_90d",
+          "merchant_attempts_1h",
+          "merchant_attempts_7d",
+          "merchant_distinct_accounts_1h",
+          "merchant_distinct_accounts_7d",
+          "merchant_failure_fraction_1h",
+          "merchant_rate_ratio",
+          "merchant_log_amount_z_7d",
+          "merchant_account_novel_7d",
+          "merchant_geo_available",
+          "geo_history_count",
+          "state_frequency_90d",
+          "city_frequency_90d",
+          "zip_frequency_90d",
+          "distinct_states_90d",
+          "state_recency_days",
+          "merchant_matured_count",
+          "merchant_matured_fraud",
+          "merchant_matured_rate"
+        ],
+        "iterations": 500,
+        "l2_leaf_reg": 10
+      },
+      "packages": [
+        {
+          "file": "depth6-0.pkl",
+          "sha256": "7d1a248f0687bcbab6bc81d411c0377d530cdd032f29ff81a00cd9d72888bf91"
+        },
+        {
+          "file": "depth6-1.pkl",
+          "sha256": "d6248ced582d4e02dc7626f13f4b2f18493c80b767bf2581077a792f8e27bd63"
+        }
+      ]
+    },
+    "online_cb": {
+      "configuration": {
+        "depth": 8,
+        "family": "catboost",
+        "features": [
+          "log_amount",
+          "category",
+          "channel",
+          "hour",
+          "weekday",
+          "attempts_1h",
+          "attempts_24h",
+          "attempts_7d",
+          "log_spend_24h",
+          "log_spend_7d",
+          "log_mean_24h",
+          "log_mean_7d",
+          "merchant_recency_days",
+          "history_samples",
+          "history_span_days",
+          "history_age_days",
+          "ew_account_log_mean",
+          "ew_account_log_std",
+          "ew_account_support",
+          "ew_category_support",
+          "category_shrink_weight",
+          "shrunk_log_amount_z",
+          "account_log_amount_z",
+          "shrunk_category_log_mean",
+          "recent_log_mean_shift",
+          "merchant_frequency_soft",
+          "category_frequency_soft",
+          "channel_frequency_soft",
+          "activity_ratio",
+          "spend_ratio"
+        ],
+        "iterations": 700,
+        "l2_leaf_reg": 10
+      },
+      "packages": [
+        {
+          "file": "online_cb-0.pkl",
+          "sha256": "4618fdbfef9ffb67191037b50e985435c4424b759423e911b6f93d56c7ebf378"
+        },
+        {
+          "file": "online_cb-1.pkl",
+          "sha256": "801f34af5ad43e5c924017406ba49997a60c582c531b5072f6cea5a7c2c3cb1d"
+        }
+      ]
+    },
+    "online_ebm": {
+      "configuration": {
+        "family": "ebm",
+        "features": [
+          "log_amount",
+          "category",
+          "channel",
+          "hour",
+          "weekday",
+          "attempts_1h",
+          "attempts_24h",
+          "attempts_7d",
+          "log_spend_24h",
+          "log_spend_7d",
+          "log_mean_24h",
+          "log_mean_7d",
+          "merchant_recency_days",
+          "history_samples",
+          "history_span_days",
+          "history_age_days",
+          "ew_account_log_mean",
+          "ew_account_log_std",
+          "ew_account_support",
+          "ew_category_support",
+          "category_shrink_weight",
+          "shrunk_log_amount_z",
+          "account_log_amount_z",
+          "shrunk_category_log_mean",
+          "recent_log_mean_shift",
+          "merchant_frequency_soft",
+          "category_frequency_soft",
+          "channel_frequency_soft",
+          "activity_ratio",
+          "spend_ratio",
+          "attempts_5m",
+          "same_merchant_attempts_5m",
+          "distinct_merchants_1h",
+          "distinct_categories_1h",
+          "prior_failure_fraction_1h",
+          "last_channel_changed",
+          "last_merchant_changed",
+          "log_amount_over_previous_completed",
+          "hour_frequency_90d",
+          "merchant_attempts_1h",
+          "merchant_attempts_7d",
+          "merchant_distinct_accounts_1h",
+          "merchant_distinct_accounts_7d",
+          "merchant_failure_fraction_1h",
+          "merchant_rate_ratio",
+          "merchant_log_amount_z_7d",
+          "merchant_account_novel_7d",
+          "merchant_geo_available",
+          "geo_history_count",
+          "state_frequency_90d",
+          "city_frequency_90d",
+          "zip_frequency_90d",
+          "distinct_states_90d",
+          "state_recency_days",
+          "merchant_matured_count",
+          "merchant_matured_fraud",
+          "merchant_matured_rate"
+        ],
+        "interactions": 15,
+        "learning_rate": 0.03,
+        "max_delta_step": 1.0,
+        "max_rounds": 512,
+        "reg_lambda": 1.0
+      },
+      "packages": [
+        {
+          "file": "online_ebm-0.pkl",
+          "sha256": "007789886e3870560d0943ffa66377f4244c91493018d5217f9fecc0bd1858fa"
+        },
+        {
+          "file": "online_ebm-1.pkl",
+          "sha256": "6238fa2b5972e5f4c195e0e96d198fd8694f17596e641dddc7b5d02337bae580"
+        }
+      ]
+    }
+  },
+  "policies": {
+    "cb": {
+      "cutoffs": {
+        "channels": {
+          "Chip Transaction": 0.19171485108023825,
+          "Online Transaction": 1.4337498431063938,
+          "Swipe Transaction": 2.1512604903044616
+        },
+        "global": 1.4337498431063938
+      },
+      "kind": "channel",
+      "source": "cb"
+    },
+    "combined": {
+      "online_burst": {
+        "hours": 24,
+        "margin": 8.0,
+        "threshold": -6.4918959222955035
+      },
+      "previous": {
+        "burst": {
+          "hours": 1,
+          "margin": 4.0,
+          "threshold": null
+        },
+        "consensus_cb": 3.303030425798609,
+        "consensus_ebm": 1.3364603089177987,
+        "online_cb": 3.303030425798609,
+        "online_ebm": 6.98749470269639,
+        "seed_threshold": 3.301431192828203
+      }
+    },
+    "online": {
+      "burst": {
+        "hours": 1,
+        "margin": 4.0,
+        "threshold": null
+      },
+      "cutoff": 1.1209508921486893
+    },
+    "rescue": {
+      "agreement": 0.7546412093517972,
+      "burst": {
+        "hours": 168,
+        "margin": 4.0,
+        "threshold": -2.1610521318274296
+      },
+      "seed_threshold": 3.301431192828203
+    }
+  },
+  "policy": "depth6",
+  "version": "ml-v13"
+}

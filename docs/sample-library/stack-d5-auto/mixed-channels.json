@@ -1,0 +1,8002 @@
+[
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00001",
+    "fraud": false,
+    "rawMargin": -4.443331239516222,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 2
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00002",
+    "fraud": false,
+    "rawMargin": -4.617842442102036,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 3
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00003",
+    "fraud": false,
+    "rawMargin": -4.373042283268029,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 4
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00004",
+    "fraud": false,
+    "rawMargin": -4.239915730521382,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 5
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00005",
+    "fraud": false,
+    "rawMargin": -4.555198988448443,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 6
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00006",
+    "fraud": false,
+    "rawMargin": -4.325612533449465,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 7
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00007",
+    "fraud": false,
+    "rawMargin": -4.189026054541656,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 8
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00008",
+    "fraud": false,
+    "rawMargin": -4.140575840940841,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 9
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00009",
+    "fraud": false,
+    "rawMargin": -3.812257317205845,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 10
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00010",
+    "fraud": false,
+    "rawMargin": -4.28493141553151,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 11
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00011",
+    "fraud": false,
+    "rawMargin": -4.141672840081863,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 12
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00012",
+    "fraud": false,
+    "rawMargin": -3.9092340176393323,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 13
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00013",
+    "fraud": false,
+    "rawMargin": -3.877882483474129,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 14
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00014",
+    "fraud": false,
+    "rawMargin": -4.109219893149512,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 15
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00015",
+    "fraud": false,
+    "rawMargin": -4.219956844407192,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 16
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00016",
+    "fraud": false,
+    "rawMargin": -4.691294831554536,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 17
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00017",
+    "fraud": false,
+    "rawMargin": -4.28493141553151,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 18
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00018",
+    "fraud": false,
+    "rawMargin": -4.28493141553151,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 19
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00019",
+    "fraud": false,
+    "rawMargin": -3.8908047999096187,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 20
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00020",
+    "fraud": false,
+    "rawMargin": -4.122980143973705,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 21
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00021",
+    "fraud": false,
+    "rawMargin": -3.812257317205845,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 22
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00022",
+    "fraud": false,
+    "rawMargin": -3.7879325574081437,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 23
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00023",
+    "fraud": false,
+    "rawMargin": -3.8233241912970266,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 24
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00024",
+    "fraud": false,
+    "rawMargin": -4.145301085642449,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 25
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00025",
+    "fraud": false,
+    "rawMargin": -3.774087264967302,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 26
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00026",
+    "fraud": false,
+    "rawMargin": -3.895247279948612,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 27
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00027",
+    "fraud": false,
+    "rawMargin": -4.223288592527203,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 28
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00028",
+    "fraud": false,
+    "rawMargin": -4.224181453701773,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 29
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00029",
+    "fraud": false,
+    "rawMargin": -4.2732653714610915,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 30
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00030",
+    "fraud": false,
+    "rawMargin": -4.716375915884822,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 31
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00031",
+    "fraud": false,
+    "rawMargin": -4.40565308911696,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 32
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00032",
+    "fraud": false,
+    "rawMargin": -4.342566010121771,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 33
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00033",
+    "fraud": false,
+    "rawMargin": -4.065989486490414,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 34
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00034",
+    "fraud": false,
+    "rawMargin": -3.3248214600795603,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 35
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00035",
+    "fraud": false,
+    "rawMargin": -4.142425248757634,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 36
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00036",
+    "fraud": false,
+    "rawMargin": -3.685825077338435,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 37
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00037",
+    "fraud": false,
+    "rawMargin": -4.066956851519825,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 38
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00038",
+    "fraud": false,
+    "rawMargin": -4.8177258347070895,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 39
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00039",
+    "fraud": false,
+    "rawMargin": -4.120640540988066,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 40
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00040",
+    "fraud": false,
+    "rawMargin": -3.6887325700642104,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 41
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00041",
+    "fraud": false,
+    "rawMargin": -3.63893872433939,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 42
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00042",
+    "fraud": false,
+    "rawMargin": -3.895578365340193,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 43
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00043",
+    "fraud": false,
+    "rawMargin": -3.717968075709639,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 44
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00044",
+    "fraud": false,
+    "rawMargin": -4.064361982492502,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 45
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00045",
+    "fraud": false,
+    "rawMargin": -4.241150217954695,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 46
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00046",
+    "fraud": false,
+    "rawMargin": -4.736593202936826,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 47
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00047",
+    "fraud": false,
+    "rawMargin": -3.833335695859536,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 48
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00048",
+    "fraud": false,
+    "rawMargin": -4.8225568331778526,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 49
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00049",
+    "fraud": false,
+    "rawMargin": -4.598616278313901,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 50
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00050",
+    "fraud": false,
+    "rawMargin": -4.300986425621334,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 51
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00051",
+    "fraud": false,
+    "rawMargin": -4.729657517209818,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 52
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00052",
+    "fraud": false,
+    "rawMargin": -3.8283765807334067,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 53
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00053",
+    "fraud": false,
+    "rawMargin": -3.721130486574871,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 54
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00054",
+    "fraud": false,
+    "rawMargin": -4.587457935399629,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 55
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00055",
+    "fraud": false,
+    "rawMargin": -4.074015803766148,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 56
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00056",
+    "fraud": false,
+    "rawMargin": -4.049892827364393,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 57
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00057",
+    "fraud": false,
+    "rawMargin": -4.306018090784018,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 58
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00058",
+    "fraud": false,
+    "rawMargin": -4.322940566654948,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 59
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00059",
+    "fraud": false,
+    "rawMargin": -2.9110820010335763,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 60
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00060",
+    "fraud": false,
+    "rawMargin": -3.126033703263859,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 61
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00061",
+    "fraud": false,
+    "rawMargin": -3.514636333557568,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 62
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00062",
+    "fraud": false,
+    "rawMargin": -3.024858310675988,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 63
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00063",
+    "fraud": false,
+    "rawMargin": -3.139131693783061,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 64
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00064",
+    "fraud": false,
+    "rawMargin": -4.130423760786089,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 65
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00065",
+    "fraud": false,
+    "rawMargin": -3.657481107063575,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 66
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00066",
+    "fraud": false,
+    "rawMargin": -4.397822424698328,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 67
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00067",
+    "fraud": false,
+    "rawMargin": -3.9202867940012505,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 68
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00068",
+    "fraud": false,
+    "rawMargin": -3.7441347019404905,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 69
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00069",
+    "fraud": false,
+    "rawMargin": -3.683886140190132,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 70
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00070",
+    "fraud": false,
+    "rawMargin": -4.000276755339726,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 71
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00071",
+    "fraud": false,
+    "rawMargin": -3.280538262852003,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 72
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00072",
+    "fraud": false,
+    "rawMargin": -4.558970308724983,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 73
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00073",
+    "fraud": false,
+    "rawMargin": -5.049455895695423,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 74
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00074",
+    "fraud": false,
+    "rawMargin": -4.468662622174315,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 75
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00075",
+    "fraud": false,
+    "rawMargin": -3.8032923611171707,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 76
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00076",
+    "fraud": false,
+    "rawMargin": -5.127422036436285,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 77
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00077",
+    "fraud": false,
+    "rawMargin": -3.444471965316685,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 78
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00078",
+    "fraud": false,
+    "rawMargin": -4.085093500663665,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 79
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00079",
+    "fraud": false,
+    "rawMargin": -5.199934629554858,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 80
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00080",
+    "fraud": false,
+    "rawMargin": -4.308813137314919,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 81
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00081",
+    "fraud": false,
+    "rawMargin": -3.4937543263497575,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 82
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00082",
+    "fraud": false,
+    "rawMargin": -5.633919116104716,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 83
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00083",
+    "fraud": false,
+    "rawMargin": -4.0273547835117744,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 84
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00084",
+    "fraud": false,
+    "rawMargin": -4.685848669328798,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 85
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00085",
+    "fraud": false,
+    "rawMargin": -5.080360717292697,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 86
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00086",
+    "fraud": false,
+    "rawMargin": -3.1522432415012154,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 87
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00087",
+    "fraud": false,
+    "rawMargin": -4.03021727893753,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 88
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00088",
+    "fraud": false,
+    "rawMargin": -4.504035582780086,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 89
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00089",
+    "fraud": false,
+    "rawMargin": -4.828146825192937,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 90
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00090",
+    "fraud": false,
+    "rawMargin": -3.923058977018483,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 91
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00091",
+    "fraud": false,
+    "rawMargin": -3.8023748799089776,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 92
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00092",
+    "fraud": false,
+    "rawMargin": -5.7545923441472295,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 93
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00093",
+    "fraud": false,
+    "rawMargin": -4.927749012425818,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 94
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00094",
+    "fraud": false,
+    "rawMargin": -4.011285463157257,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 95
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00095",
+    "fraud": false,
+    "rawMargin": -4.013419186739914,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 96
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00096",
+    "fraud": false,
+    "rawMargin": -4.337459336219031,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 97
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00097",
+    "fraud": false,
+    "rawMargin": -3.3248342442225733,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 98
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00098",
+    "fraud": false,
+    "rawMargin": -4.703537810147117,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 99
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00099",
+    "fraud": false,
+    "rawMargin": -4.807216755318316,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 100
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00100",
+    "fraud": false,
+    "rawMargin": -4.067079081171277,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 101
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00101",
+    "fraud": false,
+    "rawMargin": -4.0768075915729085,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 102
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00102",
+    "fraud": false,
+    "rawMargin": -3.40400496298007,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 103
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00103",
+    "fraud": false,
+    "rawMargin": -3.9946374195771166,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 104
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00104",
+    "fraud": false,
+    "rawMargin": -5.326033053548588,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 105
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00105",
+    "fraud": false,
+    "rawMargin": -3.9829870421828093,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 106
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00106",
+    "fraud": false,
+    "rawMargin": -4.327992945630422,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 107
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00107",
+    "fraud": false,
+    "rawMargin": -5.791402855708567,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 108
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00108",
+    "fraud": false,
+    "rawMargin": -5.470043778978972,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 109
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00109",
+    "fraud": false,
+    "rawMargin": -3.5258970922949264,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 110
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00110",
+    "fraud": false,
+    "rawMargin": -5.110593733530276,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 111
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00111",
+    "fraud": false,
+    "rawMargin": -3.069451456145958,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 112
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00112",
+    "fraud": false,
+    "rawMargin": -6.56767685730068,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 113
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00113",
+    "fraud": false,
+    "rawMargin": -3.966842892622922,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 114
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00114",
+    "fraud": false,
+    "rawMargin": -3.5771947485400775,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 115
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00115",
+    "fraud": false,
+    "rawMargin": -3.5907864780750476,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 116
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00116",
+    "fraud": false,
+    "rawMargin": -4.333351167149321,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 117
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00117",
+    "fraud": false,
+    "rawMargin": -5.7364199166685195,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 118
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00118",
+    "fraud": false,
+    "rawMargin": -3.1068882647054354,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 119
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00119",
+    "fraud": false,
+    "rawMargin": -4.740445685939206,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 120
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00120",
+    "fraud": false,
+    "rawMargin": -4.775137084821782,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 121
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00121",
+    "fraud": false,
+    "rawMargin": -5.099704898296302,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 122
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00122",
+    "fraud": false,
+    "rawMargin": -4.9671547690512226,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 123
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00123",
+    "fraud": false,
+    "rawMargin": -4.477922024086734,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 124
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00124",
+    "fraud": false,
+    "rawMargin": -4.306622901995864,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 125
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00125",
+    "fraud": false,
+    "rawMargin": -4.213228177837038,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 126
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00126",
+    "fraud": false,
+    "rawMargin": -3.3957222557943814,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 127
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00127",
+    "fraud": false,
+    "rawMargin": -3.4315978749806093,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 128
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00128",
+    "fraud": false,
+    "rawMargin": -4.3114828909652205,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 129
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00129",
+    "fraud": false,
+    "rawMargin": -3.3215104739703873,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 130
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00130",
+    "fraud": false,
+    "rawMargin": -2.5063840262064097,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 131
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00131",
+    "fraud": false,
+    "rawMargin": -3.5794767948223294,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 132
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00132",
+    "fraud": false,
+    "rawMargin": -4.602664342640274,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 133
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00133",
+    "fraud": false,
+    "rawMargin": -4.676755019810205,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 134
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00134",
+    "fraud": false,
+    "rawMargin": -3.1223150534848085,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 135
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00135",
+    "fraud": false,
+    "rawMargin": -2.6577687116001316,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 136
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00136",
+    "fraud": false,
+    "rawMargin": -3.8955414423752277,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 137
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00137",
+    "fraud": false,
+    "rawMargin": -3.6442194920296007,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 138
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00138",
+    "fraud": false,
+    "rawMargin": -3.665535237277894,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 139
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00139",
+    "fraud": false,
+    "rawMargin": -5.170364840938603,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 140
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00140",
+    "fraud": false,
+    "rawMargin": -4.010740930316086,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 141
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00141",
+    "fraud": false,
+    "rawMargin": -4.463680720946482,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 142
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00142",
+    "fraud": false,
+    "rawMargin": -3.94792041922795,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 143
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00143",
+    "fraud": false,
+    "rawMargin": -3.758403429911894,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 144
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00144",
+    "fraud": false,
+    "rawMargin": -3.4458014610620777,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 145
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00145",
+    "fraud": false,
+    "rawMargin": -3.2480467486205873,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 146
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00146",
+    "fraud": false,
+    "rawMargin": -4.3242454888702,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 147
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00147",
+    "fraud": false,
+    "rawMargin": -4.3293298510494385,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 148
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00148",
+    "fraud": false,
+    "rawMargin": -4.305061969738821,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 149
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00149",
+    "fraud": false,
+    "rawMargin": -4.137528273201782,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 150
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00150",
+    "fraud": false,
+    "rawMargin": -4.732882500037987,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 151
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00151",
+    "fraud": false,
+    "rawMargin": -4.280188413367671,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 152
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00152",
+    "fraud": false,
+    "rawMargin": -5.378907993816734,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 153
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00153",
+    "fraud": false,
+    "rawMargin": -3.0942865980080247,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 154
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00154",
+    "fraud": false,
+    "rawMargin": -3.4564694509631697,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 155
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00155",
+    "fraud": false,
+    "rawMargin": -4.267434454271478,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 156
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00156",
+    "fraud": false,
+    "rawMargin": -3.2556909950037225,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 157
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00157",
+    "fraud": false,
+    "rawMargin": -4.86306579856356,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 158
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00158",
+    "fraud": false,
+    "rawMargin": -4.317482245567541,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 159
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00159",
+    "fraud": false,
+    "rawMargin": -4.541899029203882,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 160
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00160",
+    "fraud": false,
+    "rawMargin": -6.34591165086475,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 161
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00161",
+    "fraud": false,
+    "rawMargin": -4.366982837906123,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 162
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00162",
+    "fraud": false,
+    "rawMargin": -4.102051311666002,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 163
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00163",
+    "fraud": false,
+    "rawMargin": -4.125824644146165,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 164
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00164",
+    "fraud": false,
+    "rawMargin": -3.9760097106992163,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 165
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00165",
+    "fraud": false,
+    "rawMargin": -3.9495563195899503,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 166
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00166",
+    "fraud": false,
+    "rawMargin": -3.968626073324542,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 167
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00167",
+    "fraud": false,
+    "rawMargin": -4.138582887089663,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 168
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00168",
+    "fraud": false,
+    "rawMargin": -5.747524233165995,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 169
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00169",
+    "fraud": false,
+    "rawMargin": -3.8100351562895627,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 170
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00170",
+    "fraud": false,
+    "rawMargin": -3.677424379580055,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 171
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00171",
+    "fraud": false,
+    "rawMargin": -2.704721250604149,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 172
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00172",
+    "fraud": false,
+    "rawMargin": -3.215263113568258,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 173
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00173",
+    "fraud": false,
+    "rawMargin": -4.9170560554368405,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 174
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00174",
+    "fraud": false,
+    "rawMargin": -3.7420188295649064,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 175
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00175",
+    "fraud": false,
+    "rawMargin": -4.9151988927815164,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 176
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00176",
+    "fraud": false,
+    "rawMargin": -1.528826325051407,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 177
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00177",
+    "fraud": false,
+    "rawMargin": -3.1324079448176687,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 178
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00178",
+    "fraud": false,
+    "rawMargin": -2.8446213803867915,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 179
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00179",
+    "fraud": false,
+    "rawMargin": -4.725615429570923,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 180
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00180",
+    "fraud": false,
+    "rawMargin": -5.164034449278002,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 181
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00181",
+    "fraud": false,
+    "rawMargin": -5.192659566758951,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 182
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00182",
+    "fraud": false,
+    "rawMargin": -4.553071800862313,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 183
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00183",
+    "fraud": false,
+    "rawMargin": -4.904060129254404,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 184
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00184",
+    "fraud": false,
+    "rawMargin": -4.400460896349027,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 185
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00185",
+    "fraud": false,
+    "rawMargin": -6.355724325331259,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 186
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00186",
+    "fraud": false,
+    "rawMargin": -4.487566643108722,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 187
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00187",
+    "fraud": false,
+    "rawMargin": -4.363581491513773,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 188
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00188",
+    "fraud": false,
+    "rawMargin": -3.61277932743842,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 189
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00189",
+    "fraud": false,
+    "rawMargin": -5.841431306562682,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 190
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00190",
+    "fraud": false,
+    "rawMargin": -4.7597871776019,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 191
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00191",
+    "fraud": false,
+    "rawMargin": -3.926870657586661,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 192
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00192",
+    "fraud": false,
+    "rawMargin": -5.316200592861075,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 193
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00193",
+    "fraud": false,
+    "rawMargin": -4.8522021409893865,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 194
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00194",
+    "fraud": false,
+    "rawMargin": -5.29554243108146,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 195
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00195",
+    "fraud": false,
+    "rawMargin": -5.115879750542723,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 196
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00196",
+    "fraud": false,
+    "rawMargin": -5.30621548702442,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 197
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00197",
+    "fraud": false,
+    "rawMargin": -5.190970945129317,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 198
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00198",
+    "fraud": false,
+    "rawMargin": -4.908748544755947,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 199
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00199",
+    "fraud": false,
+    "rawMargin": -5.532376132484505,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 200
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00200",
+    "fraud": false,
+    "rawMargin": -5.190232521908403,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 201
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00201",
+    "fraud": false,
+    "rawMargin": -4.532090644964141,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 202
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00202",
+    "fraud": false,
+    "rawMargin": -5.064672479393657,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 203
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00203",
+    "fraud": false,
+    "rawMargin": -5.5545109203456855,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 204
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00204",
+    "fraud": false,
+    "rawMargin": -4.581320197047619,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 205
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00205",
+    "fraud": false,
+    "rawMargin": -4.871788224444067,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 206
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00206",
+    "fraud": false,
+    "rawMargin": -4.658663120226605,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 207
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00207",
+    "fraud": false,
+    "rawMargin": -4.809175548562663,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 208
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00208",
+    "fraud": false,
+    "rawMargin": -4.328626844378502,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 209
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00209",
+    "fraud": false,
+    "rawMargin": -4.930197318160423,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 210
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00210",
+    "fraud": false,
+    "rawMargin": -4.293555795045913,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 211
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00211",
+    "fraud": false,
+    "rawMargin": -5.136097756117137,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 212
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00212",
+    "fraud": false,
+    "rawMargin": -4.03989049993602,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 213
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00213",
+    "fraud": false,
+    "rawMargin": -3.8561583003291804,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 214
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00214",
+    "fraud": false,
+    "rawMargin": -3.6777221899972363,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 215
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00215",
+    "fraud": false,
+    "rawMargin": -4.659685758515641,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 216
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00216",
+    "fraud": false,
+    "rawMargin": -4.62976906766281,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 217
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00217",
+    "fraud": false,
+    "rawMargin": -5.024739443669344,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 218
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00218",
+    "fraud": false,
+    "rawMargin": -4.931299718492435,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 219
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00219",
+    "fraud": false,
+    "rawMargin": -4.973506192182542,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 220
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00220",
+    "fraud": false,
+    "rawMargin": -4.836766401845967,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 221
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00221",
+    "fraud": false,
+    "rawMargin": -5.773581965069522,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 222
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00222",
+    "fraud": false,
+    "rawMargin": -4.955244934825315,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 223
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00223",
+    "fraud": false,
+    "rawMargin": -5.4657394840151365,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 224
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00224",
+    "fraud": false,
+    "rawMargin": -4.57547091817068,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 225
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00225",
+    "fraud": false,
+    "rawMargin": -4.865588012065579,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 226
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00226",
+    "fraud": false,
+    "rawMargin": -5.591433612640931,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 227
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00227",
+    "fraud": false,
+    "rawMargin": -4.822103727718227,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 228
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00228",
+    "fraud": false,
+    "rawMargin": -5.6323870671211225,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 229
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00229",
+    "fraud": false,
+    "rawMargin": -4.544197277992045,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 230
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00230",
+    "fraud": false,
+    "rawMargin": -4.918366963748352,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 231
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00231",
+    "fraud": false,
+    "rawMargin": -4.39156822436676,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 232
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00232",
+    "fraud": false,
+    "rawMargin": -5.053489012170714,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 233
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00233",
+    "fraud": false,
+    "rawMargin": -4.544218216704538,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 234
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00234",
+    "fraud": false,
+    "rawMargin": -4.524139643029641,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 235
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00235",
+    "fraud": false,
+    "rawMargin": -4.606419714519349,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 236
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00236",
+    "fraud": false,
+    "rawMargin": -4.7904444287954275,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 237
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00237",
+    "fraud": false,
+    "rawMargin": -4.510262818842492,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 238
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00238",
+    "fraud": false,
+    "rawMargin": -5.263946351851114,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 239
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00239",
+    "fraud": false,
+    "rawMargin": -3.812003287253816,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 240
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00240",
+    "fraud": false,
+    "rawMargin": -3.961848888756993,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 241
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00241",
+    "fraud": false,
+    "rawMargin": -5.169813076910227,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 242
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00242",
+    "fraud": false,
+    "rawMargin": -5.091940558923502,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 243
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00243",
+    "fraud": false,
+    "rawMargin": -4.270596927728019,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 244
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00244",
+    "fraud": false,
+    "rawMargin": -5.507103737529983,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 245
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00245",
+    "fraud": false,
+    "rawMargin": -4.996638367820568,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 246
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00246",
+    "fraud": false,
+    "rawMargin": -4.910358212250032,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 247
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00247",
+    "fraud": false,
+    "rawMargin": -5.945519252509486,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 248
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00248",
+    "fraud": false,
+    "rawMargin": -5.844544975112605,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 249
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00249",
+    "fraud": false,
+    "rawMargin": -4.967287606013863,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 250
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00250",
+    "fraud": false,
+    "rawMargin": -4.406183610260446,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 251
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00251",
+    "fraud": false,
+    "rawMargin": -5.632515822302326,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 252
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00252",
+    "fraud": false,
+    "rawMargin": -5.5917802179650895,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 253
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00253",
+    "fraud": false,
+    "rawMargin": -3.911685579028458,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 254
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00254",
+    "fraud": false,
+    "rawMargin": -4.672049718756431,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 255
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00255",
+    "fraud": false,
+    "rawMargin": -4.867739525483422,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 256
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00256",
+    "fraud": false,
+    "rawMargin": -4.931305736117911,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 257
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00257",
+    "fraud": false,
+    "rawMargin": -4.4481078605627244,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 258
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00258",
+    "fraud": false,
+    "rawMargin": -5.651096175743702,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 259
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00259",
+    "fraud": false,
+    "rawMargin": -4.6911143807308235,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 260
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00260",
+    "fraud": false,
+    "rawMargin": -5.361287057612415,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 261
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00261",
+    "fraud": false,
+    "rawMargin": -3.903053339542559,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 262
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00262",
+    "fraud": false,
+    "rawMargin": -5.389511018103679,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 263
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00263",
+    "fraud": false,
+    "rawMargin": -4.142204670727933,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 264
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00264",
+    "fraud": false,
+    "rawMargin": -3.5507971969300436,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 265
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00265",
+    "fraud": false,
+    "rawMargin": -4.639379401610935,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 266
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00266",
+    "fraud": false,
+    "rawMargin": -4.439865276836657,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 267
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00267",
+    "fraud": false,
+    "rawMargin": -4.067749395047157,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 268
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00268",
+    "fraud": false,
+    "rawMargin": -4.409329991924364,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 269
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00269",
+    "fraud": false,
+    "rawMargin": -1.0012920834836436,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 270
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00270",
+    "fraud": false,
+    "rawMargin": -4.717600075820391,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 271
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00271",
+    "fraud": false,
+    "rawMargin": -4.018016249574962,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 272
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00272",
+    "fraud": false,
+    "rawMargin": -5.46954191135872,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 273
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00273",
+    "fraud": false,
+    "rawMargin": -3.4620842619898182,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 274
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00274",
+    "fraud": false,
+    "rawMargin": -3.519198024812856,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 275
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00275",
+    "fraud": false,
+    "rawMargin": -4.4804370059193985,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 276
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00276",
+    "fraud": false,
+    "rawMargin": -4.683361350314501,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 277
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00277",
+    "fraud": false,
+    "rawMargin": -4.367603942000231,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 278
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00278",
+    "fraud": false,
+    "rawMargin": -3.790013724585594,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 279
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00279",
+    "fraud": false,
+    "rawMargin": -4.726013237677193,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 280
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00280",
+    "fraud": false,
+    "rawMargin": -4.689678145527508,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 281
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00281",
+    "fraud": false,
+    "rawMargin": -4.677835012554231,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 282
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00282",
+    "fraud": false,
+    "rawMargin": -5.512948392502078,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 283
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00283",
+    "fraud": false,
+    "rawMargin": -3.717691942930892,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 284
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00284",
+    "fraud": false,
+    "rawMargin": -4.516199605534023,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 285
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00285",
+    "fraud": false,
+    "rawMargin": -5.0450178751650885,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 286
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00286",
+    "fraud": false,
+    "rawMargin": -5.4936661590830145,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 287
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00287",
+    "fraud": false,
+    "rawMargin": -3.7659135481749515,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 288
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00288",
+    "fraud": false,
+    "rawMargin": -3.621145479059249,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 289
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00289",
+    "fraud": false,
+    "rawMargin": -5.765261055061993,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 290
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00290",
+    "fraud": false,
+    "rawMargin": -3.3200693800491368,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 291
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00291",
+    "fraud": false,
+    "rawMargin": -5.337979514313427,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 292
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00292",
+    "fraud": false,
+    "rawMargin": -3.455083553277129,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 293
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00293",
+    "fraud": false,
+    "rawMargin": -4.282819791159387,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 294
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00294",
+    "fraud": false,
+    "rawMargin": -5.344367732997543,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 295
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00295",
+    "fraud": false,
+    "rawMargin": -4.8509958982138475,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 296
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00296",
+    "fraud": false,
+    "rawMargin": -5.424457718151555,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 297
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00297",
+    "fraud": false,
+    "rawMargin": -5.865819083320647,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 298
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00298",
+    "fraud": false,
+    "rawMargin": -4.649639068397845,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 299
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00299",
+    "fraud": false,
+    "rawMargin": -3.560396187316813,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 300
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00300",
+    "fraud": false,
+    "rawMargin": -5.012355963990928,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 301
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00301",
+    "fraud": false,
+    "rawMargin": -4.614736137059611,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 302
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00302",
+    "fraud": false,
+    "rawMargin": -4.745964526269492,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 303
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00303",
+    "fraud": false,
+    "rawMargin": -4.742523684607947,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 304
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00304",
+    "fraud": false,
+    "rawMargin": -2.727981318680463,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 305
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00305",
+    "fraud": false,
+    "rawMargin": -3.8235678460177582,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 306
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00306",
+    "fraud": false,
+    "rawMargin": -4.850559038581639,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 307
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00307",
+    "fraud": false,
+    "rawMargin": -5.44799976745307,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 308
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00308",
+    "fraud": false,
+    "rawMargin": -5.152560726743461,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 309
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00309",
+    "fraud": false,
+    "rawMargin": -4.396658075599557,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 310
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00310",
+    "fraud": false,
+    "rawMargin": -4.52812819087646,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 311
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00311",
+    "fraud": false,
+    "rawMargin": -4.5679262967130825,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 312
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00312",
+    "fraud": false,
+    "rawMargin": -5.67888154624999,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 313
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00313",
+    "fraud": false,
+    "rawMargin": -4.394426480069148,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 314
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00314",
+    "fraud": false,
+    "rawMargin": -5.256251421011974,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 315
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00315",
+    "fraud": false,
+    "rawMargin": -5.078701322092719,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 316
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00316",
+    "fraud": false,
+    "rawMargin": -5.2506354769674,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 317
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00317",
+    "fraud": false,
+    "rawMargin": -6.495964406632541,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 318
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00318",
+    "fraud": false,
+    "rawMargin": -3.7488802133987726,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 319
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00319",
+    "fraud": false,
+    "rawMargin": -5.305459670427204,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 320
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00320",
+    "fraud": false,
+    "rawMargin": -4.771359763511636,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 321
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00321",
+    "fraud": false,
+    "rawMargin": -4.895046691375497,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 322
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00322",
+    "fraud": false,
+    "rawMargin": -2.43895258709578,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 323
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00323",
+    "fraud": false,
+    "rawMargin": -5.392175962230203,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 324
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00324",
+    "fraud": false,
+    "rawMargin": -5.000949749521569,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 325
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00325",
+    "fraud": false,
+    "rawMargin": -4.411927775223257,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 326
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00326",
+    "fraud": false,
+    "rawMargin": -4.77633732632793,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 327
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00327",
+    "fraud": false,
+    "rawMargin": -2.8276647129416443,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 328
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00328",
+    "fraud": false,
+    "rawMargin": -4.211305993266536,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 329
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00329",
+    "fraud": false,
+    "rawMargin": -3.7820195700457937,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 330
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00330",
+    "fraud": false,
+    "rawMargin": -3.9368217545087942,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 331
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00331",
+    "fraud": false,
+    "rawMargin": -4.470857195941787,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 332
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00332",
+    "fraud": false,
+    "rawMargin": -4.977606837492305,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 333
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00333",
+    "fraud": false,
+    "rawMargin": -4.944544886369701,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 334
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00334",
+    "fraud": false,
+    "rawMargin": -5.3644517171015025,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 335
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00335",
+    "fraud": false,
+    "rawMargin": -5.403067598879999,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 336
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00336",
+    "fraud": false,
+    "rawMargin": -3.989084913629536,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 337
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00337",
+    "fraud": false,
+    "rawMargin": -5.972950389087566,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 338
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00338",
+    "fraud": false,
+    "rawMargin": -5.953607733570569,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 339
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00339",
+    "fraud": false,
+    "rawMargin": -5.404159893723546,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 340
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00340",
+    "fraud": false,
+    "rawMargin": -5.198236183976505,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 341
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00341",
+    "fraud": false,
+    "rawMargin": -3.877886656783301,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 342
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00342",
+    "fraud": false,
+    "rawMargin": -4.120093220781664,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 343
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00343",
+    "fraud": false,
+    "rawMargin": -3.9159708927783115,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 344
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00344",
+    "fraud": false,
+    "rawMargin": -4.400314223631741,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 345
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00345",
+    "fraud": false,
+    "rawMargin": -3.6011885761614724,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 346
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00346",
+    "fraud": false,
+    "rawMargin": -4.597839728713926,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 347
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00347",
+    "fraud": false,
+    "rawMargin": -5.0030117445925,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 348
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00348",
+    "fraud": false,
+    "rawMargin": -3.879189803807588,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 349
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00349",
+    "fraud": false,
+    "rawMargin": -5.108058185248512,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 350
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00350",
+    "fraud": false,
+    "rawMargin": -5.1154888018094296,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 351
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00351",
+    "fraud": false,
+    "rawMargin": -4.9435187192794965,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 352
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00352",
+    "fraud": false,
+    "rawMargin": -4.287142037005283,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 353
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00353",
+    "fraud": false,
+    "rawMargin": -4.63945983351238,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 354
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00354",
+    "fraud": false,
+    "rawMargin": -3.729373576223806,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 355
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00355",
+    "fraud": false,
+    "rawMargin": -4.529940832302549,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 356
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00356",
+    "fraud": false,
+    "rawMargin": -4.99904077910137,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 357
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00357",
+    "fraud": false,
+    "rawMargin": -4.873652924846516,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 358
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00358",
+    "fraud": false,
+    "rawMargin": -5.330712044016458,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 359
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00359",
+    "fraud": false,
+    "rawMargin": -4.8633163603264356,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 360
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00360",
+    "fraud": false,
+    "rawMargin": -5.1936860429178155,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 361
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00361",
+    "fraud": false,
+    "rawMargin": -5.904090420191022,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 362
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00362",
+    "fraud": false,
+    "rawMargin": -6.1097194566079684,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 363
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00363",
+    "fraud": false,
+    "rawMargin": -5.705562997630792,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 364
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00364",
+    "fraud": false,
+    "rawMargin": -5.018036652085595,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 365
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00365",
+    "fraud": false,
+    "rawMargin": -5.114420682505799,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 366
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00366",
+    "fraud": false,
+    "rawMargin": -4.274240356666238,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 367
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00367",
+    "fraud": false,
+    "rawMargin": -4.153764229263351,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 368
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00368",
+    "fraud": false,
+    "rawMargin": -3.919972935061475,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 369
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00369",
+    "fraud": false,
+    "rawMargin": -4.020545622449112,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 370
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00370",
+    "fraud": false,
+    "rawMargin": -4.466953819869373,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 371
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00371",
+    "fraud": false,
+    "rawMargin": -5.144520436211977,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 372
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00372",
+    "fraud": false,
+    "rawMargin": -4.507560901653509,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 373
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00373",
+    "fraud": false,
+    "rawMargin": -5.703323213063942,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 374
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00374",
+    "fraud": false,
+    "rawMargin": -5.973917349758,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 375
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00375",
+    "fraud": false,
+    "rawMargin": -5.703804725655837,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 376
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00376",
+    "fraud": false,
+    "rawMargin": -4.004802071858739,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 377
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00377",
+    "fraud": false,
+    "rawMargin": -4.444882890101408,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 378
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00378",
+    "fraud": false,
+    "rawMargin": -6.448554953474564,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 379
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00379",
+    "fraud": false,
+    "rawMargin": -5.209547623913591,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 380
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00380",
+    "fraud": false,
+    "rawMargin": -5.623236655109398,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 381
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00381",
+    "fraud": false,
+    "rawMargin": -4.792679189090336,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 382
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00382",
+    "fraud": false,
+    "rawMargin": -4.9041216794774645,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 383
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00383",
+    "fraud": false,
+    "rawMargin": -4.230425609521984,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 384
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00384",
+    "fraud": false,
+    "rawMargin": -5.920337875361103,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 385
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00385",
+    "fraud": false,
+    "rawMargin": -5.389629841324865,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 386
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00386",
+    "fraud": false,
+    "rawMargin": -4.40529765835857,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 387
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00387",
+    "fraud": false,
+    "rawMargin": -4.599881801431588,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 388
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00388",
+    "fraud": false,
+    "rawMargin": -4.189673467774307,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 389
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00389",
+    "fraud": false,
+    "rawMargin": -3.804112131724277,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 390
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00390",
+    "fraud": false,
+    "rawMargin": -5.642113779428344,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 391
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00391",
+    "fraud": false,
+    "rawMargin": -5.651757104175115,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 392
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00392",
+    "fraud": false,
+    "rawMargin": -4.266479804542131,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 393
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00393",
+    "fraud": false,
+    "rawMargin": -2.9390243910628184,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 394
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00394",
+    "fraud": false,
+    "rawMargin": -4.303710266440674,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 395
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00395",
+    "fraud": false,
+    "rawMargin": -5.6009146609928795,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 396
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00396",
+    "fraud": false,
+    "rawMargin": -6.133485126909004,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 397
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00397",
+    "fraud": false,
+    "rawMargin": -5.5284115953847035,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 398
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00398",
+    "fraud": false,
+    "rawMargin": -4.536457260656809,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 399
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00399",
+    "fraud": false,
+    "rawMargin": -5.594131141759442,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 400
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00400",
+    "fraud": false,
+    "rawMargin": -5.558737973996326,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 401
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00401",
+    "fraud": false,
+    "rawMargin": -5.817346412450922,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 402
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00402",
+    "fraud": false,
+    "rawMargin": -5.6403544230741165,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 403
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00403",
+    "fraud": false,
+    "rawMargin": -6.543510593471713,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 404
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00404",
+    "fraud": false,
+    "rawMargin": -5.424864114874301,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 405
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00405",
+    "fraud": false,
+    "rawMargin": -4.564172014830025,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 406
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00406",
+    "fraud": false,
+    "rawMargin": -6.060810430970021,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 407
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00407",
+    "fraud": false,
+    "rawMargin": -4.878729453664447,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 408
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00408",
+    "fraud": false,
+    "rawMargin": -5.137582398789005,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 409
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00409",
+    "fraud": false,
+    "rawMargin": -5.730532839097965,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 410
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00410",
+    "fraud": false,
+    "rawMargin": -2.813837486166823,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 411
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00411",
+    "fraud": false,
+    "rawMargin": -4.610264439082256,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 412
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00412",
+    "fraud": false,
+    "rawMargin": -5.293308430352903,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 413
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00413",
+    "fraud": false,
+    "rawMargin": -4.872743588197771,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 414
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00414",
+    "fraud": false,
+    "rawMargin": -4.945276968332728,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 415
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00415",
+    "fraud": false,
+    "rawMargin": -4.01561158294723,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 416
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00416",
+    "fraud": false,
+    "rawMargin": -4.953581429897883,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 417
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00417",
+    "fraud": false,
+    "rawMargin": -3.6064180589245867,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 418
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00418",
+    "fraud": false,
+    "rawMargin": -4.540329001608021,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 419
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00419",
+    "fraud": false,
+    "rawMargin": -5.731319995342602,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 420
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00420",
+    "fraud": false,
+    "rawMargin": -5.701098696622332,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 421
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00421",
+    "fraud": false,
+    "rawMargin": -3.1747622582604405,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 422
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00422",
+    "fraud": false,
+    "rawMargin": -5.961620108821658,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 423
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00423",
+    "fraud": false,
+    "rawMargin": -5.207353262190945,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 424
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00424",
+    "fraud": false,
+    "rawMargin": -4.450595634608494,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 425
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00425",
+    "fraud": false,
+    "rawMargin": -3.9087357789321184,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 426
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00426",
+    "fraud": false,
+    "rawMargin": -4.197455941393569,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 427
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00427",
+    "fraud": false,
+    "rawMargin": -4.33181814808129,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 428
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00428",
+    "fraud": false,
+    "rawMargin": -5.070027512343563,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 429
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00429",
+    "fraud": false,
+    "rawMargin": -4.390302806643074,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 430
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00430",
+    "fraud": false,
+    "rawMargin": -5.8850962208781565,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 431
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00431",
+    "fraud": false,
+    "rawMargin": -4.449706933472926,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 432
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00432",
+    "fraud": false,
+    "rawMargin": -6.053857979578296,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 433
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00433",
+    "fraud": false,
+    "rawMargin": -5.3014269403670635,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 434
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00434",
+    "fraud": false,
+    "rawMargin": -4.656371653159015,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 435
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00435",
+    "fraud": false,
+    "rawMargin": -5.013234002510758,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 436
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00436",
+    "fraud": false,
+    "rawMargin": -4.779494812246297,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 437
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00437",
+    "fraud": false,
+    "rawMargin": -4.431102954973671,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 438
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00438",
+    "fraud": false,
+    "rawMargin": -5.027780390179015,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 439
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00439",
+    "fraud": false,
+    "rawMargin": -4.9022905149409,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 440
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00440",
+    "fraud": false,
+    "rawMargin": -5.9859113973319005,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 441
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00441",
+    "fraud": false,
+    "rawMargin": -5.1536000151490455,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 442
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00442",
+    "fraud": false,
+    "rawMargin": 0.31588503622644504,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 443
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00443",
+    "fraud": false,
+    "rawMargin": -6.3814175185814355,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 444
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00444",
+    "fraud": false,
+    "rawMargin": -5.581936186049173,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 445
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00445",
+    "fraud": false,
+    "rawMargin": -6.602286783046511,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 446
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00446",
+    "fraud": false,
+    "rawMargin": -5.161311023420645,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 447
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00447",
+    "fraud": false,
+    "rawMargin": -5.328945073912152,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 448
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00448",
+    "fraud": false,
+    "rawMargin": -5.436293029443946,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 449
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00449",
+    "fraud": false,
+    "rawMargin": -4.3559755680168015,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 450
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00450",
+    "fraud": false,
+    "rawMargin": -4.81109969936059,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 451
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00451",
+    "fraud": false,
+    "rawMargin": -5.957370421380387,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 452
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00452",
+    "fraud": false,
+    "rawMargin": -5.733071743998234,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 453
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00453",
+    "fraud": false,
+    "rawMargin": -4.921565912057076,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 454
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00454",
+    "fraud": false,
+    "rawMargin": -5.115146665528911,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 455
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00455",
+    "fraud": false,
+    "rawMargin": -4.785332005867865,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 456
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00456",
+    "fraud": false,
+    "rawMargin": -5.044115398332916,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 457
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00457",
+    "fraud": false,
+    "rawMargin": -5.299541624729188,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 458
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00458",
+    "fraud": false,
+    "rawMargin": -4.152994141547667,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 459
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00459",
+    "fraud": false,
+    "rawMargin": -5.408245120021946,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 460
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00460",
+    "fraud": false,
+    "rawMargin": -5.904457721639754,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 461
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00461",
+    "fraud": false,
+    "rawMargin": -5.08763143549185,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 462
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00462",
+    "fraud": false,
+    "rawMargin": -4.429904771679066,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 463
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00463",
+    "fraud": false,
+    "rawMargin": -6.467706501293902,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 464
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00464",
+    "fraud": false,
+    "rawMargin": -5.399796754710873,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 465
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00465",
+    "fraud": false,
+    "rawMargin": -4.276914228230543,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 466
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00466",
+    "fraud": false,
+    "rawMargin": -5.492989358508582,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 467
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00467",
+    "fraud": false,
+    "rawMargin": -5.054587711790016,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 468
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00468",
+    "fraud": false,
+    "rawMargin": -2.865988092321392,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 469
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00469",
+    "fraud": false,
+    "rawMargin": -4.691631388774379,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 470
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00470",
+    "fraud": false,
+    "rawMargin": -4.6883983945182885,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 471
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00471",
+    "fraud": false,
+    "rawMargin": -4.169566560069715,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 472
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00472",
+    "fraud": false,
+    "rawMargin": -3.3469997929936977,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 473
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00473",
+    "fraud": false,
+    "rawMargin": -3.865647377299137,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 474
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00474",
+    "fraud": false,
+    "rawMargin": -4.554672640292477,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 475
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00475",
+    "fraud": false,
+    "rawMargin": -4.3939284660813245,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 476
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00476",
+    "fraud": false,
+    "rawMargin": -5.816124444951347,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 477
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00477",
+    "fraud": false,
+    "rawMargin": -6.0827905682039445,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 478
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00478",
+    "fraud": false,
+    "rawMargin": -4.0988580083881665,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 479
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00479",
+    "fraud": false,
+    "rawMargin": -3.912389642852275,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 480
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00480",
+    "fraud": false,
+    "rawMargin": -5.919497910621499,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 481
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00481",
+    "fraud": false,
+    "rawMargin": -4.840321648590055,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 482
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00482",
+    "fraud": false,
+    "rawMargin": -5.87292552207162,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 483
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00483",
+    "fraud": false,
+    "rawMargin": -4.5488814703927805,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 484
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00484",
+    "fraud": false,
+    "rawMargin": -5.011257785389186,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 485
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00485",
+    "fraud": false,
+    "rawMargin": -6.175731589735675,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 486
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00486",
+    "fraud": false,
+    "rawMargin": -6.231104527228254,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 487
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00487",
+    "fraud": false,
+    "rawMargin": -4.687725306480784,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 488
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00488",
+    "fraud": false,
+    "rawMargin": -4.977787895833541,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 489
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00489",
+    "fraud": false,
+    "rawMargin": -5.090100046617596,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 490
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00490",
+    "fraud": false,
+    "rawMargin": -3.808536026514377,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 491
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00491",
+    "fraud": false,
+    "rawMargin": -3.4432546018207333,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 492
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00492",
+    "fraud": false,
+    "rawMargin": -6.140237353938253,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 493
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00493",
+    "fraud": false,
+    "rawMargin": -6.288090488212873,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 494
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00494",
+    "fraud": false,
+    "rawMargin": -5.025773395124365,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 495
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00495",
+    "fraud": false,
+    "rawMargin": -5.025225988214635,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 496
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00496",
+    "fraud": false,
+    "rawMargin": -4.558773559802703,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 497
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00497",
+    "fraud": false,
+    "rawMargin": -6.276199502356814,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 498
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00498",
+    "fraud": false,
+    "rawMargin": -3.1748368527305026,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 499
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00499",
+    "fraud": false,
+    "rawMargin": -4.188084172434479,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 500
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00500",
+    "fraud": false,
+    "rawMargin": -5.970588666667812,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 501
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00501",
+    "fraud": false,
+    "rawMargin": -5.307789425523285,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 502
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00502",
+    "fraud": false,
+    "rawMargin": -3.7553322436608294,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 503
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00503",
+    "fraud": false,
+    "rawMargin": -4.225400836839115,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 504
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00504",
+    "fraud": false,
+    "rawMargin": 1.6683338812975477,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 505
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00505",
+    "fraud": false,
+    "rawMargin": -3.826836707679373,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 506
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00506",
+    "fraud": false,
+    "rawMargin": -5.139435431251404,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 507
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00507",
+    "fraud": false,
+    "rawMargin": -5.906213828735242,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 508
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00508",
+    "fraud": false,
+    "rawMargin": -6.515488100698659,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 509
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00509",
+    "fraud": false,
+    "rawMargin": -5.49963665443302,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 510
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00510",
+    "fraud": false,
+    "rawMargin": -5.795489176107648,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 511
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00511",
+    "fraud": false,
+    "rawMargin": -5.389118822741673,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 512
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00512",
+    "fraud": false,
+    "rawMargin": -4.617575615730734,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 513
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00513",
+    "fraud": false,
+    "rawMargin": -5.795864241196993,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 514
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00514",
+    "fraud": false,
+    "rawMargin": -5.866717318600928,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 515
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00515",
+    "fraud": false,
+    "rawMargin": -5.320984665975343,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 516
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00516",
+    "fraud": false,
+    "rawMargin": -3.491632619663493,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 517
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00517",
+    "fraud": false,
+    "rawMargin": -5.681362535765616,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 518
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00518",
+    "fraud": false,
+    "rawMargin": -4.480315609578845,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 519
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00519",
+    "fraud": false,
+    "rawMargin": -3.7983123138960955,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 520
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00520",
+    "fraud": false,
+    "rawMargin": -3.991500714228558,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 521
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00521",
+    "fraud": false,
+    "rawMargin": -4.7965668912058055,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 522
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00522",
+    "fraud": false,
+    "rawMargin": -5.9964601664634225,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 523
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00523",
+    "fraud": false,
+    "rawMargin": -5.433617078826988,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 524
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00524",
+    "fraud": false,
+    "rawMargin": -5.372393082581298,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 525
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00525",
+    "fraud": false,
+    "rawMargin": -4.0191937750750535,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 526
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00526",
+    "fraud": false,
+    "rawMargin": -6.229657618041008,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 527
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00527",
+    "fraud": false,
+    "rawMargin": -4.519295841523976,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 528
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00528",
+    "fraud": false,
+    "rawMargin": -5.880942466520581,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 529
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00529",
+    "fraud": false,
+    "rawMargin": -4.728122540686305,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 530
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00530",
+    "fraud": false,
+    "rawMargin": -6.223390543595809,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 531
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00531",
+    "fraud": false,
+    "rawMargin": -5.1140083775641605,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 532
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00532",
+    "fraud": false,
+    "rawMargin": -4.362478103751806,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 533
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00533",
+    "fraud": false,
+    "rawMargin": -6.100728048216547,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 534
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00534",
+    "fraud": false,
+    "rawMargin": -5.5180306656670375,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 535
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00535",
+    "fraud": false,
+    "rawMargin": -4.295586301577135,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 536
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00536",
+    "fraud": false,
+    "rawMargin": -4.4400240435153755,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 537
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00537",
+    "fraud": false,
+    "rawMargin": -4.864221801352476,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 538
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00538",
+    "fraud": false,
+    "rawMargin": -5.394107704105334,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 539
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00539",
+    "fraud": false,
+    "rawMargin": -4.471928416038901,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 540
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00540",
+    "fraud": false,
+    "rawMargin": -4.212704443139126,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 541
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00541",
+    "fraud": false,
+    "rawMargin": -6.177986553168578,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 542
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00542",
+    "fraud": false,
+    "rawMargin": -5.851166932453355,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 543
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00543",
+    "fraud": false,
+    "rawMargin": -3.361097813008412,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 544
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00544",
+    "fraud": false,
+    "rawMargin": -4.796492132080711,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 545
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00545",
+    "fraud": false,
+    "rawMargin": -5.40450349941342,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 546
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00546",
+    "fraud": false,
+    "rawMargin": -3.7955570857873675,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 547
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00547",
+    "fraud": false,
+    "rawMargin": -4.690431267678035,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 548
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00548",
+    "fraud": false,
+    "rawMargin": -4.791709731966673,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 549
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00549",
+    "fraud": false,
+    "rawMargin": -4.909624182208595,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 550
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00550",
+    "fraud": false,
+    "rawMargin": -5.71609996279148,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 551
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00551",
+    "fraud": false,
+    "rawMargin": -4.702246621953911,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 552
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00552",
+    "fraud": false,
+    "rawMargin": -2.05829423060091,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 553
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00553",
+    "fraud": false,
+    "rawMargin": -5.337623544356816,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 554
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00554",
+    "fraud": false,
+    "rawMargin": -4.531670364647442,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 555
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00555",
+    "fraud": false,
+    "rawMargin": -4.551508301932356,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 556
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00556",
+    "fraud": false,
+    "rawMargin": -5.501735130050103,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 557
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00557",
+    "fraud": false,
+    "rawMargin": -5.45422657656027,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 558
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00558",
+    "fraud": false,
+    "rawMargin": -5.024232545102724,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 559
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00559",
+    "fraud": false,
+    "rawMargin": -6.009189737483959,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 560
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00560",
+    "fraud": false,
+    "rawMargin": -4.4193077638646665,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 561
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00561",
+    "fraud": false,
+    "rawMargin": -3.9046538183403965,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 562
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00562",
+    "fraud": false,
+    "rawMargin": -4.8314059982040565,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 563
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00563",
+    "fraud": false,
+    "rawMargin": -5.423955511302967,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 564
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00564",
+    "fraud": false,
+    "rawMargin": -5.888406278538864,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 565
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00565",
+    "fraud": false,
+    "rawMargin": -4.936061661315372,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 566
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00566",
+    "fraud": false,
+    "rawMargin": -5.196127550790654,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 567
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00567",
+    "fraud": false,
+    "rawMargin": -5.290846100902638,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 568
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00568",
+    "fraud": false,
+    "rawMargin": -4.699034340649932,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 569
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00569",
+    "fraud": false,
+    "rawMargin": -4.611037172355526,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 570
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00570",
+    "fraud": false,
+    "rawMargin": -7.232060495477926,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 571
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00571",
+    "fraud": false,
+    "rawMargin": -4.189794662307244,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 572
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00572",
+    "fraud": false,
+    "rawMargin": -5.580551927942393,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 573
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00573",
+    "fraud": false,
+    "rawMargin": -4.766078234186247,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 574
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00574",
+    "fraud": false,
+    "rawMargin": -3.6980886124706385,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 575
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00575",
+    "fraud": false,
+    "rawMargin": -4.73980915803461,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 576
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00576",
+    "fraud": false,
+    "rawMargin": -4.780465344567835,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 577
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00577",
+    "fraud": false,
+    "rawMargin": -4.359408738287761,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 578
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00578",
+    "fraud": false,
+    "rawMargin": -5.581009193461704,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 579
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00579",
+    "fraud": false,
+    "rawMargin": -4.9744959523966985,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 580
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00580",
+    "fraud": false,
+    "rawMargin": -4.935666370006676,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 581
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00581",
+    "fraud": false,
+    "rawMargin": -4.469295805471433,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 582
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00582",
+    "fraud": false,
+    "rawMargin": -5.583177421429915,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 583
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00583",
+    "fraud": false,
+    "rawMargin": -4.797155691894948,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 584
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00584",
+    "fraud": false,
+    "rawMargin": -4.849321241718482,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 585
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00585",
+    "fraud": false,
+    "rawMargin": -5.594768885299089,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 586
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00586",
+    "fraud": false,
+    "rawMargin": -5.2481542306510764,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 587
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00587",
+    "fraud": false,
+    "rawMargin": -4.847804245206764,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 588
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00588",
+    "fraud": false,
+    "rawMargin": -5.453685550872421,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 589
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00589",
+    "fraud": false,
+    "rawMargin": -5.744186836897345,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 590
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00590",
+    "fraud": false,
+    "rawMargin": -5.708124429226894,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 591
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00591",
+    "fraud": false,
+    "rawMargin": -5.617769955635497,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 592
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00592",
+    "fraud": false,
+    "rawMargin": -4.685926773551701,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 593
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00593",
+    "fraud": false,
+    "rawMargin": -3.6042322249423857,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 594
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00594",
+    "fraud": false,
+    "rawMargin": -4.47988488679065,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 595
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00595",
+    "fraud": false,
+    "rawMargin": -5.762610820033279,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 596
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00596",
+    "fraud": false,
+    "rawMargin": -4.735383651465425,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 597
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00597",
+    "fraud": false,
+    "rawMargin": -5.285240439753125,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 598
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00598",
+    "fraud": false,
+    "rawMargin": -4.505917193160158,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 599
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00599",
+    "fraud": false,
+    "rawMargin": -5.3857650198164375,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 600
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00600",
+    "fraud": false,
+    "rawMargin": -4.260644789245416,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 601
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00601",
+    "fraud": false,
+    "rawMargin": -5.7753625329232,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 602
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00602",
+    "fraud": false,
+    "rawMargin": -5.216693016391563,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 603
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00603",
+    "fraud": false,
+    "rawMargin": -5.137273461097605,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 604
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00604",
+    "fraud": false,
+    "rawMargin": -4.635868287969918,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 605
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00605",
+    "fraud": false,
+    "rawMargin": -5.862332885361759,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 606
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00606",
+    "fraud": false,
+    "rawMargin": -5.1513222249486,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 607
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00607",
+    "fraud": false,
+    "rawMargin": -5.396432080964794,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 608
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00608",
+    "fraud": true,
+    "rawMargin": 5.495604936045056,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 609
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00609",
+    "fraud": true,
+    "rawMargin": 6.496256640892281,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 610
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00610",
+    "fraud": true,
+    "rawMargin": 5.916178597977639,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 611
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00611",
+    "fraud": false,
+    "rawMargin": -4.854922007086723,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 612
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00612",
+    "fraud": false,
+    "rawMargin": -4.376777746098124,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 613
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00613",
+    "fraud": false,
+    "rawMargin": -4.11976647004192,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 614
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00614",
+    "fraud": false,
+    "rawMargin": -4.913841835917163,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 615
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00615",
+    "fraud": false,
+    "rawMargin": -5.710954492366168,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 616
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00616",
+    "fraud": false,
+    "rawMargin": -5.591850738748216,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 617
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00617",
+    "fraud": false,
+    "rawMargin": -5.634373916046681,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 618
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00618",
+    "fraud": false,
+    "rawMargin": -3.0505739020911493,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 619
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00619",
+    "fraud": false,
+    "rawMargin": -4.172439040427809,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 620
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00620",
+    "fraud": false,
+    "rawMargin": -5.489308957226646,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 621
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00621",
+    "fraud": false,
+    "rawMargin": -5.078761463886208,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 622
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00622",
+    "fraud": false,
+    "rawMargin": -5.389255692207358,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 623
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00623",
+    "fraud": false,
+    "rawMargin": -5.831761738957716,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 624
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00624",
+    "fraud": false,
+    "rawMargin": -5.132983145684058,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 625
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00625",
+    "fraud": false,
+    "rawMargin": -6.142130401893421,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 626
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00626",
+    "fraud": false,
+    "rawMargin": -5.031048895912096,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 627
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00627",
+    "fraud": false,
+    "rawMargin": -6.024326649583104,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 628
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00628",
+    "fraud": false,
+    "rawMargin": -5.455102155583356,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 629
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00629",
+    "fraud": false,
+    "rawMargin": -5.845108382038012,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 630
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00630",
+    "fraud": false,
+    "rawMargin": -5.029357132964398,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 631
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00631",
+    "fraud": false,
+    "rawMargin": -4.692935461607052,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 632
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00632",
+    "fraud": false,
+    "rawMargin": -3.6383319034214576,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 633
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00633",
+    "fraud": false,
+    "rawMargin": -5.015258303798639,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 634
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00634",
+    "fraud": false,
+    "rawMargin": -4.8303910709126825,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 635
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00635",
+    "fraud": false,
+    "rawMargin": -5.189158549233517,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 636
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00636",
+    "fraud": false,
+    "rawMargin": -3.9663201257818224,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 637
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00637",
+    "fraud": false,
+    "rawMargin": -4.885447089505066,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 638
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00638",
+    "fraud": false,
+    "rawMargin": -5.655957008605122,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 639
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00639",
+    "fraud": false,
+    "rawMargin": -5.135549499882608,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 640
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00640",
+    "fraud": false,
+    "rawMargin": -5.1138315523323135,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 641
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00641",
+    "fraud": false,
+    "rawMargin": -3.652613924589845,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 642
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00642",
+    "fraud": false,
+    "rawMargin": -4.867371525922551,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 643
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00643",
+    "fraud": false,
+    "rawMargin": -5.364008186250559,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 644
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00644",
+    "fraud": false,
+    "rawMargin": -4.189616212241573,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 645
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00645",
+    "fraud": false,
+    "rawMargin": -4.611112710394913,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 646
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00646",
+    "fraud": false,
+    "rawMargin": -4.728564731860965,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 647
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00647",
+    "fraud": false,
+    "rawMargin": -5.633160721341308,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 648
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00648",
+    "fraud": false,
+    "rawMargin": -5.606685275057423,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 649
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00649",
+    "fraud": false,
+    "rawMargin": -5.481344343068799,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 650
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00650",
+    "fraud": false,
+    "rawMargin": -6.195465939531014,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 651
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00651",
+    "fraud": false,
+    "rawMargin": -5.1523314857428675,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 652
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00652",
+    "fraud": false,
+    "rawMargin": -5.165208142663261,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 653
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00653",
+    "fraud": false,
+    "rawMargin": -5.001235306079405,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 654
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00654",
+    "fraud": false,
+    "rawMargin": -4.63753934096687,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 655
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00655",
+    "fraud": false,
+    "rawMargin": -5.195574355001971,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 656
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00656",
+    "fraud": false,
+    "rawMargin": -5.084510690830384,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 657
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00657",
+    "fraud": false,
+    "rawMargin": -5.424968631252608,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 658
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00658",
+    "fraud": false,
+    "rawMargin": -5.22032786036999,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 659
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00659",
+    "fraud": false,
+    "rawMargin": -5.18568730513892,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 660
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00660",
+    "fraud": false,
+    "rawMargin": -5.2262679945089285,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 661
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00661",
+    "fraud": false,
+    "rawMargin": -5.121251239811615,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 662
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00662",
+    "fraud": false,
+    "rawMargin": -5.887464416069216,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 663
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00663",
+    "fraud": false,
+    "rawMargin": -5.336489582133761,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 664
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00664",
+    "fraud": false,
+    "rawMargin": -4.922218341973701,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 665
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00665",
+    "fraud": false,
+    "rawMargin": -4.437197125146636,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 666
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00666",
+    "fraud": false,
+    "rawMargin": -4.986764629135159,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 667
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00667",
+    "fraud": false,
+    "rawMargin": -3.7409633106271425,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 668
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00668",
+    "fraud": false,
+    "rawMargin": -4.893397214656802,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 669
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00669",
+    "fraud": false,
+    "rawMargin": -6.245748597455938,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 670
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00670",
+    "fraud": false,
+    "rawMargin": -4.399163105191533,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 671
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00671",
+    "fraud": false,
+    "rawMargin": -2.1083834675003015,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 672
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00672",
+    "fraud": false,
+    "rawMargin": -5.062896071564369,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 673
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00673",
+    "fraud": false,
+    "rawMargin": -5.5488088049395055,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 674
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00674",
+    "fraud": false,
+    "rawMargin": -6.292490800165627,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 675
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00675",
+    "fraud": false,
+    "rawMargin": -4.896472884302878,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 676
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00676",
+    "fraud": false,
+    "rawMargin": -4.977670243903308,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 677
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00677",
+    "fraud": false,
+    "rawMargin": -3.9365354176018044,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 678
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00678",
+    "fraud": false,
+    "rawMargin": -5.346803173755379,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 679
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00679",
+    "fraud": false,
+    "rawMargin": -4.601813055838509,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 680
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00680",
+    "fraud": false,
+    "rawMargin": -5.078770398098369,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 681
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00681",
+    "fraud": false,
+    "rawMargin": -4.895081163513544,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 682
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00682",
+    "fraud": false,
+    "rawMargin": -5.875857499916635,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 683
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00683",
+    "fraud": false,
+    "rawMargin": -5.179828023953668,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 684
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00684",
+    "fraud": false,
+    "rawMargin": -3.9190584981763217,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 685
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00685",
+    "fraud": false,
+    "rawMargin": -5.606577749214007,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 686
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00686",
+    "fraud": false,
+    "rawMargin": -5.606862377483654,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 687
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00687",
+    "fraud": false,
+    "rawMargin": -3.6294644979437036,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 688
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00688",
+    "fraud": false,
+    "rawMargin": -5.135119691228436,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 689
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00689",
+    "fraud": false,
+    "rawMargin": -5.640631656568269,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 690
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00690",
+    "fraud": false,
+    "rawMargin": -5.057732167163865,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 691
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00691",
+    "fraud": false,
+    "rawMargin": -6.055620624684448,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 692
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00692",
+    "fraud": false,
+    "rawMargin": -4.543245053962174,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 693
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00693",
+    "fraud": false,
+    "rawMargin": -5.996653171469664,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 694
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00694",
+    "fraud": false,
+    "rawMargin": -5.453543354452888,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 695
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00695",
+    "fraud": false,
+    "rawMargin": -4.6240059818419175,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 696
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00696",
+    "fraud": false,
+    "rawMargin": -4.89506705682791,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 697
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00697",
+    "fraud": false,
+    "rawMargin": -4.886205830753109,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 698
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00698",
+    "fraud": false,
+    "rawMargin": -4.5053775181691105,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 699
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00699",
+    "fraud": false,
+    "rawMargin": -3.765777439126095,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 700
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00700",
+    "fraud": false,
+    "rawMargin": -4.850569900905785,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 701
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00701",
+    "fraud": false,
+    "rawMargin": -6.038695840652506,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 702
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00702",
+    "fraud": false,
+    "rawMargin": -4.612252620009319,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 703
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00703",
+    "fraud": false,
+    "rawMargin": -4.253916152093805,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 704
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00704",
+    "fraud": false,
+    "rawMargin": -6.245548569883642,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 705
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00705",
+    "fraud": false,
+    "rawMargin": -4.868038958621917,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 706
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00706",
+    "fraud": false,
+    "rawMargin": -4.530353488573381,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 707
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00707",
+    "fraud": false,
+    "rawMargin": -4.766019090905303,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 708
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00708",
+    "fraud": false,
+    "rawMargin": -4.906411564853596,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 709
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00709",
+    "fraud": false,
+    "rawMargin": -5.022622204220638,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 710
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00710",
+    "fraud": false,
+    "rawMargin": -6.413512765081831,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 711
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00711",
+    "fraud": false,
+    "rawMargin": -5.232490396890416,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 712
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00712",
+    "fraud": false,
+    "rawMargin": -6.212073190620933,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 713
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00713",
+    "fraud": false,
+    "rawMargin": -5.194585628162108,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 714
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00714",
+    "fraud": false,
+    "rawMargin": -4.352726562556913,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 715
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00715",
+    "fraud": false,
+    "rawMargin": -4.524888813927103,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 716
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00716",
+    "fraud": false,
+    "rawMargin": -6.319239783402432,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 717
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00717",
+    "fraud": false,
+    "rawMargin": -4.676134556581753,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 718
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00718",
+    "fraud": false,
+    "rawMargin": -5.83503573412552,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 719
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00719",
+    "fraud": false,
+    "rawMargin": -4.777445693726649,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 720
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00720",
+    "fraud": false,
+    "rawMargin": -3.9634196188779995,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 721
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00721",
+    "fraud": false,
+    "rawMargin": -3.7733090619673897,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 722
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00722",
+    "fraud": false,
+    "rawMargin": -4.356847651582633,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 723
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00723",
+    "fraud": false,
+    "rawMargin": -4.996647803308784,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 724
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00724",
+    "fraud": false,
+    "rawMargin": -4.862628589345976,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 725
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00725",
+    "fraud": false,
+    "rawMargin": -4.737278072260545,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 726
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00726",
+    "fraud": false,
+    "rawMargin": -4.775251280076757,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 727
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00727",
+    "fraud": false,
+    "rawMargin": -4.416689723760605,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 728
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00728",
+    "fraud": false,
+    "rawMargin": -2.060604186932886,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 729
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00729",
+    "fraud": false,
+    "rawMargin": -5.341227877517157,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 730
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00730",
+    "fraud": false,
+    "rawMargin": -5.95849715793041,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 731
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00731",
+    "fraud": false,
+    "rawMargin": -3.7993524657701765,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 732
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00732",
+    "fraud": false,
+    "rawMargin": -4.363213039170496,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 733
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00733",
+    "fraud": false,
+    "rawMargin": -5.372719924036129,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 734
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00734",
+    "fraud": false,
+    "rawMargin": -6.013789384541748,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 735
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00735",
+    "fraud": false,
+    "rawMargin": -3.4403411128322925,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 736
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00736",
+    "fraud": false,
+    "rawMargin": -5.2880793430240995,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 737
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00737",
+    "fraud": false,
+    "rawMargin": -5.830608925590691,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 738
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00738",
+    "fraud": false,
+    "rawMargin": -5.4187558610772415,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 739
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00739",
+    "fraud": false,
+    "rawMargin": -5.026525924493121,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 740
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00740",
+    "fraud": false,
+    "rawMargin": -3.752688247225796,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 741
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00741",
+    "fraud": false,
+    "rawMargin": -5.289686233839099,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 742
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00742",
+    "fraud": false,
+    "rawMargin": -2.3056383696534435,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 743
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00743",
+    "fraud": false,
+    "rawMargin": -4.960575497526495,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 744
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00744",
+    "fraud": false,
+    "rawMargin": -5.666564812835445,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 745
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00745",
+    "fraud": false,
+    "rawMargin": -2.894113579634669,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 746
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00746",
+    "fraud": false,
+    "rawMargin": -4.466373587550234,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 747
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00747",
+    "fraud": false,
+    "rawMargin": -4.596879273298298,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 748
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00748",
+    "fraud": false,
+    "rawMargin": -5.825607515897584,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 749
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00749",
+    "fraud": false,
+    "rawMargin": -4.845831086753017,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 750
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00750",
+    "fraud": false,
+    "rawMargin": -4.994977085874508,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 751
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00751",
+    "fraud": false,
+    "rawMargin": -4.819403777355042,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 752
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00752",
+    "fraud": false,
+    "rawMargin": -5.543256060808151,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 753
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00753",
+    "fraud": false,
+    "rawMargin": -4.108597053956925,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 754
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00754",
+    "fraud": false,
+    "rawMargin": -3.42777539768272,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 755
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00755",
+    "fraud": false,
+    "rawMargin": -5.243929620011378,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 756
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00756",
+    "fraud": false,
+    "rawMargin": -2.7964658118261347,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 757
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00757",
+    "fraud": false,
+    "rawMargin": -5.7464585680928435,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 758
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00758",
+    "fraud": false,
+    "rawMargin": -6.09330760174293,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 759
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00759",
+    "fraud": false,
+    "rawMargin": -3.584900779124532,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 760
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00760",
+    "fraud": false,
+    "rawMargin": -6.148963036336111,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 761
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00761",
+    "fraud": false,
+    "rawMargin": -6.223919542048379,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 762
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00762",
+    "fraud": false,
+    "rawMargin": -4.761501805629633,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 763
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00763",
+    "fraud": false,
+    "rawMargin": -4.774900063170571,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 764
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00764",
+    "fraud": false,
+    "rawMargin": -4.997562635620559,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 765
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00765",
+    "fraud": false,
+    "rawMargin": -4.766343731273467,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 766
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00766",
+    "fraud": false,
+    "rawMargin": -4.904940861134469,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 767
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00767",
+    "fraud": false,
+    "rawMargin": -6.213250786409809,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 768
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00768",
+    "fraud": false,
+    "rawMargin": -1.7831090820569377,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 769
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00769",
+    "fraud": false,
+    "rawMargin": -4.096852018164514,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 770
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00770",
+    "fraud": false,
+    "rawMargin": -5.041173390013449,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 771
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00771",
+    "fraud": false,
+    "rawMargin": -4.363928605007611,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 772
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00772",
+    "fraud": false,
+    "rawMargin": -3.59186503928494,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 773
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00773",
+    "fraud": false,
+    "rawMargin": -5.405530027968197,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 774
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00774",
+    "fraud": false,
+    "rawMargin": -4.48154859585422,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 775
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00775",
+    "fraud": false,
+    "rawMargin": -4.27269852725266,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 776
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00776",
+    "fraud": false,
+    "rawMargin": -3.9231427965381673,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 777
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00777",
+    "fraud": false,
+    "rawMargin": -5.413577868284436,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 778
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00778",
+    "fraud": false,
+    "rawMargin": -4.658302520782805,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 779
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00779",
+    "fraud": false,
+    "rawMargin": -5.441863688403998,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 780
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00780",
+    "fraud": false,
+    "rawMargin": -5.562346402000424,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 781
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00781",
+    "fraud": false,
+    "rawMargin": -5.5366143626818,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 782
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00782",
+    "fraud": false,
+    "rawMargin": -5.977960921569055,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 783
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00783",
+    "fraud": false,
+    "rawMargin": -3.2346880577931714,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 784
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00784",
+    "fraud": false,
+    "rawMargin": -2.936304029949832,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 785
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00785",
+    "fraud": false,
+    "rawMargin": -4.326327310944456,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 786
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00786",
+    "fraud": false,
+    "rawMargin": -5.092262033195849,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 787
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00787",
+    "fraud": false,
+    "rawMargin": -3.5465814992398412,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 788
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00788",
+    "fraud": false,
+    "rawMargin": -4.816213441281414,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 789
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00789",
+    "fraud": false,
+    "rawMargin": -2.6669874506900717,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 790
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00790",
+    "fraud": false,
+    "rawMargin": -5.619943582732608,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 791
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00791",
+    "fraud": false,
+    "rawMargin": -4.6336014354263915,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 792
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00792",
+    "fraud": false,
+    "rawMargin": -5.180394859215659,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 793
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00793",
+    "fraud": false,
+    "rawMargin": -5.4520045308807665,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 794
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00794",
+    "fraud": false,
+    "rawMargin": -5.945840200411754,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 795
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00795",
+    "fraud": false,
+    "rawMargin": -5.380092901136632,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 796
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00796",
+    "fraud": false,
+    "rawMargin": -4.904547121327537,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 797
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00797",
+    "fraud": false,
+    "rawMargin": -5.866839892320357,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 798
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00798",
+    "fraud": false,
+    "rawMargin": -5.782362460774167,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 799
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00799",
+    "fraud": false,
+    "rawMargin": -5.509402916513631,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 800
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00800",
+    "fraud": false,
+    "rawMargin": -6.414209526613367,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 801
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00801",
+    "fraud": false,
+    "rawMargin": -3.3951946718025305,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 802
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00802",
+    "fraud": false,
+    "rawMargin": -5.657428220235694,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 803
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00803",
+    "fraud": false,
+    "rawMargin": -4.266294121267422,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 804
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00804",
+    "fraud": false,
+    "rawMargin": -5.6223534149580034,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 805
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00805",
+    "fraud": false,
+    "rawMargin": -4.844127354569176,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 806
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00806",
+    "fraud": false,
+    "rawMargin": -5.550550432023043,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 807
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00807",
+    "fraud": false,
+    "rawMargin": -6.567680822588808,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 808
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00808",
+    "fraud": false,
+    "rawMargin": -3.8679374320305135,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 809
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00809",
+    "fraud": false,
+    "rawMargin": -5.545945680313031,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 810
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00810",
+    "fraud": false,
+    "rawMargin": -4.9220633881658316,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 811
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00811",
+    "fraud": false,
+    "rawMargin": -5.505355412974855,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 812
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00812",
+    "fraud": false,
+    "rawMargin": -4.768067971321866,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 813
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00813",
+    "fraud": false,
+    "rawMargin": -5.242584045142448,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 814
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00814",
+    "fraud": false,
+    "rawMargin": -1.207574161665348,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 815
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00815",
+    "fraud": false,
+    "rawMargin": -5.232635017980574,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 816
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00816",
+    "fraud": false,
+    "rawMargin": -6.236260650733964,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 817
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00817",
+    "fraud": false,
+    "rawMargin": -5.17508788361869,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 818
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00818",
+    "fraud": false,
+    "rawMargin": -5.728925681094841,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 819
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00819",
+    "fraud": false,
+    "rawMargin": -5.6144979948625915,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 820
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00820",
+    "fraud": false,
+    "rawMargin": -4.7386140168193185,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 821
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00821",
+    "fraud": false,
+    "rawMargin": -5.2748098480943835,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 822
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00822",
+    "fraud": false,
+    "rawMargin": -5.327115967587617,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 823
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00823",
+    "fraud": false,
+    "rawMargin": -5.39644927173617,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 824
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00824",
+    "fraud": false,
+    "rawMargin": -4.354407709858626,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 825
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00825",
+    "fraud": false,
+    "rawMargin": -5.673745150711153,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 826
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00826",
+    "fraud": false,
+    "rawMargin": -5.448900712254894,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 827
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00827",
+    "fraud": false,
+    "rawMargin": -3.7969308462379234,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 828
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00828",
+    "fraud": false,
+    "rawMargin": -5.82018087318718,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 829
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00829",
+    "fraud": false,
+    "rawMargin": -5.9913019581344535,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 830
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00830",
+    "fraud": false,
+    "rawMargin": -6.012680766753723,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 831
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00831",
+    "fraud": true,
+    "rawMargin": 1.5316184501444043,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 832
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00832",
+    "fraud": true,
+    "rawMargin": 6.833094323342194,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 833
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00833",
+    "fraud": true,
+    "rawMargin": 7.041494656346372,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 834
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00834",
+    "fraud": false,
+    "rawMargin": -5.846302333978798,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 835
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00835",
+    "fraud": false,
+    "rawMargin": -4.582598962364606,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 836
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00836",
+    "fraud": false,
+    "rawMargin": -5.497548803867387,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 837
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00837",
+    "fraud": false,
+    "rawMargin": -5.2797042497094315,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 838
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00838",
+    "fraud": false,
+    "rawMargin": -5.1792373825290365,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 839
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00839",
+    "fraud": false,
+    "rawMargin": -5.183186771252252,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 840
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00840",
+    "fraud": false,
+    "rawMargin": -4.94644444805654,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 841
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00841",
+    "fraud": false,
+    "rawMargin": -5.265224356802314,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 842
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00842",
+    "fraud": false,
+    "rawMargin": -5.970297226945508,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 843
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00843",
+    "fraud": true,
+    "rawMargin": -2.416509591180352,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 844
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00844",
+    "fraud": true,
+    "rawMargin": 2.7888292430662127,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 845
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00845",
+    "fraud": true,
+    "rawMargin": 3.722830395503647,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 846
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00846",
+    "fraud": false,
+    "rawMargin": -5.206330918871166,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 847
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00847",
+    "fraud": false,
+    "rawMargin": -5.456814179920179,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 848
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00848",
+    "fraud": false,
+    "rawMargin": -4.720584580470679,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 849
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00849",
+    "fraud": false,
+    "rawMargin": -5.208902856388665,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 850
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00850",
+    "fraud": false,
+    "rawMargin": -5.339362087503015,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 851
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00851",
+    "fraud": false,
+    "rawMargin": -4.877736637785346,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 852
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00852",
+    "fraud": false,
+    "rawMargin": -5.6019367216802225,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 853
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00853",
+    "fraud": false,
+    "rawMargin": -4.995367916155318,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 854
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00854",
+    "fraud": false,
+    "rawMargin": -5.2028352304943155,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 855
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00855",
+    "fraud": false,
+    "rawMargin": -5.5855282713812615,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 856
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00856",
+    "fraud": false,
+    "rawMargin": -5.800700445101343,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 857
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00857",
+    "fraud": false,
+    "rawMargin": -5.2547292607356,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 858
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00858",
+    "fraud": false,
+    "rawMargin": -5.893878040663938,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 859
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00859",
+    "fraud": false,
+    "rawMargin": -5.383353521562604,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 860
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00860",
+    "fraud": false,
+    "rawMargin": -4.754392089934178,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 861
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00861",
+    "fraud": false,
+    "rawMargin": -4.3393147540208865,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 862
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00862",
+    "fraud": false,
+    "rawMargin": -5.237460494431123,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 863
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00863",
+    "fraud": false,
+    "rawMargin": -5.82182525517613,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 864
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00864",
+    "fraud": false,
+    "rawMargin": -5.232317909924881,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 865
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00865",
+    "fraud": false,
+    "rawMargin": -5.246812325727906,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 866
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00866",
+    "fraud": false,
+    "rawMargin": -4.542905834867085,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 867
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00867",
+    "fraud": false,
+    "rawMargin": -4.2447408600221745,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 868
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00868",
+    "fraud": false,
+    "rawMargin": -5.684773160238826,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 869
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00869",
+    "fraud": false,
+    "rawMargin": -5.307736519875294,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 870
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00870",
+    "fraud": false,
+    "rawMargin": -6.049776639227869,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 871
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00871",
+    "fraud": false,
+    "rawMargin": -5.693130152437248,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 872
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00872",
+    "fraud": false,
+    "rawMargin": -4.447413031166592,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 873
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00873",
+    "fraud": false,
+    "rawMargin": -4.097828954817165,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 874
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00874",
+    "fraud": false,
+    "rawMargin": -5.255524011856968,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 875
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00875",
+    "fraud": false,
+    "rawMargin": -5.718254082444091,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 876
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00876",
+    "fraud": false,
+    "rawMargin": -5.2837335392488995,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 877
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00877",
+    "fraud": false,
+    "rawMargin": -4.07869732424263,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 878
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00878",
+    "fraud": false,
+    "rawMargin": -6.293340769738835,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 879
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00879",
+    "fraud": false,
+    "rawMargin": -5.883429578836415,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 880
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00880",
+    "fraud": false,
+    "rawMargin": -3.9757525117086456,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 881
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00881",
+    "fraud": false,
+    "rawMargin": -5.295175795680906,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 882
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00882",
+    "fraud": false,
+    "rawMargin": -4.6974161030843495,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 883
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00883",
+    "fraud": false,
+    "rawMargin": -5.505824273814607,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 884
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00884",
+    "fraud": false,
+    "rawMargin": -5.362281845013783,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 885
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00885",
+    "fraud": false,
+    "rawMargin": -3.968725326540917,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 886
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00886",
+    "fraud": false,
+    "rawMargin": -4.914572120683694,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 887
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00887",
+    "fraud": false,
+    "rawMargin": -4.464665102030918,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 888
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00888",
+    "fraud": false,
+    "rawMargin": -4.059159255557838,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 889
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00889",
+    "fraud": false,
+    "rawMargin": -1.5806262416875756,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 890
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00890",
+    "fraud": false,
+    "rawMargin": -5.461300169860588,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 891
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00891",
+    "fraud": false,
+    "rawMargin": -3.5231570285489133,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 892
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00892",
+    "fraud": false,
+    "rawMargin": -5.3275335033857445,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 893
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00893",
+    "fraud": false,
+    "rawMargin": -5.2251790901832935,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 894
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00894",
+    "fraud": false,
+    "rawMargin": -4.848997403926173,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 895
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00895",
+    "fraud": false,
+    "rawMargin": -4.511318518288697,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 896
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00896",
+    "fraud": false,
+    "rawMargin": -5.969790396358376,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 897
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00897",
+    "fraud": false,
+    "rawMargin": -4.739159075770479,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 898
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00898",
+    "fraud": false,
+    "rawMargin": -4.268595567195722,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 899
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00899",
+    "fraud": false,
+    "rawMargin": -4.763387414552712,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 900
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00900",
+    "fraud": false,
+    "rawMargin": -3.9579975399735083,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 901
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00901",
+    "fraud": false,
+    "rawMargin": -4.880737940889731,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 902
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00902",
+    "fraud": false,
+    "rawMargin": -5.605278918383944,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 903
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00903",
+    "fraud": false,
+    "rawMargin": -5.616179064323237,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 904
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00904",
+    "fraud": false,
+    "rawMargin": -4.984271340982421,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 905
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00905",
+    "fraud": false,
+    "rawMargin": -6.445693920663374,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 906
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00906",
+    "fraud": false,
+    "rawMargin": -5.301714956868591,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 907
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00907",
+    "fraud": false,
+    "rawMargin": -6.546959692833207,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 908
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00908",
+    "fraud": true,
+    "rawMargin": -0.8463658261439152,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 909
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00909",
+    "fraud": true,
+    "rawMargin": 3.190679270293591,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 910
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00910",
+    "fraud": true,
+    "rawMargin": 4.313374151221842,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 911
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00911",
+    "fraud": true,
+    "rawMargin": 0.9469697114874068,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 912
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00912",
+    "fraud": true,
+    "rawMargin": 3.125412630457966,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 913
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00913",
+    "fraud": true,
+    "rawMargin": 4.700647443205586,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 914
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00914",
+    "fraud": false,
+    "rawMargin": -3.939977041361301,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 915
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00915",
+    "fraud": false,
+    "rawMargin": -6.342094703548213,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 916
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00916",
+    "fraud": false,
+    "rawMargin": -4.114548348042194,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 917
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00917",
+    "fraud": false,
+    "rawMargin": -3.4770499466959013,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 918
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00918",
+    "fraud": false,
+    "rawMargin": -3.878466941131889,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 919
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00919",
+    "fraud": false,
+    "rawMargin": -4.0995319298625,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 920
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00920",
+    "fraud": false,
+    "rawMargin": -5.176671759444959,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 921
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00921",
+    "fraud": false,
+    "rawMargin": -4.478819846320676,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 922
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00922",
+    "fraud": false,
+    "rawMargin": -6.450134241303434,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 923
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00923",
+    "fraud": false,
+    "rawMargin": -4.634757477059553,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 924
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00924",
+    "fraud": false,
+    "rawMargin": -4.966838238579357,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 925
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00925",
+    "fraud": false,
+    "rawMargin": -4.864129217894488,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 926
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00926",
+    "fraud": false,
+    "rawMargin": -5.415312300223208,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 927
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00927",
+    "fraud": false,
+    "rawMargin": -6.007825832240822,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 928
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00928",
+    "fraud": false,
+    "rawMargin": -5.024752760441468,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 929
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00929",
+    "fraud": false,
+    "rawMargin": -2.1019662734774953,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 930
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00930",
+    "fraud": false,
+    "rawMargin": -6.199889299442489,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 931
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00931",
+    "fraud": false,
+    "rawMargin": -4.313203265003078,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 932
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00932",
+    "fraud": false,
+    "rawMargin": -5.688236580268782,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 933
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00933",
+    "fraud": false,
+    "rawMargin": -4.133048085488381,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 934
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00934",
+    "fraud": false,
+    "rawMargin": -3.087189067424881,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 935
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00935",
+    "fraud": false,
+    "rawMargin": -3.044847243177015,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 936
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00936",
+    "fraud": false,
+    "rawMargin": -4.432348372168999,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 937
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00937",
+    "fraud": false,
+    "rawMargin": -5.036911000610878,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 938
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00938",
+    "fraud": false,
+    "rawMargin": -5.917568605634055,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 939
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00939",
+    "fraud": false,
+    "rawMargin": -6.036580210240315,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 940
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00940",
+    "fraud": false,
+    "rawMargin": -4.095224224033232,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 941
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00941",
+    "fraud": false,
+    "rawMargin": -5.664455060652759,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 942
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00942",
+    "fraud": false,
+    "rawMargin": -5.042742326976489,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 943
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00943",
+    "fraud": false,
+    "rawMargin": -5.108684062101265,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 944
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00944",
+    "fraud": false,
+    "rawMargin": -4.438519110178178,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 945
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00945",
+    "fraud": false,
+    "rawMargin": -4.6966643254987455,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 946
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00946",
+    "fraud": false,
+    "rawMargin": -2.8161937679468205,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 947
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00947",
+    "fraud": false,
+    "rawMargin": -4.7850329307420205,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 948
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00948",
+    "fraud": false,
+    "rawMargin": -4.820111760504038,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 949
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00949",
+    "fraud": false,
+    "rawMargin": -3.666616068276565,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 950
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00950",
+    "fraud": false,
+    "rawMargin": -4.930249943940588,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 951
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00951",
+    "fraud": false,
+    "rawMargin": -5.660358139226102,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 952
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00952",
+    "fraud": false,
+    "rawMargin": -3.3670376913012268,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 953
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00953",
+    "fraud": false,
+    "rawMargin": -2.629438337557452,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 954
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00954",
+    "fraud": false,
+    "rawMargin": -3.5825638704074496,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 955
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00955",
+    "fraud": false,
+    "rawMargin": -4.323887342869337,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 956
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00956",
+    "fraud": false,
+    "rawMargin": -4.991770648380067,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 957
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00957",
+    "fraud": false,
+    "rawMargin": -3.628037431973446,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 958
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00958",
+    "fraud": false,
+    "rawMargin": -2.99736161383959,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 959
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00959",
+    "fraud": false,
+    "rawMargin": -5.444246304800602,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 960
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00960",
+    "fraud": false,
+    "rawMargin": -4.816650306151177,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 961
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00961",
+    "fraud": false,
+    "rawMargin": -5.9424072593951855,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 962
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00962",
+    "fraud": false,
+    "rawMargin": -5.660653538923613,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 963
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00963",
+    "fraud": false,
+    "rawMargin": -4.894173301283083,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 964
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00964",
+    "fraud": false,
+    "rawMargin": -3.3720127667853994,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 965
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00965",
+    "fraud": false,
+    "rawMargin": -5.505085622817761,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 966
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00966",
+    "fraud": false,
+    "rawMargin": -5.012567566992537,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 967
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00967",
+    "fraud": false,
+    "rawMargin": -5.078094822027711,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 968
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00968",
+    "fraud": false,
+    "rawMargin": -5.907966838860733,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 969
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00969",
+    "fraud": false,
+    "rawMargin": -5.7818504971548235,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 970
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00970",
+    "fraud": false,
+    "rawMargin": -5.75541533448901,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 971
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00971",
+    "fraud": false,
+    "rawMargin": -6.0873288784979245,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 972
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00972",
+    "fraud": false,
+    "rawMargin": -4.340456991848935,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 973
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00973",
+    "fraud": false,
+    "rawMargin": -4.948398482704709,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 974
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00974",
+    "fraud": false,
+    "rawMargin": -5.641597494109603,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 975
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00975",
+    "fraud": false,
+    "rawMargin": -4.613670060395728,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 976
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00976",
+    "fraud": false,
+    "rawMargin": -4.591264998772361,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 977
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00977",
+    "fraud": false,
+    "rawMargin": -4.939297223684359,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 978
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00978",
+    "fraud": false,
+    "rawMargin": -4.41095874522446,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 979
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00979",
+    "fraud": false,
+    "rawMargin": -5.80941195587507,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 980
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00980",
+    "fraud": false,
+    "rawMargin": -5.083597356036472,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 981
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00981",
+    "fraud": false,
+    "rawMargin": -4.350850429445141,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 982
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00982",
+    "fraud": false,
+    "rawMargin": -5.40435777610664,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 983
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00983",
+    "fraud": false,
+    "rawMargin": -4.290636730720737,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 984
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00984",
+    "fraud": false,
+    "rawMargin": -4.933194009515813,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 985
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00985",
+    "fraud": false,
+    "rawMargin": -4.754883716074301,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 986
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00986",
+    "fraud": false,
+    "rawMargin": -5.3259349346305145,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 987
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00987",
+    "fraud": false,
+    "rawMargin": -4.767731947512396,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 988
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00988",
+    "fraud": true,
+    "rawMargin": -0.5138663691958947,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 989
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00989",
+    "fraud": true,
+    "rawMargin": 2.6950314541925935,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 990
+  },
+  {
+    "alert": true,
+    "eventId": "DEMO-1000-00990",
+    "fraud": true,
+    "rawMargin": 1.8847927598018999,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 991
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00991",
+    "fraud": false,
+    "rawMargin": -5.14744482171078,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 992
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00992",
+    "fraud": false,
+    "rawMargin": -4.681066142955167,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 993
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00993",
+    "fraud": false,
+    "rawMargin": -4.982686144763698,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 994
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00994",
+    "fraud": false,
+    "rawMargin": -4.881319751366974,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 995
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00995",
+    "fraud": false,
+    "rawMargin": -4.953536630434287,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 996
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00996",
+    "fraud": false,
+    "rawMargin": -5.036186188753774,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 997
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00997",
+    "fraud": false,
+    "rawMargin": -5.722738812495633,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 998
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00998",
+    "fraud": false,
+    "rawMargin": -5.309495213459979,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 999
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-00999",
+    "fraud": false,
+    "rawMargin": -5.176405292902599,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 1000
+  },
+  {
+    "alert": false,
+    "eventId": "DEMO-1000-01000",
+    "fraud": false,
+    "rawMargin": -5.17693674745853,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 1001
+  }
+]

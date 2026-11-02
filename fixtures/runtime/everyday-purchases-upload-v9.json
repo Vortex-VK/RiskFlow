@@ -1,0 +1,712 @@
+{
+  "completedAt": "2026-10-25T00:00:00.000Z",
+  "engineVersion": "engine-ml-upload-v9",
+  "events": [
+    {
+      "accountId": "account-a",
+      "amountMinor": 1800,
+      "cardPattern": null,
+      "cardScores": null,
+      "decision": "approve",
+      "deviceId": "device-a",
+      "eventId": "day-pay-01",
+      "features": {
+        "amountMinor": 1800,
+        "categoryDeviation": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "sharedDeviceAccountCount": null,
+        "typicalAmountMinor": null,
+        "unusualLocation": null
+      },
+      "locationId": "location-a",
+      "merchantId": "grocery",
+      "model": {
+        "alert": false,
+        "bundleSha256": "58c9c2497c36ccd85c1553214ed104713d174dd4970ea6553f72bb8498495e67",
+        "detectionPaths": [],
+        "evidenceScope": "synthetic_benchmark",
+        "feedbackAvailable": false,
+        "historyCount": 0,
+        "policy": "mixed-source",
+        "probabilityAvailable": true,
+        "rawScores": {
+          "adapted_card": -8.125363285594142,
+          "adapted_online": -8.125363285594142,
+          "base_margin": -9.504641557368315,
+          "baseline": -16.158873417639185,
+          "cb": -8.788648890821197,
+          "coverage": -12.703700304136373,
+          "depth6": 0.5751221780166399,
+          "online_cb": -5.983085779350878,
+          "online_ebm": -4.41306341943236,
+          "online_specialist": 2.305983000857213
+        },
+        "score": {
+          "calibrationScope": "ibm_authored_synthetic",
+          "distance": -8.218040812622931,
+          "probabilityAvailable": true,
+          "probabilityBundleSha256": "58c9c2497c36ccd85c1553214ed104713d174dd4970ea6553f72bb8498495e67",
+          "rawMargin": -8.125363285594142,
+          "referenceThreshold": 0.09267752702878869,
+          "referenceValue": 88.83112967207818,
+          "source": "adapted_card",
+          "value": 0.0035130745514400557,
+          "version": "fraud-probability-v2"
+        },
+        "uploadDomainValidated": false,
+        "version": "ml-upload-v9"
+      },
+      "occurredAt": "2026-01-15T09:00:00.000Z",
+      "rawScore": null,
+      "riskScore": null,
+      "ruleEvaluations": [],
+      "sequenceIndex": 0
+    },
+    {
+      "accountId": "account-a",
+      "amountMinor": 4200,
+      "cardPattern": null,
+      "cardScores": null,
+      "decision": "approve",
+      "deviceId": "device-a",
+      "eventId": "day-pay-02",
+      "features": {
+        "amountMinor": 4200,
+        "categoryDeviation": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "sharedDeviceAccountCount": null,
+        "typicalAmountMinor": null,
+        "unusualLocation": null
+      },
+      "locationId": "location-a",
+      "merchantId": "retail",
+      "model": {
+        "alert": false,
+        "bundleSha256": "58c9c2497c36ccd85c1553214ed104713d174dd4970ea6553f72bb8498495e67",
+        "detectionPaths": [],
+        "evidenceScope": "synthetic_benchmark",
+        "feedbackAvailable": false,
+        "historyCount": 1,
+        "policy": "mixed-source",
+        "probabilityAvailable": true,
+        "rawScores": {
+          "adapted_card": -8.042767944522637,
+          "adapted_online": -8.042767944522637,
+          "base_margin": -5.240047875487203,
+          "baseline": -2.9102884300782144,
+          "cb": -8.080924102443298,
+          "coverage": -10.151675108333896,
+          "depth6": -0.17379501270273892,
+          "online_cb": -5.1476557182076075,
+          "online_ebm": 2.051977168377623,
+          "online_specialist": -2.506076892259562
+        },
+        "score": {
+          "calibrationScope": "ibm_authored_synthetic",
+          "distance": -8.135445471551426,
+          "probabilityAvailable": true,
+          "probabilityBundleSha256": "58c9c2497c36ccd85c1553214ed104713d174dd4970ea6553f72bb8498495e67",
+          "rawMargin": -8.042767944522637,
+          "referenceThreshold": 0.09267752702878869,
+          "referenceValue": 88.83112967207818,
+          "source": "adapted_card",
+          "value": 0.003976529930076212,
+          "version": "fraud-probability-v2"
+        },
+        "uploadDomainValidated": false,
+        "version": "ml-upload-v9"
+      },
+      "occurredAt": "2026-01-15T09:45:00.000Z",
+      "rawScore": null,
+      "riskScore": null,
+      "ruleEvaluations": [],
+      "sequenceIndex": 1
+    },
+    {
+      "accountId": "account-a",
+      "amountMinor": 5500,
+      "cardPattern": null,
+      "cardScores": null,
+      "decision": "approve",
+      "deviceId": "device-a",
+      "eventId": "day-pay-03",
+      "features": {
+        "amountMinor": 5500,
+        "categoryDeviation": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "sharedDeviceAccountCount": null,
+        "typicalAmountMinor": null,
+        "unusualLocation": null
+      },
+      "locationId": "location-a",
+      "merchantId": "dining",
+      "model": {
+        "alert": false,
+        "bundleSha256": "58c9c2497c36ccd85c1553214ed104713d174dd4970ea6553f72bb8498495e67",
+        "detectionPaths": [],
+        "evidenceScope": "synthetic_benchmark",
+        "feedbackAvailable": false,
+        "historyCount": 2,
+        "policy": "mixed-source",
+        "probabilityAvailable": true,
+        "rawScores": {
+          "adapted_card": -8.463654714963337,
+          "adapted_online": -8.463654714963337,
+          "base_margin": -4.848646253256541,
+          "baseline": -1.6343024235147645,
+          "cb": -6.181916266317503,
+          "coverage": -12.121820030375478,
+          "depth6": 1.5500876822082872,
+          "online_cb": -5.090209537491447,
+          "online_ebm": -3.9528660087983845,
+          "online_specialist": 3.476112781448933
+        },
+        "score": {
+          "calibrationScope": "ibm_authored_synthetic",
+          "distance": -8.556332241992125,
+          "probabilityAvailable": true,
+          "probabilityBundleSha256": "58c9c2497c36ccd85c1553214ed104713d174dd4970ea6553f72bb8498495e67",
+          "rawMargin": -8.463654714963337,
+          "referenceThreshold": 0.09267752702878869,
+          "referenceValue": 88.83112967207818,
+          "source": "adapted_card",
+          "value": 0.0021147724916530555,
+          "version": "fraud-probability-v2"
+        },
+        "uploadDomainValidated": false,
+        "version": "ml-upload-v9"
+      },
+      "occurredAt": "2026-01-15T12:00:00.000Z",
+      "rawScore": null,
+      "riskScore": null,
+      "ruleEvaluations": [],
+      "sequenceIndex": 2
+    },
+    {
+      "accountId": "account-a",
+      "amountMinor": 2800,
+      "cardPattern": null,
+      "cardScores": null,
+      "decision": "approve",
+      "deviceId": "device-a",
+      "eventId": "day-pay-04",
+      "features": {
+        "amountMinor": 2800,
+        "categoryDeviation": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "sharedDeviceAccountCount": null,
+        "typicalAmountMinor": null,
+        "unusualLocation": null
+      },
+      "locationId": "location-a",
+      "merchantId": "grocery",
+      "model": {
+        "alert": false,
+        "bundleSha256": "58c9c2497c36ccd85c1553214ed104713d174dd4970ea6553f72bb8498495e67",
+        "detectionPaths": [],
+        "evidenceScope": "synthetic_benchmark",
+        "feedbackAvailable": false,
+        "historyCount": 3,
+        "policy": "mixed-source",
+        "probabilityAvailable": true,
+        "rawScores": {
+          "adapted_card": -8.725967979487239,
+          "adapted_online": -8.725967979487239,
+          "base_margin": -4.781914610339392,
+          "baseline": -3.1513584840479685,
+          "cb": -7.494763433353509,
+          "coverage": -11.776562850699845,
+          "depth6": -2.0946130902985045,
+          "online_cb": -10.742214477897235,
+          "online_ebm": -8.766308635556172,
+          "online_specialist": 0.4856126403090739
+        },
+        "score": {
+          "calibrationScope": "ibm_authored_synthetic",
+          "distance": -8.818645506516027,
+          "probabilityAvailable": true,
+          "probabilityBundleSha256": "58c9c2497c36ccd85c1553214ed104713d174dd4970ea6553f72bb8498495e67",
+          "rawMargin": -8.725967979487239,
+          "referenceThreshold": 0.09267752702878869,
+          "referenceValue": 88.83112967207818,
+          "source": "adapted_card",
+          "value": 0.0014267373229306885,
+          "version": "fraud-probability-v2"
+        },
+        "uploadDomainValidated": false,
+        "version": "ml-upload-v9"
+      },
+      "occurredAt": "2026-01-15T15:00:00.000Z",
+      "rawScore": null,
+      "riskScore": null,
+      "ruleEvaluations": [],
+      "sequenceIndex": 3
+    },
+    {
+      "accountId": "account-a",
+      "amountMinor": 9600,
+      "cardPattern": null,
+      "cardScores": null,
+      "decision": "approve",
+      "deviceId": "device-a",
+      "eventId": "day-pay-05",
+      "features": {
+        "amountMinor": 9600,
+        "categoryDeviation": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "sharedDeviceAccountCount": null,
+        "typicalAmountMinor": null,
+        "unusualLocation": null
+      },
+      "locationId": "location-a",
+      "merchantId": "retail",
+      "model": {
+        "alert": false,
+        "bundleSha256": "58c9c2497c36ccd85c1553214ed104713d174dd4970ea6553f72bb8498495e67",
+        "detectionPaths": [],
+        "evidenceScope": "synthetic_benchmark",
+        "feedbackAvailable": false,
+        "historyCount": 4,
+        "policy": "mixed-source",
+        "probabilityAvailable": true,
+        "rawScores": {
+          "adapted_card": -8.819644351500342,
+          "adapted_online": -8.819644351500342,
+          "base_margin": -3.434011972410581,
+          "baseline": -1.4430689035661626,
+          "cb": -7.273613997080643,
+          "coverage": -9.427845519624787,
+          "depth6": -2.0462015440786545,
+          "online_cb": -7.191177846508724,
+          "online_ebm": 3.6290199495356035,
+          "online_specialist": -5.636271126894169
+        },
+        "score": {
+          "calibrationScope": "ibm_authored_synthetic",
+          "distance": -8.91232187852913,
+          "probabilityAvailable": true,
+          "probabilityBundleSha256": "58c9c2497c36ccd85c1553214ed104713d174dd4970ea6553f72bb8498495e67",
+          "rawMargin": -8.819644351500342,
+          "referenceThreshold": 0.09267752702878869,
+          "referenceValue": 88.83112967207818,
+          "source": "adapted_card",
+          "value": 0.001239668490278642,
+          "version": "fraud-probability-v2"
+        },
+        "uploadDomainValidated": false,
+        "version": "ml-upload-v9"
+      },
+      "occurredAt": "2026-01-15T18:00:00.000Z",
+      "rawScore": null,
+      "riskScore": null,
+      "ruleEvaluations": [],
+      "sequenceIndex": 4
+    },
+    {
+      "accountId": "account-a",
+      "amountMinor": 3500,
+      "cardPattern": null,
+      "cardScores": null,
+      "decision": "approve",
+      "deviceId": "device-a",
+      "eventId": "day-pay-06",
+      "features": {
+        "amountMinor": 3500,
+        "categoryDeviation": null,
+        "fiveMinuteAttemptCount": null,
+        "newDevice": null,
+        "sharedDeviceAccountCount": null,
+        "typicalAmountMinor": null,
+        "unusualLocation": null
+      },
+      "locationId": "location-a",
+      "merchantId": "dining",
+      "model": {
+        "alert": false,
+        "bundleSha256": "58c9c2497c36ccd85c1553214ed104713d174dd4970ea6553f72bb8498495e67",
+        "detectionPaths": [],
+        "evidenceScope": "synthetic_benchmark",
+        "feedbackAvailable": false,
+        "historyCount": 5,
+        "policy": "mixed-source",
+        "probabilityAvailable": true,
+        "rawScores": {
+          "adapted_card": -8.76938206647004,
+          "adapted_online": -8.76938206647004,
+          "base_margin": -6.194828432618701,
+          "baseline": -9.96770829579893,
+          "cb": -7.912559535439911,
+          "coverage": -10.984876288463123,
+          "depth6": -0.8668519747558435,
+          "online_cb": -10.015832577528496,
+          "online_ebm": -7.981350392952734,
+          "online_specialist": 1.025553231814729
+        },
+        "score": {
+          "calibrationScope": "ibm_authored_synthetic",
+          "distance": -8.862059593498829,
+          "probabilityAvailable": true,
+          "probabilityBundleSha256": "58c9c2497c36ccd85c1553214ed104713d174dd4970ea6553f72bb8498495e67",
+          "rawMargin": -8.76938206647004,
+          "referenceThreshold": 0.09267752702878869,
+          "referenceValue": 88.83112967207818,
+          "source": "adapted_card",
+          "value": 0.001336767599740028,
+          "version": "fraud-probability-v2"
+        },
+        "uploadDomainValidated": false,
+        "version": "ml-upload-v9"
+      },
+      "occurredAt": "2026-01-15T20:00:00.000Z",
+      "rawScore": null,
+      "riskScore": null,
+      "ruleEvaluations": [],
+      "sequenceIndex": 5
+    }
+  ],
+  "metrics": {
+    "costs": {
+      "estimatedApprovedFraudLossMinor": 0,
+      "estimatedFalseBlockFrictionCostMinor": 0,
+      "illustrativeLabeledTotalCostMinor": 0,
+      "labeledReviewCostMinor": 0,
+      "reviewOperatingCostAllMinor": 0
+    },
+    "decisionRates": {
+      "approve": {
+        "denominator": 6,
+        "numerator": 6
+      },
+      "block": {
+        "denominator": 6,
+        "numerator": 0
+      },
+      "review": {
+        "denominator": 6,
+        "numerator": 0
+      }
+    },
+    "decisions": {
+      "approve": {
+        "amountMinor": 27400,
+        "count": 6
+      },
+      "block": {
+        "amountMinor": 0,
+        "count": 0
+      },
+      "review": {
+        "amountMinor": 0,
+        "count": 0
+      }
+    },
+    "flaggedCount": 0,
+    "flaggedRate": {
+      "denominator": 6,
+      "numerator": 0
+    },
+    "labeledCount": 6,
+    "reviewWorkload": 0,
+    "ruleTriggerCounts": {
+      "merchant_category_deviation": 0,
+      "new_device": 0,
+      "payment_velocity": 0,
+      "shared_device_accounts": 0,
+      "unusual_amount": 0,
+      "unusual_location": 0
+    },
+    "scoreBins": {
+      "0-19": 0,
+      "20-39": 0,
+      "40-59": 0,
+      "60-79": 0,
+      "80-100": 0
+    },
+    "totalAmountMinor": 27400,
+    "totalCount": 6,
+    "truthMetrics": {
+      "approvedFraud": {
+        "amountMinor": 0,
+        "count": 0
+      },
+      "blockedFraud": {
+        "amountMinor": 0,
+        "count": 0
+      },
+      "blockedLegitimate": {
+        "amountMinor": 0,
+        "count": 0
+      },
+      "fraudApprovalRate": null,
+      "fraudBlockRate": null,
+      "fraudulent": {
+        "amountMinor": 0,
+        "count": 0
+      },
+      "legitimate": {
+        "amountMinor": 27400,
+        "count": 6
+      },
+      "legitimateBlockRate": {
+        "denominator": 6,
+        "numerator": 0
+      },
+      "pendingFraud": {
+        "amountMinor": 0,
+        "count": 0
+      }
+    },
+    "unlabeledCount": 0
+  },
+  "ruleSetVersion": "upload-v9-mixed-source",
+  "runId": "v9-compatibility",
+  "scenarioSnapshot": {
+    "associations": [
+      {
+        "accountId": "account-a",
+        "id": "account-a-device-a-link",
+        "knownFrom": "2026-01-14T00:00:00.000Z",
+        "observedAt": "2026-01-14T00:00:00.000Z",
+        "targetId": "device-a",
+        "type": "accountDevice"
+      },
+      {
+        "accountId": "account-a",
+        "id": "account-a-location-a-link",
+        "knownFrom": "2026-01-14T00:00:00.000Z",
+        "observedAt": "2026-01-14T00:00:00.000Z",
+        "targetId": "location-a",
+        "type": "accountLocation"
+      }
+    ],
+    "costAssumptions": {
+      "approvedFraudLossBps": 10000,
+      "falseBlockCostMinor": 1500,
+      "reviewCostMinor": 300
+    },
+    "currency": "USD",
+    "description": "Illustrative synthetic purchases for V13 replay. MCC and channel are authored demo inputs; labels are story annotations, not measured model performance.",
+    "groundTruth": {
+      "day-pay-01": "legitimate",
+      "day-pay-02": "legitimate",
+      "day-pay-03": "legitimate",
+      "day-pay-04": "legitimate",
+      "day-pay-05": "legitimate",
+      "day-pay-06": "legitimate"
+    },
+    "id": "everyday-purchases",
+    "name": "Everyday Purchases",
+    "nodes": [
+      {
+        "id": "account-a",
+        "name": "Alex Morgan",
+        "openedAt": "2025-01-15T00:00:00.000Z",
+        "type": "account",
+        "typicalAmountMinor": 5000,
+        "usualCountryCodes": [
+          "US"
+        ],
+        "usualMerchantCategories": [
+          "dining",
+          "groceries",
+          "retail"
+        ]
+      },
+      {
+        "description": null,
+        "id": "device-a",
+        "name": "Personal phone",
+        "type": "device"
+      },
+      {
+        "category": "dining",
+        "countryCode": "US",
+        "id": "dining",
+        "name": "Sunday Table",
+        "type": "merchant"
+      },
+      {
+        "category": "groceries",
+        "countryCode": "US",
+        "id": "grocery",
+        "name": "Juniper Market",
+        "type": "merchant"
+      },
+      {
+        "countryCode": "US",
+        "id": "location-a",
+        "name": "Home \u00b7 US",
+        "regionLabel": null,
+        "type": "location"
+      },
+      {
+        "category": "retail",
+        "countryCode": "US",
+        "id": "retail",
+        "name": "Common Goods",
+        "type": "merchant"
+      }
+    ],
+    "payments": [
+      {
+        "accountId": "account-a",
+        "amountMinor": 1800,
+        "category": null,
+        "deviceId": "device-a",
+        "id": "day-pay-01",
+        "locationId": "location-a",
+        "merchantId": "grocery",
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "completed": true,
+          "mcc": "5411",
+          "merchantCity": "",
+          "merchantState": "",
+          "merchantZip": ""
+        },
+        "occurredAt": "2026-01-15T09:00:00.000Z",
+        "sourceCategory": null,
+        "unavailableRules": []
+      },
+      {
+        "accountId": "account-a",
+        "amountMinor": 4200,
+        "category": null,
+        "deviceId": "device-a",
+        "id": "day-pay-02",
+        "locationId": "location-a",
+        "merchantId": "retail",
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "completed": true,
+          "mcc": "5311",
+          "merchantCity": "",
+          "merchantState": "",
+          "merchantZip": ""
+        },
+        "occurredAt": "2026-01-15T09:45:00.000Z",
+        "sourceCategory": null,
+        "unavailableRules": []
+      },
+      {
+        "accountId": "account-a",
+        "amountMinor": 5500,
+        "category": null,
+        "deviceId": "device-a",
+        "id": "day-pay-03",
+        "locationId": "location-a",
+        "merchantId": "dining",
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "completed": true,
+          "mcc": "5812",
+          "merchantCity": "",
+          "merchantState": "",
+          "merchantZip": ""
+        },
+        "occurredAt": "2026-01-15T12:00:00.000Z",
+        "sourceCategory": null,
+        "unavailableRules": []
+      },
+      {
+        "accountId": "account-a",
+        "amountMinor": 2800,
+        "category": null,
+        "deviceId": "device-a",
+        "id": "day-pay-04",
+        "locationId": "location-a",
+        "merchantId": "grocery",
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "completed": true,
+          "mcc": "5411",
+          "merchantCity": "",
+          "merchantState": "",
+          "merchantZip": ""
+        },
+        "occurredAt": "2026-01-15T15:00:00.000Z",
+        "sourceCategory": null,
+        "unavailableRules": []
+      },
+      {
+        "accountId": "account-a",
+        "amountMinor": 9600,
+        "category": null,
+        "deviceId": "device-a",
+        "id": "day-pay-05",
+        "locationId": "location-a",
+        "merchantId": "retail",
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "completed": true,
+          "mcc": "5311",
+          "merchantCity": "",
+          "merchantState": "",
+          "merchantZip": ""
+        },
+        "occurredAt": "2026-01-15T18:00:00.000Z",
+        "sourceCategory": null,
+        "unavailableRules": []
+      },
+      {
+        "accountId": "account-a",
+        "amountMinor": 3500,
+        "category": null,
+        "deviceId": "device-a",
+        "id": "day-pay-06",
+        "locationId": "location-a",
+        "merchantId": "dining",
+        "modelInput": {
+          "channel": "Chip Transaction",
+          "completed": true,
+          "mcc": "5812",
+          "merchantCity": "",
+          "merchantState": "",
+          "merchantZip": ""
+        },
+        "occurredAt": "2026-01-15T20:00:00.000Z",
+        "sourceCategory": null,
+        "unavailableRules": []
+      }
+    ],
+    "policy": {
+      "blockThreshold": 70,
+      "reviewThreshold": 40,
+      "version": 1
+    },
+    "ruleSetVersion": "rules-v1",
+    "scenarioStartAt": "2026-01-15T00:00:00.000Z",
+    "schemaVersion": 1,
+    "seed": null,
+    "sourceTemplateId": "everyday-purchases",
+    "sourceTemplateVersion": 2
+  },
+  "schemaVersion": 1,
+  "warnings": [
+    {
+      "code": "probability_scope",
+      "message": "Scores estimate fraud probability using a model trained on IBM and authored synthetic data. Calibration has not been validated for this upload's source. Each model's reference probability cutoff is shown separately; it is not necessarily 50%. Raw margins and the selected card/online policy are recorded. Probability threshold previews do not change saved decisions."
+    },
+    {
+      "code": "card_pattern_scope",
+      "message": "Card-pattern suggestions are experimental behavioral reviews, separate from Upload-v9 alerts. They do not change model decisions or fraud metrics, and do not identify counterfeit cards or establish fraud."
+    },
+    {
+      "code": "model_scope",
+      "message": "Upload-v9 is an experimental IBM/authored model using frozen thresholds.  Matching fields do not establish validity for this upload's source. Review means a model alert; approve means no alert, not a payment authorization. No automatic blocking. Raw model margins are not probabilities. Legacy rule thresholds and device/location baselines do not affect scoring."
+    },
+    {
+      "code": "incomplete_data",
+      "message": "Features use only this submitted history. Confirmed delayed merchant-fraud feedback is unavailable and encoded as zero support. Short histories and missing merchant geography may reduce performance. Synthetic benchmark metrics do not describe this upload."
+    },
+    {
+      "code": "attempt_history",
+      "message": "Features use strictly earlier events. Equal-time events cannot influence each other. Completion status updates future spending history; current labels are excluded from inference."
+    }
+  ]
+}

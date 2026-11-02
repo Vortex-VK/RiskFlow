@@ -1,0 +1,747 @@
+{
+  "eventId": "H11",
+  "modelBundleSha256": "672cc88772a0f878b4a3d631e94de920ef08687702eb1e90f4c516bb1d7909ff",
+  "method": "tree-shap-stack-head-v1",
+  "baseValue": -7.10536222276403,
+  "rawMargin": 1.1544546700815428,
+  "contributions": [
+    {
+      "feature": "expert_v2",
+      "value": 4.201564584270483,
+      "contribution": 0.29155424078830605
+    },
+    {
+      "feature": "expert_rich",
+      "value": 4.616384596665033,
+      "contribution": 3.263344321167305
+    },
+    {
+      "feature": "expert_relative",
+      "value": 4.390068014271748,
+      "contribution": 2.1269294171526254
+    },
+    {
+      "feature": "expert_pooled",
+      "value": 4.750170030270455,
+      "contribution": 2.420859927564172
+    },
+    {
+      "feature": "expert_ibm_expert",
+      "value": 3.7363310169897463,
+      "contribution": -0.08137045309380841
+    },
+    {
+      "feature": "expert_household_expert",
+      "value": 0.6478977899043097,
+      "contribution": -0.3852328745312328
+    },
+    {
+      "feature": "expert_sparkov_expert",
+      "value": 3.099020585718032,
+      "contribution": 0.010878168424026413
+    },
+    {
+      "feature": "expert_handbook_expert",
+      "value": 3.210935965526535,
+      "contribution": 0.05100712470508868
+    },
+    {
+      "feature": "p_log_history_n",
+      "value": 1.3862943649291992,
+      "contribution": 0.11130232744891676
+    },
+    {
+      "feature": "p_log_std100",
+      "value": null,
+      "contribution": -0.017039095024889497
+    },
+    {
+      "feature": "p_log_ratio10",
+      "value": null,
+      "contribution": -0.09822285833956677
+    },
+    {
+      "feature": "p_log_ratio100",
+      "value": null,
+      "contribution": -0.04352083175835516
+    },
+    {
+      "feature": "p_z10",
+      "value": null,
+      "contribution": -0.02995462573113127
+    },
+    {
+      "feature": "p_z100",
+      "value": null,
+      "contribution": -0.0003662045106584784
+    },
+    {
+      "feature": "p_log_gap_ratio",
+      "value": -2.140066146850586,
+      "contribution": 0.09138167311549777
+    },
+    {
+      "feature": "p_log_count1h",
+      "value": 1.3862943649291992,
+      "contribution": 0.1396594116950072
+    },
+    {
+      "feature": "p_log_count1d",
+      "value": 1.3862943649291992,
+      "contribution": 0.009351734861678652
+    },
+    {
+      "feature": "p_log_count7d",
+      "value": 1.3862943649291992,
+      "contribution": 0.03584483197621533
+    },
+    {
+      "feature": "p_counterparty_known",
+      "value": 1.0,
+      "contribution": 0.0
+    },
+    {
+      "feature": "p_counterparty_seen",
+      "value": 0.0,
+      "contribution": 0.0
+    },
+    {
+      "feature": "p_counterparty_frequency",
+      "value": 0.0,
+      "contribution": 0.03392399800961316
+    },
+    {
+      "feature": "p_log_distinct_counterparties",
+      "value": 1.3862943649291992,
+      "contribution": -0.06810810747740893
+    },
+    {
+      "feature": "p_log_counterparty_n",
+      "value": 1.0986123085021973,
+      "contribution": 0.02400117995038143
+    },
+    {
+      "feature": "p_log_counterparty_distinct_accounts",
+      "value": 1.0986123085021973,
+      "contribution": 0.11408951136569638
+    },
+    {
+      "feature": "p_counterparty_amount_z",
+      "value": null,
+      "contribution": -0.06100204693079675
+    },
+    {
+      "feature": "p_account_new_to_counterparty",
+      "value": 1.0,
+      "contribution": -0.0014446521071339786
+    },
+    {
+      "feature": "p_hour_sin",
+      "value": 0.5,
+      "contribution": 0.0058247417592168435
+    },
+    {
+      "feature": "p_hour_cos",
+      "value": -0.8660253882408142,
+      "contribution": 0.016081019424527488
+    },
+    {
+      "feature": "p_weekday_sin",
+      "value": 0.4338837265968323,
+      "contribution": -0.013519113005764185
+    },
+    {
+      "feature": "p_weekday_cos",
+      "value": -0.9009688496589661,
+      "contribution": 0.08981804511327393
+    },
+    {
+      "feature": "p_category_known",
+      "value": 1.0,
+      "contribution": -0.0027086998735575633
+    },
+    {
+      "feature": "p_category_frequency",
+      "value": 0.3333333432674408,
+      "contribution": -0.2874898705068135
+    },
+    {
+      "feature": "p_new_category",
+      "value": 0.0,
+      "contribution": -0.013821157249075122
+    },
+    {
+      "feature": "p_channel_known",
+      "value": 1.0,
+      "contribution": 0.03393954119876729
+    },
+    {
+      "feature": "p_channel_frequency",
+      "value": 1.0,
+      "contribution": 0.5783762140772266
+    },
+    {
+      "feature": "p_region_known",
+      "value": 0.0,
+      "contribution": -0.003797776846025578
+    },
+    {
+      "feature": "p_region_frequency",
+      "value": null,
+      "contribution": -0.003433698619568697
+    },
+    {
+      "feature": "p_new_region",
+      "value": null,
+      "contribution": -0.00045499942925349845
+    },
+    {
+      "feature": "p_city_known",
+      "value": 0.0,
+      "contribution": -0.018050564565388352
+    },
+    {
+      "feature": "p_city_frequency",
+      "value": null,
+      "contribution": -0.045939149323513964
+    },
+    {
+      "feature": "p_new_city",
+      "value": null,
+      "contribution": -0.012873758028029142
+    }
+  ],
+  "facts": [
+    {
+      "label": "Purchase amount",
+      "value": "$240.00",
+      "comparison": "3 earlier purchases; at least 5 needed for comparison"
+    },
+    {
+      "label": "Merchant history",
+      "value": "0 earlier purchases",
+      "comparison": "Out of 3 earlier purchases by this account"
+    },
+    {
+      "label": "Previous hour",
+      "value": "3 purchases",
+      "comparison": "Earlier purchases only"
+    },
+    {
+      "label": "Payment channel",
+      "value": "Chip Transaction",
+      "comparison": "Used in 3 of 3 earlier purchases"
+    }
+  ],
+  "experts": [
+    {
+      "expert": "rich",
+      "baseValue": -0.1125161562259131,
+      "rawMargin": 3.396345666421063,
+      "contributions": [
+        {
+          "feature": "log_amount",
+          "value": 5.48479700088501,
+          "contribution": 1.5159729614950885
+        },
+        {
+          "feature": "category",
+          "value": "5732",
+          "contribution": 0.748839998860251
+        },
+        {
+          "feature": "channel",
+          "value": "Chip Transaction",
+          "contribution": -0.07237987435148666
+        },
+        {
+          "feature": "hour",
+          "value": 10.0,
+          "contribution": 0.041638337610346965
+        },
+        {
+          "feature": "weekday",
+          "value": 3.0,
+          "contribution": 0.006883064727913783
+        },
+        {
+          "feature": "completed",
+          "value": 1.0,
+          "contribution": 0.09897077585700925
+        },
+        {
+          "feature": "history_count",
+          "value": 3.0,
+          "contribution": 0.018907812798209085
+        },
+        {
+          "feature": "history_days",
+          "value": 0.03750000149011612,
+          "contribution": -0.32906723557541745
+        },
+        {
+          "feature": "log_mean",
+          "value": 4.131227970123291,
+          "contribution": 0.12034676833457575
+        },
+        {
+          "feature": "log_std",
+          "value": 0.7664046883583069,
+          "contribution": -0.02802099430783337
+        },
+        {
+          "feature": "amount_z",
+          "value": null,
+          "contribution": 0.06907960155151861
+        },
+        {
+          "feature": "amount_rank",
+          "value": null,
+          "contribution": 0.03813174043447232
+        },
+        {
+          "feature": "merchant_frequency",
+          "value": 0.0,
+          "contribution": 0.030161422304556693
+        },
+        {
+          "feature": "merchant_seen",
+          "value": 0.0,
+          "contribution": 0.0
+        },
+        {
+          "feature": "log_attempts_1d",
+          "value": 1.3862943649291992,
+          "contribution": 0.062024062697215644
+        },
+        {
+          "feature": "log_attempts_7d",
+          "value": 1.3862943649291992,
+          "contribution": 0.11725713495533469
+        },
+        {
+          "feature": "log_spend_7d",
+          "value": 5.533389568328857,
+          "contribution": -0.17097235483222356
+        },
+        {
+          "feature": "log_gap_hours",
+          "value": 0.04879016429185867,
+          "contribution": 0.08553606478484342
+        },
+        {
+          "feature": "log_attempts_1h",
+          "value": 1.3862943649291992,
+          "contribution": 0.4035687881214535
+        },
+        {
+          "feature": "recent_category_frequency",
+          "value": 0.3333333432674408,
+          "contribution": 0.048903220567414044
+        },
+        {
+          "feature": "hour_frequency",
+          "value": 0.3333333432674408,
+          "contribution": -0.07420522996386464
+        },
+        {
+          "feature": "weekday_frequency",
+          "value": 1.0,
+          "contribution": 0.024333095529800716
+        },
+        {
+          "feature": "channel_frequency",
+          "value": 1.0,
+          "contribution": 0.07074498120452125
+        },
+        {
+          "feature": "recent_failure_fraction",
+          "value": 0.0,
+          "contribution": 0.018314739020151124
+        },
+        {
+          "feature": "unique_merchants_1d",
+          "value": 3.0,
+          "contribution": 0.005507230057192822
+        },
+        {
+          "feature": "same_amount_1d",
+          "value": 0.0,
+          "contribution": 0.0
+        },
+        {
+          "feature": "spend_acceleration",
+          "value": null,
+          "contribution": -0.1363749188800846
+        },
+        {
+          "feature": "amount_change",
+          "value": 0.2862999141216278,
+          "contribution": -0.08333641126356094
+        },
+        {
+          "feature": "category_amount_z",
+          "value": null,
+          "contribution": 0.1730688835464903
+        },
+        {
+          "feature": "merchant_log_count_7d",
+          "value": 1.0986123085021973,
+          "contribution": 0.07257659565077232
+        },
+        {
+          "feature": "merchant_unique_accounts_7d",
+          "value": 2.0,
+          "contribution": 0.006354077787939148
+        },
+        {
+          "feature": "merchant_amount_z",
+          "value": null,
+          "contribution": 0.03925804387136226
+        },
+        {
+          "feature": "merchant_new_account",
+          "value": 1.0,
+          "contribution": -0.026471516653575274
+        },
+        {
+          "feature": "merchant_volume_acceleration",
+          "value": 2.0,
+          "contribution": -0.060465295100026364
+        },
+        {
+          "feature": "date_only",
+          "value": 0.0,
+          "contribution": 0.0
+        },
+        {
+          "feature": "log_attempts_30d",
+          "value": 1.3862943649291992,
+          "contribution": 0.1330565608883181
+        },
+        {
+          "feature": "amount_z_7d",
+          "value": null,
+          "contribution": -0.02181491843851945
+        },
+        {
+          "feature": "new_category",
+          "value": 0.0,
+          "contribution": 0.06590850470924371
+        },
+        {
+          "feature": "geo_history_count",
+          "value": 0.0,
+          "contribution": -0.08357495268462485
+        },
+        {
+          "feature": "geo_region_frequency",
+          "value": null,
+          "contribution": -0.0010723403049427936
+        },
+        {
+          "feature": "geo_city_frequency",
+          "value": null,
+          "contribution": -0.008634504360493164
+        },
+        {
+          "feature": "geo_new_region",
+          "value": null,
+          "contribution": 0.00026071965900011237
+        },
+        {
+          "feature": "geo_new_city",
+          "value": null,
+          "contribution": -0.011033615113519094
+        },
+        {
+          "feature": "geo_region_change",
+          "value": null,
+          "contribution": 0.006591733423521831
+        },
+        {
+          "feature": "geo_regions_1d",
+          "value": 0.0,
+          "contribution": -0.007854024957191319
+        },
+        {
+          "feature": "geo_available",
+          "value": 0.0,
+          "contribution": 0.001705289396736999
+        },
+        {
+          "feature": "p_log_history_n",
+          "value": 1.3862943649291992,
+          "contribution": 0.10892079335595044
+        },
+        {
+          "feature": "p_log_std100",
+          "value": null,
+          "contribution": -0.16327082654442426
+        },
+        {
+          "feature": "p_log_ratio10",
+          "value": null,
+          "contribution": 0.17766624924116514
+        },
+        {
+          "feature": "p_log_ratio100",
+          "value": null,
+          "contribution": 0.09689037880223902
+        },
+        {
+          "feature": "p_z10",
+          "value": null,
+          "contribution": -0.013799282555636321
+        },
+        {
+          "feature": "p_z100",
+          "value": null,
+          "contribution": 0.024174843545913788
+        },
+        {
+          "feature": "p_log_gap_ratio",
+          "value": -2.140066146850586,
+          "contribution": 0.005233977294058995
+        },
+        {
+          "feature": "p_log_count1h",
+          "value": 1.3862943649291992,
+          "contribution": 0.12374839028165295
+        },
+        {
+          "feature": "p_log_count1d",
+          "value": 1.3862943649291992,
+          "contribution": 0.014954325638785305
+        },
+        {
+          "feature": "p_log_count7d",
+          "value": 1.3862943649291992,
+          "contribution": -0.004610604654878548
+        },
+        {
+          "feature": "p_counterparty_known",
+          "value": 1.0,
+          "contribution": 0.0
+        },
+        {
+          "feature": "p_counterparty_seen",
+          "value": 0.0,
+          "contribution": 0.012777156494203103
+        },
+        {
+          "feature": "p_counterparty_frequency",
+          "value": 0.0,
+          "contribution": 0.09821024768987237
+        },
+        {
+          "feature": "p_log_distinct_counterparties",
+          "value": 1.3862943649291992,
+          "contribution": 0.07128510490097052
+        },
+        {
+          "feature": "p_log_counterparty_n",
+          "value": 1.0986123085021973,
+          "contribution": -0.046321634246370216
+        },
+        {
+          "feature": "p_log_counterparty_distinct_accounts",
+          "value": 1.0986123085021973,
+          "contribution": -0.08387523323399763
+        },
+        {
+          "feature": "p_counterparty_amount_z",
+          "value": null,
+          "contribution": 0.26608016484499275
+        },
+        {
+          "feature": "p_account_new_to_counterparty",
+          "value": 1.0,
+          "contribution": 0.03354863036953613
+        },
+        {
+          "feature": "p_hour_sin",
+          "value": 0.5,
+          "contribution": 0.33294283882620196
+        },
+        {
+          "feature": "p_hour_cos",
+          "value": -0.8660253882408142,
+          "contribution": -0.08205362906054992
+        },
+        {
+          "feature": "p_weekday_sin",
+          "value": 0.4338837265968323,
+          "contribution": 0.03367674400844144
+        },
+        {
+          "feature": "p_weekday_cos",
+          "value": -0.9009688496589661,
+          "contribution": -0.005062562053957664
+        },
+        {
+          "feature": "p_category_known",
+          "value": 1.0,
+          "contribution": 0.057918148252143885
+        },
+        {
+          "feature": "p_category_frequency",
+          "value": 0.3333333432674408,
+          "contribution": -0.029067003192033515
+        },
+        {
+          "feature": "p_new_category",
+          "value": 0.0,
+          "contribution": -0.0718274638158313
+        },
+        {
+          "feature": "p_channel_known",
+          "value": 1.0,
+          "contribution": -0.07145587824293498
+        },
+        {
+          "feature": "p_channel_frequency",
+          "value": 1.0,
+          "contribution": -0.4586182757780393
+        },
+        {
+          "feature": "p_region_known",
+          "value": 0.0,
+          "contribution": 0.0
+        },
+        {
+          "feature": "p_region_frequency",
+          "value": null,
+          "contribution": 0.04850647055308239
+        },
+        {
+          "feature": "p_new_region",
+          "value": null,
+          "contribution": 0.014608161289878744
+        },
+        {
+          "feature": "p_city_known",
+          "value": 0.0,
+          "contribution": 0.039300164847117215
+        },
+        {
+          "feature": "p_city_frequency",
+          "value": null,
+          "contribution": 0.07222649895342674
+        },
+        {
+          "feature": "p_new_city",
+          "value": null,
+          "contribution": -0.002469096221891365
+        }
+      ]
+    },
+    {
+      "expert": "pooled",
+      "baseValue": -6.784240265137223,
+      "rawMargin": 1.5871200488390895,
+      "contributions": [
+        {
+          "feature": "log_amount",
+          "value": 5.48479700088501,
+          "contribution": 0.9037148030714721
+        },
+        {
+          "feature": "category",
+          "value": "5732",
+          "contribution": 3.1511387674118554
+        },
+        {
+          "feature": "channel",
+          "value": "Chip Transaction",
+          "contribution": -0.1742117815609139
+        },
+        {
+          "feature": "hour",
+          "value": 10.0,
+          "contribution": -0.048103789745063415
+        },
+        {
+          "feature": "weekday",
+          "value": 3.0,
+          "contribution": -0.007423110768133777
+        },
+        {
+          "feature": "completed",
+          "value": 1.0,
+          "contribution": 0.05669002703891512
+        },
+        {
+          "feature": "history_count",
+          "value": 3.0,
+          "contribution": 1.045166612109397
+        },
+        {
+          "feature": "history_days",
+          "value": 0.03750000149011612,
+          "contribution": -0.2913503353892761
+        },
+        {
+          "feature": "log_mean",
+          "value": 4.131227970123291,
+          "contribution": 0.18351305359884976
+        },
+        {
+          "feature": "log_std",
+          "value": 0.7664046883583069,
+          "contribution": 0.057924372245173696
+        },
+        {
+          "feature": "amount_z",
+          "value": null,
+          "contribution": 0.11738409740631198
+        },
+        {
+          "feature": "amount_rank",
+          "value": null,
+          "contribution": 0.17726107225229196
+        },
+        {
+          "feature": "merchant_frequency",
+          "value": 0.0,
+          "contribution": 0.07588403233950491
+        },
+        {
+          "feature": "merchant_seen",
+          "value": 0.0,
+          "contribution": 0.04441017836300995
+        },
+        {
+          "feature": "log_attempts_1d",
+          "value": 1.3862943649291992,
+          "contribution": 0.03397002788228081
+        },
+        {
+          "feature": "log_attempts_7d",
+          "value": 1.3862943649291992,
+          "contribution": 0.12323386256998276
+        },
+        {
+          "feature": "log_spend_7d",
+          "value": 5.533389568328857,
+          "contribution": -0.035675940471826
+        },
+        {
+          "feature": "log_gap_hours",
+          "value": 0.04879016429185867,
+          "contribution": 1.3114644688797958
+        },
+        {
+          "feature": "log_attempts_1h",
+          "value": 1.3862943649291992,
+          "contribution": 1.4291966245047647
+        },
+        {
+          "feature": "recent_category_frequency",
+          "value": 0.3333333432674408,
+          "contribution": 0.21717327223791877
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+event_id,account_id,timestamp,amount,currency,direction,transaction_type,status,merchant_id,merchant_category,device_id
+profile-00,A,2026-01-01T00:00:00.000Z,10.00,USD,debit,purchase,completed,M,groceries,D
+profile-01,A,2026-01-02T00:00:00.000Z,10.00,USD,debit,purchase,completed,M,groceries,D
+profile-02,A,2026-01-03T00:00:00.000Z,10.00,USD,debit,purchase,completed,M,groceries,D
+profile-03,A,2026-01-04T00:00:00.000Z,10.00,USD,debit,purchase,completed,M,groceries,D
+profile-04,A,2026-01-05T00:00:00.000Z,10.00,USD,debit,purchase,completed,M,groceries,D
+profile-05,A,2026-01-06T00:00:00.000Z,10.00,USD,debit,purchase,completed,M,groceries,D
+profile-06,A,2026-01-07T00:00:00.000Z,10.00,USD,debit,purchase,completed,M,groceries,D
+profile-07,A,2026-01-08T00:00:00.000Z,10.00,USD,debit,purchase,completed,M,groceries,D
+profile-08,A,2026-01-09T00:00:00.000Z,10.00,USD,debit,purchase,completed,M,groceries,D
+profile-09,A,2026-01-10T00:00:00.000Z,10.00,USD,debit,purchase,completed,M,groceries,D
+profile-10,A,2026-01-11T00:00:00.000Z,100.00,USD,debit,purchase,completed,M,groceries,D
+profile-11,A,2026-01-12T00:00:00.000Z,10.00,USD,debit,purchase,completed,M,groceries,D

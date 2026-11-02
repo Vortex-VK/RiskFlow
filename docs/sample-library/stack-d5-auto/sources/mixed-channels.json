@@ -1,0 +1,6002 @@
+[
+  {
+    "eventId": "DEMO-1000-00001",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 2
+  },
+  {
+    "eventId": "DEMO-1000-00002",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 3
+  },
+  {
+    "eventId": "DEMO-1000-00003",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 4
+  },
+  {
+    "eventId": "DEMO-1000-00004",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 5
+  },
+  {
+    "eventId": "DEMO-1000-00005",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 6
+  },
+  {
+    "eventId": "DEMO-1000-00006",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 7
+  },
+  {
+    "eventId": "DEMO-1000-00007",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 8
+  },
+  {
+    "eventId": "DEMO-1000-00008",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 9
+  },
+  {
+    "eventId": "DEMO-1000-00009",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 10
+  },
+  {
+    "eventId": "DEMO-1000-00010",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 11
+  },
+  {
+    "eventId": "DEMO-1000-00011",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 12
+  },
+  {
+    "eventId": "DEMO-1000-00012",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 13
+  },
+  {
+    "eventId": "DEMO-1000-00013",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 14
+  },
+  {
+    "eventId": "DEMO-1000-00014",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 15
+  },
+  {
+    "eventId": "DEMO-1000-00015",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 16
+  },
+  {
+    "eventId": "DEMO-1000-00016",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 17
+  },
+  {
+    "eventId": "DEMO-1000-00017",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 18
+  },
+  {
+    "eventId": "DEMO-1000-00018",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 19
+  },
+  {
+    "eventId": "DEMO-1000-00019",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 20
+  },
+  {
+    "eventId": "DEMO-1000-00020",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 21
+  },
+  {
+    "eventId": "DEMO-1000-00021",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 22
+  },
+  {
+    "eventId": "DEMO-1000-00022",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 23
+  },
+  {
+    "eventId": "DEMO-1000-00023",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 24
+  },
+  {
+    "eventId": "DEMO-1000-00024",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 25
+  },
+  {
+    "eventId": "DEMO-1000-00025",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 26
+  },
+  {
+    "eventId": "DEMO-1000-00026",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 27
+  },
+  {
+    "eventId": "DEMO-1000-00027",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 28
+  },
+  {
+    "eventId": "DEMO-1000-00028",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 29
+  },
+  {
+    "eventId": "DEMO-1000-00029",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 30
+  },
+  {
+    "eventId": "DEMO-1000-00030",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 31
+  },
+  {
+    "eventId": "DEMO-1000-00031",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 32
+  },
+  {
+    "eventId": "DEMO-1000-00032",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 33
+  },
+  {
+    "eventId": "DEMO-1000-00033",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 34
+  },
+  {
+    "eventId": "DEMO-1000-00034",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 35
+  },
+  {
+    "eventId": "DEMO-1000-00035",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 36
+  },
+  {
+    "eventId": "DEMO-1000-00036",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 37
+  },
+  {
+    "eventId": "DEMO-1000-00037",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 38
+  },
+  {
+    "eventId": "DEMO-1000-00038",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 39
+  },
+  {
+    "eventId": "DEMO-1000-00039",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 40
+  },
+  {
+    "eventId": "DEMO-1000-00040",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 41
+  },
+  {
+    "eventId": "DEMO-1000-00041",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 42
+  },
+  {
+    "eventId": "DEMO-1000-00042",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 43
+  },
+  {
+    "eventId": "DEMO-1000-00043",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 44
+  },
+  {
+    "eventId": "DEMO-1000-00044",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 45
+  },
+  {
+    "eventId": "DEMO-1000-00045",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 46
+  },
+  {
+    "eventId": "DEMO-1000-00046",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 47
+  },
+  {
+    "eventId": "DEMO-1000-00047",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 48
+  },
+  {
+    "eventId": "DEMO-1000-00048",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 49
+  },
+  {
+    "eventId": "DEMO-1000-00049",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 50
+  },
+  {
+    "eventId": "DEMO-1000-00050",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 51
+  },
+  {
+    "eventId": "DEMO-1000-00051",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 52
+  },
+  {
+    "eventId": "DEMO-1000-00052",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 53
+  },
+  {
+    "eventId": "DEMO-1000-00053",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 54
+  },
+  {
+    "eventId": "DEMO-1000-00054",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 55
+  },
+  {
+    "eventId": "DEMO-1000-00055",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 56
+  },
+  {
+    "eventId": "DEMO-1000-00056",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 57
+  },
+  {
+    "eventId": "DEMO-1000-00057",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 58
+  },
+  {
+    "eventId": "DEMO-1000-00058",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 59
+  },
+  {
+    "eventId": "DEMO-1000-00059",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 60
+  },
+  {
+    "eventId": "DEMO-1000-00060",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 61
+  },
+  {
+    "eventId": "DEMO-1000-00061",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 62
+  },
+  {
+    "eventId": "DEMO-1000-00062",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 63
+  },
+  {
+    "eventId": "DEMO-1000-00063",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 64
+  },
+  {
+    "eventId": "DEMO-1000-00064",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 65
+  },
+  {
+    "eventId": "DEMO-1000-00065",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 66
+  },
+  {
+    "eventId": "DEMO-1000-00066",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 67
+  },
+  {
+    "eventId": "DEMO-1000-00067",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 68
+  },
+  {
+    "eventId": "DEMO-1000-00068",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 69
+  },
+  {
+    "eventId": "DEMO-1000-00069",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 70
+  },
+  {
+    "eventId": "DEMO-1000-00070",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 71
+  },
+  {
+    "eventId": "DEMO-1000-00071",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 72
+  },
+  {
+    "eventId": "DEMO-1000-00072",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 73
+  },
+  {
+    "eventId": "DEMO-1000-00073",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 74
+  },
+  {
+    "eventId": "DEMO-1000-00074",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 75
+  },
+  {
+    "eventId": "DEMO-1000-00075",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 76
+  },
+  {
+    "eventId": "DEMO-1000-00076",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 77
+  },
+  {
+    "eventId": "DEMO-1000-00077",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 78
+  },
+  {
+    "eventId": "DEMO-1000-00078",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 79
+  },
+  {
+    "eventId": "DEMO-1000-00079",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 80
+  },
+  {
+    "eventId": "DEMO-1000-00080",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 81
+  },
+  {
+    "eventId": "DEMO-1000-00081",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 82
+  },
+  {
+    "eventId": "DEMO-1000-00082",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 83
+  },
+  {
+    "eventId": "DEMO-1000-00083",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 84
+  },
+  {
+    "eventId": "DEMO-1000-00084",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 85
+  },
+  {
+    "eventId": "DEMO-1000-00085",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 86
+  },
+  {
+    "eventId": "DEMO-1000-00086",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 87
+  },
+  {
+    "eventId": "DEMO-1000-00087",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 88
+  },
+  {
+    "eventId": "DEMO-1000-00088",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 89
+  },
+  {
+    "eventId": "DEMO-1000-00089",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 90
+  },
+  {
+    "eventId": "DEMO-1000-00090",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 91
+  },
+  {
+    "eventId": "DEMO-1000-00091",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 92
+  },
+  {
+    "eventId": "DEMO-1000-00092",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 93
+  },
+  {
+    "eventId": "DEMO-1000-00093",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 94
+  },
+  {
+    "eventId": "DEMO-1000-00094",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 95
+  },
+  {
+    "eventId": "DEMO-1000-00095",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 96
+  },
+  {
+    "eventId": "DEMO-1000-00096",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 97
+  },
+  {
+    "eventId": "DEMO-1000-00097",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 98
+  },
+  {
+    "eventId": "DEMO-1000-00098",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 99
+  },
+  {
+    "eventId": "DEMO-1000-00099",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 100
+  },
+  {
+    "eventId": "DEMO-1000-00100",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 101
+  },
+  {
+    "eventId": "DEMO-1000-00101",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 102
+  },
+  {
+    "eventId": "DEMO-1000-00102",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 103
+  },
+  {
+    "eventId": "DEMO-1000-00103",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 104
+  },
+  {
+    "eventId": "DEMO-1000-00104",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 105
+  },
+  {
+    "eventId": "DEMO-1000-00105",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 106
+  },
+  {
+    "eventId": "DEMO-1000-00106",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 107
+  },
+  {
+    "eventId": "DEMO-1000-00107",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 108
+  },
+  {
+    "eventId": "DEMO-1000-00108",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 109
+  },
+  {
+    "eventId": "DEMO-1000-00109",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 110
+  },
+  {
+    "eventId": "DEMO-1000-00110",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 111
+  },
+  {
+    "eventId": "DEMO-1000-00111",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 112
+  },
+  {
+    "eventId": "DEMO-1000-00112",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 113
+  },
+  {
+    "eventId": "DEMO-1000-00113",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 114
+  },
+  {
+    "eventId": "DEMO-1000-00114",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 115
+  },
+  {
+    "eventId": "DEMO-1000-00115",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 116
+  },
+  {
+    "eventId": "DEMO-1000-00116",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 117
+  },
+  {
+    "eventId": "DEMO-1000-00117",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 118
+  },
+  {
+    "eventId": "DEMO-1000-00118",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 119
+  },
+  {
+    "eventId": "DEMO-1000-00119",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 120
+  },
+  {
+    "eventId": "DEMO-1000-00120",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 121
+  },
+  {
+    "eventId": "DEMO-1000-00121",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 122
+  },
+  {
+    "eventId": "DEMO-1000-00122",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 123
+  },
+  {
+    "eventId": "DEMO-1000-00123",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 124
+  },
+  {
+    "eventId": "DEMO-1000-00124",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 125
+  },
+  {
+    "eventId": "DEMO-1000-00125",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 126
+  },
+  {
+    "eventId": "DEMO-1000-00126",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 127
+  },
+  {
+    "eventId": "DEMO-1000-00127",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 128
+  },
+  {
+    "eventId": "DEMO-1000-00128",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 129
+  },
+  {
+    "eventId": "DEMO-1000-00129",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 130
+  },
+  {
+    "eventId": "DEMO-1000-00130",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 131
+  },
+  {
+    "eventId": "DEMO-1000-00131",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 132
+  },
+  {
+    "eventId": "DEMO-1000-00132",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 133
+  },
+  {
+    "eventId": "DEMO-1000-00133",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 134
+  },
+  {
+    "eventId": "DEMO-1000-00134",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 135
+  },
+  {
+    "eventId": "DEMO-1000-00135",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 136
+  },
+  {
+    "eventId": "DEMO-1000-00136",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 137
+  },
+  {
+    "eventId": "DEMO-1000-00137",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 138
+  },
+  {
+    "eventId": "DEMO-1000-00138",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 139
+  },
+  {
+    "eventId": "DEMO-1000-00139",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 140
+  },
+  {
+    "eventId": "DEMO-1000-00140",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 141
+  },
+  {
+    "eventId": "DEMO-1000-00141",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 142
+  },
+  {
+    "eventId": "DEMO-1000-00142",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 143
+  },
+  {
+    "eventId": "DEMO-1000-00143",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 144
+  },
+  {
+    "eventId": "DEMO-1000-00144",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 145
+  },
+  {
+    "eventId": "DEMO-1000-00145",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 146
+  },
+  {
+    "eventId": "DEMO-1000-00146",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 147
+  },
+  {
+    "eventId": "DEMO-1000-00147",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 148
+  },
+  {
+    "eventId": "DEMO-1000-00148",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 149
+  },
+  {
+    "eventId": "DEMO-1000-00149",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 150
+  },
+  {
+    "eventId": "DEMO-1000-00150",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 151
+  },
+  {
+    "eventId": "DEMO-1000-00151",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 152
+  },
+  {
+    "eventId": "DEMO-1000-00152",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 153
+  },
+  {
+    "eventId": "DEMO-1000-00153",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 154
+  },
+  {
+    "eventId": "DEMO-1000-00154",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 155
+  },
+  {
+    "eventId": "DEMO-1000-00155",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 156
+  },
+  {
+    "eventId": "DEMO-1000-00156",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 157
+  },
+  {
+    "eventId": "DEMO-1000-00157",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 158
+  },
+  {
+    "eventId": "DEMO-1000-00158",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 159
+  },
+  {
+    "eventId": "DEMO-1000-00159",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 160
+  },
+  {
+    "eventId": "DEMO-1000-00160",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 161
+  },
+  {
+    "eventId": "DEMO-1000-00161",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 162
+  },
+  {
+    "eventId": "DEMO-1000-00162",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 163
+  },
+  {
+    "eventId": "DEMO-1000-00163",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 164
+  },
+  {
+    "eventId": "DEMO-1000-00164",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 165
+  },
+  {
+    "eventId": "DEMO-1000-00165",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 166
+  },
+  {
+    "eventId": "DEMO-1000-00166",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 167
+  },
+  {
+    "eventId": "DEMO-1000-00167",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 168
+  },
+  {
+    "eventId": "DEMO-1000-00168",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 169
+  },
+  {
+    "eventId": "DEMO-1000-00169",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 170
+  },
+  {
+    "eventId": "DEMO-1000-00170",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 171
+  },
+  {
+    "eventId": "DEMO-1000-00171",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 172
+  },
+  {
+    "eventId": "DEMO-1000-00172",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 173
+  },
+  {
+    "eventId": "DEMO-1000-00173",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 174
+  },
+  {
+    "eventId": "DEMO-1000-00174",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 175
+  },
+  {
+    "eventId": "DEMO-1000-00175",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 176
+  },
+  {
+    "eventId": "DEMO-1000-00176",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 177
+  },
+  {
+    "eventId": "DEMO-1000-00177",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 178
+  },
+  {
+    "eventId": "DEMO-1000-00178",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 179
+  },
+  {
+    "eventId": "DEMO-1000-00179",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 180
+  },
+  {
+    "eventId": "DEMO-1000-00180",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 181
+  },
+  {
+    "eventId": "DEMO-1000-00181",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 182
+  },
+  {
+    "eventId": "DEMO-1000-00182",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 183
+  },
+  {
+    "eventId": "DEMO-1000-00183",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 184
+  },
+  {
+    "eventId": "DEMO-1000-00184",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 185
+  },
+  {
+    "eventId": "DEMO-1000-00185",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 186
+  },
+  {
+    "eventId": "DEMO-1000-00186",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 187
+  },
+  {
+    "eventId": "DEMO-1000-00187",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 188
+  },
+  {
+    "eventId": "DEMO-1000-00188",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 189
+  },
+  {
+    "eventId": "DEMO-1000-00189",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 190
+  },
+  {
+    "eventId": "DEMO-1000-00190",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 191
+  },
+  {
+    "eventId": "DEMO-1000-00191",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 192
+  },
+  {
+    "eventId": "DEMO-1000-00192",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 193
+  },
+  {
+    "eventId": "DEMO-1000-00193",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 194
+  },
+  {
+    "eventId": "DEMO-1000-00194",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 195
+  },
+  {
+    "eventId": "DEMO-1000-00195",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 196
+  },
+  {
+    "eventId": "DEMO-1000-00196",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 197
+  },
+  {
+    "eventId": "DEMO-1000-00197",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 198
+  },
+  {
+    "eventId": "DEMO-1000-00198",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 199
+  },
+  {
+    "eventId": "DEMO-1000-00199",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 200
+  },
+  {
+    "eventId": "DEMO-1000-00200",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 201
+  },
+  {
+    "eventId": "DEMO-1000-00201",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 202
+  },
+  {
+    "eventId": "DEMO-1000-00202",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 203
+  },
+  {
+    "eventId": "DEMO-1000-00203",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 204
+  },
+  {
+    "eventId": "DEMO-1000-00204",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 205
+  },
+  {
+    "eventId": "DEMO-1000-00205",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 206
+  },
+  {
+    "eventId": "DEMO-1000-00206",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 207
+  },
+  {
+    "eventId": "DEMO-1000-00207",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 208
+  },
+  {
+    "eventId": "DEMO-1000-00208",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 209
+  },
+  {
+    "eventId": "DEMO-1000-00209",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 210
+  },
+  {
+    "eventId": "DEMO-1000-00210",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 211
+  },
+  {
+    "eventId": "DEMO-1000-00211",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 212
+  },
+  {
+    "eventId": "DEMO-1000-00212",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 213
+  },
+  {
+    "eventId": "DEMO-1000-00213",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 214
+  },
+  {
+    "eventId": "DEMO-1000-00214",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 215
+  },
+  {
+    "eventId": "DEMO-1000-00215",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 216
+  },
+  {
+    "eventId": "DEMO-1000-00216",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 217
+  },
+  {
+    "eventId": "DEMO-1000-00217",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 218
+  },
+  {
+    "eventId": "DEMO-1000-00218",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 219
+  },
+  {
+    "eventId": "DEMO-1000-00219",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 220
+  },
+  {
+    "eventId": "DEMO-1000-00220",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 221
+  },
+  {
+    "eventId": "DEMO-1000-00221",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 222
+  },
+  {
+    "eventId": "DEMO-1000-00222",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 223
+  },
+  {
+    "eventId": "DEMO-1000-00223",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 224
+  },
+  {
+    "eventId": "DEMO-1000-00224",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 225
+  },
+  {
+    "eventId": "DEMO-1000-00225",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 226
+  },
+  {
+    "eventId": "DEMO-1000-00226",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 227
+  },
+  {
+    "eventId": "DEMO-1000-00227",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 228
+  },
+  {
+    "eventId": "DEMO-1000-00228",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 229
+  },
+  {
+    "eventId": "DEMO-1000-00229",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 230
+  },
+  {
+    "eventId": "DEMO-1000-00230",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 231
+  },
+  {
+    "eventId": "DEMO-1000-00231",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 232
+  },
+  {
+    "eventId": "DEMO-1000-00232",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 233
+  },
+  {
+    "eventId": "DEMO-1000-00233",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 234
+  },
+  {
+    "eventId": "DEMO-1000-00234",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 235
+  },
+  {
+    "eventId": "DEMO-1000-00235",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 236
+  },
+  {
+    "eventId": "DEMO-1000-00236",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 237
+  },
+  {
+    "eventId": "DEMO-1000-00237",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 238
+  },
+  {
+    "eventId": "DEMO-1000-00238",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 239
+  },
+  {
+    "eventId": "DEMO-1000-00239",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 240
+  },
+  {
+    "eventId": "DEMO-1000-00240",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 241
+  },
+  {
+    "eventId": "DEMO-1000-00241",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 242
+  },
+  {
+    "eventId": "DEMO-1000-00242",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 243
+  },
+  {
+    "eventId": "DEMO-1000-00243",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 244
+  },
+  {
+    "eventId": "DEMO-1000-00244",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 245
+  },
+  {
+    "eventId": "DEMO-1000-00245",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 246
+  },
+  {
+    "eventId": "DEMO-1000-00246",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 247
+  },
+  {
+    "eventId": "DEMO-1000-00247",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 248
+  },
+  {
+    "eventId": "DEMO-1000-00248",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 249
+  },
+  {
+    "eventId": "DEMO-1000-00249",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 250
+  },
+  {
+    "eventId": "DEMO-1000-00250",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 251
+  },
+  {
+    "eventId": "DEMO-1000-00251",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 252
+  },
+  {
+    "eventId": "DEMO-1000-00252",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 253
+  },
+  {
+    "eventId": "DEMO-1000-00253",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 254
+  },
+  {
+    "eventId": "DEMO-1000-00254",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 255
+  },
+  {
+    "eventId": "DEMO-1000-00255",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 256
+  },
+  {
+    "eventId": "DEMO-1000-00256",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 257
+  },
+  {
+    "eventId": "DEMO-1000-00257",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 258
+  },
+  {
+    "eventId": "DEMO-1000-00258",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 259
+  },
+  {
+    "eventId": "DEMO-1000-00259",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 260
+  },
+  {
+    "eventId": "DEMO-1000-00260",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 261
+  },
+  {
+    "eventId": "DEMO-1000-00261",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 262
+  },
+  {
+    "eventId": "DEMO-1000-00262",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 263
+  },
+  {
+    "eventId": "DEMO-1000-00263",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 264
+  },
+  {
+    "eventId": "DEMO-1000-00264",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 265
+  },
+  {
+    "eventId": "DEMO-1000-00265",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 266
+  },
+  {
+    "eventId": "DEMO-1000-00266",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 267
+  },
+  {
+    "eventId": "DEMO-1000-00267",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 268
+  },
+  {
+    "eventId": "DEMO-1000-00268",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 269
+  },
+  {
+    "eventId": "DEMO-1000-00269",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 270
+  },
+  {
+    "eventId": "DEMO-1000-00270",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 271
+  },
+  {
+    "eventId": "DEMO-1000-00271",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 272
+  },
+  {
+    "eventId": "DEMO-1000-00272",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 273
+  },
+  {
+    "eventId": "DEMO-1000-00273",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 274
+  },
+  {
+    "eventId": "DEMO-1000-00274",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 275
+  },
+  {
+    "eventId": "DEMO-1000-00275",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 276
+  },
+  {
+    "eventId": "DEMO-1000-00276",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 277
+  },
+  {
+    "eventId": "DEMO-1000-00277",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 278
+  },
+  {
+    "eventId": "DEMO-1000-00278",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 279
+  },
+  {
+    "eventId": "DEMO-1000-00279",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 280
+  },
+  {
+    "eventId": "DEMO-1000-00280",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 281
+  },
+  {
+    "eventId": "DEMO-1000-00281",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 282
+  },
+  {
+    "eventId": "DEMO-1000-00282",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 283
+  },
+  {
+    "eventId": "DEMO-1000-00283",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 284
+  },
+  {
+    "eventId": "DEMO-1000-00284",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 285
+  },
+  {
+    "eventId": "DEMO-1000-00285",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 286
+  },
+  {
+    "eventId": "DEMO-1000-00286",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 287
+  },
+  {
+    "eventId": "DEMO-1000-00287",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 288
+  },
+  {
+    "eventId": "DEMO-1000-00288",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 289
+  },
+  {
+    "eventId": "DEMO-1000-00289",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 290
+  },
+  {
+    "eventId": "DEMO-1000-00290",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 291
+  },
+  {
+    "eventId": "DEMO-1000-00291",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 292
+  },
+  {
+    "eventId": "DEMO-1000-00292",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 293
+  },
+  {
+    "eventId": "DEMO-1000-00293",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 294
+  },
+  {
+    "eventId": "DEMO-1000-00294",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 295
+  },
+  {
+    "eventId": "DEMO-1000-00295",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 296
+  },
+  {
+    "eventId": "DEMO-1000-00296",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 297
+  },
+  {
+    "eventId": "DEMO-1000-00297",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 298
+  },
+  {
+    "eventId": "DEMO-1000-00298",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 299
+  },
+  {
+    "eventId": "DEMO-1000-00299",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 300
+  },
+  {
+    "eventId": "DEMO-1000-00300",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 301
+  },
+  {
+    "eventId": "DEMO-1000-00301",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 302
+  },
+  {
+    "eventId": "DEMO-1000-00302",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 303
+  },
+  {
+    "eventId": "DEMO-1000-00303",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 304
+  },
+  {
+    "eventId": "DEMO-1000-00304",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 305
+  },
+  {
+    "eventId": "DEMO-1000-00305",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 306
+  },
+  {
+    "eventId": "DEMO-1000-00306",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 307
+  },
+  {
+    "eventId": "DEMO-1000-00307",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 308
+  },
+  {
+    "eventId": "DEMO-1000-00308",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 309
+  },
+  {
+    "eventId": "DEMO-1000-00309",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 310
+  },
+  {
+    "eventId": "DEMO-1000-00310",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 311
+  },
+  {
+    "eventId": "DEMO-1000-00311",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 312
+  },
+  {
+    "eventId": "DEMO-1000-00312",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 313
+  },
+  {
+    "eventId": "DEMO-1000-00313",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 314
+  },
+  {
+    "eventId": "DEMO-1000-00314",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 315
+  },
+  {
+    "eventId": "DEMO-1000-00315",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 316
+  },
+  {
+    "eventId": "DEMO-1000-00316",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 317
+  },
+  {
+    "eventId": "DEMO-1000-00317",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 318
+  },
+  {
+    "eventId": "DEMO-1000-00318",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 319
+  },
+  {
+    "eventId": "DEMO-1000-00319",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 320
+  },
+  {
+    "eventId": "DEMO-1000-00320",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 321
+  },
+  {
+    "eventId": "DEMO-1000-00321",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 322
+  },
+  {
+    "eventId": "DEMO-1000-00322",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 323
+  },
+  {
+    "eventId": "DEMO-1000-00323",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 324
+  },
+  {
+    "eventId": "DEMO-1000-00324",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 325
+  },
+  {
+    "eventId": "DEMO-1000-00325",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 326
+  },
+  {
+    "eventId": "DEMO-1000-00326",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 327
+  },
+  {
+    "eventId": "DEMO-1000-00327",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 328
+  },
+  {
+    "eventId": "DEMO-1000-00328",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 329
+  },
+  {
+    "eventId": "DEMO-1000-00329",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 330
+  },
+  {
+    "eventId": "DEMO-1000-00330",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 331
+  },
+  {
+    "eventId": "DEMO-1000-00331",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 332
+  },
+  {
+    "eventId": "DEMO-1000-00332",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 333
+  },
+  {
+    "eventId": "DEMO-1000-00333",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 334
+  },
+  {
+    "eventId": "DEMO-1000-00334",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 335
+  },
+  {
+    "eventId": "DEMO-1000-00335",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 336
+  },
+  {
+    "eventId": "DEMO-1000-00336",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 337
+  },
+  {
+    "eventId": "DEMO-1000-00337",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 338
+  },
+  {
+    "eventId": "DEMO-1000-00338",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 339
+  },
+  {
+    "eventId": "DEMO-1000-00339",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 340
+  },
+  {
+    "eventId": "DEMO-1000-00340",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 341
+  },
+  {
+    "eventId": "DEMO-1000-00341",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 342
+  },
+  {
+    "eventId": "DEMO-1000-00342",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 343
+  },
+  {
+    "eventId": "DEMO-1000-00343",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 344
+  },
+  {
+    "eventId": "DEMO-1000-00344",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 345
+  },
+  {
+    "eventId": "DEMO-1000-00345",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 346
+  },
+  {
+    "eventId": "DEMO-1000-00346",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 347
+  },
+  {
+    "eventId": "DEMO-1000-00347",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 348
+  },
+  {
+    "eventId": "DEMO-1000-00348",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 349
+  },
+  {
+    "eventId": "DEMO-1000-00349",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 350
+  },
+  {
+    "eventId": "DEMO-1000-00350",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 351
+  },
+  {
+    "eventId": "DEMO-1000-00351",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 352
+  },
+  {
+    "eventId": "DEMO-1000-00352",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 353
+  },
+  {
+    "eventId": "DEMO-1000-00353",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 354
+  },
+  {
+    "eventId": "DEMO-1000-00354",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 355
+  },
+  {
+    "eventId": "DEMO-1000-00355",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 356
+  },
+  {
+    "eventId": "DEMO-1000-00356",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 357
+  },
+  {
+    "eventId": "DEMO-1000-00357",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 358
+  },
+  {
+    "eventId": "DEMO-1000-00358",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 359
+  },
+  {
+    "eventId": "DEMO-1000-00359",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 360
+  },
+  {
+    "eventId": "DEMO-1000-00360",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 361
+  },
+  {
+    "eventId": "DEMO-1000-00361",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 362
+  },
+  {
+    "eventId": "DEMO-1000-00362",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 363
+  },
+  {
+    "eventId": "DEMO-1000-00363",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 364
+  },
+  {
+    "eventId": "DEMO-1000-00364",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 365
+  },
+  {
+    "eventId": "DEMO-1000-00365",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 366
+  },
+  {
+    "eventId": "DEMO-1000-00366",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 367
+  },
+  {
+    "eventId": "DEMO-1000-00367",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 368
+  },
+  {
+    "eventId": "DEMO-1000-00368",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 369
+  },
+  {
+    "eventId": "DEMO-1000-00369",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 370
+  },
+  {
+    "eventId": "DEMO-1000-00370",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 371
+  },
+  {
+    "eventId": "DEMO-1000-00371",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 372
+  },
+  {
+    "eventId": "DEMO-1000-00372",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 373
+  },
+  {
+    "eventId": "DEMO-1000-00373",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 374
+  },
+  {
+    "eventId": "DEMO-1000-00374",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 375
+  },
+  {
+    "eventId": "DEMO-1000-00375",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 376
+  },
+  {
+    "eventId": "DEMO-1000-00376",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 377
+  },
+  {
+    "eventId": "DEMO-1000-00377",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 378
+  },
+  {
+    "eventId": "DEMO-1000-00378",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 379
+  },
+  {
+    "eventId": "DEMO-1000-00379",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 380
+  },
+  {
+    "eventId": "DEMO-1000-00380",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 381
+  },
+  {
+    "eventId": "DEMO-1000-00381",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 382
+  },
+  {
+    "eventId": "DEMO-1000-00382",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 383
+  },
+  {
+    "eventId": "DEMO-1000-00383",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 384
+  },
+  {
+    "eventId": "DEMO-1000-00384",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 385
+  },
+  {
+    "eventId": "DEMO-1000-00385",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 386
+  },
+  {
+    "eventId": "DEMO-1000-00386",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 387
+  },
+  {
+    "eventId": "DEMO-1000-00387",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 388
+  },
+  {
+    "eventId": "DEMO-1000-00388",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 389
+  },
+  {
+    "eventId": "DEMO-1000-00389",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 390
+  },
+  {
+    "eventId": "DEMO-1000-00390",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 391
+  },
+  {
+    "eventId": "DEMO-1000-00391",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 392
+  },
+  {
+    "eventId": "DEMO-1000-00392",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 393
+  },
+  {
+    "eventId": "DEMO-1000-00393",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 394
+  },
+  {
+    "eventId": "DEMO-1000-00394",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 395
+  },
+  {
+    "eventId": "DEMO-1000-00395",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 396
+  },
+  {
+    "eventId": "DEMO-1000-00396",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 397
+  },
+  {
+    "eventId": "DEMO-1000-00397",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 398
+  },
+  {
+    "eventId": "DEMO-1000-00398",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 399
+  },
+  {
+    "eventId": "DEMO-1000-00399",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 400
+  },
+  {
+    "eventId": "DEMO-1000-00400",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 401
+  },
+  {
+    "eventId": "DEMO-1000-00401",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 402
+  },
+  {
+    "eventId": "DEMO-1000-00402",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 403
+  },
+  {
+    "eventId": "DEMO-1000-00403",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 404
+  },
+  {
+    "eventId": "DEMO-1000-00404",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 405
+  },
+  {
+    "eventId": "DEMO-1000-00405",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 406
+  },
+  {
+    "eventId": "DEMO-1000-00406",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 407
+  },
+  {
+    "eventId": "DEMO-1000-00407",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 408
+  },
+  {
+    "eventId": "DEMO-1000-00408",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 409
+  },
+  {
+    "eventId": "DEMO-1000-00409",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 410
+  },
+  {
+    "eventId": "DEMO-1000-00410",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 411
+  },
+  {
+    "eventId": "DEMO-1000-00411",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 412
+  },
+  {
+    "eventId": "DEMO-1000-00412",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 413
+  },
+  {
+    "eventId": "DEMO-1000-00413",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 414
+  },
+  {
+    "eventId": "DEMO-1000-00414",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 415
+  },
+  {
+    "eventId": "DEMO-1000-00415",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 416
+  },
+  {
+    "eventId": "DEMO-1000-00416",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 417
+  },
+  {
+    "eventId": "DEMO-1000-00417",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 418
+  },
+  {
+    "eventId": "DEMO-1000-00418",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 419
+  },
+  {
+    "eventId": "DEMO-1000-00419",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 420
+  },
+  {
+    "eventId": "DEMO-1000-00420",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 421
+  },
+  {
+    "eventId": "DEMO-1000-00421",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 422
+  },
+  {
+    "eventId": "DEMO-1000-00422",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 423
+  },
+  {
+    "eventId": "DEMO-1000-00423",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 424
+  },
+  {
+    "eventId": "DEMO-1000-00424",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 425
+  },
+  {
+    "eventId": "DEMO-1000-00425",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 426
+  },
+  {
+    "eventId": "DEMO-1000-00426",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 427
+  },
+  {
+    "eventId": "DEMO-1000-00427",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 428
+  },
+  {
+    "eventId": "DEMO-1000-00428",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 429
+  },
+  {
+    "eventId": "DEMO-1000-00429",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 430
+  },
+  {
+    "eventId": "DEMO-1000-00430",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 431
+  },
+  {
+    "eventId": "DEMO-1000-00431",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 432
+  },
+  {
+    "eventId": "DEMO-1000-00432",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 433
+  },
+  {
+    "eventId": "DEMO-1000-00433",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 434
+  },
+  {
+    "eventId": "DEMO-1000-00434",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 435
+  },
+  {
+    "eventId": "DEMO-1000-00435",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 436
+  },
+  {
+    "eventId": "DEMO-1000-00436",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 437
+  },
+  {
+    "eventId": "DEMO-1000-00437",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 438
+  },
+  {
+    "eventId": "DEMO-1000-00438",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 439
+  },
+  {
+    "eventId": "DEMO-1000-00439",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 440
+  },
+  {
+    "eventId": "DEMO-1000-00440",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 441
+  },
+  {
+    "eventId": "DEMO-1000-00441",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 442
+  },
+  {
+    "eventId": "DEMO-1000-00442",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 443
+  },
+  {
+    "eventId": "DEMO-1000-00443",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 444
+  },
+  {
+    "eventId": "DEMO-1000-00444",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 445
+  },
+  {
+    "eventId": "DEMO-1000-00445",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 446
+  },
+  {
+    "eventId": "DEMO-1000-00446",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 447
+  },
+  {
+    "eventId": "DEMO-1000-00447",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 448
+  },
+  {
+    "eventId": "DEMO-1000-00448",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 449
+  },
+  {
+    "eventId": "DEMO-1000-00449",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 450
+  },
+  {
+    "eventId": "DEMO-1000-00450",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 451
+  },
+  {
+    "eventId": "DEMO-1000-00451",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 452
+  },
+  {
+    "eventId": "DEMO-1000-00452",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 453
+  },
+  {
+    "eventId": "DEMO-1000-00453",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 454
+  },
+  {
+    "eventId": "DEMO-1000-00454",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 455
+  },
+  {
+    "eventId": "DEMO-1000-00455",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 456
+  },
+  {
+    "eventId": "DEMO-1000-00456",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 457
+  },
+  {
+    "eventId": "DEMO-1000-00457",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 458
+  },
+  {
+    "eventId": "DEMO-1000-00458",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 459
+  },
+  {
+    "eventId": "DEMO-1000-00459",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 460
+  },
+  {
+    "eventId": "DEMO-1000-00460",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 461
+  },
+  {
+    "eventId": "DEMO-1000-00461",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 462
+  },
+  {
+    "eventId": "DEMO-1000-00462",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 463
+  },
+  {
+    "eventId": "DEMO-1000-00463",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 464
+  },
+  {
+    "eventId": "DEMO-1000-00464",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 465
+  },
+  {
+    "eventId": "DEMO-1000-00465",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 466
+  },
+  {
+    "eventId": "DEMO-1000-00466",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 467
+  },
+  {
+    "eventId": "DEMO-1000-00467",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 468
+  },
+  {
+    "eventId": "DEMO-1000-00468",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 469
+  },
+  {
+    "eventId": "DEMO-1000-00469",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 470
+  },
+  {
+    "eventId": "DEMO-1000-00470",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 471
+  },
+  {
+    "eventId": "DEMO-1000-00471",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 472
+  },
+  {
+    "eventId": "DEMO-1000-00472",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 473
+  },
+  {
+    "eventId": "DEMO-1000-00473",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 474
+  },
+  {
+    "eventId": "DEMO-1000-00474",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 475
+  },
+  {
+    "eventId": "DEMO-1000-00475",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 476
+  },
+  {
+    "eventId": "DEMO-1000-00476",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 477
+  },
+  {
+    "eventId": "DEMO-1000-00477",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 478
+  },
+  {
+    "eventId": "DEMO-1000-00478",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 479
+  },
+  {
+    "eventId": "DEMO-1000-00479",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 480
+  },
+  {
+    "eventId": "DEMO-1000-00480",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 481
+  },
+  {
+    "eventId": "DEMO-1000-00481",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 482
+  },
+  {
+    "eventId": "DEMO-1000-00482",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 483
+  },
+  {
+    "eventId": "DEMO-1000-00483",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 484
+  },
+  {
+    "eventId": "DEMO-1000-00484",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 485
+  },
+  {
+    "eventId": "DEMO-1000-00485",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 486
+  },
+  {
+    "eventId": "DEMO-1000-00486",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 487
+  },
+  {
+    "eventId": "DEMO-1000-00487",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 488
+  },
+  {
+    "eventId": "DEMO-1000-00488",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 489
+  },
+  {
+    "eventId": "DEMO-1000-00489",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 490
+  },
+  {
+    "eventId": "DEMO-1000-00490",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 491
+  },
+  {
+    "eventId": "DEMO-1000-00491",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 492
+  },
+  {
+    "eventId": "DEMO-1000-00492",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 493
+  },
+  {
+    "eventId": "DEMO-1000-00493",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 494
+  },
+  {
+    "eventId": "DEMO-1000-00494",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 495
+  },
+  {
+    "eventId": "DEMO-1000-00495",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 496
+  },
+  {
+    "eventId": "DEMO-1000-00496",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 497
+  },
+  {
+    "eventId": "DEMO-1000-00497",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 498
+  },
+  {
+    "eventId": "DEMO-1000-00498",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 499
+  },
+  {
+    "eventId": "DEMO-1000-00499",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 500
+  },
+  {
+    "eventId": "DEMO-1000-00500",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 501
+  },
+  {
+    "eventId": "DEMO-1000-00501",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 502
+  },
+  {
+    "eventId": "DEMO-1000-00502",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 503
+  },
+  {
+    "eventId": "DEMO-1000-00503",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 504
+  },
+  {
+    "eventId": "DEMO-1000-00504",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 505
+  },
+  {
+    "eventId": "DEMO-1000-00505",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 506
+  },
+  {
+    "eventId": "DEMO-1000-00506",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 507
+  },
+  {
+    "eventId": "DEMO-1000-00507",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 508
+  },
+  {
+    "eventId": "DEMO-1000-00508",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 509
+  },
+  {
+    "eventId": "DEMO-1000-00509",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 510
+  },
+  {
+    "eventId": "DEMO-1000-00510",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 511
+  },
+  {
+    "eventId": "DEMO-1000-00511",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 512
+  },
+  {
+    "eventId": "DEMO-1000-00512",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 513
+  },
+  {
+    "eventId": "DEMO-1000-00513",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 514
+  },
+  {
+    "eventId": "DEMO-1000-00514",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 515
+  },
+  {
+    "eventId": "DEMO-1000-00515",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 516
+  },
+  {
+    "eventId": "DEMO-1000-00516",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 517
+  },
+  {
+    "eventId": "DEMO-1000-00517",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 518
+  },
+  {
+    "eventId": "DEMO-1000-00518",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 519
+  },
+  {
+    "eventId": "DEMO-1000-00519",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 520
+  },
+  {
+    "eventId": "DEMO-1000-00520",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 521
+  },
+  {
+    "eventId": "DEMO-1000-00521",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 522
+  },
+  {
+    "eventId": "DEMO-1000-00522",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 523
+  },
+  {
+    "eventId": "DEMO-1000-00523",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 524
+  },
+  {
+    "eventId": "DEMO-1000-00524",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 525
+  },
+  {
+    "eventId": "DEMO-1000-00525",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 526
+  },
+  {
+    "eventId": "DEMO-1000-00526",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 527
+  },
+  {
+    "eventId": "DEMO-1000-00527",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 528
+  },
+  {
+    "eventId": "DEMO-1000-00528",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 529
+  },
+  {
+    "eventId": "DEMO-1000-00529",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 530
+  },
+  {
+    "eventId": "DEMO-1000-00530",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 531
+  },
+  {
+    "eventId": "DEMO-1000-00531",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 532
+  },
+  {
+    "eventId": "DEMO-1000-00532",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 533
+  },
+  {
+    "eventId": "DEMO-1000-00533",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 534
+  },
+  {
+    "eventId": "DEMO-1000-00534",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 535
+  },
+  {
+    "eventId": "DEMO-1000-00535",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 536
+  },
+  {
+    "eventId": "DEMO-1000-00536",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 537
+  },
+  {
+    "eventId": "DEMO-1000-00537",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 538
+  },
+  {
+    "eventId": "DEMO-1000-00538",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 539
+  },
+  {
+    "eventId": "DEMO-1000-00539",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 540
+  },
+  {
+    "eventId": "DEMO-1000-00540",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 541
+  },
+  {
+    "eventId": "DEMO-1000-00541",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 542
+  },
+  {
+    "eventId": "DEMO-1000-00542",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 543
+  },
+  {
+    "eventId": "DEMO-1000-00543",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 544
+  },
+  {
+    "eventId": "DEMO-1000-00544",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 545
+  },
+  {
+    "eventId": "DEMO-1000-00545",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 546
+  },
+  {
+    "eventId": "DEMO-1000-00546",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 547
+  },
+  {
+    "eventId": "DEMO-1000-00547",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 548
+  },
+  {
+    "eventId": "DEMO-1000-00548",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 549
+  },
+  {
+    "eventId": "DEMO-1000-00549",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 550
+  },
+  {
+    "eventId": "DEMO-1000-00550",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 551
+  },
+  {
+    "eventId": "DEMO-1000-00551",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 552
+  },
+  {
+    "eventId": "DEMO-1000-00552",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 553
+  },
+  {
+    "eventId": "DEMO-1000-00553",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 554
+  },
+  {
+    "eventId": "DEMO-1000-00554",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 555
+  },
+  {
+    "eventId": "DEMO-1000-00555",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 556
+  },
+  {
+    "eventId": "DEMO-1000-00556",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 557
+  },
+  {
+    "eventId": "DEMO-1000-00557",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 558
+  },
+  {
+    "eventId": "DEMO-1000-00558",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 559
+  },
+  {
+    "eventId": "DEMO-1000-00559",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 560
+  },
+  {
+    "eventId": "DEMO-1000-00560",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 561
+  },
+  {
+    "eventId": "DEMO-1000-00561",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 562
+  },
+  {
+    "eventId": "DEMO-1000-00562",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 563
+  },
+  {
+    "eventId": "DEMO-1000-00563",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 564
+  },
+  {
+    "eventId": "DEMO-1000-00564",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 565
+  },
+  {
+    "eventId": "DEMO-1000-00565",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 566
+  },
+  {
+    "eventId": "DEMO-1000-00566",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 567
+  },
+  {
+    "eventId": "DEMO-1000-00567",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 568
+  },
+  {
+    "eventId": "DEMO-1000-00568",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 569
+  },
+  {
+    "eventId": "DEMO-1000-00569",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 570
+  },
+  {
+    "eventId": "DEMO-1000-00570",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 571
+  },
+  {
+    "eventId": "DEMO-1000-00571",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 572
+  },
+  {
+    "eventId": "DEMO-1000-00572",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 573
+  },
+  {
+    "eventId": "DEMO-1000-00573",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 574
+  },
+  {
+    "eventId": "DEMO-1000-00574",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 575
+  },
+  {
+    "eventId": "DEMO-1000-00575",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 576
+  },
+  {
+    "eventId": "DEMO-1000-00576",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 577
+  },
+  {
+    "eventId": "DEMO-1000-00577",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 578
+  },
+  {
+    "eventId": "DEMO-1000-00578",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 579
+  },
+  {
+    "eventId": "DEMO-1000-00579",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 580
+  },
+  {
+    "eventId": "DEMO-1000-00580",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 581
+  },
+  {
+    "eventId": "DEMO-1000-00581",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 582
+  },
+  {
+    "eventId": "DEMO-1000-00582",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 583
+  },
+  {
+    "eventId": "DEMO-1000-00583",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 584
+  },
+  {
+    "eventId": "DEMO-1000-00584",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 585
+  },
+  {
+    "eventId": "DEMO-1000-00585",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 586
+  },
+  {
+    "eventId": "DEMO-1000-00586",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 587
+  },
+  {
+    "eventId": "DEMO-1000-00587",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 588
+  },
+  {
+    "eventId": "DEMO-1000-00588",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 589
+  },
+  {
+    "eventId": "DEMO-1000-00589",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 590
+  },
+  {
+    "eventId": "DEMO-1000-00590",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 591
+  },
+  {
+    "eventId": "DEMO-1000-00591",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 592
+  },
+  {
+    "eventId": "DEMO-1000-00592",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 593
+  },
+  {
+    "eventId": "DEMO-1000-00593",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 594
+  },
+  {
+    "eventId": "DEMO-1000-00594",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 595
+  },
+  {
+    "eventId": "DEMO-1000-00595",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 596
+  },
+  {
+    "eventId": "DEMO-1000-00596",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 597
+  },
+  {
+    "eventId": "DEMO-1000-00597",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 598
+  },
+  {
+    "eventId": "DEMO-1000-00598",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 599
+  },
+  {
+    "eventId": "DEMO-1000-00599",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 600
+  },
+  {
+    "eventId": "DEMO-1000-00600",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 601
+  },
+  {
+    "eventId": "DEMO-1000-00601",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 602
+  },
+  {
+    "eventId": "DEMO-1000-00602",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 603
+  },
+  {
+    "eventId": "DEMO-1000-00603",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 604
+  },
+  {
+    "eventId": "DEMO-1000-00604",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 605
+  },
+  {
+    "eventId": "DEMO-1000-00605",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 606
+  },
+  {
+    "eventId": "DEMO-1000-00606",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 607
+  },
+  {
+    "eventId": "DEMO-1000-00607",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 608
+  },
+  {
+    "eventId": "DEMO-1000-00608",
+    "fraud": true,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 609
+  },
+  {
+    "eventId": "DEMO-1000-00609",
+    "fraud": true,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 610
+  },
+  {
+    "eventId": "DEMO-1000-00610",
+    "fraud": true,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 611
+  },
+  {
+    "eventId": "DEMO-1000-00611",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 612
+  },
+  {
+    "eventId": "DEMO-1000-00612",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 613
+  },
+  {
+    "eventId": "DEMO-1000-00613",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 614
+  },
+  {
+    "eventId": "DEMO-1000-00614",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 615
+  },
+  {
+    "eventId": "DEMO-1000-00615",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 616
+  },
+  {
+    "eventId": "DEMO-1000-00616",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 617
+  },
+  {
+    "eventId": "DEMO-1000-00617",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 618
+  },
+  {
+    "eventId": "DEMO-1000-00618",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 619
+  },
+  {
+    "eventId": "DEMO-1000-00619",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 620
+  },
+  {
+    "eventId": "DEMO-1000-00620",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 621
+  },
+  {
+    "eventId": "DEMO-1000-00621",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 622
+  },
+  {
+    "eventId": "DEMO-1000-00622",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 623
+  },
+  {
+    "eventId": "DEMO-1000-00623",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 624
+  },
+  {
+    "eventId": "DEMO-1000-00624",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 625
+  },
+  {
+    "eventId": "DEMO-1000-00625",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 626
+  },
+  {
+    "eventId": "DEMO-1000-00626",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 627
+  },
+  {
+    "eventId": "DEMO-1000-00627",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 628
+  },
+  {
+    "eventId": "DEMO-1000-00628",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 629
+  },
+  {
+    "eventId": "DEMO-1000-00629",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 630
+  },
+  {
+    "eventId": "DEMO-1000-00630",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 631
+  },
+  {
+    "eventId": "DEMO-1000-00631",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 632
+  },
+  {
+    "eventId": "DEMO-1000-00632",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 633
+  },
+  {
+    "eventId": "DEMO-1000-00633",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 634
+  },
+  {
+    "eventId": "DEMO-1000-00634",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 635
+  },
+  {
+    "eventId": "DEMO-1000-00635",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 636
+  },
+  {
+    "eventId": "DEMO-1000-00636",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 637
+  },
+  {
+    "eventId": "DEMO-1000-00637",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 638
+  },
+  {
+    "eventId": "DEMO-1000-00638",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 639
+  },
+  {
+    "eventId": "DEMO-1000-00639",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 640
+  },
+  {
+    "eventId": "DEMO-1000-00640",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 641
+  },
+  {
+    "eventId": "DEMO-1000-00641",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 642
+  },
+  {
+    "eventId": "DEMO-1000-00642",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 643
+  },
+  {
+    "eventId": "DEMO-1000-00643",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 644
+  },
+  {
+    "eventId": "DEMO-1000-00644",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 645
+  },
+  {
+    "eventId": "DEMO-1000-00645",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 646
+  },
+  {
+    "eventId": "DEMO-1000-00646",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 647
+  },
+  {
+    "eventId": "DEMO-1000-00647",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 648
+  },
+  {
+    "eventId": "DEMO-1000-00648",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 649
+  },
+  {
+    "eventId": "DEMO-1000-00649",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 650
+  },
+  {
+    "eventId": "DEMO-1000-00650",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 651
+  },
+  {
+    "eventId": "DEMO-1000-00651",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 652
+  },
+  {
+    "eventId": "DEMO-1000-00652",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 653
+  },
+  {
+    "eventId": "DEMO-1000-00653",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 654
+  },
+  {
+    "eventId": "DEMO-1000-00654",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 655
+  },
+  {
+    "eventId": "DEMO-1000-00655",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 656
+  },
+  {
+    "eventId": "DEMO-1000-00656",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 657
+  },
+  {
+    "eventId": "DEMO-1000-00657",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 658
+  },
+  {
+    "eventId": "DEMO-1000-00658",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 659
+  },
+  {
+    "eventId": "DEMO-1000-00659",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 660
+  },
+  {
+    "eventId": "DEMO-1000-00660",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 661
+  },
+  {
+    "eventId": "DEMO-1000-00661",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 662
+  },
+  {
+    "eventId": "DEMO-1000-00662",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 663
+  },
+  {
+    "eventId": "DEMO-1000-00663",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 664
+  },
+  {
+    "eventId": "DEMO-1000-00664",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 665
+  },
+  {
+    "eventId": "DEMO-1000-00665",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 666
+  },
+  {
+    "eventId": "DEMO-1000-00666",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 667
+  },
+  {
+    "eventId": "DEMO-1000-00667",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 668
+  },
+  {
+    "eventId": "DEMO-1000-00668",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 669
+  },
+  {
+    "eventId": "DEMO-1000-00669",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 670
+  },
+  {
+    "eventId": "DEMO-1000-00670",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 671
+  },
+  {
+    "eventId": "DEMO-1000-00671",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 672
+  },
+  {
+    "eventId": "DEMO-1000-00672",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 673
+  },
+  {
+    "eventId": "DEMO-1000-00673",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 674
+  },
+  {
+    "eventId": "DEMO-1000-00674",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 675
+  },
+  {
+    "eventId": "DEMO-1000-00675",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 676
+  },
+  {
+    "eventId": "DEMO-1000-00676",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 677
+  },
+  {
+    "eventId": "DEMO-1000-00677",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 678
+  },
+  {
+    "eventId": "DEMO-1000-00678",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 679
+  },
+  {
+    "eventId": "DEMO-1000-00679",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 680
+  },
+  {
+    "eventId": "DEMO-1000-00680",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 681
+  },
+  {
+    "eventId": "DEMO-1000-00681",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 682
+  },
+  {
+    "eventId": "DEMO-1000-00682",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 683
+  },
+  {
+    "eventId": "DEMO-1000-00683",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 684
+  },
+  {
+    "eventId": "DEMO-1000-00684",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 685
+  },
+  {
+    "eventId": "DEMO-1000-00685",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 686
+  },
+  {
+    "eventId": "DEMO-1000-00686",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 687
+  },
+  {
+    "eventId": "DEMO-1000-00687",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 688
+  },
+  {
+    "eventId": "DEMO-1000-00688",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 689
+  },
+  {
+    "eventId": "DEMO-1000-00689",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 690
+  },
+  {
+    "eventId": "DEMO-1000-00690",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 691
+  },
+  {
+    "eventId": "DEMO-1000-00691",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 692
+  },
+  {
+    "eventId": "DEMO-1000-00692",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 693
+  },
+  {
+    "eventId": "DEMO-1000-00693",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 694
+  },
+  {
+    "eventId": "DEMO-1000-00694",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 695
+  },
+  {
+    "eventId": "DEMO-1000-00695",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 696
+  },
+  {
+    "eventId": "DEMO-1000-00696",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 697
+  },
+  {
+    "eventId": "DEMO-1000-00697",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 698
+  },
+  {
+    "eventId": "DEMO-1000-00698",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 699
+  },
+  {
+    "eventId": "DEMO-1000-00699",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 700
+  },
+  {
+    "eventId": "DEMO-1000-00700",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 701
+  },
+  {
+    "eventId": "DEMO-1000-00701",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 702
+  },
+  {
+    "eventId": "DEMO-1000-00702",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 703
+  },
+  {
+    "eventId": "DEMO-1000-00703",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 704
+  },
+  {
+    "eventId": "DEMO-1000-00704",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 705
+  },
+  {
+    "eventId": "DEMO-1000-00705",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 706
+  },
+  {
+    "eventId": "DEMO-1000-00706",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 707
+  },
+  {
+    "eventId": "DEMO-1000-00707",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 708
+  },
+  {
+    "eventId": "DEMO-1000-00708",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 709
+  },
+  {
+    "eventId": "DEMO-1000-00709",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 710
+  },
+  {
+    "eventId": "DEMO-1000-00710",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 711
+  },
+  {
+    "eventId": "DEMO-1000-00711",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 712
+  },
+  {
+    "eventId": "DEMO-1000-00712",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 713
+  },
+  {
+    "eventId": "DEMO-1000-00713",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 714
+  },
+  {
+    "eventId": "DEMO-1000-00714",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 715
+  },
+  {
+    "eventId": "DEMO-1000-00715",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 716
+  },
+  {
+    "eventId": "DEMO-1000-00716",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 717
+  },
+  {
+    "eventId": "DEMO-1000-00717",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 718
+  },
+  {
+    "eventId": "DEMO-1000-00718",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 719
+  },
+  {
+    "eventId": "DEMO-1000-00719",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 720
+  },
+  {
+    "eventId": "DEMO-1000-00720",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 721
+  },
+  {
+    "eventId": "DEMO-1000-00721",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 722
+  },
+  {
+    "eventId": "DEMO-1000-00722",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 723
+  },
+  {
+    "eventId": "DEMO-1000-00723",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 724
+  },
+  {
+    "eventId": "DEMO-1000-00724",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 725
+  },
+  {
+    "eventId": "DEMO-1000-00725",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 726
+  },
+  {
+    "eventId": "DEMO-1000-00726",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 727
+  },
+  {
+    "eventId": "DEMO-1000-00727",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 728
+  },
+  {
+    "eventId": "DEMO-1000-00728",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 729
+  },
+  {
+    "eventId": "DEMO-1000-00729",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 730
+  },
+  {
+    "eventId": "DEMO-1000-00730",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 731
+  },
+  {
+    "eventId": "DEMO-1000-00731",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 732
+  },
+  {
+    "eventId": "DEMO-1000-00732",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 733
+  },
+  {
+    "eventId": "DEMO-1000-00733",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 734
+  },
+  {
+    "eventId": "DEMO-1000-00734",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 735
+  },
+  {
+    "eventId": "DEMO-1000-00735",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 736
+  },
+  {
+    "eventId": "DEMO-1000-00736",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 737
+  },
+  {
+    "eventId": "DEMO-1000-00737",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 738
+  },
+  {
+    "eventId": "DEMO-1000-00738",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 739
+  },
+  {
+    "eventId": "DEMO-1000-00739",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 740
+  },
+  {
+    "eventId": "DEMO-1000-00740",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 741
+  },
+  {
+    "eventId": "DEMO-1000-00741",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 742
+  },
+  {
+    "eventId": "DEMO-1000-00742",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 743
+  },
+  {
+    "eventId": "DEMO-1000-00743",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 744
+  },
+  {
+    "eventId": "DEMO-1000-00744",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 745
+  },
+  {
+    "eventId": "DEMO-1000-00745",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 746
+  },
+  {
+    "eventId": "DEMO-1000-00746",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 747
+  },
+  {
+    "eventId": "DEMO-1000-00747",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 748
+  },
+  {
+    "eventId": "DEMO-1000-00748",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 749
+  },
+  {
+    "eventId": "DEMO-1000-00749",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 750
+  },
+  {
+    "eventId": "DEMO-1000-00750",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 751
+  },
+  {
+    "eventId": "DEMO-1000-00751",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 752
+  },
+  {
+    "eventId": "DEMO-1000-00752",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 753
+  },
+  {
+    "eventId": "DEMO-1000-00753",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 754
+  },
+  {
+    "eventId": "DEMO-1000-00754",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 755
+  },
+  {
+    "eventId": "DEMO-1000-00755",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 756
+  },
+  {
+    "eventId": "DEMO-1000-00756",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 757
+  },
+  {
+    "eventId": "DEMO-1000-00757",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 758
+  },
+  {
+    "eventId": "DEMO-1000-00758",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 759
+  },
+  {
+    "eventId": "DEMO-1000-00759",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 760
+  },
+  {
+    "eventId": "DEMO-1000-00760",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 761
+  },
+  {
+    "eventId": "DEMO-1000-00761",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 762
+  },
+  {
+    "eventId": "DEMO-1000-00762",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 763
+  },
+  {
+    "eventId": "DEMO-1000-00763",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 764
+  },
+  {
+    "eventId": "DEMO-1000-00764",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 765
+  },
+  {
+    "eventId": "DEMO-1000-00765",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 766
+  },
+  {
+    "eventId": "DEMO-1000-00766",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 767
+  },
+  {
+    "eventId": "DEMO-1000-00767",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 768
+  },
+  {
+    "eventId": "DEMO-1000-00768",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 769
+  },
+  {
+    "eventId": "DEMO-1000-00769",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 770
+  },
+  {
+    "eventId": "DEMO-1000-00770",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 771
+  },
+  {
+    "eventId": "DEMO-1000-00771",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 772
+  },
+  {
+    "eventId": "DEMO-1000-00772",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 773
+  },
+  {
+    "eventId": "DEMO-1000-00773",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 774
+  },
+  {
+    "eventId": "DEMO-1000-00774",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 775
+  },
+  {
+    "eventId": "DEMO-1000-00775",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 776
+  },
+  {
+    "eventId": "DEMO-1000-00776",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 777
+  },
+  {
+    "eventId": "DEMO-1000-00777",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 778
+  },
+  {
+    "eventId": "DEMO-1000-00778",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 779
+  },
+  {
+    "eventId": "DEMO-1000-00779",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 780
+  },
+  {
+    "eventId": "DEMO-1000-00780",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 781
+  },
+  {
+    "eventId": "DEMO-1000-00781",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 782
+  },
+  {
+    "eventId": "DEMO-1000-00782",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 783
+  },
+  {
+    "eventId": "DEMO-1000-00783",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 784
+  },
+  {
+    "eventId": "DEMO-1000-00784",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 785
+  },
+  {
+    "eventId": "DEMO-1000-00785",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 786
+  },
+  {
+    "eventId": "DEMO-1000-00786",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 787
+  },
+  {
+    "eventId": "DEMO-1000-00787",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 788
+  },
+  {
+    "eventId": "DEMO-1000-00788",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 789
+  },
+  {
+    "eventId": "DEMO-1000-00789",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 790
+  },
+  {
+    "eventId": "DEMO-1000-00790",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 791
+  },
+  {
+    "eventId": "DEMO-1000-00791",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 792
+  },
+  {
+    "eventId": "DEMO-1000-00792",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 793
+  },
+  {
+    "eventId": "DEMO-1000-00793",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 794
+  },
+  {
+    "eventId": "DEMO-1000-00794",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 795
+  },
+  {
+    "eventId": "DEMO-1000-00795",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 796
+  },
+  {
+    "eventId": "DEMO-1000-00796",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 797
+  },
+  {
+    "eventId": "DEMO-1000-00797",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 798
+  },
+  {
+    "eventId": "DEMO-1000-00798",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 799
+  },
+  {
+    "eventId": "DEMO-1000-00799",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 800
+  },
+  {
+    "eventId": "DEMO-1000-00800",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 801
+  },
+  {
+    "eventId": "DEMO-1000-00801",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 802
+  },
+  {
+    "eventId": "DEMO-1000-00802",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 803
+  },
+  {
+    "eventId": "DEMO-1000-00803",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 804
+  },
+  {
+    "eventId": "DEMO-1000-00804",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 805
+  },
+  {
+    "eventId": "DEMO-1000-00805",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 806
+  },
+  {
+    "eventId": "DEMO-1000-00806",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 807
+  },
+  {
+    "eventId": "DEMO-1000-00807",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 808
+  },
+  {
+    "eventId": "DEMO-1000-00808",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 809
+  },
+  {
+    "eventId": "DEMO-1000-00809",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 810
+  },
+  {
+    "eventId": "DEMO-1000-00810",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 811
+  },
+  {
+    "eventId": "DEMO-1000-00811",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 812
+  },
+  {
+    "eventId": "DEMO-1000-00812",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 813
+  },
+  {
+    "eventId": "DEMO-1000-00813",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 814
+  },
+  {
+    "eventId": "DEMO-1000-00814",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 815
+  },
+  {
+    "eventId": "DEMO-1000-00815",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 816
+  },
+  {
+    "eventId": "DEMO-1000-00816",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 817
+  },
+  {
+    "eventId": "DEMO-1000-00817",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 818
+  },
+  {
+    "eventId": "DEMO-1000-00818",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 819
+  },
+  {
+    "eventId": "DEMO-1000-00819",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 820
+  },
+  {
+    "eventId": "DEMO-1000-00820",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 821
+  },
+  {
+    "eventId": "DEMO-1000-00821",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 822
+  },
+  {
+    "eventId": "DEMO-1000-00822",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 823
+  },
+  {
+    "eventId": "DEMO-1000-00823",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 824
+  },
+  {
+    "eventId": "DEMO-1000-00824",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 825
+  },
+  {
+    "eventId": "DEMO-1000-00825",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 826
+  },
+  {
+    "eventId": "DEMO-1000-00826",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 827
+  },
+  {
+    "eventId": "DEMO-1000-00827",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 828
+  },
+  {
+    "eventId": "DEMO-1000-00828",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 829
+  },
+  {
+    "eventId": "DEMO-1000-00829",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 830
+  },
+  {
+    "eventId": "DEMO-1000-00830",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 831
+  },
+  {
+    "eventId": "DEMO-1000-00831",
+    "fraud": true,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 832
+  },
+  {
+    "eventId": "DEMO-1000-00832",
+    "fraud": true,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 833
+  },
+  {
+    "eventId": "DEMO-1000-00833",
+    "fraud": true,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 834
+  },
+  {
+    "eventId": "DEMO-1000-00834",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 835
+  },
+  {
+    "eventId": "DEMO-1000-00835",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 836
+  },
+  {
+    "eventId": "DEMO-1000-00836",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 837
+  },
+  {
+    "eventId": "DEMO-1000-00837",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 838
+  },
+  {
+    "eventId": "DEMO-1000-00838",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 839
+  },
+  {
+    "eventId": "DEMO-1000-00839",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 840
+  },
+  {
+    "eventId": "DEMO-1000-00840",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 841
+  },
+  {
+    "eventId": "DEMO-1000-00841",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 842
+  },
+  {
+    "eventId": "DEMO-1000-00842",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 843
+  },
+  {
+    "eventId": "DEMO-1000-00843",
+    "fraud": true,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 844
+  },
+  {
+    "eventId": "DEMO-1000-00844",
+    "fraud": true,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 845
+  },
+  {
+    "eventId": "DEMO-1000-00845",
+    "fraud": true,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 846
+  },
+  {
+    "eventId": "DEMO-1000-00846",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 847
+  },
+  {
+    "eventId": "DEMO-1000-00847",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 848
+  },
+  {
+    "eventId": "DEMO-1000-00848",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 849
+  },
+  {
+    "eventId": "DEMO-1000-00849",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 850
+  },
+  {
+    "eventId": "DEMO-1000-00850",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 851
+  },
+  {
+    "eventId": "DEMO-1000-00851",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 852
+  },
+  {
+    "eventId": "DEMO-1000-00852",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 853
+  },
+  {
+    "eventId": "DEMO-1000-00853",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 854
+  },
+  {
+    "eventId": "DEMO-1000-00854",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 855
+  },
+  {
+    "eventId": "DEMO-1000-00855",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 856
+  },
+  {
+    "eventId": "DEMO-1000-00856",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 857
+  },
+  {
+    "eventId": "DEMO-1000-00857",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 858
+  },
+  {
+    "eventId": "DEMO-1000-00858",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 859
+  },
+  {
+    "eventId": "DEMO-1000-00859",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 860
+  },
+  {
+    "eventId": "DEMO-1000-00860",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 861
+  },
+  {
+    "eventId": "DEMO-1000-00861",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 862
+  },
+  {
+    "eventId": "DEMO-1000-00862",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 863
+  },
+  {
+    "eventId": "DEMO-1000-00863",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 864
+  },
+  {
+    "eventId": "DEMO-1000-00864",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 865
+  },
+  {
+    "eventId": "DEMO-1000-00865",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 866
+  },
+  {
+    "eventId": "DEMO-1000-00866",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 867
+  },
+  {
+    "eventId": "DEMO-1000-00867",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 868
+  },
+  {
+    "eventId": "DEMO-1000-00868",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 869
+  },
+  {
+    "eventId": "DEMO-1000-00869",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 870
+  },
+  {
+    "eventId": "DEMO-1000-00870",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 871
+  },
+  {
+    "eventId": "DEMO-1000-00871",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 872
+  },
+  {
+    "eventId": "DEMO-1000-00872",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 873
+  },
+  {
+    "eventId": "DEMO-1000-00873",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 874
+  },
+  {
+    "eventId": "DEMO-1000-00874",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 875
+  },
+  {
+    "eventId": "DEMO-1000-00875",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 876
+  },
+  {
+    "eventId": "DEMO-1000-00876",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 877
+  },
+  {
+    "eventId": "DEMO-1000-00877",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 878
+  },
+  {
+    "eventId": "DEMO-1000-00878",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 879
+  },
+  {
+    "eventId": "DEMO-1000-00879",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 880
+  },
+  {
+    "eventId": "DEMO-1000-00880",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 881
+  },
+  {
+    "eventId": "DEMO-1000-00881",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 882
+  },
+  {
+    "eventId": "DEMO-1000-00882",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 883
+  },
+  {
+    "eventId": "DEMO-1000-00883",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 884
+  },
+  {
+    "eventId": "DEMO-1000-00884",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 885
+  },
+  {
+    "eventId": "DEMO-1000-00885",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 886
+  },
+  {
+    "eventId": "DEMO-1000-00886",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 887
+  },
+  {
+    "eventId": "DEMO-1000-00887",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 888
+  },
+  {
+    "eventId": "DEMO-1000-00888",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 889
+  },
+  {
+    "eventId": "DEMO-1000-00889",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 890
+  },
+  {
+    "eventId": "DEMO-1000-00890",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 891
+  },
+  {
+    "eventId": "DEMO-1000-00891",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 892
+  },
+  {
+    "eventId": "DEMO-1000-00892",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 893
+  },
+  {
+    "eventId": "DEMO-1000-00893",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 894
+  },
+  {
+    "eventId": "DEMO-1000-00894",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 895
+  },
+  {
+    "eventId": "DEMO-1000-00895",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 896
+  },
+  {
+    "eventId": "DEMO-1000-00896",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 897
+  },
+  {
+    "eventId": "DEMO-1000-00897",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 898
+  },
+  {
+    "eventId": "DEMO-1000-00898",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 899
+  },
+  {
+    "eventId": "DEMO-1000-00899",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 900
+  },
+  {
+    "eventId": "DEMO-1000-00900",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 901
+  },
+  {
+    "eventId": "DEMO-1000-00901",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 902
+  },
+  {
+    "eventId": "DEMO-1000-00902",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 903
+  },
+  {
+    "eventId": "DEMO-1000-00903",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 904
+  },
+  {
+    "eventId": "DEMO-1000-00904",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 905
+  },
+  {
+    "eventId": "DEMO-1000-00905",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 906
+  },
+  {
+    "eventId": "DEMO-1000-00906",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 907
+  },
+  {
+    "eventId": "DEMO-1000-00907",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 908
+  },
+  {
+    "eventId": "DEMO-1000-00908",
+    "fraud": true,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 909
+  },
+  {
+    "eventId": "DEMO-1000-00909",
+    "fraud": true,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 910
+  },
+  {
+    "eventId": "DEMO-1000-00910",
+    "fraud": true,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 911
+  },
+  {
+    "eventId": "DEMO-1000-00911",
+    "fraud": true,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 912
+  },
+  {
+    "eventId": "DEMO-1000-00912",
+    "fraud": true,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 913
+  },
+  {
+    "eventId": "DEMO-1000-00913",
+    "fraud": true,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 914
+  },
+  {
+    "eventId": "DEMO-1000-00914",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 915
+  },
+  {
+    "eventId": "DEMO-1000-00915",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 916
+  },
+  {
+    "eventId": "DEMO-1000-00916",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 917
+  },
+  {
+    "eventId": "DEMO-1000-00917",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 918
+  },
+  {
+    "eventId": "DEMO-1000-00918",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 919
+  },
+  {
+    "eventId": "DEMO-1000-00919",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 920
+  },
+  {
+    "eventId": "DEMO-1000-00920",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 921
+  },
+  {
+    "eventId": "DEMO-1000-00921",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 922
+  },
+  {
+    "eventId": "DEMO-1000-00922",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 923
+  },
+  {
+    "eventId": "DEMO-1000-00923",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 924
+  },
+  {
+    "eventId": "DEMO-1000-00924",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 925
+  },
+  {
+    "eventId": "DEMO-1000-00925",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 926
+  },
+  {
+    "eventId": "DEMO-1000-00926",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 927
+  },
+  {
+    "eventId": "DEMO-1000-00927",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 928
+  },
+  {
+    "eventId": "DEMO-1000-00928",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 929
+  },
+  {
+    "eventId": "DEMO-1000-00929",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 930
+  },
+  {
+    "eventId": "DEMO-1000-00930",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 931
+  },
+  {
+    "eventId": "DEMO-1000-00931",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 932
+  },
+  {
+    "eventId": "DEMO-1000-00932",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 933
+  },
+  {
+    "eventId": "DEMO-1000-00933",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 934
+  },
+  {
+    "eventId": "DEMO-1000-00934",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 935
+  },
+  {
+    "eventId": "DEMO-1000-00935",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 936
+  },
+  {
+    "eventId": "DEMO-1000-00936",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 937
+  },
+  {
+    "eventId": "DEMO-1000-00937",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 938
+  },
+  {
+    "eventId": "DEMO-1000-00938",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 939
+  },
+  {
+    "eventId": "DEMO-1000-00939",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 940
+  },
+  {
+    "eventId": "DEMO-1000-00940",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 941
+  },
+  {
+    "eventId": "DEMO-1000-00941",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 942
+  },
+  {
+    "eventId": "DEMO-1000-00942",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 943
+  },
+  {
+    "eventId": "DEMO-1000-00943",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 944
+  },
+  {
+    "eventId": "DEMO-1000-00944",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 945
+  },
+  {
+    "eventId": "DEMO-1000-00945",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 946
+  },
+  {
+    "eventId": "DEMO-1000-00946",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 947
+  },
+  {
+    "eventId": "DEMO-1000-00947",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 948
+  },
+  {
+    "eventId": "DEMO-1000-00948",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 949
+  },
+  {
+    "eventId": "DEMO-1000-00949",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 950
+  },
+  {
+    "eventId": "DEMO-1000-00950",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 951
+  },
+  {
+    "eventId": "DEMO-1000-00951",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 952
+  },
+  {
+    "eventId": "DEMO-1000-00952",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 953
+  },
+  {
+    "eventId": "DEMO-1000-00953",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 954
+  },
+  {
+    "eventId": "DEMO-1000-00954",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 955
+  },
+  {
+    "eventId": "DEMO-1000-00955",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 956
+  },
+  {
+    "eventId": "DEMO-1000-00956",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 957
+  },
+  {
+    "eventId": "DEMO-1000-00957",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 958
+  },
+  {
+    "eventId": "DEMO-1000-00958",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 959
+  },
+  {
+    "eventId": "DEMO-1000-00959",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 960
+  },
+  {
+    "eventId": "DEMO-1000-00960",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 961
+  },
+  {
+    "eventId": "DEMO-1000-00961",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 962
+  },
+  {
+    "eventId": "DEMO-1000-00962",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 963
+  },
+  {
+    "eventId": "DEMO-1000-00963",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 964
+  },
+  {
+    "eventId": "DEMO-1000-00964",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 965
+  },
+  {
+    "eventId": "DEMO-1000-00965",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 966
+  },
+  {
+    "eventId": "DEMO-1000-00966",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 967
+  },
+  {
+    "eventId": "DEMO-1000-00967",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 968
+  },
+  {
+    "eventId": "DEMO-1000-00968",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 969
+  },
+  {
+    "eventId": "DEMO-1000-00969",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 970
+  },
+  {
+    "eventId": "DEMO-1000-00970",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 971
+  },
+  {
+    "eventId": "DEMO-1000-00971",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 972
+  },
+  {
+    "eventId": "DEMO-1000-00972",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 973
+  },
+  {
+    "eventId": "DEMO-1000-00973",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 974
+  },
+  {
+    "eventId": "DEMO-1000-00974",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 975
+  },
+  {
+    "eventId": "DEMO-1000-00975",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 976
+  },
+  {
+    "eventId": "DEMO-1000-00976",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 977
+  },
+  {
+    "eventId": "DEMO-1000-00977",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 978
+  },
+  {
+    "eventId": "DEMO-1000-00978",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 979
+  },
+  {
+    "eventId": "DEMO-1000-00979",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 980
+  },
+  {
+    "eventId": "DEMO-1000-00980",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 981
+  },
+  {
+    "eventId": "DEMO-1000-00981",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 982
+  },
+  {
+    "eventId": "DEMO-1000-00982",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 983
+  },
+  {
+    "eventId": "DEMO-1000-00983",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 984
+  },
+  {
+    "eventId": "DEMO-1000-00984",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 985
+  },
+  {
+    "eventId": "DEMO-1000-00985",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 986
+  },
+  {
+    "eventId": "DEMO-1000-00986",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 987
+  },
+  {
+    "eventId": "DEMO-1000-00987",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 988
+  },
+  {
+    "eventId": "DEMO-1000-00988",
+    "fraud": true,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 989
+  },
+  {
+    "eventId": "DEMO-1000-00989",
+    "fraud": true,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 990
+  },
+  {
+    "eventId": "DEMO-1000-00990",
+    "fraud": true,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 991
+  },
+  {
+    "eventId": "DEMO-1000-00991",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 992
+  },
+  {
+    "eventId": "DEMO-1000-00992",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 993
+  },
+  {
+    "eventId": "DEMO-1000-00993",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 994
+  },
+  {
+    "eventId": "DEMO-1000-00994",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 995
+  },
+  {
+    "eventId": "DEMO-1000-00995",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 996
+  },
+  {
+    "eventId": "DEMO-1000-00996",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 997
+  },
+  {
+    "eventId": "DEMO-1000-00997",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 998
+  },
+  {
+    "eventId": "DEMO-1000-00998",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 999
+  },
+  {
+    "eventId": "DEMO-1000-00999",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 1000
+  },
+  {
+    "eventId": "DEMO-1000-01000",
+    "fraud": false,
+    "sourceFile": "scenarios/mixed-channels.csv",
+    "sourceRow": 1001
+  }
+]
