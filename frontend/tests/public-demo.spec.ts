@@ -141,11 +141,15 @@ test("public build opens a sample and imports a CSV through the real engine", as
   await page
     .getByLabel("CSV file")
     .setInputFiles(`public/samples/${sample.file}`);
-  await page.getByRole("button", { name: "Preview graph" }).click();
-  await page.getByRole("button", { name: "Build graph" }).click();
+  // Preview starts scoring; Simulate can reuse the completed preparation.
   const imported = page.waitForResponse("**/api/v1/simulations");
-  await page.getByRole("button", { name: "Simulate", exact: true }).click();
+  await page.getByRole("button", { name: "Preview graph" }).click();
   const importedResponse = await imported;
   expect(importedResponse.ok()).toBe(true);
   expect((await importedResponse.json()).events).toHaveLength(sample.rows);
+  await page.getByRole("button", { name: "Build graph" }).click();
+  await page.getByRole("button", { name: "Simulate", exact: true }).click();
+  await expect(
+    page.getByRole("button", { name: "Edit scenario", exact: true }),
+  ).toBeVisible();
 });
