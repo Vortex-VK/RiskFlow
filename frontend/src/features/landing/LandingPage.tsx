@@ -20,15 +20,26 @@ function TechnicalDetails() {
   return (
     <details className="landing-technical" id="under-the-hood">
       <summary>
-        <span>
-          <span className="landing-eyebrow">For the curious</span>
-          <span className="landing-technical-title">Under the hood</span>
-          <span className="landing-technical-hint">
-            Graph construction, model architecture &amp; evaluation
-          </span>
-        </span>
-        <span className="landing-plus" aria-hidden="true">
-          +
+        <div className="landing-section-heading">
+          <h2>Under the hood</h2>
+          <p>Graph construction, model architecture &amp; evaluation</p>
+        </div>
+        <span className="landing-technical-toggle">
+          <span className="landing-technical-show">Show details</span>
+          <span className="landing-technical-hide">Hide details</span>
+          <svg
+            viewBox="0 0 24 24"
+            width="22"
+            height="22"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m6 9 6 6 6-6" />
+          </svg>
         </span>
       </summary>
       <div className="landing-technical-body">
@@ -214,7 +225,7 @@ export function LandingPage({ returning }: { returning: boolean }) {
           <h1 id="landing-title" tabIndex={-1}>
             Know which payments
             <br />
-            <span>to investigate first.</span>
+            <span>to investigate first</span>
           </h1>
           <p className="landing-lead">
             RiskFlow helps you find and investigate possible payment fraud. Turn
@@ -289,10 +300,11 @@ export function LandingPage({ returning }: { returning: boolean }) {
               </figure>
               <div className="landing-step-copy">
                 <p>
-                  The engine looks at payment amounts, timing and merchant
-                  familiarity in the context of earlier activity. It combines
-                  these signals to rank payments and suggest which ones deserve
-                  a closer look.
+                  RiskFlow brings together scores from eight AI models, each
+                  trained to look for patterns in payment data. It combines
+                  those scores with clues from earlier activity, such as payment
+                  amounts, timing and whether a shop is familiar, to suggest
+                  which payments deserve a closer look.
                 </p>
                 <p>
                   Start with the highest-priority payments. Adjust the review

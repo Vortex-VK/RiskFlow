@@ -392,7 +392,7 @@
 }
 .landing-technical {
   margin-bottom: 48px;
-  border-block: 1px solid var(--landing-line);
+  border-top: 1px solid var(--landing-line);
 }
 .landing-technical > summary {
   list-style: none;
@@ -401,32 +401,48 @@
   justify-content: space-between;
   align-items: center;
   gap: 25px;
-  padding: 24px 0;
+  padding: 45px 0;
 }
 .landing-technical > summary::-webkit-details-marker {
   display: none;
 }
-.landing-technical .landing-eyebrow {
-  display: block;
-  font-size: 10px;
+.landing-technical .landing-section-heading {
+  margin-bottom: 0;
 }
-.landing-technical-title {
-  display: inline-block;
-  font-size: 18px;
-  color: #b6c5d7;
-  margin: 7px 25px 0 0;
+.landing-technical-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid #617991;
+  border-radius: 6px;
+  color: var(--landing-accent);
+  font-size: 15px;
+  font-weight: 500;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease;
 }
-.landing-technical-hint {
-  font-size: 11px;
-  color: var(--landing-muted);
+.landing-technical
+  > summary:is(:hover, :focus-visible)
+  .landing-technical-toggle {
+  background: #101e2c;
+  border-color: var(--landing-accent);
 }
-.landing-plus {
-  color: #a6bed7;
-  font-size: 24px;
-  font-weight: 300;
+.landing-technical-hide,
+.landing-technical[open] .landing-technical-show {
+  display: none;
 }
-.landing-technical[open] .landing-plus {
-  transform: rotate(45deg);
+.landing-technical[open] .landing-technical-hide {
+  display: inline;
+}
+.landing-technical-toggle svg {
+  transition: transform 180ms ease;
+}
+.landing-technical[open] .landing-technical-toggle svg {
+  transform: rotate(180deg);
 }
 .landing-technical-body {
   padding-bottom: 40px;
@@ -548,10 +564,6 @@
     right: -400px;
     opacity: 0.35;
   }
-  .landing-technical-hint {
-    display: block;
-    margin-top: 4px;
-  }
 }
 @media (max-width: 560px) {
   .landing-container {
@@ -596,6 +608,12 @@
   .landing-workflow,
   .landing-results {
     padding-block: 32px 45px;
+  }
+  .landing-technical > summary {
+    padding-block: 32px 45px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
   }
   .landing-workflow-list li {
     padding-block: 24px;

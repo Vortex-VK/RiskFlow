@@ -159,17 +159,16 @@ export function GraphTutorial({
   }
   const watching =
     phase === "simulate" && simulation.viewing && !view.completed;
+  // Keep the tour state alive so guidance resumes after each animation.
+  if (revealing || watching) return null;
   const action = {
     overview: {
-      title: revealing
-        ? "Watch the network take shape"
-        : "Start with the big picture",
-      text: revealing
-        ? "Accounts and merchants connect as the sample graph appears."
-        : "Each group brings together related payments. Drag empty space to pan. Click a group, zoom toward it, or choose Next to explore inside.",
-      selectors: revealing
-        ? []
-        : ['.transaction-sector[data-leaf="false"] .sector-label', trail],
+      title: "Start with the big picture",
+      text: "Each group brings together related payments. Drag empty space to pan. Click a group, zoom toward it, or choose Next to explore inside.",
+      selectors: [
+        '.transaction-sector[data-leaf="false"] .sector-label',
+        trail,
+      ],
     },
     connections: {
       title: view.connection
@@ -191,20 +190,14 @@ export function GraphTutorial({
       selectors: [`${trail} button:first-child`],
     },
     simulate: {
-      title: watching
-        ? "Watch the payments flow"
-        : view.completed
-          ? "Your review is ready"
-          : "Run the simulation",
+      title: view.completed ? "Your review is ready" : "Run the simulation",
       text: simulation.error
         ? `The simulation did not finish: ${simulation.error} Choose Next to retry.`
         : simulation.pending
           ? "The model is preparing the payment rankings."
-          : watching
-            ? "Payments light up as they are assessed. When playback finishes, the tour moves to the review list."
-            : view.completed
-              ? "The simulation is complete. Continue to inspect the payments that need review."
-              : "Choose Simulate, or Next, to watch payments move through the network and receive their review rankings.",
+          : view.completed
+            ? "The simulation is complete. Continue to inspect the payments that need review."
+            : "Choose Simulate, or Next, to watch payments move through the network and receive their review rankings.",
       selectors: simulation.viewing ? [] : [".tools .simulate"],
     },
     evidence: {

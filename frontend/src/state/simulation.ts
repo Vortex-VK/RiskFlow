@@ -38,7 +38,7 @@ export const useSimulation = create<SimulationState>((set, get) => ({
   viewing: false,
   elapsed: 0,
   playing: false,
-  speed: 1,
+  speed: 2,
   edit: () => set({ viewing: false, playing: false }),
   openAssessment: (run) => {
     if (!run.simulation) return;

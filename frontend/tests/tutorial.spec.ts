@@ -40,17 +40,14 @@ for (const viewport of [
     const phase = (name: string) =>
       expect(tour).toHaveAttribute("data-phase", name);
     const next = tour.getByRole("button", { name: "Next", exact: true });
-    await phase("overview");
     await expect(
       page.getByRole("button", { name: "Payments 250", exact: true }),
     ).toBeVisible();
     await expect(page.locator(".graph-reveal")).toBeVisible();
-    await expect(next).toBeDisabled();
-    await expect(page.locator(".tour-dimmer")).toHaveAttribute(
-      "fill",
-      "transparent",
-    );
+    await expect(tour).toHaveCount(0);
+    await expect(page.locator(".tour-dimmer")).toHaveCount(0);
     await expect(next).toBeEnabled({ timeout: 10000 });
+    await phase("overview");
     await expect(page.locator(".tour-dimmer")).toHaveCSS(
       "transition-duration",
       "0.42s",
@@ -168,12 +165,10 @@ for (const viewport of [
     await expect(
       page.getByRole("button", { name: "Pause", exact: true }),
     ).toBeVisible();
-    await expect(page.locator(".tour-dimmer")).toHaveAttribute(
-      "fill",
-      "transparent",
-    );
-    await expect(next).toBeDisabled();
+    await expect(tour).toHaveCount(0);
+    await expect(page.locator(".tour-dimmer")).toHaveCount(0);
     const speed = page.getByRole("slider", { name: "Playback speed" });
+    await expect(speed).toHaveAttribute("aria-valuetext", "2×");
     await speed.press("Home");
     await expect(speed).toHaveValue("0");
     const speedBox = (await speed.boundingBox())!;
@@ -190,7 +185,7 @@ for (const viewport of [
     );
     await phase("evidence");
     await tour.getByRole("button", { name: "Back", exact: true }).click();
-    await phase("simulate");
+    await expect(tour).toHaveCount(0);
     await speed.press("End");
     await expect(tour).toHaveAttribute("data-phase", "evidence", {
       timeout: 35000,
@@ -316,6 +311,7 @@ for (const mode of ["graph", "build"] as const) {
     await expect(page.locator(".tutorial-tour")).toHaveAttribute(
       "data-phase",
       mode === "graph" ? "overview" : "objects",
+      { timeout: 10000 },
     );
     await expect(
       page.getByRole("button", {
